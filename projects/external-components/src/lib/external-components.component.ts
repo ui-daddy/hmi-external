@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-my-lib',
+  selector: 'lib-external-components',
   template: `
     <p>
-      my-lib works!
+      external-components works!
     </p>
   `,
   styles: [
   ]
 })
-export class MyLibComponent implements OnInit {
+export class ExternalComponentsComponent implements OnInit {
 
   constructor() { }
 

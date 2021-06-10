@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyLibComponent } from './my-lib.component';
+import { ExternalComponentsComponent } from './external-components.component';
 
-describe('MyLibComponent', () => {
-  let component: MyLibComponent;
-  let fixture: ComponentFixture<MyLibComponent>;
+describe('ExternalComponentsComponent', () => {
+  let component: ExternalComponentsComponent;
+  let fixture: ComponentFixture<ExternalComponentsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyLibComponent ]
+      declarations: [ ExternalComponentsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MyLibComponent);
+    fixture = TestBed.createComponent(ExternalComponentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
