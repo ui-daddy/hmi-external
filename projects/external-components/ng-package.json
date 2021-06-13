@@ -3,5 +3,8 @@
   "dest": "../../dist/external-components",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "primeng"
+  ]
 }

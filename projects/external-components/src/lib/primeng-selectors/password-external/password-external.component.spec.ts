@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExternalComponentsComponent } from './external-components.component';
+import { PasswordExternalComponent } from './password-external.component';
 
-describe('ExternalComponentsComponent', () => {
-  let component: ExternalComponentsComponent;
-  let fixture: ComponentFixture<ExternalComponentsComponent>;
+describe('PasswordExternalComponent', () => {
+  let component: PasswordExternalComponent;
+  let fixture: ComponentFixture<PasswordExternalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExternalComponentsComponent ]
+      declarations: [ PasswordExternalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExternalComponentsComponent);
+    fixture = TestBed.createComponent(PasswordExternalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
