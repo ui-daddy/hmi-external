@@ -4,7 +4,7 @@ import { Password } from 'primeng/password';
 @Component({
   selector: 'hmi-ext-password-external',
   templateUrl: './password-external.component.html',
-  styleUrls: ['./password-external.component.css']
+  styleUrls: ['./password-external.component.scss']
 })
 export class PasswordExternalComponent implements OnInit {
 

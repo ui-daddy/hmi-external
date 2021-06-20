@@ -9,6 +9,6 @@
     "primeicons"
   ],
   "assets": [
-    "styles.css"
+    "styles.scss"
   ]
 }

@@ -7,7 +7,7 @@ interface IText {
 @Component({
   selector: 'hmi-ext-text-external',
   templateUrl: './text-external.component.html',
-  styleUrls: ['./text-external.component.css']
+  styleUrls: ['./text-external.component.scss']
 })
 export class TextExternalComponent implements OnInit {
 
