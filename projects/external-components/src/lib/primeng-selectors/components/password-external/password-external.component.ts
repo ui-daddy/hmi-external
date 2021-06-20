@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Password } from 'primeng/password';
+import { PrimeNgPassword } from '../../models/primeng-password';
 
 @Component({
   selector: 'hmi-ext-password-external',
@@ -8,14 +8,17 @@ import { Password } from 'primeng/password';
 })
 export class PasswordExternalComponent implements OnInit {
 
-  @Input()
-  inputPropsMapping: any = {};
+  @Input() fieldObj: any;
+  @Input() dynamicAttributes: any;
 
-  value1: string = "testing";
+  fieldProperties: PrimeNgPassword;
 
-  constructor() { }
+  constructor() {
+    this.fieldProperties = new PrimeNgPassword(null);
+  }
 
   ngOnInit(): void {
+    this.fieldProperties = new PrimeNgPassword(this.fieldObj.customAttributes);
   }
 
 }

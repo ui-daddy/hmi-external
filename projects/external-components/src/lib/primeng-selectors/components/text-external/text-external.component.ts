@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PrimeNgText } from '../../models/primeng-text';
 
-interface IText {
-  disabled: boolean;
-}
 
 @Component({
   selector: 'hmi-ext-text-external',
@@ -11,15 +9,17 @@ interface IText {
 })
 export class TextExternalComponent implements OnInit {
 
-  @Input()
-  inputPropsMapping: any = {};
+  @Input() fieldObj: any;
+  @Input() dynamicAttributes: any;
 
-  property: string = "testing";
+  fieldProperties: PrimeNgText;
 
-  constructor() { }
+  constructor() { 
+    this.fieldProperties = new PrimeNgText(null);
+  }
 
   ngOnInit(): void {
-    console.log(this.inputPropsMapping);
+    this.fieldProperties = new PrimeNgText(this.fieldObj.customAttributes);
   }
 
 }
