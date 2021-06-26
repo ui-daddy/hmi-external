@@ -1,0 +1,26 @@
+<p-table #dt [columns]="fieldProperties.colNameAccessorMap" [value]="data" dataKey="{{fieldProperties.dataKey}}"
+    styleClass="p-datatable-customers" [rowHover]="fieldProperties.rowHover" [rows]="fieldProperties.rows"
+    [showCurrentPageReport]="fieldProperties.showCurrentPageReport"
+    [loading]="fieldProperties.loading" [paginator]="fieldProperties.paginator"
+    currentPageReportTemplate="{{fieldProperties.currentPageReportTemplate}}" [filterDelay]="fieldProperties.filterDelay">
+    <ng-template pTemplate="caption" *ngIf="fieldProperties.caption">
+        {{fieldProperties.caption}}
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of fieldProperties.colNameAccessorMap">
+                {{col.colName}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of fieldProperties.colNameAccessorMap">
+                {{rowData[col.accessor]}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" *ngIf="fieldProperties.summary">
+        {{fieldProperties.summary}}
+    </ng-template>
+</p-table>
