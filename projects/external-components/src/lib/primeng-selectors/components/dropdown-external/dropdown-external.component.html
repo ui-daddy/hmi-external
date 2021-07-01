@@ -1,0 +1,37 @@
+<span [formGroup]="formGroupObj">
+    <p-dropdown #dropdownComponent formControlName="{{fieldObj.baseProperties.name}}"
+        name="{{fieldObj.baseProperties.name}}"
+        [options]="fieldProperties.optionList" 
+        [optionLabel]="fieldProperties.optionLabel" 
+        [optionValue]="fieldProperties.optionValue"
+        [scrollHeight]="fieldProperties.scrollHeight"
+        (onChange)="onDropdownChange($event)"></p-dropdown>
+
+    <!-- <p-dropdown #dropdownComponent formControlName="{{fieldObj.baseProperties.name}}"
+        name="{{fieldObj.baseProperties.name}}"
+        [options]="fieldProperties.optionList" 
+        [optionLabel]="fieldProperties.optionLabel" 
+        [optionValue]="fieldProperties.optionValue"
+        [optionDisabled]="optionDisabled"
+        [optionGroupLabel]="optionGroupLabel"
+        [optionGroupChildren]="optionGroupChildren"
+        [scrollHeight]="fieldProperties.scrollHeight"
+        [style]="style"
+        [panelStyle]="panelStyle"
+        [styleClass]="styleClass"
+        [panelStyleClass]="panelStyleClass"
+        [filter]="filter"
+        [filterValue]="filterValue"
+        [filterBy]="filterBy"
+        [filterMatchMode]="filterMatchMode"
+        [filterPlaceholder]="filterPlaceholder"
+        [filterLocale]="filterLocale"
+        [required]="fieldObj.expressionProperties.requiredValue"
+        [disabled]="fieldObj.expressionProperties.disabledValue"
+        [readonly]="fieldObj.expressionProperties.readonlyValue"
+        [emptyMessage]="emptyMessage"
+        [emptyFilterMessage]="emptyFilterMessage"
+        [ariaLabelledBy]="ariaLabelledBy"
+
+        (onChange)="onDropdownChange($event)"></p-dropdown> -->
+</span>
