@@ -1,10 +1,10 @@
 export class CustomAttribute {
-    name?: string;
+    name: string;
     value?: any;
     expression?: string;
     accessor?: string;
 
-    constructor(options: {name?: string,
+    constructor(options: {name: string,
         value?: any,
         expression?: string,
         accessor?: string}) {
