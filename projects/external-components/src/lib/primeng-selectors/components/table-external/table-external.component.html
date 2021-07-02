@@ -11,7 +11,7 @@
     [responsive]="fieldObj.customAttributes.responsive">
     <ng-template pTemplate="caption" *ngIf="fieldObj.customAttributes.caption">
         <div class="table-header">
-            {{fieldObj.customAttributes.caption}}
+            <span class="table-header-caption">{{fieldObj.customAttributes.caption}}</span>
             <span class="p-input-icon-left"
                 *ngIf="fieldObj.customAttributes.globalFilterFields && fieldObj.customAttributes.globalFilterFields.length">
                 <i class="pi pi-search"></i>

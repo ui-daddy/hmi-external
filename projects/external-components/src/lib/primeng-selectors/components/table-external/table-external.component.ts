@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Table } from 'primeng/table';
-import { PrimeNgTable } from '../../models/primeng-table';
 import { CommonService } from '../../services/common.service';
 
 
@@ -21,7 +20,6 @@ export class TableExternalComponent implements OnInit {
 
   ngOnInit(): void {
     this.fieldObj.customAttributes.loading = true;
-    this.fieldObj.customAttributes = new PrimeNgTable(this.fieldObj.customAttributes);
     if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
       this.commonService.getData(this.fieldObj.customAttributes.dataConfig.url).then((data: any) => {
         if (this.fieldObj.customAttributes.dataConfig.onSuccess && this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor 
