@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { PrimeNgDropdown } from '../../models/primeng-dropdown';
 
 @Component({
   selector: 'hmi-ext-dropdown-external',
@@ -13,18 +12,13 @@ export class DropdownExternal implements OnInit {
   @Input() dynamicAttributes: any;
   @Input() formGroupObj: any;
 
-  @Output() onChange: any;  
-
-  fieldProperties: PrimeNgDropdown;
+  @Output() onChange: any;
   selectedValue: any;
 
-  constructor() {
-    this.fieldProperties = new PrimeNgDropdown(null);
-  }
+  constructor() { }
 
   ngOnInit(): void {    
-    this.fieldProperties = new PrimeNgDropdown(this.fieldObj.customAttributes);    
-    console.log("Options: "+JSON.stringify(this.fieldProperties.optionList));
+    console.log("Options: "+JSON.stringify(this.fieldObj.customAttributes.optionList));
     this.selectedValue = this.fieldObj.value;    
   }
 

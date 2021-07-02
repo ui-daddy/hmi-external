@@ -1,0 +1,39 @@
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    .table-header-caption {
+        align-self: center;
+    }
+}
+
+:host ::ng-deep {
+    .p-datatable .p-datatable-header {
+        padding: 1rem;
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    .p-datatable-tbody > tr > td .p-column-title {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .table-header {
+        font-size: 18px;
+    }
+    
+    .p-column-title {
+        white-space: normal;
+        width: 40%;
+        vertical-align: middle;
+    }
+    :host ::ng-deep {
+        .p-datatable-tbody {
+            font-size: 14px;
+        }
+    }
+    .p-body-data {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

@@ -1,10 +1,10 @@
 <span [formGroup]="formGroupObj">
     <p-dropdown #dropdownComponent formControlName="{{fieldObj.baseProperties.name}}"
         name="{{fieldObj.baseProperties.name}}"
-        [options]="fieldProperties.optionList" 
-        [optionLabel]="fieldProperties.optionLabel" 
-        [optionValue]="fieldProperties.optionValue"
-        [scrollHeight]="fieldProperties.scrollHeight"
+        [options]="fieldObj.customAttributes.optionList" 
+        [optionLabel]="fieldObj.customAttributes.optionLabel" 
+        [optionValue]="fieldObj.customAttributes.optionValue"
+        [scrollHeight]="fieldObj.customAttributes.scrollHeight"
         (onChange)="onDropdownChange($event)"></p-dropdown>
 
     <!-- <p-dropdown #dropdownComponent formControlName="{{fieldObj.baseProperties.name}}"

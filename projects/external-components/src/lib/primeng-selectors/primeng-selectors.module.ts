@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
+import { TableExternalComponent } from './components/table-external/table-external.component';
+import {AccordionModule} from 'primeng/accordion';
+import {TableModule} from 'primeng/table';
 import { DropdownExternal } from './components/dropdown-external/dropdown-external.component';
 
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
-import {AccordionModule} from 'primeng/accordion';
 import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
 
@@ -16,15 +18,17 @@ import {CheckboxModule} from 'primeng/checkbox';
   declarations: [
     PasswordExternalComponent,
     TextExternalComponent,
+    TableExternalComponent,
     DropdownExternal
   ],
   imports: [
-    CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, AccordionModule, DropdownModule, CheckboxModule
+    CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, AccordionModule, TableModule, DropdownModule, CheckboxModule
   ],
   exports: [
     PasswordExternalComponent,
     TextExternalComponent,
-    AccordionModule,
+    TableExternalComponent,
+    AccordionModule, TableModule,
     DropdownExternal, PasswordModule, DropdownModule, CheckboxModule
   ]
 })
