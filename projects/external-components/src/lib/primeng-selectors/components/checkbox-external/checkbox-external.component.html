@@ -1,0 +1,45 @@
+<span *ngFor="let option of fieldObj.customAttributes.optionList" class="p-field-checkbox">
+    <p-checkbox name="fieldObj.baseProperties.name"
+                [value]="option.value"
+                [(ngModel)]="fieldObj.value"
+                [inputId]="option.value"
+                [id]="fieldObj.baseProperties.name"
+                [binary] = "fieldObj.customAttributes.binary"
+                [tabindex] = "fieldObj.customAttributes.tabindex"
+                [ariaLabelledBy] = "fieldObj.customAttributes.ariaLabelledBy"
+                [ariaLabel] = "fieldObj.customAttributes.ariaLabel"
+                [style] = "fieldObj.customAttributes.style"
+                [styleClass] = "fieldObj.customAttributes.styleClass"
+                [labelStyleClass] = "fieldObj.customAttributes.labelStyleClass"
+                [checkboxIcon] = "fieldObj.customAttributes.checkboxIcon"
+                [readonly] = "fieldObj.customAttributes.readonly"
+                [required] = "fieldObj.customAttributes.required"
+                [disabled] = "fieldObj.customAttributes.disabled"
+                (onChange)="onCheckboxChange($event)"
+                >
+    </p-checkbox>
+    <label [for]="option.name">
+        {{option.label}}
+    </label>
+
+</span>
+<!-- 
+<p-checkbox [(ngModel)]="fieldProperties.optionList"
+            [value]= "fieldProperties.value"
+            [name]="fieldObj.baseProperties.name"
+            [inputId] = "fieldProperties.inputId"
+            [id]="fieldObj.baseProperties.name"
+            [binary] = "fieldProperties.binary"
+            [tabindex] = "fieldProperties.tabindex"
+            [ariaLabelledBy] = "fieldProperties.ariaLabelledBy"
+            [ariaLabel] = "fieldProperties.ariaLabel"
+            [style] = "fieldProperties.style"
+            [styleClass] = "fieldProperties.styleClass"
+            [labelStyleClass] = "fieldProperties.labelStyleClass"
+            [checkboxIcon] = "fieldProperties.checkboxIcon"
+            [readonly] = "fieldProperties.readonly"
+            [required] = "fieldProperties.required"
+            [disabled] = "fieldProperties.disabled">
+</p-checkbox> -->
+
+

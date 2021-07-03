@@ -12,6 +12,7 @@ import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
+import { CheckboxExternalComponent } from './components/checkbox-external/checkbox-external.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     PasswordExternalComponent,
     TextExternalComponent,
     TableExternalComponent,
-    DropdownExternal
+    DropdownExternal,
+    CheckboxExternalComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, AccordionModule, TableModule, DropdownModule, CheckboxModule
@@ -29,7 +31,7 @@ import {CheckboxModule} from 'primeng/checkbox';
     TextExternalComponent,
     TableExternalComponent,
     AccordionModule, TableModule,
-    DropdownExternal, PasswordModule, DropdownModule, CheckboxModule
+    DropdownExternal, PasswordModule, DropdownModule, CheckboxModule, CheckboxExternalComponent
   ]
 })
 export class PrimengSelectorsModule { }
