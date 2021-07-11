@@ -1,7 +1,6 @@
-<input type="text" pInputText  
+<input type="text" pInputText #primeText  
     [(ngModel)]="dynamicAttributes.value"
     id="{{ fieldObj.baseProperties.name }}"
     name="{{ fieldObj.baseProperties.name }}"
     placeholder="{{ fieldObj.placeholder }}"
-    [readonly]="dynamicAttributes.readOnlyValue"
-    [disabled]="fieldObj.customAttributes.disabled">
+    [readonly]="dynamicAttributes.readOnlyValue">
