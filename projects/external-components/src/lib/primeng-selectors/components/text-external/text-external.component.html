@@ -1,6 +1,6 @@
-<input type="text" pInputText #primeText  
-    [(ngModel)]="dynamicAttributes.value"
+<span [formGroup]="formGroupObj">
+    <input type="text" pInputText #primeText  
+    formControlName="{{fieldObj.baseProperties.name}}"
     id="{{ fieldObj.baseProperties.name }}"
-    name="{{ fieldObj.baseProperties.name }}"
-    placeholder="{{ fieldObj.placeholder }}"
-    [readonly]="dynamicAttributes.readOnlyValue">
+    name="{{ fieldObj.baseProperties.name }}">
+</span>
