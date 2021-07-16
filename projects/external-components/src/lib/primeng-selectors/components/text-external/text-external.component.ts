@@ -21,6 +21,7 @@ export class TextExternalComponent implements AfterViewInit {
     Object.assign(this.primeText, this._fieldObj.customAttributes);
   }
   @Input() dynamicAttributes: any;
+  @Input() formGroupObj: any;
 
   @ViewChild(InputText, {static: true}) primeText!: any; 
 
