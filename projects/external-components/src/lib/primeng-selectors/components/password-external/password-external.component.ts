@@ -1,14 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonExternalComponent } from '../common-external/common-external.component';
 
 @Component({
   selector: 'hmi-ext-password-external',
   templateUrl: './password-external.component.html',
   styleUrls: ['./password-external.component.scss']
 })
-export class PasswordExternalComponent {
-
-  @Input() fieldObj: any;
-  @Input() dynamicAttributes: any;
-
-  constructor() { }
+export class PasswordExternalComponent extends CommonExternalComponent {
+  constructor() { 
+    super();
+  }
 }
