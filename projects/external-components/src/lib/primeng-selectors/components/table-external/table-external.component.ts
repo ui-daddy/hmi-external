@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { Table } from 'primeng/table';
 import { CommonService } from '../../services/common.service';
+import { CommonExternalComponent } from '../common-external/common-external.component';
 
 
 @Component({
@@ -8,15 +8,12 @@ import { CommonService } from '../../services/common.service';
   templateUrl: './table-external.component.html',
   styleUrls: ['./table-external.component.scss']
 })
-export class TableExternalComponent implements OnInit {
-
-  @Input() fieldObj: any;
-  @Input() dynamicAttributes: any;
-  @ViewChild('dt') dt: Table | undefined;
-
+export class TableExternalComponent extends CommonExternalComponent implements OnInit {
   data: any = [];
 
-  constructor(private commonService: CommonService) { }
+  constructor(private commonService: CommonService) { 
+    super();
+  }
 
   ngOnInit(): void {
     this.fieldObj.customAttributes.loading = true;
@@ -33,6 +30,6 @@ export class TableExternalComponent implements OnInit {
   }
 
   applyGlobalFilter($event: Event, stringVal: string) {
-    this.dt!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
+    this.primeElement!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
   }
 }
