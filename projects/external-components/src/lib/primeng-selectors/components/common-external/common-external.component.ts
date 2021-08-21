@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'hmi-ext-common-external',
@@ -8,6 +8,7 @@ export class CommonExternalComponent implements AfterViewInit {
 
   private _fieldObj: any;
   public isDirective: boolean = false;
+  private isEventInitialized = false;
   public get fieldObj() {
     return this._fieldObj;
   }
@@ -18,6 +19,7 @@ export class CommonExternalComponent implements AfterViewInit {
   }
   @Input() dynamicAttributes: any;
   @Input() formGroupObj: any;
+  @Output('initializeEvents') protected initializeEvents = new EventEmitter<any>();
 
   @ViewChild('primeElement', {static: true}) primeElement!: any; 
 
@@ -29,6 +31,11 @@ export class CommonExternalComponent implements AfterViewInit {
       nativeElement.readOnly = this.dynamicAttributes.readOnlyValue;
     } else {
       this.primeElement.readonly = this.dynamicAttributes.readOnlyValue;
+    }
+
+    if (!this.isEventInitialized) {
+      this.isEventInitialized = true;
+      this.initializeEvents.emit();
     }
   }
 }

@@ -1,14 +1,4 @@
-<p-table #dt [columns]="fieldObj.customAttributes.colNameAccessorMap" [value]="data"
-    dataKey="{{fieldObj.customAttributes.dataKey}}" [rowHover]="fieldObj.customAttributes.rowHover"
-    [rows]="fieldObj.customAttributes.rows" [showCurrentPageReport]="fieldObj.customAttributes.showCurrentPageReport"
-    [loading]="fieldObj.customAttributes.loading" [paginator]="fieldObj.customAttributes.paginator"
-    currentPageReportTemplate="{{fieldObj.customAttributes.currentPageReportTemplate}}"
-    [filterDelay]="fieldObj.customAttributes.filterDelay"
-    [globalFilterFields]="fieldObj.customAttributes.globalFilterFields"
-    [resizableColumns]="fieldObj.customAttributes.resizableColumns"
-    [reorderableColumns]="fieldObj.customAttributes.reorderableColumns" selectionMode="single" stateStorage="session"
-    stateKey="statedemo-session-{{fieldObj.baseProperties.id}}" [autoLayout]="fieldObj.customAttributes.autoLayout"
-    [responsive]="fieldObj.customAttributes.responsive">
+<p-table #primeElement [value]="data">
     <ng-template pTemplate="caption" *ngIf="fieldObj.customAttributes.caption">
         <div class="table-header">
             <span class="table-header-caption">{{fieldObj.customAttributes.caption}}</span>
@@ -21,7 +11,7 @@
     </ng-template>
     <ng-template pTemplate="header" let-columns>
         <tr>
-            <th *ngFor="let col of fieldObj.customAttributes.colNameAccessorMap" [pSortableColumn]="col.accessor"
+            <th *ngFor="let col of fieldObj.customAttributes.columns" [pSortableColumn]="col.accessor"
                 pResizableColumn pReorderableColumn>
                 {{col.colName}}
                 <p-sortIcon [field]="col.accessor"></p-sortIcon>
@@ -30,7 +20,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr [pSelectableRow]="rowData">
-            <td *ngFor="let col of fieldObj.customAttributes.colNameAccessorMap">
+            <td *ngFor="let col of fieldObj.customAttributes.columns">
                 <span class="p-column-title">{{col.colName}}</span>
                 <span class="p-body-data" [innerHTML]="rowData[col.accessor] || col.html"></span>
             </td>
