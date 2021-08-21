@@ -2,10 +2,15 @@
     <ng-template pTemplate="caption" *ngIf="fieldObj.customAttributes.caption">
         <div class="table-header">
             <span class="table-header-caption">{{fieldObj.customAttributes.caption}}</span>
-            <span class="p-input-icon-left"
-                *ngIf="fieldObj.customAttributes.globalFilterFields && fieldObj.customAttributes.globalFilterFields.length">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" (input)="applyGlobalFilter($event, 'contains')" placeholder="Search" />
+            <span>
+                <span class="p-input-icon-left"
+                    *ngIf="fieldObj.customAttributes.globalFilterFields && fieldObj.customAttributes.globalFilterFields.length">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="applyGlobalFilter($event, 'contains')" placeholder="Search" />
+                </span>
+                <span class="ml-2">
+                    <button type="button" class="btn btn-primary" (click)="refreshTable()">Refresh</button>
+                </span>
             </span>
         </div>
     </ng-template>
@@ -20,7 +25,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr [pSelectableRow]="rowData">
-            <td *ngFor="let col of fieldObj.customAttributes.columns">
+            <td *ngFor="let col of fieldObj.customAttributes.columns" (click)="cellAction(col, rowData)">
                 <span class="p-column-title">{{col.colName}}</span>
                 <span class="p-body-data" [innerHTML]="rowData[col.accessor] || col.html"></span>
             </td>

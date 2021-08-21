@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hmi-ext-common-external',
@@ -19,6 +20,7 @@ export class CommonExternalComponent implements AfterViewInit {
   }
   @Input() dynamicAttributes: any;
   @Input() formGroupObj: any;
+  @Input() customApiCall: any;
   @Output('initializeEvents') protected initializeEvents = new EventEmitter<any>();
 
   @ViewChild('primeElement', {static: true}) primeElement!: any; 
