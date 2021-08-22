@@ -17,6 +17,11 @@ export class TableExternalComponent extends CommonExternalComponent implements O
 
   ngOnInit(): void {
     this.refreshTable();
+    this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
+      if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
+        this.refreshTable();
+      }      
+    });
   }
 
   applyGlobalFilter($event: Event, stringVal: string) {
@@ -43,13 +48,9 @@ export class TableExternalComponent extends CommonExternalComponent implements O
       if (colConfig.action.name === "ROW_ACTION" && colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
         this.customApiCall(colConfig.action.apiConfig, rowData).subscribe(() => { 
           console.log("Row action performed successfully.");
-          // let dynamicAttributes = _.cloneDeep(this.dynamicAttributes);
-          // if (colConfig.actionObj.apiConfig.onSuccess && colConfig.actionObj.apiConfig.onSuccess.deleteTableRow) {
-          //   dynamicAttributes.value = _.reject(dynamicAttributes.value, rowData);
-          // }
-          // this._dataChange.emit({ dynamicData: dynamicAttributes });
-        })
+        });
       }
     }
   }
+  
 }

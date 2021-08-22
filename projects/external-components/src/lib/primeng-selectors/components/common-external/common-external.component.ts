@@ -24,6 +24,7 @@ export class CommonExternalComponent implements AfterViewInit {
   @Output('initializeEvents') protected initializeEvents = new EventEmitter<any>();
 
   @ViewChild('primeElement', {static: true}) primeElement!: any; 
+  subscription: any;
 
   constructor() { }
 
