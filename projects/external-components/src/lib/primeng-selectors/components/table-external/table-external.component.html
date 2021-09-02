@@ -7,10 +7,12 @@
                     *ngIf="fieldObj.customAttributes.globalFilterFields && fieldObj.customAttributes.globalFilterFields.length">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="applyGlobalFilter($event, 'contains')" placeholder="Search" />
-                </span>
-                <span class="ml-2">
-                    <button type="button" class="btn btn-primary" (click)="refreshTable()">Refresh</button>
-                </span>
+                </span>                
+            </span>
+            <span class="ml-2">
+                <button type="button" class="btn btn-primary" (click)="refreshTable()">
+                    <i class="fa fa-sync-alt"></i>
+                </button>
             </span>
         </div>
     </ng-template>
