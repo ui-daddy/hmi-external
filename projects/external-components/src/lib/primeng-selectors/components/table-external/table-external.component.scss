@@ -1,8 +1,9 @@
 .table-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     .table-header-caption {
         align-self: center;
+        margin-right: auto;
     }
 }
 
