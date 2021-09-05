@@ -21,3 +21,7 @@ npm link
 Go to HMI workspace folder and open cmd
 npm link external-components
 You are now ready to use the components from the external-components library.
+
+Direct shortcut commands if you have followed above steps atleast once::
+1. npm run build
+2. Open another command prompt and  -> npm run link
