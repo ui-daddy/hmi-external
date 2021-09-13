@@ -16,20 +16,41 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   ngOnInit(): void {
+    this.refreshTable();
+    this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
+      if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
+        this.refreshTable();
+      }      
+    });
+  }
+
+  applyGlobalFilter($event: Event, stringVal: string) {
+    this.primeElement!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
+  }
+
+  refreshTable() {
     this.fieldObj.customAttributes.loading = true;
     if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
-      this.commonService.getData(this.fieldObj.customAttributes.dataConfig.url).then((data: any) => {
+      this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {
         if (this.fieldObj.customAttributes.dataConfig.onSuccess && this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor 
             && data[this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor]) {
           this.data = data[this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor];
         } else {
           this.data = data;
         }
-      }).finally(() => this.fieldObj.customAttributes.loading = false);
+        this.fieldObj.customAttributes.loading = false;
+      });
     }
   }
 
-  applyGlobalFilter($event: Event, stringVal: string) {
-    this.primeElement!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
+  cellAction(colConfig: any, rowData: any) {
+    if (colConfig.action) {
+      if (colConfig.action.name === "ROW_ACTION" && colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
+        this.customApiCall(colConfig.action.apiConfig, rowData).subscribe(() => { 
+          console.log("Row action performed successfully.");
+        });
+      }
+    }
   }
+  
 }

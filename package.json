@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build external-components --watch",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "link": "cd dist\\external-components && npm link"
   },
   "private": true,
   "dependencies": {

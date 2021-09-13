@@ -11,6 +11,5 @@ export * from './lib/primeng-selectors/components/dropdown-external/dropdown-ext
 export * from 'primeng/dropdown';
 export * from 'primeng/password';
 export * from 'primeng/checkbox';
-export * from 'primeng/accordion';
-
-
+export * from 'primeng/calendar';
+export {ToggleButtonModule, ToggleButton} from 'primeng/togglebutton';
