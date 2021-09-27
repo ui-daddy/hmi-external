@@ -6,7 +6,8 @@
   },
   "allowedNonPeerDependencies": [
     "primeng",
-    "primeicons"
+    "primeicons",
+    "chart.js"
   ],
   "assets": [
     "styles.scss"
