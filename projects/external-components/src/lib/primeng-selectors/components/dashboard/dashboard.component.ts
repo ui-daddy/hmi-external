@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { GatwayClientService } from '../service/gateway/gatway-client.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { environment } from 'src/environments/environment';
+
 import * as moment from "moment";
+import { environment } from '../../../constants/environment';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -52,7 +53,7 @@ export class DashboardComponent implements OnInit {
   currentIndex = -1;
   Data: any[] = [];
 
-  constructor(private chdt: ChangeDetectorRef, private http: HttpClient, private gateway: GatwayClientService) { }
+  constructor(private chdt: ChangeDetectorRef, private http: HttpClient, private gateway: CommonService) { }
 
   ngOnInit(): void {
     this.getData()
