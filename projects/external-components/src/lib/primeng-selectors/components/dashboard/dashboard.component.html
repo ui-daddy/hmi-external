@@ -1,4 +1,4 @@
-<app-heder [page]="'dash'"></app-heder><br />
+<!-- <app-heder [page]="'dash'"></app-heder><br /> -->
 <div class="container-fluid">
   <div class="dash-body">
     <div style="margin-top: 10px;">
@@ -119,10 +119,9 @@
                   style="border: none;outline: none !important;box-shadow: none;width: 135px;min-width:135px;min-height: 70%;height: 80%;align-items: center;justify-content: center;">{{status}}</button>
                 <span style="margin-top: 10px;font-size: 12px;cursor: pointer; color: #2D2828;"
                   (click)="ShowDetails(item)">View Details
-                  <img *ngIf="!item.show" src="assets/next.png"
-                    style="margin-left: 2px;width: 10px;margin-bottom: 3px;">
-                  <img *ngIf="item.show" src="../../assets/down.svg"
-                    style="margin-left: 2px;width: 10px;margin-bottom: 3px;"></span>
+                  <i *ngIf="item.show" class="fas fa-chevron-down"></i>
+                  <i *ngIf="!item.show" class="fas fa-chevron-right"></i>
+                </span>
               </div>
             </div>
             <div class="card-bottom" style="margin-top: 3% !important;">
