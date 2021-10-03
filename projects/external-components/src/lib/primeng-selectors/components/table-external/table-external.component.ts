@@ -31,13 +31,8 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   refreshTable() {
     this.fieldObj.customAttributes.loading = true;
     if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
-      this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {
-        if (this.fieldObj.customAttributes.dataConfig.onSuccess && this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor 
-            && data[this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor]) {
-          this.data = data[this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor];
-        } else {
-          this.data = data;
-        }
+      this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {        
+        this.data = data;
         this.fieldObj.customAttributes.loading = false;
       });
     }
