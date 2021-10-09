@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
 import { TableExternalComponent } from './components/table-external/table-external.component';
@@ -26,7 +25,7 @@ import {ChartModule} from 'primeng/chart';
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, 
-    TableModule, DropdownModule, ToggleButtonModule, ChartModule, NgxPaginationModule
+    TableModule, DropdownModule, ToggleButtonModule, ChartModule
   ],
   exports: [
     PasswordExternalComponent,
