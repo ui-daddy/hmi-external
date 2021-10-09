@@ -1,0 +1,296 @@
+<!-- <app-heder [page]="'dash'"></app-heder><br /> -->
+<div class="container-fluid">
+  <div #primeElement class="dash-body">
+    <div style="margin-top: 10px;">
+      <div class="row" style="height: 80vh;max-height: 80vh;overflow: auto;background-color: #F6F4F4;">
+
+        <!--Filters Start-->
+        <div class="col-lg-3 col-12">
+
+          <div
+            style="background: #FFFFFF;padding : 20px 0px;min-height:85%;max-height:98%;padding: 10px;margin-top: 10px;">
+
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-1">
+              <h5 style="color: #2D2828;font-size: 25px;margin-bottom: 15px;">Filters</h5>
+            </div>
+
+            <div>
+              <label class="label" style="margin-left: 10px;-size: 15px;color: #2D2828;">Mode</label>
+            </div>
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-3 input">
+              <input type="text" list="modes" class="form-control" placeholder="" id="mode"
+                style="outline: none !important;box-shadow: none;" [(ngModel)]="shipping_type">
+            </div>
+
+            <div>
+              <label class="label" style="margin-left: 10px;-size: 15px;color: #2D2828;">Carrier</label>
+            </div>
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-3 input">
+              <input type="text" list="shippings" class="form-control" placeholder="" id="shipping"
+                style="outline: none !important;box-shadow: none;" [(ngModel)]="carrier">
+            </div>
+
+            <div>
+              <label class="label" style="margin-left: 10px;-size: 15px;color: #2D2828;">Consignee</label>
+            </div>
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-3 input">
+              <input type="text" list="consignees" class="form-control" placeholder="" id="consignee"
+                style="outline: none !important;box-shadow: none;" [(ngModel)]="consignee">
+            </div>
+
+            <div>
+              <label class="label" style="margin-left: 10px;-size: 15px;color: #2D2828;">Delivery Number</label>
+            </div>
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-3 input">
+              <input type="text" list="reference_nums" class="form-control" placeholder="" id="reference_num"
+                style="outline: none !important;box-shadow: none;" [(ngModel)]="delivery">
+            </div>
+
+            <div>
+              <label class="label" style="margin-left: 10px;-size: 15px;color: #2D2828;">Dispatched Date</label>
+            </div>
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-3 input">
+              <input type="text" class="form-control" placeholder="YYYY-MM-DD" id="dates"
+                style="outline: none !important;box-shadow: none;" [(ngModel)]="loading_date">
+            </div>
+
+            <div>
+              <label class="label" style="margin-left: 10px;-size: 15px;color: #2D2828;">Country of Origin</label>
+            </div>
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-3 input">
+              <input type="text" class="form-control" placeholder="" id="origin"
+                style="outline: none !important;box-shadow: none;" [(ngModel)]="country_of_origin">
+            </div>
+
+            <div>
+              <label class="label" style="margin-left: 10px;-size: 15px;color: #2D2828;">Country of Destination</label>
+            </div>
+            <div class="col-12 d-flex flex-lg-row flex-md-row mb-3 input">
+              <input type="text" class="form-control" placeholder="" id="destination"
+                style="outline: none !important;box-shadow: none;" [(ngModel)]="location_of_the_ship_to_party">
+            </div>
+
+            <div class="col-12 mb-3">
+              <button type="submit" class="btn btn-primary btn-block"
+                style="color:#fff;background: #EE7E38;border:none;outline: none !important;box-shadow: none;width: 100%;font-size: 13px;line-break: auto;"
+                (click)="filterData()">Search</button>
+            </div>
+
+          </div>
+
+        </div>
+        <!--Filters end-->
+        <div class="col-lg-9 col-12">
+
+          <!--Polling Code Starts-->
+          <div class="card" *ngFor="let item of listData">
+            <div class="card-heading">
+              <div class="header col-lg-9 col-12">
+                <div class="col-lg-2 col-12" style="margin-left: 10px;">
+                  <h6 style="color: #EE7E38;font-size:16px;">Mode</h6>
+                  <p style="font-size: 14px;">{{item.mode}}</p>
+                </div>
+                <div class="col-lg-2 col-12">
+                  <h6 style="color: #EE7E38;font-size:16px;">Carrier</h6>
+                  <p class="apiData" style="color: #2D2828;">{{item.forward_agent_name}}</p>
+                </div>
+                <div class="col-lg-2 col-12">
+                  <h6 style="color: #EE7E38;font-size:16px;">From</h6>
+                  <p class="apiData" style="color: #2D2828;">{{item.country_of_origin}}</p>
+                </div>
+                <div class="col-lg-2 col-12">
+                  <h6 style="color: #EE7E38;font-size:16px;">To</h6>
+                  <p class="apiData" style="color: #2D2828;">{{item.location_of_the_ship_to_party}}</p>
+                </div>
+                <div class="col-lg-2 col-12">
+                  <h6 style="color: #EE7E38;font-size:16px;">Consignee</h6>
+                  <p class="apiData" style="color: #2D2828;">{{item.consignee}}</p>
+                </div>
+                <div class="col-lg-2 col-12" style="margin-left: 15px;">
+                  <h6 style="color: #EE7E38;font-size:16px;">ETA</h6>
+                  <p class="apiData" style="color: #2D2828;">{{item.loading_date}}</p>
+                  <!-- {{item.loading_date}}
+              {{job.createdAt |  date:'MM/dd/yyyy' | amTimeAgo }} -->
+                </div>
+              </div>
+              <div class="header-btn col-lg-3 col-12">
+                <button type="submit"
+                  [ngClass]="{ 'btn':!status1, 'status1':status1, 'status2':status2, 'status6':status3}"
+                  style="border: none;outline: none !important;box-shadow: none;width: 135px;min-width:135px;min-height: 70%;height: 80%;align-items: center;justify-content: center;">{{status}}</button>
+                <span style="margin-top: 10px;font-size: 12px;cursor: pointer; color: #2D2828;"
+                  (click)="ShowDetails(item)">View Details
+                  <i *ngIf="item.show" class="fas fa-chevron-down"></i>
+                  <i *ngIf="!item.show" class="fas fa-chevron-right"></i>
+                </span>
+              </div>
+            </div>
+            <div class="card-bottom" style="margin-top: 3% !important;">
+              <div class="col-lg-4 col-12 colom-height"
+                [ngClass]="{ 'normal-status':!status1, 'status1':status1,'status6':status1 && status3 }">
+                <button title="Arrival of Transport On 12:15PM" *ngIf="status1"
+                  style="border-radius: 50%;position: absolute;z-index: 1;padding: 5px;margin-top: -5px;"
+                  [ngClass]="{ 'normal-status':!status1, 'status1':status1 && !status3, 'status6':status1 && status3 }"></button>
+                <p>Shipment started</p>
+              </div>
+              <div class="col-lg-4 col-12 colom-height"
+                [ngClass]="{ 'normal-status':!status2, 'status2':status2,'status6':status2 && status3 }">
+                <button title="Goods Loaded On 1:15PM" *ngIf="status2"
+                  style="border-radius: 50%;position: absolute;z-index: 1;padding: 5px;margin-top: -5px;"
+                  [ngClass]="{ 'normal-status':!status2, 'status2':status2,'status6':status2 && status3}"></button>
+                <p>In Transit</p>
+              </div>
+              <div class="col-lg-4 col-12 colom-height" [ngClass]="{ 'normal-status':!status3, 'status6':status3 }">
+                <button title="Shipment Completed On 04:15PM" *ngIf="status3"
+                  style="border-radius: 50%;z-index: 1;padding: 5px;margin-top: -5px;float: right;"
+                  [ngClass]="{ 'normal-status':!status3, 'status6':status3 }"></button>
+                <button title="Shipment Completed On 04:15PM" *ngIf="status3"
+                  style="border-radius: 50%;z-index: 1;padding: 5px;margin-top: -5px;float: left;"
+                  [ngClass]="{ 'normal-status':!status3, 'status6':status3 }"></button>
+                <p>Delivered</p>
+              </div>
+            </div>
+            <div class="card-tbl" *ngIf="item.show">
+              <p style="color: #3F3A3A;font-size: smaller;margin-top: 15px;margin-bottom: 17px;margin-left: 5px;">
+                <span style="font-weight: bold;">Delivery
+                  Number: {{item.delivery}}</span>
+              </p>
+              <div class="navbar navbar-expand-lg" style="padding: inherit;width: 45%;background-color: #fff;">
+                <div class="container-fluid" style="margin-left: -24px;">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item" (click)="viewDetails(item,'shipment')"
+                        [ngClass]="{ 'active':item.shipmentDetalsShow, 'not-active':!item.shipmentDetalsShow }">
+                        <a class="nav-link" style=" font-size: 15px;cursor: pointer;color:#3F3A3A">Shipment
+                          Details</a>
+                      </li>
+                      <li class="nav-item" (click)="viewDetails(item,'scan')">
+                        <a class="nav-link" style="font-size: 15px;cursor: pointer;color:#3F3A3A"
+                          [ngClass]="{ 'active':item.status_scanShow, 'not-active':!item.status_scanShow }">Status
+                          History</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="item.shipmentDetalsShow" style="background: #F6F4F4;">
+
+                <div class="container">
+                  <div class="row" style="padding: 30px;">
+                    <div class="col-md-5" style="text-align: center;margin-top: 88px;">
+                      <p style="font-size: 18px;">Estimated Arrival Date<span style="margin-left: 10px;">:</span>
+                        {{item.loading_date}}
+                      </p>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="row">
+                        <div *ngFor="let ship of item.shipmentDetals">
+                          <div class="apiData" style="line-height: 30px;font-size: 11px;color: #000000;">Way Bill Number
+                            <span style="margin-left: 79px;margin-right: 60px;">:</span>{{ship.forward_agent}}
+                          </div>
+                          <div class="apiData" style="line-height: 30px;font-size: 11px;color: #000000;">Destination
+                            Address <span style="margin-left: 60px;margin-right: 60px;">:</span>
+                            {{ship.location_of_the_ship_to_party}}
+                          </div>
+                          <div class="apiData" style="line-height: 30px;font-size: 11px;color: #000000;">Destination
+                            City
+                            <span style="margin-left: 83px;margin-right: 60px;">:</span> {{ship.city}}
+                          </div>
+                          <div class="apiData" style="line-height: 30px;font-size: 11px;color: #000000;">Postal Code
+                            <span style="margin-left: 105px;margin-right: 60px;">:</span>{{ship.postalcode}}
+                          </div>
+                          <div class="apiData" style="line-height: 30px;font-size: 11px;color: #000000;">Customer Name
+                            <span style="margin-left: 82px;margin-right: 60px;">:</span>{{ship.forward_agent_name}}
+                          </div>
+                          <div class="apiData" style="line-height: 30px;font-size: 11px;color: #000000;">Total Weight
+                            <span style="margin-left: 102px;margin-right: 60px;">:</span> {{ship.total_weight}}
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="item.status_scanShow" style="background: #F6F4F4;">
+                <table class="table responsive" style="background-color: #F6F4F4">
+                  <thead>
+                    <tr>
+                      <th class="col-md-3">Location</th>
+                      <th class="col-md-3">Details</th>
+                      <th class="col-md-3">Date/Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ship of item.status_scan"
+                      style="background-color: #F6F4F4;border-color: #FFFFFF;border-bottom-width: thick;">
+                      <td style="font-size: 10px;color: #3F3A3A;">{{ship.location_of_the_ship_to_party}}</td>
+                      <td style="font-size: 10px;color: #3F3A3A;">{{ship.shipment_status}}</td>
+                      <!-- <td style="font-size: 10px;color: #3F3A3A;">{{ship.loading_date}}</td> -->
+                      <td style="font-size: 10px;color: #3F3A3A;">{{ship.shippingtime}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--Polling Code Ends-->
+
+          <!--Pagination Code Starts-->
+          <div class="col-lg-8 col-8"
+            style="margin-top: 10px;float: right;display: flex;justify-content: space-between;">
+            <!-- <p>Page</p><br/> -->
+            <!-- <form [formGroup]="form" (ngSubmit)="submit()" style="margin-top: -15px;">
+                  <div class="form-group">
+                      <select formControlName="website" class="form-control" (ngModelChange)="clearFilter($event)">
+                          <option disabled>Select Page</option>
+                          <option *ngFor="let web of websiteList">{{web}}</option>
+                      </select>
+                  </div>
+              </form> -->
+            <!-- <button class="btn btn-primary" [disabled]="page === 1" style="margin: 5px;">Previous</button>
+        <button class="btn btn-primary" style="margin: 5px;" (click)="next()"
+          [disabled]="page === totaldata">Next</button>
+        <p>Page {{count}}</p> -->
+
+            <!-- (pageChange)="handlePageChange($event)" -->
+            <!--  -->
+            <ul class="list-group">
+              <li style="display: none;" class="list-group-item" *ngFor="
+          let data of Data | paginate : {
+            itemsPerPage: PageSize,
+            currentPage: Page,
+            totalItems: Count
+          };
+          let i = index
+          " [class.active]="i == currentIndex">
+                {{i}}
+              </li>
+            </ul>
+
+            <pagination-controls (pageChange)="handlePageChange($event)" [responsive]="true" [maxSize]="9"
+              [directionLinks]="true" [autoHide]="true" previousLabel="Previous" nextLabel="Next"
+              screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+              screenReaderCurrentLabel="You're on page"></pagination-controls>
+
+          </div>
+          <!--Pagination Code Ends-->
+
+          <!-- (change)="handlePageSizeChange($event)" -->
+          <div class="mt-3">
+            Items per Page:
+            <select (change)="handlePageSizeChange($event)">
+              <option *ngFor="let size of PageSizes" [ngValue]="size">
+                {{ size }}
+              </option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br />
+
+</div>
+<!-- <app-footer></app-footer> -->
