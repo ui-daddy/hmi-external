@@ -8,7 +8,6 @@ export * from './lib/primeng-selectors/components/text-external/text-external.co
 export * from './lib/primeng-selectors/components/table-external/table-external.component';
 export * from './lib/primeng-selectors/components/dropdown-external/dropdown-external.component';
 export * from './lib/primeng-selectors/components/charts-external/charts-external.component';
-export * from './lib/primeng-selectors/components/dashboard/dashboard.component';
 
 export * from 'primeng/dropdown';
 export * from 'primeng/password';

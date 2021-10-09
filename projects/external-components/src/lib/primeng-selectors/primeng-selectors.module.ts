@@ -8,7 +8,6 @@ import { TableExternalComponent } from './components/table-external/table-extern
 import {TableModule} from 'primeng/table';
 import { DropdownExternal } from './components/dropdown-external/dropdown-external.component';
 import { ChartsExternalComponent } from './components/charts-external/charts-external.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
@@ -23,8 +22,7 @@ import {ChartModule} from 'primeng/chart';
     TextExternalComponent,
     TableExternalComponent,
     DropdownExternal,
-    ChartsExternalComponent,
-    DashboardComponent
+    ChartsExternalComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, 
@@ -36,8 +34,7 @@ import {ChartModule} from 'primeng/chart';
     TableExternalComponent,
     TableModule,
     DropdownExternal,
-    ChartsExternalComponent, PasswordModule, DropdownModule,
-    DashboardComponent
+    ChartsExternalComponent, PasswordModule, DropdownModule
   ],
   entryComponents: [
     ToggleButton
