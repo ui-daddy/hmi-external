@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import * as moment from "moment";
@@ -12,6 +12,10 @@ import { CommonService } from '../../services/common.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  @ViewChild('primeElement', {static: true}) primeElement!: any; 
+  subscription: any;
+  @Output('initializeEvents') protected initializeEvents = new EventEmitter<any>();
 
   user: any = 'Kiran'
   dashList = [1, 2, 3, 4]
@@ -111,7 +115,6 @@ export class DashboardComponent implements OnInit {
     });
   }
   viewDetails(item: any, type: any) {
-    console.log(type, item);
     this.listData.map((data: any) => {
       if (type === 'shipment') {
         if (data.consignee === item.consignee) {
@@ -157,10 +160,8 @@ export class DashboardComponent implements OnInit {
       // console.log('response ==>', data);
       this.Count = data.results.total;
       this.Data = data.results.data;
-      console.log(this.Data, "DATASHIPMENT");
       let index = 0;
       this.Data.map((tbl: any) => {
-        console.log(tbl);
         let orderfilelen = tbl.masterfile.orderfile ? tbl.masterfile.orderfile.length : 0;
         let jsn = {
           show: false,
@@ -213,7 +214,7 @@ export class DashboardComponent implements OnInit {
           }
           s.push(status);
         })
-        console.log("status", s)
+        //console.log("status", s)
         jsn.status_scan = s;
         // {
         //   country_of_origin: tbl.masterfile.orderfile.country_of_origin,
@@ -225,7 +226,6 @@ export class DashboardComponent implements OnInit {
         this.listData.push(jsn);
         this.old_list.push(jsn);
       })
-      console.log("this.listData ==>", this.listData)
     }).catch((err) => {
       console.log(err);
       // alert("Oops! Something went wrong, please try again")
@@ -254,10 +254,8 @@ export class DashboardComponent implements OnInit {
       // console.log('response ==>', data);
       this.Count = data.results.total;
       this.Data = data.results.data;
-      console.log(this.Data, "DATASHIPMENT");
       let index = 0;
       this.Data.map((tbl: any) => {
-        console.log(tbl);
         let orderfilelen = tbl.masterfile.orderfile ? tbl.masterfile.orderfile.length : 0;
         let jsn = {
           show: false,
@@ -309,7 +307,6 @@ export class DashboardComponent implements OnInit {
           }
           s.push(status);
         })
-        console.log("status", s)
         jsn.status_scan = s;
         // {
         //   country_of_origin: tbl.masterfile.orderfile.country_of_origin,
@@ -321,7 +318,6 @@ export class DashboardComponent implements OnInit {
         this.listData.push(jsn);
         this.old_list.push(jsn);
       })
-      console.log("this.listData ==>", this.listData)
     }).catch((err) => {
       console.log(err);
       // alert("Oops! Something went wrong, please try again")
@@ -337,7 +333,7 @@ export class DashboardComponent implements OnInit {
         x.consignee === this.consignee
       )
     }
-    console.log(this.listData.filter((x) => { }))
+    //console.log(this.listData.filter((x) => { }))
   }
 
   dummyData() {
@@ -399,7 +395,7 @@ export class DashboardComponent implements OnInit {
 
   previous() {
     this.page = this.page - 1 < 1 ? 1 : this.page - 1;
-    console.log(this.page)
+    //console.log(this.page)
     // this.getData()
   }
 

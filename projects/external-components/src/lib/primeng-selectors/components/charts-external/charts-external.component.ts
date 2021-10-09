@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
   templateUrl: './charts-external.component.html',
   styleUrls: ['./charts-external.component.css']
 })
-export class ChartsExternalComponent extends CommonExternalComponent implements OnInit {
+export class ChartsExternalComponent extends CommonExternalComponent implements OnInit, OnDestroy {
 
   //PrimeNg charts supports chart.js v2.9.4. v3 of charts will be supported soon maybe next version
   data: any;
@@ -23,22 +23,15 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
     this.options = this.fieldObj.customAttributes.options;
     this.type = this.fieldObj.customAttributes.type;
     if (this.fieldObj.customAttributes.dataConfig) {
-      this.loadData();
-      // this.data = [
-      //   {
-      //     "count": "18",
-      //     "location_of_the_ship_to_party": "Erkrath",
-      //     "forward_agent_name": "SCHENKER DEUTSCHLAND AG"
-      //   },
-      //   {
-      //     "count": "330",
-      //     "location_of_the_ship_to_party": "Erkrath",
-      //     "forward_agent_name": "UPS SCS GMBH & CO. OHG"
-      //   }
-      // ]
+      this.loadData();     
     } else {
       this.data = this.fieldObj.customAttributes.data;
     }
+    this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
+      if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
+        this.loadData();
+      }      
+    });
   }
 
   loadData(): void {
@@ -119,5 +112,9 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
 
     this.type = "bar";
   **/
+
+    ngOnDestroy(): void {
+      this.subscription.unsubscribe();
+    }
 
 }
