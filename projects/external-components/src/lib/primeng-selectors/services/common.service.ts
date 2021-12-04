@@ -12,4 +12,10 @@ export class CommonService {
                     .toPromise()
                     .then(data => { return data; });
     }
+
+    postMethod(url: string, payload?: any) {
+      return this.http.post(url, payload)
+                  .toPromise()
+                  .then(data => { return data; });
+  }
 }

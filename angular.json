@@ -22,7 +22,10 @@
             "production": {
               "tsConfig": "projects/external-components/tsconfig.lib.prod.json"
             }
-          }
+          },
+          "scripts": [
+            "projects/external-components/node_modules/chart.js/dist/Chart.js"
+          ]
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
