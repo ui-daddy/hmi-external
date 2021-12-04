@@ -7,8 +7,7 @@
   "allowedNonPeerDependencies": [
     "primeng",
     "primeicons",
-    "chart.js",
-    "ngx-pagination"
+    "chart.js"
   ],
   "assets": [
     "styles.scss"
