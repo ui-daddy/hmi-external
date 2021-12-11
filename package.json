@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build external-components --watch",
+    "build:nowatch": "ng build external-components",
     "test": "ng test",
     "lint": "ng lint",
     "link": "cd dist\\external-components && npm link"
