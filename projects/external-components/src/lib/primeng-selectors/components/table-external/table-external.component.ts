@@ -46,6 +46,18 @@ export class TableExternalComponent extends CommonExternalComponent implements O
         });
       }
     }
+    if (colConfig.events && colConfig.events.length) {
+      colConfig.events.forEach((action: any) => {
+        if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
+          action.sharedData.forEach((shareDataObj: any) => {
+            if (shareDataObj.staticData === "$ROW_DATA$") {
+              shareDataObj.staticData = rowData;
+            }
+          });
+        }
+      });
+      this.initializeEvents.emit({ name: "fireEvent", events: colConfig.events, data: rowData});
+    }
   }
   
 }
