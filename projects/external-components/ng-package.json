@@ -4,12 +4,6 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": [
-    "primeng",
-    "primeicons",
-    "chart.js"
-  ],
-  "assets": [
-    "styles.scss"
-  ]
+  "allowedNonPeerDependencies": ["primeng", "primeicons", "chart.js"],
+  "assets": ["styles.scss", "./assets"]
 }

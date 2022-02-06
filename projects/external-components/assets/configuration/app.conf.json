@@ -1,0 +1,226 @@
+{
+    "login": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": ""
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": ""
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.field",
+            "localURL": "./assets/pageLayout/ui-daddy/login/login.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.section",
+            "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.data",
+            "localURL": ""
+        },        
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Login",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": "",
+                        "xs": {
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    }
+                }
+            }           
+        }
+    },
+    "dashboard": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": ""
+        },        
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.field.json"
+        },        
+        "globalPageSettings": {
+            "title": "Projects"         
+        }
+    },
+    "signup": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": ""
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": ""
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.field",
+            "localURL": "./assets/pageLayout/ui-daddy/signup/signup.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.section",
+            "localURL": "./assets/pageLayout/ui-daddy/signup/signup.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.data",
+            "localURL": ""
+        },        
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Sign Up",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": "",
+                        "xs": {
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    }
+                }
+            }           
+        }
+    },
+    "forget-password": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": ""
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": ""
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.field",
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.section",
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/forgotPasword.data",
+            "localURL": ""
+        },        
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Forget Password",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": "",
+                        "xs": {
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    }
+                }
+            }           
+        }
+    },
+    "hmiAppConfiguration": {
+        "ifPageNotFound": "login",
+        "title": "UI Daddy",
+        "metaTags": [{
+            "name": "keyword",
+            "content": "uidaddy"
+        }],
+        "linkTags": [],
+        "layoutProperties": {
+            "css": {
+                "configuration": {
+                    "selectorName": "",
+                    "xs": {
+                        "parent-background-color": "#f1f3f6"
+                    },
+                    "sm": {
+                        "parent-background-color": "#f1f3f6"
+                    },
+                    "md": {
+                        "parent-background-color": "#f1f3f6"
+                    },
+                    "lg": {
+                        "parent-background-color": "#f1f3f6"
+                    }
+                }
+            }
+        }
+    }
+}
