@@ -1,0 +1,25 @@
+{
+    "header-dashboard": [
+        {
+            "value": "UI Daddy",
+            "baseProperties": {
+                "name": "menu",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__logo",
+                        "xs": {
+                            "min-height": "40px",
+                            "font-size": "30px",
+                            "margin-left": "15px",
+                            "parent-justify-content": "flex-start"
+                        }
+                    },
+                    "customClassName": "header__logo"
+                }
+            }
+        }   
+    ]
+}
