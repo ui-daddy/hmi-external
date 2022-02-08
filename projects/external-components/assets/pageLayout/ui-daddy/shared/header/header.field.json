@@ -14,7 +14,8 @@
                             "min-height": "40px",
                             "font-size": "30px",
                             "margin-left": "15px",
-                            "parent-justify-content": "flex-start"
+                            "parent-justify-content": "flex-start",
+                            "parent-padding": "8px"
                         }
                     },
                     "customClassName": "header__logo"

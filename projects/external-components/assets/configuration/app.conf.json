@@ -34,6 +34,13 @@
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer/field",
             "localURL": ""
+        },        
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated == 'true'",
+                "onConditionSuccess": "dashboard"
+            }],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "Login",
@@ -87,6 +94,13 @@
             "serverURL": "",
             "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.field.json"
         },        
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated != 'true'",
+                "onConditionSuccess": "login"
+            }],
+            "enabled": true
+        },
         "globalPageSettings": {
             "title": "Projects"         
         }
@@ -202,6 +216,33 @@
             "name": "keyword",
             "content": "uidaddy"
         }],
+        "apiConfigurations": [{
+            "name": "getSession",
+            "url": "/rest/session",
+            "method": "GET",
+            "isApplicationSessionAPI": true,
+            "onSuccess": {
+                "sharedData": [{
+                    "varName": "authenticated",
+                    "staticData": "true",
+                    "cache": true
+                }]
+            },
+            "onError": {
+                "pageUrl": "login",
+                "clearSharedData": ["authenticated"]
+            }
+        }],
+        "interceptorConfigurations": [
+            {
+                "statusCode": "401",
+                "messageCode": "",
+                "messageCodeResponseAccessor": "messageCode",
+                "type": "error",
+                "msgResponseAccessor": "",
+                "message": "this is error"
+            }
+        ],
         "linkTags": [],
         "layoutProperties": {
             "css": {
