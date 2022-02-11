@@ -16,6 +16,12 @@
     .p-datatable-tbody > tr > td .p-column-title {
         display: none;
     }
+
+    .p-body-data {
+        i.fas {
+            cursor: pointer;
+        }
+    }
 }
 
 @media (max-width: 640px) {
