@@ -92,7 +92,7 @@
                 "visible": "",
                 "visibleValue": true
             },
-            "minRequirementPattern": "^.{4,20}$"
+            "minRequirementPattern": "^.{8,20}$"
         }
     ],
     "loginButtons": [
@@ -131,6 +131,7 @@
                 "name": "loginButtonApi",
                 "url": "/rest/login",
                 "method": "POST",
+                "isApplicationSessionAPI": true,
                 "payloadParams": [
                     {
                         "paramName": "email",
@@ -146,18 +147,18 @@
                     "sharedData": [
                     {
                         "varName": "name",
-                        "responseAccessor": "user.name",
+                        "responseAccessor": "results.user.name",
                         "cache": true
-                    },
-                    {
-                        "varName": "email",
-                        "responseAccessor": "user.email",
+                    }, {
+                        "varName": "authenticated",
+                        "staticData": "yes",
                         "cache": true
                     }],
-                    "clearSharedData": ["name", "email"]
+                    "clearSharedData": ["name", "authenticated"]
                 },
                 "onError": {
-                  "showErrorMessage": true
+                  "showErrorMessage": true,
+                  "clearSharedData": ["name", "authenticated"]
                 }
             }, 
             "events": [
