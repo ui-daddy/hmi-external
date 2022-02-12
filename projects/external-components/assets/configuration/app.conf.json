@@ -34,6 +34,13 @@
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer/field",
             "localURL": ""
+        },        
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated == 'yes'",
+                "onConditionSuccess": "dashboard"
+            }],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "Login",
@@ -87,6 +94,13 @@
             "serverURL": "",
             "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.field.json"
         },        
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated != 'yes'",
+                "onConditionSuccess": "login"
+            }],
+            "enabled": true
+        },
         "globalPageSettings": {
             "title": "Projects"         
         }
@@ -141,6 +155,13 @@
                     }
                 }
             }           
+        },
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated == 'yes'",
+                "onConditionSuccess": "dashboard"
+            }],
+            "enabled": true
         }
     },
     "forget-password": {
@@ -193,6 +214,13 @@
                     }
                 }
             }           
+        },
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated == 'yes'",
+                "onConditionSuccess": "dashboard"
+            }],
+            "enabled": true
         }
     },
     "hmiAppConfiguration": {
@@ -202,6 +230,29 @@
             "name": "keyword",
             "content": "uidaddy"
         }],
+        "apiConfigurations": [{
+            "name": "getSession",
+            "url": "/rest/session",
+            "method": "GET",
+            "isApplicationSessionAPI": true,
+            "onSuccess": {
+                "sharedData": [{
+                    "varName": "authenticated",
+                    "staticData": "true",
+                    "cache": true
+                }]
+            }
+        }],
+        "interceptorConfigurations": [
+            {
+                "statusCode": "402",
+                "messageCode": "",
+                "messageCodeResponseAccessor": "messageCode",
+                "type": "error",
+                "msgResponseAccessor": "",
+                "message": "Session Error"
+            }
+        ],
         "linkTags": [],
         "layoutProperties": {
             "css": {
