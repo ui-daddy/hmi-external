@@ -37,7 +37,7 @@
         },        
         "authGuardConfig": {
             "conditions": [{
-                "if": "authenticated == 'true'",
+                "if": "authenticated == 'yes'",
                 "onConditionSuccess": "dashboard"
             }],
             "enabled": true
@@ -96,7 +96,7 @@
         },        
         "authGuardConfig": {
             "conditions": [{
-                "if": "authenticated != 'true'",
+                "if": "authenticated != 'yes'",
                 "onConditionSuccess": "login"
             }],
             "enabled": true
@@ -155,6 +155,13 @@
                     }
                 }
             }           
+        },
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated == 'yes'",
+                "onConditionSuccess": "dashboard"
+            }],
+            "enabled": true
         }
     },
     "forget-password": {
@@ -207,6 +214,13 @@
                     }
                 }
             }           
+        },
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated == 'yes'",
+                "onConditionSuccess": "dashboard"
+            }],
+            "enabled": true
         }
     },
     "hmiAppConfiguration": {
@@ -230,17 +244,18 @@
             },
             "onError": {
                 "pageUrl": "login",
-                "clearSharedData": ["authenticated"]
+                "clearSharedData": ["authenticated", "name"],
+                "showErrorMessage": false
             }
         }],
         "interceptorConfigurations": [
             {
-                "statusCode": "401",
+                "statusCode": "402",
                 "messageCode": "",
                 "messageCodeResponseAccessor": "messageCode",
                 "type": "error",
                 "msgResponseAccessor": "",
-                "message": "this is error"
+                "message": "Session Error"
             }
         ],
         "linkTags": [],

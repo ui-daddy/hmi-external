@@ -149,21 +149,16 @@
                         "varName": "name",
                         "responseAccessor": "results.user.name",
                         "cache": true
-                    },
-                    {
-                        "varName": "email",
-                        "responseAccessor": "results.user.email",
-                        "cache": true
                     }, {
                         "varName": "authenticated",
-                        "staticData": "true",
+                        "staticData": "yes",
                         "cache": true
                     }],
-                    "clearSharedData": ["name", "email", "authenticated"]
+                    "clearSharedData": ["name", "authenticated"]
                 },
                 "onError": {
                   "showErrorMessage": true,
-                  "clearSharedData": ["name", "email", "authenticated"]
+                  "clearSharedData": ["name", "authenticated"]
                 }
             }, 
             "events": [

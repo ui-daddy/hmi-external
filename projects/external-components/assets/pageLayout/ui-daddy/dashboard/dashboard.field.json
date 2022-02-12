@@ -562,13 +562,13 @@
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "buildProject",
-                      "url": "/v1/buildProject",
-                      "method": "GET",
-                      "payloadParams": [
+                      "url": "/rest/build/:projectGuid",
+                      "method": "POST",
+                      "pathParams": [
                           {
-                              "paramName": "projectName",
+                              "paramName": "projectGuid",
                               "mappedField": "CUSTOM_FIELD_OBJECT",
-                              "mappedValue": "projectName"
+                              "mappedValue": "guid"
                           }
                       ],
                       "onSuccess": {
@@ -584,13 +584,13 @@
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "downloadCode",
-                      "url": "/v1/downloadCode",
-                      "method": "GET",
-                      "payloadParams": [
+                      "url": "/rest/download/:projectGuid",
+                      "method": "POST",
+                      "pathParams": [
                           {
-                              "paramName": "projectName",
+                              "paramName": "projectGuid",
                               "mappedField": "CUSTOM_FIELD_OBJECT",
-                              "mappedValue": "projectName"
+                              "mappedValue": "guid"
                           }
                       ],
                       "onSuccess": {
