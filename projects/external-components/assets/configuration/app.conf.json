@@ -241,11 +241,6 @@
                     "staticData": "true",
                     "cache": true
                 }]
-            },
-            "onError": {
-                "pageUrl": "login",
-                "clearSharedData": ["authenticated", "name"],
-                "showErrorMessage": false
             }
         }],
         "interceptorConfigurations": [
