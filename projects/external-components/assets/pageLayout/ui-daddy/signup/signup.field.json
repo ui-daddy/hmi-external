@@ -385,7 +385,7 @@
       },
       "apiConfig": {
         "name": "signupApi",
-        "url": "/v1/signup",
+        "url": "/rest/signup",
         "method": "POST",
         "payloadParams": [
           {
@@ -406,7 +406,19 @@
           }
         ],
         "onSuccess": {
-          "pageUrl": "/dashboard"
+          "pageUrl": "/dashboard",
+          "sharedData": [
+            {
+                "varName": "name",
+                "responseAccessor": "results.user.name",
+                "cache": true
+            }, {
+                "varName": "authenticated",
+                "staticData": "yes",
+                "cache": true
+            }
+          ],
+          "clearSharedData": ["name", "authenticated", "otpVerified", "showVerifyOtp"]
         },
         "onError": {
           "showErrorMessage": true
