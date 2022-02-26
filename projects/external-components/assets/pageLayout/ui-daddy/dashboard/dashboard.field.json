@@ -553,12 +553,12 @@
               "rows": "5",
               "paginator": "true",
               "columns": [
-                { "colName": "Project Name", "accessor": "title" }, 
-                { "colName": "Description", "accessor": "description", "colWidth": { "unit": "px", "value": 100 } },
-                { "colName": "Github Forked URL", "accessor": "forkUrl", "colWidth": { "unit": "px", "value": 100 } },
-                { "colName": "Branch Name", "accessor": "branchName", "colWidth": { "unit": "px", "value": 100 } },
-                
-                { "colName": "", "html": "<a href='javascript:void(0)'>Build</a>", "action": {
+                { "colName": "Project Name", "accessor": "title", "colWidth": { "unit": "px", "value": 200 } }, 
+                { "colName": "Description", "accessor": "description", "colWidth": { "unit": "px", "value": 200 } },
+                { "colName": "Github Forked URL", "accessor": "forkUrl"},
+                { "colName": "Branch Name", "accessor": "branchName", "colWidth": { "unit": "px", "value": 200 } },
+                { "colName": "Status", "accessor": "status", "colWidth": { "unit": "px", "value": 100 } },
+                { "colName": "", "title": "Build Project", "html": "<a href='javascript:void(0)'>Build</a>", "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "buildProject",
@@ -580,12 +580,12 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "html": "<i class='fas fa-download'></i>", "action": {
+                { "colName": "", "title": "Download Build", "html": "<i class='fas fa-download'></i>", "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "downloadCode",
                       "url": "/rest/download/:projectGuid",
-                      "method": "POST",
+                      "method": "DOWNLOAD",
                       "pathParams": [
                           {
                               "paramName": "projectGuid",
@@ -602,7 +602,29 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "html": "<i class='fas fa-edit'></i>", "events": [
+                { "colName": "", "title": "Download logs", "html": "<i class='fas fa-file-download'></i>", "action": {
+                    "name": "ROW_ACTION",
+                    "apiConfig": {
+                      "name": "downloadLogs",
+                      "url": "/rest/download/:projectGuid",
+                      "method": "DOWNLOAD",
+                      "pathParams": [
+                          {
+                              "paramName": "projectGuid",
+                              "mappedField": "CUSTOM_FIELD_OBJECT",
+                              "mappedValue": "guid"
+                          }
+                      ],
+                      "onSuccess": {
+                        "showSuccessMessage": true
+                      },
+                      "onError": {
+                        "showErrorMessage": true
+                      }
+                    }
+                  }, "colWidth": { "unit": "px", "value": 50 } 
+                },
+                { "colName": "", "title": "Edit Project", "html": "<i class='fas fa-edit'></i>", "events": [
                     {
                         "event": "",
                         "actions": [
@@ -664,7 +686,7 @@
                     }
                 ], "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "html": "<i class='fas fa-trash'></i>", "action": {
+                { "colName": "", "title": "Delete Project", "html": "<i class='fas fa-trash'></i>", "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "deleteProject",
