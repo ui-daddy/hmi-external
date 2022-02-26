@@ -557,7 +557,7 @@
                 { "colName": "Description", "accessor": "description", "colWidth": { "unit": "px", "value": 200 } },
                 { "colName": "Github Forked URL", "accessor": "forkUrl"},
                 { "colName": "Branch Name", "accessor": "branchName", "colWidth": { "unit": "px", "value": 200 } },
-                { "colName": "Status", "accessor": "status", "colWidth": { "unit": "px", "value": 100 } },
+                { "colName": "Status", "accessor": "buildStatus", "colWidth": { "unit": "px", "value": 100 } },
                 { "colName": "", "title": "Build Project", "html": "<a href='javascript:void(0)'>Build</a>", "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
