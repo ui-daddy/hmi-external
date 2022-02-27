@@ -557,7 +557,7 @@
                 { "colName": "Description", "accessor": "description", "colWidth": { "unit": "px", "value": 200 } },
                 { "colName": "Github Forked URL", "accessor": "forkUrl"},
                 { "colName": "Branch Name", "accessor": "branchName", "colWidth": { "unit": "px", "value": 200 } },
-                { "colName": "Status", "accessor": "buildStatus", "colWidth": { "unit": "px", "value": 100 } },
+                { "colName": "Status", "accessor": "buildStatus", "colWidth": { "unit": "px", "value": 120 } },
                 { "colName": "", "title": "Build Project", "html": "<a href='javascript:void(0)'>Build</a>", "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
@@ -584,8 +584,9 @@
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "downloadCode",
-                      "url": "/rest/download/:projectGuid",
-                      "method": "DOWNLOAD",
+                      "url": "/rest/download/build/:projectGuid",
+                      "method": "GET",
+                      "responseType": "arraybuffer",
                       "pathParams": [
                           {
                               "paramName": "projectGuid",
@@ -606,8 +607,9 @@
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "downloadLogs",
-                      "url": "/rest/download/:projectGuid",
-                      "method": "DOWNLOAD",
+                      "url": "/rest/download/log/:projectGuid",
+                      "method": "GET",
+                      "responseType": "arraybuffer",
                       "pathParams": [
                           {
                               "paramName": "projectGuid",
