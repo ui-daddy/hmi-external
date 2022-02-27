@@ -89,7 +89,7 @@
         "readOnlyValue": false,
         "disabled": "",
         "disabledValue": false,
-        "visible": "",
+        "visible": "otpVerified != 'true'",
         "visibleValue": true
       },
       "hideSpinner": true
@@ -98,7 +98,7 @@
       "baseProperties": {
         "name": "generateOtp",
         "id": "generateOtp",
-        "type": "submit",
+        "type": "button",
         "formName": "signupForm",
         "label": "Generate OTP"
       },
@@ -115,16 +115,105 @@
           "customClassName": "signup__generate-otp"
         }
       },
+      "expressionProperties": {
+        "requiredValue": true,
+        "required": "",
+        "readOnly": "",
+        "readOnlyValue": false,
+        "disabled": "",
+        "disabledValue": false,
+        "visible": "otpVerified != 'true'",
+        "visibleValue": true
+      },
       "apiConfig": {
         "name": "generateOTPApi",
-        "url": "/v1/otp",
+        "url": "/rest/signupOtp",
         "method": "POST",
         "payloadParams": [
           {
-            "paramName": "email",
+            "paramName": "mailId",
             "mappedField": "emailId"
           }
         ],
+        "onSuccess": {
+          "showSuccessMessage": true,
+          "sharedData": [
+            {
+                "varName": "showVerifyOTP",
+                "staticData": "true"
+            }
+          ]
+        },
+        "onError": {
+          "showErrorMessage": true
+        }
+      },
+      "events": [
+        {
+          "event": "click",
+          "actions": [
+            {
+              "actionType": "submit",
+              "showLoading": true
+            }
+          ],
+          "debounce": 3000
+        }
+      ]
+    },
+    {
+      "baseProperties": {
+        "name": "verifyOtp",
+        "id": "verifyOtp",
+        "type": "button",
+        "formName": "signupForm",
+        "label": "Verify OTP"
+      },
+      "layoutProperties": {
+        "css": {
+          "themeClass": "btn-warning",
+          "configuration": {
+            "selectorName": ".signup__generate-otp",
+            "xs": {
+              "parent-justify-content": "center"
+            }
+          },
+          "customClassName": "signup__generate-otp"
+        }
+      },
+      "expressionProperties": {
+        "requiredValue": true,
+        "required": "",
+        "readOnly": "",
+        "readOnlyValue": false,
+        "disabled": "",
+        "disabledValue": false,
+        "visible": "showVerifyOTP == 'true' and otpVerified != 'true'",
+        "visibleValue": true
+      },
+      "apiConfig": {
+        "name": "verifyOTPApi",
+        "url": "/rest/verifyOtp",
+        "method": "POST",
+        "payloadParams": [
+          {
+            "paramName": "mailId",
+            "mappedField": "emailId"
+          },
+          {
+            "paramName": "otp",
+            "mappedField": "otp"
+          }
+        ],
+        "onSuccess": {
+          "showSuccessMessage": true,
+          "sharedData": [
+            {
+                "varName": "otpVerified",
+                "staticData": "true"
+            }
+          ]
+        },
         "onError": {
           "showErrorMessage": true
         }
@@ -160,7 +249,7 @@
         "readOnlyValue": false,
         "disabled": "",
         "disabledValue": false,
-        "visible": "",
+        "visible": "otpVerified == 'true'",
         "visibleValue": true
       }
     },
@@ -172,7 +261,17 @@
         "type": "text"
       },
       "placeholder": "Enter last name",
-      "accessor": "obj.lname"
+      "accessor": "obj.lname",
+      "expressionProperties": {
+        "requiredValue": false,
+        "required": "",
+        "readOnly": "",
+        "readOnlyValue": false,
+        "disabled": "",
+        "disabledValue": false,
+        "visible": "otpVerified == 'true'",
+        "visibleValue": true
+      }
     },
     {
       "baseProperties": {
@@ -182,7 +281,17 @@
         "type": "password"
       },
       "placeholder": "Enter password",
-      "accessor": "obj.pass"
+      "accessor": "obj.pass",
+      "expressionProperties": {
+        "requiredValue": false,
+        "required": "",
+        "readOnly": "",
+        "readOnlyValue": false,
+        "disabled": "",
+        "disabledValue": false,
+        "visible": "otpVerified == 'true'",
+        "visibleValue": true
+      }
     },
     {
       "baseProperties": {
@@ -200,7 +309,7 @@
         "readOnlyValue": false,
         "disabled": "",
         "disabledValue": false,
-        "visible": "",
+        "visible": "otpVerified == 'true'",
         "visibleValue": true
       }
     },    
@@ -213,13 +322,14 @@
         "type": "radio"
       },
       "expressionProperties": {
-        "requiredValue": true,
+        "requiredValue": false,
         "required": "",
         "readOnly": "",
         "readOnlyValue": false,
         "disabled": "",
         "disabledValue": false,
-        "visible": ""
+        "visible": "otpVerified == 'true'",
+        "visibleValue": true
       },
       "accessor": "",
       "layoutProperties": {
@@ -258,7 +368,7 @@
         "readOnlyValue": false,
         "disabled": "",
         "disabledValue": false,
-        "visible": "",
+        "visible": "otpVerified == 'true'",
         "visibleValue": true
       },
       "layoutProperties": {
@@ -275,7 +385,7 @@
       },
       "apiConfig": {
         "name": "signupApi",
-        "url": "/v1/signup",
+        "url": "/rest/signup",
         "method": "POST",
         "payloadParams": [
           {
@@ -295,6 +405,21 @@
             "mappedField": "password"
           }
         ],
+        "onSuccess": {
+          "pageUrl": "/dashboard",
+          "sharedData": [
+            {
+                "varName": "name",
+                "responseAccessor": "results.user.name",
+                "cache": true
+            }, {
+                "varName": "authenticated",
+                "staticData": "yes",
+                "cache": true
+            }
+          ],
+          "clearSharedData": ["name", "authenticated", "otpVerified", "showVerifyOtp"]
+        },
         "onError": {
           "showErrorMessage": true
         }
