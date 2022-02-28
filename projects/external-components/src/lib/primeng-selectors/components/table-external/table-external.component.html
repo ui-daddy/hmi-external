@@ -19,7 +19,8 @@
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of fieldObj.customAttributes.columns" [pSortableColumn]="col.accessor"
-                pResizableColumn pReorderableColumn>
+                pResizableColumn pReorderableColumn
+                [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
                 {{col.colName}}
                 <p-sortIcon [field]="col.accessor"></p-sortIcon>
             </th>
@@ -27,9 +28,11 @@
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr [pSelectableRow]="rowData">
-            <td *ngFor="let col of fieldObj.customAttributes.columns" (click)="cellAction(col, rowData)">
+            <td *ngFor="let col of fieldObj.customAttributes.columns" 
+                [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }"
+                 (click)="cellAction(col, rowData)">
                 <span class="p-column-title">{{col.colName}}</span>
-                <span class="p-body-data" [innerHTML]="rowData[col.accessor] || col.html"></span>
+                <span class="p-body-data" [title]="col.title || rowData[col.accessor] || col.html" [innerHTML]="rowData[col.accessor] || col.html"></span>
             </td>
         </tr>
     </ng-template>
