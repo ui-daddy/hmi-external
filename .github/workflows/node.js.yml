@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ ui-daddy-develop ]
   pull_request:
-    branches: [ develop ]
+    branches: [ ui-daddy-develop ]
 
 jobs:
   build:
@@ -25,5 +25,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i projects/external-components
+    - run: npm i projects\external-components
     - run: npm run build:nowatch --if-present
