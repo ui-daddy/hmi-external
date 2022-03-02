@@ -25,6 +25,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd projects/external-components
-    - run: npm i
+    - run: npm i projects/external-components
     - run: npm run build:nowatch --if-present
