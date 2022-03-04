@@ -45,7 +45,7 @@
       "placeholder": "Enter Your Email",
       "accessor": "obj.email",
       "expressionProperties": {
-        "requiredValue": false,
+        "requiredValue": true,
         "required": "",
         "readOnly": "",
         "readOnlyValue": false,
@@ -243,7 +243,7 @@
       "placeholder": "Enter first name",
       "accessor": "obj.fname",
       "expressionProperties": {
-        "requiredValue": false,
+        "requiredValue": true,
         "required": "",
         "readOnly": "",
         "readOnlyValue": false,
@@ -283,7 +283,7 @@
       "placeholder": "Enter password",
       "accessor": "obj.pass",
       "expressionProperties": {
-        "requiredValue": false,
+        "requiredValue": true,
         "required": "",
         "readOnly": "",
         "readOnlyValue": false,
@@ -295,15 +295,15 @@
     },
     {
       "baseProperties": {
-        "name": "password",
-        "id": "cnfpassword",
+        "name": "confirmPassword",
+        "id": "confirmPassword",
         "formName": "signupForm",
         "type": "password"
       },
       "placeholder": "Enter confirm password",
       "accessor": "obj.cnfpass",
       "expressionProperties": {
-        "requiredValue": false,
+        "requiredValue": true,
         "required": "",
         "readOnly": "",
         "readOnlyValue": false,
@@ -322,7 +322,7 @@
         "type": "radio"
       },
       "expressionProperties": {
-        "requiredValue": false,
+        "requiredValue": true,
         "required": "",
         "readOnly": "",
         "readOnlyValue": false,
@@ -366,7 +366,7 @@
         "required": "",
         "readOnly": "",
         "readOnlyValue": false,
-        "disabled": "",
+        "disabled": "password != confirmPassword",
         "disabledValue": false,
         "visible": "otpVerified == 'true'",
         "visibleValue": true
@@ -403,6 +403,11 @@
           {
             "paramName": "password",
             "mappedField": "password"
+          },
+          {
+            "paramName": "acceptedTerms",
+            "mappedField": "termsAndCond",
+            "mappedValue": "value"
           }
         ],
         "onSuccess": {
