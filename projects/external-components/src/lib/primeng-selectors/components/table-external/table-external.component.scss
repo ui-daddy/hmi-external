@@ -37,6 +37,9 @@
     :host ::ng-deep {
         .p-datatable-tbody {
             font-size: 14px;
+            & > tr > td {
+                width: 100% !important;
+            }
         }
     }
     .p-body-data {
