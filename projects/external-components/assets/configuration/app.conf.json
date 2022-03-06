@@ -1,206 +1,576 @@
 {
-    "login": {
+    "forgotPassword": {
+        "body": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/body",
+            "localURL": "./assets/pageLayout/body.json"
+        },
         "headerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommonWithBack/header.section.json"
         },
         "headerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommonWithBack/header.field.json"
         },
         "field": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/forgotPasword.field",
-            "localURL": "./assets/pageLayout/ui-daddy/login/login.field.json"
+            "localURL": "./assets/pageLayout/TokenApp/forgotPassword/forgotPassword.field.json"
         },
         "section": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/forgotPasword.section",
-            "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json"
+            "localURL": "./assets/pageLayout/TokenApp/forgotPassword/forgotPassword.section.json"
         },
         "data": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/forgotPasword.data",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/forgotPassword/forgotPassword.data.json"
         },        
         "footerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
         },
         "footerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },        
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "length token > 0 and userType == 'customer'",
+                "onConditionSuccess": "customerDashboard"
+            }, {
+                "if": "length token > 0 and userType == 'merchant' and length shopId > 0",
+                "onConditionSuccess": "shopDashboard"
+            }, {
+                "if": "length token > 0 and userType == 'merchant' and length shopId == 0",
+                "onConditionSuccess": "shopProfile"
+            }],
+            "enabled": true
         },
         "globalPageSettings": {
-            "title": "Login",
-            "layoutProperties": {
-                "css": {
-                    "configuration": {
-                        "selectorName": "",
-                        "xs": {
-                            "background-image": "url(assets/images/loginPage.jpg)",
-                            "background-size": "cover",
-                            "background-position": "center center"
-                        }
-                    }
-                }
-            }           
+            "title": "Forgot Password"            
         }
     },
-    "dashboard": {
-        "headerSection": {
+    "shopProfile": {
+        "body": {
             "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+            "serverURL": "/api/section/body",
+            "localURL": "./assets/pageLayout/body.json"
         },
-        "headerField": {
-            "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
-        },
-        "field": {
-            "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.field.json"
-        },
-        "section": {
-            "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.section.json"
-        },
-        "data": {
-            "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": ""
-        },        
-        "footerSection": {
-            "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.section.json"
-        },
-        "footerField": {
-            "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.field.json"
-        },        
-        "globalPageSettings": {
-            "title": "Projects"         
-        }
-    },
-    "signup": {
         "headerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.section.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.section.json" }
         },
         "headerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.field.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.field.json" }
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.section.json" }
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.field.json" }
         },
         "field": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/forgotPasword.field",
-            "localURL": "./assets/pageLayout/ui-daddy/signup/signup.field.json"
+            "localURL": "./assets/pageLayout/TokenApp/shopProfile/shopProfile.field.json"
         },
         "section": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/forgotPasword.section",
-            "localURL": "./assets/pageLayout/ui-daddy/signup/signup.section.json"
+            "localURL": "./assets/pageLayout/TokenApp/shopProfile/shopProfile.section.json"
         },
         "data": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.data",
-            "localURL": ""
+            "fetchFromLocal": false,
+            "serverURL": [ 
+                {
+                    "name": "profileInfo",   
+                    "url": "/v1/shop",
+                    "method": "GET",
+                    "params": {}
+                }
+            ],
+            "localURL": "./assets/pageLayout/TokenApp/shopProfile/shopProfile.data.json"
         },        
         "footerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
         },
         "footerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },        
+        "authGuardConfig": {
+            "ifNotAuthorized": "loginAndSignupForm",
+            "enabled": true,
+            "conditions": [{
+                "if": "userType == 'customer'",
+                "onConditionSuccess": "customerDashboard"
+            }]
         },
         "globalPageSettings": {
-            "title": "Sign Up",
-            "layoutProperties": {
-                "css": {
-                    "configuration": {
-                        "selectorName": "",
-                        "xs": {
-                            "background-image": "url(assets/images/loginPage.jpg)",
-                            "background-size": "cover",
-                            "background-position": "center center"
-                        }
-                    }
-                }
-            }           
+            "title": "Business Profile"
         }
     },
-    "forget-password": {
+    "offlineBooking": {
+        "body": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/body",
+            "localURL": "./assets/pageLayout/body.json"
+        },
         "headerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.section.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.section.json" }
         },
         "headerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.field.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.field.json" }
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.section.json" }
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.field.json" }
         },
         "field": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.field",
-            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.field.json"
+            "serverURL": "/api/section/dummyForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/offlineBooking/offlineBooking.field.json"
         },
         "section": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.section",
-            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.section.json"
+            "serverURL": "/api/section/dummyForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/offlineBooking/offlineBooking.section.json"
         },
         "data": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.data",
-            "localURL": ""
+            "fetchFromLocal": false,
+            "serverURL": [ 
+                {
+                    "name": "shopProfile",   
+                    "url": "/v1/shop",
+                    "method": "GET",
+                    "params": {}
+                }
+            ],
+            "localURL": "./assets/pageLayout/shopDashboard.data.json"
         },        
         "footerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
         },
         "footerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },        
+        "authGuardConfig": {
+            "ifNotAuthorized": "loginAndSignupForm",
+            "enabled": true,
+            "conditions": [{
+                "if": "userType == 'customer'",
+                "onConditionSuccess": "customerDashboard"
+            }]
         },
         "globalPageSettings": {
-            "title": "Forget Password",
-            "layoutProperties": {
-                "css": {
-                    "configuration": {
-                        "selectorName": "",
-                        "xs": {
-                            "background-image": "url(assets/images/loginPage.jpg)",
-                            "background-size": "cover",
-                            "background-position": "center center"
-                        }
+            "title": "Offline Booking"
+        }
+    },
+    "shopDashboard": {
+        "body": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/body",
+            "localURL": "./assets/pageLayout/body.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.section.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.section.json" }
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.field.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.field.json" }
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.section.json" }
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.field.json" }
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/shopDashboard/shopDashboard.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.section",
+            "localURL": "./assets/pageLayout/TokenApp/shopDashboard/shopDashboard.section.json"
+        },
+        "data": {
+            "fetchFromLocal": false,
+            "serverURL": [ 
+                {
+                    "name": "shopProfile",   
+                    "url": "/v1/shop",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "sharedData": [{
+                            "varName": "myShopStatus",
+                            "responseAccessor": "shop.status",
+                            "cache": false
+                        }]
                     }
                 }
-            }           
+            ],
+            "localURL": "./assets/pageLayout/shopDashboard.data.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },
+        "authGuardConfig": {
+            "ifNotAuthorized": "loginAndSignupForm",
+            "enabled": true,
+            "conditions": [{
+                "if": "userType == 'customer'",
+                "onConditionSuccess": "customerDashboard"
+            }, {
+                "if": "length token > 0 and userType == 'merchant' and length shopId == 0",
+                "onConditionSuccess": "shopProfile"
+            }]
+        },
+        "globalPageSettings": {
+            "title": "Business Dashboard"
+        }
+    },
+    "customerDashboard": {
+        "body": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/body",
+            "localURL": "./assets/pageLayout/body.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCustomer/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCustomer/header.field.json"
+        },
+        "nav": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": "./assets/pageLayout/nav.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/customerDashboard/customerDashboard.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.section",
+            "localURL": "./assets/pageLayout/TokenApp/customerDashboard/customerDashboard.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },
+        "authGuardConfig": {
+            "ifNotAuthorized": "loginAndSignupForm",
+            "enabled": true,
+            "conditions": [{
+                "if": "userType == 'merchant'",
+                "onConditionSuccess": "shopDashboard"
+            }]
+        },
+        "globalPageSettings": {
+            "title": "Customer Dashboard"
+        }
+    },    
+    "loginAndSignupForm": {
+        "body": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/body",
+            "localURL": "./assets/pageLayout/body.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommon/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommon/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/loginForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/loginAndSignup/loginAndSignup.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/loginForm.section",
+            "localURL": "./assets/pageLayout/TokenApp/loginAndSignup/loginAndSignup.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/loginForm.data",
+            "localURL": "./assets/pageLayout/TokenApp/loginAndSignup/loginAndSignup.data.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "length token > 0 and userType == 'customer'",
+                "onConditionSuccess": "customerDashboard"
+            }, {
+                "if": "length token > 0 and userType == 'merchant' and length shopId > 0",
+                "onConditionSuccess": "shopDashboard"
+            }, {
+                "if": "length token > 0 and userType == 'merchant' and length shopId == 0",
+                "onConditionSuccess": "shopProfile"
+            }],
+            "enabled": true
+        },
+        "globalPageSettings": {
+            "title": "Login and signup"
+        }
+    },
+    "termsAndCondition": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommonWithBack/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommonWithBack/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/termsAndCondition/termsAndCondition.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.section",
+            "localURL": "./assets/pageLayout/TokenApp/termsAndCondition/termsAndCondition.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },
+        "globalPageSettings": {
+            "title": "Terms and conditions"
+        },
+        "data": {
+            "fetchFromLocal": false,
+            "serverURL": [ 
+                {
+                    "name": "termsOfUse",   
+                    "url": "/v1/termsOfUse",
+                    "method": "GET",
+                    "params": {}
+                }
+            ]
+        }
+    },
+    "viewBusinessProfile/:businessShopId": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommonWithBack/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/TokenApp/headerAndNav/headerCommonWithBack/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/viewBusinessProfile/viewBusinessProfile.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.section",
+            "localURL": "./assets/pageLayout/TokenApp/viewBusinessProfile/viewBusinessProfile.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },
+        "globalPageSettings": {
+            "title": "Business Profile"
+        },
+        "data": {
+            "fetchFromLocal": false,
+            "serverURL": [ 
+                {
+                    "name": "getBusinessProfile",
+                    "url": "/v1/business/:businessShopId",
+                    "method": "GET",
+                    "pathParams": [
+                        {
+                            "paramName": "businessShopId",
+                            "mappedField": "$URL_PATH_PARAMS",
+                            "mappedValue": "businessShopId"
+                        }
+                    ],
+                    "onSuccess": {
+                        "sharedData": [{
+                            "varName": "businessProfile",
+                            "responseAccessor": "shop",
+                            "cache": false
+                        }]
+                    }
+                }
+            ]
+        }
+    },
+    "qrCode": {
+        "body": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/body",
+            "localURL": "./assets/pageLayout/body.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.section.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.section.json" }
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": { "desktopURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.desktop.field.json", "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/headerMerchant/header.mobile.field.json" }
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.section.json" }
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/nav",
+            "localURL": { "mobileURL": "./assets/pageLayout/TokenApp/headerAndNav/navMerchant/nav.mobile.field.json" }
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.field",
+            "localURL": "./assets/pageLayout/TokenApp/qrCode/qrCode.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/dummyForm.section",
+            "localURL": "./assets/pageLayout/TokenApp/qrCode/qrCode.section.json"
+        },
+        "data": {
+            "fetchFromLocal": false,
+            "serverURL": [ 
+                {
+                    "name": "qrGenerator",   
+                    "url": "/v1/qrCode",
+                    "method": "GET"                    
+                }
+            ],
+            "localURL": "./assets/pageLayout/dummy.data.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": "./assets/pageLayout/TokenApp/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": "./assets/pageLayout/TokenApp/footer.field.json"
+        },
+        "authGuardConfig": {
+            "ifNotAuthorized": "loginAndSignupForm",
+            "enabled": true,
+            "conditions": [{
+                "if": "userType == 'customer'",
+                "onConditionSuccess": "customerDashboard"
+            }, {
+                "if": "length token > 0 and userType == 'merchant' and length shopId == 0",
+                "onConditionSuccess": "shopProfile"
+            }]
+        },
+        "globalPageSettings": {
+            "title": "QR Code"
         }
     },
     "hmiAppConfiguration": {
-        "ifPageNotFound": "login",
-        "title": "UI Daddy",
+        "ifPageNotFound": "loginAndSignupForm",
+        "title": "Clear the Q",
         "metaTags": [{
             "name": "keyword",
-            "content": "uidaddy"
+            "content": "cleartheq"
         }],
         "linkTags": [],
         "layoutProperties": {
