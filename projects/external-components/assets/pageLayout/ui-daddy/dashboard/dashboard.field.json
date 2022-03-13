@@ -540,7 +540,7 @@
               "currentPageReportTemplate": "Showing {first} to {last} of {totalRecords} entries",
               "dataKey": "tokenNumber",
               "resizableColumns": true,
-              "responsive": true,
+              "responsive": false,
               "dataConfig": {
                 "name": "projectList",
                 "url": "/rest/getProjects",
@@ -558,7 +558,9 @@
                 { "colName": "Github Forked URL", "accessor": "forkUrl"},
                 { "colName": "Branch Name", "accessor": "branchName", "colWidth": { "unit": "px", "value": 200 } },
                 { "colName": "Status", "accessor": "buildStatus", "colWidth": { "unit": "px", "value": 120 } },
-                { "colName": "", "title": "Build Project", "html": "<a href='javascript:void(0)'>Build</a>", "action": {
+                { "colName": "", "title": "Build Project", "html": "<a href='javascript:void(0)'>Build</a>", 
+                    "disableColumnSorting": true, 
+                    "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "buildProject",
@@ -580,7 +582,9 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "title": "Download Build", "html": "<i class='fas fa-download'></i>", "action": {
+                { "colName": "", "title": "Download Build", "html": "<i class='fas fa-download'></i>", 
+                    "disableColumnSorting": true, 
+                    "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "downloadCode",
@@ -603,7 +607,9 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "title": "Download logs", "html": "<i class='fas fa-file-download'></i>", "action": {
+                { "colName": "", "title": "Download logs", "html": "<i class='fas fa-file-download'></i>", 
+                    "disableColumnSorting": true, 
+                    "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "downloadLogs",
@@ -626,7 +632,9 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "title": "Edit Project", "html": "<i class='fas fa-edit'></i>", "events": [
+                { "colName": "", "title": "Edit Project", "html": "<i class='fas fa-edit'></i>", 
+                    "disableColumnSorting": true, 
+                    "events": [
                     {
                         "event": "",
                         "actions": [
@@ -688,7 +696,9 @@
                     }
                 ], "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "title": "Delete Project", "html": "<i class='fas fa-trash'></i>", "action": {
+                { "colName": "", "title": "Delete Project", "html": "<i class='fas fa-trash'></i>", 
+                    "disableColumnSorting": true, 
+                    "action": {
                     "name": "ROW_ACTION",
                     "apiConfig": {
                       "name": "deleteProject",
