@@ -29,11 +29,11 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   refreshTable() {
-    this.fieldObj.customAttributes.loading = true;
+    this.primeElement.loading = true;
     if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
       this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {        
         this.data = data;
-        this.fieldObj.customAttributes.loading = false;
+        this.primeElement.loading = false;
       });
     }
   }
@@ -41,8 +41,10 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   cellAction(colConfig: any, rowData: any) {
     if (colConfig.action) {
       if (colConfig.action.name === "ROW_ACTION" && colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
+        this.primeElement.loading = true;
         this.customApiCall(colConfig.action.apiConfig, rowData).subscribe(() => { 
           console.log("Row action performed successfully.");
+          this.primeElement.loading = false;
         });
       }
     }
