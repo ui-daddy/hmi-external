@@ -24,6 +24,26 @@
         },
         {
             "baseProperties": {
+                "name": "userName",
+                "type": "staticText"
+            },
+            "value": "Welcome {0}",
+            "dynamicValueAccessor": ["name"],
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__user-name",
+                        "xs": {
+                            "padding-right": "40px",
+                            "parent-justify-content": "flex-end"
+                        }
+                    },
+                    "customClassName": "header__user-name hide-xs"
+                }
+            }
+        },
+        {
+            "baseProperties": {
                 "name": "logout",
                 "label": "Log Out",
                 "type": "submit",
