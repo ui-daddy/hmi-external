@@ -245,12 +245,14 @@
         }],
         "interceptorConfigurations": [
             {
-                "statusCode": "402",
+                "statusCode": "401",
                 "messageCode": "",
                 "messageCodeResponseAccessor": "messageCode",
                 "type": "error",
-                "msgResponseAccessor": "",
-                "message": "Session Error"
+                "msgResponseAccessor": "message",
+                "message": "Session Error",
+                "pageUrl": "login",
+                "clearSharedData": ["authenticated", "name"]
             }
         ],
         "linkTags": [],
