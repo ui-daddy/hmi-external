@@ -8,7 +8,8 @@
     "build:nowatch": "ng build external-components",
     "test": "ng test",
     "lint": "ng lint",
-    "link": "cd dist\\external-components && npm link"
+    "link": "cd dist\\external-components && npm link",
+    "unlink": "cd dist\\external-components && npm unlink"
   },
   "private": true,
   "dependencies": {
