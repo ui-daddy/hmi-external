@@ -582,6 +582,7 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
+                { "colName": "Deployment Link", "accessor": "deployLink", "colWidth": { "unit": "px", "value": 480 } },
                 { "colName": "", "title": "Download Build", "html": "<i class='fas fa-download'></i>", 
                     "disableColumnSorting": true, 
                     "action": {
