@@ -147,7 +147,7 @@
                     "sharedData": [
                     {
                         "varName": "name",
-                        "responseAccessor": "results.user.name",
+                        "responseAccessor": "user.name",
                         "cache": true
                     }, {
                         "varName": "authenticated",
