@@ -13,7 +13,6 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import { ToggleButton, ToggleButtonModule } from 'primeng/togglebutton';
 import {ChartModule} from 'primeng/chart';
-import { RowDataHandlerDirective } from './components/table-external/rowDataHandler/row-data-handler.directive';
 
 
 @NgModule({
@@ -22,8 +21,7 @@ import { RowDataHandlerDirective } from './components/table-external/rowDataHand
     TextExternalComponent,
     TableExternalComponent,
     DropdownExternal,
-    ChartsExternalComponent,
-    RowDataHandlerDirective
+    ChartsExternalComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, 
