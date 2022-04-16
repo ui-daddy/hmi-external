@@ -18,8 +18,8 @@ export class RowDataHandlerDirective {
   @Input() set rowDataHandler(newHref: string) {
     if (newHref) {
       this._hrefValue = newHref;
-      let urlPattern = /^(http[s]?:\/\/(www\.)?|ftp:\/\/(www\.)?|www\.){1}([0-9A-Za-z-\.@:%_\+~#=]+)+((\.[a-zA-Z]{2,3})+)(\/(.)*)?(\?(.)*)?/g;;
-      let patternTag = /<(“[^”]*”|'[^’]*’|[^'”>])*>/;
+      const urlPattern = /^(http[s]?:\/\/(www\.)?|ftp:\/\/(www\.)?|www\.){1}([0-9A-Za-z-\.@:%_\+~#=]+)+((\.[a-zA-Z]{2,3})+)(\/(.)*)?(\?(.)*)?/g;
+      const patternTag = /<(“[^”]*”|'[^’]*’|[^'”>])*>/;
       if (newHref.match(urlPattern)) {
         if (this.anchorTag != null) {
           this.renderer.removeChild(this.elmRef.nativeElement, this.anchorTag);
@@ -29,11 +29,11 @@ export class RowDataHandlerDirective {
         const linkText = this.renderer.createText(this._hrefValue);
         this.renderer.appendChild(this.anchorTag, linkText);
         this.renderer.appendChild(this.elmRef.nativeElement, this.anchorTag);
-      }else if (newHref.match(patternTag)) {
-        var DS = this._hrefValue;
-        var sanitized = this.domSanitizer.sanitize(SecurityContext.HTML, DS);
+      } else if (newHref.match(patternTag)) {
+        let unsanitizedData = this._hrefValue;
+        let sanitized = this.domSanitizer.sanitize(SecurityContext.HTML, unsanitizedData);
         this.elmRef.nativeElement.innerHTML = sanitized;
-      }else {
+      } else {
         if (this.spanTag != null) {
           this.renderer.removeChild(this.elmRef.nativeElement, this.spanTag);
         }
