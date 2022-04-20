@@ -92,7 +92,7 @@
                 "formName": "addProject",
                 "label": "Github URL",
                 "type": "url",
-                "tooltip":"Please fork from the github repo - <hmi-external url> and add it here.",
+                "tooltip":"Please fork from the github repo https://github.com/ui-ankush/hmi-external and add it here.",
                 "tooltipPlacement":"top"
             },
             "placeholder": "",
