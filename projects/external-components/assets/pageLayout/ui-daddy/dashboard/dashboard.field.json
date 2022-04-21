@@ -91,7 +91,9 @@
                 "id": "gitUrl",
                 "formName": "addProject",
                 "label": "Github URL",
-                "type": "url"
+                "type": "url",
+                "tooltip":"Please fork from the github repo https://github.com/ui-ankush/hmi-external and add it here.",
+                "tooltipPlacement":"top"
             },
             "placeholder": "",
             "accessor": "",
@@ -116,7 +118,9 @@
                 "id": "branchName",
                 "formName": "addProject",
                 "label": "Branch Name",
-                "type": "text"
+                "type": "text",
+                "tooltip":"Please create your branch from develop and add it here.",
+                "tooltipPlacement":"top"
             },
             "placeholder": "",
             "accessor": "",
