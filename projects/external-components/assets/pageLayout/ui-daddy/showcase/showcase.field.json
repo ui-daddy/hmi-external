@@ -1,0 +1,84 @@
+{
+  "showcaseSection": [
+    {
+      "baseProperties": {
+        "type": "showcase"
+      },
+      "expressionProperties": {
+        "list": [
+          {
+            "heading": "Form Input",
+            "components": [
+              {
+                "label": "Input",
+                "url": "input"
+              },
+              {
+                "label": "Static Text",
+                "url": "login"
+              },
+              {
+                "label": "Checkbox"
+              },
+              {
+                "label": "Select"
+              },
+              {
+                "label": "Radio"
+              },
+              {
+                "label": "Dropdown"
+              },
+              {
+                "label": "Password"
+              },
+              {
+                "label": "Calendar"
+              }
+            ]
+          },
+          {
+            "heading": "Button",
+            "components": [
+              {
+                "label": "Simple Button"
+              },
+              {
+                "label": "Split Button"
+              }
+            ]
+          },
+          {
+            "heading": "Data",
+            "components": [
+              {
+                "label": "Pie Chart"
+              },
+              {
+                "label": "Line Chart"
+              },
+              {
+                "label": "Tree"
+              },
+              {
+                "label": "Timeline"
+              },
+              {
+                "label": "Line Chart"
+              }
+            ]
+          }
+        ]
+      },
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": ".element-child",
+            "xs": {}
+          },
+          "customClassName": "element-child"
+        }
+      }
+    }
+  ]
+}

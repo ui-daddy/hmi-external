@@ -1,0 +1,45 @@
+{
+  "layout": [
+    {
+      "id": "showcaseForm",
+      "type": "form",
+      "layout": {
+        "css": {
+          "customClassName": "",
+          "configuration": {
+            "selectorName": ".showcase-section-card",
+            "xs": {}
+          }
+        },
+        "column": {
+          "count": 1,
+          "ratio": {
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
+          },
+          "autoPlace": "false"
+        }
+      },
+      "sectionList": [
+        {
+          "id": "showcaseSection",
+          "type": "content",
+          "layout": {
+            "column": {
+              "count": 2,
+              "ratio": {
+                "lg": "4:8",
+                "md": "4:8",
+                "sm": "12",
+                "xs": "12"
+              },
+              "autoPlace": "false"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
