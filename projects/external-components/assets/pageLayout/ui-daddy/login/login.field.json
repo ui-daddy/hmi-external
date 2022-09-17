@@ -31,10 +31,10 @@
             "baseProperties": {
                 "name": "email",
                 "id": "email",
-                "type": "email",
+                "type": "text",
                 "formName": "loginForm"
             },
-            "placeholder": "Enter Your Email",
+            "placeholder": "Enter Your username",
             "accessor": "obj.email",
             "expressionProperties": {
                 "requiredValue": false,
@@ -92,7 +92,7 @@
                 "visible": "",
                 "visibleValue": true
             },
-            "minRequirementPattern": "^.{8,20}$"
+            "minRequirementPattern": "^.{4,20}$"
         }
     ],
     "loginButtons": [
@@ -129,16 +129,16 @@
             },
             "apiConfig": {
                 "name": "loginButtonApi",
-                "url": "/rest/login",
+                "url": "https://upms-api.azurewebsites.net/api/user/login",
                 "method": "POST",
                 "isApplicationSessionAPI": true,
                 "payloadParams": [
                     {
-                        "paramName": "email",
+                        "paramName": "UserName",
                         "mappedField": "email"
                     },
                     {
-                        "paramName": "password",
+                        "paramName": "Password",
                         "mappedField": "password"
                     }
                 ],
@@ -147,7 +147,12 @@
                     "sharedData": [
                     {
                         "varName": "name",
-                        "responseAccessor": "user.name",
+                        "responseAccessor": "firstName",
+                        "cache": true
+                    },
+                    {
+                        "varName": "surname",
+                        "responseAccessor": "lastName",
                         "cache": true
                     }, {
                         "varName": "authenticated",

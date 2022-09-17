@@ -1,0 +1,16 @@
+{
+ 
+  "dashboard": [
+      
+      {
+        "baseProperties": {
+            "name": "userName",
+            "type": "staticText"
+        },
+        "value": "Welcome {0} {1}",
+        "dynamicValueAccessor": ["name","surname"]
+          
+         
+      }
+  ]
+}

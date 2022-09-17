@@ -58,6 +58,53 @@
             }           
         }
     },
+    "dashboard": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": ""
+        },        
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.field.json"
+        },        
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated != 'yes'",
+                "onConditionSuccess": "login"
+            }],
+            "enabled": true
+        },
+        "globalPageSettings": {
+            "title": "Projects"         
+        }
+    },
     "forget-password": {
         "headerSection": {
             "fetchFromLocal": true,
