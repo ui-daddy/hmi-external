@@ -1,4 +1,51 @@
 {
+    "iframe": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": ""
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": ""
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/iframe.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/iframe.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Login",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": "",
+                        "xs": {
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    }
+                }
+            }           
+        }
+    },
     "login": {
         "headerSection": {
             "fetchFromLocal": true,
