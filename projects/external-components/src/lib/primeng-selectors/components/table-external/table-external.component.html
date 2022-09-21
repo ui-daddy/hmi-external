@@ -32,7 +32,7 @@
                 [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }"
                  (click)="cellAction(col, rowData)">
                 <span class="p-column-title">{{col.colName}}</span>
-                <span class="p-body-data" [title]="col.title || rowData[col.accessor] || col.html" [innerHTML]="rowData[col.accessor] || col.html"></span>
+                <span class="p-body-data" [title]="col.title || rowData[col.accessor] || col.html" [rowDataHandler]="rowData[col.accessor] || col.html"></span>
             </td>
         </tr>
     </ng-template>
@@ -40,3 +40,4 @@
         {{fieldObj.customAttributes.summary}}
     </ng-template>
 </p-table>
+
