@@ -22,18 +22,9 @@
           "visibleValue": true
       },
       "customAttributes": {
-          "src": "http://localhost:3000/app"
+          "src": "https://localhost:3000/app"
       }
-  },  
-    {
-        "baseProperties": {
-            "name": "userName",
-            "type": "staticText"
-        },
-        "value": "Welcome {0} {1}",
-        "dynamicValueAccessor": ["name","surname"]
-          
-         
-      }
+    }  
+    
   ]
 }
