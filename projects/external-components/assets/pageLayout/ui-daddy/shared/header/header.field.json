@@ -1,0 +1,126 @@
+{
+    "menu-header-dashboard": [
+        {
+            "value": "",
+            "baseProperties": {
+                "src": "https://cdn.pixabay.com/photo/2015/10/01/17/17/car-967387__480.png",
+                "name": "logo",
+                "type": "img"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__logo",
+                        "xs": {
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    },
+                    "customClassName": "header__logo"
+                }
+            }
+        },
+		{
+            "baseProperties": {
+                "name": "menu",
+                "type": "navItemGroup",
+                "id": "menu"
+            },
+            "navItems": [
+                {"id": "dashboard", "label": "Home", "navigateToPage": ""},
+                {"id": "reports", "label": "Reports", "navigateToPage": "/reports"},
+                {"id": "tasks", "label": "My Tasks", "navigateToPage": "/tasks"},
+				{"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
+				{"id": "users", "label": "Users", "navigateToPage": "/users"},
+				{"id": "orgs", "label": "Departments", "navigateToPage": "/orgs"}
+            ],
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__nav-items",
+                        "xs": {
+                            "padding-right": "40px",
+                            "parent-justify-content": "flex-end"
+                        }
+                    },
+                    "customClassName": "header__nav-items"
+                }
+            }
+        }
+    ],
+    "logout-header-dashboard": [
+        {   "value":"",
+            "baseProperties": {
+                "name": "space",
+                "type": "staticText"
+            }
+        },
+        {   "value":"org: BTS",
+            "baseProperties": {
+                "name": "org",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight":"bold"                        }
+                    },
+                    "customClassName": "header__org"
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "name": "logout",
+                "label": "Log Out",
+                "type": "submit",
+                "id": "logout"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header-common__logout",
+                        "xs": {
+                            "parent-white-space": "nowrap",
+                            "parent-justify-content": "flex-end",
+                            "background-color": "#222121",
+                            "border-color": "#222121"
+                        }
+                    },
+                    "customClassName": "header-common__logout",                
+                    "themeClass": "btn btn-dark"                    
+                }
+            },
+            "apiConfig": {
+                "name": "signupButtonApi",
+                "url": "/rest/logout",
+                "method": "POST",
+                "payloadParams": [],
+                "onSuccess": {
+                    "pageUrl": "/login",
+                    "clearSharedData": ["authenticated", "name"]
+                }
+            },
+            "events": [
+                {
+                   "event": "click",
+                    "actions" :[ 
+                           {
+                                "actionType" : "submit",
+                                "showLoading": true                              
+                           }          
+                    ],
+                    "debounce": 3000
+                }
+            ]
+        }
+        
+        
+    ]
+}

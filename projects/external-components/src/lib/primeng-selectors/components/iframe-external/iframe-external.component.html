@@ -1,6 +1,5 @@
 
-<div>
-    <iframe [src]="src" style="height:90%; width:100%">  
-              
-    </iframe>
+<div *ngIf= "visible" style="height:88vh">
+    <iframe #iframe [src]="src" height="90%" width="100%" marginheight="0" marginwidth="0" allowTransparency="true" background="transparent" frameBorder="0"
+    style="visibility:hidden" onload="this.style.visibility = 'visible'"></iframe>
 </div>  
