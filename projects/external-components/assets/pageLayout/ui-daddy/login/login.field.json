@@ -129,7 +129,7 @@
             },
             "apiConfig": {
                 "name": "loginButtonApi",
-                "url": "https://upms-api.azurewebsites.net/api/v1/useraccount",
+                "url": "https://upms-api.azurewebsites.net/api/user/login",
                 "method": "POST",
                 "isApplicationSessionAPI": true,
                 "payloadParams": [
