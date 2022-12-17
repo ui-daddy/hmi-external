@@ -3,12 +3,12 @@
         "headerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
         },
         "headerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
         },
         "field": {
             "fetchFromLocal": true,
@@ -34,7 +34,228 @@
             "title": "Login",
             "layoutProperties": {
                 "css": {
-                   
+                    "configuration": {
+                        "selectorName": "",
+                        "xs": {
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    }
+                }
+            }           
+        }
+    },
+	"users": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/users/users.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/users/users.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Login",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ""
+                        
+                    }
+                }
+            }           
+        }
+    },
+	"reports": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/reports/reports.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/reports/reports.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Login",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ""
+                       
+                    }
+                }
+            }           
+        }
+    },
+	"orgs": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/orgs/orgs.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/orgs/orgs.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Login",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ""
+                    
+                    }
+                }
+            }           
+        }
+    },
+	"projects": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/projects/projects.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/projects/projects.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Login",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ""
+                
+                    }
+                }
+            }           
+        }
+    },
+	"tasks": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/tasks/tasks.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "",
+            "localURL": "./assets/pageLayout/ui-daddy/tasks/tasks.section.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Login",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ""
+                    }
                 }
             }           
         }

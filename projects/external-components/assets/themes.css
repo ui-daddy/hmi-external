@@ -1,3 +1,7 @@
 header.header-container {
     background-color: #222121 !important;
 }
+.hmi-section-card > div{
+    box-shadow: none !important;
+    background: none;
+}
