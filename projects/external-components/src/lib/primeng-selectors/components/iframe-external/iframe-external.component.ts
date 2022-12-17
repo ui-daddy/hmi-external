@@ -11,7 +11,6 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 export class IframeExternalComponent extends CommonExternalComponent  implements OnInit, AfterViewInit {
   src: any;
   visible= false;
-  @ViewChild('iframe') iframe: ElementRef;
   constructor(private sanitizer: DomSanitizer ) { super()}
 
   ngOnInit(): void {
