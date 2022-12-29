@@ -223,6 +223,65 @@
             "enabled": true
         }
     },
+    "termsAndCondition": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header",
+            "localURL": ""
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/header/field",
+            "localURL": ""
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/termsAndCondition.field",
+            "localURL": "./assets/pageLayout/ui-daddy/termsAndCondition/termsAndCondition.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/termsAndCondition.section",
+            "localURL": "./assets/pageLayout/ui-daddy/termsAndCondition/termsAndCondition.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/termsAndCondition.data",
+            "localURL": ""
+        },        
+        "footerSection": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer",
+            "localURL": ""
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "serverURL": "/api/section/footer/field",
+            "localURL": ""
+        },
+        "globalPageSettings": {
+            "title": "Tearms & Condition",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": "",
+                        "xs": {
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    }
+                }
+            }           
+        },
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated == 'yes'",
+                "onConditionSuccess": "dashboard"
+            }],
+            "enabled": true
+        }
+    },
     "hmiAppConfiguration": {
         "ifPageNotFound": "login",
         "title": "UI Daddy",

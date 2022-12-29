@@ -355,6 +355,29 @@
     },
     {
       "baseProperties": {
+          "id": "termsAndCondLink",
+          "name": "termsAndCondLink",
+          "type": "link",
+          "formName": "",
+          "label": "Terms & Condition"
+      },
+      "accessor": "",
+      "href": "/termsAndCondition",
+      "layoutProperties": {
+          "css": {
+              "customClassName": "signup__termsAndCond-link",
+              "configuration": {
+                  "selectorName": ".signup__termsAndCond-link",
+                  "xs": {
+                      "parent-margin": "10px",
+                      "parent-justify-content":"center"
+                  }
+              }
+          }
+      }
+  },
+    {
+      "baseProperties": {
         "name": "button",
         "id": "button",
         "formName": "signupForm",

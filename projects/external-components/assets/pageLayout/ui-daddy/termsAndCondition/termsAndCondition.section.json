@@ -1,0 +1,24 @@
+{
+    "layout": [
+        {
+            "id": "termsAndCondition",
+            "type": "content",
+            "layout": {
+              "css": {
+                "customClassName": "hmi-section-card"
+              },
+              "column":{
+                "count": 2,
+                "ratio": {
+                  "lg": "12",
+                  "md": "12",
+                  "sm": "12",
+                  "xs": "12"
+                },
+                "autoPlace": "false"
+              }
+            }
+          }
+            
+        ]
+    }
