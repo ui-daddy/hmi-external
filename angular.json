@@ -21,11 +21,13 @@
           "configurations": {
             "production": {
               "tsConfig": "projects/external-components/tsconfig.lib.prod.json"
-            }
+            },
+            "development": {}
           },
           "scripts": [
             "projects/external-components/node_modules/chart.js/dist/Chart.js"
-          ]
+          ],
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
