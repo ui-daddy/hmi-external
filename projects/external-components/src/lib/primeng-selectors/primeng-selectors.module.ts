@@ -19,31 +19,28 @@ import { IframeExternalComponent } from './components/iframe-external/iframe-ext
 
 
 @NgModule({
-  declarations: [
-    PasswordExternalComponent,
-    TextExternalComponent,
-    TableExternalComponent,
-    DropdownExternal,
-    ChartsExternalComponent,
-    RowDataHandlerDirective,
-    IframeExternalComponent 
-  ],
-  imports: [
-    CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, 
-    TableModule, DropdownModule, ToggleButtonModule, ChartModule
-  ],
-  exports: [
-    PasswordExternalComponent,
-    TextExternalComponent,
-    TableExternalComponent,
-    TableModule,
-    DropdownExternal,
-    IframeExternalComponent,
-    ChartsExternalComponent, PasswordModule, DropdownModule
-  ],
-  entryComponents: [
-    ToggleButton
-  ]
+    declarations: [
+        PasswordExternalComponent,
+        TextExternalComponent,
+        TableExternalComponent,
+        DropdownExternal,
+        ChartsExternalComponent,
+        RowDataHandlerDirective,
+        IframeExternalComponent
+    ],
+    imports: [
+        CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
+        TableModule, DropdownModule, ToggleButtonModule, ChartModule
+    ],
+    exports: [
+        PasswordExternalComponent,
+        TextExternalComponent,
+        TableExternalComponent,
+        TableModule,
+        DropdownExternal,
+        IframeExternalComponent,
+        ChartsExternalComponent, PasswordModule, DropdownModule
+    ]
 })
 export class PrimengSelectorsModule { }
 
