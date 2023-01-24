@@ -177,6 +177,29 @@
         },
         {
             "baseProperties": {
+                "id": "githubLoginLink",
+                "name": "githubLoginLink",
+                "type": "link",
+                "formName": "",
+                "label": "GitHub Login"
+            },
+            "accessor": "",
+            "href": "https://github.com/login/oauth/authorize?client_id=a9a79a60730c8bd64fae&scope=repo&state=aRandomUnguessableString&allow_signup=true",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "github__login-link",
+                    "configuration": {
+                        "selectorName": ".github__login-link",
+                        "xs": {
+                            "parent-margin": "10px",
+                            "parent-justify-content":"center"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "baseProperties": {
                 "id": "forgotPwdLink",
                 "name": "forgotPwdLink",
                 "type": "link",
