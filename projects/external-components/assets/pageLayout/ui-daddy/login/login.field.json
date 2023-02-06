@@ -35,7 +35,7 @@
                 "name": "githubLoginLink",
                 "type": "link",
                 "formName": "",
-                "label": "GitHub Login"
+                "label": "Log in with GitHub"
             },
             "accessor": "",
             "href": "https://github.com/login/oauth/authorize?client_id=a9a79a60730c8bd64fae&scope=repo&state=aRandomUnguessableString&allow_signup=true",

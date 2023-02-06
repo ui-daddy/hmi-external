@@ -86,9 +86,9 @@
             "conditions": [{
                 "type": "cookie",
                 "cookieName": "accessToken",
-                "if": "accessToken != undefined"
+                "if": "accessToken != undefined",
+                "onConditionSuccess": "dashboard"
             }],
-            "onConditionSuccess": "dashboard",
             "enabled": true
         },
         "globalPageSettings": {
@@ -147,9 +147,9 @@
             "conditions": [{
                 "type": "cookie",
                 "cookieName": "accessToken",
-                "if": "accessToken == undefined"
+                "if": "accessToken == undefined",
+                "onConditionSuccess": "login"
             }],
-            "onConditionSuccess": "login",
             "enabled": true
         },
         "globalPageSettings": {
