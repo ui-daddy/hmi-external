@@ -84,7 +84,9 @@
         },        
         "authGuardConfig": {
             "conditions": [{
-                "if": "authenticated == 'yes'",
+                "type": "cookie",
+                "cookieName": "accessToken",
+                "if": "accessToken != undefined",
                 "onConditionSuccess": "dashboard"
             }],
             "enabled": true
@@ -143,131 +145,15 @@
         },        
         "authGuardConfig": {
             "conditions": [{
-                "if": "authenticated != 'yes'",
+                "type": "cookie",
+                "cookieName": "accessToken",
+                "if": "accessToken == undefined",
                 "onConditionSuccess": "login"
             }],
             "enabled": true
         },
         "globalPageSettings": {
             "title": "Projects"         
-        }
-    },
-    "signup": {
-        "headerSection": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/header",
-            "localURL": ""
-        },
-        "headerField": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/header/field",
-            "localURL": ""
-        },
-        "field": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.field",
-            "localURL": "./assets/pageLayout/ui-daddy/signup/signup.field.json"
-        },
-        "section": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.section",
-            "localURL": "./assets/pageLayout/ui-daddy/signup/signup.section.json"
-        },
-        "data": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.data",
-            "localURL": ""
-        },        
-        "footerSection": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/footer",
-            "localURL": ""
-        },
-        "footerField": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/footer/field",
-            "localURL": ""
-        },
-        "globalPageSettings": {
-            "title": "Sign Up",
-            "layoutProperties": {
-                "css": {
-                    "configuration": {
-                        "selectorName": "",
-                        "xs": {
-                            "background-image": "url(assets/images/loginPage.jpg)",
-                            "background-size": "cover",
-                            "background-position": "center center"
-                        }
-                    }
-                }
-            }           
-        },
-        "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated == 'yes'",
-                "onConditionSuccess": "dashboard"
-            }],
-            "enabled": true
-        }
-    },
-    "forget-password": {
-        "headerSection": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/header",
-            "localURL": ""
-        },
-        "headerField": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/header/field",
-            "localURL": ""
-        },
-        "field": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.field",
-            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.field.json"
-        },
-        "section": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.section",
-            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.section.json"
-        },
-        "data": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.data",
-            "localURL": ""
-        },        
-        "footerSection": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/footer",
-            "localURL": ""
-        },
-        "footerField": {
-            "fetchFromLocal": true,
-            "serverURL": "/api/section/footer/field",
-            "localURL": ""
-        },
-        "globalPageSettings": {
-            "title": "Forget Password",
-            "layoutProperties": {
-                "css": {
-                    "configuration": {
-                        "selectorName": "",
-                        "xs": {
-                            "background-image": "url(assets/images/loginPage.jpg)",
-                            "background-size": "cover",
-                            "background-position": "center center"
-                        }
-                    }
-                }
-            }           
-        },
-        "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated == 'yes'",
-                "onConditionSuccess": "dashboard"
-            }],
-            "enabled": true
         }
     },
     "hmiAppConfiguration": {
