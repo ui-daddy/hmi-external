@@ -587,6 +587,7 @@
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
                 { "colName": "Deployment Link", "accessor": "deployLink", "colWidth": { "unit": "px", "value": 480 } },
+                { "colName": "", "html": "<a href='/edit-form'><i class='fa fa-th'></i></a>", "colWidth": { "unit": "px", "value": 50 } },
                 { "colName": "", "title": "Download Build", "html": "<i class='fas fa-download'></i>", 
                     "disableColumnSorting": true, 
                     "action": {
