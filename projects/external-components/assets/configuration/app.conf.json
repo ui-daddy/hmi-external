@@ -209,7 +209,7 @@
             }
         }
     },
-    "edit-form":{
+    "edit-form/:projectId":{
         "headerSection": {
             "fetchFromLocal": true,
             "serverURL": "",
