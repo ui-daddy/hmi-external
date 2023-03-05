@@ -19,16 +19,18 @@
     <ng-template pTemplate="header" let-columns>
         <tr>
             <ng-container *ngFor="let col of fieldObj.customAttributes.columns">
-                <th *ngIf="col.unsortableColumn else sortableColumn" pResizableColumn pReorderableColumn
-                    [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
-                    {{col.colName}}
-                </th>
-                <ng-template #sortableColumn>
-                    <th [pSortableColumn]="col.accessor"
+                
+                <th *ngIf="(col.sortable == undefined || col.sortable === true); else sortableColumn" 
+                        [pSortableColumn]="col.accessor"
                         pResizableColumn pReorderableColumn
                         [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
                         {{col.colName}}
                         <p-sortIcon [field]="col.accessor"></p-sortIcon>
+                </th>                    
+                <ng-template #sortableColumn>
+                    <th pResizableColumn pReorderableColumn
+                        [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
+                        {{col.colName}}
                     </th>
                 </ng-template>
             </ng-container>
@@ -38,17 +40,19 @@
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr [pSelectableRow]="rowData">
             <ng-container *ngFor="let col of fieldObj.customAttributes.columns">
-                    <td *ngIf="col.routerLink else defaultCol">
-                        <!-- <a [routerLink]="[col.routerLink]" [queryParams]="{ 'projectId': rowData.id }" class="fa fa-th"></a> -->
+                    <!-- <td *ngIf="col.routerLink else defaultCol">
+                        <a [routerLink]="[col.routerLink, rowData.id]" class="fa fa-th"></a>
+                    </td> -->
+                    <!-- <td *ngIf="col.routerLink else defaultCol">
                         <a [routerLink]="[col.routerLink, rowData.id]" class="fa fa-th"></a>
                     </td>
-                    <ng-template #defaultCol>
+                    <ng-template #defaultCol> -->
                         <td [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }"
                         (click)="cellAction(col, rowData)">
                        <span class="p-column-title">{{col.colName}}</span>
                        <span class="p-body-data" [title]="col.title || rowData[col.accessor] || col.html" [rowDataHandler]="rowData[col.accessor] || col.html"></span>
                         </td>
-                    </ng-template>
+                    <!-- </ng-template> -->
             </ng-container>
             
         </tr>
