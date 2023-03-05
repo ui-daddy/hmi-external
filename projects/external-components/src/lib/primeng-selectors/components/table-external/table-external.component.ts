@@ -46,6 +46,9 @@ export class TableExternalComponent extends CommonExternalComponent implements O
           this.primeElement.loading = true;
           this.customApiCall(colConfig.action.apiConfig, rowData).subscribe(() => { 
             console.log("Row action performed successfully.");
+          }, (err: any) => {
+            console.error(err);
+          }).add(() => {
             this.primeElement.loading = false;
           });
         }
