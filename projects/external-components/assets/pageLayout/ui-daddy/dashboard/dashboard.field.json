@@ -562,7 +562,7 @@
                 { "colName": "Github Forked URL", "accessor": "forkUrl"},
                 { "colName": "Branch Name", "accessor": "branchName", "colWidth": { "unit": "px", "value": 200 } },
                 { "colName": "Status", "accessor": "buildStatus", "colWidth": { "unit": "px", "value": 120 } },
-                { "colName": "", "title": "Build Project", "html": "<a href='javascript:void(0)'>Build</a>", 
+                { "colName": "Build", "title": "Build Project", "sortable": false, "html": "<a href='javascript:void(0)'>Build</a>", 
                     "disableColumnSorting": true, 
                     "action": {
                     "name": "ROW_ACTION",
@@ -587,8 +587,13 @@
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
                 { "colName": "Deployment Link", "accessor": "deployLink", "colWidth": { "unit": "px", "value": 480 } },
-                { "colName": "Edit Form", "unsortableColumn": true, "routerLink": "/edit-form", "colWidth": { "unit": "px", "value": 50 } },
-                { "colName": "", "title": "Download Build", "html": "<i class='fas fa-download'></i>", 
+                { "colName": "Edit Form", "title":"Edit Form", "html": "<i class='fas fa-th'></i>", "sortable": false, "colWidth": { "unit": "px", "value": 50 },
+                   "action": {
+                        "name": "ROW_ACTION",
+                        "pageUrl": "/edit-form"
+                   }
+                },
+                { "colName": "Download Build", "title": "Download Build", "html": "<i class='fas fa-download'></i>", "sortable": false, 
                     "disableColumnSorting": true, 
                     "action": {
                     "name": "ROW_ACTION",
@@ -613,7 +618,7 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "title": "Download logs", "html": "<i class='fas fa-file-download'></i>", 
+                { "colName": "Download logs", "title": "Download logs", "html": "<i class='fas fa-file-download'></i>", "sortable": false, 
                     "disableColumnSorting": true, 
                     "action": {
                     "name": "ROW_ACTION",
@@ -638,7 +643,7 @@
                     }
                   }, "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "title": "Edit Project", "html": "<i class='fas fa-edit'></i>", 
+                { "colName": "Edit Project", "title": "Edit Project", "html": "<i class='fas fa-edit'></i>", "sortable": false, 
                     "disableColumnSorting": true, 
                     "events": [
                     {
@@ -702,7 +707,7 @@
                     }
                 ], "colWidth": { "unit": "px", "value": 50 } 
                 },
-                { "colName": "", "title": "Delete Project", "html": "<i class='fas fa-trash'></i>", 
+                { "colName": "Delete Project", "title": "Delete Project", "html": "<i class='fas fa-trash'></i>", "sortable": false, 
                     "disableColumnSorting": true, 
                     "action": {
                     "name": "ROW_ACTION",

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
@@ -11,7 +12,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 export class TableExternalComponent extends CommonExternalComponent implements OnInit {
   data: any = [];
 
-  constructor(private commonService: CommonService) { 
+  constructor(private commonService: CommonService, private router: Router) { 
     super();
   }
 
@@ -40,12 +41,17 @@ export class TableExternalComponent extends CommonExternalComponent implements O
 
   cellAction(colConfig: any, rowData: any) {
     if (colConfig.action) {
-      if (colConfig.action.name === "ROW_ACTION" && colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
-        this.primeElement.loading = true;
-        this.customApiCall(colConfig.action.apiConfig, rowData).subscribe(() => { 
-          console.log("Row action performed successfully.");
-          this.primeElement.loading = false;
-        });
+      if (colConfig.action.name === "ROW_ACTION") {
+        if(colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
+          this.primeElement.loading = true;
+          this.customApiCall(colConfig.action.apiConfig, rowData).subscribe(() => { 
+            console.log("Row action performed successfully.");
+            this.primeElement.loading = false;
+          });
+        }
+        if (colConfig.action.pageUrl) {
+          this.router.navigate([colConfig.action.pageUrl, rowData.id]);
+        }
       }
     }
     let colEvents;
