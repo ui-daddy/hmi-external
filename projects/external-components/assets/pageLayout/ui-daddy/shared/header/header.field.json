@@ -64,23 +64,23 @@
                     "themeClass": "btn btn-dark"                    
                 }
             },
-            "apiConfig": {
-                "name": "signupButtonApi",
-                "url": "/rest/logout",
-                "method": "POST",
-                "payloadParams": [],
-                "onSuccess": {
-                    "pageUrl": "/login",
-                    "clearSharedData": ["authenticated", "name"]
-                }
-            },
             "events": [
                 {
                    "event": "click",
                     "actions" :[ 
                            {
-                                "actionType" : "submit",
-                                "showLoading": true                              
+                                "actionType" : "INVOKE_API",
+                                "showLoading": true,
+                                "apiConfig": {
+                                    "name": "signupButtonApi",
+                                    "url": "/rest/logout",
+                                    "method": "POST",
+                                    "payloadParams": [],
+                                    "onSuccess": {
+                                        "pageUrl": "/login",
+                                        "clearSharedData": ["authenticated", "name"]
+                                    }
+                                }                            
                            }          
                     ],
                     "debounce": 3000
