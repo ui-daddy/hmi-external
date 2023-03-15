@@ -3,11 +3,16 @@ pipeline {
         label 'nodejs'
     }
     stages {
-        stage('Install') {            
+        stage('External Components Install') {            
             steps {
-                dir("./projects/external-components") {
+                dir("projects/external-components") {
                     sh 'npm ci'                
                 }
+            }     
+        }
+        stage('Install') {            
+            steps {
+                sh 'npm ci'
             }     
         }
         stage('Build') {
