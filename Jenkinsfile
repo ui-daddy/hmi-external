@@ -3,17 +3,17 @@ pipeline {
         label 'nodejs'
     }
     stages {
-        stage('Install') {
-            dir("./projects/external-components") {
-                steps {
+        stage('Install') {            
+            steps {
+                dir("./projects/external-components") {
                     sh 'npm i'                
                 }
             }     
         }
         stage('Build') {
-            dir("./projects/external-components") {
-                steps {
-                    sh 'npm run build:nowatch'
+            steps {
+                dir("./projects/external-components") {
+                    sh 'npm run build:nowatch'              
                 }
             }
         }
