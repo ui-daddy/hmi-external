@@ -6,15 +6,13 @@ pipeline {
         stage('Install') {            
             steps {
                 dir("./projects/external-components") {
-                    sh 'npm i'                
+                    sh 'npm ci'                
                 }
             }     
         }
         stage('Build') {
             steps {
-                dir("./projects/external-components") {
-                    sh 'npm run build:nowatch'              
-                }
+                sh 'npm run build:nowatch'                
             }
         }
         stage('Deploy') {
