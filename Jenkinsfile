@@ -6,13 +6,13 @@ pipeline {
         stage('External Components Install') {            
             steps {
                 dir("projects/external-components") {
-                    sh 'npm ci'                
+                    sh 'npm ci -d'                
                 }
             }     
         }
         stage('Install') {            
             steps {
-                sh 'npm ci'
+                sh 'npm ci -d'
             }     
         }
         stage('Build') {
