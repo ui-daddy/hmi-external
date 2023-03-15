@@ -4,13 +4,17 @@ pipeline {
     }
     stages {
         stage('Install') {
-            steps {
-                sh 'npm ci'                
-            }
+            dir("./projects/external-components") {
+                steps {
+                    sh 'npm i'                
+                }
+            }     
         }
         stage('Build') {
-            steps {
-                sh 'npm run build:nowatch'                                    
+            dir("./projects/external-components") {
+                steps {
+                    sh 'npm run build:nowatch'
+                }
             }
         }
         stage('Deploy') {
