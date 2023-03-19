@@ -38,7 +38,7 @@
                 "label": "Log in with GitHub"
             },
             "accessor": "",
-            "href": "https://github.com/login/oauth/authorize?client_id=a9a79a60730c8bd64fae&scope=repo&state=aRandomUnguessableString&allow_signup=true",
+            "href": "https://github.com/login/oauth/authorize?client_id=5260dbf9a0fefd183580&scope=repo&state=aRandomUnguessableString&allow_signup=true",
             "layoutProperties": {
                 "css": {
                     "customClassName": "github__login-link",
