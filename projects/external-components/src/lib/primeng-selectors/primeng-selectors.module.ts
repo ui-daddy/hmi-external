@@ -13,31 +13,35 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import { ToggleButton, ToggleButtonModule } from 'primeng/togglebutton';
 import {ChartModule} from 'primeng/chart';
+import { RowDataHandlerDirective } from './components/table-external/rowDataHandler/row-data-handler.directive';
+import { IframeExternalComponent } from './components/iframe-external/iframe-external.component';
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
-  declarations: [
-    PasswordExternalComponent,
-    TextExternalComponent,
-    TableExternalComponent,
-    DropdownExternal,
-    ChartsExternalComponent
-  ],
-  imports: [
-    CommonModule, FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule, 
-    TableModule, DropdownModule, ToggleButtonModule, ChartModule
-  ],
-  exports: [
-    PasswordExternalComponent,
-    TextExternalComponent,
-    TableExternalComponent,
-    TableModule,
-    DropdownExternal,
-    ChartsExternalComponent, PasswordModule, DropdownModule
-  ],
-  entryComponents: [
-    ToggleButton
-  ]
+    declarations: [
+        PasswordExternalComponent,
+        TextExternalComponent,
+        TableExternalComponent,
+        DropdownExternal,
+        ChartsExternalComponent,
+        RowDataHandlerDirective,
+        IframeExternalComponent
+    ],
+    imports: [
+        CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
+        TableModule, DropdownModule, ToggleButtonModule, ChartModule
+    ],
+    exports: [
+        PasswordExternalComponent,
+        TextExternalComponent,
+        TableExternalComponent,
+        TableModule,
+        DropdownExternal,
+        IframeExternalComponent,
+        ChartsExternalComponent, PasswordModule, DropdownModule
+    ]
 })
 export class PrimengSelectorsModule { }
 

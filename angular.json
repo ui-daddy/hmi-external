@@ -21,11 +21,13 @@
           "configurations": {
             "production": {
               "tsConfig": "projects/external-components/tsconfig.lib.prod.json"
-            }
+            },
+            "development": {}
           },
           "scripts": [
             "projects/external-components/node_modules/chart.js/dist/Chart.js"
-          ]
+          ],
+          "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -34,21 +36,8 @@
             "tsConfig": "projects/external-components/tsconfig.spec.json",
             "karmaConfig": "projects/external-components/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/external-components/tsconfig.lib.json",
-              "projects/external-components/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     }
-  },
-  "defaultProject": "external-components"
+  }
 }
