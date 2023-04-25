@@ -1,1 +1,1 @@
-{"dnd-0":[{"baseProperties":{"type":"staticText","id":"dnd-1"},"layoutProperties":{}}]}
+{"dnd-0":[{"baseProperties":{"type":"staticText","id":"dnd-1"},"layoutProperties":{}},{"baseProperties":{"type":"dropdown","id":"dnd-2"},"layoutProperties":{}}]}
