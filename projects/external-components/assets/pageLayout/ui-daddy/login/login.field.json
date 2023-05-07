@@ -127,52 +127,52 @@
                 "visible": "",
                 "visibleValue": true
             },
-            "apiConfig": {
-                "name": "loginButtonApi",
-                "url": "https://upms-api.azurewebsites.net/api/v1/useraccount",
-                "method": "POST",
-                "isApplicationSessionAPI": true,
-                "payloadParams": [
-                    {
-                        "paramName": "UserName",
-                        "mappedField": "email"
-                    },
-                    {
-                        "paramName": "Password",
-                        "mappedField": "password"
-                    }
-                ],
-                "onSuccess": {
-                    "pageUrl": "/dashboard",
-                    "sharedData": [
-                    {
-                        "varName": "name",
-                        "responseAccessor": "firstName",
-                        "cache": true
-                    },
-                    {
-                        "varName": "surname",
-                        "responseAccessor": "lastName",
-                        "cache": true
-                    }, {
-                        "varName": "authenticated",
-                        "staticData": "yes",
-                        "cache": true
-                    }],
-                    "clearSharedData": ["name", "authenticated"]
-                },
-                "onError": {
-                  "showErrorMessage": true,
-                  "clearSharedData": ["name", "authenticated"]
-                }
-            }, 
             "events": [
                 {
                    "event": "click",
                     "actions" :[ 
                            {
                                "actionType" : "submit",
-                                "showLoading": true
+                                "showLoading": true,
+                                "apiConfig": {
+                                    "name": "loginButtonApi",
+                                    "url": "https://upms-api.azurewebsites.net/api/v1/useraccount",
+                                    "method": "POST",
+                                    "isApplicationSessionAPI": true,
+                                    "payloadParams": [
+                                        {
+                                            "paramName": "UserName",
+                                            "mappedField": "email"
+                                        },
+                                        {
+                                            "paramName": "Password",
+                                            "mappedField": "password"
+                                        }
+                                    ],
+                                    "onSuccess": {
+                                        "pageUrl": "/dashboard",
+                                        "sharedData": [
+                                        {
+                                            "varName": "name",
+                                            "responseAccessor": "firstName",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "surname",
+                                            "responseAccessor": "lastName",
+                                            "cache": true
+                                        }, {
+                                            "varName": "authenticated",
+                                            "staticData": "yes",
+                                            "cache": true
+                                        }],
+                                        "clearSharedData": ["name", "authenticated"]
+                                    },
+                                    "onError": {
+                                      "showErrorMessage": true,
+                                      "clearSharedData": ["name", "authenticated"]
+                                    }
+                                }
                            }
                     ],
                     "debounce": 3000
