@@ -1,0 +1,15 @@
+[
+    {
+          "widgetList": ["TableExternalComponent"],
+          "hideenBaseProperties": ["label"],
+          "hideenLayoutProperties": ["orientation"],
+          "hideenExpressionProperties":["required", "readOnly", "disabled"],
+          "customAttributes": [{
+              "propertyName": "columns",
+              "defaultValueMapping": "columns",
+              "type": "textarea",
+              "label": "Columns Array",
+              "placeholder": "Enter columns array colWidth,colName,accessor,title,html etc"
+          }]        
+    }
+]
