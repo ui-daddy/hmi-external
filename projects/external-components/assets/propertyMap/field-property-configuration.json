@@ -1,6 +1,12 @@
 [
     {
-          "widgetList": ["TableExternalComponent"],
+          "widgetList": [
+              {
+                  "name": "TableExternalComponent",
+                  "icon": "",
+                  "label": "TableExternalComponent"
+              }
+          ],
           "hiddenBaseProperties": ["label"],
           "hiddenBaseProperties": ["orientation"],
           "hiddenBaseProperties":["required", "readOnly", "disabled"],
@@ -13,7 +19,13 @@
           }]        
     },
     {
-          "widgetList": ["IframeExternalComponent"],
+          "widgetList": [
+              {
+                  "name": "IframeExternalComponent",
+                  "icon": "",
+                  "label": "IframeExternalComponent"
+              }
+          ],
           "hiddenBaseProperties": ["label"],
           "hiddenBaseProperties": ["orientation", "themeClass"],
           "hiddenBaseProperties":["required", "readOnly", "disabled"],
