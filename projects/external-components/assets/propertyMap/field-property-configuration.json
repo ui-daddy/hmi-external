@@ -3,7 +3,7 @@
           "widgetList": [
               {
                   "name": "TableExternalComponent",
-                  "icon": "",
+                  "icon": "bi bi-box",
                   "label": "TableExternalComponent"
               }
           ],
@@ -22,7 +22,7 @@
           "widgetList": [
               {
                   "name": "IframeExternalComponent",
-                  "icon": "",
+                  "icon": "bi bi-box",
                   "label": "IframeExternalComponent"
               }
           ],
