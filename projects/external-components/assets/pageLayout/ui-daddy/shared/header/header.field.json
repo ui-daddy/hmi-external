@@ -1,10 +1,10 @@
 {
     "header-dashboard": [
         {
-            "value": "UI Daddy",
             "baseProperties": {
                 "name": "menu",
-                "type": "staticText"
+                "type": "link",
+                "label": "UI Daddy"
             },
             "layoutProperties":{
                 "css": {
@@ -15,12 +15,17 @@
                             "font-size": "30px",
                             "margin-left": "15px",
                             "parent-justify-content": "flex-start",
-                            "parent-padding": "8px"
+                            "parent-padding": "8px",
+                            "cursor": "pointer",
+                            "color": "white",
+                            "text-decoration": "none"
                         }
                     },
                     "customClassName": "header__logo"
                 }
-            }
+            },
+            "href": "http://localhost:4200/dashboard",
+            "target": "_self"
         },
         {
             "baseProperties": {
@@ -81,7 +86,7 @@
                                         "clearSharedData": ["authenticated", "name"]
                                     }
                                 }                            
-                           }          
+                         }       
                     ],
                     "debounce": 3000
                 }
