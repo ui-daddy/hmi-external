@@ -1,15 +1,15 @@
 [
     {
           "widgetList": [
-              {
-                  "name": "TableExternalComponent",
-                  "icon": "bi bi-box",
-                  "label": "TableExternalComponent"
-              }
+            {
+                "name": "TableExternalComponent",
+                "icon": "bi bi-box",
+                "label": "TableExternalComponent"
+            }
           ],
-          "hiddenBaseProperties": ["label"],
-          "hiddenBaseProperties": ["orientation"],
-          "hiddenBaseProperties":["required", "readOnly", "disabled"],
+          "hideenBaseProperties": ["label"],
+          "hideenLayoutProperties": ["orientation"],
+          "hideenExpressionProperties":["required", "readOnly", "disabled"],
           "customAttributes": [{
               "propertyName": "columns",
               "defaultValueMapping": "columns",
@@ -19,22 +19,22 @@
           }]        
     },
     {
-          "widgetList": [
-              {
-                  "name": "IframeExternalComponent",
-                  "icon": "bi bi-box",
-                  "label": "IframeExternalComponent"
-              }
-          ],
-          "hiddenBaseProperties": ["label"],
-          "hiddenBaseProperties": ["orientation", "themeClass"],
-          "hiddenBaseProperties":["required", "readOnly", "disabled"],
-          "customAttributes": [{
-              "propertyName": "src",
-              "defaultValueMapping": "src",
-              "type": "text",
-              "label": "Source Url",
-              "placeholder": "Enter iFrame Source Url"
-          }]        
-    }
+        "widgetList": [
+            {
+                "name": "IframeExternalComponent",
+                "icon": "bi bi-box",
+                "label": "IframeExternalComponent"
+            }
+        ],
+        "hideenBaseProperties": ["label"],
+        "hideenLayoutProperties": ["orientation", "themeClass"],
+        "hideenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [{
+            "propertyName": "src",
+            "defaultValueMapping": "src",
+            "type": "text",
+            "label": "Source Url",
+            "placeholder": "Enter iFrame Source Url"
+        }]        
+  }
 ]
