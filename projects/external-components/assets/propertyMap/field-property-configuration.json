@@ -1,6 +1,12 @@
 [
     {
-          "widgetList": ["TableExternalComponent"],
+          "widgetList": [
+            {
+                "name": "TableExternalComponent",
+                "icon": "bi bi-box",
+                "label": "TableExternalComponent"
+            }
+          ],
           "hideenBaseProperties": ["label"],
           "hideenLayoutProperties": ["orientation"],
           "hideenExpressionProperties":["required", "readOnly", "disabled"],
@@ -11,5 +17,24 @@
               "label": "Columns Array",
               "placeholder": "Enter columns array colWidth,colName,accessor,title,html etc"
           }]        
-    }
+    },
+    {
+        "widgetList": [
+            {
+                "name": "IframeExternalComponent",
+                "icon": "bi bi-box",
+                "label": "IframeExternalComponent"
+            }
+        ],
+        "hideenBaseProperties": ["label"],
+        "hideenLayoutProperties": ["orientation", "themeClass"],
+        "hideenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [{
+            "propertyName": "src",
+            "defaultValueMapping": "src",
+            "type": "text",
+            "label": "Source Url",
+            "placeholder": "Enter iFrame Source Url"
+        }]        
+  }
 ]
