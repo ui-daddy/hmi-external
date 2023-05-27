@@ -7,9 +7,9 @@
                 "label": "TableExternalComponent"
             }
           ],
-          "hideenBaseProperties": ["label"],
-          "hideenLayoutProperties": ["orientation"],
-          "hideenExpressionProperties":["required", "readOnly", "disabled"],
+          "hiddenBaseProperties": ["label"],
+          "hiddenLayoutProperties": ["orientation"],
+          "hiddenExpressionProperties":["required", "readOnly", "disabled"],
           "customAttributes": [{
               "propertyName": "columns",
               "defaultValueMapping": "columns",
@@ -26,9 +26,9 @@
                 "label": "IframeExternalComponent"
             }
         ],
-        "hideenBaseProperties": ["label"],
-        "hideenLayoutProperties": ["orientation", "themeClass"],
-        "hideenExpressionProperties":["required", "readOnly", "disabled"],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
         "customAttributes": [{
             "propertyName": "src",
             "defaultValueMapping": "src",
