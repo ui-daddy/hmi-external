@@ -1,9 +1,15 @@
 [
     {
-          "widgetList": ["TableExternalComponent"],
+          "widgetList": [
+            {
+                "name": "TableExternalComponent",
+                "icon": "bi bi-box",
+                "label": "TableExternalComponent"
+            }
+          ],
           "hiddenBaseProperties": ["label"],
-          "hiddenBaseProperties": ["orientation"],
-          "hiddenBaseProperties":["required", "readOnly", "disabled"],
+          "hiddenLayoutProperties": ["orientation"],
+          "hiddenExpressionProperties":["required", "readOnly", "disabled"],
           "customAttributes": [{
               "propertyName": "columns",
               "defaultValueMapping": "columns",
@@ -13,16 +19,22 @@
           }]        
     },
     {
-          "widgetList": ["IframeExternalComponent"],
-          "hiddenBaseProperties": ["label"],
-          "hiddenBaseProperties": ["orientation", "themeClass"],
-          "hiddenBaseProperties":["required", "readOnly", "disabled"],
-          "customAttributes": [{
-              "propertyName": "src",
-              "defaultValueMapping": "src",
-              "type": "text",
-              "label": "Source Url",
-              "placeholder": "Enter iFrame Source Url"
-          }]        
-    }
+        "widgetList": [
+            {
+                "name": "IframeExternalComponent",
+                "icon": "bi bi-box",
+                "label": "IframeExternalComponent"
+            }
+        ],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [{
+            "propertyName": "src",
+            "defaultValueMapping": "src",
+            "type": "text",
+            "label": "Source Url",
+            "placeholder": "Enter iFrame Source Url"
+        }]        
+  }
 ]
