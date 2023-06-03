@@ -21,7 +21,7 @@
                 "visibleValue": true
             },
             "customAttributes": {
-                "src": "http://localhost:4300"
+                "src": "/form-designer/"
             }
         } 
     ]
