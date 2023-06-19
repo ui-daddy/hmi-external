@@ -132,7 +132,7 @@
                    "event": "click",
                     "actions" :[ 
                            {
-                               "actionType" : "submit",
+                               "actionType" : "INVOKE_API",
                                 "showLoading": true,
                                 "apiConfig": {
                                     "name": "loginButtonApi",
