@@ -16,6 +16,10 @@ import {ChartModule} from 'primeng/chart';
 import { RowDataHandlerDirective } from './components/table-external/rowDataHandler/row-data-handler.directive';
 import { IframeExternalComponent } from './components/iframe-external/iframe-external.component';
 import { RouterModule } from '@angular/router';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { ListPipe } from './pipes/list/list.pipe';
+import {ButtonModule} from 'primeng/button';
+import {TooltipModule} from 'primeng/tooltip';
 
 
 
@@ -27,11 +31,12 @@ import { RouterModule } from '@angular/router';
         DropdownExternal,
         ChartsExternalComponent,
         RowDataHandlerDirective,
-        IframeExternalComponent
+        IframeExternalComponent,
+        ListPipe
     ],
     imports: [
         CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
-        TableModule, DropdownModule, ToggleButtonModule, ChartModule
+        TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, TooltipModule
     ],
     exports: [
         PasswordExternalComponent,
