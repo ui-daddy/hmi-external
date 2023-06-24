@@ -1,0 +1,26 @@
+{
+    "dnd-0": [],
+    "dnd-2": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-3",
+                "name": "Vendor Details"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        }
+    ]
+}
