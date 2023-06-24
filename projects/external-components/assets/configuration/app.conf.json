@@ -33,10 +33,8 @@
         "globalPageSettings": {
             "title": "Login",
             "layoutProperties": {
-                "css": {
-                   
-                }
-            }           
+                "css": {}
+            }
         }
     },
     "login": {
@@ -64,7 +62,7 @@
             "fetchFromLocal": true,
             "serverURL": "/api/section/forgotPasword.data",
             "localURL": ""
-        },        
+        },
         "footerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer",
@@ -74,12 +72,14 @@
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer/field",
             "localURL": ""
-        },        
+        },
         "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated == 'yes'",
-                "onConditionSuccess": "dashboard"
-            }],
+            "conditions": [
+                {
+                    "if": "authenticated == 'yes'",
+                    "onConditionSuccess": "dashboard"
+                }
+            ],
             "enabled": true
         },
         "globalPageSettings": {
@@ -95,7 +95,7 @@
                         }
                     }
                 }
-            }           
+            }
         }
     },
     "forget-password": {
@@ -123,7 +123,7 @@
             "fetchFromLocal": true,
             "serverURL": "/api/section/forgotPasword.data",
             "localURL": ""
-        },        
+        },
         "footerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/footer",
@@ -147,36 +147,44 @@
                         }
                     }
                 }
-            }           
+            }
         },
         "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated == 'yes'",
-                "onConditionSuccess": "dashboard"
-            }],
+            "conditions": [
+                {
+                    "if": "authenticated == 'yes'",
+                    "onConditionSuccess": "dashboard"
+                }
+            ],
             "enabled": true
         }
     },
     "hmiAppConfiguration": {
         "ifPageNotFound": "login",
         "title": "UI Daddy",
-        "metaTags": [{
-            "name": "keyword",
-            "content": "uidaddy"
-        }],
-        "apiConfigurations": [{
-            "name": "getSession",
-            "url": "/rest/session",
-            "method": "GET",
-            "isApplicationSessionAPI": true,
-            "onSuccess": {
-                "sharedData": [{
-                    "varName": "authenticated",
-                    "staticData": "true",
-                    "cache": true
-                }]
+        "metaTags": [
+            {
+                "name": "keyword",
+                "content": "uidaddy"
             }
-        }],
+        ],
+        "apiConfigurations": [
+            {
+                "name": "getSession",
+                "url": "/rest/session",
+                "method": "GET",
+                "isApplicationSessionAPI": true,
+                "onSuccess": {
+                    "sharedData": [
+                        {
+                            "varName": "authenticated",
+                            "staticData": "true",
+                            "cache": true
+                        }
+                    ]
+                }
+            }
+        ],
         "interceptorConfigurations": [
             {
                 "statusCode": "401",
@@ -186,7 +194,10 @@
                 "msgResponseAccessor": "message",
                 "message": "Session Error",
                 "pageUrl": "login",
-                "clearSharedData": ["authenticated", "name"]
+                "clearSharedData": [
+                    "authenticated",
+                    "name"
+                ]
             }
         ],
         "linkTags": [],
@@ -208,6 +219,52 @@
                     }
                 }
             }
+        }
+    },
+    "dashboard": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "dashboard",
+            "layoutProperties": null
         }
     }
 }
