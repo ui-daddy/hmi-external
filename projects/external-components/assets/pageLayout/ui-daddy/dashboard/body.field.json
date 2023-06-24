@@ -64,5 +64,30 @@
             "expressionProperties": {},
             "value": null
         }
+    ],
+    "dnd-8": [
+        {
+            "baseProperties": {
+                "type": "table",
+                "id": "dnd-9",
+                "label": "Vendors"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "colNameAccessorMap": {},
+            "dataConfig": null,
+            "accessor": null
+        }
     ]
 }
