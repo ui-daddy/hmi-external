@@ -1,0 +1,94 @@
+{
+    "dnd-1": [],
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-2",
+                "label": "Add Vendor",
+                "name": "addProjectButton"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "add-project__btn",
+                    "configuration": [
+                        {
+                            "selectorName": "add-project__btn",
+                            "xs": {
+                                "parent-padding": "25px 0 15px 0"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-warning"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "OPEN_MODAL",
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-3",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": []
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "readOnlyValue": "false",
+                "disabledValue": "false"
+            }
+        }
+    ],
+    "dnd-3": [],
+    "dnd-4": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-5",
+                "name": "addVendorTitle"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "add-vendor-title",
+                    "configuration": [
+                        {
+                            "selectorName": "add-vendor-title",
+                            "xs": {
+                                "text-align": "center",
+                                "parent-font-size": "30px",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Add Vendor"
+        }
+    ]
+}
