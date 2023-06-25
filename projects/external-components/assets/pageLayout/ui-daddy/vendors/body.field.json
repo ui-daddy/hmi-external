@@ -357,9 +357,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
+                    "customClassName": "save-vendor",
+                    "configuration": [
+                        {
+                            "selectorName": "save-vendor",
+                            "xs": {
+                                "parent-padding-top": "30px",
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-warning"
                 },
                 "orientation": null
             },
