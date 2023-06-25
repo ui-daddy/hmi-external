@@ -96,7 +96,7 @@
                 "label": "Vendor Name"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "left",
                 "width": null,
                 "height": null,
                 "css": {
