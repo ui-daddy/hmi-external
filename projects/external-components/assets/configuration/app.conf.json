@@ -224,21 +224,6 @@
                     "showErrorMessage": false,
                     "actions": []
                 }
-            },
-            {
-                "name": "API Name2",
-                "url": "/test-app-api",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "onSuccess": {},
-                "onError": {},
-                "beforeSubmit": {
-                    "action": []
-                },
-                "downloadFileName": "",
-                "responseType": ""
             }
         ],
         "layoutProperties": {
