@@ -236,15 +236,24 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "vendor-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".vendor-modal-title",
+                            "xs": {
+                                "text-align": "center",
+                                "parent-font-size": "30px",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": "Add Vendor"
         },
         {
             "baseProperties": {
