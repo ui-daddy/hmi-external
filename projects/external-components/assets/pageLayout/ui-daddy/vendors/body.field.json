@@ -40,7 +40,7 @@
                             "fieldValue": "",
                             "messagetype": "",
                             "messageText": "",
-                            "target": "dnd-3",
+                            "target": "dnd-29",
                             "timer": null,
                             "formName": "",
                             "componentName": "",
@@ -412,6 +412,97 @@
                     ]
                 }
             ],
+            "expressionProperties": {}
+        }
+    ],
+    "dnd-29": [],
+    "dnd-30": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-31"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "vendor-modal-title",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Delete Vendor"
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-34"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Are you sure you want to delete vendor xyz?"
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-38"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "delete-vendor",
+                    "configuration": [
+                        {
+                            "selectorName": ".delete-vendor",
+                            "xs": {
+                                "padding": "30px",
+                                "parent-padding-top": "30px",
+                                "width": "50%"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-warning"
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-37",
+                "label": "Cancel"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "delete-vendor",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
             "expressionProperties": {}
         }
     ]
