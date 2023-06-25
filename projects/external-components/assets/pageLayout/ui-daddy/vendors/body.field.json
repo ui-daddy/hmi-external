@@ -60,35 +60,145 @@
     "dnd-4": [
         {
             "baseProperties": {
-                "type": "staticText",
-                "id": "dnd-5",
-                "name": "addVendorTitle"
+                "type": "text",
+                "id": "dnd-13",
+                "label": "Vendor Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "textarea",
+                "id": "dnd-12",
+                "label": "Vendor Address"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "tel",
+                "id": "dnd-11",
+                "label": "Phone Number"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-9",
+                "label": "Website"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-14",
+                "label": "Save Vendor"
             },
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "add-vendor-title",
-                    "configuration": [
-                        {
-                            "selectorName": "add-vendor-title",
-                            "xs": {
-                                "text-align": "center",
-                                "parent-font-size": "30px",
-                                "font-weight": "500"
-                            }
-                        }
-                    ],
+                    "customClassName": "",
+                    "configuration": [],
                     "themeClass": ""
                 },
                 "orientation": null
             },
-            "events": [],
-            "expressionProperties": {
-                "visibleValue": "true"
-            },
-            "value": "Add Vendor"
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": [
+                                {
+                                    "name": "AddVendor",
+                                    "url": "api/v1/vendor",
+                                    "method": "POST",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "onSuccess": {},
+                                    "onError": {},
+                                    "beforeSubmit": {
+                                        "action": []
+                                    },
+                                    "downloadFileName": "",
+                                    "responseType": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
         }
     ]
 }
