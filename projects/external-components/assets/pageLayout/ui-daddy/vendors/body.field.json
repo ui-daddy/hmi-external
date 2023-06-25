@@ -55,6 +55,13 @@
                 "readOnlyValue": "false",
                 "disabledValue": "false"
             }
+        },
+        {
+            "baseProperties": {
+                "type": "table",
+                "id": "dnd-28"
+            },
+            "layoutProperties": {}
         }
     ],
     "dnd-17": [],
