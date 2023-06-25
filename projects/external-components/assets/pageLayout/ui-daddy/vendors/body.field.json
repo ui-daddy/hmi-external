@@ -460,7 +460,8 @@
         {
             "baseProperties": {
                 "type": "submit",
-                "id": "dnd-38"
+                "id": "dnd-38",
+                "label": "Delete Vendor"
             },
             "layoutProperties": {
                 "labelPlacement": null,
