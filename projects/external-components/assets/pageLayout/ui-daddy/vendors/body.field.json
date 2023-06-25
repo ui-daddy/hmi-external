@@ -84,8 +84,10 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Edit Vendor"
         },
         {
             "baseProperties": {
@@ -136,7 +138,7 @@
                 "label": "Phone Number"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "left",
                 "width": null,
                 "height": null,
                 "css": {
@@ -157,7 +159,7 @@
                 "label": "Vendor Website"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "left",
                 "width": null,
                 "height": null,
                 "css": {
