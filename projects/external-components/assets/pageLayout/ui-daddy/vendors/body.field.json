@@ -360,7 +360,7 @@
                     "customClassName": "save-vendor",
                     "configuration": [
                         {
-                            "selectorName": "save-vendor",
+                            "selectorName": ".save-vendor",
                             "xs": {
                                 "parent-padding-top": "30px",
                                 "width": "100%"
