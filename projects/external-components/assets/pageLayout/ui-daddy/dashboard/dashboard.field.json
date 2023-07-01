@@ -557,7 +557,8 @@
               "rows": "5",
               "paginator": "true",
               "columnFilter": true,
-              "showExportExcel": true,
+              "showExportExcelBtn": true,
+              "showExportPdfBtn": true,          
               "columns": [
                 { "colName": "Project Name", "filterType": "multiselect", "accessor": "title", "colWidth": { "unit": "px", "value": 200 } }, 
                 { "colName": "Description", "filterType": "text", "accessor": "description", "colWidth": { "unit": "px", "value": 200 } },
