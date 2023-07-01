@@ -14,10 +14,10 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "add-project__btn",
+                    "customClassName": "add-vendor-btn",
                     "configuration": [
                         {
-                            "selectorName": "add-project__btn",
+                            "selectorName": ".add-vendor-btn",
                             "xs": {
                                 "parent-padding": "25px 0 15px 0"
                             }
