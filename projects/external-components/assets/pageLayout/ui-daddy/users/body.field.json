@@ -539,10 +539,12 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-25",
-                "name": "role"
+                "name": "role",
+                "label": "Role",
+                "formName": "editUserModal"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "left",
                 "width": null,
                 "height": null,
                 "css": {
@@ -554,6 +556,268 @@
             },
             "events": [],
             "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-28",
+                "name": "companyName",
+                "label": "Company Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-30",
+                "name": "given_name",
+                "label": "Given Name",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-31",
+                "name": "family_name",
+                "formName": "editUserModal",
+                "label": "Family Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "tel",
+                "id": "dnd-32",
+                "name": "mobile",
+                "label": "Mobile",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-33",
+                "name": "designation",
+                "formName": "editUserModal",
+                "label": "Designation"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-34",
+                "name": "empId",
+                "label": "Employee ID",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-35",
+                "name": "level",
+                "label": "Level",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-36",
+                "name": "userName",
+                "label": "Username",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "url",
+                "id": "dnd-38",
+                "name": "photoIdUrl",
+                "formName": "editUserModal",
+                "label": "User Photo"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "dnd-39",
+                "name": "email",
+                "label": "E-Mail",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "radio",
+                "id": "dnd-40",
+                "name": "email_verified",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": "horizontal"
+            },
+            "events": [],
+            "expressionProperties": {
+                "readOnlyValue": "true"
+            },
+            "optionList": null,
+            "displayKey": "email_verified",
+            "outputKey": null,
             "value": null
         },
         {
