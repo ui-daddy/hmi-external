@@ -357,9 +357,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
+                    "customClassName": "save-user",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-user",
+                            "xs": {
+                                "parent-padding-top": "30px",
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-warning"
                 },
                 "orientation": null
             },
@@ -478,11 +486,227 @@
                 }
             ],
             "expressionProperties": {}
+        }
+    ],
+    "dnd-21": [],
+    "dnd-22": [
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-26",
+                "name": "userId",
+                "label": "userId",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-24",
+                "formName": "editUserModal",
+                "name": "editUserModalTitle"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "user-modal-title",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Edit User"
         },
         {
             "baseProperties": {
                 "type": "text",
-                "id": "dnd-10"
+                "id": "dnd-25",
+                "name": "role"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-27",
+                "name": "saveUserBtn",
+                "formName": "editUserModal",
+                "label": "Save User"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "save-user",
+                    "configuration": [],
+                    "themeClass": "btn-warning"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Edit User",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Create'",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "role",
+                                        "mappedField": "role",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyName",
+                                        "mappedField": "companyName",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "userId",
+                                        "mappedField": "userId",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "given_name",
+                                        "mappedField": "given_name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "family_name",
+                                        "mappedField": "family_name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "mobile",
+                                        "mappedField": "mobile",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "designation",
+                                        "mappedField": "designation",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "empId",
+                                        "mappedField": "empId",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "level",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "userName",
+                                        "mappedField": "userName",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photoIdUrl",
+                                        "mappedField": "photoIdUrl",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "fileUploadUrl",
+                                        "mappedField": "fileUploadUrl",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "email",
+                                        "mappedField": "email",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "email_verified",
+                                        "mappedField": "email_verified",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                },
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "downloadFileName": "",
+                                "responseType": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-23"
             },
             "layoutProperties": {}
         }
