@@ -1,0 +1,149 @@
+{
+    "dnd-0": [],
+    "dnd-1": [],
+    "dnd-2": [
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-3",
+                "label": "Add User"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "add-user-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".add-user-btn",
+                            "xs": {
+                                "parent-padding": "25px 0 15px 0"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-warning"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "OPEN_MODAL",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-5",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "readOnlyValue": "false",
+                "disabledValue": "false"
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "table",
+                "id": "dnd-4"
+            },
+            "layoutProperties": {}
+        }
+    ],
+    "dnd-5": [],
+    "dnd-7": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-8",
+                "name": "addUserTitile",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "user-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".user-modal-title",
+                            "xs": {
+                                "text-align": "center",
+                                "parent-font-size": "30px",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Add User"
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-14"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-13"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-12"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-11"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-9"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-15"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-10"
+            },
+            "layoutProperties": {}
+        }
+    ]
+}
