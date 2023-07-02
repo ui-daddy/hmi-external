@@ -15,8 +15,5 @@
     "primeicons": "^4.1.0",
     "primeng": "^14.2.3",
     "tslib": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/file-saver": "2.0.5"
   }
 }
