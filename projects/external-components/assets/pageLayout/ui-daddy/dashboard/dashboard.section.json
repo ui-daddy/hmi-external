@@ -1,116 +1,121 @@
 {
     "layout": [
-      {
-        "id": "add-project-section",
-        "type": "form",
-        "layout": {
-          "column" : {
-            "count": 1,
-            "ratio": {
-              "lg": "12",
-              "md": "12",
-              "sm": "12",
-              "xs": "12"
-            },
-            "autoPlace": "false"
-          }
-        },
-        "sectionList": [
         {
-          "id": "project-list",
-          "type": "content",
-          "layout": {
-            "css": {
-              "customClassName": "hmi-section-card"
-            },
-            "column":{
-              "count": 2,
-              "ratio": {
-                "lg": "12",
-                "md": "12",
-                "sm": "12",
-                "xs": "12"
-              },
-              "autoPlace": "false"
-            }
-          }
-        },
-        {
-          "id": "add-project-modal",
-          "type": "modal",
-          "layout": {
-            "css": {
-              "customClassName": ""
-            },
-            "column":{
-              "count": 2,
-              "ratio": {
-                "lg": "12",
-                "md": "12",
-                "sm": "12",
-                "xs": "12"
-              },
-              "autoPlace": "false"
-            }
-          },
-          "sectionList": [{
-            "id": "add-project-modal-content",
-            "type": "content",
+            "id": "add-project-section",
+            "type": "form",
             "layout": {
-              "css": {
-                "customClassName": ""
-              },
-              "column":{
-                "count": 2,
-                "ratio": {
-                  "lg": "12",
-                  "md": "12",
-                  "sm": "12",
-                  "xs": "12"
-                },
-                "autoPlace": "false"
-              }
-            }
-          }]
-        },
-        {
-          "id": "edit-project-modal",
-          "type": "modal",
-          "layout": {
-            "css": {
-              "customClassName": ""
+                "column": {
+                    "count": 1,
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "autoPlace": "false"
+                }
             },
-            "column":{
-              "count": 2,
-              "ratio": {
-                "lg": "12",
-                "md": "12",
-                "sm": "12",
-                "xs": "12"
-              },
-              "autoPlace": "false"
-            }
-          },
-          "sectionList": [{
-            "id": "edit-project-modal-content",
-            "type": "content",
-            "layout": {
-              "css": {
-                "customClassName": ""
-              },
-              "column":{
-                "count": 2,
-                "ratio": {
-                  "lg": "12",
-                  "md": "12",
-                  "sm": "12",
-                  "xs": "12"
+            "sectionList": [
+                {
+                    "id": "project-list",
+                    "type": "content",
+                    "layout": {
+                        "css": {
+                            "customClassName": "hmi-section-card"
+                        },
+                        "column": {
+                            "count": 2,
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "autoPlace": "false"
+                        }
+                    }
                 },
-                "autoPlace": "false"
-              }
-            }
-          }]
+                {
+                    "id": "add-project-modal",
+                    "type": "modal",
+                    "layout": {
+                        "css": {
+                            "customClassName": ""
+                        },
+                        "column": {
+                            "count": 2,
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "autoPlace": "false"
+                        }
+                    },
+                    "sectionList": [
+                        {
+                            "id": "add-project-modal-content",
+                            "type": "content",
+                            "layout": {
+                                "css": {
+                                    "customClassName": ""
+                                },
+                                "column": {
+                                    "count": 2,
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "autoPlace": "false"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "edit-project-modal",
+                    "type": "modal",
+                    "layout": {
+                        "css": {
+                            "customClassName": ""
+                        },
+                        "column": {
+                            "count": 2,
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "autoPlace": "false"
+                        }
+                    },
+                    "sectionList": [
+                        {
+                            "id": "edit-project-modal-content",
+                            "type": "content",
+                            "layout": {
+                                "css": {
+                                    "customClassName": ""
+                                },
+                                "column": {
+                                    "count": 2,
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "autoPlace": "false"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }]
+    ]
 }
