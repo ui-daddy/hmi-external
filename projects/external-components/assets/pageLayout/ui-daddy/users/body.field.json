@@ -99,16 +99,52 @@
         {
             "baseProperties": {
                 "type": "text",
-                "id": "dnd-14"
+                "id": "dnd-14",
+                "formName": "addUserModal",
+                "label": "Role",
+                "name": "role"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
         },
         {
             "baseProperties": {
                 "type": "text",
-                "id": "dnd-13"
+                "id": "dnd-13",
+                "name": "companyName",
+                "label": "Company Name",
+                "formName": "addUserModal"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visibleValue": "true",
+                "readOnlyValue": "false"
+            },
+            "value": null
         },
         {
             "baseProperties": {
