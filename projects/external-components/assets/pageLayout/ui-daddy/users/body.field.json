@@ -39,7 +39,7 @@
                             "fieldValue": "",
                             "messagetype": "",
                             "messageText": "",
-                            "target": "dnd-5",
+                            "target": "dnd-42",
                             "timer": null,
                             "formName": "",
                             "componentName": "",
@@ -63,432 +63,7 @@
             "layoutProperties": {}
         }
     ],
-    "dnd-5": [],
-    "dnd-7": [
-        {
-            "baseProperties": {
-                "type": "staticText",
-                "id": "dnd-8",
-                "name": "addUserTitile",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "user-modal-title",
-                    "configuration": [
-                        {
-                            "selectorName": ".user-modal-title",
-                            "xs": {
-                                "text-align": "center",
-                                "parent-font-size": "30px",
-                                "font-weight": "500"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Add User"
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-14",
-                "formName": "addUserModal",
-                "label": "Role",
-                "name": "role"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-13",
-                "name": "companyName",
-                "label": "Company Name",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visibleValue": "true",
-                "readOnlyValue": "false"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-12",
-                "formName": "addUserModal",
-                "name": "given_name",
-                "label": "Given Name"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-11",
-                "name": "family_name",
-                "formName": "addUserModal",
-                "label": "Family Name"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "tel",
-                "id": "dnd-16",
-                "name": "mobile",
-                "label": "Mobile",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-9",
-                "name": "designation",
-                "label": "Designation",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-15",
-                "name": "level",
-                "formName": "addUserModal",
-                "label": "Level"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "false"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-18",
-                "name": "userName",
-                "label": "Username",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "email",
-                "id": "dnd-17",
-                "name": "email",
-                "label": "E-Mail",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "url",
-                "id": "dnd-19",
-                "name": "photoIdUrl",
-                "label": "Photo Id",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "false"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "submit",
-                "id": "dnd-20",
-                "name": "submitUser",
-                "label": "Save",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "save-user",
-                    "configuration": [
-                        {
-                            "selectorName": ".save-user",
-                            "xs": {
-                                "parent-padding-top": "30px",
-                                "width": "100%"
-                            }
-                        }
-                    ],
-                    "themeClass": "btn-warning"
-                },
-                "orientation": null
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "INVOKE_API",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "",
-                            "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": {
-                                "name": "Add User",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Create",
-                                "method": "POST",
-                                "pathParams": [],
-                                "queryParams": [],
-                                "payloadParams": [
-                                    {
-                                        "paramName": "role",
-                                        "mappedField": "role",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "companyName",
-                                        "mappedField": "companyName",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "given_name",
-                                        "mappedField": "given_name",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "family_name",
-                                        "mappedField": "family_name",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "mobile",
-                                        "mappedField": "mobile",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "designation",
-                                        "mappedField": "designation",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "empId",
-                                        "mappedField": "empId",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "level",
-                                        "mappedField": "level",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "userName",
-                                        "mappedField": "userName",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "photoIdUrl",
-                                        "mappedField": "photoIdUrl",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "fileUploadUrl",
-                                        "mappedField": "fileUploadUrl",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "email",
-                                        "mappedField": "email",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    }
-                                ],
-                                "onSuccess": {
-                                    "showSuccessMessage": true
-                                },
-                                "onError": {
-                                    "showErrorMessage": true
-                                },
-                                "beforeSubmit": {
-                                    "action": []
-                                },
-                                "downloadFileName": "",
-                                "responseType": ""
-                            }
-                        }
-                    ]
-                }
-            ],
-            "expressionProperties": {}
-        }
-    ],
-    "dnd-21": [],
+    "dnd-43": [],
     "dnd-22": [
         {
             "baseProperties": {
@@ -973,6 +548,431 @@
                 "id": "dnd-23"
             },
             "layoutProperties": {}
+        }
+    ],
+    "dnd-42": [],
+    "dnd-7": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-8",
+                "name": "addUserTitile",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "user-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".user-modal-title",
+                            "xs": {
+                                "text-align": "center",
+                                "parent-font-size": "30px",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Add User"
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-14",
+                "formName": "addUserModal",
+                "label": "Role",
+                "name": "role"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-13",
+                "name": "companyName",
+                "label": "Company Name",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visibleValue": "true",
+                "readOnlyValue": "false"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-12",
+                "formName": "addUserModal",
+                "name": "given_name",
+                "label": "Given Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-11",
+                "name": "family_name",
+                "formName": "addUserModal",
+                "label": "Family Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "tel",
+                "id": "dnd-16",
+                "name": "mobile",
+                "label": "Mobile",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-9",
+                "name": "designation",
+                "label": "Designation",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-15",
+                "name": "level",
+                "formName": "addUserModal",
+                "label": "Level"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "false"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-18",
+                "name": "userName",
+                "label": "Username",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "dnd-17",
+                "name": "email",
+                "label": "E-Mail",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "url",
+                "id": "dnd-19",
+                "name": "photoIdUrl",
+                "label": "Photo Id",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "false"
+            },
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-20",
+                "name": "submitUser",
+                "label": "Save",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "save-user",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-user",
+                            "xs": {
+                                "parent-padding-top": "30px",
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-warning"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Add User",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Create",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "role",
+                                        "mappedField": "role",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyName",
+                                        "mappedField": "companyName",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "given_name",
+                                        "mappedField": "given_name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "family_name",
+                                        "mappedField": "family_name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "mobile",
+                                        "mappedField": "mobile",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "designation",
+                                        "mappedField": "designation",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "empId",
+                                        "mappedField": "empId",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "level",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "userName",
+                                        "mappedField": "userName",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photoIdUrl",
+                                        "mappedField": "photoIdUrl",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "fileUploadUrl",
+                                        "mappedField": "fileUploadUrl",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "email",
+                                        "mappedField": "email",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                },
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "downloadFileName": "",
+                                "responseType": ""
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
         }
     ]
 }
