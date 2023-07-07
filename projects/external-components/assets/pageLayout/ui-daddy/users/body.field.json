@@ -896,13 +896,13 @@
                                         "valueFormat": ""
                                     },
                                     {
-                                        "paramName": "given_name",
+                                        "paramName": "givenName",
                                         "mappedField": "given_name",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
-                                        "paramName": "family_name",
+                                        "paramName": "familyName",
                                         "mappedField": "family_name",
                                         "mappedValue": "",
                                         "valueFormat": ""
@@ -956,17 +956,33 @@
                                         "valueFormat": ""
                                     }
                                 ],
-                                "onSuccess": {
-                                    "showSuccessMessage": true
-                                },
-                                "onError": {
-                                    "showErrorMessage": true
-                                },
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
                                 "beforeSubmit": {
                                     "action": []
                                 },
-                                "downloadFileName": "",
-                                "responseType": ""
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
                             }
                         }
                     ]
