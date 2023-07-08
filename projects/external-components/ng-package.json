@@ -4,6 +4,6 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": ["primeng", "primeicons", "chart.js"],
+  "allowedNonPeerDependencies": ["jspdf", "jspdf-autotable", "file-saver", "xlsx", "primeng", "primeicons", "chart.js"],
   "assets": ["styles.scss", "./assets"]
 }

@@ -1,0 +1,63 @@
+{
+    "layout": [
+        {
+            "id": "loginForm",
+            "type": "form",
+            "layout": {
+                "css": {
+                    "customClassName": "section-card__center login-section-card__opaque",
+                    "configuration": {
+                        "selectorName": ".login-section-card__opaque",
+                        "xs": {
+                            "opacity": 0.5
+                        }
+                    }
+                },
+                "column": {
+                    "count": 1,
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "autoPlace": "false"
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "loginInfo",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 4,
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "autoPlace": "false"
+                        }
+                    }
+                },
+                {
+                    "id": "loginButtons",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 2,
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "autoPlace": "false"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

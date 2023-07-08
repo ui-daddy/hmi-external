@@ -2,35 +2,41 @@
     "iframe": {
         "headerSection": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/header.section.json"
         },
         "headerField": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/header.field.json"
         },
         "field": {
             "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/iframe/iframe.field.json"
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/body.field.json"
         },
         "section": {
             "fetchFromLocal": true,
-            "serverURL": "",
-            "localURL": "./assets/pageLayout/ui-daddy/iframe/iframe.section.json"
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/body.section.json"
         },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/body.data.json"
+        },      
         "footerSection": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/footer",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/footer.section.json"
         },
         "footerField": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/footer/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/footer.field.json"
         },
-        "globalPageSettings": {
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/iframe/nav.field.json"
+        },
+        "navSection": {
+           "fetchFromLocal": true,
+           "localURL": "./assets/pageLayout/ui-daddy/iframe/nav.section.json"
+       },
+            "globalPageSettings": {
             "title": "Login",
             "layoutProperties": {
                 "css": {}
@@ -40,39 +46,41 @@
     "login": {
         "headerSection": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/login/header.section.json"
         },
         "headerField": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/login/header.field.json"
         },
         "field": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.field",
-            "localURL": "./assets/pageLayout/ui-daddy/login/login.field.json"
+            "localURL": "./assets/pageLayout/ui-daddy/login/body.field.json"
         },
         "section": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.section",
-            "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json"
+            "localURL": "./assets/pageLayout/ui-daddy/login/body.section.json"
         },
         "data": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.data",
-            "localURL": ""
-        },
+            "localURL": "./assets/pageLayout/ui-daddy/login/body.data.json"
+        },        
         "footerSection": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/footer",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/login/footer.section.json"
         },
         "footerField": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/footer/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/login/footer.field.json"
+        }, 
+        "navSection": {
+           "fetchFromLocal": true,
+           "localURL": "./assets/pageLayout/ui-daddy/login/nav.section.json"
+       },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login/nav.field.json"
         },
+
         "authGuardConfig": {
             "conditions": [
                 {
@@ -95,45 +103,94 @@
                         }
                     }
                 }
-            }
+            }           
+        }
+    },
+    "dashboard": {
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/header.section.json"
+        },
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/header.field.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/body.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/body.data.json"
+        },        
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/footer.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/footer.field.json"
+        },  
+        "navSection": {
+           "fetchFromLocal": true,
+           "localURL": "./assets/pageLayout/ui-daddy/dashboard/nav.section.json"
+       },    
+       "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard/nav.field.json"
+        },  
+        "authGuardConfig": {
+            "conditions": [{
+                "if": "authenticated != 'yes'",
+                "onConditionSuccess": "login"
+            }],
+            "enabled": true
+        },
+        "globalPageSettings": {
+            "title": "Projects"         
         }
     },
     "forget-password": {
         "headerSection": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/header.section.json"
         },
         "headerField": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/header.field.json"
         },
         "field": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.field",
-            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.field.json"
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/body.field.json"
         },
         "section": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.section",
-            "localURL": "./assets/pageLayout/ui-daddy/forget-password/forget-password.section.json"
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/body.section.json"
         },
         "data": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/forgotPasword.data",
-            "localURL": ""
-        },
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/body.data.json"
+        },        
         "footerSection": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/footer",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/footer.section.json"
         },
         "footerField": {
             "fetchFromLocal": true,
-            "serverURL": "/api/section/footer/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/footer.field.json"
         },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/nav.section.json"
+        },  
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/forget-password/nav.field.json"
+        },  
         "globalPageSettings": {
             "title": "Forget Password",
             "layoutProperties": {

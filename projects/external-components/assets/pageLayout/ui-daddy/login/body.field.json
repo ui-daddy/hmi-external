@@ -54,23 +54,21 @@
             ],
             "events": [
                 {
-                   "event": "",
-                    "actions" :[ 
-                           {
-                               "actionType" : "setfield",
-                               "field" : "$password$",
-                               "fieldValue": "$userName$"
-
-                           },
-                           {
-                            "actionType" : "setfield",
-                            "field" : "$password$",
+                    "event": "",
+                    "actions": [
+                        {
+                            "actionType": "setfield",
+                            "field": "$password$",
                             "fieldValue": "$userName$"
-                            }
+                        },
+                        {
+                            "actionType": "setfield",
+                            "field": "$password$",
+                            "fieldValue": "$userName$"
+                        }
                     ],
                     "debounce": 3000
                 }
-
             ]
         },
         {
@@ -116,7 +114,7 @@
                         }
                     }
                 }
-            },            
+            },
             "expressionProperties": {
                 "requiredValue": true,
                 "required": "",
@@ -129,29 +127,29 @@
             },
             "events": [
                 {
-                   "event": "click",
-                    "actions" :[ 
-                           {
-                               "actionType" : "INVOKE_API",
-                                "showLoading": true,
-                                "apiConfig": {
-                                    "name": "loginButtonApi",
-                                    "url": "https://upms-api.azurewebsites.net/api/v1/useraccount",
-                                    "method": "POST",
-                                    "isApplicationSessionAPI": true,
-                                    "payloadParams": [
-                                        {
-                                            "paramName": "UserName",
-                                            "mappedField": "email"
-                                        },
-                                        {
-                                            "paramName": "Password",
-                                            "mappedField": "password"
-                                        }
-                                    ],
-                                    "onSuccess": {
-                                        "pageUrl": "/dashboard",
-                                        "sharedData": [
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "showLoading": true,
+                            "apiConfig": {
+                                "name": "loginButtonApi",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Login",
+                                "method": "POST",
+                                "isApplicationSessionAPI": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "username",
+                                        "mappedField": "email"
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "password"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "pageUrl": "/dashboard",
+                                    "sharedData": [
                                         {
                                             "varName": "name",
                                             "responseAccessor": "firstName",
@@ -161,24 +159,31 @@
                                             "varName": "surname",
                                             "responseAccessor": "lastName",
                                             "cache": true
-                                        }, {
+                                        },
+                                        {
                                             "varName": "authenticated",
                                             "staticData": "yes",
                                             "cache": true
-                                        }],
-                                        "clearSharedData": ["name", "authenticated"]
-                                    },
-                                    "onError": {
-                                      "showErrorMessage": true,
-                                      "clearSharedData": ["name", "authenticated"]
-                                    }
+                                        }
+                                    ],
+                                    "clearSharedData": [
+                                        "name",
+                                        "authenticated"
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true,
+                                    "clearSharedData": [
+                                        "name",
+                                        "authenticated"
+                                    ]
                                 }
-                           }
+                            }
+                        }
                     ],
                     "debounce": 3000
                 }
             ]
-            
         },
         {
             "baseProperties": {
@@ -197,7 +202,7 @@
                         "selectorName": ".login__forgot-link",
                         "xs": {
                             "parent-margin": "10px",
-                            "parent-justify-content":"center"
+                            "parent-justify-content": "center"
                         }
                     }
                 }
