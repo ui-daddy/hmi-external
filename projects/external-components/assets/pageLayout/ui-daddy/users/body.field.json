@@ -638,7 +638,7 @@
                 "type": "text",
                 "id": "dnd-12",
                 "formName": "addUserModal",
-                "name": "given_name",
+                "name": "givenName",
                 "label": "Given Name"
             },
             "layoutProperties": {
@@ -656,13 +656,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-11",
-                "name": "family_name",
+                "name": "familyName",
                 "formName": "addUserModal",
                 "label": "Family Name"
             },
@@ -679,7 +680,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -704,7 +706,32 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-44",
+                "name": "empId",
+                "formName": "addUserModal",
+                "label": "Employee ID"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -808,6 +835,30 @@
         },
         {
             "baseProperties": {
+                "type": "password",
+                "id": "dnd-45",
+                "name": "password",
+                "formName": "addUserModal",
+                "label": "Password"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "url",
                 "id": "dnd-19",
                 "name": "photoIdUrl",
@@ -897,13 +948,13 @@
                                     },
                                     {
                                         "paramName": "givenName",
-                                        "mappedField": "given_name",
+                                        "mappedField": "givenName",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "familyName",
-                                        "mappedField": "family_name",
+                                        "mappedField": "familyName",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
@@ -952,6 +1003,12 @@
                                     {
                                         "paramName": "email",
                                         "mappedField": "email",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "password",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
