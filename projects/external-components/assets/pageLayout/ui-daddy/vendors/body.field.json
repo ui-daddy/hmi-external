@@ -424,14 +424,12 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "UpdateVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:vendorId",
-                                "method": "PUT",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:id",
+                                "method": "PATCH",
                                 "pathParams": [
                                     {
-                                        "paramName": "vendorId",
-                                        "mappedField": "id",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
+                                        "paramName": "id",
+                                        "mappedField": "id"
                                     }
                                 ],
                                 "queryParams": [],
