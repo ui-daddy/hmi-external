@@ -196,7 +196,7 @@
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
-                                            "componentName": "dnd-2"
+                                            "componentName": "dnd-39"
                                         }
                                     ]
                                 },
@@ -225,7 +225,7 @@
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
-                        "apiDataAccessor": "payload"
+                        "apiDataAccessor": ""
                     }
                 },
                 "columnFilter": true,
@@ -651,8 +651,39 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor added successfully. Please refresh Vendor table.",
-                                    "actions": []
+                                    "message": "Vendor added successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-39",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-3",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
                                 },
                                 "onError": {
                                     "pageUrl": "",
