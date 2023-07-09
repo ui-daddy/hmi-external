@@ -710,13 +710,6 @@
                 }
             ],
             "expressionProperties": {}
-        },
-        {
-            "baseProperties": {
-                "type": "button",
-                "id": "dnd-23"
-            },
-            "layoutProperties": {}
         }
     ],
     "dnd-42": [],
