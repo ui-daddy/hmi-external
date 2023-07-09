@@ -197,7 +197,7 @@
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
-                                            "target": "dnd-39"
+                                            "componentName": "dnd-39"
                                         }
                                     ]
                                 },
@@ -474,38 +474,7 @@
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
                                     "message": "Vendor updated successfully.",
-                                    "actions": [
-                                        {
-                                            "actionType": "RELOAD_COMPONENT_DATA",
-                                            "url": "",
-                                            "condition": "",
-                                            "field": "",
-                                            "fieldValue": "",
-                                            "messagetype": "",
-                                            "messageText": "",
-                                            "target": "dnd-39",
-                                            "timer": null,
-                                            "formName": "",
-                                            "componentName": "",
-                                            "sharedData": [],
-                                            "apiConfig": null
-                                        },
-                                        {
-                                            "actionType": "CLOSE_MODAL",
-                                            "url": "",
-                                            "condition": "",
-                                            "field": "",
-                                            "fieldValue": "",
-                                            "messagetype": "",
-                                            "messageText": "",
-                                            "target": "dnd-17",
-                                            "timer": null,
-                                            "formName": "",
-                                            "componentName": "",
-                                            "sharedData": [],
-                                            "apiConfig": null
-                                        }
-                                    ]
+                                    "actions": []
                                 },
                                 "onError": {
                                     "pageUrl": "",
