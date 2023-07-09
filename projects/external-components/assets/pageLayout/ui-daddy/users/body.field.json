@@ -170,49 +170,70 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-32$",
+                                        "field": "$dnd-31$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.familyName",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-31$",
+                                        "field": "$dnd-32$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.mobile",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$id$",
+                                        "field": "$dnd-26$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.id",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$designation$",
+                                        "field": "$dnd-33$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.designation",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$level$",
+                                        "field": "$dnd-34$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.empId",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-35$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.level",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$email$",
+                                        "field": "$dnd-36$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.userName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-38$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.photo",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-39$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.email",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$empId$",
+                                        "field": "$dnd-34$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.empId",
                                         "condition": "true",
                                         "formName": "editUserModal"
@@ -489,7 +510,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -535,13 +557,14 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "url",
                 "id": "dnd-38",
-                "name": "photoIdUrl",
+                "name": "photo",
                 "formName": "editUserModal",
                 "label": "User Photo"
             },
@@ -558,7 +581,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
