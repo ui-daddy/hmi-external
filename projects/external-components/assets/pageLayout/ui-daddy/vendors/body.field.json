@@ -40,12 +40,44 @@
                             "fieldValue": "",
                             "messagetype": "",
                             "messageText": "",
-                            "target": "dnd-29",
+                            "target": "dnd-17",
                             "timer": null,
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": []
+                            "apiConfig": {
+                                "name": "",
+                                "url": "",
+                                "method": "",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
+                            }
                         }
                     ]
                 }
