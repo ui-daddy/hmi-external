@@ -291,7 +291,7 @@
                 "type": "text",
                 "id": "dnd-22",
                 "label": "Vendor Name",
-                "name": "name"
+                "name": "editName"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -436,7 +436,7 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "name",
-                                        "mappedField": "name",
+                                        "mappedField": "editName",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
