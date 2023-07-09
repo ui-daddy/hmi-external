@@ -58,10 +58,11 @@
         {
             "baseProperties": {
                 "type": "dynamicField",
-                "id": "dnd-47"
+                "id": "dnd-47",
+                "name": "userList"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "top",
                 "width": null,
                 "height": null,
                 "css": {
@@ -73,7 +74,9 @@
             },
             "libraryComponent": "TableExternalComponent",
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
             "customAttributes": {
                 "columns": [
                     {
