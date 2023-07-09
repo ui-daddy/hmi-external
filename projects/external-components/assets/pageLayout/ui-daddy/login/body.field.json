@@ -148,7 +148,7 @@
                                     }
                                 ],
                                 "onSuccess": {
-                                    "pageUrl": "/dashboard",
+                                    "pageUrl": "/users",
                                     "sharedData": [
                                         {
                                             "varName": "name",
