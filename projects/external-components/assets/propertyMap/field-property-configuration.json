@@ -82,6 +82,12 @@
                 "defaultValueMapping": "showExportPdfBtn",
                 "type": "checkbox",
                 "label": "Show Export PDF Button"
+            },
+            {
+                "propertyName": "showPrintPreviewBtn",
+                "defaultValueMapping": "showPrintPreviewBtn",
+                "type": "checkbox",
+                "label": "Show PDF Print Preview"
             }
           ]        
     },
