@@ -163,15 +163,22 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$givenName$",
+                                        "field": "$dnd-30$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.givenName",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$familyName$",
+                                        "field": "$dnd-32$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.familyName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-31$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.mobile",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
@@ -212,8 +219,15 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$role$",
+                                        "field": "$dnd-25$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.role",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-28$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyName",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     }
@@ -351,13 +365,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-30",
-                "name": "given_name",
+                "name": "givenName",
                 "label": "Given Name",
                 "formName": "editUserModal"
             },
@@ -376,13 +391,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-31",
-                "name": "family_name",
+                "name": "familyName",
                 "formName": "editUserModal",
                 "label": "Family Name"
             },
@@ -399,7 +415,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -422,7 +439,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -447,7 +465,8 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
