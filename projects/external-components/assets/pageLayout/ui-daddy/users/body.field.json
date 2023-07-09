@@ -116,12 +116,12 @@
                         }
                     },
                     {
-                        "colName": "Level",
+                        "colName": "Company",
                         "filterType": "multiselect",
-                        "accessor": "level",
+                        "accessor": "companyName",
                         "colWidth": {
                             "unit": "px",
-                            "value": 50
+                            "value": 100
                         }
                     },
                     {
