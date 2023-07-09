@@ -591,23 +591,46 @@
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": [
-                                {
-                                    "name": "AddVendor",
-                                    "url": "api/v1/vendor",
-                                    "method": "POST",
-                                    "pathParams": [],
-                                    "queryParams": [],
-                                    "payloadParams": [],
-                                    "onSuccess": {},
-                                    "onError": {},
-                                    "beforeSubmit": {
-                                        "action": []
-                                    },
-                                    "downloadFileName": "",
-                                    "responseType": ""
+                            "apiConfig": {
+                                "name": "AddVendor",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Create",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "name",
+                                        "mappedField": "name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Vendor added successfully. Please refresh Vendor table.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while adding vendor.",
+                                    "showErrorMessage": true,
+                                    "actions": []
                                 }
-                            ]
+                            }
                         }
                     ]
                 }
