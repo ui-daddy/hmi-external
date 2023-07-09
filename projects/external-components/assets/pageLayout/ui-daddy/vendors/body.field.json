@@ -426,7 +426,14 @@
                                 "name": "UpdateVendor",
                                 "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:vendorId",
                                 "method": "PUT",
-                                "pathParams": [],
+                                "pathParams": [
+                                    {
+                                        "paramName": "vendorId",
+                                        "mappedField": "id",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
