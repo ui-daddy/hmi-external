@@ -151,7 +151,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "loginButtonApi",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Login",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Login/Login",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
