@@ -193,7 +193,7 @@
                                 "onSuccess": {
                                     "deleteTableRow": false,
                                     "showSuccessMessage": true,
-                                    "message": "Vendor deleted successfully.",
+                                    "message": "Vendor deleted successfully. Please refresh the below table to see the changes.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
@@ -473,8 +473,40 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor updated successfully.",
-                                    "actions": []
+                                    "message": "Vendor updated successfully. Please refresh the below table to see the changes.",
+                                    
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-39",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-17",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
                                 },
                                 "onError": {
                                     "pageUrl": "",
@@ -699,7 +731,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor added successfully.",
+                                    "message": "Vendor added successfully. Please refresh the below table to see the changes.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
