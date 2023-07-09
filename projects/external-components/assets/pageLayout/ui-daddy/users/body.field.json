@@ -632,13 +632,13 @@
                     "debounce": null,
                     "actions": [
                         {
-                            "actionType": "INVOKE_API",
+                            "actionType": "message",
                             "url": "",
                             "condition": "1==1",
                             "field": "",
                             "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
+                            "messagetype": "Success",
+                            "messageText": "User updated successfully",
                             "target": "",
                             "timer": null,
                             "formName": "",
@@ -736,17 +736,33 @@
                                         "valueFormat": ""
                                     }
                                 ],
-                                "onSuccess": {
-                                    "showSuccessMessage": true
-                                },
-                                "onError": {
-                                    "showErrorMessage": true
-                                },
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
                                 "beforeSubmit": {
                                     "action": []
                                 },
-                                "downloadFileName": "",
-                                "responseType": ""
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
                             }
                         }
                     ]
