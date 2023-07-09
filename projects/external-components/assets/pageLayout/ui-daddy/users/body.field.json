@@ -57,10 +57,197 @@
         },
         {
             "baseProperties": {
-                "type": "table",
-                "id": "dnd-4"
+                "type": "dynamicField",
+                "id": "dnd-47"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Given Name",
+                        "filterType": "text",
+                        "accessor": "givenName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Family Name",
+                        "accessor": "familyName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Designation",
+                        "filterType": "multiselect",
+                        "accessor": "designation",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "E-Mail",
+                        "filterType": "multiselect",
+                        "accessor": "email",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Level",
+                        "filterType": "multiselect",
+                        "accessor": "level",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "EmpId",
+                        "filterType": "text",
+                        "accessor": "empId",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Edit User",
+                        "title": "Edit User",
+                        "html": "<i class='fas fa-edit'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "events": [
+                            {
+                                "event": "",
+                                "actions": [
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-43"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "SET_SHARED_DATA",
+                                        "sharedData": [
+                                            {
+                                                "varName": "tableRowData",
+                                                "staticData": "$ROW_DATA$"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$givenName$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.givenName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$familyName$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.familyName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$id$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$designation$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.designation",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$level$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.level",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$email$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.email",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$empId$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.empId",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$role$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.role",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    }
+                                ],
+                                "debounce": 3000
+                            }
+                        ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    }
+                ],
+                "caption": "Users",
+                "summary": null,
+                "globalFilterFields": [
+                    "givenName",
+                    "familyName",
+                    "designation",
+                    "userName",
+                    "email"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": null,
+                "dataConfig": {
+                    "name": "userList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Employee/List",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": "payload"
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true
+            }
         }
     ],
     "dnd-43": [],
