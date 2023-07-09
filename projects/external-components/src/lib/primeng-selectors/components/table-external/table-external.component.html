@@ -1,4 +1,4 @@
-<p-table [attr.id]="'tableExternal'" #primeElement [value]="data">
+<p-table [attr.id]="'tableExternal-'+fieldObj.baseProperties.id" #primeElement [value]="data">
     <ng-template pTemplate="caption" *ngIf="fieldObj.customAttributes.caption">
         <div class="table-header">
             <span class="table-header-caption">{{fieldObj.customAttributes.caption}}</span>

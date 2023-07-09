@@ -103,7 +103,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
 
   printPreview() {
     // Add a CSS class to the element you want to print
-    const originalElement = document.getElementById('tableExternal');
+    const originalElement = document.getElementById('tableExternal-'+this.fieldObj.baseProperties.id);
     const newWindow = window.open('', '_open');
     if (originalElement && newWindow) {
         newWindow.document.write('<link rel="stylesheet" type="text/css" href="styles.css" onload="onCssLoad()">');
