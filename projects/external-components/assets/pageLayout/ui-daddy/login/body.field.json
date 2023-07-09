@@ -103,23 +103,17 @@
                 "label": "Login"
             },
             "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
                 "css": {
+                    "themeClass": "btn-warning",
                     "customClassName": "login__btn",
-                    "configuration": [
-                        {
-                            "selectorName": ".login__btn",
-                            "xs": {
-                                "width": "100%",
-                                "parent-margin-top": "20px"
-                            }
+                    "configuration": {
+                        "selectorName": ".login__btn",
+                        "xs": {
+                            "width": "100%",
+                            "parent-margin-top": "20px"
                         }
-                    ],
-                    "themeClass": "btn-warning"
-                },
-                "orientation": null
+                    }
+                }
             },
             "expressionProperties": {
                 "requiredValue": true,
@@ -134,27 +128,15 @@
             "events": [
                 {
                     "event": "click",
-                    "debounce": 3000,
                     "actions": [
                         {
                             "actionType": "INVOKE_API",
-                            "url": "",
-                            "condition": "",
-                            "field": "",
-                            "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [],
+                            "showLoading": true,
                             "apiConfig": {
                                 "name": "loginButtonApi",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Login/Login",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Login",
                                 "method": "POST",
-                                "pathParams": [],
-                                "queryParams": [],
+                                "isApplicationSessionAPI": true,
                                 "payloadParams": [
                                     {
                                         "paramName": "username",
@@ -165,14 +147,8 @@
                                         "mappedField": "password"
                                     }
                                 ],
-                                "fetch": "",
-                                "downloadFileName": "",
-                                "responseType": "",
-                                "beforeSubmit": null,
                                 "onSuccess": {
                                     "pageUrl": "/users",
-                                    "deleteTableRow": false,
-                                    "showSuccessMessage": false,
                                     "sharedData": [
                                         {
                                             "varName": "name",
@@ -190,31 +166,22 @@
                                             "cache": true
                                         }
                                     ],
-                                    "fieldData": [],
                                     "clearSharedData": [
                                         "name",
                                         "authenticated"
-                                    ],
-                                    "apiDataAccessor": "",
-                                    "message": "",
-                                    "actions": []
+                                    ]
                                 },
                                 "onError": {
-                                    "pageUrl": "",
-                                    "sharedData": [],
-                                    "fieldData": [],
+                                    "showErrorMessage": true,
                                     "clearSharedData": [
                                         "name",
                                         "authenticated"
-                                    ],
-                                    "apiDataAccessor": "",
-                                    "message": "",
-                                    "showErrorMessage": true,
-                                    "actions": []
+                                    ]
                                 }
                             }
                         }
-                    ]
+                    ],
+                    "debounce": 3000
                 }
             ]
         },

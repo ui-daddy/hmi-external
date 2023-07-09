@@ -1,93 +1,30 @@
 {
-    "dnd-0": [],
-    "dnd-2": [
-        {
-            "baseProperties": {
-                "type": "staticText",
-                "id": "dnd-3",
-                "name": "Vendor Details"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Vendor Details"
+    "dashboard": [
+        
+      {
+        "baseProperties": {
+            "name": "iframeField",
+            "id": "iframeField",
+            "type": "dynamicField",
+            "library": "primeng",
+            "formName": ""
         },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-5",
-                "label": "Vendor Name"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null
+        "libraryComponent": "IframeExternalComponent",
+        "accessor": "",
+        "expressionProperties": {
+            "requiredValue": false,
+            "required": "",
+            "readOnly": "",
+            "readOnlyValue": false,
+            "disabled": "",
+            "disabledValue": false,
+            "visible": "",
+            "visibleValue": true
         },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-7",
-                "label": "Company Code"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null
+        "customAttributes": {
+            "src": "https://localhost:3000/app"
         }
-    ],
-    "dnd-8": [
-        {
-            "baseProperties": {
-                "type": "table",
-                "id": "dnd-9",
-                "label": "Vendors"
-            },
-            "layoutProperties": {
-                "labelPlacement": "top",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "colNameAccessorMap": {},
-            "dataConfig": null,
-            "accessor": null
-        }
+      }  
+      
     ]
-}
+  }
