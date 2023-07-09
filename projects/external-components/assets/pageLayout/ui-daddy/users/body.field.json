@@ -276,8 +276,13 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "visibleValue": "false",
+                "disabledValue": "true",
+                "readOnlyValue": "true"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -557,33 +562,6 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "radio",
-                "id": "dnd-40",
-                "name": "email_verified",
-                "formName": "editUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": "horizontal"
-            },
-            "events": [],
-            "expressionProperties": {
-                "readOnlyValue": "true"
-            },
-            "optionList": null,
-            "displayKey": "email_verified",
-            "outputKey": null,
             "value": null
         },
         {
@@ -1218,16 +1196,37 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "",
+                                    "message": "User added successfully. Please refresh to see new user.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
-                                            "componentName": "dnd-4"
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "dnd-4",
+                                            "sharedData": [],
+                                            "apiConfig": null
                                         },
                                         {
                                             "actionType": "CLOSE_MODAL",
-                                            "showLoading": true,
-                                            "target": "dnd-42"
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-42",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
                                         }
                                     ]
                                 },
@@ -1237,7 +1236,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "",
+                                    "message": "Error occurred while adding user.",
                                     "showErrorMessage": true,
                                     "actions": []
                                 }
