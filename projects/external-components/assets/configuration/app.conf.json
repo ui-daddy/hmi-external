@@ -102,8 +102,7 @@
         }
     },
     "hmiAppConfiguration": {
-        "apiConfigurations": [
-        ],
+        "apiConfigurations": [],
         "ifPageNotFound": "login",
         "interceptorConfigurations": [
             {
@@ -147,8 +146,7 @@
             "orientation": null,
             "width": null
         },
-        "linkTags": [
-        ],
+        "linkTags": [],
         "metaTags": [
             {
                 "content": "uidaddy",
@@ -224,6 +222,52 @@
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json",
             "serverURL": "/api/section/forgotPasword.section"
+        }
+    },
+    "test1": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/test1/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "test1",
+            "layoutProperties": null
         }
     }
 }
