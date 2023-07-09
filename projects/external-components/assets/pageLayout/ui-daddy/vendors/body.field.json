@@ -422,23 +422,65 @@
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": [
-                                {
-                                    "name": "API Name",
-                                    "url": "api/v1/vendor/:id",
-                                    "method": "POST",
-                                    "pathParams": [],
-                                    "queryParams": [],
-                                    "payloadParams": [],
-                                    "onSuccess": {},
-                                    "onError": {},
-                                    "beforeSubmit": {
-                                        "action": []
+                            "apiConfig": {
+                                "name": "UpdateVendor",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:vendorId",
+                                "method": "PUT",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "name",
+                                        "mappedField": "name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
                                     },
-                                    "downloadFileName": "",
-                                    "responseType": ""
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "id",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "id",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "id"
+                                        },
+                                        {
+                                            "varName": "name",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "name"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Vendor updated successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
                                 }
-                            ]
+                            }
                         }
                     ]
                 }
