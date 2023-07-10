@@ -19,7 +19,8 @@
                             "selectorName": ".add-user-btn",
                             "xs": {
                                 "parent-padding": "25px 0 15px 0",
-                                "background-color": "#6ebe71"
+                                "background-color": "#cae6fc",
+                                "border-color": "#cae6fc"
                             }
                         }
                     ],
