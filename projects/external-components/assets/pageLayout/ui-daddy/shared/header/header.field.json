@@ -31,7 +31,7 @@
                 {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/statistics"},
                 {"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
                 {"id": "tasks", "label": "My Tasks", "navigateToPage": "/my-task"},
-                {"id": "gantt-chart", "label": "Gantt Chart", "navigateToPage": "/chart"},
+                {"id": "gantt-chart", "label": "Project Plan", "navigateToPage": "/chart"},
                 {"id": "users", "label": "Users", "navigateToPage": "/users"},
                 {"id": "profile", "label": "My Profile", "navigateToPage": "/profile"}
             ],
