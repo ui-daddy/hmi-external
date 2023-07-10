@@ -20,7 +20,8 @@
                             "xs": {
                                 "parent-padding": "25px 0 15px 0",
                                 "background-color": "#BDBDBD",
-                                "color": "black"
+                                "color": "black",
+                                "border-color": "#9E9E9E"
                             }
                         }
                     ],
