@@ -21,7 +21,7 @@
                                 "parent-padding": "25px 0 15px 0",
                                 "background-color": "#BDBDBD",
                                 "color": "black",
-                                "border-color": "#9E9E9E"
+                                "border-color": "#BDBDBD"
                             }
                         }
                     ],
@@ -577,8 +577,16 @@
                 "height": null,
                 "css": {
                     "customClassName": "save-user",
-                    "configuration": [],
-                    "themeClass": "btn-warning"
+                    "configuration": [
+                        {
+                            "selectorName": ".save-user",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
                 },
                 "orientation": null
             },
