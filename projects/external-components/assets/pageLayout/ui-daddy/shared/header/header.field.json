@@ -33,7 +33,7 @@
                 {"id": "tasks", "label": "My Tasks", "navigateToPage": "/my-task"},
                 {"id": "gantt-chart", "label": "Project Plan", "navigateToPage": "/chart"},
                 {"id": "users", "label": "Users", "navigateToPage": "/users"},
-                {"id": "profile", "label": "My Profile", "navigateToPage": "/profile"}
+                {"id": "profile", "label": "My Profile", "navigateToPage": "/profile"} 
             ],
             "layoutProperties":{
                 "css": {
