@@ -1027,7 +1027,9 @@
                             "selectorName": ".save-user",
                             "xs": {
                                 "parent-padding-top": "30px",
-                                "width": "100%"
+                                "width": "100%",
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
                             }
                         }
                     ],
