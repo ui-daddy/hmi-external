@@ -516,57 +516,10 @@
         {
             "baseProperties": {
                 "type": "text",
-                "id": "dnd-35",
-                "name": "level",
-                "label": "Level",
-                "formName": "editUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
                 "id": "dnd-36",
                 "name": "userName",
                 "label": "Username",
                 "formName": "editUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "url",
-                "id": "dnd-38",
-                "name": "photo",
-                "formName": "editUserModal",
-                "label": "User Photo"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
