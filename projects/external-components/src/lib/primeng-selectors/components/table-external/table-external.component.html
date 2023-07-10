@@ -2,6 +2,10 @@
     <ng-template pTemplate="caption" *ngIf="fieldObj.customAttributes.caption">
         <div class="table-header">
             <span class="table-header-caption">{{fieldObj.customAttributes.caption}}</span>
+            <div class="align-self-center mr-3">
+                <button *ngIf="fieldObj.customAttributes.showExportExcelBtn" type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
+                <button *ngIf="fieldObj.customAttributes.showExportPdfBtn" type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+            </div>
             <span>
                 <span class="p-input-icon-left"
                     *ngIf="fieldObj.customAttributes.globalFilterFields && fieldObj.customAttributes.globalFilterFields.length">
@@ -18,22 +22,63 @@
     </ng-template>
     <ng-template pTemplate="header" let-columns>
         <tr>
-            <th *ngFor="let col of fieldObj.customAttributes.columns" [pSortableColumn]="col.accessor"
-                pResizableColumn pReorderableColumn
-                [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
-                {{col.colName}}
-                <p-sortIcon [field]="col.accessor"></p-sortIcon>
-            </th>
+            <ng-container *ngFor="let col of fieldObj.customAttributes.columns">
+                
+                <th *ngIf="(col.sortable == undefined || col.sortable === true); else sortableColumn" 
+                        [pSortableColumn]="col.accessor"
+                        pResizableColumn pReorderableColumn
+                        [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
+                        {{col.colName}}
+                        <p-sortIcon [field]="col.accessor"></p-sortIcon>
+                </th>                    
+                <ng-template #sortableColumn>
+                    <th pResizableColumn pReorderableColumn
+                        [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
+                        {{col.colName}}
+                    </th>
+                </ng-template>
+            </ng-container>
+            
+        </tr>
+        <tr *ngIf="fieldObj.customAttributes.columnFilter">
+            <ng-container *ngFor="let col of fieldObj.customAttributes.columns">
+                <th *ngIf="col.accessor && col.filterType else emptyHeader">
+                    <ng-container [ngSwitch]="col.filterType">
+
+                        <p-columnFilter *ngSwitchCase="'multiselect'" [field]="col.accessor" matchMode="in" [showMenu]="false">
+                            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                <p-multiSelect [ngModel]="value" [appendTo]="'body'" [options]="data | list: col.accessor" placeholder="Any" (onChange)="filter($event.value)">
+                                </p-multiSelect>
+                            </ng-template>
+                        </p-columnFilter>                       
+
+                        <p-columnFilter *ngSwitchDefault type="text" [field]="col.accessor"></p-columnFilter>
+                    </ng-container>
+                </th>
+                <ng-template #emptyHeader>
+                    <th></th>
+                </ng-template>
+            </ng-container>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr [pSelectableRow]="rowData">
-            <td *ngFor="let col of fieldObj.customAttributes.columns" 
-                [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }"
-                 (click)="cellAction(col, rowData)">
-                <span class="p-column-title">{{col.colName}}</span>
-                <span class="p-body-data" [title]="col.title || rowData[col.accessor] || col.html" [rowDataHandler]="rowData[col.accessor] || col.html"></span>
-            </td>
+            <ng-container *ngFor="let col of fieldObj.customAttributes.columns">
+                    <!-- <td *ngIf="col.routerLink else defaultCol">
+                        <a [routerLink]="[col.routerLink, rowData.id]" class="fa fa-th"></a>
+                    </td> -->
+                    <!-- <td *ngIf="col.routerLink else defaultCol">
+                        <a [routerLink]="[col.routerLink, rowData.id]" class="fa fa-th"></a>
+                    </td>
+                    <ng-template #defaultCol> -->
+                        <td [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }"
+                        (click)="cellAction(col, rowData)">
+                       <span class="p-column-title">{{col.colName}}</span>
+                       <span class="p-body-data" [title]="col.title || rowData[col.accessor] || col.html" [rowDataHandler]="rowData[col.accessor] || col.html"></span>
+                        </td>
+                    <!-- </ng-template> -->
+            </ng-container>
+            
         </tr>
     </ng-template>
     <ng-template pTemplate="summary" *ngIf="fieldObj.customAttributes.summary">
