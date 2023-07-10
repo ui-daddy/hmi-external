@@ -19,12 +19,12 @@
                             "selectorName": ".add-user-btn",
                             "xs": {
                                 "parent-padding": "25px 0 15px 0",
-                                "background-color": "#cae6fc",
-                                "border-color": "#cae6fc"
+                                "background-color": "#BDBDBD",
+                                "border-color": "#BDBDBD"
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -1033,7 +1033,7 @@
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
