@@ -1033,7 +1033,7 @@
                             }
                         }
                     ],
-                    "themeClass": ""
+                    "themeClass": "btn-secondary"
                 },
                 "orientation": null
             },
