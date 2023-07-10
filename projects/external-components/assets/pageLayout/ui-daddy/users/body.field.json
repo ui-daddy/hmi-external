@@ -935,31 +935,6 @@
         {
             "baseProperties": {
                 "type": "text",
-                "id": "dnd-15",
-                "name": "level",
-                "formName": "addUserModal",
-                "label": "Level"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "false"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
                 "id": "dnd-18",
                 "name": "userName",
                 "label": "Username",
@@ -1030,31 +1005,6 @@
             "expressionProperties": {},
             "value": null,
             "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "url",
-                "id": "dnd-19",
-                "name": "photoIdUrl",
-                "label": "Photo Id",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "false"
-            },
-            "value": null
         },
         {
             "baseProperties": {
