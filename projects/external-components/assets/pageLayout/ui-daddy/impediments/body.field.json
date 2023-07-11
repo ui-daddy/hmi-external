@@ -63,5 +63,138 @@
             "layoutProperties": {}
         }
     ],
-    "dnd-6": []
+    "dnd-6": [],
+    "dnd-11": [],
+    "dnd-12": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-13",
+                "name": "addImpedementTitle",
+                "formName": "addImpedementModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "ImpedementModalTitle",
+                    "configuration": [
+                        {
+                            "selectorName": ".ImpedementModalTitle",
+                            "xs": {
+                                "text-align": "center",
+                                "parent-font-size": "30px",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Add Impedements"
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-18",
+                "formName": "addImpedementModal",
+                "name": "name",
+                "label": "Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-15",
+                "formName": "addImpedementModal",
+                "name": "type",
+                "label": "Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": null,
+            "optionsConfig": null,
+            "labelKey": null,
+            "valueKey": null,
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-16",
+                "name": "createdBy",
+                "formName": "addImpedementModal",
+                "label": "Created By"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-17",
+                "formName": "addImpedementModal",
+                "name": "createdAt",
+                "label": "Create Time"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        }
+    ]
 }
