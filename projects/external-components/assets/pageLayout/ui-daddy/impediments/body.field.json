@@ -1,0 +1,20 @@
+{
+    "dnd-0": [],
+    "dnd-1": [],
+    "dnd-3": [
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-4"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "table",
+                "id": "dnd-5"
+            },
+            "layoutProperties": {}
+        }
+    ]
+}
