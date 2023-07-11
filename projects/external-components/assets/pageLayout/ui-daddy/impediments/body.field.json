@@ -5,9 +5,55 @@
         {
             "baseProperties": {
                 "type": "button",
-                "id": "dnd-4"
+                "id": "dnd-4",
+                "name": "AddImpedementsButton",
+                "label": "Add Impedements"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "add-impedement-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".add-impedement-btn",
+                            "xs": {
+                                "parent-padding": "25px 0 15px 0",
+                                "background-color": "#BDBDBD",
+                                "border-color": "#BDBDBD",
+                                "color": "black"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "OPEN_MODAL",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
         },
         {
             "baseProperties": {
@@ -16,5 +62,6 @@
             },
             "layoutProperties": {}
         }
-    ]
+    ],
+    "dnd-6": []
 }
