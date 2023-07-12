@@ -1177,7 +1177,7 @@
                                             "target": "",
                                             "timer": null,
                                             "formName": "",
-                                            "componentName": "dnd-4",
+                                            "componentName": "userList",
                                             "sharedData": [],
                                             "apiConfig": null
                                         },
