@@ -93,6 +93,192 @@
         }
     ],
     "dnd-6": [],
+    "dnd-21": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-22",
+                "name": "editImpedementTitle",
+                "formName": "editImpedementTitle"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "ImpedementModalTitle",
+                    "configuration": [
+                        {
+                            "selectorName": ".ImpedementModalTitle",
+                            "xs": {
+                                "text-align": "center",
+                                "parent-font-size": "30px",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-23",
+                "formName": "editImpedementTitle",
+                "name": "name",
+                "label": "Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-24",
+                "name": "type",
+                "label": "Type",
+                "formName": "editImpedementTitle"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": null,
+            "optionsConfig": null,
+            "labelKey": null,
+            "valueKey": null,
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-25",
+                "formName": "editImpedementTitle",
+                "name": "createdBy",
+                "label": "Created By"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-26",
+                "formName": "editImpedementTitle",
+                "name": "createdAt",
+                "label": "Create Time"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-27",
+                "formName": "editImpedementTitle",
+                "name": "submitImpedements",
+                "label": "Save"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "save-impedements",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-impedements",
+                            "xs": {
+                                "parent-padding-top": "30px",
+                                "width": "100%",
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "message",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "Success",
+                            "messageText": "Impedements updated successfully",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        }
+    ],
     "dnd-11": [],
     "dnd-12": [
         {
@@ -254,7 +440,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {}
         }
     ]
