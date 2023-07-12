@@ -57,10 +57,39 @@
         },
         {
             "baseProperties": {
-                "type": "table",
-                "id": "dnd-5"
+                "type": "dynamicField",
+                "id": "dnd-20",
+                "name": "impedementsLIst"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "columns": [],
+                "caption": "Impedements",
+                "summary": null,
+                "globalFilterFields": null,
+                "dataKey": null,
+                "resizableColumns": null,
+                "responsive": null,
+                "dataConfig": null,
+                "columnFilter": null,
+                "showExportExcelBtn": null,
+                "showExportPdfBtn": null
+            }
         }
     ],
     "dnd-6": [],
