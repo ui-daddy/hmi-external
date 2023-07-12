@@ -195,6 +195,38 @@
             "expressionProperties": {},
             "value": null,
             "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-19",
+                "formName": "addImpedementModal",
+                "name": "submitImpedements",
+                "label": "Save"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "save-impedements",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-impedements",
+                            "xs": {
+                                "parent-padding-top": "30px",
+                                "width": "100%",
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         }
     ]
 }
