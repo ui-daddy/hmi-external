@@ -1,1 +1,154 @@
-{}
+{
+    "menu-header-dashboard": [
+        {
+            "value": "",
+            "baseProperties": {
+                "name": "logo",
+                "type": "staticImage"
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__logo",
+                        "xs": {
+                            "background-image": "url(assets/images/logo.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    },
+                    "customClassName": "header__logo"
+                }
+            },
+            "imageUrl": "assets/images/logo.jpg"
+        },
+        {
+            "baseProperties": {
+                "name": "menu",
+                "type": "navItemGroup",
+                "id": "menu"
+            },
+            "navItems": [
+                {
+                    "id": "dashboard",
+                    "label": "Dashboard",
+                    "navigateToPage": "/statistics"
+                },
+                {
+                    "id": "projects",
+                    "label": "Projects",
+                    "navigateToPage": "/projects"
+                },
+                {
+                    "id": "tasks",
+                    "label": "My Tasks",
+                    "navigateToPage": "/my-task"
+                },
+                {
+                    "id": "gantt-chart",
+                    "label": "Gantt Chart",
+                    "navigateToPage": "/chart"
+                },
+                {
+                    "id": "users",
+                    "label": "Users",
+                    "navigateToPage": "/users"
+                },
+                {
+                    "id": "profile",
+                    "label": "My Profile",
+                    "navigateToPage": "/profile"
+                }
+            ],
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__nav-items",
+                        "xs": {
+                            "padding-right": "40px",
+                            "parent-justify-content": "flex-end"
+                        }
+                    },
+                    "customClassName": "header__nav-items"
+                }
+            }
+        }
+    ],
+    "logout-header-dashboard": [
+        {
+            "value": "",
+            "baseProperties": {
+                "name": "space",
+                "type": "staticText"
+            }
+        },
+        {
+            "value": "Welcome",
+            "baseProperties": {
+                "name": "org",
+                "type": "staticText"
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight": "bold"
+                        }
+                    },
+                    "customClassName": "header__org"
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "name": "logout",
+                "label": "Log Out",
+                "type": "submit",
+                "id": "logout"
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header-common__logout",
+                        "xs": {
+                            "parent-white-space": "nowrap",
+                            "parent-justify-content": "flex-end",
+                            "background-color": "#222121",
+                            "border-color": "#222121",
+                            "margin-top": "9px"
+                        }
+                    },
+                    "customClassName": "header-common__logout",
+                    "themeClass": "btn btn-dark"
+                }
+            },
+            "apiConfig": {
+                "name": "signupButtonApi",
+                "url": "/rest/logout",
+                "method": "POST",
+                "payloadParams": [],
+                "onSuccess": {
+                    "pageUrl": "/login",
+                    "clearSharedData": [
+                        "authenticated",
+                        "name"
+                    ]
+                }
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "submit",
+                            "showLoading": true
+                        }
+                    ],
+                    "debounce": 3000
+                }
+            ]
+        }
+    ]
+}
