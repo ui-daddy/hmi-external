@@ -81,14 +81,27 @@
                 "columns": [],
                 "caption": "Impedements",
                 "summary": null,
-                "globalFilterFields": null,
-                "dataKey": null,
+                "globalFilterFields": [
+                    "name",
+                    "type",
+                    "createdBY",
+                    "createdAt"
+                ],
+                "dataKey": "id",
                 "resizableColumns": null,
-                "responsive": null,
-                "dataConfig": null,
-                "columnFilter": null,
-                "showExportExcelBtn": null,
-                "showExportPdfBtn": null
+                "responsive": true,
+                "dataConfig": {
+                    "name": "userList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Employee/List",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": "payload"
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true
             }
         }
     ],
