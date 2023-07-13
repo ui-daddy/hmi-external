@@ -16,7 +16,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
     super();
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.refreshTable();
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
@@ -35,6 +35,13 @@ export class TableExternalComponent extends CommonExternalComponent implements O
       this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {        
         this.data = data;
         this.primeElement.loading = false;
+        const hideColumns = this.fieldObj.customAttributes.hideColumns;
+        const hideColumnsBasedOn = this.fieldObj.customAttributes.hideColumnsBasedOn;
+        if (hideColumnsBasedOn && hideColumns && hideColumns.length) {
+          if (this.data && (<any[]>this.data).some(v=> v[hideColumnsBasedOn])) {
+            this.fieldObj.customAttributes.columns = this.fieldObj.customAttributes.columns.filter((v:any) => !hideColumns.includes(v.colName));
+          }
+        }
       });
     }
   }
