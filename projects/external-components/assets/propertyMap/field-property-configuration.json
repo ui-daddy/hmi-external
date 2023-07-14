@@ -88,20 +88,6 @@
                 "defaultValueMapping": "showPrintPreviewBtn",
                 "type": "checkbox",
                 "label": "Show PDF Print Preview"
-            },
-            {
-                "propertyName": "hideColumns",
-                "defaultValueMapping": "hideColumns",
-                "type": "textarea",
-                "label": "Hide Columns Array",
-                "placeholder": "Enter column names"
-            },
-            {
-                "propertyName": "hideColumnsBasedOn",
-                "defaultValueMapping": "hideColumnsBasedOn",
-                "type": "text",
-                "label": "Hide Column Based On",
-                "placeholder": "Enter key name"
             }
           ]        
     },
