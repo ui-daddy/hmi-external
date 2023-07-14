@@ -1177,7 +1177,7 @@
                                             "target": "dnd-47",
                                             "timer": null,
                                             "formName": "",
-                                            "componentName": "",
+                                            "componentName": "userList",
                                             "sharedData": [],
                                             "apiConfig": null
                                         },

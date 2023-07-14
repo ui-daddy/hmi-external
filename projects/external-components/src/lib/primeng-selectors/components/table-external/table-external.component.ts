@@ -99,7 +99,23 @@ export class TableExternalComponent extends CommonExternalComponent implements O
             doc.save(fileName+'.pdf');
         })
     })
-}
+  }
+
+  printPreview() {
+    // Add a CSS class to the element you want to print
+    const originalElement = document.getElementById('tableExternal-'+this.fieldObj.baseProperties.id);
+    const newWindow = window.open('', '_open');
+    if (originalElement && newWindow) {
+        newWindow.document.write('<link rel="stylesheet" type="text/css" href="styles.css" onload="onCssLoad()">');
+        newWindow.document.write('<script> function onCssLoad(){ window.print();}</script>');
+        newWindow.document.write('<html><head><title>Print Preview</title></head>');
+        newWindow.document.write('<style>@media print { .d-print-none, .p-datatable-header { display: none; } }</style>');
+        newWindow.document.write('<body>');
+        newWindow.document.write(originalElement.outerHTML);
+        newWindow.document.write('</body></html>');
+        newWindow.document.close();
+    }
+  }
 
   exportExcel() {
       import("xlsx").then(xlsx => {
