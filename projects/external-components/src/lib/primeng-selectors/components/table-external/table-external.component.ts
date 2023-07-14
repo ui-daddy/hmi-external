@@ -35,19 +35,12 @@ export class TableExternalComponent extends CommonExternalComponent implements O
       this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {        
         this.data = data;
         this.primeElement.loading = false;
-        const hideColumns = this.fieldObj.customAttributes.hideColumns;
-        const hideColumnsBasedOn = this.fieldObj.customAttributes.hideColumnsBasedOn;
-        if (hideColumnsBasedOn && hideColumns && hideColumns.length) {
-          if (this.data && (<any[]>this.data).some(v=> v[hideColumnsBasedOn])) {
-            this.fieldObj.customAttributes.columns = this.fieldObj.customAttributes.columns.filter((v:any) => !hideColumns.includes(v.colName));
-          }
-        }
       });
     }
   }
 
   cellAction(colConfig: any, rowData: any) {
-    if (colConfig.action) {
+    if (colConfig.action && !colConfig.disabled) {
       if (colConfig.action.name === "ROW_ACTION") {
         if(colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
           this.primeElement.loading = true;
