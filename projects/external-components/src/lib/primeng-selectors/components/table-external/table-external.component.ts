@@ -16,7 +16,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
     super();
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.refreshTable();
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
@@ -40,7 +40,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   cellAction(colConfig: any, rowData: any) {
-    if (colConfig.action && !colConfig.disabled) {
+    if (colConfig.action) {
       if (colConfig.action.name === "ROW_ACTION") {
         if(colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
           this.primeElement.loading = true;
