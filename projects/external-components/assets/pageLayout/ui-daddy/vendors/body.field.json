@@ -296,7 +296,7 @@
                 "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
-                "showPrintPreviewBtn": null
+                "showPrintPreviewBtn": true
             }
         }
     ],

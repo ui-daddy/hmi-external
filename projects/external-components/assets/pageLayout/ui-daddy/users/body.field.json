@@ -328,7 +328,8 @@
                 },
                 "columnFilter": true,
                 "showExportExcelBtn": true,
-                "showExportPdfBtn": true
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
             }
         }
     ],
