@@ -613,13 +613,13 @@
                     "debounce": null,
                     "actions": [
                         {
-                            "actionType": "message",
+                            "actionType": "INVOKE_API",
                             "url": "",
-                            "condition": "1==1",
+                            "condition": "",
                             "field": "",
                             "fieldValue": "",
-                            "messagetype": "Success",
-                            "messageText": "User updated successfully.",
+                            "messagetype": "",
+                            "messageText": "",
                             "target": "",
                             "timer": null,
                             "formName": "",
@@ -656,20 +656,14 @@
                                         "valueFormat": ""
                                     },
                                     {
-                                        "paramName": "userId",
-                                        "mappedField": "userId",
+                                        "paramName": "givenName",
+                                        "mappedField": "givenName",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
-                                        "paramName": "given_name",
-                                        "mappedField": "given_name",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "family_name",
-                                        "mappedField": "family_name",
+                                        "paramName": "familyName",
+                                        "mappedField": "familyName",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
@@ -720,12 +714,6 @@
                                         "mappedField": "email",
                                         "mappedValue": "",
                                         "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "email_verified",
-                                        "mappedField": "email_verified",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
@@ -742,8 +730,39 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "",
-                                    "actions": []
+                                    "message": "Vendor updated successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "userList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-43",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
                                 },
                                 "onError": {
                                     "pageUrl": "",

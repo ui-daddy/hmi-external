@@ -255,9 +255,9 @@
                                     }
                                 ],
                                 "onSuccess": {
-                                    "deleteTableRow": false,
+                                    "deleteTableRow": true,
                                     "showSuccessMessage": true,
-                                    "message": "Vendor deleted successfully. Please refresh the below table to see the changes.",
+                                    "message": "Vendor deleted successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
@@ -584,7 +584,7 @@
                                             "fieldValue": "",
                                             "messagetype": "",
                                             "messageText": "",
-                                            "target": "dnd-39",
+                                            "target": "",
                                             "timer": null,
                                             "formName": "",
                                             "componentName": "vendorList",
