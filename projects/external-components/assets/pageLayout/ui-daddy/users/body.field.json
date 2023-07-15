@@ -815,7 +815,33 @@
                 "requiredValue": "true"
             },
             "optionList": {},
-            "optionsConfig": null,
+            "optionsConfig": {
+                "name": "Get Vendors",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [
+                    {
+                        "paramName": "id",
+                        "mappedField": "id",
+                        "mappedValue": "",
+                        "valueFormat": ""
+                    },
+                    {
+                        "paramName": "name",
+                        "mappedField": "name",
+                        "mappedValue": "",
+                        "valueFormat": ""
+                    }
+                ],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
             "labelKey": "name",
             "valueKey": "id",
             "value": "name"
