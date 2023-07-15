@@ -570,20 +570,7 @@
                                     "pageUrl": "",
                                     "deleteTableRow": false,
                                     "showSuccessMessage": true,
-                                    "sharedData": [
-                                        {
-                                            "varName": "id",
-                                            "staticData": "",
-                                            "cache": false,
-                                            "responseAccessor": "id"
-                                        },
-                                        {
-                                            "varName": "name",
-                                            "staticData": "",
-                                            "cache": false,
-                                            "responseAccessor": "name"
-                                        }
-                                    ],
+                                    "sharedData": [],
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
