@@ -793,6 +793,35 @@
         },
         {
             "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-48",
+                "name": "company",
+                "formName": "addUserModal",
+                "label": "Company"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "optionList": {},
+            "optionsConfig": null,
+            "labelKey": "name",
+            "valueKey": "id",
+            "value": "name"
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-13",
                 "name": "companyName",
