@@ -147,15 +147,6 @@
                                 "event": "",
                                 "actions": [
                                     {
-                                        "actionType": "OPEN_MODAL",
-                                        "showLoading": true,
-                                        "target": "dnd-43"
-                                    },
-                                    {
-                                        "actionType": "WAIT_IN_MS",
-                                        "timer": 100
-                                    },
-                                    {
                                         "actionType": "SET_SHARED_DATA",
                                         "sharedData": [
                                             {
@@ -251,9 +242,18 @@
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-28$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyName",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyId",
                                         "condition": "true",
                                         "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-43"
                                     }
                                 ],
                                 "debounce": 3000
@@ -369,10 +369,11 @@
         },
         {
             "baseProperties": {
-                "type": "text",
+                "type": "dropdown",
                 "id": "dnd-28",
-                "name": "companyName",
-                "label": "Company Name"
+                "name": "companyDropdown-editModal",
+                "formName": "editUserModal",
+                "label": "Company"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -389,8 +390,24 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Vendors",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "id",
+            "value": ""
         },
         {
             "baseProperties": {
@@ -610,9 +627,14 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Edit User",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Create'",
-                                "method": "POST",
-                                "pathParams": [],
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Update/:id",
+                                "method": "PATCH",
+                                "pathParams": [
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "userId"
+                                    }
+                                ],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
@@ -623,8 +645,14 @@
                                     },
                                     {
                                         "paramName": "companyName",
-                                        "mappedField": "companyName",
-                                        "mappedValue": "",
+                                        "mappedField": "companyDropdown-editModal",
+                                        "mappedValue": "label",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyId",
+                                        "mappedField": "companyDropdown-editModal",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
@@ -795,7 +823,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-48",
-                "name": "company",
+                "name": "companyDropdown-addModal",
                 "formName": "addUserModal",
                 "label": "Company"
             },
@@ -821,20 +849,7 @@
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
-                "payloadParams": [
-                    {
-                        "paramName": "id",
-                        "mappedField": "companyId",
-                        "mappedValue": "",
-                        "valueFormat": ""
-                    },
-                    {
-                        "paramName": "name",
-                        "mappedField": "companyName",
-                        "mappedValue": "",
-                        "valueFormat": ""
-                    }
-                ],
+                "payloadParams": [],
                 "fetch": "ONLOAD",
                 "downloadFileName": "",
                 "responseType": "",
@@ -842,36 +857,9 @@
                     "action": []
                 }
             },
-            "labelKey": "companyName",
-            "valueKey": "companyId",
+            "labelKey": "name",
+            "valueKey": "id",
             "value": ""
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-13",
-                "name": "companyName",
-                "label": "Company Name",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visibleValue": "true",
-                "readOnlyValue": "false"
-            },
-            "value": null
         },
         {
             "baseProperties": {
@@ -1134,8 +1122,14 @@
                                     },
                                     {
                                         "paramName": "companyName",
-                                        "mappedField": "companyName",
-                                        "mappedValue": "",
+                                        "mappedField": "companyDropdown-addModal",
+                                        "mappedValue": "label",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyId",
+                                        "mappedField": "companyDropdown-addModal",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
