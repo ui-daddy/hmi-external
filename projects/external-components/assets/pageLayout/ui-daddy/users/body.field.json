@@ -298,7 +298,7 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-26",
-                "name": "userId",
+                "name": "userIdEdit",
                 "label": "userId",
                 "formName": "editUserModal"
             },
@@ -348,7 +348,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-25",
-                "name": "role",
+                "name": "roleEdit",
                 "label": "Role",
                 "formName": "editUserModal"
             },
@@ -365,7 +365,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -413,7 +414,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-30",
-                "name": "givenName",
+                "name": "givenNameEdit",
                 "label": "Given Name",
                 "formName": "editUserModal"
             },
@@ -439,7 +440,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-31",
-                "name": "familyName",
+                "name": "familyNameEdit",
                 "formName": "editUserModal",
                 "label": "Family Name"
             },
@@ -463,7 +464,7 @@
             "baseProperties": {
                 "type": "tel",
                 "id": "dnd-32",
-                "name": "mobile",
+                "name": "mobileEdit",
                 "label": "Mobile",
                 "formName": "editUserModal"
             },
@@ -487,7 +488,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-33",
-                "name": "designation",
+                "name": "designationEdit",
                 "formName": "editUserModal",
                 "label": "Designation"
             },
@@ -513,7 +514,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-34",
-                "name": "empId",
+                "name": "empIdEdit",
                 "label": "Employee ID",
                 "formName": "editUserModal"
             },
@@ -537,7 +538,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-36",
-                "name": "userName",
+                "name": "userNameEdit",
                 "label": "Username",
                 "formName": "editUserModal"
             },
@@ -561,7 +562,7 @@
             "baseProperties": {
                 "type": "email",
                 "id": "dnd-39",
-                "name": "email",
+                "name": "emailEdit",
                 "label": "E-Mail",
                 "formName": "editUserModal"
             },
@@ -578,7 +579,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -632,14 +634,14 @@
                                 "pathParams": [
                                     {
                                         "paramName": "id",
-                                        "mappedField": "userId"
+                                        "mappedField": "userIdEdit"
                                     }
                                 ],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
                                         "paramName": "role",
-                                        "mappedField": "role",
+                                        "mappedField": "roleEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
@@ -657,61 +659,61 @@
                                     },
                                     {
                                         "paramName": "givenName",
-                                        "mappedField": "givenName",
+                                        "mappedField": "givenNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "familyName",
-                                        "mappedField": "familyName",
+                                        "mappedField": "familyNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "mobile",
-                                        "mappedField": "mobile",
+                                        "mappedField": "mobileEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "designation",
-                                        "mappedField": "designation",
+                                        "mappedField": "designationEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "empId",
-                                        "mappedField": "empId",
+                                        "mappedField": "empIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "level",
+                                        "mappedField": "levelEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "userName",
-                                        "mappedField": "userName",
+                                        "mappedField": "userNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "photoIdUrl",
-                                        "mappedField": "photoIdUrl",
+                                        "mappedField": "photoIdUrlEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "fileUploadUrl",
-                                        "mappedField": "fileUploadUrl",
+                                        "mappedField": "fileUploadUrlEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "email",
-                                        "mappedField": "email",
+                                        "mappedField": "emailEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
@@ -821,7 +823,7 @@
                 "id": "dnd-14",
                 "formName": "addUserModal",
                 "label": "Role",
-                "name": "role"
+                "name": "roleAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -836,7 +838,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -885,7 +888,7 @@
                 "type": "text",
                 "id": "dnd-12",
                 "formName": "addUserModal",
-                "name": "givenName",
+                "name": "givenNameAdd",
                 "label": "Given Name"
             },
             "layoutProperties": {
@@ -910,7 +913,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-11",
-                "name": "familyName",
+                "name": "familyNameAdd",
                 "formName": "addUserModal",
                 "label": "Family Name"
             },
@@ -934,7 +937,7 @@
             "baseProperties": {
                 "type": "tel",
                 "id": "dnd-16",
-                "name": "mobile",
+                "name": "mobileAdd",
                 "label": "Mobile",
                 "formName": "addUserModal"
             },
@@ -960,7 +963,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-44",
-                "name": "empId",
+                "name": "empIdAdd",
                 "formName": "addUserModal",
                 "label": "Employee ID"
             },
@@ -984,7 +987,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-9",
-                "name": "designation",
+                "name": "designationAdd",
                 "label": "Designation",
                 "formName": "addUserModal"
             },
@@ -1003,13 +1006,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-18",
-                "name": "userName",
+                "name": "userNameAdd",
                 "label": "Username",
                 "formName": "addUserModal"
             },
@@ -1028,13 +1032,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "email",
                 "id": "dnd-17",
-                "name": "email",
+                "name": "emailAdd",
                 "label": "E-Mail",
                 "formName": "addUserModal"
             },
@@ -1053,13 +1058,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "password",
                 "id": "dnd-45",
-                "name": "password",
+                "name": "passwordAdd",
                 "formName": "addUserModal",
                 "label": "Password"
             },
@@ -1135,7 +1141,7 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "role",
-                                        "mappedField": "role",
+                                        "mappedField": "roleAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
@@ -1153,67 +1159,67 @@
                                     },
                                     {
                                         "paramName": "givenName",
-                                        "mappedField": "givenName",
+                                        "mappedField": "givenNameAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "familyName",
-                                        "mappedField": "familyName",
+                                        "mappedField": "familyNameAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "mobile",
-                                        "mappedField": "mobile",
+                                        "mappedField": "mobileAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "designation",
-                                        "mappedField": "designation",
+                                        "mappedField": "designationAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "empId",
-                                        "mappedField": "empId",
+                                        "mappedField": "empIdAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "level",
+                                        "mappedField": "levelAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "userName",
-                                        "mappedField": "userName",
+                                        "mappedField": "userNameAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "photoIdUrl",
-                                        "mappedField": "photoIdUrl",
+                                        "mappedField": "photoIdUrlAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "fileUploadUrl",
-                                        "mappedField": "fileUploadUrl",
+                                        "mappedField": "fileUploadUrlAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "email",
-                                        "mappedField": "email",
+                                        "mappedField": "emailAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "password",
-                                        "mappedField": "password",
+                                        "mappedField": "passwordAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
