@@ -1021,11 +1021,12 @@
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
+                                "fileUpload": true,
                                 "payloadParams": [
                                     {
                                         "paramName": "data",
                                         "mappedField": "profileImage",
-                                        "mappedValue": "data",
+                                        "mappedValue": "file",
                                         "valueFormat": ""
                                     }
                                 ],
@@ -1044,7 +1045,7 @@
                                             "varName": "profilePath",
                                             "staticData": "",
                                             "cache": false,
-                                            "responseAccessor": "$RESPONSE$"
+                                            "responseAccessor": "fileURL"
                                         }
                                     ],
                                     "fieldData": [],
@@ -1277,6 +1278,12 @@
                                         "mappedField": "password",
                                         "mappedValue": "",
                                         "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photo",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(profilePath)"
                                     }
                                 ],
                                 "fetch": "",
