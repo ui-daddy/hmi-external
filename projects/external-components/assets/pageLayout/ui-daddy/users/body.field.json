@@ -1019,38 +1019,13 @@
                                 "name": "Upload Profile Image",
                                 "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=task",
                                 "method": "POST",
-                                "fileUpload": true,
                                 "pathParams": [],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
-                                        "paramName": "fileName",
-                                        "mappedField": "profileImage",
-                                        "mappedValue": "name",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "fileExtension",
-                                        "mappedField": "profileImage",
-                                        "mappedValue": "extension",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "fileType",
-                                        "mappedField": "profileImage",
-                                        "mappedValue": "type",
-                                        "valueFormat": ""
-                                    },
-                                    {
                                         "paramName": "data",
                                         "mappedField": "profileImage",
                                         "mappedValue": "data",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "type",
-                                        "mappedField": "",
-                                        "mappedValue": "",
                                         "valueFormat": ""
                                     }
                                 ],
@@ -1064,14 +1039,19 @@
                                     "pageUrl": "",
                                     "deleteTableRow": false,
                                     "showSuccessMessage": true,
-                                    "sharedData": [],
+                                    "sharedData": [
+                                        {
+                                            "varName": "profilePath",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "$RESPONSE$"
+                                        }
+                                    ],
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
                                     "message": "Profile image uploaded successfully.",
-                                    "actions": [
-                                        
-                                    ]
+                                    "actions": []
                                 },
                                 "onError": {
                                     "pageUrl": "",
