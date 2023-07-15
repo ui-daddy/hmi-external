@@ -945,6 +945,155 @@
         },
         {
             "baseProperties": {
+                "type": "file",
+                "id": "dnd-46",
+                "name": "profileImage",
+                "formName": "addUserModal",
+                "label": "Profile Image"
+            },
+            "allowedExt": ".jpg,.jpeg,.png",
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-48",
+                "name": "profileUpload",
+                "label": "Upload",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "parent-float": "right",
+                                "parent-width": "calc(100% - 215px)",
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Upload Profile Image",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=task",
+                                "method": "POST",
+                                "fileUpload": true,
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "fileName",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "name",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "fileExtension",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "extension",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "fileType",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "type",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "data",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "data",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "type",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Profile image uploaded successfully.",
+                                    "actions": [
+                                        
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while uploading profile picture.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "disabled": "profileImage == null or profileImage == undefined"
+            }
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-18",
                 "name": "userName",
@@ -1164,7 +1313,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "User added successfully. Please refresh to see new user.",
+                                    "message": "User added successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
