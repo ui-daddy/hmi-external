@@ -716,6 +716,12 @@
                                         "mappedField": "emailEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "userIdEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
