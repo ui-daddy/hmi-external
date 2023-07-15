@@ -814,7 +814,7 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "optionList": {},
+            "optionList": [],
             "optionsConfig": {
                 "name": "Get Vendors",
                 "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
@@ -835,7 +835,7 @@
                         "valueFormat": ""
                     }
                 ],
-                "fetch": "",
+                "fetch": "ONLOAD",
                 "downloadFileName": "",
                 "responseType": "",
                 "beforeSubmit": {
