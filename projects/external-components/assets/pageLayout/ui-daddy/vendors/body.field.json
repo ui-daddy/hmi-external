@@ -527,7 +527,7 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "name",
-                                        "mappedField": "editName",
+                                        "mappedField": "name",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
