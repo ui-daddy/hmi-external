@@ -112,12 +112,48 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Vendor Name",
+                        "colName": "Name",
                         "filterType": "text",
                         "accessor": "name",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Address",
+                        "filterType": "text",
+                        "accessor": "address",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 250
+                        }
+                    },
+                    {
+                        "colName": "Contact",
+                        "filterType": "text",
+                        "accessor": "contact",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Website",
+                        "filterType": "text",
+                        "accessor": "website",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 250
+                        }
+                    },
+                    {
+                        "colName": "Company Code",
+                        "filterType": "text",
+                        "accessor": "companyCode",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
                         }
                     },
                     {
@@ -231,7 +267,8 @@
                 },
                 "columnFilter": true,
                 "showExportExcelBtn": true,
-                "showExportPdfBtn": true
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": null
             }
         }
     ],
@@ -291,8 +328,8 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-22",
-                "label": "Vendor Name",
-                "name": "editName"
+                "label": "Name",
+                "name": "name"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -316,7 +353,8 @@
             "baseProperties": {
                 "type": "textarea",
                 "id": "dnd-24",
-                "label": "Vendor Address"
+                "label": "Address",
+                "name": "address"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -331,7 +369,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visibleValue": "false",
+                "visibleValue": "true",
                 "requiredValue": "false"
             },
             "value": null,
@@ -342,7 +380,7 @@
                 "type": "tel",
                 "id": "dnd-25",
                 "label": "Phone Number",
-                "name": "mobile"
+                "name": "contact"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -358,7 +396,7 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "false"
+                "visibleValue": "true"
             },
             "value": null,
             "placeholder": null
@@ -367,7 +405,8 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-26",
-                "label": "Vendor Website"
+                "label": "Website",
+                "name": "website"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -383,8 +422,31 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "false"
+                "visibleValue": "true"
             },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-41",
+                "label": "Company Code",
+                "name": "companyCode"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
             "value": null,
             "placeholder": null
         },
@@ -446,6 +508,30 @@
                                         "mappedField": "id",
                                         "mappedValue": "",
                                         "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "address",
+                                        "mappedField": "address",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "contact",
+                                        "mappedField": "contact",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "website",
+                                        "mappedField": "website",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyCode",
+                                        "mappedField": "companyCode",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
@@ -473,8 +559,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor updated successfully. Please refresh the below table to see the changes.",
-                                    
+                                    "message": "Vendor updated successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
@@ -562,7 +647,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-13",
-                "label": "Vendor Name",
+                "label": "Name",
                 "name": "name"
             },
             "layoutProperties": {
@@ -588,7 +673,7 @@
             "baseProperties": {
                 "type": "textarea",
                 "id": "dnd-12",
-                "label": "Vendor Address",
+                "label": "Address",
                 "name": "address"
             },
             "layoutProperties": {
@@ -604,7 +689,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visibleValue": "false",
+                "visibleValue": "true",
                 "requiredValue": "false"
             },
             "value": null,
@@ -615,7 +700,7 @@
                 "type": "tel",
                 "id": "dnd-11",
                 "label": "Phone Number",
-                "name": "mobile"
+                "name": "contact"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -631,7 +716,7 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "false"
+                "visibleValue": "true"
             },
             "value": null,
             "placeholder": null
@@ -640,7 +725,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-9",
-                "label": "Vendor Website",
+                "label": "Website",
                 "name": "website"
             },
             "layoutProperties": {
@@ -656,9 +741,32 @@
             },
             "events": [],
             "expressionProperties": {
-                "visibleValue": "false",
+                "visibleValue": "true",
                 "requiredValue": "false"
             },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-42",
+                "label": "Company Code",
+                "name": "companyCode"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
             "value": null,
             "placeholder": null
         },
@@ -717,6 +825,30 @@
                                         "mappedField": "name",
                                         "mappedValue": "",
                                         "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "address",
+                                        "mappedField": "address",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "contact",
+                                        "mappedField": "contact",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "website",
+                                        "mappedField": "website",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyCode",
+                                        "mappedField": "companyCode",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
@@ -731,7 +863,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor added successfully. Please refresh the below table to see the changes.",
+                                    "message": "Vendor added successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
