@@ -40,12 +40,44 @@
                             "fieldValue": "",
                             "messagetype": "",
                             "messageText": "",
-                            "target": "dnd-29",
+                            "target": "dnd-3",
                             "timer": null,
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": []
+                            "apiConfig": {
+                                "name": "",
+                                "url": "",
+                                "method": "",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
+                            }
                         }
                     ]
                 }
@@ -58,10 +90,149 @@
         },
         {
             "baseProperties": {
-                "type": "table",
-                "id": "dnd-28"
+                "type": "dynamicField",
+                "id": "dnd-39",
+                "name": "vendorList",
+                "library": "primeng"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Vendor Name",
+                        "filterType": "text",
+                        "accessor": "name",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Edit Vendor",
+                        "title": "Edit Vendor",
+                        "html": "<i class='fas fa-edit'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "events": [
+                            {
+                                "event": "",
+                                "actions": [
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-17"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "SET_SHARED_DATA",
+                                        "sharedData": [
+                                            {
+                                                "varName": "tableRowData",
+                                                "staticData": "$ROW_DATA$"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-22$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.name",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-40$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    }
+                                ],
+                                "debounce": 3000
+                            }
+                        ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Delete Vendor",
+                        "title": "Delete Vendor",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteVendor",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Delete/:vendorId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "vendorId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "message": "Vendor deleted successfully. Please refresh the below table to see the changes.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "dnd-39"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    }
+                ],
+                "caption": "Vendors",
+                "summary": null,
+                "globalFilterFields": [
+                    "name"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": null,
+                "dataConfig": {
+                    "name": "vendorList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true
+            }
         }
     ],
     "dnd-17": [],
@@ -91,9 +262,37 @@
         },
         {
             "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-40",
+                "name": "id"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visibleValue": "false",
+                "readOnlyValue": "true",
+                "disabledValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-22",
-                "label": "Vendor Name"
+                "label": "Vendor Name",
+                "name": "editName"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -107,8 +306,11 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -128,14 +330,19 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "visibleValue": "false",
+                "requiredValue": "false"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "tel",
                 "id": "dnd-25",
-                "label": "Phone Number"
+                "label": "Phone Number",
+                "name": "mobile"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -149,8 +356,12 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "requiredValue": "false",
+                "visibleValue": "false"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -170,8 +381,12 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "requiredValue": "false",
+                "visibleValue": "false"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -208,23 +423,102 @@
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": [
-                                {
-                                    "name": "API Name",
-                                    "url": "api/v1/vendor/:id",
-                                    "method": "POST",
-                                    "pathParams": [],
-                                    "queryParams": [],
-                                    "payloadParams": [],
-                                    "onSuccess": {},
-                                    "onError": {},
-                                    "beforeSubmit": {
-                                        "action": []
+                            "apiConfig": {
+                                "name": "UpdateVendor",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:id",
+                                "method": "PATCH",
+                                "pathParams": [
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "id"
+                                    }
+                                ],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "name",
+                                        "mappedField": "editName",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
                                     },
-                                    "downloadFileName": "",
-                                    "responseType": ""
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "id",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "id",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "id"
+                                        },
+                                        {
+                                            "varName": "name",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "name"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Vendor updated successfully. Please refresh the below table to see the changes.",
+                                    
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-39",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-17",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
                                 }
-                            ]
+                            }
                         }
                     ]
                 }
@@ -268,7 +562,8 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-13",
-                "label": "Vendor Name"
+                "label": "Vendor Name",
+                "name": "name"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -282,14 +577,19 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visibleValue": "true"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "textarea",
                 "id": "dnd-12",
-                "label": "Vendor Address"
+                "label": "Vendor Address",
+                "name": "address"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -303,14 +603,19 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "visibleValue": "false",
+                "requiredValue": "false"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "tel",
                 "id": "dnd-11",
-                "label": "Phone Number"
+                "label": "Phone Number",
+                "name": "mobile"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -324,14 +629,19 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "requiredValue": "false",
+                "visibleValue": "false"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-9",
-                "label": "Vendor Website"
+                "label": "Vendor Website",
+                "name": "website"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -345,8 +655,12 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
-            "value": null
+            "expressionProperties": {
+                "visibleValue": "false",
+                "requiredValue": "false"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -391,119 +705,81 @@
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": [
-                                {
-                                    "name": "AddVendor",
-                                    "url": "api/v1/vendor",
-                                    "method": "POST",
-                                    "pathParams": [],
-                                    "queryParams": [],
-                                    "payloadParams": [],
-                                    "onSuccess": {},
-                                    "onError": {},
-                                    "beforeSubmit": {
-                                        "action": []
-                                    },
-                                    "downloadFileName": "",
-                                    "responseType": ""
+                            "apiConfig": {
+                                "name": "AddVendor",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Create",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "name",
+                                        "mappedField": "name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Vendor added successfully. Please refresh the below table to see the changes.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-39",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-3",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while adding vendor.",
+                                    "showErrorMessage": true,
+                                    "actions": []
                                 }
-                            ]
+                            }
                         }
                     ]
                 }
             ],
-            "expressionProperties": {}
-        }
-    ],
-    "dnd-29": [],
-    "dnd-30": [
-        {
-            "baseProperties": {
-                "type": "staticText",
-                "id": "dnd-31"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "vendor-modal-title",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Delete Vendor"
-        },
-        {
-            "baseProperties": {
-                "type": "staticText",
-                "id": "dnd-34"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Are you sure you want to delete vendor xyz?"
-        },
-        {
-            "baseProperties": {
-                "type": "submit",
-                "id": "dnd-38",
-                "label": "Delete Vendor"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "delete-vendor",
-                    "configuration": [
-                        {
-                            "selectorName": ".delete-vendor",
-                            "xs": {
-                                "padding": "30px",
-                                "parent-padding-top": "30px",
-                                "width": "50%"
-                            }
-                        }
-                    ],
-                    "themeClass": "btn-warning"
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {}
-        },
-        {
-            "baseProperties": {
-                "type": "button",
-                "id": "dnd-37",
-                "label": "Cancel"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "delete-vendor",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
             "expressionProperties": {}
         }
     ]
