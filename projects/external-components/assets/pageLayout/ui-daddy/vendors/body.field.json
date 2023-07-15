@@ -329,7 +329,7 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-40",
-                "name": "id"
+                "name": "idEdit"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -357,7 +357,7 @@
                 "type": "text",
                 "id": "dnd-22",
                 "label": "Name",
-                "name": "name"
+                "name": "nameEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -382,7 +382,7 @@
                 "type": "textarea",
                 "id": "dnd-24",
                 "label": "Address",
-                "name": "address"
+                "name": "addressEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -408,7 +408,7 @@
                 "type": "tel",
                 "id": "dnd-25",
                 "label": "Phone Number",
-                "name": "contact"
+                "name": "contactEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -434,7 +434,7 @@
                 "type": "text",
                 "id": "dnd-26",
                 "label": "Website",
-                "name": "website"
+                "name": "websiteEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -460,7 +460,7 @@
                 "type": "text",
                 "id": "dnd-41",
                 "label": "Company Code",
-                "name": "companyCode"
+                "name": "companyCodeEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -520,44 +520,38 @@
                                 "pathParams": [
                                     {
                                         "paramName": "id",
-                                        "mappedField": "id"
+                                        "mappedField": "idEdit"
                                     }
                                 ],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
                                         "paramName": "name",
-                                        "mappedField": "name",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "id",
-                                        "mappedField": "id",
+                                        "mappedField": "nameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "address",
-                                        "mappedField": "address",
+                                        "mappedField": "addressEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "contact",
-                                        "mappedField": "contact",
+                                        "mappedField": "contactEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "website",
-                                        "mappedField": "website",
+                                        "mappedField": "websiteEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyCode",
-                                        "mappedField": "companyCode",
+                                        "mappedField": "companyCodeEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
@@ -663,7 +657,7 @@
                 "type": "text",
                 "id": "dnd-13",
                 "label": "Name",
-                "name": "name"
+                "name": "nameAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -689,7 +683,7 @@
                 "type": "textarea",
                 "id": "dnd-12",
                 "label": "Address",
-                "name": "address"
+                "name": "addressAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -715,7 +709,7 @@
                 "type": "tel",
                 "id": "dnd-11",
                 "label": "Phone Number",
-                "name": "contact"
+                "name": "contactAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -741,7 +735,7 @@
                 "type": "text",
                 "id": "dnd-9",
                 "label": "Website",
-                "name": "website"
+                "name": "websiteAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -767,7 +761,7 @@
                 "type": "text",
                 "id": "dnd-42",
                 "label": "Company Code",
-                "name": "companyCode"
+                "name": "companyCodeAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -837,31 +831,31 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "name",
-                                        "mappedField": "name",
+                                        "mappedField": "nameAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "address",
-                                        "mappedField": "address",
+                                        "mappedField": "addressAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "contact",
-                                        "mappedField": "contact",
+                                        "mappedField": "contactAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "website",
-                                        "mappedField": "website",
+                                        "mappedField": "websiteAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyCode",
-                                        "mappedField": "companyCode",
+                                        "mappedField": "companyCodeAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
