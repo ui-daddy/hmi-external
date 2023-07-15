@@ -824,13 +824,13 @@
                 "payloadParams": [
                     {
                         "paramName": "id",
-                        "mappedField": "id",
+                        "mappedField": "companyId",
                         "mappedValue": "",
                         "valueFormat": ""
                     },
                     {
                         "paramName": "name",
-                        "mappedField": "name",
+                        "mappedField": "companyName",
                         "mappedValue": "",
                         "valueFormat": ""
                     }
@@ -842,9 +842,9 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
-            "valueKey": "id",
-            "value": "name"
+            "labelKey": "companyName",
+            "valueKey": "companyId",
+            "value": ""
         },
         {
             "baseProperties": {
