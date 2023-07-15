@@ -822,29 +822,6 @@
         },
         {
             "baseProperties": {
-                "type": "dropdownMenu",
-                "id": "dnd-49",
-                "label": "Company"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true"
-            },
-            "optionList": null
-        },
-        {
-            "baseProperties": {
                 "type": "text",
                 "id": "dnd-13",
                 "name": "companyName",
