@@ -619,7 +619,7 @@
                             "field": "",
                             "fieldValue": "",
                             "messagetype": "Success",
-                            "messageText": "User updated successfully. Please refresh the below table to see the changes.",
+                            "messageText": "User updated successfully.",
                             "target": "",
                             "timer": null,
                             "formName": "",
@@ -1213,7 +1213,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "User added successfully. Please refresh the below table to see the changes.",
+                                    "message": "User added successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",

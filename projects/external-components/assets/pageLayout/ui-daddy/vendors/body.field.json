@@ -197,6 +197,34 @@
                                         "fieldValue": "$SHARED_DATA$.tableRowData.id",
                                         "condition": "true",
                                         "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-24$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.address",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-25$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.contact",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-26$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.website",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-41$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyCode",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
                                     }
                                 ],
                                 "debounce": 3000
@@ -233,7 +261,7 @@
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
-                                            "componentName": "dnd-39"
+                                            "componentName": "vendorList"
                                         }
                                     ]
                                 },
@@ -572,7 +600,7 @@
                                             "target": "dnd-39",
                                             "timer": null,
                                             "formName": "",
-                                            "componentName": "",
+                                            "componentName": "vendorList",
                                             "sharedData": [],
                                             "apiConfig": null
                                         },
@@ -876,7 +904,7 @@
                                             "target": "dnd-39",
                                             "timer": null,
                                             "formName": "",
-                                            "componentName": "",
+                                            "componentName": "vendorList",
                                             "sharedData": [],
                                             "apiConfig": null
                                         },
