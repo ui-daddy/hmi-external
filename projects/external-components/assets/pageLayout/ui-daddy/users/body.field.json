@@ -18,11 +18,14 @@
                         {
                             "selectorName": ".add-user-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0"
+                                "parent-padding": "25px 0 15px 0",
+                                "background-color": "#BDBDBD",
+                                "color": "black",
+                                "border-color": "#BDBDBD"
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": "btn-secondary"
                 },
                 "orientation": null
             },
@@ -516,57 +519,10 @@
         {
             "baseProperties": {
                 "type": "text",
-                "id": "dnd-35",
-                "name": "level",
-                "label": "Level",
-                "formName": "editUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
                 "id": "dnd-36",
                 "name": "userName",
                 "label": "Username",
                 "formName": "editUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "url",
-                "id": "dnd-38",
-                "name": "photo",
-                "formName": "editUserModal",
-                "label": "User Photo"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -621,8 +577,16 @@
                 "height": null,
                 "css": {
                     "customClassName": "save-user",
-                    "configuration": [],
-                    "themeClass": "btn-warning"
+                    "configuration": [
+                        {
+                            "selectorName": ".save-user",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
                 },
                 "orientation": null
             },
@@ -638,7 +602,7 @@
                             "field": "",
                             "fieldValue": "",
                             "messagetype": "Success",
-                            "messageText": "User updated successfully",
+                            "messageText": "User updated successfully. Please refresh the below table to see the changes.",
                             "target": "",
                             "timer": null,
                             "formName": "",
@@ -982,31 +946,6 @@
         {
             "baseProperties": {
                 "type": "text",
-                "id": "dnd-15",
-                "name": "level",
-                "formName": "addUserModal",
-                "label": "Level"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "false"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
                 "id": "dnd-18",
                 "name": "userName",
                 "label": "Username",
@@ -1080,31 +1019,6 @@
         },
         {
             "baseProperties": {
-                "type": "url",
-                "id": "dnd-19",
-                "name": "photoIdUrl",
-                "label": "Photo Id",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "false"
-            },
-            "value": null
-        },
-        {
-            "baseProperties": {
                 "type": "submit",
                 "id": "dnd-20",
                 "name": "submitUser",
@@ -1122,11 +1036,13 @@
                             "selectorName": ".save-user",
                             "xs": {
                                 "parent-padding-top": "30px",
-                                "width": "100%"
+                                "width": "100%",
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": "btn-secondary"
                 },
                 "orientation": null
             },
@@ -1248,7 +1164,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "User added successfully. Please refresh to see new user.",
+                                    "message": "User added successfully. Please refresh the below table to see the changes.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
@@ -1258,10 +1174,10 @@
                                             "fieldValue": "",
                                             "messagetype": "",
                                             "messageText": "",
-                                            "target": "",
+                                            "target": "dnd-47",
                                             "timer": null,
                                             "formName": "",
-                                            "componentName": "dnd-4",
+                                            "componentName": "userList",
                                             "sharedData": [],
                                             "apiConfig": null
                                         },
