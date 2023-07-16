@@ -56,10 +56,30 @@
                             "sectionList": []
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "id": "dnd-6",
+            "type": "modal",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    }
                 },
+                "css": {
+                    "configuration": [],
+                    "customClassName": null
+                }
+            },
+            "sectionList": [
                 {
-                    "id": "dnd-6",
-                    "type": "modal",
+                    "id": "dnd-21",
+                    "type": "content",
                     "layout": {
                         "column": {
                             "ratio": {
@@ -74,31 +94,31 @@
                             "customClassName": null
                         }
                     },
-                    "sectionList": [
-                        {
-                            "id": "dnd-21",
-                            "type": "content",
-                            "layout": {
-                                "column": {
-                                    "ratio": {
-                                        "lg": "12",
-                                        "md": "12",
-                                        "sm": "12",
-                                        "xs": "12"
-                                    }
-                                },
-                                "css": {
-                                    "configuration": [],
-                                    "customClassName": null
-                                }
-                            },
-                            "sectionList": []
-                        }
-                    ]
+                    "sectionList": []
+                }
+            ]
+        },
+        {
+            "id": "dnd-11",
+            "type": "modal",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    }
                 },
+                "css": {
+                    "configuration": [],
+                    "customClassName": null
+                }
+            },
+            "sectionList": [
                 {
-                    "id": "dnd-11",
-                    "type": "modal",
+                    "id": "dnd-12",
+                    "type": "content",
                     "layout": {
                         "column": {
                             "ratio": {
@@ -113,27 +133,7 @@
                             "customClassName": null
                         }
                     },
-                    "sectionList": [
-                        {
-                            "id": "dnd-12",
-                            "type": "content",
-                            "layout": {
-                                "column": {
-                                    "ratio": {
-                                        "lg": "12",
-                                        "md": "12",
-                                        "sm": "12",
-                                        "xs": "12"
-                                    }
-                                },
-                                "css": {
-                                    "configuration": [],
-                                    "customClassName": null
-                                }
-                            },
-                            "sectionList": []
-                        }
-                    ]
+                    "sectionList": []
                 }
             ]
         }
