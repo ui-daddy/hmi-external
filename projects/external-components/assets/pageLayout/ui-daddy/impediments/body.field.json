@@ -471,7 +471,21 @@
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": null
+                            "apiConfig": {
+                                "name": "Add impediment",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Create",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [],
+                                "onSuccess": {},
+                                "onError": {},
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "downloadFileName": "",
+                                "responseType": ""
+                            }
                         }
                     ]
                 }
