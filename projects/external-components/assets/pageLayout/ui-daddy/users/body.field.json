@@ -1045,7 +1045,7 @@
                                             "varName": "profilePath",
                                             "staticData": "",
                                             "cache": false,
-                                            "responseAccessor": "fileURL"
+                                            "responseAccessor": "$RESPONSE$"
                                         }
                                     ],
                                     "fieldData": [],
