@@ -6,8 +6,8 @@
             "baseProperties": {
                 "type": "button",
                 "id": "dnd-4",
-                "name": "AddImpedementsButton",
-                "label": "Add Impedements"
+                "name": "",
+                "label": "Add Impedement"
             },
             "layoutProperties": {
                 "labelPlacement": null,
