@@ -78,7 +78,17 @@
                 "visibleValue": "true"
             },
             "customAttributes": {
-                "columns": [],
+                "columns": [
+                    {
+                        "colName": "Name",
+                        "filterType": "text",
+                        "accessor": "name",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    }
+                ],
                 "caption": "Impedements",
                 "summary": null,
                 "globalFilterFields": [
