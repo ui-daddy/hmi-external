@@ -193,8 +193,8 @@
                 "resizableColumns": null,
                 "responsive": true,
                 "dataConfig": {
-                    "name": "userList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Employee/List",
+                    "name": "impedimentList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
