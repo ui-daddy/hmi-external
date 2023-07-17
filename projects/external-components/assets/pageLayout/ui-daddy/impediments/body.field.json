@@ -53,7 +53,11 @@
                     ]
                 }
             ],
-            "expressionProperties": {}
+            "expressionProperties": {
+                "visibleValue": "true",
+                "readOnlyValue": "false",
+                "disabledValue": "false"
+            }
         },
         {
             "baseProperties": {
@@ -400,18 +404,18 @@
             "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-13",
-                "name": "addImpedementTitle",
-                "formName": "addImpedementModal"
+                "name": "addImpedimentTitle",
+                "formName": "addImpedimentModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "ImpedementModalTitle",
+                    "customClassName": "impediment-modal-title",
                     "configuration": [
                         {
-                            "selectorName": ".ImpedementModalTitle",
+                            "selectorName": ".impediment-modal-title",
                             "xs": {
                                 "text-align": "center",
                                 "parent-font-size": "30px",
@@ -425,13 +429,13 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Add Impedements"
+            "value": "Add Impedement"
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-18",
-                "formName": "addImpedementModal",
+                "formName": "addImpedimentModal",
                 "name": "name",
                 "label": "Name"
             },
@@ -455,7 +459,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-15",
-                "formName": "addImpedementModal",
+                "formName": "addImpedimentModal",
                 "name": "type",
                 "label": "Type"
             },
@@ -472,7 +476,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": null,
+            "optionList": {},
             "optionsConfig": null,
             "labelKey": null,
             "valueKey": null,
@@ -483,7 +487,7 @@
                 "type": "text",
                 "id": "dnd-16",
                 "name": "createdBy",
-                "formName": "addImpedementModal",
+                "formName": "addImpedimentModal",
                 "label": "Created By"
             },
             "layoutProperties": {
@@ -506,7 +510,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-17",
-                "formName": "addImpedementModal",
+                "formName": "addImpedimentModal",
                 "name": "createdAt",
                 "label": "Create Time"
             },
@@ -530,8 +534,8 @@
             "baseProperties": {
                 "type": "submit",
                 "id": "dnd-19",
-                "formName": "addImpedementModal",
-                "name": "submitImpedements",
+                "formName": "addImpedimentModal",
+                "name": "submitImpediment",
                 "label": "Save"
             },
             "layoutProperties": {
@@ -539,10 +543,10 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-impedements",
+                    "customClassName": "save-impediment",
                     "configuration": [
                         {
-                            "selectorName": ".save-impedements",
+                            "selectorName": ".save-impediment",
                             "xs": {
                                 "parent-padding-top": "30px",
                                 "width": "100%",
@@ -579,14 +583,59 @@
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
-                                "payloadParams": [],
-                                "onSuccess": {},
-                                "onError": {},
+                                "payloadParams": [
+                                    {
+                                        "paramName": "name",
+                                        "mappedField": "name",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "type",
+                                        "mappedField": "type",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "createdBy",
+                                        "mappedField": "createdBy",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "createdAt",
+                                        "mappedField": "createdAt",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
                                 "beforeSubmit": {
                                     "action": []
                                 },
-                                "downloadFileName": "",
-                                "responseType": ""
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "User added successfully. Please refresh to see new user.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while adding user.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
                             }
                         }
                     ]
