@@ -45,7 +45,7 @@
                 },
                 {
                     "id": "gantt-chart",
-                    "label": "Gantt Chart",
+                    "label": "Project Plan",
                     "navigateToPage": "/chart"
                 },
                 {
