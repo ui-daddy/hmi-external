@@ -289,11 +289,27 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": null,
+            "optionList": [
+                {
+                    "name": "a",
+                    "value": "1",
+                    "label": "UP"
+                },
+                {
+                    "name": "b",
+                    "value": "2",
+                    "label": "MP"
+                },
+                {
+                    "name": "c",
+                    "value": "3",
+                    "label": "UK"
+                }
+            ],
             "optionsConfig": null,
-            "labelKey": null,
-            "valueKey": null,
-            "value": null
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": "3"
         },
         {
             "baseProperties": {
