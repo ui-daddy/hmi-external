@@ -5,12 +5,12 @@
             "type": "content",
             "layout": {
                 "column": {
-                    "count": 1,
+                    "count": 2,
                     "ratio": {
-                        "lg": "6:6",
-                        "md": "6:6",
-                        "sm": "6:6",
-                        "xs": "6:6"
+                        "lg": "10:2",
+                        "md": "10:2",
+                        "sm": "10:2",
+                        "xs": "10:2"
                     },
                     "autoPlace": "false"
                 }
@@ -49,10 +49,10 @@
                         "column": {
                             "count": 3,
                             "ratio": {
-                                "lg": "8:2:2",
-                                "md": "8:2:2",
-                                "sm": "8:2:2",
-                                "xs": "8:2:2"
+                                "lg": "6:6",
+                                "md": "6:6",
+                                "sm": "6:6",
+                                "xs": "6:6"
                             },
                             "autoPlace": "false"
                         }

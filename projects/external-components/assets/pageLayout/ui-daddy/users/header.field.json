@@ -75,13 +75,6 @@
     ],
     "logout-header-dashboard": [
         {
-            "value": "",
-            "baseProperties": {
-                "name": "space",
-                "type": "staticText"
-            }
-        },
-        {
             "value": "Welcome",
             "baseProperties": {
                 "name": "org",
