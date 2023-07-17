@@ -142,6 +142,7 @@
                         "html": "<i class='fas fa-edit'></i>",
                         "sortable": false,
                         "disableColumnSorting": true,
+                        "cellDisableAccessor": "edit",
                         "events": [
                             {
                                 "event": "",
@@ -270,6 +271,7 @@
                         "html": "<i class='fas fa-trash'></i>",
                         "sortable": false,
                         "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
                         "action": {
                             "name": "ROW_ACTION",
                             "apiConfig": {
