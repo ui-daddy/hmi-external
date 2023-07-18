@@ -1029,7 +1029,10 @@
                                     "showSuccessMessage": true,
                                     "sharedData": [],
                                     "fieldData": [],
-                                    "clearSharedData": [],
+                                    "clearSharedData": [
+                                        "idProofVar",
+                                        "profilePath"
+                                    ],
                                     "apiDataAccessor": "",
                                     "message": "Vendor updated successfully.",
                                     "actions": [
@@ -1796,7 +1799,10 @@
                                     "showSuccessMessage": true,
                                     "sharedData": [],
                                     "fieldData": [],
-                                    "clearSharedData": [],
+                                    "clearSharedData": [
+                                        "profilePath",
+                                        "idProofVar"
+                                    ],
                                     "apiDataAccessor": "",
                                     "message": "User added successfully.",
                                     "actions": [
