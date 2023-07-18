@@ -481,7 +481,7 @@
                 "id": "dnd-17",
                 "formName": "addImpedimentModal",
                 "name": "createdAt",
-                "label": "Created By"
+                "label": "Created At"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
