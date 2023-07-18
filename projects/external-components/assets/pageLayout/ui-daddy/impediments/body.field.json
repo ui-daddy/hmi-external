@@ -94,7 +94,7 @@
                     },
                     {
                         "colName": "Type",
-                        "filterType": "dropdown",
+                        "filterType": "text",
                         "accessor": "type",
                         "colWidth": {
                             "unit": "px",
@@ -103,7 +103,6 @@
                     },
                     {
                         "colName": "Created By",
-                        "filterType": "text",
                         "accessor": "createdBy",
                         "colWidth": {
                             "unit": "px",
@@ -112,7 +111,6 @@
                     },
                     {
                         "colName": "Created At",
-                        "filterType": "text",
                         "accessor": "createdAt",
                         "colWidth": {
                             "unit": "px",
@@ -152,28 +150,28 @@
                                         "field": "$dnd-23$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.name",
                                         "condition": "true",
-                                        "formName": "editImpedementModal"
+                                        "formName": "editImpedimentModal"
                                     },
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-24$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.type",
                                         "condition": "true",
-                                        "formName": "editImpedementModal"
+                                        "formName": "editImpedimentModal"
                                     },
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-25$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.createdBy",
                                         "condition": "true",
-                                        "formName": "editImpedementModal"
+                                        "formName": "editImpedimentModal"
                                     },
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-26$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.createdAt",
                                         "condition": "true",
-                                        "formName": "editImpedementModal"
+                                        "formName": "editImpedimentModal"
                                     }
                                 ],
                                 "debounce": 3000
