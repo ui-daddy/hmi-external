@@ -364,7 +364,7 @@
                 "type": "submit",
                 "id": "dnd-27",
                 "formName": "editImpedimentModal",
-                "name": "submitImpediment",
+                "name": "saveImpedimentBtn",
                 "label": "Save"
             },
             "layoutProperties": {
