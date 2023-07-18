@@ -290,18 +290,23 @@
             "optionList": [
                 {
                     "name": "a",
-                    "value": "1",
-                    "label": "UP"
+                    "value": "Flood",
+                    "label": "Flood"
                 },
                 {
                     "name": "b",
-                    "value": "2",
-                    "label": "MP"
+                    "value": " Fire",
+                    "label": " Fire"
                 },
                 {
                     "name": "c",
-                    "value": "3",
-                    "label": "UK"
+                    "value": "Earthquake",
+                    "label": "Earthquake"
+                },
+                {
+                    "name": "d",
+                    "value": "Riots",
+                    "label": "Riots"
                 }
             ],
             "optionsConfig": null,
