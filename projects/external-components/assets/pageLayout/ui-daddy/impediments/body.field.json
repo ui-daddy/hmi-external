@@ -372,10 +372,10 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-impedements",
+                    "customClassName": "save-impediment",
                     "configuration": [
                         {
-                            "selectorName": ".save-impedements",
+                            "selectorName": ".save-impediment",
                             "xs": {
                                 "parent-padding-top": "30px",
                                 "width": "100%",
