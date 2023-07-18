@@ -217,18 +217,18 @@
             "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-22",
-                "name": "editImpedementTitle",
-                "formName": "editImpedementModal"
+                "name": "editImpedimentModalTitle",
+                "formName": "editImpedimentModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "ImpedementModalTitle",
+                    "customClassName": "impediment-modal-title",
                     "configuration": [
                         {
-                            "selectorName": ".ImpedementModalTitle",
+                            "selectorName": ".impediment-modal-title",
                             "xs": {
                                 "text-align": "center",
                                 "parent-font-size": "30px",
