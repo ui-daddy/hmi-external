@@ -17,8 +17,8 @@ header.header-container {
 body {
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji" !important
 }
-.nav-link {
-    width:100px !important;
+.navbar .dynamic-style-child {
+    width: 140px !important;
 }
 .navbar {
     margin-left:115px;
