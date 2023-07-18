@@ -510,7 +510,7 @@
                 }
             ],
             "optionsConfig": null,
-            "labelKey": "lable",
+            "labelKey": "label",
             "valueKey": "value",
             "value": "3"
         },
