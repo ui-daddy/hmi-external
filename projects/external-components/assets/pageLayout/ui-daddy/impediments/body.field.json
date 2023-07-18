@@ -103,6 +103,7 @@
                     },
                     {
                         "colName": "Created By",
+                        "filterType": "text",
                         "accessor": "createdBy",
                         "colWidth": {
                             "unit": "px",
@@ -111,6 +112,7 @@
                     },
                     {
                         "colName": "Created At",
+                        "filterType": "text",
                         "accessor": "createdAt",
                         "colWidth": {
                             "unit": "px",
@@ -275,7 +277,7 @@
                 "id": "dnd-26",
                 "formName": "editImpedimentModal",
                 "name": "createdAt",
-                "label": "Create Time"
+                "label": "Created By"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -479,7 +481,7 @@
                 "id": "dnd-17",
                 "formName": "addImpedimentModal",
                 "name": "createdAt",
-                "label": "Create Time"
+                "label": "Created By"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
