@@ -248,7 +248,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-23",
-                "formName": "editImpedementModal",
+                "formName": "editImpedimentModal",
                 "name": "name",
                 "label": "Name"
             },
@@ -274,7 +274,7 @@
                 "id": "dnd-24",
                 "name": "type",
                 "label": "Type",
-                "formName": "editImpedementModal"
+                "formName": "editImpedimentModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -315,7 +315,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-25",
-                "formName": "editImpedementModal",
+                "formName": "editImpedimentModal",
                 "name": "createdBy",
                 "label": "Created By"
             },
@@ -339,7 +339,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-26",
-                "formName": "editImpedementModal",
+                "formName": "editImpedimentModal",
                 "name": "createdAt",
                 "label": "Create Time"
             },
@@ -363,8 +363,8 @@
             "baseProperties": {
                 "type": "submit",
                 "id": "dnd-27",
-                "formName": "editImpedementModal",
-                "name": "submitImpedements",
+                "formName": "editImpedimentModal",
+                "name": "submitImpediment",
                 "label": "Save"
             },
             "layoutProperties": {
