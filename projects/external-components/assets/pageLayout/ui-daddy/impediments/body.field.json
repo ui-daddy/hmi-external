@@ -183,12 +183,12 @@
                         }
                     }
                 ],
-                "caption": "Impedements",
+                "caption": "Impediments",
                 "summary": null,
                 "globalFilterFields": [
                     "name",
                     "type",
-                    "createdBY",
+                    "createdBy",
                     "createdAt"
                 ],
                 "dataKey": "id",
