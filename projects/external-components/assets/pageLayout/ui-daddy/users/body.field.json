@@ -868,30 +868,6 @@
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-14",
-                "formName": "addUserModal",
-                "label": "Role",
-                "name": "roleAdd"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-50",
                 "name": "levelTypeEdit",
@@ -937,6 +913,32 @@
             "labelKey": "label",
             "valueKey": "name",
             "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-14",
+                "formName": "addUserModal",
+                "label": "Role",
+                "name": "roleAdd"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "dnd-50!=undefined"
+            },
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
