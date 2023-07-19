@@ -870,7 +870,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-50",
-                "name": "levelTypeEdit",
+                "name": "levelTypeAdd",
                 "formName": "addUserModal",
                 "label": "Level Type"
             },
@@ -935,7 +935,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "dnd-50!=undefined"
+                "visible": "levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
