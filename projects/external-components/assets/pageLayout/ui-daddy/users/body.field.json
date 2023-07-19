@@ -893,6 +893,54 @@
         {
             "baseProperties": {
                 "type": "dropdown",
+                "id": "dnd-50",
+                "name": "levelTypeEdit",
+                "formName": "addUserModal",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "name": "district",
+                    "value": "district",
+                    "label": "District"
+                },
+                {
+                    "name": "division",
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "name": "circle",
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "name": "zone",
+                    "value": "zone",
+                    "label": "Zone"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "name",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
                 "id": "dnd-48",
                 "name": "companyDropdown-addModal",
                 "formName": "addUserModal",
@@ -1085,108 +1133,45 @@
         },
         {
             "baseProperties": {
-                "type": "button",
+                "type": "dropdown",
                 "id": "dnd-48",
-                "name": "profileUpload",
-                "label": "Upload",
-                "formName": "addUserModal"
+                "name": "companyDropdown-addModal",
+                "formName": "addUserModal",
+                "label": "Company"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "left",
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "profile-upload",
-                    "configuration": [
-                        {
-                            "selectorName": ".profile-upload",
-                            "xs": {
-                                "parent-float": "right",
-                                "parent-width": "calc(100% - 215px)",
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
-                            }
-                        }
-                    ],
-                    "themeClass": "btn-secondary"
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
                 },
                 "orientation": null
             },
-            "events": [
-                {
-                    "event": "click",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "INVOKE_API",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "",
-                            "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": {
-                                "name": "Upload Profile Image",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=task",
-                                "method": "POST",
-                                "pathParams": [],
-                                "queryParams": [],
-                                "fileUpload": true,
-                                "payloadParams": [
-                                    {
-                                        "paramName": "data",
-                                        "mappedField": "profileImage",
-                                        "mappedValue": "file",
-                                        "valueFormat": ""
-                                    }
-                                ],
-                                "fetch": "",
-                                "downloadFileName": "",
-                                "responseType": "",
-                                "beforeSubmit": {
-                                    "action": []
-                                },
-                                "onSuccess": {
-                                    "pageUrl": "",
-                                    "deleteTableRow": false,
-                                    "showSuccessMessage": true,
-                                    "sharedData": [
-                                        {
-                                            "varName": "profilePath",
-                                            "staticData": "",
-                                            "cache": false,
-                                            "responseAccessor": "$RESPONSE$"
-                                        }
-                                    ],
-                                    "fieldData": [],
-                                    "clearSharedData": [],
-                                    "apiDataAccessor": "",
-                                    "message": "Profile image uploaded successfully.",
-                                    "actions": []
-                                },
-                                "onError": {
-                                    "pageUrl": "",
-                                    "sharedData": [],
-                                    "fieldData": [],
-                                    "clearSharedData": [],
-                                    "apiDataAccessor": "",
-                                    "message": "Error occurred while uploading profile picture.",
-                                    "showErrorMessage": true,
-                                    "actions": []
-                                }
-                            }
-                        }
-                    ]
-                }
-            ],
+            "events": [],
             "expressionProperties": {
-                "disabled": "profileImage == null or profileImage == undefined"
-            }
+                "requiredValue": "true"
+            },
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Vendors",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "id",
+            "value": ""
         },
         {
             "baseProperties": {
