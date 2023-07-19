@@ -1133,48 +1133,6 @@
         },
         {
             "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-48",
-                "name": "companyDropdown-addModal",
-                "formName": "addUserModal",
-                "label": "Company"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true"
-            },
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Vendors",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                }
-            },
-            "labelKey": "name",
-            "valueKey": "id",
-            "value": ""
-        },
-        {
-            "baseProperties": {
                 "type": "text",
                 "id": "dnd-18",
                 "name": "userNameAdd",
