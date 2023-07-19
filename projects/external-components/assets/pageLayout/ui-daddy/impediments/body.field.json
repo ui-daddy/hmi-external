@@ -185,13 +185,180 @@
                             "unit": "px",
                             "value": 150
                         }
+                    },
+                    {
+                        "colName": "Designation",
+                        "filterType": "multiselect",
+                        "accessor": "designation",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "E-Mail",
+                        "filterType": "multiselect",
+                        "accessor": "email",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Company",
+                        "filterType": "multiselect",
+                        "accessor": "companyName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "EmpId",
+                        "filterType": "text",
+                        "accessor": "empId",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Edit User",
+                        "title": "Edit User",
+                        "html": "<i class='fas fa-edit'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "events": [
+                            {
+                                "event": "",
+                                "actions": [
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-43"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "SET_SHARED_DATA",
+                                        "sharedData": [
+                                            {
+                                                "varName": "tableRowData",
+                                                "staticData": "$ROW_DATA$"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-30$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.givenName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-31$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.familyName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-32$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.mobile",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-26$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-33$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.designation",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-34$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.empId",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-35$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.level",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-36$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.userName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-38$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.photo",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-39$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.email",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-34$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.empId",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-25$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.role",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-28$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyName",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    }
+                                ],
+                                "debounce": 3000
+                            }
+                        ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
                     }
                 ],
                 "caption": "Users",
                 "summary": null,
                 "globalFilterFields": [
                     "givenName",
-                    "familyName"
+                    "familyName",
+                    "designation",
+                    "userName",
+                    "email"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
