@@ -343,7 +343,7 @@
                 "id": "dnd-26",
                 "formName": "editImpedimentModal",
                 "name": "createdAt",
-                "label": "Created By"
+                "label": "Created At"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
