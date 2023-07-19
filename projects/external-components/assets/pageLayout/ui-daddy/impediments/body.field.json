@@ -144,6 +144,71 @@
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true
             }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-28",
+                "name": "userList"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Given Name",
+                        "filterType": "text",
+                        "accessor": "givenName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Family Name",
+                        "accessor": "familyName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    }
+                ],
+                "caption": "Users",
+                "summary": null,
+                "globalFilterFields": [
+                    "givenName",
+                    "familyName"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": true,
+                "dataConfig": {
+                    "name": "userList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Employee/List",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": "payload"
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true
+            }
         }
     ],
     "dnd-6": [],
