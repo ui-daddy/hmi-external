@@ -63,7 +63,7 @@
             "baseProperties": {
                 "type": "dynamicField",
                 "id": "dnd-20",
-                "name": "userList",
+                "name": "impedimentList",
                 "library": "primeng"
             },
             "layoutProperties": {
