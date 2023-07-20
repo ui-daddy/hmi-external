@@ -112,12 +112,48 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Vendor Name",
+                        "colName": "Name",
                         "filterType": "text",
                         "accessor": "name",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Address",
+                        "filterType": "text",
+                        "accessor": "address",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 250
+                        }
+                    },
+                    {
+                        "colName": "Contact",
+                        "filterType": "text",
+                        "accessor": "contact",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Website",
+                        "filterType": "text",
+                        "accessor": "website",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 250
+                        }
+                    },
+                    {
+                        "colName": "Company Code",
+                        "filterType": "text",
+                        "accessor": "companyCode",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
                         }
                     },
                     {
@@ -161,6 +197,34 @@
                                         "fieldValue": "$SHARED_DATA$.tableRowData.id",
                                         "condition": "true",
                                         "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-24$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.address",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-25$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.contact",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-26$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.website",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-41$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyCode",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
                                     }
                                 ],
                                 "debounce": 3000
@@ -191,13 +255,13 @@
                                     }
                                 ],
                                 "onSuccess": {
-                                    "deleteTableRow": false,
+                                    "deleteTableRow": true,
                                     "showSuccessMessage": true,
-                                    "message": "Vendor deleted successfully. Please refresh the below table to see the changes.",
+                                    "message": "Vendor deleted successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
-                                            "componentName": "dnd-39"
+                                            "componentName": "vendorList"
                                         }
                                     ]
                                 },
@@ -231,7 +295,8 @@
                 },
                 "columnFilter": true,
                 "showExportExcelBtn": true,
-                "showExportPdfBtn": true
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
             }
         }
     ],
@@ -264,7 +329,7 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-40",
-                "name": "id"
+                "name": "idEdit"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -291,8 +356,8 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-22",
-                "label": "Vendor Name",
-                "name": "editName"
+                "label": "Name",
+                "name": "nameEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -316,7 +381,8 @@
             "baseProperties": {
                 "type": "textarea",
                 "id": "dnd-24",
-                "label": "Vendor Address"
+                "label": "Address",
+                "name": "addressEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -331,7 +397,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visibleValue": "false",
+                "visibleValue": "true",
                 "requiredValue": "false"
             },
             "value": null,
@@ -342,7 +408,7 @@
                 "type": "tel",
                 "id": "dnd-25",
                 "label": "Phone Number",
-                "name": "mobile"
+                "name": "contactEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -358,7 +424,7 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "false"
+                "visibleValue": "true"
             },
             "value": null,
             "placeholder": null
@@ -367,7 +433,8 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-26",
-                "label": "Vendor Website"
+                "label": "Website",
+                "name": "websiteEdit"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -383,8 +450,31 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "false"
+                "visibleValue": "true"
             },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-41",
+                "label": "Company Code",
+                "name": "companyCodeEdit"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
             "value": null,
             "placeholder": null
         },
@@ -430,20 +520,44 @@
                                 "pathParams": [
                                     {
                                         "paramName": "id",
-                                        "mappedField": "id"
+                                        "mappedField": "idEdit"
                                     }
                                 ],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
                                         "paramName": "name",
-                                        "mappedField": "editName",
+                                        "mappedField": "nameEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "address",
+                                        "mappedField": "addressEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "contact",
+                                        "mappedField": "contactEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "website",
+                                        "mappedField": "websiteEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyCode",
+                                        "mappedField": "companyCodeEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "id",
-                                        "mappedField": "id",
+                                        "mappedField": "idEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
@@ -456,25 +570,11 @@
                                     "pageUrl": "",
                                     "deleteTableRow": false,
                                     "showSuccessMessage": true,
-                                    "sharedData": [
-                                        {
-                                            "varName": "id",
-                                            "staticData": "",
-                                            "cache": false,
-                                            "responseAccessor": "id"
-                                        },
-                                        {
-                                            "varName": "name",
-                                            "staticData": "",
-                                            "cache": false,
-                                            "responseAccessor": "name"
-                                        }
-                                    ],
+                                    "sharedData": [],
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor updated successfully. Please refresh the below table to see the changes.",
-                                    
+                                    "message": "Vendor updated successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
@@ -484,10 +584,10 @@
                                             "fieldValue": "",
                                             "messagetype": "",
                                             "messageText": "",
-                                            "target": "dnd-39",
+                                            "target": "",
                                             "timer": null,
                                             "formName": "",
-                                            "componentName": "",
+                                            "componentName": "vendorList",
                                             "sharedData": [],
                                             "apiConfig": null
                                         },
@@ -562,8 +662,8 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-13",
-                "label": "Vendor Name",
-                "name": "name"
+                "label": "Name",
+                "name": "nameAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -588,8 +688,8 @@
             "baseProperties": {
                 "type": "textarea",
                 "id": "dnd-12",
-                "label": "Vendor Address",
-                "name": "address"
+                "label": "Address",
+                "name": "addressAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -604,7 +704,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visibleValue": "false",
+                "visibleValue": "true",
                 "requiredValue": "false"
             },
             "value": null,
@@ -615,7 +715,7 @@
                 "type": "tel",
                 "id": "dnd-11",
                 "label": "Phone Number",
-                "name": "mobile"
+                "name": "contactAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -631,7 +731,7 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "false"
+                "visibleValue": "true"
             },
             "value": null,
             "placeholder": null
@@ -640,8 +740,8 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-9",
-                "label": "Vendor Website",
-                "name": "website"
+                "label": "Website",
+                "name": "websiteAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -656,9 +756,32 @@
             },
             "events": [],
             "expressionProperties": {
-                "visibleValue": "false",
+                "visibleValue": "true",
                 "requiredValue": "false"
             },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-42",
+                "label": "Company Code",
+                "name": "companyCodeAdd"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
             "value": null,
             "placeholder": null
         },
@@ -714,7 +837,31 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "name",
-                                        "mappedField": "name",
+                                        "mappedField": "nameAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "address",
+                                        "mappedField": "addressAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "contact",
+                                        "mappedField": "contactAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "website",
+                                        "mappedField": "websiteAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyCode",
+                                        "mappedField": "companyCodeAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
@@ -731,7 +878,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor added successfully. Please refresh the below table to see the changes.",
+                                    "message": "Vendor added successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
@@ -744,7 +891,7 @@
                                             "target": "dnd-39",
                                             "timer": null,
                                             "formName": "",
-                                            "componentName": "",
+                                            "componentName": "vendorList",
                                             "sharedData": [],
                                             "apiConfig": null
                                         },

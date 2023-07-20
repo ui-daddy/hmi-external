@@ -142,19 +142,11 @@
                         "html": "<i class='fas fa-edit'></i>",
                         "sortable": false,
                         "disableColumnSorting": true,
+                        "cellDisableAccessor": "edit",
                         "events": [
                             {
                                 "event": "",
                                 "actions": [
-                                    {
-                                        "actionType": "OPEN_MODAL",
-                                        "showLoading": true,
-                                        "target": "dnd-43"
-                                    },
-                                    {
-                                        "actionType": "WAIT_IN_MS",
-                                        "timer": 100
-                                    },
                                     {
                                         "actionType": "SET_SHARED_DATA",
                                         "sharedData": [
@@ -251,14 +243,64 @@
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-28$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyName",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyId",
                                         "condition": "true",
                                         "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-43"
                                     }
                                 ],
                                 "debounce": 3000
                             }
                         ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Delete User",
+                        "title": "Delete User",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteUser",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Delete/:userId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "userId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": true,
+                                    "showSuccessMessage": true,
+                                    "message": "User deleted successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "userList"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
                         "colWidth": {
                             "unit": "px",
                             "value": 50
@@ -288,7 +330,8 @@
                 },
                 "columnFilter": true,
                 "showExportExcelBtn": true,
-                "showExportPdfBtn": true
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
             }
         }
     ],
@@ -298,7 +341,7 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-26",
-                "name": "userId",
+                "name": "userIdEdit",
                 "label": "userId",
                 "formName": "editUserModal"
             },
@@ -348,7 +391,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-25",
-                "name": "role",
+                "name": "roleEdit",
                 "label": "Role",
                 "formName": "editUserModal"
             },
@@ -365,14 +408,16 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
-                "type": "text",
+                "type": "dropdown",
                 "id": "dnd-28",
-                "name": "companyName",
-                "label": "Company Name"
+                "name": "companyDropdown-editModal",
+                "formName": "editUserModal",
+                "label": "Company"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -389,14 +434,30 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Vendors",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "id",
+            "value": ""
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-30",
-                "name": "givenName",
+                "name": "givenNameEdit",
                 "label": "Given Name",
                 "formName": "editUserModal"
             },
@@ -422,7 +483,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-31",
-                "name": "familyName",
+                "name": "familyNameEdit",
                 "formName": "editUserModal",
                 "label": "Family Name"
             },
@@ -446,7 +507,7 @@
             "baseProperties": {
                 "type": "tel",
                 "id": "dnd-32",
-                "name": "mobile",
+                "name": "mobileEdit",
                 "label": "Mobile",
                 "formName": "editUserModal"
             },
@@ -470,7 +531,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-33",
-                "name": "designation",
+                "name": "designationEdit",
                 "formName": "editUserModal",
                 "label": "Designation"
             },
@@ -496,7 +557,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-34",
-                "name": "empId",
+                "name": "empIdEdit",
                 "label": "Employee ID",
                 "formName": "editUserModal"
             },
@@ -520,7 +581,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-36",
-                "name": "userName",
+                "name": "userNameEdit",
                 "label": "Username",
                 "formName": "editUserModal"
             },
@@ -544,7 +605,7 @@
             "baseProperties": {
                 "type": "email",
                 "id": "dnd-39",
-                "name": "email",
+                "name": "emailEdit",
                 "label": "E-Mail",
                 "formName": "editUserModal"
             },
@@ -561,7 +622,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -596,13 +658,13 @@
                     "debounce": null,
                     "actions": [
                         {
-                            "actionType": "message",
+                            "actionType": "INVOKE_API",
                             "url": "",
-                            "condition": "1==1",
+                            "condition": "",
                             "field": "",
                             "fieldValue": "",
-                            "messagetype": "Success",
-                            "messageText": "User updated successfully. Please refresh the below table to see the changes.",
+                            "messagetype": "",
+                            "messageText": "",
                             "target": "",
                             "timer": null,
                             "formName": "",
@@ -610,92 +672,97 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Edit User",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Create'",
-                                "method": "POST",
-                                "pathParams": [],
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Update/:id",
+                                "method": "PATCH",
+                                "pathParams": [
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "userIdEdit"
+                                    }
+                                ],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
                                         "paramName": "role",
-                                        "mappedField": "role",
+                                        "mappedField": "roleEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyName",
-                                        "mappedField": "companyName",
+                                        "mappedField": "companyDropdown-editModal",
+                                        "mappedValue": "label",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyId",
+                                        "mappedField": "companyDropdown-editModal",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "givenName",
+                                        "mappedField": "givenNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
-                                        "paramName": "userId",
-                                        "mappedField": "userId",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "given_name",
-                                        "mappedField": "given_name",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "family_name",
-                                        "mappedField": "family_name",
+                                        "paramName": "familyName",
+                                        "mappedField": "familyNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "mobile",
-                                        "mappedField": "mobile",
+                                        "mappedField": "mobileEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "designation",
-                                        "mappedField": "designation",
+                                        "mappedField": "designationEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "empId",
-                                        "mappedField": "empId",
+                                        "mappedField": "empIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "level",
+                                        "mappedField": "levelEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "userName",
-                                        "mappedField": "userName",
+                                        "mappedField": "userNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "photoIdUrl",
-                                        "mappedField": "photoIdUrl",
+                                        "mappedField": "photoIdUrlEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "fileUploadUrl",
-                                        "mappedField": "fileUploadUrl",
+                                        "mappedField": "fileUploadUrlEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "email",
-                                        "mappedField": "email",
+                                        "mappedField": "emailEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
-                                        "paramName": "email_verified",
-                                        "mappedField": "email_verified",
+                                        "paramName": "id",
+                                        "mappedField": "userIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
@@ -714,8 +781,39 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "",
-                                    "actions": []
+                                    "message": "Vendor updated successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "userList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-43",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
                                 },
                                 "onError": {
                                     "pageUrl": "",
@@ -774,7 +872,7 @@
                 "id": "dnd-14",
                 "formName": "addUserModal",
                 "label": "Role",
-                "name": "role"
+                "name": "roleAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -789,15 +887,16 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-13",
-                "name": "companyName",
-                "label": "Company Name",
-                "formName": "addUserModal"
+                "type": "dropdown",
+                "id": "dnd-48",
+                "name": "companyDropdown-addModal",
+                "formName": "addUserModal",
+                "label": "Company"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -812,18 +911,33 @@
             },
             "events": [],
             "expressionProperties": {
-                "requiredValue": "true",
-                "visibleValue": "true",
-                "readOnlyValue": "false"
+                "requiredValue": "true"
             },
-            "value": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Vendors",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "id",
+            "value": ""
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-12",
                 "formName": "addUserModal",
-                "name": "givenName",
+                "name": "givenNameAdd",
                 "label": "Given Name"
             },
             "layoutProperties": {
@@ -848,7 +962,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-11",
-                "name": "familyName",
+                "name": "familyNameAdd",
                 "formName": "addUserModal",
                 "label": "Family Name"
             },
@@ -872,7 +986,7 @@
             "baseProperties": {
                 "type": "tel",
                 "id": "dnd-16",
-                "name": "mobile",
+                "name": "mobileAdd",
                 "label": "Mobile",
                 "formName": "addUserModal"
             },
@@ -898,7 +1012,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-44",
-                "name": "empId",
+                "name": "empIdAdd",
                 "formName": "addUserModal",
                 "label": "Employee ID"
             },
@@ -922,7 +1036,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-9",
-                "name": "designation",
+                "name": "designationAdd",
                 "label": "Designation",
                 "formName": "addUserModal"
             },
@@ -941,13 +1055,144 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "file",
+                "id": "dnd-46",
+                "name": "profileImage",
+                "formName": "addUserModal",
+                "label": "Profile Image"
+            },
+            "allowedExt": ".jpg,.jpeg,.png",
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-48",
+                "name": "profileUpload",
+                "label": "Upload",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "parent-float": "right",
+                                "parent-width": "calc(100% - 215px)",
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Upload Profile Image",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=task",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "fileUpload": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "data",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "file",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "profilePath",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "$RESPONSE$"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Profile image uploaded successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while uploading profile picture.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "disabled": "profileImage == null or profileImage == undefined"
+            }
         },
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-18",
-                "name": "userName",
+                "name": "userNameAdd",
                 "label": "Username",
                 "formName": "addUserModal"
             },
@@ -966,13 +1211,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "email",
                 "id": "dnd-17",
-                "name": "email",
+                "name": "emailAdd",
                 "label": "E-Mail",
                 "formName": "addUserModal"
             },
@@ -991,13 +1237,14 @@
             "expressionProperties": {
                 "requiredValue": "true"
             },
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "password",
                 "id": "dnd-45",
-                "name": "password",
+                "name": "passwordAdd",
                 "formName": "addUserModal",
                 "label": "Password"
             },
@@ -1073,81 +1320,93 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "role",
-                                        "mappedField": "role",
+                                        "mappedField": "roleAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyName",
-                                        "mappedField": "companyName",
-                                        "mappedValue": "",
+                                        "mappedField": "companyDropdown-addModal",
+                                        "mappedValue": "label",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyId",
+                                        "mappedField": "companyDropdown-addModal",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "givenName",
-                                        "mappedField": "givenName",
+                                        "mappedField": "givenNameAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "familyName",
-                                        "mappedField": "familyName",
+                                        "mappedField": "familyNameAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "mobile",
-                                        "mappedField": "mobile",
+                                        "mappedField": "mobileAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "designation",
-                                        "mappedField": "designation",
+                                        "mappedField": "designationAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "empId",
-                                        "mappedField": "empId",
+                                        "mappedField": "empIdAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "level",
+                                        "mappedField": "levelAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "userName",
-                                        "mappedField": "userName",
+                                        "mappedField": "userNameAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "photoIdUrl",
-                                        "mappedField": "photoIdUrl",
+                                        "mappedField": "photoIdUrlAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "fileUploadUrl",
-                                        "mappedField": "fileUploadUrl",
+                                        "mappedField": "fileUploadUrlAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "email",
-                                        "mappedField": "email",
+                                        "mappedField": "emailAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "password",
-                                        "mappedField": "password",
+                                        "mappedField": "passwordAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photo",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(profilePath)"
                                     }
                                 ],
                                 "fetch": "",
@@ -1164,7 +1423,7 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "User added successfully. Please refresh the below table to see the changes.",
+                                    "message": "User added successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",

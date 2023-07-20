@@ -45,7 +45,7 @@
                 },
                 {
                     "id": "gantt-chart",
-                    "label": "Gantt Chart",
+                    "label": "Project Plan",
                     "navigateToPage": "/chart"
                 },
                 {
@@ -74,13 +74,6 @@
         }
     ],
     "logout-header-dashboard": [
-        {
-            "value": "",
-            "baseProperties": {
-                "name": "space",
-                "type": "staticText"
-            }
-        },
         {
             "value": "Welcome",
             "baseProperties": {
