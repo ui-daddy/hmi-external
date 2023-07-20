@@ -121,8 +121,8 @@
                         }
                     },
                     {
-                        "colName": "Edit User",
-                        "title": "Edit User",
+                        "colName": "Edit Impediment",
+                        "title": "Edit Impediment",
                         "html": "<i class='fas fa-edit'></i>",
                         "sortable": false,
                         "disableColumnSorting": true,
@@ -186,7 +186,7 @@
                         }
                     }
                 ],
-                "caption": "Users",
+                "caption": "Impediments",
                 "summary": null,
                 "globalFilterFields": [
                     "name",
