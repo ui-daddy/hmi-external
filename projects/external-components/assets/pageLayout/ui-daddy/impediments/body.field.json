@@ -85,9 +85,9 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Name",
+                        "colName": "Remark",
                         "filterType": "text",
-                        "accessor": "name",
+                        "accessor": "remark",
                         "colWidth": {
                             "unit": "px",
                             "value": 150
@@ -151,7 +151,7 @@
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-23$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.name",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.remark",
                                         "condition": "true",
                                         "formName": "editImpedimentModal"
                                     },
@@ -189,7 +189,7 @@
                 "caption": "Impediments",
                 "summary": null,
                 "globalFilterFields": [
-                    "name",
+                    "remark",
                     "type",
                     "createdBy",
                     "createdAt"
@@ -198,8 +198,8 @@
                 "resizableColumns": null,
                 "responsive": true,
                 "dataConfig": {
-                    "name": "userList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Employee/List",
+                    "name": "impedimentList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -250,8 +250,8 @@
                 "type": "text",
                 "id": "dnd-23",
                 "formName": "editImpedimentModal",
-                "name": "name",
-                "label": "Name"
+                "name": "remark",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -454,8 +454,8 @@
                 "type": "text",
                 "id": "dnd-18",
                 "formName": "addImpedimentModal",
-                "name": "name",
-                "label": "Name"
+                "name": "remark",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -620,8 +620,8 @@
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
-                                        "paramName": "name",
-                                        "mappedField": "name",
+                                        "paramName": "remark",
+                                        "mappedField": "remark",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
