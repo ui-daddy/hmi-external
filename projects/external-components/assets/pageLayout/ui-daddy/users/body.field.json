@@ -975,7 +975,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "length levelTypeAdd > 0"
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
