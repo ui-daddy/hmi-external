@@ -868,6 +868,94 @@
         },
         {
             "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-50",
+                "name": "levelTypeAdd",
+                "formName": "addUserModal",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "name": "district",
+                    "value": "district",
+                    "label": "District"
+                },
+                {
+                    "name": "division",
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "name": "circle",
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "name": "zone",
+                    "value": "zone",
+                    "label": "Zone"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "name",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-51",
+                "label": "Level",
+                "name": "levelEdit",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "id",
+            "value": null
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-14",
                 "formName": "addUserModal",
@@ -886,7 +974,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
@@ -1086,7 +1176,7 @@
         {
             "baseProperties": {
                 "type": "button",
-                "id": "dnd-48",
+                "id": "dnd-49",
                 "name": "profileUpload",
                 "label": "Upload",
                 "formName": "addUserModal"
