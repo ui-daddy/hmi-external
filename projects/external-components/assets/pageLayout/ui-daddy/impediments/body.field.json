@@ -203,7 +203,7 @@
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
-                        "apiDataAccessor": "payload"
+                        "apiDataAccessor": ""
                     }
                 },
                 "columnFilter": true,
