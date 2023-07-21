@@ -30,10 +30,7 @@
             "navItems": [
                 {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/statistics"},
                 {"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
-                {"id": "tasks", "label": "My Tasks", "navigateToPage": "/my-task"},
-                {"id": "gantt-chart", "label": "Project Plan", "navigateToPage": "/chart"},
-                {"id": "users", "label": "Users", "navigateToPage": "/users"},
-                {"id": "profile", "label": "My Profile", "navigateToPage": "/profile"} 
+                {"id": "gantt-chart", "label": "Project Plan", "navigateToPage": "/chart"}
             ],
             "layoutProperties":{
                 "css": {
@@ -49,13 +46,37 @@
             }
         }
     ],
-    "logout-header-dashboard": [
-        {   "value":"",
+    "menu-dropdown-dashboard": [
+		{
             "baseProperties": {
-                "name": "space",
-                "type": "staticText"
+                "name": "navMenu",
+                "type": "nav-menu",
+                "id": "navMenu",
+                "label" : "More"
+            },
+            "optionList": [
+                {"id": "tasks", "label": "My Tasks", "href": "/my-task", "type":"link"},
+                {"id": "users", "label": "Users", "href": "/users", "type":"link"},
+                {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link"},
+                {"id": "users", "label": "Vendor", "href": "/vendor", "type":"link"},
+                {"id": "profile", "label": "Impediments", "href": "/impediments", "type":"link"},
+                {"id": "profile", "label": "Board ", "href": "/boards", "type":"link"}  
+            ],
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".dropdown-nav",
+                        "xs": {
+                            "padding-right": "40px",
+                            "parent-justify-content": "flex-end"
+                        }
+                    },
+                    "customClassName": "dropdown-nav"
+                }
             }
-        },
+        }
+    ],
+    "logout-header-dashboard": [
         {   "value":"Welcome",
             "baseProperties": {
                 "name": "org",
