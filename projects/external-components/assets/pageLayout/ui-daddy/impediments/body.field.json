@@ -216,6 +216,34 @@
     "dnd-21": [
         {
             "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-29",
+                "name": "impedimentIdEdit",
+                "formName": "editImpedimentModal",
+                "label": "impedimentId"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "false",
+                "readOnlyValue": "true",
+                "disabledValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-22",
                 "name": "editImpedimentModalTitle",
