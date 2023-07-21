@@ -103,18 +103,18 @@
                         }
                     },
                     {
-                        "colName": "Created By",
+                        "colName": "Id",
                         "filterType": "multiselect",
-                        "accessor": "createdBy",
+                        "accessor": "id",
                         "colWidth": {
                             "unit": "px",
                             "value": 150
                         }
                     },
                     {
-                        "colName": "Created At",
+                        "colName": "Activity",
                         "filterType": "multiselect",
-                        "accessor": "createdAt",
+                        "accessor": "activity",
                         "colWidth": {
                             "unit": "px",
                             "value": 200
@@ -165,14 +165,14 @@
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-25$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.createdBy",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
                                         "condition": "true",
                                         "formName": "editImpedimentModal"
                                     },
                                     {
                                         "actionType": "setfield",
                                         "field": "$dnd-26$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.createdAt",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.activity",
                                         "condition": "true",
                                         "formName": "editImpedimentModal"
                                     }
