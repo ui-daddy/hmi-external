@@ -23,3 +23,20 @@ body {
 .navbar {
     margin-left:115px;
 }
+
+.dropdown-nav {
+    margin-top:9px;
+}
+.dropdown-nav .nav-link{
+    color: #1f2937!important
+}
+.dropdown-nav .dropdown-menu {
+    padding: 0px !important;
+}
+
+.dropdown-nav .dynamic-style-parent {
+    border-bottom: 1px solid #dee1e6;
+    padding: 5px;;
+}
+
+
