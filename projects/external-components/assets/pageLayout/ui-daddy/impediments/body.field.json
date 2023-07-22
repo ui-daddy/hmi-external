@@ -182,7 +182,6 @@
                 "globalFilterFields": [
                     "remark",
                     "type",
-                    "id",
                     "activity"
                 ],
                 "dataKey": "id",
