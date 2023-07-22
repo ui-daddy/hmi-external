@@ -60,7 +60,7 @@
                 {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link"},
                 {"id": "users", "label": "Vendor", "href": "/vendor", "type":"link"},
                 {"id": "profile", "label": "Impediments", "href": "/impediments", "type":"link"},
-                {"id": "profile", "label": "Board ", "href": "/boards", "type":"link"}  
+                {"id": "board", "label": "Board ", "href": "/boards", "type":"link"} 
             ],
             "layoutProperties":{
                 "css": {
@@ -77,11 +77,12 @@
         }
     ],
     "logout-header-dashboard": [
-        {   "value":"Welcome",
+        {    "value":"Welcome {0}",
             "baseProperties": {
-                "name": "org",
+                "name": "givenName",
                 "type": "staticText"
             },
+            "dynamicValueAccessor": ["givenName"],
             "layoutProperties":{
                 "css": {
                     "configuration": {
@@ -96,11 +97,22 @@
                 }
             }
         },
+            {    
+            "value":"userId",
+            "baseProperties": {
+                "name": "userId",
+                "type": "hidden"
+            },
+            "dynamicValueAccessor": ["id"],
+            "layoutProperties":{
+               
+            }
+        },
         {
             "baseProperties": {
                 "name": "logout",
                 "label": "Log Out",
-                "type": "submit",
+                "type": "button",
                 "id": "logout"
             },
             "layoutProperties":{
@@ -120,23 +132,32 @@
                     "themeClass": "btn btn-dark"                    
                 }
             },
-            "apiConfig": {
-                "name": "signupButtonApi",
-                "url": "/rest/logout",
-                "method": "POST",
-                "payloadParams": [],
-                "onSuccess": {
-                    "pageUrl": "/login",
-                    "clearSharedData": ["authenticated", "name"]
-                }
-            },
+           
             "events": [
                 {
                    "event": "click",
                     "actions" :[ 
                            {
-                                "actionType" : "submit",
-                                "showLoading": true                              
+                            
+                            "actionType": "INVOKE_API",
+                            "formName": "",
+                            "apiConfig": {
+                                "name": "signupButtonApi",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Logoff",
+                                "method": "POST",
+                                "payloadParams": [
+                                    {
+                                        "paramName": "userId",
+                                        "mappedField": "userId",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(id)"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "pageUrl": "/login",
+                                    "clearSharedData": ["name", "id", "givenName", "surname", "authenticated"]
+                                }
+                            }                             
                            }          
                     ],
                     "debounce": 3000
