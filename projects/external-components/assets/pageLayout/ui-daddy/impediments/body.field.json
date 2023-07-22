@@ -103,15 +103,6 @@
                         }
                     },
                     {
-                        "colName": "Id",
-                        "filterType": "multiselect",
-                        "accessor": "id",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
                         "colName": "Activity",
                         "filterType": "multiselect",
                         "accessor": "activity",
@@ -208,7 +199,8 @@
                 },
                 "columnFilter": true,
                 "showExportExcelBtn": true,
-                "showExportPdfBtn": true
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": null
             }
         }
     ],
