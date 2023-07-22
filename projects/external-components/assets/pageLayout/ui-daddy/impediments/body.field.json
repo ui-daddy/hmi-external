@@ -547,11 +547,11 @@
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-16",
-                "name": "createdBy",
+                "type": "dropdown",
+                "id": "dnd-30",
+                "name": "activityDropdown-addModal",
                 "formName": "addImpedimentModal",
-                "label": "Created By"
+                "label": "Activity"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -566,32 +566,24 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-17",
-                "formName": "addImpedimentModal",
-                "name": "createdAt",
-                "label": "Created At"
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Impediment",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
             },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "labelKey": "activity",
+            "valueKey": "id",
+            "value": null
         },
         {
             "baseProperties": {
