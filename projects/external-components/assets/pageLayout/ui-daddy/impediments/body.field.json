@@ -330,7 +330,7 @@
             "optionsConfig": null,
             "labelKey": "label",
             "valueKey": "value",
-            "value": "3"
+            "value": null
         },
         {
             "baseProperties": {
