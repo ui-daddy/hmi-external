@@ -278,7 +278,7 @@
                 "type": "text",
                 "id": "dnd-23",
                 "formName": "editImpedimentModal",
-                "name": "remark",
+                "name": "remarkEdit",
                 "label": "Remark"
             },
             "layoutProperties": {
@@ -301,7 +301,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-24",
-                "name": "type",
+                "name": "typeEdit",
                 "label": "Type",
                 "formName": "editImpedimentModal"
             },
@@ -416,7 +416,7 @@
                     "debounce": null,
                     "actions": [
                         {
-                            "actionType": "message",
+                            "actionType": "INVOKE_API",
                             "url": "",
                             "condition": "1==1",
                             "field": "",
@@ -428,7 +428,67 @@
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": null
+                            "apiConfig": {
+                                "name": "Edit Impediment",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Update/3",
+                                "method": "",
+                                "pathParams": [
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "impedimentIdEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "remark",
+                                        "mappedField": "remarkEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "type",
+                                        "mappedField": "typeEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "activity",
+                                        "mappedField": "activityDropdown-editModal",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Impediment updated successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while editing impediments.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
                         }
                     ]
                 }
