@@ -131,7 +131,7 @@
         "data": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/chart/body.data.json"
-        },        
+        },
         "footerSection": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/chart/footer.section.json"
@@ -139,27 +139,28 @@
         "footerField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/chart/footer.field.json"
-        },  
+        },
         "navSection": {
-           "fetchFromLocal": true,
-           "localURL": "./assets/pageLayout/ui-daddy/chart/nav.section.json"
-       },    
-       "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/chart/nav.section.json"
+        },
+        "navField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/chart/nav.field.json"
-        },  
+        },
         "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated != 'yes'",
-                "onConditionSuccess": "login"
-            }],
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"         
+            "title": "Projects"
         }
     },
-
     "projects": {
         "headerSection": {
             "fetchFromLocal": true,
@@ -182,7 +183,7 @@
         "data": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/projects/body.data.json"
-        },        
+        },
         "footerSection": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/projects/footer.section.json"
@@ -190,24 +191,26 @@
         "footerField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/projects/footer.field.json"
-        },  
+        },
         "navSection": {
-           "fetchFromLocal": true,
-           "localURL": "./assets/pageLayout/ui-daddy/projects/nav.section.json"
-       },    
-       "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/projects/nav.section.json"
+        },
+        "navField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/projects/nav.field.json"
-        },  
+        },
         "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated != 'yes'",
-                "onConditionSuccess": "login"
-            }],
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"         
+            "title": "Projects"
         }
     },
     "my-task": {
@@ -232,7 +235,7 @@
         "data": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/my-task/body.data.json"
-        },        
+        },
         "footerSection": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/my-task/footer.section.json"
@@ -240,24 +243,26 @@
         "footerField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/my-task/footer.field.json"
-        },  
+        },
         "navSection": {
-           "fetchFromLocal": true,
-           "localURL": "./assets/pageLayout/ui-daddy/my-task/nav.section.json"
-       },    
-       "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/my-task/nav.section.json"
+        },
+        "navField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/my-task/nav.field.json"
-        },  
+        },
         "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated != 'yes'",
-                "onConditionSuccess": "login"
-            }],
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"         
+            "title": "Projects"
         }
     },
     "profile": {
@@ -282,7 +287,7 @@
         "data": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/profile/body.data.json"
-        },        
+        },
         "footerSection": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/profile/footer.section.json"
@@ -290,28 +295,28 @@
         "footerField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/profile/footer.field.json"
-        },  
+        },
         "navSection": {
-           "fetchFromLocal": true,
-           "localURL": "./assets/pageLayout/ui-daddy/profile/nav.section.json"
-       },    
-       "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/profile/nav.section.json"
+        },
+        "navField": {
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/profile/nav.field.json"
-        },  
+        },
         "authGuardConfig": {
-            "conditions": [{
-                "if": "authenticated != 'yes'",
-                "onConditionSuccess": "login"
-            }],
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"         
+            "title": "Projects"
         }
     },
-
-    
     "forget-password": {
         "headerSection": {
             "fetchFromLocal": true,
@@ -525,6 +530,52 @@
         },
         "globalPageSettings": {
             "title": "users",
+            "layoutProperties": null
+        }
+    },
+    "impediments": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/impediments/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "impediments",
             "layoutProperties": null
         }
     }
