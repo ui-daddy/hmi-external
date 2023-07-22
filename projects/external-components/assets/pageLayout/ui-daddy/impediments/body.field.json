@@ -442,7 +442,7 @@
                                     {
                                         "paramName": "type",
                                         "mappedField": "typeEdit",
-                                        "mappedValue": "",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
