@@ -934,7 +934,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "optionList": null,
             "optionsConfig": {
                 "name": "Get Levels",
