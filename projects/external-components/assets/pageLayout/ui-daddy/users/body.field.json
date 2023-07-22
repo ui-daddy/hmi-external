@@ -153,6 +153,14 @@
                                             {
                                                 "varName": "tableRowData",
                                                 "staticData": "$ROW_DATA$"
+                                            },
+                                            {
+                                                "varName": "profilePath",
+                                                "responseAccessor": "$SHARED_DATA$.tableRowData.photo"
+                                            },
+                                            {
+                                                "varName": "idProofVar",
+                                                "responseAccessor": "$SHARED_DATA$.tableRowData.idProof"
                                             }
                                         ]
                                     },
@@ -214,10 +222,23 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-38$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.photo",
+                                        "field": "$dnd-52$",
+                                        "fieldValue": "$SHARED_DATA$",
                                         "condition": "true",
-                                        "formName": "editUserModal"
+                                        "formName": "editUserModal",
+                                        "fieldAccessor": {
+                                            "name": "tableRowData.photoName"
+                                        }
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-54$",
+                                        "fieldValue": "$SHARED_DATA$",
+                                        "condition": "true",
+                                        "formName": "editUserModal",
+                                        "fieldAccessor": {
+                                            "name": "tableRowData.idProofName"
+                                        }
                                     },
                                     {
                                         "actionType": "setfield",
