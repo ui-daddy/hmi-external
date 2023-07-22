@@ -889,29 +889,25 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "name": "district",
                     "value": "district",
                     "label": "District"
                 },
                 {
-                    "name": "division",
                     "value": "division",
                     "label": "Division"
                 },
                 {
-                    "name": "circle",
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "name": "zone",
                     "value": "zone",
                     "label": "Zone"
                 }
             ],
             "optionsConfig": null,
             "labelKey": "label",
-            "valueKey": "name",
+            "valueKey": "value",
             "value": null
         },
         {
@@ -934,14 +930,20 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "optionList": null,
             "optionsConfig": {
                 "name": "Get Levels",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/List",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/List?level=levelType",
                 "method": "GET",
                 "pathParams": [],
-                "queryParams": [],
+                "queryParams": [{
+                    "paramName": "levelType",
+                    "mappedField": "levelTypeAdd",
+                    "mappedValue": "value"
+                }],
                 "payloadParams": [],
                 "fetch": "ONLOAD",
                 "downloadFileName": "",
