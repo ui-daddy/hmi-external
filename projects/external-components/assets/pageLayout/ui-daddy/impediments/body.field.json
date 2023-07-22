@@ -516,19 +516,19 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "Flood",
+                    "value": "flood",
                     "label": "Flood"
                 },
                 {
-                    "value": " Fire",
-                    "label": " Fire"
+                    "value": "fire",
+                    "label": "Fire"
                 },
                 {
-                    "value": "Earthquake",
+                    "value": "earthquake",
                     "label": "Earthquake"
                 },
                 {
-                    "value": "Riots",
+                    "value": "riots",
                     "label": "Riots"
                 }
             ],
@@ -640,13 +640,13 @@
                                     {
                                         "paramName": "type",
                                         "mappedField": "typeAdd",
-                                        "mappedValue": "",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "activity",
                                         "mappedField": "activityDropdown-addModal",
-                                        "mappedValue": "",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     }
                                 ],
