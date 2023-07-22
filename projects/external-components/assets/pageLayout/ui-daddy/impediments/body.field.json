@@ -425,7 +425,7 @@
                             "apiConfig": {
                                 "name": "Edit Impediment",
                                 "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Update/3",
-                                "method": "",
+                                "method": "PATCH",
                                 "pathParams": [
                                     {
                                         "paramName": "id",
