@@ -1009,27 +1009,23 @@
             "expressionProperties": {
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
-            "optionList": [
-                {
-                    "value": "admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "user",
-                    "label": "User"
-                },
-                {
-                    "value": "vendorAdmin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "vendorUser",
-                    "label": "Vendor User"
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Vendors",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Roles/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
                 }
-            ],
-            "optionsConfig": null,
+            },
             "labelKey": "label",
-            "valueKey": "value",
+            "valueKey": "name",
             "value": null
         },
         {
