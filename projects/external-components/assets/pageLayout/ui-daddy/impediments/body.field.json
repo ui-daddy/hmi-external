@@ -482,7 +482,7 @@
                 "type": "text",
                 "id": "dnd-18",
                 "formName": "addImpedimentModal",
-                "name": "remark",
+                "name": "remarkAdd",
                 "label": "Remark"
             },
             "layoutProperties": {
@@ -506,7 +506,7 @@
                 "type": "dropdown",
                 "id": "dnd-15",
                 "formName": "addImpedimentModal",
-                "name": "type",
+                "name": "typeAdd",
                 "label": "Type"
             },
             "layoutProperties": {
@@ -641,25 +641,19 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "remark",
-                                        "mappedField": "remark",
+                                        "mappedField": "remarkAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "type",
-                                        "mappedField": "type",
+                                        "mappedField": "typeAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
-                                        "paramName": "createdBy",
-                                        "mappedField": "createdBy",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "createdAt",
-                                        "mappedField": "createdAt",
+                                        "paramName": "activity",
+                                        "mappedField": "activityDropdown-addModal",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
