@@ -311,19 +311,19 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "Flood",
+                    "value": "flood",
                     "label": "Flood"
                 },
                 {
-                    "value": " Fire",
+                    "value": " fire",
                     "label": " Fire"
                 },
                 {
-                    "value": "Earthquake",
+                    "value": "earthquake",
                     "label": "Earthquake"
                 },
                 {
-                    "value": "Riots",
+                    "value": "riots",
                     "label": "Riots"
                 }
             ],
