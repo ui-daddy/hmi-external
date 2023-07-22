@@ -16,11 +16,11 @@ export class RowDataHandlerDirective {
   }
 
   @Input() set rowDataHandler(newHref: string) {
-    if (newHref) {
+    if (newHref !== null && newHref !== undefined) {
       this._hrefValue = newHref;
       const urlPattern = /^(http[s]?:\/\/(www\.)?|ftp:\/\/(www\.)?|www\.){1}([0-9A-Za-z-\.@:%_\+~#=]+)+((\.[a-zA-Z]{2,3})+)(\/(.)*)?(\?(.)*)?/g;
       const patternTag = /<(“[^”]*”|'[^’]*’|[^'”>])*>/;
-      if (newHref.match(urlPattern)) {
+      if (typeof newHref === 'string' && newHref.match(urlPattern)) {
         if (this.anchorTag != null) {
           this.renderer.removeChild(this.elmRef.nativeElement, this.anchorTag);
         }
@@ -29,7 +29,7 @@ export class RowDataHandlerDirective {
         const linkText = this.renderer.createText(this._hrefValue);
         this.renderer.appendChild(this.anchorTag, linkText);
         this.renderer.appendChild(this.elmRef.nativeElement, this.anchorTag);
-      } else if (newHref.match(patternTag)) {
+      } else if (typeof newHref === 'string' && newHref.match(patternTag)) {
         let unsanitizedData = this._hrefValue;
         let sanitized = this.domSanitizer.sanitize(SecurityContext.HTML, unsanitizedData);
         this.elmRef.nativeElement.innerHTML = sanitized;
