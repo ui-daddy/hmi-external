@@ -5,12 +5,12 @@
             "type": "content",
             "layout": {
               "column": {
-              "count": 2,
+              "count": 3,
               "ratio": {
-                "lg": "10:2",
-                "md": "10:2",
-                "sm": "10:2",
-                "xs": "10:2"                
+                "lg": "5:4:2",
+                "md": "5:4:2",
+                "sm": "5:4:2",
+                "xs": "5:4:2"                
               },
               "autoPlace": "false"
               }
@@ -42,8 +42,36 @@
                   }
                 }
                 }
-                
-            },{
+    
+            },
+            {
+            
+              "id": "menu-dropdown-dashboard",
+              "type": "content",
+              "layout": {
+                "column": {
+                "count": 1,
+                "ratio": {
+                  "lg": "1:1:2:1:1:1:5",
+                  "md": "1:1:2:1:1:1:5",
+                  "sm": "1:1:2:1:1:1:5",
+                  "xs": "1:1:2:1:1:1:5"
+                },
+                "autoPlace": "false"
+                },
+                "css": {
+                  "customClassName": "menu-header-style",
+                  "configuration": {
+                    "selectorName": ".menu-header-style > div > div",
+                    "xs": {
+                        "padding":"0px",
+                        "background-color":"red"
+                    }
+                }
+              }
+              }   
+          }
+            ,{
             
               "id": "logout-header-dashboard",
               "type": "content",
