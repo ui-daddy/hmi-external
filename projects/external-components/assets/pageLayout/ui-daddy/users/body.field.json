@@ -210,8 +210,15 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-35$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.level",
+                                        "field": "$dnd-52$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-53$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
                                         "condition": "true",
                                         "formName": "editUserModal"
                                     },
@@ -400,6 +407,94 @@
         {
             "baseProperties": {
                 "type": "dropdown",
+                "id": "dnd-52",
+                "name": "levelTypeEdit",
+                "formName": "editUserModal",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "district",
+                    "label": "District"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-53",
+                "label": "Level",
+                "name": "levelEdit",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams":  [{
+                    "paramName": "level",
+                    "mappedField": "levelTypeEdit",
+                    "mappedValue": "value"
+                }],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
                 "id": "dnd-25",
                 "name": "roleEdit",
                 "formName": "editUserModal",
@@ -420,19 +515,19 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "admin",
+                    "value": "Admin",
                     "label": "Admin"
                 },
                 {
-                    "value": "user",
+                    "value": "User",
                     "label": "User"
                 },
                 {
-                    "value": "vendorAdmin",
+                    "value": "Vendor Admin",
                     "label": "Vendor Admin"
                 },
                 {
-                    "value": "vendorUser",
+                    "value": "Vendor User",
                     "label": "Vendor User"
                 }
             ],
@@ -445,7 +540,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-28",
-                "name": "companyDropdown-editModal",
+                "name": "companyEdit",
                 "formName": "editUserModal",
                 "label": "Company"
             },
@@ -720,13 +815,13 @@
                                     },
                                     {
                                         "paramName": "companyName",
-                                        "mappedField": "companyDropdown-editModal",
+                                        "mappedField": "companyEdit",
                                         "mappedValue": "label",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyId",
-                                        "mappedField": "companyDropdown-editModal",
+                                        "mappedField": "companyEdit",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
@@ -1009,30 +1104,34 @@
             "expressionProperties": {
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Vendors",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Roles/List",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
+            "optionList": [
+                {
+                    "value": "Admin",
+                    "label": "Admin"
+                },
+                {
+                    "value": "User",
+                    "label": "User"
+                },
+                {
+                    "value": "Vendor Admin",
+                    "label": "Vendor Admin"
+                },
+                {
+                    "value": "Vendor User",
+                    "label": "Vendor User"
                 }
-            },
+            ],
+            "optionsConfig": null,
             "labelKey": "label",
-            "valueKey": "name",
+            "valueKey": "value",
             "value": null
         },
         {
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-48",
-                "name": "companyDropdown-addModal",
+                "name": "companyAdd",
                 "formName": "addUserModal",
                 "label": "Company"
             },
@@ -1479,13 +1578,13 @@
                                     },
                                     {
                                         "paramName": "companyName",
-                                        "mappedField": "companyDropdown-addModal",
+                                        "mappedField": "companyAdd",
                                         "mappedValue": "label",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyId",
-                                        "mappedField": "companyDropdown-addModal",
+                                        "mappedField": "companyAdd",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
