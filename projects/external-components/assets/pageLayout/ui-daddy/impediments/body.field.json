@@ -355,8 +355,8 @@
             "expressionProperties": {},
             "optionList": [],
             "optionsConfig": {
-                "name": "Get Impediment",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
+                "name": "Get Activities",
+                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -368,7 +368,7 @@
                     "action": []
                 }
             },
-            "labelKey": "activity",
+            "labelKey": "title",
             "valueKey": "id",
             "value": null
         },
@@ -611,8 +611,8 @@
             "expressionProperties": {},
             "optionList": [],
             "optionsConfig": {
-                "name": "Get Impediment",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
+                "name": "Get Activities",
+                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -624,7 +624,7 @@
                     "action": []
                 }
             },
-            "labelKey": "activity",
+            "labelKey": "title",
             "valueKey": "id",
             "value": null
         },
