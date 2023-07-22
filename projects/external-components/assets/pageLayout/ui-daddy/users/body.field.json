@@ -84,20 +84,12 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Given Name",
+                        "colName": "Employee Name",
                         "filterType": "text",
-                        "accessor": "givenName",
+                        "accessor": "employeeName",
                         "colWidth": {
                             "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Family Name",
-                        "accessor": "familyName",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
+                            "value": 200
                         }
                     },
                     {
@@ -107,6 +99,15 @@
                         "colWidth": {
                             "unit": "px",
                             "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Role",
+                        "filterType": "multiselect",
+                        "accessor": "role",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
                         }
                     },
                     {
@@ -131,6 +132,15 @@
                         "colName": "EmpId",
                         "filterType": "text",
                         "accessor": "empId",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Level",
+                        "filterType": "text",
+                        "accessor": "level",
                         "colWidth": {
                             "unit": "px",
                             "value": 100
@@ -389,11 +399,11 @@
         },
         {
             "baseProperties": {
-                "type": "text",
+                "type": "dropdown",
                 "id": "dnd-25",
                 "name": "roleEdit",
-                "label": "Role",
-                "formName": "editUserModal"
+                "formName": "editUserModal",
+                "label": "Role"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -408,8 +418,28 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "optionList": [
+                {
+                    "value": "admin",
+                    "label": "Admin"
+                },
+                {
+                    "value": "user",
+                    "label": "User"
+                },
+                {
+                    "value": "vendorAdmin",
+                    "label": "Vendor Admin"
+                },
+                {
+                    "value": "vendorUser",
+                    "label": "Vendor User"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
         },
         {
             "baseProperties": {
@@ -685,7 +715,7 @@
                                     {
                                         "paramName": "role",
                                         "mappedField": "roleEdit",
-                                        "mappedValue": "",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
@@ -733,7 +763,7 @@
                                     {
                                         "paramName": "level",
                                         "mappedField": "levelEdit",
-                                        "mappedValue": "",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
@@ -915,7 +945,7 @@
                 "type": "dropdown",
                 "id": "dnd-51",
                 "label": "Level",
-                "name": "levelEdit",
+                "name": "levelAdd",
                 "formName": "addUserModal"
             },
             "layoutProperties": {
@@ -936,11 +966,11 @@
             "optionList": null,
             "optionsConfig": {
                 "name": "Get Levels",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/List?level=levelType",
+                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [{
-                    "paramName": "levelType",
+                    "paramName": "level",
                     "mappedField": "levelTypeAdd",
                     "mappedValue": "value"
                 }],
@@ -953,16 +983,16 @@
                 }
             },
             "labelKey": "name",
-            "valueKey": "id",
+            "valueKey": "code",
             "value": null
         },
         {
             "baseProperties": {
-                "type": "text",
+                "type": "dropdown",
                 "id": "dnd-14",
+                "name": "roleAdd",
                 "formName": "addUserModal",
-                "label": "Role",
-                "name": "roleAdd"
+                "label": "Role"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -979,8 +1009,28 @@
             "expressionProperties": {
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
-            "value": null,
-            "placeholder": null
+            "optionList": [
+                {
+                    "value": "admin",
+                    "label": "Admin"
+                },
+                {
+                    "value": "user",
+                    "label": "User"
+                },
+                {
+                    "value": "vendorAdmin",
+                    "label": "Vendor Admin"
+                },
+                {
+                    "value": "vendorUser",
+                    "label": "Vendor User"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
         },
         {
             "baseProperties": {
@@ -1003,7 +1053,8 @@
             },
             "events": [],
             "expressionProperties": {
-                "requiredValue": "true"
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"            
             },
             "optionList": [],
             "optionsConfig": {
@@ -1045,7 +1096,8 @@
             },
             "events": [],
             "expressionProperties": {
-                "requiredValue": "true"
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -1070,7 +1122,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
@@ -1095,7 +1149,8 @@
             },
             "events": [],
             "expressionProperties": {
-                "requiredValue": "true"
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -1120,7 +1175,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
@@ -1145,7 +1202,8 @@
             },
             "events": [],
             "expressionProperties": {
-                "requiredValue": "true"
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -1171,7 +1229,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
@@ -1277,7 +1337,8 @@
                 }
             ],
             "expressionProperties": {
-                "disabled": "profileImage == null or profileImage == undefined"
+                "disabled": "profileImage == null or profileImage == undefined",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             }
         },
         {
@@ -1301,7 +1362,8 @@
             },
             "events": [],
             "expressionProperties": {
-                "requiredValue": "true"
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -1327,7 +1389,8 @@
             },
             "events": [],
             "expressionProperties": {
-                "requiredValue": "true"
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -1352,7 +1415,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
@@ -1413,7 +1478,7 @@
                                     {
                                         "paramName": "role",
                                         "mappedField": "roleAdd",
-                                        "mappedValue": "",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
@@ -1461,24 +1526,12 @@
                                     {
                                         "paramName": "level",
                                         "mappedField": "levelAdd",
-                                        "mappedValue": "",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "userName",
                                         "mappedField": "userNameAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "photoIdUrl",
-                                        "mappedField": "photoIdUrlAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "fileUploadUrl",
-                                        "mappedField": "fileUploadUrlAdd",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
