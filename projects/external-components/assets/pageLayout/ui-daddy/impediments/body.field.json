@@ -315,15 +315,15 @@
                     "label": "Flood"
                 },
                 {
-                    "value": " fire",
+                    "value": " Fire",
                     "label": " Fire"
                 },
                 {
-                    "value": "earthquake",
+                    "value": "Earthquake",
                     "label": "Earthquake"
                 },
                 {
-                    "value": "riots",
+                    "value": "Riots",
                     "label": "Riots"
                 }
             ],
