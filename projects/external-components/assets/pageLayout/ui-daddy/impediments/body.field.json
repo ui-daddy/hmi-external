@@ -191,8 +191,8 @@
                 "globalFilterFields": [
                     "remark",
                     "type",
-                    "createdBy",
-                    "createdAt"
+                    "id",
+                    "activity"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
