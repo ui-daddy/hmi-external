@@ -585,19 +585,19 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "flood",
+                    "value": "Flood",
                     "label": "Flood"
                 },
                 {
-                    "value": "fire",
+                    "value": "Fire",
                     "label": "Fire"
                 },
                 {
-                    "value": "earthquake",
+                    "value": "Earthquake",
                     "label": "Earthquake"
                 },
                 {
-                    "value": "riots",
+                    "value": "Riots",
                     "label": "Riots"
                 }
             ],
