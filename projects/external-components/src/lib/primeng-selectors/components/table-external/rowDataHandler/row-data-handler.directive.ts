@@ -16,7 +16,7 @@ export class RowDataHandlerDirective {
   }
 
   @Input() set rowDataHandler(newHref: string) {
-    if (newHref) {
+    if (newHref !== null && newHref !== undefined) {
       this._hrefValue = newHref;
       const urlPattern = /^(http[s]?:\/\/(www\.)?|ftp:\/\/(www\.)?|www\.){1}([0-9A-Za-z-\.@:%_\+~#=]+)+((\.[a-zA-Z]{2,3})+)(\/(.)*)?(\?(.)*)?/g;
       const patternTag = /<(“[^”]*”|'[^’]*’|[^'”>])*>/;
