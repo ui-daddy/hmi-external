@@ -239,7 +239,7 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-52$",
+                                        "field": "$dnd-63$",
                                         "fieldValue": "$SHARED_DATA$",
                                         "condition": "true",
                                         "formName": "editUserModal",
@@ -726,7 +726,7 @@
         {
             "baseProperties": {
                 "type": "file",
-                "id": "dnd-52",
+                "id": "dnd-63",
                 "name": "editProfileImage",
                 "formName": "editUserModal",
                 "label": "Profile Image"
@@ -751,7 +751,7 @@
         {
             "baseProperties": {
                 "type": "button",
-                "id": "dnd-53",
+                "id": "dnd-64",
                 "name": "editProfileUpload",
                 "label": "Upload",
                 "formName": "editUserModal"
@@ -1713,7 +1713,7 @@
         {
             "baseProperties": {
                 "type": "file",
-                "id": "dnd-50",
+                "id": "dnd-60",
                 "name": "idProof",
                 "formName": "addUserModal",
                 "label": "Photo ID"
@@ -1731,14 +1731,16 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
         {
             "baseProperties": {
                 "type": "button",
-                "id": "dnd-51",
+                "id": "dnd-62",
                 "name": "idUpload",
                 "label": "Upload",
                 "formName": "addUserModal"
@@ -1826,7 +1828,8 @@
                 }
             ],
             "expressionProperties": {
-                "disabled": "idProof == null or idProof == undefined"
+                "disabled": "idProof == null or idProof == undefined",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             }
         },
         {
