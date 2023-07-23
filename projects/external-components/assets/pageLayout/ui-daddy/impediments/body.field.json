@@ -122,7 +122,6 @@
                             {
                                 "event": "",
                                 "actions": [
-                                    
                                     {
                                         "actionType": "OPEN_MODAL",
                                         "showLoading": true,
@@ -173,6 +172,47 @@
                                 "debounce": 3000
                             }
                         ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Delete Impediment",
+                        "title": "Delete Impediment",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteImpediment",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Delete/:impedimentId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "impedimentId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": true,
+                                    "showSuccessMessage": true,
+                                    "message": "Impediment deleted successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "impedimentList"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
                         "colWidth": {
                             "unit": "px",
                             "value": 50
@@ -503,7 +543,7 @@
                                             "sharedData": [],
                                             "apiConfig": null
                                         }
-                                    ]                               
+                                    ]
                                 },
                                 "onError": {
                                     "pageUrl": "",
@@ -786,7 +826,7 @@
                                             "sharedData": [],
                                             "apiConfig": null
                                         }
-                                    ]                                
+                                    ]
                                 },
                                 "onError": {
                                     "pageUrl": "",
