@@ -123,15 +123,6 @@
                                 "event": "",
                                 "actions": [
                                     {
-                                        "actionType": "OPEN_MODAL",
-                                        "showLoading": true,
-                                        "target": "dnd-6"
-                                    },
-                                    {
-                                        "actionType": "WAIT_IN_MS",
-                                        "timer": 100
-                                    },
-                                    {
                                         "actionType": "SET_SHARED_DATA",
                                         "sharedData": [
                                             {
