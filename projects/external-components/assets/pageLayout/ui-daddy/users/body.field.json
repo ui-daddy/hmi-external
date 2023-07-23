@@ -163,6 +163,14 @@
                                             {
                                                 "varName": "tableRowData",
                                                 "staticData": "$ROW_DATA$"
+                                            },
+                                            {
+                                                "varName": "profilePath",
+                                                "responseAccessor": "$SHARED_DATA$.tableRowData.photo"
+                                            },
+                                            {
+                                                "varName": "idProofVar",
+                                                "responseAccessor": "$SHARED_DATA$.tableRowData.idProof"
                                             }
                                         ]
                                     },
@@ -231,10 +239,23 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-38$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.photo",
+                                        "field": "$dnd-63$",
+                                        "fieldValue": "$SHARED_DATA$",
                                         "condition": "true",
-                                        "formName": "editUserModal"
+                                        "formName": "editUserModal",
+                                        "fieldAccessor": {
+                                            "name": "tableRowData.photoName"
+                                        }
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-54$",
+                                        "fieldValue": "$SHARED_DATA$",
+                                        "condition": "true",
+                                        "formName": "editUserModal",
+                                        "fieldAccessor": {
+                                            "name": "tableRowData.idProofName"
+                                        }
                                     },
                                     {
                                         "actionType": "setfield",
@@ -704,6 +725,244 @@
         },
         {
             "baseProperties": {
+                "type": "file",
+                "id": "dnd-63",
+                "name": "editProfileImage",
+                "formName": "editUserModal",
+                "label": "Profile Image"
+            },
+            "allowedExt": ".jpg,.jpeg,.png",
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-64",
+                "name": "editProfileUpload",
+                "label": "Upload",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profile-upload",
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Upload Profile Image",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "fileUpload": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "data",
+                                        "mappedField": "editProfileImage",
+                                        "mappedValue": "file",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "profilePath",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "fileURL"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Profile image uploaded successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while uploading profile picture.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "disabled": "editProfileImage == null or editProfileImage == undefined"
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "file",
+                "id": "dnd-54",
+                "name": "editIdProof",
+                "formName": "editUserModal",
+                "label": "Photo ID"
+            },
+            "allowedExt": "",
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-55",
+                "name": "editIdUpload",
+                "label": "Upload",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profile-upload",
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Upload Photo ID",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "fileUpload": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "data",
+                                        "mappedField": "editIdProof",
+                                        "mappedValue": "file",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "idProofVar",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "fileURL"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Photo ID uploaded successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while uploading profile picture.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "disabled": "editIdProof == null or editIdProof == undefined"
+            }
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-36",
                 "name": "userNameEdit",
@@ -890,6 +1149,18 @@
                                         "mappedField": "userIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photo",
+                                        "mappedField": "editProfileImage",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(profilePath)"
+                                    },
+                                    {
+                                        "paramName": "idProof",
+                                        "mappedField": "editIdProof",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(idProofVar)"
                                     }
                                 ],
                                 "fetch": "",
@@ -904,7 +1175,10 @@
                                     "showSuccessMessage": true,
                                     "sharedData": [],
                                     "fieldData": [],
-                                    "clearSharedData": [],
+                                    "clearSharedData": [
+                                        "idProofVar",
+                                        "profilePath"
+                                    ],
                                     "apiDataAccessor": "",
                                     "message": "Vendor updated successfully.",
                                     "actions": [
@@ -1379,7 +1653,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Upload Profile Image",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=task",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
@@ -1407,7 +1681,7 @@
                                             "varName": "profilePath",
                                             "staticData": "",
                                             "cache": false,
-                                            "responseAccessor": "$RESPONSE$"
+                                            "responseAccessor": "fileURL"
                                         }
                                     ],
                                     "fieldData": [],
@@ -1433,6 +1707,128 @@
             ],
             "expressionProperties": {
                 "disabled": "profileImage == null or profileImage == undefined",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "file",
+                "id": "dnd-60",
+                "name": "idProof",
+                "formName": "addUserModal",
+                "label": "Photo ID"
+            },
+            "allowedExt": "",
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-62",
+                "name": "idUpload",
+                "label": "Upload",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profile-upload",
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Upload Photo ID",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "fileUpload": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "data",
+                                        "mappedField": "idProof",
+                                        "mappedValue": "file",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "idProofVar",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "fileURL"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Photo ID uploaded successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while uploading profile picture.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "disabled": "idProof == null or idProof == undefined",
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             }
         },
@@ -1647,6 +2043,12 @@
                                         "mappedField": "profileImage",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(profilePath)"
+                                    },
+                                    {
+                                        "paramName": "idProof",
+                                        "mappedField": "idProof",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(idProofVar)"
                                     }
                                 ],
                                 "fetch": "",
@@ -1661,7 +2063,10 @@
                                     "showSuccessMessage": true,
                                     "sharedData": [],
                                     "fieldData": [],
-                                    "clearSharedData": [],
+                                    "clearSharedData": [
+                                        "profilePath",
+                                        "idProofVar"
+                                    ],
                                     "apiDataAccessor": "",
                                     "message": "User added successfully.",
                                     "actions": [
