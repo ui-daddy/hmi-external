@@ -117,10 +117,12 @@
                         "html": "<i class='fas fa-edit'></i>",
                         "sortable": false,
                         "disableColumnSorting": true,
+                        "cellDisableAccessor": "edit",
                         "events": [
                             {
                                 "event": "",
                                 "actions": [
+                                    
                                     {
                                         "actionType": "OPEN_MODAL",
                                         "showLoading": true,
@@ -470,7 +472,38 @@
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
                                     "message": "Impediment updated successfully.",
-                                    "actions": []
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "impedimentList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-6",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]                               
                                 },
                                 "onError": {
                                     "pageUrl": "",
@@ -721,8 +754,39 @@
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "User added successfully. Please refresh to see new user.",
-                                    "actions": []
+                                    "message": "Impediment added successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "impedimentList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-11",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]                                
                                 },
                                 "onError": {
                                     "pageUrl": "",
