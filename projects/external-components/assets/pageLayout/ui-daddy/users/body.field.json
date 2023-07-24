@@ -444,7 +444,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelEdit",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -496,11 +518,13 @@
                 "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
                 "method": "GET",
                 "pathParams": [],
-                "queryParams":  [{
-                    "paramName": "level",
-                    "mappedField": "levelTypeEdit",
-                    "mappedValue": "value"
-                }],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeEdit",
+                        "mappedValue": "value"
+                    }
+                ],
                 "payloadParams": [],
                 "fetch": "ONLOAD",
                 "downloadFileName": "",
@@ -1338,11 +1362,13 @@
                 "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
                 "method": "GET",
                 "pathParams": [],
-                "queryParams": [{
-                    "paramName": "level",
-                    "mappedField": "levelTypeAdd",
-                    "mappedValue": "value"
-                }],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeAdd",
+                        "mappedValue": "value"
+                    }
+                ],
                 "payloadParams": [],
                 "fetch": "ONLOAD",
                 "downloadFileName": "",
@@ -1423,7 +1449,7 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"            
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "optionList": [],
             "optionsConfig": {
