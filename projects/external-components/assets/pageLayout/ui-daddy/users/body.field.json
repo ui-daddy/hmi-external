@@ -448,8 +448,8 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "district",
-                    "label": "District"
+                    "value": "management",
+                    "label": "Management"
                 },
                 {
                     "value": "division",
@@ -604,7 +604,7 @@
                 "type": "text",
                 "id": "dnd-30",
                 "name": "givenNameEdit",
-                "label": "Given Name",
+                "label": "First Name",
                 "formName": "editUserModal"
             },
             "layoutProperties": {
@@ -631,7 +631,7 @@
                 "id": "dnd-31",
                 "name": "familyNameEdit",
                 "formName": "editUserModal",
-                "label": "Family Name"
+                "label": "Last Name"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1288,8 +1288,8 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "district",
-                    "label": "District"
+                    "value": "management",
+                    "label": "Management"
                 },
                 {
                     "value": "division",
@@ -1450,7 +1450,7 @@
                 "id": "dnd-12",
                 "formName": "addUserModal",
                 "name": "givenNameAdd",
-                "label": "Given Name"
+                "label": "First Name"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1477,7 +1477,7 @@
                 "id": "dnd-11",
                 "name": "familyNameAdd",
                 "formName": "addUserModal",
-                "label": "Family Name"
+                "label": "Last Name"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
