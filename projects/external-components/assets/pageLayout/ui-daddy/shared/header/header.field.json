@@ -58,7 +58,7 @@
                 {"id": "tasks", "label": "My Tasks", "href": "/my-task", "type":"link"},
                 {"id": "users", "label": "Users", "href": "/users", "type":"link"},
                 {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link"},
-                {"id": "vendor", "label": "Vendor", "href": "/vendor", "type":"link"},
+                {"id": "vendor", "label": "Vendor", "href": "/vendors", "type":"link"},
                 {"id": "impediments", "label": "Impediments", "href": "/impediments", "type":"link"},
                 {"id": "reports", "label": "Reports ", "href": "/reports", "type":"link"}
             ],
