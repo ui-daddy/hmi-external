@@ -1,1 +1,171 @@
-{}
+{
+    "menu-header-dashboard": [
+        {
+            "value": "",
+            "baseProperties": {
+                "name": "logo",
+                "type": "staticImage"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__logo",
+                        "xs": {
+                            "background-image": "url(assets/images/logo.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
+                        }
+                    },
+                    "customClassName": "header__logo"
+                }
+            },
+            "imageUrl": "assets/images/logo.jpg"
+        },
+		{
+            "baseProperties": {
+                "name": "menu",
+                "type": "navItemGroup",
+                "id": "menu"
+            },
+            "navItems": [
+                {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/statistics"},
+                {"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
+                {"id": "gantt-chart", "label": "Project Plan", "navigateToPage": "/chart"}
+            ],
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__nav-items",
+                        "xs": {
+                            "padding-right": "40px",
+                            "parent-justify-content": "flex-end"
+                        }
+                    },
+                    "customClassName": "header__nav-items"
+                }
+            }
+        }
+    ],
+    "menu-dropdown-dashboard": [
+		{
+            "baseProperties": {
+                "name": "navMenu",
+                "type": "nav-menu",
+                "id": "navMenu",
+                "label" : "More"
+            },
+            "optionList": [
+                {"id": "tasks", "label": "My Tasks", "href": "/my-task", "type":"link"},
+                {"id": "users", "label": "Users", "href": "/users", "type":"link"},
+                {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link"},
+                {"id": "users", "label": "Vendor", "href": "/vendor", "type":"link"},
+                {"id": "profile", "label": "Impediments", "href": "/impediments", "type":"link"},
+                {"id": "board", "label": "Board ", "href": "/boards", "type":"link"},
+                {"id": "reports", "label": "Reports ", "href": "/reports", "type":"link"}
+            ],
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".dropdown-nav",
+                        "xs": {
+                            "padding-right": "40px",
+                            "parent-justify-content": "flex-end"
+                        }
+                    },
+                    "customClassName": "dropdown-nav"
+                }
+            }
+        }
+    ],
+    "logout-header-dashboard": [
+        {    "value":"Welcome {0}",
+            "baseProperties": {
+                "name": "givenName",
+                "type": "staticText"
+            },
+            "dynamicValueAccessor": ["givenName"],
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight":"bold"                        }
+                    },
+                    "customClassName": "header__org"
+                }
+            }
+        },
+            {    
+            "value":"userId",
+            "baseProperties": {
+                "name": "userId",
+                "type": "hidden"
+            },
+            "dynamicValueAccessor": ["id"],
+            "layoutProperties":{
+               
+            }
+        },
+        {
+            "baseProperties": {
+                "name": "logout",
+                "label": "Log Out",
+                "type": "button",
+                "id": "logout"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header-common__logout",
+                        "xs": {
+                            "parent-white-space": "nowrap",
+                            "parent-justify-content": "flex-end",
+                            "background-color": "#222121",
+                            "border-color": "#222121",
+                            "margin-top": "9px" 
+        
+                        }
+                    },
+                    "customClassName": "header-common__logout",                
+                    "themeClass": "btn btn-dark"                    
+                }
+            },
+           
+            "events": [
+                {
+                   "event": "click",
+                    "actions" :[ 
+                           {
+                            
+                            "actionType": "INVOKE_API",
+                            "formName": "",
+                            "apiConfig": {
+                                "name": "signupButtonApi",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Logoff",
+                                "method": "POST",
+                                "payloadParams": [
+                                    {
+                                        "paramName": "userId",
+                                        "mappedField": "userId",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(id)"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "pageUrl": "/login",
+                                    "clearSharedData": ["name", "id", "givenName", "surname", "authenticated"]
+                                }
+                            }                             
+                           }          
+                    ],
+                    "debounce": 3000
+                }
+            ]
+        }
+        
+        
+    ]
+}

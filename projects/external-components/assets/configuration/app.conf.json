@@ -617,8 +617,13 @@
             "localURL": "./assets/pageLayout/ui-daddy/reports/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
-            "conditions": []
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "reports",
