@@ -444,29 +444,7 @@
                 },
                 "orientation": null
             },
-            "events": [
-                {
-                    "event": "change",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "RELOAD_COMPONENT_DATA",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "",
-                            "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "levelEdit",
-                            "sharedData": [],
-                            "apiConfig": null
-                        }
-                    ]
-                }
-            ],
+            "events": [],
             "expressionProperties": {},
             "optionList": [
                 {
