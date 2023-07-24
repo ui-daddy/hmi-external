@@ -1,0 +1,12 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-1"
+            },
+            "layoutProperties": {},
+            "libraryComponent": "TableExternalComponent"
+        }
+    ]
+}
