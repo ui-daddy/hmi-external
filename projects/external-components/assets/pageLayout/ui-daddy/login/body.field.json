@@ -1,4 +1,5 @@
 {
+    "loginForm": [],
     "loginInfo": [
         {
             "value": "Sign in",
@@ -203,31 +204,6 @@
                         "xs": {
                             "parent-margin": "10px",
                             "parent-justify-content": "center"
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "baseProperties": {
-                "id": "signupBtn",
-                "name": "signupBtn",
-                "type": "button",
-                "formName": "",
-                "label": "Create New Account"
-            },
-            "accessor": "",
-            "navigateToPage": "/signup",
-            "layoutProperties": {
-                "css": {
-                    "themeClass": "btn-success",
-                    "customClassName": "login__signup-btn",
-                    "configuration": {
-                        "selectorName": ".login__signup-btn",
-                        "xs": {
-                            "width": "100%",
-                            "parent-border-top": "1px solid black",
-                            "parent-padding-top": "25px"
                         }
                     }
                 }
