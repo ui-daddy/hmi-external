@@ -100,7 +100,50 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Forget Password",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/ResetPassword",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "email",
+                                        "mappedField": "email",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "onSuccess": {},
+                                "onError": {},
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "downloadFileName": "",
+                                "responseType": ""
+                            }
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {}
         },
         {
