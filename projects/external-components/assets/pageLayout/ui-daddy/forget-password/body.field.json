@@ -128,7 +128,7 @@
                                     {
                                         "paramName": "email",
                                         "mappedField": "email",
-                                        "mappedValue": "value",
+                                        "mappedValue": "",
                                         "valueFormat": ""
                                     }
                                 ],
