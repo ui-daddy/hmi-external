@@ -123,7 +123,14 @@
                                 "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/ResetPassword",
                                 "method": "POST",
                                 "pathParams": [],
-                                "queryParams": [],
+                                "queryParams": [
+                                    {
+                                        "paramName": "email",
+                                        "mappedField": "email",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
                                 "payloadParams": [
                                     {
                                         "paramName": "email",
