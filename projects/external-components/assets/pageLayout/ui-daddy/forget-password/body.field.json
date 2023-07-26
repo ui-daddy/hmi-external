@@ -131,14 +131,7 @@
                                         "valueFormat": ""
                                     }
                                 ],
-                                "payloadParams": [
-                                    {
-                                        "paramName": "email",
-                                        "mappedField": "email",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    }
-                                ],
+                                "payloadParams": [],
                                 "fetch": "",
                                 "downloadFileName": "",
                                 "responseType": "",
