@@ -96,6 +96,12 @@
                     "label": "Impediments",
                     "href": "/impediments",
                     "type": "link"
+                },
+                {
+                  "id": "reports", 
+                  "label": "Reports ", 
+                  "href": "/reports", 
+                  "type":"link"
                 }
             ],
             "layoutProperties": {
