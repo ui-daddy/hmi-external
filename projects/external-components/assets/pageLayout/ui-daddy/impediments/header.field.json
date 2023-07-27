@@ -6,7 +6,7 @@
                 "name": "logo",
                 "type": "staticImage"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__logo",
@@ -21,18 +21,30 @@
             },
             "imageUrl": "assets/images/logo.jpg"
         },
-		{
+        {
             "baseProperties": {
                 "name": "menu",
                 "type": "navItemGroup",
                 "id": "menu"
             },
             "navItems": [
-                {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/statistics"},
-                {"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
-                {"id": "gantt-chart", "label": "Project Plan", "navigateToPage": "/chart"}
+                {
+                    "id": "dashboard",
+                    "label": "Dashboard",
+                    "navigateToPage": "/statistics"
+                },
+                {
+                    "id": "projects",
+                    "label": "Projects",
+                    "navigateToPage": "/projects"
+                },
+                {
+                    "id": "gantt-chart",
+                    "label": "Project Plan",
+                    "navigateToPage": "/chart"
+                }
             ],
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__nav-items",
@@ -47,22 +59,52 @@
         }
     ],
     "menu-dropdown-dashboard": [
-		{
+        {
             "baseProperties": {
                 "name": "navMenu",
                 "type": "nav-menu",
                 "id": "navMenu",
-                "label" : "More"
+                "label": "More"
             },
             "optionList": [
-                {"id": "tasks", "label": "My Tasks", "href": "/my-task", "type":"link"},
-                {"id": "users", "label": "Users", "href": "/users", "type":"link"},
-                {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link"},
-                {"id": "vendor", "label": "Vendor", "href": "/vendors", "type":"link"},
-                {"id": "impediments", "label": "Impediments", "href": "/impediments", "type":"link"},
-                {"id": "reports", "label": "Reports ", "href": "/reports", "type":"link"}
+                {
+                    "id": "tasks",
+                    "label": "My Tasks",
+                    "href": "/my-task",
+                    "type": "link"
+                },
+                {
+                    "id": "users",
+                    "label": "Users",
+                    "href": "/users",
+                    "type": "link"
+                },
+                {
+                    "id": "profile",
+                    "label": "My Profile",
+                    "href": "/profile",
+                    "type": "link"
+                },
+                {
+                    "id": "vendor",
+                    "label": "Vendor",
+                    "href": "/vendors",
+                    "type": "link"
+                },
+                {
+                    "id": "profile",
+                    "label": "Impediments",
+                    "href": "/impediments",
+                    "type": "link"
+                },
+                {
+                  "id": "reports", 
+                  "label": "Reports ", 
+                  "href": "/reports", 
+                  "type":"link"
+                }
             ],
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".dropdown-nav",
@@ -77,36 +119,39 @@
         }
     ],
     "logout-header-dashboard": [
-        {    "value":"Welcome {0}",
+        {
+            "value": "Welcome {0}",
             "baseProperties": {
                 "name": "givenName",
                 "type": "staticText"
             },
-            "dynamicValueAccessor": ["givenName"],
-            "layoutProperties":{
+            "dynamicValueAccessor": [
+                "givenName"
+            ],
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__org",
                         "xs": {
-                            
                             "color": "black",
                             "font-size": "15px",
-                            "font-weight":"bold"                        }
+                            "font-weight": "bold"
+                        }
                     },
                     "customClassName": "header__org"
                 }
             }
         },
-            {    
-            "value":"userId",
+        {
+            "value": "userId",
             "baseProperties": {
                 "name": "userId",
                 "type": "hidden"
             },
-            "dynamicValueAccessor": ["id"],
-            "layoutProperties":{
-               
-            }
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {}
         },
         {
             "baseProperties": {
@@ -115,7 +160,7 @@
                 "type": "button",
                 "id": "logout"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header-common__logout",
@@ -124,21 +169,18 @@
                             "parent-justify-content": "flex-end",
                             "background-color": "#222121",
                             "border-color": "#222121",
-                            "margin-top": "9px" 
-        
+                            "margin-top": "9px"
                         }
                     },
-                    "customClassName": "header-common__logout",                
-                    "themeClass": "btn btn-dark"                    
+                    "customClassName": "header-common__logout",
+                    "themeClass": "btn btn-dark"
                 }
             },
-           
             "events": [
                 {
-                   "event": "click",
-                    "actions" :[ 
-                           {
-                            
+                    "event": "click",
+                    "actions": [
+                        {
                             "actionType": "INVOKE_API",
                             "formName": "",
                             "apiConfig": {
@@ -155,16 +197,20 @@
                                 ],
                                 "onSuccess": {
                                     "pageUrl": "/login",
-                                    "clearSharedData": ["name", "id", "givenName", "surname", "authenticated"]
+                                    "clearSharedData": [
+                                        "name",
+                                        "id",
+                                        "givenName",
+                                        "surname",
+                                        "authenticated"
+                                    ]
                                 }
-                            }                             
-                           }          
+                            }
+                        }
                     ],
                     "debounce": 3000
                 }
             ]
         }
-        
-        
     ]
 }
