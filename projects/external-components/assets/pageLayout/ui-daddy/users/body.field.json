@@ -739,8 +739,18 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "file-input-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".file-input-txt .custom-file-label",
+                            "xs": {
+                                "padding-right": "27px",
+                                "overflow": "hidden",
+                                "text-overflow": "ellipsis",
+                                "white-space": "nowrap"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -846,6 +856,53 @@
         },
         {
             "baseProperties": {
+                "type": "staticIcon",
+                "id": "dnd-71",
+                "name": "downloadProfileUpload",
+                "label": "Download",
+                "formName": "editUserModal"
+            },
+            "iconClass": "fas fa-download",
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "image-download",
+                    "themeClass": "btn-secondary",
+                    "configuration": [
+                        {
+                            "selectorName": ".image-download",
+                            "xs": {
+                                "text-align": "right",
+                                "position": "absolute",
+                                "right": "23px",
+                                "top": "-95px",
+                                "cursor": "pointer",
+                                "z-index": "10"
+                            }
+                        }
+                    ]
+                },
+                "orientation": null
+            },
+            "expressionProperties": {
+                "visible": "editProfileImage != undefined and profilePath != null and profilePath != undefined"
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "DOWNLOAD_FILE_URI",
+                            "fieldValue": "$SHARED_DATA$.profilePath"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "baseProperties": {
                 "type": "file",
                 "id": "dnd-54",
                 "name": "editIdProof",
@@ -858,7 +915,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
+                    "customClassName": "file-input-txt",
                     "configuration": [],
                     "themeClass": ""
                 },
@@ -962,6 +1019,41 @@
             "expressionProperties": {
                 "disabled": "editIdProof == null or editIdProof == undefined"
             }
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dnd-72",
+                "name": "downloadIdUpload",
+                "label": "Download",
+                "formName": "editUserModal"
+            },
+            "iconClass": "fas fa-download",
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "image-download",
+                    "themeClass": "btn-secondary",
+                    "configuration": []
+                },
+                "orientation": null
+            },
+            "expressionProperties": {
+                "visible": "editIdProof != null and editProfileImage != undefined and idProofVar != null and idProofVar != undefined"
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "DOWNLOAD_FILE_URI",
+                            "fieldValue": "$SHARED_DATA$.idProofVar"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "baseProperties": {

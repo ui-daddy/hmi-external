@@ -20,13 +20,13 @@
                             "selectorName": ".add-impedement-btn",
                             "xs": {
                                 "parent-padding": "25px 0 15px 0",
-                                "background-color": "#BDBDBD",
                                 "border-color": "#BDBDBD",
-                                "color": "black"
+                                "color": "white",
+                                "background-color": "primary-gradient"
                             }
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
