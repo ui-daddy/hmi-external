@@ -39,7 +39,8 @@
                             },
                             "autoPlace": "false"
                         }
-                    }
+                    },
+                    "sectionList": []
                 },
                 {
                     "id": "loginButtons",
@@ -55,7 +56,8 @@
                             },
                             "autoPlace": "false"
                         }
-                    }
+                    },
+                    "sectionList": []
                 }
             ]
         }
