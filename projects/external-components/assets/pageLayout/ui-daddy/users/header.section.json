@@ -40,7 +40,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "sectionList": []
                 },
                 {
                     "id": "menu-dropdown-dashboard",
@@ -66,7 +67,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "sectionList": []
                 },
                 {
                     "id": "logout-header-dashboard",
@@ -82,7 +84,8 @@
                             },
                             "autoPlace": "false"
                         }
-                    }
+                    },
+                    "sectionList": []
                 }
             ]
         }
