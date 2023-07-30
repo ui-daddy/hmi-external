@@ -2237,5 +2237,28 @@
             ],
             "expressionProperties": {}
         }
+    ],
+    "dnd-73": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-74",
+                "name": "mobileNotAllowed"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Page not supported on mobile screen. Please download the app."
+        }
     ]
 }
