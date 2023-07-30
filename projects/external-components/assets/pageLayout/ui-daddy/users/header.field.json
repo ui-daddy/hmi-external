@@ -1,4 +1,5 @@
 {
+    "header-dashboard": [],
     "menu-header-dashboard": [
         {
             "value": "",
@@ -29,9 +30,21 @@
                 "id": "menu"
             },
             "navItems": [
-                {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/dashboard"},
-                {"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
-                {"id": "chart", "label": "Project Plan", "navigateToPage": "/chart"}
+                {
+                    "id": "dashboard",
+                    "label": "Dashboard",
+                    "navigateToPage": "/dashboard"
+                },
+                {
+                    "id": "projects",
+                    "label": "Projects",
+                    "navigateToPage": "/projects"
+                },
+                {
+                    "id": "chart",
+                    "label": "Project Plan",
+                    "navigateToPage": "/chart"
+                }
             ],
             "layoutProperties": {
                 "css": {
@@ -57,12 +70,48 @@
                 "label": "More"
             },
             "optionList": [
-                {"id": "my-task", "label": "My Tasks", "href": "/my-task", "type":"link", "highlight": true},
-                {"id": "users", "label": "Users", "href": "/users", "type":"link", "highlight": true},
-                {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link", "highlight": true},
-                {"id": "vendors", "label": "Vendor", "href": "/vendors", "type":"link", "highlight": true},
-                {"id": "impediments", "label": "Impediments", "href": "/impediments", "type":"link", "highlight": true},
-                {"id": "reports", "label": "Reports ", "href": "/reports", "type":"link", "highlight": true}
+                {
+                    "id": "my-task",
+                    "label": "My Tasks",
+                    "href": "/my-task",
+                    "type": "link",
+                    "highlight": true
+                },
+                {
+                    "id": "users",
+                    "label": "Users",
+                    "href": "/users",
+                    "type": "link",
+                    "highlight": true
+                },
+                {
+                    "id": "profile",
+                    "label": "My Profile",
+                    "href": "/profile",
+                    "type": "link",
+                    "highlight": true
+                },
+                {
+                    "id": "vendors",
+                    "label": "Vendor",
+                    "href": "/vendors",
+                    "type": "link",
+                    "highlight": true
+                },
+                {
+                    "id": "impediments",
+                    "label": "Impediments",
+                    "href": "/impediments",
+                    "type": "link",
+                    "highlight": true
+                },
+                {
+                    "id": "reports",
+                    "label": "Reports ",
+                    "href": "/reports",
+                    "type": "link",
+                    "highlight": true
+                }
             ],
             "layoutProperties": {
                 "css": {
@@ -95,7 +144,7 @@
                         "xs": {
                             "color": "black",
                             "font-size": "15px",
-                            "font-weight":"bold",
+                            "font-weight": "bold",
                             "margin-top": "10px"
                         }
                     },
@@ -104,15 +153,28 @@
             }
         },
         {
-            "value": "userId",
+            "value": "Welcome {0}",
             "baseProperties": {
-                "name": "userId",
-                "type": "hidden"
+                "name": "givenName",
+                "type": "staticText"
             },
             "dynamicValueAccessor": [
-                "id"
+                "givenName"
             ],
-            "layoutProperties": {}
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight": "bold",
+                            "margin-top": "10px"
+                        }
+                    },
+                    "customClassName": "header__org"
+                }
+            }
         },
         {
             "baseProperties": {
