@@ -13,7 +13,8 @@
                         "xs": {
                             "background-image": "url(assets/images/logo.jpg)",
                             "background-size": "cover",
-                            "background-position": "center center"
+                            "background-position": "center center",
+                            "width": "120px"
                         }
                     },
                     "customClassName": "header__logo"
@@ -28,9 +29,9 @@
                 "id": "menu"
             },
             "navItems": [
-                {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/statistics"},
+                {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/dashboard"},
                 {"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
-                {"id": "gantt-chart", "label": "Project Plan", "navigateToPage": "/chart"}
+                {"id": "chart", "label": "Project Plan", "navigateToPage": "/chart"}
             ],
             "layoutProperties":{
                 "css": {
@@ -38,7 +39,8 @@
                         "selectorName": ".header__nav-items",
                         "xs": {
                             "padding-right": "40px",
-                            "parent-justify-content": "flex-end"
+                            "parent-justify-content": "flex-end",
+                            "text-align": "center"
                         }
                     },
                     "customClassName": "header__nav-items"
@@ -55,12 +57,12 @@
                 "label" : "More"
             },
             "optionList": [
-                {"id": "tasks", "label": "My Tasks", "href": "/my-task", "type":"link"},
-                {"id": "users", "label": "Users", "href": "/users", "type":"link"},
-                {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link"},
-                {"id": "vendor", "label": "Vendor", "href": "/vendors", "type":"link"},
-                {"id": "impediments", "label": "Impediments", "href": "/impediments", "type":"link"},
-                {"id": "reports", "label": "Reports ", "href": "/reports", "type":"link"}
+                {"id": "my-task", "label": "My Tasks", "href": "/my-task", "type":"link", "highlight": true},
+                {"id": "users", "label": "Users", "href": "/users", "type":"link", "highlight": true},
+                {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link", "highlight": true},
+                {"id": "vendors", "label": "Vendor", "href": "/vendors", "type":"link", "highlight": true},
+                {"id": "impediments", "label": "Impediments", "href": "/impediments", "type":"link", "highlight": true},
+                {"id": "reports", "label": "Reports ", "href": "/reports", "type":"link", "highlight": true}
             ],
             "layoutProperties":{
                 "css": {
@@ -91,7 +93,9 @@
                             
                             "color": "black",
                             "font-size": "15px",
-                            "font-weight":"bold"                        }
+                            "font-weight":"bold",
+                            "margin-top": "10px"
+                        }
                     },
                     "customClassName": "header__org"
                 }
