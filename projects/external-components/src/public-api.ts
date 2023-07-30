@@ -14,4 +14,4 @@ export * from 'primeng/password';
 export * from 'primeng/checkbox';
 export * from 'primeng/calendar';
 export {ToggleButtonModule, ToggleButton} from 'primeng/togglebutton';
-export * from './lib/primeng-selectors/transformers';
+export * from './lib/primeng-selectors/util/util';
