@@ -108,7 +108,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "login__btn theme-btn",
+                    "customClassName": "login__btn",
                     "configuration": [
                         {
                             "selectorName": ".login__btn",
@@ -118,7 +118,7 @@
                             }
                         }
                     ],
-                    "themeClass": ""
+                    "themeClass": "btn-secondary"
                 },
                 "orientation": null
             },
