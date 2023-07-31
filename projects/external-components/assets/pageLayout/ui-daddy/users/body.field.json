@@ -18,14 +18,11 @@
                         {
                             "selectorName": ".add-user-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0",
-                                "background-color": "#BDBDBD",
-                                "color": "black",
-                                "border-color": "#BDBDBD"
+                                "parent-padding": "25px 0 15px 0"
                             }
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": "theme-btn"
                 },
                 "orientation": null
             },
@@ -496,11 +493,13 @@
                 "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
                 "method": "GET",
                 "pathParams": [],
-                "queryParams":  [{
-                    "paramName": "level",
-                    "mappedField": "levelTypeEdit",
-                    "mappedValue": "value"
-                }],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeEdit",
+                        "mappedValue": "value"
+                    }
+                ],
                 "payloadParams": [],
                 "fetch": "ONLOAD",
                 "downloadFileName": "",
@@ -1118,13 +1117,10 @@
                     "configuration": [
                         {
                             "selectorName": ".save-user",
-                            "xs": {
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
-                            }
+                            "xs": {}
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": "theme-btn"
                 },
                 "orientation": null
             },
@@ -1430,11 +1426,13 @@
                 "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
                 "method": "GET",
                 "pathParams": [],
-                "queryParams": [{
-                    "paramName": "level",
-                    "mappedField": "levelTypeAdd",
-                    "mappedValue": "value"
-                }],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeAdd",
+                        "mappedValue": "value"
+                    }
+                ],
                 "payloadParams": [],
                 "fetch": "ONLOAD",
                 "downloadFileName": "",
@@ -1515,7 +1513,7 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"            
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "optionList": [],
             "optionsConfig": {
