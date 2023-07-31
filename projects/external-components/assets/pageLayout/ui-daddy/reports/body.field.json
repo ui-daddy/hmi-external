@@ -91,6 +91,7 @@
                     "url": "https://upms-api.azurewebsites.net/api/v1/Report/OverDueReport",
                     "method": "GET",
                     "params": {},
+                    "postTransform": "dateTransform",
                     "onSuccess": {
                         "apiDataAccessor": ""
                     }
