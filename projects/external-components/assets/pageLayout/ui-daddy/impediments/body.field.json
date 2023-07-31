@@ -715,14 +715,11 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "theme-btn",
+                    "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".theme-btn",
-                            "xs": {
-                                "parent-padding-top": "30px",
-                                "width": "100%"
-                            }
+                            "selectorName": ".dit-impediment-btn",
+                            "xs": {}
                         }
                     ],
                     "themeClass": ""
