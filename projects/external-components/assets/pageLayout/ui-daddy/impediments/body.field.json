@@ -18,7 +18,9 @@
                     "configuration": [
                         {
                             "selectorName": ".theme-btn",
-                            "xs": {}
+                            "xs": {
+                                "parent-padding": "25px 0 15px 0"
+                            }
                         }
                     ],
                     "themeClass": ""
