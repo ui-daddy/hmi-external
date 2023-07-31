@@ -1113,11 +1113,13 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "theme-btn",
+                    "customClassName": "theme-btn save-user",
                     "configuration": [
                         {
                             "selectorName": ".save-user",
-                            "xs": {}
+                            "xs": {
+                                "width": "100%"
+                            }
                         }
                     ],
                     "themeClass": ""
