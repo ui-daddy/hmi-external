@@ -83,15 +83,13 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reset-button",
+                    "customClassName": "reset-button theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".reset-button",
                             "xs": {
                                 "parent-margin": "10px",
                                 "parent-justify-content": "center",
-                                "background-color": "#ffc107",
-                                "color": "black",
                                 "width": "100%"
                             }
                         }
