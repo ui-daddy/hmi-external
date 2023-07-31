@@ -104,17 +104,23 @@
                 "label": "Login"
             },
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
-                    "themeClass": "btn-warning",
-                    "customClassName": "login__btn",
-                    "configuration": {
-                        "selectorName": ".login__btn",
-                        "xs": {
-                            "width": "100%",
-                            "parent-margin-top": "20px"
+                    "customClassName": "login__btn theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".login__btn",
+                            "xs": {
+                                "width": "100%",
+                                "parent-margin-top": "20px"
+                            }
                         }
-                    }
-                }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
             },
             "expressionProperties": {
                 "requiredValue": true,
