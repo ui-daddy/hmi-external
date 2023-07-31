@@ -118,7 +118,7 @@
                             }
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": "btn-warning"
                 },
                 "orientation": null
             },
