@@ -13,7 +13,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "add-user-btn",
+                    "customClassName": "add-user-btn theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".add-user-btn",
@@ -22,7 +22,7 @@
                             }
                         }
                     ],
-                    "themeClass": "theme-btn"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -1113,14 +1113,14 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-user",
+                    "customClassName": "theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".save-user",
                             "xs": {}
                         }
                     ],
-                    "themeClass": "theme-btn"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -2015,19 +2015,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-user",
+                    "customClassName": "save-user theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".save-user",
                             "xs": {
                                 "parent-padding-top": "30px",
-                                "width": "100%",
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
+                                "width": "100%"
                             }
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
