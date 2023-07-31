@@ -14,10 +14,10 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "theme-btn",
+                    "customClassName": "theme-btn add-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".theme-btn",
+                            "selectorName": ".add-impediment-btn",
                             "xs": {
                                 "parent-padding": "25px 0 15px 0"
                             }
@@ -427,10 +427,10 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "theme-btn",
+                    "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".theme-btn",
+                            "selectorName": ".edit-impediment-btn",
                             "xs": {
                                 "parent-padding-top": "30px",
                                 "width": "100%"
@@ -715,14 +715,11 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "theme-btn",
+                    "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".theme-btn",
-                            "xs": {
-                                "parent-padding-top": "30px",
-                                "width": "100%"
-                            }
+                            "selectorName": ".dit-impediment-btn",
+                            "xs": {}
                         }
                     ],
                     "themeClass": ""
