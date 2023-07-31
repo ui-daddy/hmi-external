@@ -59,7 +59,7 @@ body {
 .theme-btn.dynamic-style-parent button.dynamic-style-child:focus { 
     outline: 2px solid #654ff8;
     outline-offset: 2px;
-    box-shadow: none important;
+    box-shadow: none !important;
 }
 
 
