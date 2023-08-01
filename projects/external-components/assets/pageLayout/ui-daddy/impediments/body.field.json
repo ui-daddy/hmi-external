@@ -100,9 +100,9 @@
                         }
                     },
                     {
-                        "colName": "Activity",
+                        "colName": "Activity Name",
                         "filterType": "multiselect",
-                        "accessor": "activity",
+                        "accessor": "activityname",
                         "colWidth": {
                             "unit": "px",
                             "value": 200
