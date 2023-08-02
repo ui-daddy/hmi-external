@@ -101,7 +101,7 @@
                     },
                     {
                         "colName": "Activity Name",
-                        "filterType": "multiselect",
+                        "filterType": "text",
                         "accessor": "activityname",
                         "colWidth": {
                             "unit": "px",
