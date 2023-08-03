@@ -135,15 +135,27 @@
             "events": [
                 {
                     "event": "click",
+                    "debounce": 3000,
                     "actions": [
                         {
                             "actionType": "INVOKE_API",
-                            "showLoading": true,
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
                             "apiConfig": {
                                 "name": "loginButtonApi",
                                 "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Login",
                                 "method": "POST",
-                                "isApplicationSessionAPI": true,
+                                "pathParams": [],
+                                "queryParams": [],
                                 "payloadParams": [
                                     {
                                         "paramName": "username",
@@ -154,8 +166,14 @@
                                         "mappedField": "password"
                                     }
                                 ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
                                 "onSuccess": {
                                     "pageUrl": "/dashboard",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
                                     "sharedData": [
                                         {
                                             "varName": "name",
@@ -183,22 +201,31 @@
                                             "cache": true
                                         }
                                     ],
+                                    "fieldData": [],
                                     "clearSharedData": [
                                         "name",
                                         "authenticated"
-                                    ]
+                                    ],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
                                 },
                                 "onError": {
-                                    "showErrorMessage": true,
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
                                     "clearSharedData": [
                                         "name",
                                         "authenticated"
-                                    ]
+                                    ],
+                                    "apiDataAccessor": "",
+                                    "message": "Incorrect user id or password",
+                                    "showErrorMessage": true,
+                                    "actions": []
                                 }
                             }
                         }
-                    ],
-                    "debounce": 3000
+                    ]
                 }
             ]
         },
