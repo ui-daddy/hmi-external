@@ -219,7 +219,7 @@
                                         "authenticated"
                                     ],
                                     "apiDataAccessor": "",
-                                    "message": "Incorrect user id or password",
+                                    "message": "",
                                     "showErrorMessage": true,
                                     "actions": []
                                 }
