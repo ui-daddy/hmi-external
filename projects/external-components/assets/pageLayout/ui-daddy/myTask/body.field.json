@@ -1,0 +1,113 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-1",
+                "name": "myTask-table"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Sr.No.",
+                        "filterType": "number",
+                        "accessor": "",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Task Name",
+                        "filterType": "multiselect",
+                        "accessor": "title",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Scheduled Start Date",
+                        "filterType": "multiselect",
+                        "accessor": "expectedStartDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Scheduled End Date",
+                        "filterType": "multiselect",
+                        "accessor": "expectedEndDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Actual Start Date",
+                        "filterType": "multiselect",
+                        "accessor": "actualStartDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Actual End Date",
+                        "filterType": "text",
+                        "accessor": "actualEndDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Status",
+                        "filterType": "multiselect",
+                        "accessor": "status",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    }
+                ],
+                "caption": "My Tasks",
+                "summary": null,
+                "globalFilterFields": null,
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": true,
+                "dataConfig": {
+                    "name": "myTaskList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/:id",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    }
+                },
+                "columnFilter": null,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
+            }
+        }
+    ]
+}
