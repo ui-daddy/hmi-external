@@ -28,7 +28,6 @@
                 "type": "navItemGroup",
                 "id": "menu"
             },
-            "visibleNavItemsCount": 10,
             "dropdownLabel": "More",
             "navItems": [
                 {
