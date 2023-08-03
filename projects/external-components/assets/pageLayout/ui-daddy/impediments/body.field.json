@@ -14,15 +14,12 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "add-impedement-btn",
+                    "customClassName": "theme-btn add-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".add-impedement-btn",
+                            "selectorName": ".add-impediment-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0",
-                                "border-color": "#BDBDBD",
-                                "color": "white",
-                                "background-color": "primary-gradient"
+                                "parent-padding": "25px 0 15px 0"
                             }
                         }
                     ],
@@ -430,19 +427,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-impediment",
+                    "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".save-impediment",
+                            "selectorName": ".edit-impediment-btn",
                             "xs": {
                                 "parent-padding-top": "30px",
-                                "width": "100%",
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
+                                "width": "100%"
                             }
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -720,19 +715,14 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-impediment",
+                    "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".save-impediment",
-                            "xs": {
-                                "parent-padding-top": "30px",
-                                "width": "100%",
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
-                            }
+                            "selectorName": ".dit-impediment-btn",
+                            "xs": {}
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": ""
                 },
                 "orientation": null
             },

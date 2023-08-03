@@ -14,7 +14,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "add-vendor-btn",
+                    "customClassName": "add-vendor-btn theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".add-vendor-btn",
@@ -23,7 +23,7 @@
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -491,9 +491,9 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-vendor",
+                    "customClassName": "save-vendor theme-btn",
                     "configuration": [],
-                    "themeClass": "btn-warning"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -798,7 +798,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-vendor",
+                    "customClassName": "save-vendor theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".save-vendor",
@@ -808,7 +808,7 @@
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
