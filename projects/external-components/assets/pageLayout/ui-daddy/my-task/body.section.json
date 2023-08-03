@@ -1,22 +1,83 @@
 {
-  "layout": [
-    {
-      "id": "dashboard",
-      "type": "content",
-      "layout": {
-        "css": {
-          "customClassName": ""
+    "layout": [
+        {
+            "id": "dashboard",
+            "type": "content",
+            "layout": {
+                "css": {
+                    "customClassName": ""
+                },
+                "column": {
+                    "count": 2,
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "autoPlace": "false"
+                }
+            },
+            "sectionList": []
         },
-        "column":{
-          "count": 2,
-          "ratio": {
-            "lg": "12",
-            "md": "12",
-            "sm": "12",
-            "xs": "12"
-          },
-          "autoPlace": "false"
+        {
+            "id": "dnd-1",
+            "type": "form",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    }
+                },
+                "css": {
+                    "configuration": [],
+                    "customClassName": null
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "dnd-2",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": [
+                        {
+                            "id": "dnd-3",
+                            "type": "form",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    }
+                                },
+                                "css": {
+                                    "configuration": [],
+                                    "customClassName": null
+                                }
+                            },
+                            "sectionList": []
+                        }
+                    ]
+                }
+            ]
         }
-      }
-    }]
+    ]
 }
