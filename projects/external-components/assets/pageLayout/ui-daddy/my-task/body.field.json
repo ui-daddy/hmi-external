@@ -21,7 +21,7 @@
                 "visibleValue": true
             },
             "customAttributes": {
-                "src": ""
+                "src": "/pmtool/app/tasks"
             },
             "layoutProperties": {
                 "labelPlacement": "top",
@@ -35,33 +35,6 @@
                 "orientation": null
             },
             "events": []
-        }
-    ],
-    "dnd-1": [],
-    "dnd-2": [],
-    "dnd-3": [
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-4",
-                "name": "name",
-                "label": "name"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "name",
-            "placeholder": null
         }
     ]
 }
