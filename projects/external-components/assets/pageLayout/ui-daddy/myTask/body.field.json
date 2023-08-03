@@ -90,7 +90,7 @@
                 ],
                 "caption": "My Tasks",
                 "summary": null,
-                "globalFilterFields": null,
+                "globalFilterFields": [],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": true,
