@@ -27,7 +27,7 @@
                     {
                         "colName": "Sr.No.",
                         "filterType": "number",
-                        "accessor": "",
+                        "accessor": "progress",
                         "colWidth": {
                             "unit": "px",
                             "value": 50
