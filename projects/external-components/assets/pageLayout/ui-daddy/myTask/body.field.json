@@ -96,7 +96,7 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "myTaskList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/:id",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
