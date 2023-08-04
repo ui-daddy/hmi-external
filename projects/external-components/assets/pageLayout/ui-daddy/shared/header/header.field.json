@@ -46,9 +46,9 @@
                     "navigateToPage": "/chart"
                 },
                 {
-                    "id": "my-task",
+                    "id": "myTask",
                     "label": "My Tasks",
-                    "navigateToPage": "/my-task"
+                    "navigateToPage": "/myTask"
                 },
                 {
                     "id": "users",

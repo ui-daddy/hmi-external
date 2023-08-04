@@ -7,8 +7,8 @@
                 "column": {
                     "count": 3,
                     "ratio": {
-                        "lg": "6:2:4",
-                        "md": "6:2:4",
+                        "lg": "7:5",
+                        "md": "7:5",
                         "sm": "6:2:4",
                         "xs": "6:2:4"
                     },
@@ -23,36 +23,10 @@
                         "column": {
                             "count": 1,
                             "ratio": {
-                                "lg": "1:1:2:1:1:1:5",
-                                "md": "1:1:2:1:1:1:5",
-                                "sm": "1:1:2:1:1:1:5",
-                                "xs": "1:1:2:1:1:1:5"
-                            },
-                            "autoPlace": "false"
-                        },
-                        "css": {
-                            "customClassName": "menu-header-style",
-                            "configuration": {
-                                "selectorName": ".menu-header-style > div > div",
-                                "xs": {
-                                    "padding": "0px",
-                                    "background-color": "red"
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "id": "menu-dropdown-dashboard",
-                    "type": "content",
-                    "layout": {
-                        "column": {
-                            "count": 1,
-                            "ratio": {
-                                "lg": "6:6",
-                                "md": "6:6",
-                                "sm": "6:6",
-                                "xs": "6:6"
+                                "lg": "2:10",
+                                "md": "3:9",
+                                "sm": "4:8",
+                                "xs": "4:8"
                             },
                             "autoPlace": "false"
                         },
@@ -75,10 +49,10 @@
                         "column": {
                             "count": 3,
                             "ratio": {
-                                "lg": "8:1:3",
-                                "md": "8:1:3",
-                                "sm": "8:1:3",
-                                "xs": "8:1:3"
+                                "lg": "6:0:6",
+                                "md": "6:0:6",
+                                "sm": "6:0:6",
+                                "xs": "6:0:6"
                             },
                             "autoPlace": "false"
                         }
@@ -87,4 +61,5 @@
             ]
         }
     ]
-}
+  }
+  

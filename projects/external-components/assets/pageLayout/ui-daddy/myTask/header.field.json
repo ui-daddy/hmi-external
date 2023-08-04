@@ -28,6 +28,7 @@
                 "type": "navItemGroup",
                 "id": "menu"
             },
+            "dropdownLabel": "More",
             "navItems": [
                 {
                     "id": "dashboard",
@@ -43,6 +44,36 @@
                     "id": "chart",
                     "label": "Project Plan",
                     "navigateToPage": "/chart"
+                },
+                {
+                    "id": "myTask",
+                    "label": "My Tasks",
+                    "navigateToPage": "/myTask"
+                },
+                {
+                    "id": "users",
+                    "label": "Users",
+                    "navigateToPage": "/users"
+                },
+                {
+                    "id": "profile",
+                    "label": "My Profile",
+                    "navigateToPage": "/profile"
+                },
+                {
+                    "id": "vendors",
+                    "label": "Vendor",
+                    "navigateToPage": "/vendors"
+                },
+                {
+                    "id": "impediments",
+                    "label": "Impediments",
+                    "navigateToPage": "/impediments"
+                },
+                {
+                    "id": "reports",
+                    "label": "Reports",
+                    "navigateToPage": "/reports"
                 }
             ],
             "layoutProperties": {
@@ -50,78 +81,12 @@
                     "configuration": {
                         "selectorName": ".header__nav-items",
                         "xs": {
-                            "padding-right": "40px",
+                            "padding-right": "35px",
                             "parent-justify-content": "flex-end",
                             "text-align": "center"
                         }
                     },
                     "customClassName": "header__nav-items"
-                }
-            }
-        }
-    ],
-    "menu-dropdown-dashboard": [
-        {
-            "baseProperties": {
-                "name": "navMenu",
-                "type": "nav-menu",
-                "id": "navMenu",
-                "label": "More"
-            },
-            "optionList": [
-                {
-                    "id": "my-task",
-                    "label": "My Tasks",
-                    "href": "/my-task",
-                    "type": "link",
-                    "highlight": true
-                },
-                {
-                    "id": "users",
-                    "label": "Users",
-                    "href": "/users",
-                    "type": "link",
-                    "highlight": true
-                },
-                {
-                    "id": "profile",
-                    "label": "My Profile",
-                    "href": "/profile",
-                    "type": "link",
-                    "highlight": true
-                },
-                {
-                    "id": "vendors",
-                    "label": "Vendor",
-                    "href": "/vendors",
-                    "type": "link",
-                    "highlight": true
-                },
-                {
-                    "id": "impediments",
-                    "label": "Impediments",
-                    "href": "/impediments",
-                    "type": "link",
-                    "highlight": true
-                },
-                {
-                    "id": "reports",
-                    "label": "Reports ",
-                    "href": "/reports",
-                    "type": "link",
-                    "highlight": true
-                }
-            ],
-            "layoutProperties": {
-                "css": {
-                    "configuration": {
-                        "selectorName": ".dropdown-nav",
-                        "xs": {
-                            "padding-right": "40px",
-                            "parent-justify-content": "flex-end"
-                        }
-                    },
-                    "customClassName": "dropdown-nav"
                 }
             }
         }
@@ -144,7 +109,8 @@
                             "color": "black",
                             "font-size": "15px",
                             "font-weight": "bold",
-                            "margin-top": "10px"
+                            "margin-top": "10px",
+                            "parent-justify-content": "end"
                         }
                     },
                     "customClassName": "header__org"
@@ -176,13 +142,11 @@
                         "xs": {
                             "parent-white-space": "nowrap",
                             "parent-justify-content": "flex-end",
-                            "background-color": "#222121",
-                            "border-color": "#222121",
                             "margin-top": "9px"
                         }
                     },
-                    "customClassName": "header-common__logout",
-                    "themeClass": "btn btn-dark"
+                    "customClassName": "header-common__logout theme-btn",
+                    "themeClass": "btn"
                 }
             },
             "events": [
