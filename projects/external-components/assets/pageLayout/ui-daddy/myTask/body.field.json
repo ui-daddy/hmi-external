@@ -25,15 +25,6 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Sr.No.",
-                        "filterType": "multiselect",
-                        "accessor": "progress",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 50
-                        }
-                    },
-                    {
                         "colName": "Task Name",
                         "filterType": "multiselect",
                         "accessor": "title",
@@ -96,11 +87,11 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "myTaskList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
-                        "apiDataAccessor": ""
+                        "apiDataAccessor": "payload"
                     }
                 },
                 "columnFilter": null,
