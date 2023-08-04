@@ -4,7 +4,8 @@
             "baseProperties": {
                 "type": "dynamicField",
                 "id": "dnd-1",
-                "name": "myTask-table"
+                "name": "myTask-table",
+                "library": "primeng"
             },
             "layoutProperties": {
                 "labelPlacement": "top",
