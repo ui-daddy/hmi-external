@@ -6,7 +6,7 @@
                 "name": "logo",
                 "type": "staticImage"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__logo",
@@ -22,23 +22,66 @@
             },
             "imageUrl": "assets/images/logo.jpg"
         },
-		{
+        {
             "baseProperties": {
                 "name": "menu",
                 "type": "navItemGroup",
                 "id": "menu"
             },
+            "dropdownLabel": "More",
             "navItems": [
-                {"id": "dashboard", "label": "Dashboard", "navigateToPage": "/dashboard"},
-                {"id": "projects", "label": "Projects", "navigateToPage": "/projects"},
-                {"id": "chart", "label": "Project Plan", "navigateToPage": "/chart"}
+                {
+                    "id": "dashboard",
+                    "label": "Dashboard",
+                    "navigateToPage": "/dashboard"
+                },
+                {
+                    "id": "projects",
+                    "label": "Projects",
+                    "navigateToPage": "/projects"
+                },
+                {
+                    "id": "chart",
+                    "label": "Project Plan",
+                    "navigateToPage": "/chart"
+                },
+                {
+                    "id": "my-task",
+                    "label": "My Tasks",
+                    "navigateToPage": "/my-task"
+                },
+                {
+                    "id": "users",
+                    "label": "Users",
+                    "navigateToPage": "/users"
+                },
+                {
+                    "id": "profile",
+                    "label": "My Profile",
+                    "navigateToPage": "/profile"
+                },
+                {
+                    "id": "vendors",
+                    "label": "Vendor",
+                    "navigateToPage": "/vendors"
+                },
+                {
+                    "id": "impediments",
+                    "label": "Impediments",
+                    "navigateToPage": "/impediments"
+                },
+                {
+                    "id": "reports",
+                    "label": "Reports",
+                    "navigateToPage": "/reports"
+                }
             ],
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__nav-items",
                         "xs": {
-                            "padding-right": "40px",
+                            "padding-right": "35px",
                             "parent-justify-content": "flex-end",
                             "text-align": "center"
                         }
@@ -48,69 +91,42 @@
             }
         }
     ],
-    "menu-dropdown-dashboard": [
-		{
-            "baseProperties": {
-                "name": "navMenu",
-                "type": "nav-menu",
-                "id": "navMenu",
-                "label" : "More"
-            },
-            "optionList": [
-                {"id": "my-task", "label": "My Tasks", "href": "/my-task", "type":"link", "highlight": true},
-                {"id": "users", "label": "Users", "href": "/users", "type":"link", "highlight": true},
-                {"id": "profile", "label": "My Profile", "href": "/profile", "type":"link", "highlight": true},
-                {"id": "vendors", "label": "Vendor", "href": "/vendors", "type":"link", "highlight": true},
-                {"id": "impediments", "label": "Impediments", "href": "/impediments", "type":"link", "highlight": true},
-                {"id": "reports", "label": "Reports ", "href": "/reports", "type":"link", "highlight": true}
-            ],
-            "layoutProperties":{
-                "css": {
-                    "configuration": {
-                        "selectorName": ".dropdown-nav",
-                        "xs": {
-                            "padding-right": "40px",
-                            "parent-justify-content": "flex-end"
-                        }
-                    },
-                    "customClassName": "dropdown-nav"
-                }
-            }
-        }
-    ],
     "logout-header-dashboard": [
-        {    "value":"Welcome {0}",
+        {
+            "value": "Welcome {0}",
             "baseProperties": {
                 "name": "givenName",
                 "type": "staticText"
             },
-            "dynamicValueAccessor": ["givenName"],
-            "layoutProperties":{
+            "dynamicValueAccessor": [
+                "givenName"
+            ],
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__org",
                         "xs": {
-                            
                             "color": "black",
                             "font-size": "15px",
-                            "font-weight":"bold",
-                            "margin-top": "10px"
+                            "font-weight": "bold",
+                            "margin-top": "10px",
+                            "parent-justify-content": "end"
                         }
                     },
                     "customClassName": "header__org"
                 }
             }
         },
-            {    
-            "value":"userId",
+        {
+            "value": "userId",
             "baseProperties": {
                 "name": "userId",
                 "type": "hidden"
             },
-            "dynamicValueAccessor": ["id"],
-            "layoutProperties":{
-               
-            }
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {}
         },
         {
             "baseProperties": {
@@ -119,30 +135,25 @@
                 "type": "button",
                 "id": "logout"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header-common__logout",
                         "xs": {
                             "parent-white-space": "nowrap",
                             "parent-justify-content": "flex-end",
-                            "background-color": "#222121",
-                            "border-color": "#222121",
-                            "margin-top": "9px" 
-        
+                            "margin-top": "9px"
                         }
                     },
-                    "customClassName": "header-common__logout",                
-                    "themeClass": "btn btn-dark"                    
+                    "customClassName": "header-common__logout theme-btn",
+                    "themeClass": "btn"
                 }
             },
-           
             "events": [
                 {
-                   "event": "click",
-                    "actions" :[ 
-                           {
-                            
+                    "event": "click",
+                    "actions": [
+                        {
                             "actionType": "INVOKE_API",
                             "formName": "",
                             "apiConfig": {
@@ -159,16 +170,20 @@
                                 ],
                                 "onSuccess": {
                                     "pageUrl": "/login",
-                                    "clearSharedData": ["name", "id", "givenName", "surname", "authenticated"]
+                                    "clearSharedData": [
+                                        "name",
+                                        "id",
+                                        "givenName",
+                                        "surname",
+                                        "authenticated"
+                                    ]
                                 }
-                            }                             
-                           }          
+                            }
+                        }
                     ],
                     "debounce": 3000
                 }
             ]
         }
-        
-        
     ]
 }
