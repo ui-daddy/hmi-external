@@ -35,7 +35,6 @@
                     },
                     {
                         "colName": "Scheduled Start Date",
-                        "filterType": "",
                         "accessor": "expectedStartDate",
                         "colWidth": {
                             "unit": "px",
@@ -44,7 +43,6 @@
                     },
                     {
                         "colName": "Scheduled End Date",
-                        "filterType": "",
                         "accessor": "expectedEndDate",
                         "colWidth": {
                             "unit": "px",
@@ -53,7 +51,6 @@
                     },
                     {
                         "colName": "Actual Start Date",
-                        "filterType": "",
                         "accessor": "actualStartDate",
                         "colWidth": {
                             "unit": "px",
@@ -62,7 +59,6 @@
                     },
                     {
                         "colName": "Actual End Date",
-                        "filterType": "",
                         "accessor": "actualEndDate",
                         "colWidth": {
                             "unit": "px",
