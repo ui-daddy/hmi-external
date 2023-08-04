@@ -4,8 +4,7 @@
             "baseProperties": {
                 "type": "dynamicField",
                 "id": "dnd-1",
-                "name": "myTask-table",
-                "library": "primeng"
+                "name": "myTask-table"
             },
             "layoutProperties": {
                 "labelPlacement": "top",
@@ -27,7 +26,7 @@
                 "columns": [
                     {
                         "colName": "Task Name",
-                        "filterType": "multiselect",
+                        "filterType": "text",
                         "accessor": "title",
                         "colWidth": {
                             "unit": "px",
@@ -36,7 +35,7 @@
                     },
                     {
                         "colName": "Scheduled Start Date",
-                        "filterType": "multiselect",
+                        "filterType": "",
                         "accessor": "expectedStartDate",
                         "colWidth": {
                             "unit": "px",
@@ -45,7 +44,7 @@
                     },
                     {
                         "colName": "Scheduled End Date",
-                        "filterType": "multiselect",
+                        "filterType": "",
                         "accessor": "expectedEndDate",
                         "colWidth": {
                             "unit": "px",
@@ -54,7 +53,7 @@
                     },
                     {
                         "colName": "Actual Start Date",
-                        "filterType": "multiselect",
+                        "filterType": "",
                         "accessor": "actualStartDate",
                         "colWidth": {
                             "unit": "px",
@@ -63,7 +62,7 @@
                     },
                     {
                         "colName": "Actual End Date",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "actualEndDate",
                         "colWidth": {
                             "unit": "px",
