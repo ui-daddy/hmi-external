@@ -1,5 +1,4 @@
 {
-    "header-dashboard": [],
     "menu-header-dashboard": [
         {
             "value": "",
@@ -103,29 +102,31 @@
                 "givenName"
             ],
             "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
                 "css": {
-                    "customClassName": "header__org",
-                    "configuration": [
-                        {
-                            "selectorName": ".header__org",
-                            "xs": {
-                                "color": "black",
-                                "font-size": "15px",
-                                "font-weight": "bold",
-                                "margin-top": "10px",
-                                "parent-justify-content": "end"
-                            }
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight": "bold",
+                            "margin-top": "10px",
+                            "parent-justify-content": "end"
                         }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
+                    },
+                    "customClassName": "header__org"
+                }
+            }
+        },
+        {
+            "value": "userId",
+            "baseProperties": {
+                "name": "userId",
+                "type": "hidden"
             },
-            "events": [],
-            "expressionProperties": {}
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {}
         },
         {
             "baseProperties": {
