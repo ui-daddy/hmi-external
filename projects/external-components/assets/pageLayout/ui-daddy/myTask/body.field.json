@@ -30,7 +30,7 @@
                         "accessor": "id",
                         "colWidth": {
                             "unit": "px",
-                            "value": 50
+                            "value": 60
                         }
                     },
                     {
@@ -39,7 +39,7 @@
                         "accessor": "title",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 250
                         }
                     },
                     {
@@ -48,7 +48,7 @@
                         "accessor": "status",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 140
                         }
                     },
                     {
