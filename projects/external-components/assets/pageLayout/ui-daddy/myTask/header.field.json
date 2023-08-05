@@ -204,7 +204,7 @@
                             "xs": {
                                 "background-color": "#91e2ed",
                                 "width": "100%",
-                                "parent-justify-content": "center"
+                                "justify-content": "center"
                             }
                         },
                         {
