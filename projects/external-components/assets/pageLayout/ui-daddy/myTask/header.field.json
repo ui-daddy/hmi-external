@@ -218,8 +218,9 @@
                         {
                             "selectorName": ".header-static",
                             "xs": {
-                                "background-color": "yellow",
-                                "width": "100%"
+                                "background-color": "#91e2ed",
+                                "width": "100%",
+                                "text_align": "center"
                             }
                         },
                         {
