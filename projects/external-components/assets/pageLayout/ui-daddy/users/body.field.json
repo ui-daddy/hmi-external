@@ -1716,7 +1716,6 @@
                             "xs": {
                                 "parent-float": "right",
                                 "parent-width": "calc(100% - 215px)",
-                                "background-color": "#9E9E9E",
                                 "border-color": "#9E9E9E"
                             }
                         }
