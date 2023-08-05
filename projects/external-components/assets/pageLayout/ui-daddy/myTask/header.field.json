@@ -103,20 +103,29 @@
                 "givenName"
             ],
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
-                    "configuration": {
-                        "selectorName": ".header__org",
-                        "xs": {
-                            "color": "black",
-                            "font-size": "15px",
-                            "font-weight": "bold",
-                            "margin-top": "10px",
-                            "parent-justify-content": "end"
+                    "customClassName": "header__org",
+                    "configuration": [
+                        {
+                            "selectorName": ".header__org",
+                            "xs": {
+                                "color": "black",
+                                "font-size": "15px",
+                                "font-weight": "bold",
+                                "margin-top": "10px",
+                                "parent-justify-content": "end"
+                            }
                         }
-                    },
-                    "customClassName": "header__org"
-                }
-            }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         },
         {
             "value": "Welcome {0}",
@@ -128,20 +137,29 @@
                 "givenName"
             ],
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
-                    "configuration": {
-                        "selectorName": ".header__org",
-                        "xs": {
-                            "color": "black",
-                            "font-size": "15px",
-                            "font-weight": "bold",
-                            "margin-top": "10px",
-                            "parent-justify-content": "end"
+                    "customClassName": "header__org",
+                    "configuration": [
+                        {
+                            "selectorName": ".header__org",
+                            "xs": {
+                                "color": "black",
+                                "font-size": "15px",
+                                "font-weight": "bold",
+                                "margin-top": "10px",
+                                "parent-justify-content": "end"
+                            }
                         }
-                    },
-                    "customClassName": "header__org"
-                }
-            }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         },
         {
             "baseProperties": {
@@ -220,7 +238,7 @@
                             "xs": {
                                 "background-color": "#91e2ed",
                                 "width": "100%",
-                                "text_align": "center"
+                                "parent-justify-content": "center"
                             }
                         },
                         {
