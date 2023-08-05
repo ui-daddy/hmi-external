@@ -218,7 +218,8 @@
                         {
                             "selectorName": ".header-static",
                             "xs": {
-                                "background-color": "yellow"
+                                "background-color": "yellow",
+                                "width": "100%"
                             }
                         },
                         {
