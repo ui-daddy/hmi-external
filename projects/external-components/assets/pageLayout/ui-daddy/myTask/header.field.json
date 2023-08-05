@@ -1,4 +1,5 @@
 {
+    "header-dashboard": [],
     "menu-header-dashboard": [
         {
             "value": "",
@@ -118,15 +119,29 @@
             }
         },
         {
-            "value": "userId",
+            "value": "Welcome {0}",
             "baseProperties": {
-                "name": "userId",
-                "type": "hidden"
+                "name": "givenName",
+                "type": "staticText"
             },
             "dynamicValueAccessor": [
-                "id"
+                "givenName"
             ],
-            "layoutProperties": {}
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight": "bold",
+                            "margin-top": "10px",
+                            "parent-justify-content": "end"
+                        }
+                    },
+                    "customClassName": "header__org"
+                }
+            }
         },
         {
             "baseProperties": {
@@ -184,6 +199,42 @@
                     "debounce": 3000
                 }
             ]
+        }
+    ],
+    "dnd-1": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-2",
+                "name": "staticText"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-static",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-static",
+                            "xs": {
+                                "background-color": "yellow"
+                            }
+                        },
+                        {
+                            "selectorName": ".temp-class-2",
+                            "xs": {}
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Visibility for 250 substation"
         }
     ]
 }
