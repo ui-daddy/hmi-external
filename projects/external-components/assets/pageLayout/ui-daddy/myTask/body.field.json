@@ -48,7 +48,7 @@
                         "accessor": "status",
                         "colWidth": {
                             "unit": "px",
-                            "value": 140
+                            "value": 130
                         }
                     },
                     {
