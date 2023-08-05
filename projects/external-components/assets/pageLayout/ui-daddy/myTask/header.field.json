@@ -231,14 +231,13 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "header-static",
+                    "customClassName": "header-static bg-info",
                     "configuration": [
                         {
                             "selectorName": ".header-static",
                             "xs": {
                                 "background-color": "#91e2ed",
-                                "width": "100%",
-                                "child-justify-content": "center"
+                                "width": "fit-content"
                             }
                         },
                         {
