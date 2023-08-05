@@ -1,4 +1,5 @@
 {
+    "header-dashboard": [],
     "menu-header-dashboard": [
         {
             "value": "",
@@ -102,31 +103,63 @@
                 "givenName"
             ],
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
-                    "configuration": {
-                        "selectorName": ".header__org",
-                        "xs": {
-                            "color": "black",
-                            "font-size": "15px",
-                            "font-weight": "bold",
-                            "margin-top": "10px",
-                            "parent-justify-content": "end"
+                    "customClassName": "header__org",
+                    "configuration": [
+                        {
+                            "selectorName": ".header__org",
+                            "xs": {
+                                "color": "black",
+                                "font-size": "15px",
+                                "font-weight": "bold",
+                                "margin-top": "10px",
+                                "parent-justify-content": "end"
+                            }
                         }
-                    },
-                    "customClassName": "header__org"
-                }
-            }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         },
         {
-            "value": "userId",
+            "value": "Welcome {0}",
             "baseProperties": {
-                "name": "userId",
-                "type": "hidden"
+                "name": "givenName",
+                "type": "staticText"
             },
             "dynamicValueAccessor": [
-                "id"
+                "givenName"
             ],
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header__org",
+                    "configuration": [
+                        {
+                            "selectorName": ".header__org",
+                            "xs": {
+                                "color": "black",
+                                "font-size": "15px",
+                                "font-weight": "bold",
+                                "margin-top": "10px",
+                                "parent-justify-content": "end"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         },
         {
             "baseProperties": {
@@ -205,7 +238,7 @@
                             "xs": {
                                 "background-color": "#91e2ed",
                                 "width": "100%",
-                                "justify-content": "center"
+                                "child-justify-content": "center"
                             }
                         },
                         {
