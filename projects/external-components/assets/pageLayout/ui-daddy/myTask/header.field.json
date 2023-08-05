@@ -252,7 +252,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visibleValue": "false"
+                "visibleValue": "true"
             },
             "value": "Visibility for 250 substation"
         }
