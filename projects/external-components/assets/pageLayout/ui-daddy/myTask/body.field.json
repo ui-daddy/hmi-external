@@ -26,9 +26,26 @@
             "customAttributes": {
                 "columns": [
                     {
+                        "colName": "Task Id",
+                        "accessor": "id",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
                         "colName": "Task Name",
                         "filterType": "text",
                         "accessor": "title",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Status",
+                        "filterType": "multiselect",
+                        "accessor": "status",
                         "colWidth": {
                             "unit": "px",
                             "value": 200
@@ -65,20 +82,14 @@
                             "unit": "px",
                             "value": 100
                         }
-                    },
-                    {
-                        "colName": "Status",
-                        "filterType": "multiselect",
-                        "accessor": "status",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 200
-                        }
                     }
                 ],
                 "caption": "My Tasks",
                 "summary": null,
-                "globalFilterFields": [],
+                "globalFilterFields": [
+                    "Task Name",
+                    "Status"
+                ],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": true,
@@ -92,7 +103,7 @@
                         "apiDataAccessor": "payload"
                     }
                 },
-                "columnFilter": null,
+                "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
                 "showPrintPreviewBtn": true
