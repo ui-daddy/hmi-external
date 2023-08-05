@@ -40,7 +40,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "sectionList": []
                 },
                 {
                     "id": "logout-header-dashboard",
@@ -56,9 +57,29 @@
                             },
                             "autoPlace": "false"
                         }
-                    }
+                    },
+                    "sectionList": []
                 }
             ]
+        },
+        {
+            "id": "dnd-1",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    }
+                },
+                "css": {
+                    "configuration": [],
+                    "customClassName": null
+                }
+            },
+            "sectionList": []
         }
     ]
 }
