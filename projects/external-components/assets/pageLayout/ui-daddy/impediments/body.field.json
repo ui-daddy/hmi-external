@@ -87,7 +87,7 @@
                         "accessor": "remark",
                         "colWidth": {
                             "unit": "px",
-                            "value": 150
+                            "value": 175
                         }
                     },
                     {
@@ -100,16 +100,16 @@
                         }
                     },
                     {
-                        "colName": "Activity",
-                        "filterType": "multiselect",
-                        "accessor": "activity",
+                        "colName": "Activity Name",
+                        "filterType": "text",
+                        "accessor": "activityname",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 300
                         }
                     },
                     {
-                        "colName": "Edit Impediment",
+                        "colName": "Edit",
                         "title": "Edit Impediment",
                         "html": "<i class='fas fa-edit'></i>",
                         "sortable": false,
@@ -175,7 +175,7 @@
                         }
                     },
                     {
-                        "colName": "Delete Impediment",
+                        "colName": "Delete",
                         "title": "Delete Impediment",
                         "html": "<i class='fas fa-trash'></i>",
                         "sortable": false,
