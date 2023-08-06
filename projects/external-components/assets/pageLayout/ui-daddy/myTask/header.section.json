@@ -72,11 +72,20 @@
                         "md": "12",
                         "sm": "12",
                         "xs": "12"
-                    }
+                    },
+                    "count": 1
                 },
                 "css": {
-                    "configuration": [],
-                    "customClassName": null
+                    "customClassName": "container",
+                    "configuration": [
+                        {
+                            "selectorName": ".container",
+                            "xs": {
+                                "padding": "0 0 0 0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
                 }
             },
             "sectionList": []
