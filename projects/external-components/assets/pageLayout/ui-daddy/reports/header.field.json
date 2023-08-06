@@ -185,5 +185,42 @@
                 }
             ]
         }
+    ],
+    "dnd-1": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-2",
+                "name": "staticText"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-static",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-static",
+                            "xs": {
+                                "width": "100%",
+                                "text-align": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".temp-class-2",
+                            "xs": {}
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Visibility for 250 substation"
+        }
     ]
 }
