@@ -81,7 +81,7 @@
                         {
                             "selectorName": ".container",
                             "xs": {
-                                "padding": "0 0 0 0"
+                                "parent-padding": "0 0 0 0"
                             }
                         }
                     ],
