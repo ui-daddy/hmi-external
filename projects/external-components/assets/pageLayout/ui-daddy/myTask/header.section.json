@@ -75,7 +75,8 @@
                         {
                             "selectorName": ".container",
                             "xs": {
-                                "paddiing-left": "0px"
+                                "paddiing-left": "0px",
+                                "background-color": "#91e2ed"
                             }
                         }
                     ],
