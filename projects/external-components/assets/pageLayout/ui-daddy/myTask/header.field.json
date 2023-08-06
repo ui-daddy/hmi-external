@@ -204,7 +204,6 @@
                             "selectorName": ".header-static",
                             "xs": {
                                 "width": "100%",
-                                "background-color": "#91e2ed",
                                 "justify-content": "center",
                                 "text-align": "center"
                             }
