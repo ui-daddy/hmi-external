@@ -247,7 +247,7 @@
                             "name": "ROW_ACTION",
                             "apiConfig": {
                                 "name": "deleteVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Delete/:vendorId",
+                                "url": "/api/v1/Vendor/Delete/:vendorId",
                                 "method": "DELETE",
                                 "pathParams": [
                                     {
@@ -288,7 +288,7 @@
                 "responsive": null,
                 "dataConfig": {
                     "name": "vendorList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                    "url": "/api/v1/Vendor/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -517,7 +517,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "UpdateVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:id",
+                                "url": "/api/v1/Vendor/Update/:id",
                                 "method": "PATCH",
                                 "pathParams": [
                                     {
@@ -832,7 +832,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "AddVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Create",
+                                "url": "/api/v1/Vendor/Create",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],

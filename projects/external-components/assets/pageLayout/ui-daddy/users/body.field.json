@@ -311,7 +311,7 @@
                             "name": "ROW_ACTION",
                             "apiConfig": {
                                 "name": "deleteUser",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Delete/:userId",
+                                "url": "/api/v1/Employee/Delete/:userId",
                                 "method": "DELETE",
                                 "pathParams": [
                                     {
@@ -356,7 +356,7 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "userList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Employee/List",
+                    "url": "/api/v1/Employee/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -492,7 +492,7 @@
             "optionList": null,
             "optionsConfig": {
                 "name": "Get Levels",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
+                "url": "/api/v1/Levels/Get",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [
@@ -584,7 +584,7 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Vendors",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                "url": "/api/v1/Vendor/List",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -797,7 +797,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Upload Profile Image",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
+                                "url": "/api/v1/file/upload?type=employee",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
@@ -963,7 +963,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Upload Photo ID",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
+                                "url": "/api/v1/file/upload?type=employee",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
@@ -1148,7 +1148,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Edit User",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Update/:id",
+                                "url": "/api/v1/Employee/Update/:id",
                                 "method": "PATCH",
                                 "pathParams": [
                                     {
@@ -1427,7 +1427,7 @@
             "optionList": null,
             "optionsConfig": {
                 "name": "Get Levels",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Levels/Get",
+                "url": "/api/v1/Levels/Get",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [
@@ -1522,7 +1522,7 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Vendors",
-                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                "url": "/api/v1/Vendor/List",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -1747,7 +1747,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Upload Profile Image",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
+                                "url": "/api/v1/file/upload?type=employee",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
@@ -1869,7 +1869,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Upload Photo ID",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/file/upload?type=employee",
+                                "url": "/api/v1/file/upload?type=employee",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
@@ -2053,7 +2053,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Add User",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Employee/Create",
+                                "url": "/api/v1/Employee/Create",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
