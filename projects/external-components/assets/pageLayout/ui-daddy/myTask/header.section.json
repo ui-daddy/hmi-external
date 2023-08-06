@@ -74,7 +74,9 @@
                     "configuration": [
                         {
                             "selectorName": ".container",
-                            "xs": {}
+                            "xs": {
+                                "paddiing-left": "0px"
+                            }
                         }
                     ],
                     "themeClass": ""
