@@ -31,14 +31,8 @@
                             "autoPlace": "false"
                         },
                         "css": {
-                            "customClassName": "menu-header-style",
-                            "configuration": {
-                                "selectorName": ".menu-header-style > div > div",
-                                "xs": {
-                                    "padding": "0px",
-                                    "background-color": "red"
-                                }
-                            }
+                            "customClassName": "",
+                            "configuration": {}
                         }
                     }
                 },
@@ -61,5 +55,4 @@
             ]
         }
     ]
-  }
-  
+}
