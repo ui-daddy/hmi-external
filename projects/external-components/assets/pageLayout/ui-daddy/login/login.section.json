@@ -5,13 +5,9 @@
         "type": "form",
         "layout": {
           "css": {
-              "customClassName": "section-card__center login-section-card__opaque",
+              "customClassName": "section-card__center",
               "configuration": {
-                "selectorName": ".login-section-card__opaque",
-                "xs": {
-                    "opacity": 0.5
-                }
-            }
+              }
           },
           "column" : {
             "count": 1,

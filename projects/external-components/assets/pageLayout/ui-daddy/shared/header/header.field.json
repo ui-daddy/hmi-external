@@ -8,16 +8,21 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".header__logo",
+                        "xs": {
+                            "justify-content": "flex-start",
+                            "padding": "8px"
+                        }
+                    },
+                    {
+                        "selectorName": ".header__logo .dynamic-style-child",
                         "xs": {
                             "min-height": "40px",
                             "font-size": "30px",
-                            "margin-left": "15px",
-                            "parent-justify-content": "flex-start",
-                            "parent-padding": "8px"
+                            "margin-left": "15px"
                         }
-                    },
+                    }],
                     "customClassName": "header__logo"
                 }
             }
@@ -36,8 +41,8 @@
                     "configuration": {
                         "selectorName": ".header__user-name",
                         "xs": {
-                            "padding-right": "40px",
-                            "parent-justify-content": "flex-end"
+                            "right": "40px",
+                            "justify-content": "flex-end"
                         }
                     },
                     "customClassName": "header__user-name hide-xs"
@@ -53,15 +58,20 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".header-common__logout",
                         "xs": {
-                            "parent-white-space": "nowrap",
-                            "parent-justify-content": "flex-end",
+                            "white-space": "nowrap",
+                            "justify-content": "flex-end"
+                        }
+                    },
+                    {
+                        "selectorName": ".header-common__logout .dynamic-style-child",
+                        "xs": {
                             "background-color": "#222121",
                             "border-color": "#222121"
                         }
-                    },
+                    }],
                     "customClassName": "header-common__logout",
                     "themeClass": "btn btn-dark"
                 }

@@ -14,14 +14,19 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".add-project-modal-title",
                         "xs": {
-                            "text-align": "center",
-                            "parent-font-size": "30px",
-                            "font-weight": "500"
+                            "parent-font-size": "30px"
                         }
                     },
+                    {
+                        "selectorName": ".add-project-modal-title .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "font-weight": "500"
+                        }
+                    }],
                     "customClassName": "add-project-modal-title"
                 }
             }
@@ -53,7 +58,7 @@
                     "configuration": {
                         "selectorName": ".add-project__title",
                         "xs": {
-                            "parent-padding-top": "15px"
+                            "padding-top": "15px"
                         }
                     }
                 }
@@ -151,13 +156,18 @@
                 "css": {
                     "themeClass": "btn-warning",
                     "customClassName": "add-project__save-details",
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".add-project__save-details",
                         "xs": {
-                            "parent-padding-top": "30px",
+                            "padding-top": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".add-project__save-details .dynamic-style-child",
+                        "xs": {
                             "width": "100%"
                         }
-                    }
+                    }]
                 }
             },
             "expressionProperties": {
@@ -239,14 +249,19 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".edit-project-modal-title",
                         "xs": {
-                            "text-align": "center",
-                            "parent-font-size": "30px",
-                            "font-weight": "500"
+                            "font-size": "30px"
                         }
                     },
+                    {
+                        "selectorName": ".edit-project-modal-title .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "font-weight": "500"
+                        }
+                    }],
                     "customClassName": "edit-project-modal-title"
                 }
             }
@@ -278,7 +293,7 @@
                     "configuration": {
                         "selectorName": ".add-project__title",
                         "xs": {
-                            "parent-padding-top": "15px"
+                            "padding-top": "15px"
                         }
                     }
                 }
@@ -396,13 +411,18 @@
                 "css": {
                     "themeClass": "btn-warning",
                     "customClassName": "add-project__save-details",
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".add-project__save-details",
                         "xs": {
-                            "parent-padding-top": "30px",
+                            "padding-top": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".add-project__save-details .dynamic-style-child",
+                        "xs": {
                             "width": "100%"
                         }
-                    }
+                    }]
                 }
             },
             "expressionProperties": {
@@ -486,7 +506,7 @@
                     "configuration": {
                         "selectorName": ".add-project__btn",
                         "xs": {
-                            "parent-padding": "25px 0 15px 0"
+                            "padding": "25px 0 15px 0"
                         }
                     }
                 }
