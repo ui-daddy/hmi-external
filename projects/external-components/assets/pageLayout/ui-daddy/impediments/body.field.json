@@ -19,7 +19,7 @@
                         {
                             "selectorName": ".add-impediment-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0"
+                                "padding": "25px 0 15px 0"
                             }
                         }
                     ],
@@ -289,8 +289,13 @@
                         {
                             "selectorName": ".impediment-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -432,7 +437,12 @@
                         {
                             "selectorName": ".edit-impediment-btn",
                             "xs": {
-                                "parent-padding-top": "30px",
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }
@@ -577,8 +587,13 @@
                         {
                             "selectorName": ".impediment-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
