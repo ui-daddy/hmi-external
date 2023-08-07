@@ -679,11 +679,11 @@
     "boards": {
         "headerField": {
             "fetchFromLocal": true,
-            "localURL": "./assets/pageLayout/ui-daddy/boards/header.field.json"
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
         },
         "headerSection": {
             "fetchFromLocal": true,
-            "localURL": "./assets/pageLayout/ui-daddy/boards/header.section.json"
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
         },
         "field": {
             "fetchFromLocal": true,
