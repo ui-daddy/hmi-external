@@ -1,0 +1,31 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-1",
+                "name": "iframeField",
+                "formName": ""
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "IframeExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "src": null
+            }
+        }
+    ]
+}
