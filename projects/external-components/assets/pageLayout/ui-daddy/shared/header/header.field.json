@@ -6,7 +6,7 @@
                 "name": "menu",
                 "type": "staticText"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__logo",
@@ -28,8 +28,10 @@
                 "type": "staticText"
             },
             "value": "Welcome {0}",
-            "dynamicValueAccessor": ["name"],
-            "layoutProperties":{
+            "dynamicValueAccessor": [
+                "name"
+            ],
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header__user-name",
@@ -49,7 +51,7 @@
                 "type": "submit",
                 "id": "logout"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".header-common__logout",
@@ -60,32 +62,35 @@
                             "border-color": "#222121"
                         }
                     },
-                    "customClassName": "header-common__logout",                
-                    "themeClass": "btn btn-dark"                    
+                    "customClassName": "header-common__logout",
+                    "themeClass": "btn btn-dark"
                 }
             },
             "events": [
                 {
-                   "event": "click",
-                    "actions" :[ 
-                           {
-                                "actionType" : "INVOKE_API",
-                                "showLoading": true,
-                                "apiConfig": {
-                                    "name": "signupButtonApi",
-                                    "url": "/rest/logout",
-                                    "method": "POST",
-                                    "payloadParams": [],
-                                    "onSuccess": {
-                                        "pageUrl": "/login",
-                                        "clearSharedData": ["authenticated", "name"]
-                                    }
-                                }                            
-                           }          
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "showLoading": true,
+                            "apiConfig": {
+                                "name": "signupButtonApi",
+                                "url": "/rest/logout",
+                                "method": "POST",
+                                "payloadParams": [],
+                                "onSuccess": {
+                                    "pageUrl": "/login",
+                                    "clearSharedData": [
+                                        "authenticated",
+                                        "name"
+                                    ]
+                                }
+                            }
+                        }
                     ],
                     "debounce": 3000
                 }
             ]
-        } 
+        }
     ]
 }

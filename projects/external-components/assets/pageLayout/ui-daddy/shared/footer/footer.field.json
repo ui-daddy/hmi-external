@@ -7,7 +7,7 @@
                 "id": "copyright"
             },
             "value": "©2020 Streetz e-trade Solutions LLP",
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "configuration": {
                         "selectorName": ".footer__copyright",
@@ -16,9 +16,9 @@
                             "parent-padding": "8px"
                         }
                     },
-                    "customClassName": "footer__copyright"                   
+                    "customClassName": "footer__copyright"
                 }
             }
-        }   
+        }
     ]
 }

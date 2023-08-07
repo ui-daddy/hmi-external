@@ -7,3 +7,7 @@
 .p-dropdown {
     width: 100%;
 }
+.disable-column {
+    pointer-events: none;
+    opacity: 0.2;
+}
