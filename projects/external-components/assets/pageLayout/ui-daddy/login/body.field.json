@@ -1,4 +1,5 @@
 {
+    "loginForm": [],
     "loginInfo": [
         {
             "value": "Sign in",
@@ -103,17 +104,23 @@
                 "label": "Login"
             },
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
-                    "themeClass": "btn-warning",
                     "customClassName": "login__btn",
-                    "configuration": {
-                        "selectorName": ".login__btn",
-                        "xs": {
-                            "width": "100%",
-                            "parent-margin-top": "20px"
+                    "configuration": [
+                        {
+                            "selectorName": ".login__btn",
+                            "xs": {
+                                "width": "100%",
+                                "parent-margin-top": "20px"
+                            }
                         }
-                    }
-                }
+                    ],
+                    "themeClass": "btn-warning"
+                },
+                "orientation": null
             },
             "expressionProperties": {
                 "requiredValue": true,
@@ -134,16 +141,16 @@
                             "showLoading": true,
                             "apiConfig": {
                                 "name": "loginButtonApi",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/useraccount",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Login",
                                 "method": "POST",
                                 "isApplicationSessionAPI": true,
                                 "payloadParams": [
                                     {
-                                        "paramName": "UserName",
+                                        "paramName": "username",
                                         "mappedField": "email"
                                     },
                                     {
-                                        "paramName": "Password",
+                                        "paramName": "password",
                                         "mappedField": "password"
                                     }
                                 ],
@@ -153,6 +160,16 @@
                                         {
                                             "varName": "name",
                                             "responseAccessor": "firstName",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "id",
+                                            "responseAccessor": "id",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "givenName",
+                                            "responseAccessor": "givenName",
                                             "cache": true
                                         },
                                         {
@@ -203,31 +220,6 @@
                         "xs": {
                             "parent-margin": "10px",
                             "parent-justify-content": "center"
-                        }
-                    }
-                }
-            }
-        },
-        {
-            "baseProperties": {
-                "id": "signupBtn",
-                "name": "signupBtn",
-                "type": "button",
-                "formName": "",
-                "label": "Create New Account"
-            },
-            "accessor": "",
-            "navigateToPage": "/signup",
-            "layoutProperties": {
-                "css": {
-                    "themeClass": "btn-success",
-                    "customClassName": "login__signup-btn",
-                    "configuration": {
-                        "selectorName": ".login__signup-btn",
-                        "xs": {
-                            "width": "100%",
-                            "parent-border-top": "1px solid black",
-                            "parent-padding-top": "25px"
                         }
                     }
                 }

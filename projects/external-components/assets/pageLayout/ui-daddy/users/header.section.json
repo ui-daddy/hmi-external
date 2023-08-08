@@ -1,0 +1,91 @@
+{
+    "layout": [
+        {
+            "id": "header-dashboard",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "count": 3,
+                    "ratio": {
+                        "lg": "7:5",
+                        "md": "7:5",
+                        "sm": "6:2:4",
+                        "xs": "6:2:4"
+                    },
+                    "autoPlace": "false"
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "menu-header-dashboard",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 1,
+                            "ratio": {
+                                "lg": "2:10",
+                                "md": "3:9",
+                                "sm": "4:8",
+                                "xs": "4:8"
+                            },
+                            "autoPlace": "false"
+                        },
+                        "css": {
+                            "customClassName": "",
+                            "configuration": {}
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "logout-header-dashboard",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 3,
+                            "ratio": {
+                                "lg": "6:0:6",
+                                "md": "6:0:6",
+                                "sm": "6:0:6",
+                                "xs": "6:0:6"
+                            },
+                            "autoPlace": "false"
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        },
+        {
+            "id": "dnd-1",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "tooltip-container",
+                    "configuration": [
+                        {
+                            "selectorName": ".tooltip-container",
+                            "xs": {
+                                "background-color": "#91e2ed",
+                                "paddig": "0",
+                                "margin": "0",
+                                "max-width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": []
+        }
+    ]
+}

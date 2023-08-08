@@ -1,0 +1,113 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-1",
+                "name": "myTask-table",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Task Id",
+                        "accessor": "id",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 60
+                        }
+                    },
+                    {
+                        "colName": "Task Name",
+                        "filterType": "text",
+                        "accessor": "title",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 250
+                        }
+                    },
+                    {
+                        "colName": "Status",
+                        "filterType": "multiselect",
+                        "accessor": "status",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 130
+                        }
+                    },
+                    {
+                        "colName": "Scheduled Start Date",
+                        "accessor": "expectedStartDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Scheduled End Date",
+                        "accessor": "expectedEndDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Actual Start Date",
+                        "accessor": "actualStartDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Actual End Date",
+                        "accessor": "actualEndDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    }
+                ],
+                "caption": "My Tasks",
+                "summary": null,
+                "globalFilterFields": [
+                    "Task Name",
+                    "Status"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": true,
+                "dataConfig": {
+                    "name": "myTaskList",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
+                    "method": "GET",
+                    "params": {},
+                    "postTransform": "multiDateTransform",
+                    "onSuccess": {
+                        "apiDataAccessor": "payload"
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
+            }
+        }
+    ]
+}

@@ -1,63 +1,77 @@
 {
-  "layout": [
-    {
-      "id": "forgetPassForm",
-      "type": "form",
-      "layout": {
-        "css": {
-          "customClassName": "section-card__center",
-          "configuration": {
-            "selectorName": ".login-section-card__opaque",
-            "xs": {
-              "opacity": 0.5
-            }
-          }
-        },
-        "column": {
-          "count": 1,
-          "ratio": {
-            "lg": "12",
-            "md": "12",
-            "sm": "12",
-            "xs": "12"
-          },
-          "autoPlace": "false"
-        }
-      },
-      "sectionList": [
+    "layout": [
         {
-          "id": "forgetInitFields",
-          "type": "content",
-          "layout": {
-            "column": {
-              "count": 4,
-              "ratio": {
-                "lg": "12",
-                "md": "12",
-                "sm": "12",
-                "xs": "12"
-              },
-              "autoPlace": "false"
-            }
-          }
-        },
-        {
-          "id": "validOtp",
-          "type": "content",
-          "layout": {
-            "column": {
-              "count": 3,
-              "ratio": {
-                "lg": "12",
-                "md": "12",
-                "sm": "12",
-                "xs": "12"
-              },
-              "autoPlace": "false"
-            }
-          }
+            "id": "dnd-0",
+            "type": "form",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "section-card__center login-section-card__opaque",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-section-card__opaque",
+                            "xs": {
+                                "opacity": "0.5"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "dnd-2",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "dnd-3",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "customClassName": "",
+                            "configuration": [
+                                {
+                                    "selectorName": ".temp-class-1",
+                                    "xs": {}
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

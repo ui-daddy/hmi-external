@@ -1,0 +1,226 @@
+{
+    "menu-header-dashboard": [
+        {
+            "value": "",
+            "baseProperties": {
+                "name": "logo",
+                "type": "staticImage"
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__logo",
+                        "xs": {
+                            "background-image": "url(assets/images/logo.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center",
+                            "width": "120px"
+                        }
+                    },
+                    "customClassName": "header__logo"
+                }
+            },
+            "imageUrl": "assets/images/logo.jpg"
+        },
+        {
+            "baseProperties": {
+                "name": "menu",
+                "type": "navItemGroup",
+                "id": "menu"
+            },
+            "dropdownLabel": "More",
+            "navItems": [
+                {
+                    "id": "dashboard",
+                    "label": "Dashboard",
+                    "navigateToPage": "/dashboard"
+                },
+                {
+                    "id": "projects",
+                    "label": "Projects",
+                    "navigateToPage": "/projects"
+                },
+                {
+                    "id": "chart",
+                    "label": "Project Plan",
+                    "navigateToPage": "/chart"
+                },
+                {
+                    "id": "myTask",
+                    "label": "My Tasks",
+                    "navigateToPage": "/myTask"
+                },
+                {
+                    "id": "users",
+                    "label": "Users",
+                    "navigateToPage": "/users"
+                },
+                {
+                    "id": "profile",
+                    "label": "My Profile",
+                    "navigateToPage": "/profile"
+                },
+                {
+                    "id": "vendors",
+                    "label": "Vendor",
+                    "navigateToPage": "/vendors"
+                },
+                {
+                    "id": "impediments",
+                    "label": "Impediments",
+                    "navigateToPage": "/impediments"
+                },
+                {
+                    "id": "reports",
+                    "label": "Reports",
+                    "navigateToPage": "/reports"
+                }
+            ],
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__nav-items",
+                        "xs": {
+                            "padding-right": "35px",
+                            "parent-justify-content": "flex-end",
+                            "text-align": "center"
+                        }
+                    },
+                    "customClassName": "header__nav-items"
+                }
+            }
+        }
+    ],
+    "logout-header-dashboard": [
+        {
+            "value": "Welcome {0}",
+            "baseProperties": {
+                "name": "givenName",
+                "type": "staticText"
+            },
+            "dynamicValueAccessor": [
+                "givenName"
+            ],
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight": "bold",
+                            "margin-top": "10px",
+                            "parent-justify-content": "end"
+                        }
+                    },
+                    "customClassName": "header__org"
+                }
+            }
+        },
+        {
+            "value": "userId",
+            "baseProperties": {
+                "name": "userId",
+                "type": "hidden"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "name": "logout",
+                "label": "Log Out",
+                "type": "button",
+                "id": "logout"
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header-common__logout",
+                        "xs": {
+                            "parent-white-space": "nowrap",
+                            "parent-justify-content": "flex-end",
+                            "margin-top": "9px"
+                        }
+                    },
+                    "customClassName": "header-common__logout theme-btn",
+                    "themeClass": "btn"
+                }
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "formName": "",
+                            "apiConfig": {
+                                "name": "signupButtonApi",
+                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Logoff",
+                                "method": "POST",
+                                "payloadParams": [
+                                    {
+                                        "paramName": "userId",
+                                        "mappedField": "userId",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(id)"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "pageUrl": "/login",
+                                    "clearSharedData": [
+                                        "name",
+                                        "id",
+                                        "givenName",
+                                        "surname",
+                                        "authenticated"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "debounce": 3000
+                }
+            ]
+        }
+    ],
+    "dnd-1": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-2",
+                "name": "staticText"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-static",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-static",
+                            "xs": {
+                                "width": "100%",
+                                "text-align": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".temp-class-2",
+                            "xs": {}
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Visibility for 250 substations"
+        }
+    ]
+}

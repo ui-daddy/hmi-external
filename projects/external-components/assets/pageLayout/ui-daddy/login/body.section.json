@@ -5,13 +5,8 @@
             "type": "form",
             "layout": {
                 "css": {
-                    "customClassName": "section-card__center login-section-card__opaque",
-                    "configuration": {
-                        "selectorName": ".login-section-card__opaque",
-                        "xs": {
-                            "opacity": 0.5
-                        }
-                    }
+                    "customClassName": "section-card__center",
+                    "configuration": {}
                 },
                 "column": {
                     "count": 1,
@@ -39,7 +34,8 @@
                             },
                             "autoPlace": "false"
                         }
-                    }
+                    },
+                    "sectionList": []
                 },
                 {
                     "id": "loginButtons",
@@ -55,7 +51,8 @@
                             },
                             "autoPlace": "false"
                         }
-                    }
+                    },
+                    "sectionList": []
                 }
             ]
         }
