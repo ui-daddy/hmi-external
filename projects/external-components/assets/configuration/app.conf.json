@@ -382,6 +382,7 @@
     "hmiAppConfiguration": {
         "ifPageNotFound": "login",
         "title": "UI Daddy",
+        "baseUrl": "https://upms-api.azurewebsites.net",
         "metaTags": [
             {
                 "name": "keyword",
