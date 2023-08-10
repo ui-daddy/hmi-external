@@ -5,6 +5,7 @@
                 "type": "dynamicField",
                 "id": "dnd-1",
                 "name": "iframeField",
+                "library": "primeng",
                 "formName": ""
             },
             "layoutProperties": {
