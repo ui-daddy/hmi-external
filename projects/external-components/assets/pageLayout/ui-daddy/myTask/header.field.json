@@ -158,7 +158,7 @@
                             "formName": "",
                             "apiConfig": {
                                 "name": "signupButtonApi",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Logoff",
+                                "url": "/api/v1/EmployeeAccount/Logoff",
                                 "method": "POST",
                                 "payloadParams": [
                                     {
