@@ -99,7 +99,7 @@
                 "type": "staticText"
             },
             "dynamicValueAccessor": [
-                "name"
+                "givenName", "surname"
             ],
             "layoutProperties": {
                 "css": {
