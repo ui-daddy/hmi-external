@@ -12,8 +12,13 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "reports_table_status",
+                    "configuration": [
+                        {
+                            "selectorName": ".reports_table_status",
+                            "xs": {}
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -56,6 +61,7 @@
                         "colName": "Status",
                         "filterType": "multiselect",
                         "accessor": "status",
+                        "pill": "true",
                         "colWidth": {
                             "unit": "px",
                             "value": 200
