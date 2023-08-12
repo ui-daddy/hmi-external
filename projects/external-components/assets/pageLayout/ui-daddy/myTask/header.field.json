@@ -99,7 +99,7 @@
                 "type": "staticText"
             },
             "dynamicValueAccessor": [
-                "${givenName} ${familyName}"
+                "`${givenName} ${familyName}`"
             ],
             "layoutProperties": {
                 "css": {
