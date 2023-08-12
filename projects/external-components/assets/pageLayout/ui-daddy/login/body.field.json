@@ -173,8 +173,8 @@
                                             "cache": true
                                         },
                                         {
-                                            "varName": "surname",
-                                            "responseAccessor": "lastName",
+                                            "varName": "familyName",
+                                            "responseAccessor": "familyName",
                                             "cache": true
                                         },
                                         {

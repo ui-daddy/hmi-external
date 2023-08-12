@@ -93,13 +93,13 @@
     ],
     "logout-header-dashboard": [
         {
-            "value": "Welcome {0}",
+            "value": "Welcome {0} {1}",
             "baseProperties": {
                 "name": "givenName",
                 "type": "staticText"
             },
             "dynamicValueAccessor": [
-                "givenName"
+                "givenName","familyName"
             ],
             "layoutProperties": {
                 "css": {
@@ -174,7 +174,7 @@
                                         "name",
                                         "id",
                                         "givenName",
-                                        "surname",
+                                        "familyName",
                                         "authenticated"
                                     ]
                                 }
@@ -204,7 +204,8 @@
                             "selectorName": ".header-static",
                             "xs": {
                                 "width": "100%",
-                                "text-align": "center"
+                                "text-align": "center",
+                                "font-weight": "bold"
                             }
                         },
                         {
