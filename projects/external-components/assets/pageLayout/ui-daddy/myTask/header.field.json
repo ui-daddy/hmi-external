@@ -93,13 +93,13 @@
     ],
     "logout-header-dashboard": [
         {
-            "value": "Welcome {0}",
+            "value": "Welcome {0} {1}",
             "baseProperties": {
                 "name": "givenName",
                 "type": "staticText"
             },
             "dynamicValueAccessor": [
-                "`${givenName} ${familyName}`"
+                "givenName","familyName"
             ],
             "layoutProperties": {
                 "css": {
