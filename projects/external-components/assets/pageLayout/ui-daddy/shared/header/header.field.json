@@ -4,7 +4,8 @@
             "value": "UI Daddy",
             "baseProperties": {
                 "name": "menu",
-                "type": "staticText"
+                "type": "staticText",
+                "id": "dnd-1"
             },
             "layoutProperties": {
                 "css": {
@@ -30,7 +31,8 @@
         {
             "baseProperties": {
                 "name": "userName",
-                "type": "staticText"
+                "type": "staticText",
+                "id": "dnd-2"
             },
             "value": "Welcome {0}",
             "dynamicValueAccessor": [

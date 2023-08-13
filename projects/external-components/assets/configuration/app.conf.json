@@ -125,17 +125,17 @@
                 "configuration": [
                     {
                         "lg": {
-                            "parent-background-color": "#f1f3f6"
+                            "background-color": "#f1f3f6"
                         },
                         "md": {
-                            "parent-background-color": "#f1f3f6"
+                            "background-color": "#f1f3f6"
                         },
                         "selectorName": "",
                         "sm": {
-                            "parent-background-color": "#f1f3f6"
+                            "background-color": "#f1f3f6"
                         },
                         "xs": {
-                            "parent-background-color": "#f1f3f6"
+                            "background-color": "#f1f3f6"
                         }
                     }
                 ],
