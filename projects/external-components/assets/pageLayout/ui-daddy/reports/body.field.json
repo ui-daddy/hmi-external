@@ -19,7 +19,7 @@
                             "xs": {}
                         },
                         {
-                            "selectorName": ".[aria-label=\"Assigned\"]",
+                            "selectorName": "[aria-label=\"Assigned\"]",
                             "xs": {
                                 "color": "green",
                                 "background-color": "black"
