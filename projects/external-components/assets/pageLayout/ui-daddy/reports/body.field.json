@@ -12,14 +12,14 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reports_table_status",
+                    "customClassName": "reports_table_status [aria-label=\"Assigned\"]",
                     "configuration": [
                         {
                             "selectorName": ".reports_table_status",
                             "xs": {}
                         },
                         {
-                            "selectorName": "[aria-label=\"Assigned\"]",
+                            "selectorName": ".[aria-label=\"Assigned\"]",
                             "xs": {
                                 "color": "green",
                                 "background-color": "black"
