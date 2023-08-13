@@ -14,15 +14,20 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".element-child",
                         "xs": {
-                            "text-align": "center",
-                            "color": "white",
-                            "parent-margin-bottom": "35px",
-                            "parent-font-size": "30px"
+                            "margin-bottom": "35px",
+                            "font-size": "30px"
                         }
                     },
+                    {
+                        "selectorName": ".element-child .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "color": "white"
+                        }
+                    }],
                     "customClassName": "element-child"
                 }
             }
@@ -45,8 +50,8 @@
                     "configuration": {
                         "selectorName": ".github__login-link",
                         "xs": {
-                            "parent-margin": "10px",
-                            "parent-justify-content":"center"
+                            "margin": "10px",
+                            "justify-content":"center"
                         }
                     }
                 }

@@ -14,14 +14,19 @@
       },
       "layoutProperties": {
         "css": {
-          "configuration": {
+          "configuration": [{
             "selectorName": ".element-child",
             "xs": {
-              "text-align": "center",
-              "color": "white",
-              "parent-font-size": "30px"
+              "font-size": "30px"
             }
           },
+          {
+            "selectorName": ".element-child .dynamic-style-child",
+            "xs": {
+              "text-align": "center",
+              "color": "white"
+            }
+          }],
           "customClassName": "element-child"
         }
       }
@@ -109,7 +114,7 @@
           "configuration": {
             "selectorName": ".signup__generate-otp",
             "xs": {
-              "parent-justify-content": "center"
+              "justify-content": "center"
             }
           },
           "customClassName": "signup__generate-otp"
@@ -175,7 +180,7 @@
           "configuration": {
             "selectorName": ".signup__generate-otp",
             "xs": {
-              "parent-justify-content": "center"
+              "justify-content": "center"
             }
           },
           "customClassName": "signup__generate-otp"
@@ -338,8 +343,8 @@
           "configuration": {
             "selectorName": ".signup__tnc .custom-control-label",
             "xs": {
-              "parent-margin-top": "10px",
-              "parent-color": "white"
+              "margin-top": "10px",
+              "color": "white"
             }
           },
           "customClassName": "signup__tnc"
@@ -377,7 +382,7 @@
           "configuration": {
             "selectorName": ".signup__btn",
             "xs": {
-              "parent-justify-content": "center"
+              "justify-content": "center"
             }
           },
           "customClassName": "signup__btn"
