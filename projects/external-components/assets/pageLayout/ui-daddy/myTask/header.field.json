@@ -4,7 +4,8 @@
             "value": "",
             "baseProperties": {
                 "name": "logo",
-                "type": "staticImage"
+                "type": "staticImage",
+                "id": "header-logo"
             },
             "layoutProperties": {
                 "css": {
@@ -101,7 +102,8 @@
             "value": "Welcome {0} {1}",
             "baseProperties": {
                 "name": "givenName",
-                "type": "staticText"
+                "type": "staticText",
+                "id": "givenName"
             },
             "dynamicValueAccessor": [
                 "givenName","familyName"
@@ -131,7 +133,8 @@
             "value": "userId",
             "baseProperties": {
                 "name": "userId",
-                "type": "hidden"
+                "type": "hidden",
+                "id": "userIdHidden"
             },
             "dynamicValueAccessor": [
                 "id"

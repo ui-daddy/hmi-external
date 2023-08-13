@@ -4,7 +4,8 @@
             "value": "",
             "baseProperties": {
                 "name": "logo",
-                "type": "staticImage"
+                "type": "staticImage",
+                "id": "header-logo"
             },
             "layoutProperties": {
                 "css": {
@@ -98,13 +99,14 @@
     ],
     "logout-header-dashboard": [
         {
-            "value": "Welcome {0}",
+            "value": "Welcome {0} {1}",
             "baseProperties": {
                 "name": "givenName",
-                "type": "staticText"
+                "type": "staticText",
+                "id": "givenName"
             },
             "dynamicValueAccessor": [
-                "givenName"
+                "givenName","familyName"
             ],
             "layoutProperties": {
                 "css": {
@@ -131,7 +133,8 @@
             "value": "userId",
             "baseProperties": {
                 "name": "userId",
-                "type": "hidden"
+                "type": "hidden",
+                "id": "userIdHidden"
             },
             "dynamicValueAccessor": [
                 "id"
@@ -189,7 +192,7 @@
                                         "name",
                                         "id",
                                         "givenName",
-                                        "surname",
+                                        "familyName",
                                         "authenticated"
                                     ]
                                 }
@@ -219,7 +222,8 @@
                             "selectorName": ".header-static",
                             "xs": {
                                 "width": "100%",
-                                "text-align": "center"
+                                "text-align": "center",
+                                "font-weight": "bold"
                             }
                         },
                         {

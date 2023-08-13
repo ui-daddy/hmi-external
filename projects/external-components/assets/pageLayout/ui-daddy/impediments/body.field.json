@@ -733,8 +733,16 @@
                     "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".dit-impediment-btn",
-                            "xs": {}
+                            "selectorName": ".edit-impediment-btn",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
                         }
                     ],
                     "themeClass": ""

@@ -413,7 +413,21 @@
                 "height": null,
                 "css": {
                     "customClassName": "user-modal-title",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".user-modal-title  .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        },
+                        {
+                            "selectorName": ".user-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -773,6 +787,22 @@
                 "height": null,
                 "css": {
                     "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
                     "themeClass": "btn-secondary"
                 },
                 "orientation": null
@@ -939,6 +969,22 @@
                 "height": null,
                 "css": {
                     "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
                     "themeClass": "btn-secondary"
                 },
                 "orientation": null
@@ -1035,7 +1081,19 @@
                 "css": {
                     "customClassName": "image-download",
                     "themeClass": "btn-secondary",
-                    "configuration": []
+                    "configuration": [
+                        {
+                            "selectorName": ".image-download .dynamic-style-child",
+                            "xs": {
+                                "text-align": "right",
+                                "position": "absolute",
+                                "right": "23px",
+                                "top": "-95px",
+                                "cursor": "pointer",
+                                "z-index": "10"
+                            }
+                        }
+                    ]
                 },
                 "orientation": null
             },
@@ -1855,6 +1913,22 @@
                 "height": null,
                 "css": {
                     "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
                     "themeClass": "btn-secondary"
                 },
                 "orientation": null
