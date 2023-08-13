@@ -151,7 +151,7 @@
                             "showLoading": true,
                             "apiConfig": {
                                 "name": "loginButtonApi",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Login",
+                                "url": "/api/v1/EmployeeAccount/Login",
                                 "method": "POST",
                                 "isApplicationSessionAPI": true,
                                 "payloadParams": [
@@ -183,8 +183,8 @@
                                             "cache": true
                                         },
                                         {
-                                            "varName": "surname",
-                                            "responseAccessor": "lastName",
+                                            "varName": "familyName",
+                                            "responseAccessor": "familyName",
                                             "cache": true
                                         },
                                         {

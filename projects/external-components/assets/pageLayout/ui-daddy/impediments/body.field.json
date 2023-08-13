@@ -185,7 +185,7 @@
                             "name": "ROW_ACTION",
                             "apiConfig": {
                                 "name": "deleteImpediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Delete/:impedimentId",
+                                "url": "/api/v1/Impediment/Delete/:impedimentId",
                                 "method": "DELETE",
                                 "pathParams": [
                                     {
@@ -228,7 +228,7 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "impedimentList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
+                    "url": "/api/v1/Impediment/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -400,7 +400,7 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Activities",
-                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
+                "url": "/api/v1/tasks/MyTask/1",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -471,7 +471,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Edit Impediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Update/:id",
+                                "url": "/api/v1/Impediment/Update/:id",
                                 "method": "PATCH",
                                 "pathParams": [
                                     {
@@ -698,7 +698,7 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Activities",
-                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
+                "url": "/api/v1/tasks/MyTask/1",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -761,7 +761,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Add impediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Create",
+                                "url": "/api/v1/Impediment/Create",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],

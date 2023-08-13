@@ -124,7 +124,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Forget Password",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/ResetPassword",
+                                "url": "/api/v1/EmployeeAccount/ResetPassword",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [
