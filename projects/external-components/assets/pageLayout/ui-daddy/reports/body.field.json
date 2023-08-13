@@ -17,6 +17,13 @@
                         {
                             "selectorName": ".reports_table_status",
                             "xs": {}
+                        },
+                        {
+                            "selectorName": "[aria-label=\"Assigned\"]",
+                            "xs": {
+                                "color": "green",
+                                "background-color": "black"
+                            }
                         }
                     ],
                     "themeClass": ""
