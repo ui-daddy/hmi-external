@@ -118,7 +118,7 @@
                     "Sub-station"
                 ],
                 "dataKey": "id",
-                "resizableColumns": null,
+                "resizableColumns": true,
                 "responsive": true,
                 "dataConfig": {
                     "name": "userList",
@@ -130,7 +130,7 @@
                         "apiDataAccessor": ""
                     }
                 },
-                "columnFilter": false,
+                "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
                 "showPrintPreviewBtn": true
