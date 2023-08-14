@@ -22,21 +22,21 @@
                             "selectorName": "[aria-label=\"Assigned\"]",
                             "xs": {
                                 "color": "white",
-                                "background-color": "#20c997"
+                                "background-color": "#8f369f"
                             }
                         },
                         {
                             "selectorName": "[aria-label=\"In Progress\"]",
                             "xs": {
                                 "color": "white",
-                                "background-color": "#d5a326"
+                                "background-color": "#c19b3e"
                             }
                         },
                         {
                             "selectorName": "[aria-label=\"Completed\"]",
                             "xs": {
                                 "color": "white",
-                                "background-color": "#4caf50"
+                                "background-color": "#0f9d15"
                             }
                         }
                     ],
