@@ -35,15 +35,6 @@
                         }
                     },
                     {
-                        "colName": "Description",
-                        "filterType": "multiselect",
-                        "accessor": "description",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
                         "colName": "Priority",
                         "filterType": "multiselect",
                         "accessor": "priority",
@@ -58,7 +49,43 @@
                         "accessor": "status",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 120
+                        }
+                    },
+                    {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "description",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "description",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "description",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Sub-station",
+                        "filterType": "multiselect",
+                        "accessor": "description",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
                         }
                     },
                     {
@@ -82,7 +109,14 @@
                 ],
                 "caption": "Reports",
                 "summary": null,
-                "globalFilterFields": [],
+                "globalFilterFields": [
+                    "Priority",
+                    "Status",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Sub-station"
+                ],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": true,
