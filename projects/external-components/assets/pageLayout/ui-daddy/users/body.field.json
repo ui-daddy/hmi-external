@@ -18,7 +18,7 @@
                         {
                             "selectorName": ".add-user-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0"
+                                "padding": "25px 0 15px 0"
                             }
                         }
                     ],
@@ -413,7 +413,21 @@
                 "height": null,
                 "css": {
                     "customClassName": "user-modal-title",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".user-modal-title  .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        },
+                        {
+                            "selectorName": ".user-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -773,6 +787,22 @@
                 "height": null,
                 "css": {
                     "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
                     "themeClass": "btn-secondary"
                 },
                 "orientation": null
@@ -871,7 +901,7 @@
                     "themeClass": "btn-secondary",
                     "configuration": [
                         {
-                            "selectorName": ".image-download",
+                            "selectorName": ".image-download .dynamic-style-child",
                             "xs": {
                                 "text-align": "right",
                                 "position": "absolute",
@@ -939,6 +969,22 @@
                 "height": null,
                 "css": {
                     "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
                     "themeClass": "btn-secondary"
                 },
                 "orientation": null
@@ -1035,7 +1081,19 @@
                 "css": {
                     "customClassName": "image-download",
                     "themeClass": "btn-secondary",
-                    "configuration": []
+                    "configuration": [
+                        {
+                            "selectorName": ".image-download .dynamic-style-child",
+                            "xs": {
+                                "text-align": "right",
+                                "position": "absolute",
+                                "right": "23px",
+                                "top": "-95px",
+                                "cursor": "pointer",
+                                "z-index": "10"
+                            }
+                        }
+                    ]
                 },
                 "orientation": null
             },
@@ -1118,7 +1176,7 @@
                     "customClassName": "theme-btn save-user",
                     "configuration": [
                         {
-                            "selectorName": ".save-user",
+                            "selectorName": ".save-user  .dynamic-style-child",
                             "xs": {
                                 "width": "100%"
                             }
@@ -1341,11 +1399,16 @@
                     "customClassName": "user-modal-title",
                     "configuration": [
                         {
-                            "selectorName": ".user-modal-title",
+                            "selectorName": ".user-modal-title  .dynamic-style-child",
                             "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
+                            }
+                        },
+                        {
+                            "selectorName": ".user-modal-title",
+                            "xs": {
+                                "font-size": "30px"
                             }
                         }
                     ],
@@ -1716,8 +1779,14 @@
                         {
                             "selectorName": ".profile-upload",
                             "xs": {
-                                "parent-float": "right",
-                                "parent-width": "calc(100% - 215px)",
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
                                 "border-color": "#9E9E9E"
                             }
                         }
@@ -1844,6 +1913,22 @@
                 "height": null,
                 "css": {
                     "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
                     "themeClass": "btn-secondary"
                 },
                 "orientation": null
@@ -2023,7 +2108,12 @@
                         {
                             "selectorName": ".save-user",
                             "xs": {
-                                "parent-padding-top": "30px",
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-user .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }

@@ -427,16 +427,16 @@
                 "configuration": {
                     "selectorName": "",
                     "xs": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     },
                     "sm": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     },
                     "md": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     },
                     "lg": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     }
                 }
             }

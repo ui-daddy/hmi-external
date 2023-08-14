@@ -4,12 +4,13 @@
             "value": "",
             "baseProperties": {
                 "name": "logo",
-                "type": "staticImage"
+                "type": "staticImage",
+                "id": "header-logo"
             },
             "layoutProperties": {
                 "css": {
                     "configuration": {
-                        "selectorName": ".header__logo",
+                        "selectorName": ".header__logo .dynamic-style-child",
                         "xs": {
                             "background-image": "url(assets/images/logo.jpg)",
                             "background-size": "cover",
@@ -78,14 +79,19 @@
             ],
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".header__nav-items",
                         "xs": {
-                            "padding-right": "35px",
-                            "parent-justify-content": "flex-end",
-                            "text-align": "center"
+                            "justify-content": "flex-end"
                         }
                     },
+                    {
+                        "selectorName": ".header__nav-items .dynamic-style-child",
+                        "xs": {
+                            "padding-right": "35px",
+                            "text-align": "center"
+                        }
+                    }],
                     "customClassName": "header__nav-items"
                 }
             }
@@ -96,23 +102,29 @@
             "value": "Welcome {0} {1}",
             "baseProperties": {
                 "name": "givenName",
-                "type": "staticText"
+                "type": "staticText",
+                "id": "givenName"
             },
             "dynamicValueAccessor": [
                 "givenName","familyName"
             ],
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".header__org",
+                        "xs": {
+                            "justify-content": "end"
+                        }
+                    },
+                    {
+                        "selectorName": ".header__org .dynamic-style-child",
                         "xs": {
                             "color": "black",
                             "font-size": "15px",
                             "font-weight": "bold",
-                            "margin-top": "10px",
-                            "parent-justify-content": "end"
+                            "margin-top": "10px"
                         }
-                    },
+                    }],
                     "customClassName": "header__org"
                 }
             }
@@ -121,7 +133,8 @@
             "value": "userId",
             "baseProperties": {
                 "name": "userId",
-                "type": "hidden"
+                "type": "hidden",
+                "id": "userIdHidden"
             },
             "dynamicValueAccessor": [
                 "id"
@@ -137,14 +150,19 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".header-common__logout",
                         "xs": {
-                            "parent-white-space": "nowrap",
-                            "parent-justify-content": "flex-end",
-                            "margin-top": "9px"
+                            "white-space": "nowrap",
+                            "justify-content": "flex-end"
                         }
                     },
+                    {
+                        "selectorName": ".header-common__logout .dynamic-style-child",
+                        "xs": {
+                            "margin-top": "9px"
+                        }
+                    }],
                     "customClassName": "header-common__logout theme-btn",
                     "themeClass": "btn"
                 }

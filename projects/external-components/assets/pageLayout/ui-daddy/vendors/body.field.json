@@ -19,7 +19,7 @@
                         {
                             "selectorName": ".add-vendor-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0"
+                                "padding": "25px 0 15px 0"
                             }
                         }
                     ],
@@ -316,7 +316,21 @@
                 "height": null,
                 "css": {
                     "customClassName": "vendor-modal-title",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".vendor-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -492,7 +506,20 @@
                 "height": null,
                 "css": {
                     "customClassName": "save-vendor theme-btn",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".save-vendor",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -646,8 +673,13 @@
                         {
                             "selectorName": ".vendor-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -803,7 +835,12 @@
                         {
                             "selectorName": ".save-vendor",
                             "xs": {
-                                "parent-padding-top": "30px",
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }
