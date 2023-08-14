@@ -118,7 +118,7 @@
                     "Sub-station"
                 ],
                 "dataKey": "id",
-                "resizableColumns": true,
+                "resizableColumns": false,
                 "responsive": true,
                 "dataConfig": {
                     "name": "userList",
