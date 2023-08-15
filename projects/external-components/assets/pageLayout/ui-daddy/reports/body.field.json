@@ -55,7 +55,7 @@
                     {
                         "colName": "Zone",
                         "filterType": "multiselect",
-                        "accessor": "description",
+                        "accessor": "zoneLabel",
                         "colWidth": {
                             "unit": "px",
                             "value": 150
@@ -64,7 +64,7 @@
                     {
                         "colName": "Circle",
                         "filterType": "multiselect",
-                        "accessor": "description",
+                        "accessor": "circleLabel",
                         "colWidth": {
                             "unit": "px",
                             "value": 150
@@ -73,16 +73,16 @@
                     {
                         "colName": "Division",
                         "filterType": "multiselect",
-                        "accessor": "description",
+                        "accessor": "divisionLabel",
                         "colWidth": {
                             "unit": "px",
                             "value": 150
                         }
                     },
                     {
-                        "colName": "Sub-station",
+                        "colName": "Substation",
                         "filterType": "multiselect",
-                        "accessor": "description",
+                        "accessor": "substationLabel",
                         "colWidth": {
                             "unit": "px",
                             "value": 150
@@ -115,7 +115,7 @@
                     "Zone",
                     "Circle",
                     "Division",
-                    "Sub-station"
+                    "Substation"
                 ],
                 "dataKey": "id",
                 "resizableColumns": false,
