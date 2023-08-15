@@ -121,12 +121,48 @@
                         }
                     },
                     {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
                         "colName": "Address",
                         "filterType": "text",
                         "accessor": "address",
                         "colWidth": {
                             "unit": "px",
-                            "value": 250
+                            "value": 200
                         }
                     },
                     {
@@ -144,7 +180,7 @@
                         "accessor": "website",
                         "colWidth": {
                             "unit": "px",
-                            "value": 250
+                            "value": 200
                         }
                     },
                     {
@@ -281,7 +317,11 @@
                 "caption": "Vendors",
                 "summary": null,
                 "globalFilterFields": [
-                    "name"
+                    "name",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
