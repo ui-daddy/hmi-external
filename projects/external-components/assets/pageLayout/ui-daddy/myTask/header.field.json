@@ -63,7 +63,7 @@
                 },
                 {
                     "id": "vendors",
-                    "label": "Vendor",
+                    "label": "Vendor Management",
                     "navigateToPage": "/vendors"
                 },
                 {
