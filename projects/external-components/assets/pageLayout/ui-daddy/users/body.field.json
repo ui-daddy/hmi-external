@@ -1,4 +1,5 @@
 {
+    "dnd-73": [],
     "dnd-0": [],
     "dnd-1": [],
     "dnd-2": [
@@ -399,6 +400,925 @@
                 "showExportPdfBtn": true,
                 "showPrintPreviewBtn": true
             }
+        }
+    ],
+    "dnd-42": [],
+    "dnd-7": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-8",
+                "name": "addUserTitile",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "user-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".user-modal-title  .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        },
+                        {
+                            "selectorName": ".user-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Add User"
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-50",
+                "name": "levelTypeAdd",
+                "formName": "addUserModal",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-51",
+                "label": "Level",
+                "name": "levelAdd",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeAdd",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-14",
+                "name": "roleAdd",
+                "formName": "addUserModal",
+                "label": "Role"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "optionList": [
+                {
+                    "value": "Admin",
+                    "label": "Admin"
+                },
+                {
+                    "value": "User",
+                    "label": "User"
+                },
+                {
+                    "value": "Vendor Admin",
+                    "label": "Vendor Admin"
+                },
+                {
+                    "value": "Vendor User",
+                    "label": "Vendor User"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-48",
+                "name": "companyAdd",
+                "formName": "addUserModal",
+                "label": "Company"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Vendors",
+                "url": "/api/v1/Vendor/List",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "id",
+            "value": ""
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-12",
+                "formName": "addUserModal",
+                "name": "givenNameAdd",
+                "label": "First Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-11",
+                "name": "familyNameAdd",
+                "formName": "addUserModal",
+                "label": "Last Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "tel",
+                "id": "dnd-16",
+                "name": "mobileAdd",
+                "label": "Mobile",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-44",
+                "name": "empIdAdd",
+                "formName": "addUserModal",
+                "label": "Employee ID"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-9",
+                "name": "designationAdd",
+                "label": "Designation",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "file",
+                "id": "dnd-46",
+                "name": "profileImage",
+                "formName": "addUserModal",
+                "label": "Profile Image"
+            },
+            "allowedExt": ".jpg,.jpeg,.png",
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-49",
+                "name": "profileUpload",
+                "label": "Upload",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Upload Profile Image",
+                                "url": "/api/v1/file/upload?type=employee",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "fileUpload": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "data",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "file",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "profilePath",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "fileURL"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Profile image uploaded successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while uploading profile picture.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "disabled": "profileImage == null or profileImage == undefined",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "file",
+                "id": "dnd-60",
+                "name": "idProof",
+                "formName": "addUserModal",
+                "label": "Photo ID"
+            },
+            "allowedExt": "",
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-62",
+                "name": "idUpload",
+                "label": "Upload",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profile-upload",
+                    "configuration": [
+                        {
+                            "selectorName": ".profile-upload",
+                            "xs": {
+                                "float": "right",
+                                "width": "calc(100% - 215px)"
+                            }
+                        },
+                        {
+                            "selectorName": ".profile-upload .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#9E9E9E",
+                                "border-color": "#9E9E9E"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-secondary"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Upload Photo ID",
+                                "url": "/api/v1/file/upload?type=employee",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "fileUpload": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "data",
+                                        "mappedField": "idProof",
+                                        "mappedValue": "file",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [
+                                        {
+                                            "varName": "idProofVar",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": "fileURL"
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Photo ID uploaded successfully.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while uploading profile picture.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "disabled": "idProof == null or idProof == undefined",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-18",
+                "name": "userNameAdd",
+                "label": "Username",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "dnd-17",
+                "name": "emailAdd",
+                "label": "E-Mail",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "password",
+                "id": "dnd-45",
+                "name": "passwordAdd",
+                "formName": "addUserModal",
+                "label": "Password"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-20",
+                "name": "submitUser",
+                "label": "Save",
+                "formName": "addUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "save-user theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-user",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-user .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Add User",
+                                "url": "/api/v1/Employee/Create",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "role",
+                                        "mappedField": "roleAdd",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyName",
+                                        "mappedField": "companyAdd",
+                                        "mappedValue": "label",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyId",
+                                        "mappedField": "companyAdd",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "givenName",
+                                        "mappedField": "givenNameAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "familyName",
+                                        "mappedField": "familyNameAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "mobile",
+                                        "mappedField": "mobileAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "designation",
+                                        "mappedField": "designationAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "empId",
+                                        "mappedField": "empIdAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelAdd",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "userName",
+                                        "mappedField": "userNameAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "email",
+                                        "mappedField": "emailAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "passwordAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photo",
+                                        "mappedField": "profileImage",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(profilePath)"
+                                    },
+                                    {
+                                        "paramName": "idProof",
+                                        "mappedField": "idProof",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(idProofVar)"
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [
+                                        "profilePath",
+                                        "idProofVar"
+                                    ],
+                                    "apiDataAccessor": "",
+                                    "message": "User added successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-47",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "userList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-42",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while adding user.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
         }
     ],
     "dnd-43": [],
@@ -1413,923 +2333,5 @@
             "expressionProperties": {}
         }
     ],
-    "dnd-42": [],
-    "dnd-7": [
-        {
-            "baseProperties": {
-                "type": "staticText",
-                "id": "dnd-8",
-                "name": "addUserTitile",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "user-modal-title",
-                    "configuration": [
-                        {
-                            "selectorName": ".user-modal-title  .dynamic-style-child",
-                            "xs": {
-                                "text-align": "center",
-                                "font-weight": "500"
-                            }
-                        },
-                        {
-                            "selectorName": ".user-modal-title",
-                            "xs": {
-                                "font-size": "30px"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Add User"
-        },
-        {
-            "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-50",
-                "name": "levelTypeAdd",
-                "formName": "addUserModal",
-                "label": "Level Type"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "optionList": [
-                {
-                    "value": "management",
-                    "label": "Management"
-                },
-                {
-                    "value": "division",
-                    "label": "Division"
-                },
-                {
-                    "value": "circle",
-                    "label": "Circle"
-                },
-                {
-                    "value": "zone",
-                    "label": "Zone"
-                }
-            ],
-            "optionsConfig": null,
-            "labelKey": "label",
-            "valueKey": "value",
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-51",
-                "label": "Level",
-                "name": "levelAdd",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "optionList": null,
-            "optionsConfig": {
-                "name": "Get Levels",
-                "url": "/api/v1/Levels/Get",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [
-                    {
-                        "paramName": "level",
-                        "mappedField": "levelTypeAdd",
-                        "mappedValue": "value"
-                    }
-                ],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                }
-            },
-            "labelKey": "name",
-            "valueKey": "code",
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-14",
-                "name": "roleAdd",
-                "formName": "addUserModal",
-                "label": "Role"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "optionList": [
-                {
-                    "value": "Admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "User",
-                    "label": "User"
-                },
-                {
-                    "value": "Vendor Admin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "Vendor User",
-                    "label": "Vendor User"
-                }
-            ],
-            "optionsConfig": null,
-            "labelKey": "label",
-            "valueKey": "value",
-            "value": null
-        },
-        {
-            "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-48",
-                "name": "companyAdd",
-                "formName": "addUserModal",
-                "label": "Company"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Vendors",
-                "url": "/api/v1/Vendor/List",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                }
-            },
-            "labelKey": "name",
-            "valueKey": "id",
-            "value": ""
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-12",
-                "formName": "addUserModal",
-                "name": "givenNameAdd",
-                "label": "First Name"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-11",
-                "name": "familyNameAdd",
-                "formName": "addUserModal",
-                "label": "Last Name"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "tel",
-                "id": "dnd-16",
-                "name": "mobileAdd",
-                "label": "Mobile",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-44",
-                "name": "empIdAdd",
-                "formName": "addUserModal",
-                "label": "Employee ID"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-9",
-                "name": "designationAdd",
-                "label": "Designation",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "file",
-                "id": "dnd-46",
-                "name": "profileImage",
-                "formName": "addUserModal",
-                "label": "Profile Image"
-            },
-            "allowedExt": ".jpg,.jpeg,.png",
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "button",
-                "id": "dnd-49",
-                "name": "profileUpload",
-                "label": "Upload",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "profile-upload",
-                    "configuration": [
-                        {
-                            "selectorName": ".profile-upload",
-                            "xs": {
-                                "float": "right",
-                                "width": "calc(100% - 215px)"
-                            }
-                        },
-                        {
-                            "selectorName": ".profile-upload .dynamic-style-child",
-                            "xs": {
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
-                            }
-                        }
-                    ],
-                    "themeClass": "btn-secondary"
-                },
-                "orientation": null
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "INVOKE_API",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "",
-                            "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": {
-                                "name": "Upload Profile Image",
-                                "url": "/api/v1/file/upload?type=employee",
-                                "method": "POST",
-                                "pathParams": [],
-                                "queryParams": [],
-                                "fileUpload": true,
-                                "payloadParams": [
-                                    {
-                                        "paramName": "data",
-                                        "mappedField": "profileImage",
-                                        "mappedValue": "file",
-                                        "valueFormat": ""
-                                    }
-                                ],
-                                "fetch": "",
-                                "downloadFileName": "",
-                                "responseType": "",
-                                "beforeSubmit": {
-                                    "action": []
-                                },
-                                "onSuccess": {
-                                    "pageUrl": "",
-                                    "deleteTableRow": false,
-                                    "showSuccessMessage": true,
-                                    "sharedData": [
-                                        {
-                                            "varName": "profilePath",
-                                            "staticData": "",
-                                            "cache": false,
-                                            "responseAccessor": "fileURL"
-                                        }
-                                    ],
-                                    "fieldData": [],
-                                    "clearSharedData": [],
-                                    "apiDataAccessor": "",
-                                    "message": "Profile image uploaded successfully.",
-                                    "actions": []
-                                },
-                                "onError": {
-                                    "pageUrl": "",
-                                    "sharedData": [],
-                                    "fieldData": [],
-                                    "clearSharedData": [],
-                                    "apiDataAccessor": "",
-                                    "message": "Error occurred while uploading profile picture.",
-                                    "showErrorMessage": true,
-                                    "actions": []
-                                }
-                            }
-                        }
-                    ]
-                }
-            ],
-            "expressionProperties": {
-                "disabled": "profileImage == null or profileImage == undefined",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            }
-        },
-        {
-            "baseProperties": {
-                "type": "file",
-                "id": "dnd-60",
-                "name": "idProof",
-                "formName": "addUserModal",
-                "label": "Photo ID"
-            },
-            "allowedExt": "",
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "button",
-                "id": "dnd-62",
-                "name": "idUpload",
-                "label": "Upload",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "profile-upload",
-                    "configuration": [
-                        {
-                            "selectorName": ".profile-upload",
-                            "xs": {
-                                "float": "right",
-                                "width": "calc(100% - 215px)"
-                            }
-                        },
-                        {
-                            "selectorName": ".profile-upload .dynamic-style-child",
-                            "xs": {
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
-                            }
-                        }
-                    ],
-                    "themeClass": "btn-secondary"
-                },
-                "orientation": null
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "INVOKE_API",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "",
-                            "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": {
-                                "name": "Upload Photo ID",
-                                "url": "/api/v1/file/upload?type=employee",
-                                "method": "POST",
-                                "pathParams": [],
-                                "queryParams": [],
-                                "fileUpload": true,
-                                "payloadParams": [
-                                    {
-                                        "paramName": "data",
-                                        "mappedField": "idProof",
-                                        "mappedValue": "file",
-                                        "valueFormat": ""
-                                    }
-                                ],
-                                "fetch": "",
-                                "downloadFileName": "",
-                                "responseType": "",
-                                "beforeSubmit": {
-                                    "action": []
-                                },
-                                "onSuccess": {
-                                    "pageUrl": "",
-                                    "deleteTableRow": false,
-                                    "showSuccessMessage": true,
-                                    "sharedData": [
-                                        {
-                                            "varName": "idProofVar",
-                                            "staticData": "",
-                                            "cache": false,
-                                            "responseAccessor": "fileURL"
-                                        }
-                                    ],
-                                    "fieldData": [],
-                                    "clearSharedData": [],
-                                    "apiDataAccessor": "",
-                                    "message": "Photo ID uploaded successfully.",
-                                    "actions": []
-                                },
-                                "onError": {
-                                    "pageUrl": "",
-                                    "sharedData": [],
-                                    "fieldData": [],
-                                    "clearSharedData": [],
-                                    "apiDataAccessor": "",
-                                    "message": "Error occurred while uploading profile picture.",
-                                    "showErrorMessage": true,
-                                    "actions": []
-                                }
-                            }
-                        }
-                    ]
-                }
-            ],
-            "expressionProperties": {
-                "disabled": "idProof == null or idProof == undefined",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            }
-        },
-        {
-            "baseProperties": {
-                "type": "text",
-                "id": "dnd-18",
-                "name": "userNameAdd",
-                "label": "Username",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "email",
-                "id": "dnd-17",
-                "name": "emailAdd",
-                "label": "E-Mail",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "requiredValue": "true",
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "password",
-                "id": "dnd-45",
-                "name": "passwordAdd",
-                "formName": "addUserModal",
-                "label": "Password"
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
-            },
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
-                "type": "submit",
-                "id": "dnd-20",
-                "name": "submitUser",
-                "label": "Save",
-                "formName": "addUserModal"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "save-user theme-btn",
-                    "configuration": [
-                        {
-                            "selectorName": ".save-user",
-                            "xs": {
-                                "padding-top": "30px"
-                            }
-                        },
-                        {
-                            "selectorName": ".save-user .dynamic-style-child",
-                            "xs": {
-                                "width": "100%"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "INVOKE_API",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "",
-                            "fieldValue": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": {
-                                "name": "Add User",
-                                "url": "/api/v1/Employee/Create",
-                                "method": "POST",
-                                "pathParams": [],
-                                "queryParams": [],
-                                "payloadParams": [
-                                    {
-                                        "paramName": "role",
-                                        "mappedField": "roleAdd",
-                                        "mappedValue": "value",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "companyName",
-                                        "mappedField": "companyAdd",
-                                        "mappedValue": "label",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "companyId",
-                                        "mappedField": "companyAdd",
-                                        "mappedValue": "value",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "givenName",
-                                        "mappedField": "givenNameAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "familyName",
-                                        "mappedField": "familyNameAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "mobile",
-                                        "mappedField": "mobileAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "designation",
-                                        "mappedField": "designationAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "empId",
-                                        "mappedField": "empIdAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "level",
-                                        "mappedField": "levelAdd",
-                                        "mappedValue": "value",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "userName",
-                                        "mappedField": "userNameAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "email",
-                                        "mappedField": "emailAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "password",
-                                        "mappedField": "passwordAdd",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "photo",
-                                        "mappedField": "profileImage",
-                                        "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(profilePath)"
-                                    },
-                                    {
-                                        "paramName": "idProof",
-                                        "mappedField": "idProof",
-                                        "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(idProofVar)"
-                                    }
-                                ],
-                                "fetch": "",
-                                "downloadFileName": "",
-                                "responseType": "",
-                                "beforeSubmit": {
-                                    "action": []
-                                },
-                                "onSuccess": {
-                                    "pageUrl": "",
-                                    "deleteTableRow": false,
-                                    "showSuccessMessage": true,
-                                    "sharedData": [],
-                                    "fieldData": [],
-                                    "clearSharedData": [
-                                        "profilePath",
-                                        "idProofVar"
-                                    ],
-                                    "apiDataAccessor": "",
-                                    "message": "User added successfully.",
-                                    "actions": [
-                                        {
-                                            "actionType": "RELOAD_COMPONENT_DATA",
-                                            "url": "",
-                                            "condition": "",
-                                            "field": "",
-                                            "fieldValue": "",
-                                            "messagetype": "",
-                                            "messageText": "",
-                                            "target": "dnd-47",
-                                            "timer": null,
-                                            "formName": "",
-                                            "componentName": "userList",
-                                            "sharedData": [],
-                                            "apiConfig": null
-                                        },
-                                        {
-                                            "actionType": "CLOSE_MODAL",
-                                            "url": "",
-                                            "condition": "",
-                                            "field": "",
-                                            "fieldValue": "",
-                                            "messagetype": "",
-                                            "messageText": "",
-                                            "target": "dnd-42",
-                                            "timer": null,
-                                            "formName": "",
-                                            "componentName": "",
-                                            "sharedData": [],
-                                            "apiConfig": null
-                                        }
-                                    ]
-                                },
-                                "onError": {
-                                    "pageUrl": "",
-                                    "sharedData": [],
-                                    "fieldData": [],
-                                    "clearSharedData": [],
-                                    "apiDataAccessor": "",
-                                    "message": "Error occurred while adding user.",
-                                    "showErrorMessage": true,
-                                    "actions": []
-                                }
-                            }
-                        }
-                    ]
-                }
-            ],
-            "expressionProperties": {}
-        }
-    ]
+    "dnd-74": []
 }
