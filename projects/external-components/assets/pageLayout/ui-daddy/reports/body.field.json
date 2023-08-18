@@ -61,15 +61,6 @@
                         }
                     },
                     {
-                        "colName": "Description",
-                        "filterType": "multiselect",
-                        "accessor": "description",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
                         "colName": "Priority",
                         "filterType": "multiselect",
                         "accessor": "priority",
@@ -85,7 +76,43 @@
                         "pill": "true",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 120
+                        }
+                    },
+                    {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
                         }
                     },
                     {
@@ -109,13 +136,20 @@
                 ],
                 "caption": "Reports",
                 "summary": null,
-                "globalFilterFields": [],
+                "globalFilterFields": [
+                    "Priority",
+                    "Status",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
+                ],
                 "dataKey": "id",
-                "resizableColumns": null,
+                "resizableColumns": false,
                 "responsive": true,
                 "dataConfig": {
                     "name": "userList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Report/OverDueReport",
+                    "url": "/api/v1/Report/OverDueReport",
                     "method": "GET",
                     "params": {},
                     "postTransform": "dateTransform",
@@ -123,7 +157,7 @@
                         "apiDataAccessor": ""
                     }
                 },
-                "columnFilter": false,
+                "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
                 "showPrintPreviewBtn": true

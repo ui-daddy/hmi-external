@@ -382,6 +382,7 @@
     "hmiAppConfiguration": {
         "ifPageNotFound": "login",
         "title": "UI Daddy",
+        "baseUrl": "https://upms-api.azurewebsites.net",
         "metaTags": [
             {
                 "name": "keyword",
@@ -426,16 +427,16 @@
                 "configuration": {
                     "selectorName": "",
                     "xs": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     },
                     "sm": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     },
                     "md": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     },
                     "lg": {
-                        "parent-background-color": "#f1f3f6"
+                        "background-color": "#f1f3f6"
                     }
                 }
             }
@@ -673,6 +674,52 @@
         },
         "globalPageSettings": {
             "title": "myTask",
+            "layoutProperties": null
+        }
+    },
+    "boards": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/boards/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/boards/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/boards/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/boards/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/boards/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/boards/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/boards/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "boards",
             "layoutProperties": null
         }
     }

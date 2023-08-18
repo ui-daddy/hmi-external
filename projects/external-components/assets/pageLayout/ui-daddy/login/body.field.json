@@ -15,15 +15,20 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".element-child",
                         "xs": {
-                            "text-align": "center",
-                            "color": "white",
-                            "parent-margin-bottom": "35px",
-                            "parent-font-size": "30px"
+                            "margin-bottom": "35px",
+                            "font-size": "30px"
                         }
                     },
+                    {
+                        "selectorName": ".element-child .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "color": "white"
+                        }
+                    }],
                     "customClassName": "element-child"
                 }
             }
@@ -113,8 +118,13 @@
                         {
                             "selectorName": ".login__btn",
                             "xs": {
-                                "width": "100%",
-                                "parent-margin-top": "20px"
+                                "margin-top": "20px"
+                            }
+                        },
+                        {
+                            "selectorName": ".login__btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
                             }
                         }
                     ],
@@ -141,7 +151,7 @@
                             "showLoading": true,
                             "apiConfig": {
                                 "name": "loginButtonApi",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/Login",
+                                "url": "/api/v1/EmployeeAccount/Login",
                                 "method": "POST",
                                 "isApplicationSessionAPI": true,
                                 "payloadParams": [
@@ -173,8 +183,8 @@
                                             "cache": true
                                         },
                                         {
-                                            "varName": "surname",
-                                            "responseAccessor": "lastName",
+                                            "varName": "familyName",
+                                            "responseAccessor": "familyName",
                                             "cache": true
                                         },
                                         {
@@ -218,8 +228,8 @@
                     "configuration": {
                         "selectorName": ".login__forgot-link",
                         "xs": {
-                            "parent-margin": "10px",
-                            "parent-justify-content": "center"
+                            "margin": "10px",
+                            "justify-content": "center"
                         }
                     }
                 }

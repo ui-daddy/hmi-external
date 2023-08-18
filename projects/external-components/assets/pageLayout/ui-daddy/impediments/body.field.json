@@ -19,7 +19,7 @@
                         {
                             "selectorName": ".add-impediment-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0"
+                                "padding": "25px 0 15px 0"
                             }
                         }
                     ],
@@ -185,7 +185,7 @@
                             "name": "ROW_ACTION",
                             "apiConfig": {
                                 "name": "deleteImpediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Delete/:impedimentId",
+                                "url": "/api/v1/Impediment/Delete/:impedimentId",
                                 "method": "DELETE",
                                 "pathParams": [
                                     {
@@ -228,7 +228,7 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "impedimentList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
+                    "url": "/api/v1/Impediment/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -289,8 +289,13 @@
                         {
                             "selectorName": ".impediment-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -395,7 +400,7 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Activities",
-                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
+                "url": "/api/v1/tasks/MyTask/1",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -432,7 +437,12 @@
                         {
                             "selectorName": ".edit-impediment-btn",
                             "xs": {
-                                "parent-padding-top": "30px",
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }
@@ -461,7 +471,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Edit Impediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Update/:id",
+                                "url": "/api/v1/Impediment/Update/:id",
                                 "method": "PATCH",
                                 "pathParams": [
                                     {
@@ -577,8 +587,13 @@
                         {
                             "selectorName": ".impediment-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -683,7 +698,7 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Activities",
-                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
+                "url": "/api/v1/tasks/MyTask/1",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
@@ -718,8 +733,16 @@
                     "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".dit-impediment-btn",
-                            "xs": {}
+                            "selectorName": ".edit-impediment-btn",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
                         }
                     ],
                     "themeClass": ""
@@ -746,7 +769,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Add impediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Create",
+                                "url": "/api/v1/Impediment/Create",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],

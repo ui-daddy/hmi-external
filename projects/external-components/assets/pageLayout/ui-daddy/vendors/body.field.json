@@ -19,7 +19,7 @@
                         {
                             "selectorName": ".add-vendor-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0"
+                                "padding": "25px 0 15px 0"
                             }
                         }
                     ],
@@ -121,12 +121,48 @@
                         }
                     },
                     {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
                         "colName": "Address",
                         "filterType": "text",
                         "accessor": "address",
                         "colWidth": {
                             "unit": "px",
-                            "value": 250
+                            "value": 200
                         }
                     },
                     {
@@ -144,7 +180,7 @@
                         "accessor": "website",
                         "colWidth": {
                             "unit": "px",
-                            "value": 250
+                            "value": 200
                         }
                     },
                     {
@@ -247,7 +283,7 @@
                             "name": "ROW_ACTION",
                             "apiConfig": {
                                 "name": "deleteVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Delete/:vendorId",
+                                "url": "/api/v1/Vendor/Delete/:vendorId",
                                 "method": "DELETE",
                                 "pathParams": [
                                     {
@@ -281,14 +317,18 @@
                 "caption": "Vendors",
                 "summary": null,
                 "globalFilterFields": [
-                    "name"
+                    "name",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": null,
                 "dataConfig": {
                     "name": "vendorList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                    "url": "/api/v1/Vendor/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -316,7 +356,21 @@
                 "height": null,
                 "css": {
                     "customClassName": "vendor-modal-title",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".vendor-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -492,7 +546,20 @@
                 "height": null,
                 "css": {
                     "customClassName": "save-vendor theme-btn",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".save-vendor",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -517,7 +584,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "UpdateVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:id",
+                                "url": "/api/v1/Vendor/Update/:id",
                                 "method": "PATCH",
                                 "pathParams": [
                                     {
@@ -646,8 +713,13 @@
                         {
                             "selectorName": ".vendor-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -803,7 +875,12 @@
                         {
                             "selectorName": ".save-vendor",
                             "xs": {
-                                "parent-padding-top": "30px",
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }
@@ -832,7 +909,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "AddVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Create",
+                                "url": "/api/v1/Vendor/Create",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
