@@ -135,12 +135,39 @@
                         }
                     },
                     {
-                        "colName": "Level",
-                        "filterType": "text",
-                        "accessor": "level",
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
                         "colWidth": {
                             "unit": "px",
-                            "value": 100
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
                         }
                     },
                     {
@@ -349,7 +376,11 @@
                     "familyName",
                     "designation",
                     "userName",
-                    "email"
+                    "email",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
