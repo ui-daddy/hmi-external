@@ -2341,17 +2341,244 @@
         {
             "baseProperties": {
                 "type": "button",
-                "id": "dnd-85"
+                "id": "dnd-85",
+                "label": "Add User"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "add-user-btn theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".add-user-btn",
+                            "xs": {
+                                "padding": "25px 0 15px 0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "OPEN_MODAL",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-80",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "readOnlyValue": "false",
+                "disabledValue": "false"
+            }
         },
         {
             "baseProperties": {
                 "type": "dynamicField",
-                "id": "dnd-86"
+                "id": "dnd-86",
+                "name": "userList",
+                "library": "primeng"
             },
-            "layoutProperties": {},
-            "libraryComponent": "TableExternalComponent"
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Employee Name",
+                        "filterType": "text",
+                        "accessor": "employeeName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Designation",
+                        "filterType": "multiselect",
+                        "accessor": "designation",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Role",
+                        "filterType": "multiselect",
+                        "accessor": "role",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "E-Mail",
+                        "filterType": "multiselect",
+                        "accessor": "email",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Company",
+                        "filterType": "multiselect",
+                        "accessor": "companyName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "EmpId",
+                        "filterType": "text",
+                        "accessor": "empId",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    
+                    {
+                        "colName": "Delete User",
+                        "title": "Delete User",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteUser",
+                                "url": "/api/v1/Employee/Delete/:userId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "userId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": true,
+                                    "showSuccessMessage": true,
+                                    "message": "User deleted successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "userList"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    }
+                ],
+                "caption": "Users",
+                "summary": null,
+                "globalFilterFields": [
+                    "givenName",
+                    "familyName",
+                    "designation",
+                    "userName",
+                    "email",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": true,
+                "dataConfig": {
+                    "name": "userList",
+                    "url": "/api/v1/Employee/List?vendor=yes",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": "payload"
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
+            }
         }
     ],
     "dnd-79": [],
