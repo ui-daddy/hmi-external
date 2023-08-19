@@ -396,7 +396,7 @@
                         }
                     }
                 ],
-                "caption": "Users",
+                "caption": "MSETCL Users",
                 "summary": null,
                 "globalFilterFields": [
                     "givenName",
@@ -2730,7 +2730,7 @@
                         }
                     }
                 ],
-                "caption": "Users",
+                "caption": "Vendor Users",
                 "summary": null,
                 "globalFilterFields": [
                     "givenName",
