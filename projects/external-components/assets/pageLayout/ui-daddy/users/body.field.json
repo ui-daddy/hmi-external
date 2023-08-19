@@ -1,30 +1,5 @@
 {
-    "dnd-73": [
-        {
-            "baseProperties": {
-                "id": "dnd-75",
-                "label": "Company Users",
-                "type": "tab"
-            },
-            "layoutProperties":{
-                "css": {
-                    "customClassName": "section__tab-full-width"
-                }
-            }
-        },
-        {
-            "baseProperties": {
-                "id": "dnd-76",
-                "label": "Vendor Users",
-                "type": "tab"
-            },
-            "layoutProperties":{
-                "css": {
-                    "customClassName": "section__tab-full-width"
-                }
-            }
-        }
-    ],
+    "dnd-73": [],
     "dnd-75": [],
     "dnd-0": [],
     "dnd-1": [],
@@ -2359,27 +2334,28 @@
             "expressionProperties": {}
         }
     ],
-    "dnd-76": [
+    "dnd-76": [],
+    "dnd-78": [],
+    "dnd-81": [],
+    "dnd-82": [
         {
             "baseProperties": {
-                "type": "staticText",
-                "id": "dnd-77",
-                "name": "staticText"
+                "type": "button",
+                "id": "dnd-85"
             },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-86"
             },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Hello users"
+            "layoutProperties": {},
+            "libraryComponent": "TableExternalComponent"
         }
-    ]
+    ],
+    "dnd-79": [],
+    "dnd-83": [],
+    "dnd-80": [],
+    "dnd-84": []
 }
