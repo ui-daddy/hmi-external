@@ -1,5 +1,30 @@
 {
-    "dnd-73": [],
+    "dnd-73": [
+        {
+            "baseProperties": {
+                "id": "dnd-75",
+                "label": "MSETCL users",
+                "type": "tab"
+            },
+            "layoutProperties":{
+                "css": {
+                    "customClassName": "section__tab-full-width"
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "id": "dnd-76",
+                "label": "Vendor Users",
+                "type": "tab"
+            },
+            "layoutProperties":{
+                "css": {
+                    "customClassName": "section__tab-full-width"
+                }
+            }
+        }
+    ],
     "dnd-75": [],
     "dnd-0": [],
     "dnd-1": [],
