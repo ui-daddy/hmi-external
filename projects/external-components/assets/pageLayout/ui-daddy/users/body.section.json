@@ -254,7 +254,7 @@
                         },
                         {
                             "id": "dnd-79",
-                            "type": "form",
+                            "type": "modal",
                             "layout": {
                                 "column": {
                                     "ratio": {
@@ -293,7 +293,7 @@
                         },
                         {
                             "id": "dnd-80",
-                            "type": "form",
+                            "type": "modal",
                             "layout": {
                                 "column": {
                                     "ratio": {
