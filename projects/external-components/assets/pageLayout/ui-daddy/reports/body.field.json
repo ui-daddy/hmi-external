@@ -3,6 +3,152 @@
         {
             "baseProperties": {
                 "type": "dynamicField",
+                "id": "dnd-3",
+                "name": "reports-filter",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": "p-button-outlined p-button-icon-only"
+                },
+                "orientation": null
+            },
+            "libraryComponent": "FilterGroupExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "buttonOptions": {
+                    "label": "",
+                    "leftIcon": "pi-filter"
+                },
+                "filterOptions": [
+                    {
+                        "label": "Area",
+                        "icon": "",
+                        "type": "dependent",
+                        "dependentList": [
+                            {
+                                "label": "Zone",
+                                "optionList": [{
+                                    "label": "Zone",
+                                    "value": "Zone"
+                                }],
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [
+                                        {
+                                            "paramName": "level",
+                                            "mappedField": "levelTypeEdit",
+                                            "mappedValue": "value"
+                                        }
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD",
+                                    "labelKey": "zone",
+                                    "valueKey": "zone"
+                                }
+                            }, {
+                                "label": "Circle",
+                                "optionList": [{
+                                    "label": "Circle",
+                                    "value": "circle"
+                                }],
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [
+                                        {
+                                            "paramName": "level",
+                                            "mappedField": "levelTypeEdit",
+                                            "mappedValue": "value"
+                                        }
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD",
+                                    "labelKey": "zone",
+                                    "valueKey": "zone"
+                                }
+                            }, {
+                                "label": "Division",
+                                "optionList": [{
+                                    "label": "Division",
+                                    "value": "Division"
+                                }],
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [
+                                        {
+                                            "paramName": "level",
+                                            "mappedField": "levelTypeEdit",
+                                            "mappedValue": "value"
+                                        }
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD",
+                                    "labelKey": "zone",
+                                    "valueKey": "zone"
+                                }
+                            }, {
+                                "label": "substation",
+                                "optionList": [{
+                                    "label": "substation",
+                                    "value": "substation"
+                                }],
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [
+                                        {
+                                            "paramName": "level",
+                                            "mappedField": "levelTypeEdit",
+                                            "mappedValue": "value"
+                                        }
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD",
+                                    "labelKey": "zone",
+                                    "valueKey": "zone"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Area",
+                        "icon": "",
+                        "type": "text"
+                    },
+                    {
+                        "label": "Area",
+                        "icon": "",
+                        "type": "dropdown",
+                        "optionList": [
+                            { "label": "New York", "value": "NY" },
+                            { "label": "New York1", "value": "NY1" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
                 "id": "dnd-2",
                 "name": "reports-table",
                 "library": "primeng"
