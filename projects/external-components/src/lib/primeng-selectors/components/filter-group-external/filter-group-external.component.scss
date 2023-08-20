@@ -1,0 +1,61 @@
+.filter-menu-popup {
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1001;
+}
+
+.filter-group-container {
+    button.filter-button.p-element {
+        width: 30px;
+        height: 30px;
+    }
+    
+    button.filter-button.p-element span {
+        font-size: 12px;
+    }
+}
+
+.filter-group-container {
+    position: relative;
+}
+
+.menu-filter-option {
+    position: absolute;
+    left: 13rem;
+    top: 100%;
+    z-index: 1001;
+    background-color: white;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+}
+
+.dependent-event-container,
+.text-event-container,
+.dropdown-event-container {
+    padding: 20px;
+    input {
+        margin-bottom: 20px;
+    }
+    .p-element + .p-element,
+    label + label {
+        margin-left: 20px;
+    }
+    label {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+}
+
+:host ::ng-deep {
+    .dropdown-event-container,
+    .dependent-event-container {
+        .p-dropdown {
+            margin-bottom: 20px;
+        }
+        .p-dropdown-label {
+            padding: 5px;
+        }
+    }
+}

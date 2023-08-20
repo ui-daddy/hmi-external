@@ -1,0 +1,46 @@
+<div [attr.id]="'filter-group-'+fieldObj.baseProperties.id"
+    [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName" class="filter-group-container">
+    <button pButton type="button" (click)="handleShowPopup()" id="filter-group-btn-{{fieldObj.baseProperties.id}}"
+        class="{{fieldObj.layoutProperties.css.themeClass}} filter-button">
+        <span *ngIf="fieldObj.customAttributes.buttonOptions?.leftIcon" class="p-button-icon-left pi {{fieldObj.customAttributes.buttonOptions?.leftIcon}}"></span>
+        <span *ngIf="fieldObj.customAttributes.buttonOptions?.label" class="p-button-label">{{fieldObj.customAttributes.buttonOptions?.label}}</span>
+        <span *ngIf="fieldObj.customAttributes.buttonOptions?.rightIcon" class="p-button-icon-right pi {{fieldObj.customAttributes.buttonOptions?.rightIcon}}"></span>
+    </button>
+    <p-menu [model]="items" *ngIf="showPopup" id="filter-menu-popup-{{fieldObj.baseProperties.id}}" class="filter-menu-popup"></p-menu>
+    <div *ngIf="showSubMenuOption" class="menu-filter-option" id="filter-menu-subpopup-{{fieldObj.baseProperties.id}}">
+        <div class="dependent-event-container" *ngIf="currentEventConfig.dependent.show">
+            <ng-template *ngTemplateOutlet="dependentIf"></ng-template>
+        </div>
+        <div class="text-event-container" *ngIf="currentEventConfig.text.show">
+            <ng-template *ngTemplateOutlet="textIf"></ng-template>
+        </div>
+        <div class="dropdown-event-container" *ngIf="currentEventConfig.dropdown.show">
+            <ng-template *ngTemplateOutlet="dropdownIf"></ng-template>
+        </div>
+    </div>
+</div>
+
+<ng-template #dependentIf>
+    <label *ngFor="let dependentObj of currentEventConfig.dependent.config?.dependentList; let i = index">
+        {{dependentObj.label}}
+        <p-dropdown [options]="dependentObj.optionList" placeholder="Select" [(ngModel)]="currentEventConfig.dependent.value[i]" optionLabel="label" (onChange)="changeDependentDropdown(i)"></p-dropdown>
+    </label>
+    <div>
+        <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
+        <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDependentEvent()"></p-button>
+    </div>
+</ng-template>
+<ng-template #textIf>
+    <input pInputText type="text" class="p-inputtext-sm" placeholder="Filter By text" [(ngModel)]="currentEventConfig.text.value"/>
+    <div>
+        <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
+        <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyTextEvent()"></p-button>
+    </div>
+</ng-template>
+<ng-template #dropdownIf>
+    <p-dropdown [options]="currentEventConfig.dropdown?.config?.optionList" placeholder="Select" [(ngModel)]="currentEventConfig.dropdown.value" optionLabel="label"></p-dropdown>
+    <div>
+        <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
+        <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDropdownEvent()"></p-button>
+    </div>
+</ng-template>
