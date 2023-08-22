@@ -68,6 +68,7 @@
                         "colName": "Status",
                         "filterType": "multiselect",
                         "accessor": "status",
+                        "pill": "true",
                         "colWidth": {
                             "unit": "px",
                             "value": 130
