@@ -36,95 +36,66 @@
                         "dependentList": [
                             {
                                 "label": "Zone",
-                                "optionList": [{
-                                    "label": "Zone",
-                                    "value": "Zone"
-                                }],
+                                "optionList": [],
+                                "labelKey": "zone",
+                                "valueKey": "zone",
                                 "optionsConfig": {
                                     "name": "Get Zone",
-                                    "url": "/api/v1/Levels/Get",
+                                    "url": "/api/v1/Levels/Get?level=zone",
                                     "method": "GET",
                                     "pathParams": [],
-                                    "queryParams": [
-                                        {
-                                            "paramName": "level",
-                                            "mappedField": "levelTypeEdit",
-                                            "mappedValue": "value"
-                                        }
+                                    "queryParams": [                                        
                                     ],
                                     "payloadParams": [],
-                                    "fetch": "ONLOAD",
-                                    "labelKey": "zone",
-                                    "valueKey": "zone"
+                                    "fetch": "ONLOAD"                                    
                                 }
                             }, {
                                 "label": "Circle",
-                                "optionList": [{
-                                    "label": "Circle",
-                                    "value": "circle"
-                                }],
+                                "optionList": [],
+                                "labelKey": "circle",
+                                "valueKey": "circle",
+                                "filterOptionListBy": "zone",
                                 "optionsConfig": {
-                                    "name": "Get Zone",
-                                    "url": "/api/v1/Levels/Get",
+                                    "name": "Get Circle",
+                                    "url": "/api/v1/Levels/Get?level=circle",
                                     "method": "GET",
                                     "pathParams": [],
-                                    "queryParams": [
-                                        {
-                                            "paramName": "level",
-                                            "mappedField": "levelTypeEdit",
-                                            "mappedValue": "value"
-                                        }
+                                    "queryParams": [                                       
                                     ],
                                     "payloadParams": [],
-                                    "fetch": "ONLOAD",
-                                    "labelKey": "zone",
-                                    "valueKey": "zone"
+                                    "fetch": "ONLOAD"                                    
                                 }
                             }, {
                                 "label": "Division",
-                                "optionList": [{
-                                    "label": "Division",
-                                    "value": "Division"
-                                }],
+                                "optionList": [],
+                                "labelKey": "dividion",
+                                "valueKey": "dividion",
+                                "filterOptionListBy": "circle",
                                 "optionsConfig": {
-                                    "name": "Get Zone",
-                                    "url": "/api/v1/Levels/Get",
+                                    "name": "Get Division",
+                                    "url": "/api/v1/Levels/Get?level=division",
                                     "method": "GET",
                                     "pathParams": [],
-                                    "queryParams": [
-                                        {
-                                            "paramName": "level",
-                                            "mappedField": "levelTypeEdit",
-                                            "mappedValue": "value"
-                                        }
+                                    "queryParams": [                                        
                                     ],
                                     "payloadParams": [],
-                                    "fetch": "ONLOAD",
-                                    "labelKey": "zone",
-                                    "valueKey": "zone"
+                                    "fetch": "ONLOAD"
                                 }
                             }, {
                                 "label": "substation",
-                                "optionList": [{
-                                    "label": "substation",
-                                    "value": "substation"
-                                }],
+                                "optionList": [],
+                                "labelKey": "name",
+                                "valueKey": "name",
+                                "filterOptionListBy": "division",
                                 "optionsConfig": {
-                                    "name": "Get Zone",
-                                    "url": "/api/v1/Levels/Get",
+                                    "name": "Get substation",
+                                    "url": "/api/v1/Levels/Get?level=substation",
                                     "method": "GET",
                                     "pathParams": [],
                                     "queryParams": [
-                                        {
-                                            "paramName": "level",
-                                            "mappedField": "levelTypeEdit",
-                                            "mappedValue": "value"
-                                        }
                                     ],
                                     "payloadParams": [],
-                                    "fetch": "ONLOAD",
-                                    "labelKey": "zone",
-                                    "valueKey": "zone"
+                                    "fetch": "ONLOAD"
                                 }
                             }
                         ]

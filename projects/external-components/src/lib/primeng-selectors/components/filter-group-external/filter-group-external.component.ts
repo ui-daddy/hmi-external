@@ -7,6 +7,18 @@ export const FilterEventType = {
   DROPDOWN: 'dropdown'
 };
 
+export interface IFilterGroup {
+  label: string;
+  type: string;
+  value: string;
+  show: boolean;
+  labelKey?: string;
+  valueKey?: string;
+  filterApplied?: boolean;
+  optionList?: any[];
+  dependentList?: IFilterGroup[];
+}
+
 @Component({
   selector: 'hmi-ext-filter-group',
   templateUrl: './filter-group-external.component.html',
@@ -26,37 +38,21 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     this.items = [];
   }
 
-  initializeCurrentEventConfig() {
-    this.currentEventConfig = {};
-    this.currentEventConfig[FilterEventType.DEPENDENT] = {
-      show: false,
-      value: [],
-      config: null
-    }
-
-    this.currentEventConfig[FilterEventType.TEXT] = {
-      show: false,
-      value: "",
-      config: null
-    }
-
-    this.currentEventConfig[FilterEventType.DROPDOWN] = {
-      show: false,
-      value: "",
-      config: null
-    }
+  filterFormGrp : IFilterGroup[] = [];
+  initializeFilterFormGrp() {
+    this.filterFormGrp = this.fieldObj.customAttributes?.filterOptions?.map((v: any)=> {
+      const data = { ...v, show: false };
+      if (v.type === FilterEventType.DEPENDENT) {
+        const dependentList = v.dependentList.map((dep:any)=> ({ ...dep, value: '' }))
+        return {...data, dependentList}
+      }
+      return data;
+    });
+    console.info('filterFormGrp ',this.filterFormGrp)
   }
 
-  initializeDependentValue(length: number) {
-    for (let i = 0; i < length; i++) {
-      this.currentEventConfig[FilterEventType.DEPENDENT].value[i] = "";
-    }
-  }
-
-  hideFilterEventPopup() {
-    this.currentEventConfig[FilterEventType.DEPENDENT].show = false;
-    this.currentEventConfig[FilterEventType.TEXT].show = false;
-    this.currentEventConfig[FilterEventType.DROPDOWN].show = false;
+  hideFilterFormGrp() {
+    this.filterFormGrp = this.filterFormGrp.map(v=> ({...v, show: false}))
   }
 
   handleShowPopup() {
@@ -81,27 +77,28 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
 
   ngOnInit() {
     console.log(this.fieldObj);
-    this.items = this.fieldObj.customAttributes?.filterOptions?.map((item: any) => {
+    this.initializeFilterFormGrp();
+    this.items = this.fieldObj.customAttributes?.filterOptions?.map((item: any, index:number) => {
       item.command = () => {
-        this.initializeCurrentEventConfig();
+        this.hideFilterFormGrp();
+        const filterObj = this.filterFormGrp[index];
         switch(item.type.toLowerCase()) {
-          case FilterEventType.DEPENDENT:
-            this.currentEventConfig[FilterEventType.DEPENDENT].show = true;
-            this.currentEventConfig[FilterEventType.DEPENDENT].config = item;
-            this.initializeDependentValue(item.dependentList.length);
-            this.loadDropdownDataFromAPI((item.dependentList && item.dependentList[0]) || []);
+          case FilterEventType.DEPENDENT:            
+            filterObj.show = true;
+            if(filterObj.dependentList && filterObj.dependentList.length) {
+              this.loadDropdownDataFromAPI((filterObj.dependentList[0]) || []);
+            }
             break;
           case FilterEventType.TEXT:
-            this.currentEventConfig[FilterEventType.TEXT].show = true;
-            this.currentEventConfig[FilterEventType.TEXT].config = item;
+            filterObj.show = true;
             break;
           case FilterEventType.DROPDOWN:
-            this.currentEventConfig[FilterEventType.DROPDOWN].show = true;
-            this.currentEventConfig[FilterEventType.DROPDOWN].config = item;
+            filterObj.show = true;
             this.loadDropdownDataFromAPI(item);
             break;
         }
         this.showSubMenuOption = true;
+        console.info('filterFormGrp ',this.filterFormGrp)
       }
       return item;
     }); 
@@ -113,65 +110,41 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     }
   }
 
-  loadData(ddOption: any) {     
-    this.customApiCall(ddOption.optionsConfig).subscribe((data: any) => {
-      ddOption.optionList = this.optionsFormatter(data, ddOption.optionsConfig);
+  loadData(ddOption: any, selectedValue?: string) {     
+    this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
+      ddOption.optionList = data;
+      if (data && data.length && ddOption.filterOptionListBy) {
+        ddOption.optionList = ddOption.optionList.filter((v:any)=> v[ddOption.filterOptionListBy] === selectedValue)
+      }
     }, ((err: any) => {
       ddOption.optionList = [];
       console.error(err);
     }));
   }
 
-  customGet(object: any, path: any, defaultValue: any) {
-    const pathArray = Array.isArray(path) ? path : path.split('.');
-    
-    for (const key of pathArray) {
-      if (object === null || typeof object !== 'object') {
-        return defaultValue;
-      }
-      
-      object = object[key];
-    }
-    
-    return object !== undefined ? object : defaultValue;
-  }
-
-  optionsFormatter(optionList: any[], optionConfig: any) {
-    if(optionList?.length) {
-
-      return optionList.map(optionObj => {
-        let modifiedOptionObj = {
-          label: this.customGet(optionObj, optionConfig.labelKey, ""),
-          value: this.customGet(optionObj, optionConfig.valueKey, "")
-        }
-        return modifiedOptionObj;
-      });
-    }
-    return [{label:"", value:""}];
-  }
-
   closeSubMenuPopup() {
     this.showSubMenuOption = false;
   }
 
-  changeDependentDropdown(index: number) {
-    if (this.currentEventConfig[FilterEventType.DEPENDENT]?.config?.dependentList[index + 1]?.optionsConfig) {
-      this.loadData(this.currentEventConfig[FilterEventType.DEPENDENT]?.config?.dependentList[index + 1]);
+  changeDependentDropdown(index: number, selectedValue: any,list: any[]) {
+    if (list[index + 1]?.optionsConfig) {
+      this.loadData(list[index + 1], selectedValue);
     }
   }
 
-  applyTextEvent() {
-    console.log(this.currentEventConfig[FilterEventType.TEXT]);
+  applyTextEvent(filterObj: any) {
+    filterObj.filterApplied = true;
     this.closePopup();
   }
 
-  applyDropdownEvent() {
-    console.log(this.currentEventConfig[FilterEventType.TEXT]);
+  applyDropdownEvent(filterObj: any) {
+    filterObj.filterApplied = true;
     this.closePopup();
   }
 
-  applyDependentEvent() {
-    console.log(this.currentEventConfig[FilterEventType.TEXT]);
+  applyDependentEvent(filterObj: any) {
+    filterObj.filterApplied = true;
+    this.closePopup();
   }
 
   ngOnDestroy(): void {
