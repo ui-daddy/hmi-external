@@ -12,7 +12,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reports_table_status [aria-label=\"Assigned\"] [aria-label=\"In Progress\"]",
+                    "customClassName": "reports_table_status",
                     "configuration": [
                         {
                             "selectorName": "[aria-label=\"Assigned\"]",
