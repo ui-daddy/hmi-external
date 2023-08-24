@@ -68,7 +68,7 @@
                 },
                 {
                     "id": "impediments",
-                    "label": "Impediments",
+                    "label": "Issues",
                     "navigateToPage": "/impediments"
                 },
                 {
