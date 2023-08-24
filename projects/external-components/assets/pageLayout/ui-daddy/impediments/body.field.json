@@ -7,7 +7,7 @@
                 "type": "button",
                 "id": "dnd-4",
                 "name": "",
-                "label": "Add Impedement"
+                "label": "Add Issue"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -216,7 +216,7 @@
                         }
                     }
                 ],
-                "caption": "Impediments",
+                "caption": "Issues",
                 "summary": null,
                 "globalFilterFields": [
                     "remark",
@@ -306,7 +306,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Edit Impediment"
+            "value": "Edit Issue"
         },
         {
             "baseProperties": {
@@ -604,7 +604,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Add Impedement"
+            "value": "Add Issue"
         },
         {
             "baseProperties": {
