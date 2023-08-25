@@ -1554,7 +1554,7 @@
                 "queryParams": [
                     {
                         "paramName": "level",
-                        "mappedField": "msetclLevelAdd",
+                        "mappedField": "msetclLevelTypeAdd",
                         "mappedValue": "value"
                     }
                 ],
