@@ -1952,7 +1952,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+                "visible": "msetclLevelTypeAdd != null or msetclLevelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
