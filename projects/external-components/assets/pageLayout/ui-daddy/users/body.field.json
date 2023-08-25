@@ -1527,7 +1527,7 @@
                 "type": "dropdown",
                 "id": "dnd-51",
                 "label": "Level",
-                "name": "levelAdd",
+                "name": "msetcllevelAdd",
                 "formName": "addUserModal"
             },
             "layoutProperties": {
