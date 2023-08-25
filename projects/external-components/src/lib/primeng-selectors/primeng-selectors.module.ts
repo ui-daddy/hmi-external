@@ -22,7 +22,7 @@ import { ListPipe } from './pipes/list/list.pipe';
 import {ButtonModule} from 'primeng/button';
 import {TooltipModule} from 'primeng/tooltip';
 import { MenuModule } from 'primeng/menu';
-
+import { TagModule } from 'primeng/tag';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { MenuModule } from 'primeng/menu';
     ],
     imports: [
         CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
-        TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, TooltipModule, MenuModule
+        TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, TooltipModule, MenuModule, TagModule
     ],
     exports: [
         PasswordExternalComponent,
