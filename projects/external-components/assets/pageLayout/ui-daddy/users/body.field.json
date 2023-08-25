@@ -434,7 +434,7 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-26",
-                "name": "userIdEdit",
+                "name": "msetclUserIdEdit",
                 "label": "userId",
                 "formName": "editUserModal"
             },
@@ -463,7 +463,7 @@
                 "type": "staticText",
                 "id": "dnd-24",
                 "formName": "editUserModal",
-                "name": "editUserModalTitle"
+                "name": "msetclEditUserModalTitle"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -498,7 +498,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-52",
-                "name": "levelTypeEdit",
+                "name": "msetclLevelTypeEdit",
                 "formName": "editUserModal",
                 "label": "Level Type"
             },
@@ -543,7 +543,7 @@
                 "type": "dropdown",
                 "id": "dnd-53",
                 "label": "Level",
-                "name": "levelEdit",
+                "name": "msetclLevelEdit",
                 "formName": "editUserModal"
             },
             "layoutProperties": {
@@ -559,7 +559,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "levelTypeEdit != null or levelTypeEdit != undefined"
+                "visible": "msetclLevelTypeEdit != null or msetclLevelTypeEdit != undefined"
             },
             "optionList": null,
             "optionsConfig": {
@@ -570,7 +570,7 @@
                 "queryParams": [
                     {
                         "paramName": "level",
-                        "mappedField": "levelTypeEdit",
+                        "mappedField": "msetclLevelTypeEdit",
                         "mappedValue": "value"
                     }
                 ],
@@ -590,7 +590,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-25",
-                "name": "roleEdit",
+                "name": "msetclRoleEdit",
                 "formName": "editUserModal",
                 "label": "Role"
             },
@@ -634,7 +634,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-28",
-                "name": "companyEdit",
+                "name": "msetclCompanyEdit",
                 "formName": "editUserModal",
                 "label": "Company"
             },
@@ -676,7 +676,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-30",
-                "name": "givenNameEdit",
+                "name": "msetclGivenNameEdit",
                 "label": "First Name",
                 "formName": "editUserModal"
             },
@@ -702,7 +702,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-31",
-                "name": "familyNameEdit",
+                "name": "msetclFamilyNameEdit",
                 "formName": "editUserModal",
                 "label": "Last Name"
             },
@@ -726,7 +726,7 @@
             "baseProperties": {
                 "type": "tel",
                 "id": "dnd-32",
-                "name": "mobileEdit",
+                "name": "msetclMobileEdit",
                 "label": "Mobile",
                 "formName": "editUserModal"
             },
@@ -750,7 +750,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-33",
-                "name": "designationEdit",
+                "name": "msetclDesignationEdit",
                 "formName": "editUserModal",
                 "label": "Designation"
             },
@@ -776,7 +776,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-34",
-                "name": "empIdEdit",
+                "name": "msetclEmpIdEdit",
                 "label": "Employee ID",
                 "formName": "editUserModal"
             },
@@ -800,7 +800,7 @@
             "baseProperties": {
                 "type": "file",
                 "id": "dnd-63",
-                "name": "editProfileImage",
+                "name": "msetclEditProfileImage",
                 "formName": "editUserModal",
                 "label": "Profile Image"
             },
@@ -835,7 +835,7 @@
             "baseProperties": {
                 "type": "button",
                 "id": "dnd-64",
-                "name": "editProfileUpload",
+                "name": "msetclEditProfileUpload",
                 "label": "Upload",
                 "formName": "editUserModal"
             },
@@ -893,7 +893,7 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "data",
-                                        "mappedField": "editProfileImage",
+                                        "mappedField": "msetclEditProfileImage",
                                         "mappedValue": "file",
                                         "valueFormat": ""
                                     }
@@ -938,14 +938,14 @@
                 }
             ],
             "expressionProperties": {
-                "disabled": "editProfileImage == null or editProfileImage == undefined"
+                "disabled": "msetclEditProfileImage == null or msetclEditProfileImage == undefined"
             }
         },
         {
             "baseProperties": {
                 "type": "staticIcon",
                 "id": "dnd-71",
-                "name": "downloadProfileUpload",
+                "name": "msetclDownloadProfileUpload",
                 "label": "Download",
                 "formName": "editUserModal"
             },
@@ -974,7 +974,7 @@
                 "orientation": null
             },
             "expressionProperties": {
-                "visible": "editProfileImage != undefined and profilePath != null and profilePath != undefined"
+                "visible": "msetclEditProfileImage != undefined and profilePath != null and profilePath != undefined"
             },
             "events": [
                 {
@@ -992,7 +992,7 @@
             "baseProperties": {
                 "type": "file",
                 "id": "dnd-54",
-                "name": "editIdProof",
+                "name": "msetclEditIdProof",
                 "formName": "editUserModal",
                 "label": "Photo ID"
             },
@@ -1017,7 +1017,7 @@
             "baseProperties": {
                 "type": "button",
                 "id": "dnd-55",
-                "name": "editIdUpload",
+                "name": "msetclEditIdUpload",
                 "label": "Upload",
                 "formName": "editUserModal"
             },
@@ -1075,7 +1075,7 @@
                                 "payloadParams": [
                                     {
                                         "paramName": "data",
-                                        "mappedField": "editIdProof",
+                                        "mappedField": "msetclEditIdProof",
                                         "mappedValue": "file",
                                         "valueFormat": ""
                                     }
@@ -1120,14 +1120,14 @@
                 }
             ],
             "expressionProperties": {
-                "disabled": "editIdProof == null or editIdProof == undefined"
+                "disabled": "msetclEditIdProof == null or msetclEditIdProof == undefined"
             }
         },
         {
             "baseProperties": {
                 "type": "staticIcon",
                 "id": "dnd-72",
-                "name": "downloadIdUpload",
+                "name": "msetclDownloadIdUpload",
                 "label": "Download",
                 "formName": "editUserModal"
             },
@@ -1156,7 +1156,7 @@
                 "orientation": null
             },
             "expressionProperties": {
-                "visible": "editIdProof != null and editProfileImage != undefined and idProofVar != null and idProofVar != undefined"
+                "visible": "msetclEditIdProof != null and msetclEditProfileImage != undefined and idProofVar != null and idProofVar != undefined"
             },
             "events": [
                 {
@@ -1174,7 +1174,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-36",
-                "name": "userNameEdit",
+                "name": "msetclUserNameEdit",
                 "label": "Username",
                 "formName": "editUserModal"
             },
@@ -1198,7 +1198,7 @@
             "baseProperties": {
                 "type": "email",
                 "id": "dnd-39",
-                "name": "emailEdit",
+                "name": "msetclEmailEdit",
                 "label": "E-Mail",
                 "formName": "editUserModal"
             },
@@ -1222,7 +1222,7 @@
             "baseProperties": {
                 "type": "submit",
                 "id": "dnd-27",
-                "name": "saveUserBtn",
+                "name": "msetclSaveUserBtn",
                 "formName": "editUserModal",
                 "label": "Save User"
             },
@@ -1269,104 +1269,104 @@
                                 "pathParams": [
                                     {
                                         "paramName": "id",
-                                        "mappedField": "userIdEdit"
+                                        "mappedField": "msetclUserIdEdit"
                                     }
                                 ],
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
                                         "paramName": "role",
-                                        "mappedField": "roleEdit",
+                                        "mappedField": "msetclRoleEdit",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyName",
-                                        "mappedField": "companyEdit",
+                                        "mappedField": "msetclCompanyEdit",
                                         "mappedValue": "label",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "companyId",
-                                        "mappedField": "companyEdit",
+                                        "mappedField": "msetclCompanyEdit",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "givenName",
-                                        "mappedField": "givenNameEdit",
+                                        "mappedField": "msetclGivenNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "familyName",
-                                        "mappedField": "familyNameEdit",
+                                        "mappedField": "msetclFamilyNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "mobile",
-                                        "mappedField": "mobileEdit",
+                                        "mappedField": "msetclMobileEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "designation",
-                                        "mappedField": "designationEdit",
+                                        "mappedField": "msetclDesignationEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "empId",
-                                        "mappedField": "empIdEdit",
+                                        "mappedField": "msetclEmpIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "levelEdit",
+                                        "mappedField": "msetclLevelEdit",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "userName",
-                                        "mappedField": "userNameEdit",
+                                        "mappedField": "msetclUserNameEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "photoIdUrl",
-                                        "mappedField": "photoIdUrlEdit",
+                                        "mappedField": "msetclPhotoIdUrlEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "fileUploadUrl",
-                                        "mappedField": "fileUploadUrlEdit",
+                                        "mappedField": "msetclFileUploadUrlEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "email",
-                                        "mappedField": "emailEdit",
+                                        "mappedField": "msetclEmailEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "id",
-                                        "mappedField": "userIdEdit",
+                                        "mappedField": "msetclUserIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
                                     {
                                         "paramName": "photo",
-                                        "mappedField": "editProfileImage",
+                                        "mappedField": "msetclEditProfileImage",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(profilePath)"
                                     },
                                     {
                                         "paramName": "idProof",
-                                        "mappedField": "editIdProof",
+                                        "mappedField": "msetclEditIdProof",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(idProofVar)"
                                     }
