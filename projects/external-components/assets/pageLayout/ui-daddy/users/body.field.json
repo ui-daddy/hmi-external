@@ -1543,7 +1543,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+                "visible": "msetclLevelAdd != null or msetclLevelAdd != undefined"
             },
             "optionList": null,
             "optionsConfig": {
@@ -1554,7 +1554,7 @@
                 "queryParams": [
                     {
                         "paramName": "level",
-                        "mappedField": "levelTypeAdd",
+                        "mappedField": "msetclLevelAdd",
                         "mappedValue": "value"
                     }
                 ],
@@ -1591,7 +1591,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+                "visible": "msetclLevelAdd != null or msetclLevelAdd != undefined"
             },
             "optionList": [
                 {
