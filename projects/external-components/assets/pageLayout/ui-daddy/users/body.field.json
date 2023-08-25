@@ -1543,7 +1543,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "msetclLevelAdd != null or msetclLevelAdd != undefined"
+                "visible": "msetclLevelTypeAdd != null or msetclLevelTypeAdd != undefined"
             },
             "optionList": null,
             "optionsConfig": {
@@ -1591,7 +1591,7 @@
             },
             "events": [],
             "expressionProperties": {
-                "visible": "msetclLevelAdd != null or msetclLevelAdd != undefined"
+                "visible": "msetclLevelTypeAdd != null or msetclLevelTypeAdd != undefined"
             },
             "optionList": [
                 {
