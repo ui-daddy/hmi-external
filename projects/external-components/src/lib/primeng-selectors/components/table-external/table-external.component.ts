@@ -128,20 +128,21 @@ export class TableExternalComponent extends CommonExternalComponent implements O
             }
           });
 
+          // rows obj keys must follow exportKeys value
           const exportList = this.data.map((obj:any) => {
             const newObj:any = {};
-            for (const prop in obj) {
-              if (exportKeys.includes(prop)) {
-                newObj[prop] = obj[prop];
-              }
+            for (const keyName of exportKeys) {
+              newObj[keyName] = obj[keyName]
             }
             return newObj;
           });
 
           const worksheet = xlsx.utils.json_to_sheet(exportList);
+          const workbook = xlsx.utils.book_new();
+          xlsx.utils.book_append_sheet(workbook, worksheet, "Data");
           /* replace first row */
           xlsx.utils.sheet_add_aoa(worksheet, [customHeaders], { origin: "A1" });
-          const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+   
           const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
           this.saveAsExcelFile(excelBuffer, this.fieldObj.customAttributes.downloadExcelFileName || 'downloadedExcel');
 
