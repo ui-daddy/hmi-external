@@ -79,21 +79,19 @@
             ],
             "layoutProperties": {
                 "css": {
-                    "configuration": [
-                        {
-                            "selectorName": ".header__nav-items",
-                            "xs": {
-                                "justify-content": "flex-end"
-                            }
-                        },
-                        {
-                            "selectorName": ".header__nav-items .dynamic-style-child",
-                            "xs": {
-                                "padding-right": "35px",
-                                "text-align": "center"
-                            }
+                    "configuration": [{
+                        "selectorName": ".header__nav-items",
+                        "xs": {
+                            "justify-content": "flex-end"
                         }
-                    ],
+                    },
+                    {
+                        "selectorName": ".header__nav-items .dynamic-style-child",
+                        "xs": {
+                            "padding-right": "35px",
+                            "text-align": "center"
+                        }
+                    }],
                     "customClassName": "header__nav-items"
                 }
             }
@@ -108,28 +106,25 @@
                 "id": "givenName"
             },
             "dynamicValueAccessor": [
-                "givenName",
-                "familyName"
+                "givenName","familyName"
             ],
             "layoutProperties": {
                 "css": {
-                    "configuration": [
-                        {
-                            "selectorName": ".header__org",
-                            "xs": {
-                                "justify-content": "end"
-                            }
-                        },
-                        {
-                            "selectorName": ".header__org .dynamic-style-child",
-                            "xs": {
-                                "color": "black",
-                                "font-size": "15px",
-                                "font-weight": "bold",
-                                "margin-top": "10px"
-                            }
+                    "configuration": [{
+                        "selectorName": ".header__org",
+                        "xs": {
+                            "justify-content": "end"
                         }
-                    ],
+                    },
+                    {
+                        "selectorName": ".header__org .dynamic-style-child",
+                        "xs": {
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight": "bold",
+                            "margin-top": "10px"
+                        }
+                    }],
                     "customClassName": "header__org"
                 }
             }
@@ -155,21 +150,19 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": [
-                        {
-                            "selectorName": ".header-common__logout",
-                            "xs": {
-                                "white-space": "nowrap",
-                                "justify-content": "flex-end"
-                            }
-                        },
-                        {
-                            "selectorName": ".header-common__logout .dynamic-style-child",
-                            "xs": {
-                                "margin-top": "9px"
-                            }
+                    "configuration": [{
+                        "selectorName": ".header-common__logout",
+                        "xs": {
+                            "white-space": "nowrap",
+                            "justify-content": "flex-end"
                         }
-                    ],
+                    },
+                    {
+                        "selectorName": ".header-common__logout .dynamic-style-child",
+                        "xs": {
+                            "margin-top": "9px"
+                        }
+                    }],
                     "customClassName": "header-common__logout theme-btn",
                     "themeClass": "btn"
                 }
