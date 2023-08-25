@@ -1482,7 +1482,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-50",
-                "name": "levelTypeAdd",
+                "name": "msetclLevelTypeAdd",
                 "formName": "addUserModal",
                 "label": "Level Type"
             },
@@ -1527,7 +1527,7 @@
                 "type": "dropdown",
                 "id": "dnd-51",
                 "label": "Level",
-                "name": "msetcllevelAdd",
+                "name": "msetclLevelAdd",
                 "formName": "addUserModal"
             },
             "layoutProperties": {
