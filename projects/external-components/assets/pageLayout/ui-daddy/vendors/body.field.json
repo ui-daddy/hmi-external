@@ -734,6 +734,96 @@
         },
         {
             "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-43",
+                "name": "levelTypeAdd",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-44",
+                "name": "levelAdd",
+                "label": "Level"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeAdd ",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-13",
                 "label": "Name",
@@ -753,7 +843,8 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
-                "visibleValue": "true"
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -779,7 +870,8 @@
             "events": [],
             "expressionProperties": {
                 "visibleValue": "true",
-                "requiredValue": "false"
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -805,7 +897,8 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "true"
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -831,7 +924,8 @@
             "events": [],
             "expressionProperties": {
                 "visibleValue": "true",
-                "requiredValue": "false"
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -855,7 +949,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
