@@ -15,23 +15,48 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": [{
-                        "selectorName": ".element-child",
-                        "xs": {
-                            "margin-bottom": "35px",
-                            "font-size": "30px"
+                    "configuration": [
+                        {
+                            "selectorName": ".element-child",
+                            "xs": {
+                                "margin-bottom": "35px",
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".element-child .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "color": "white"
+                            }
                         }
-                    },
-                    {
-                        "selectorName": ".element-child .dynamic-style-child",
-                        "xs": {
-                            "text-align": "center",
-                            "color": "white"
-                        }
-                    }],
+                    ],
                     "customClassName": "element-child"
                 }
             }
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-1",
+                "name": "test",
+                "label": "test"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
