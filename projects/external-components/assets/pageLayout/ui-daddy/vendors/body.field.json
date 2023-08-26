@@ -719,6 +719,12 @@
                                         "mappedField": "idEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelEdit",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
