@@ -1011,6 +1011,12 @@
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
+                                        "paramName": "level",
+                                        "mappedField": "levelAdd",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    },
+                                    {
                                         "paramName": "name",
                                         "mappedField": "nameAdd",
                                         "mappedValue": "",
