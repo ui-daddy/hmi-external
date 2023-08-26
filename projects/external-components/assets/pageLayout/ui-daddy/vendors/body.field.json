@@ -410,6 +410,96 @@
         },
         {
             "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-45",
+                "name": "levelTypeEdit",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-46",
+                "name": "levelEdit",
+                "label": "Level"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeEdit != null or levelTypeEdit != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeEdit",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-22",
                 "label": "Name",
@@ -806,7 +896,7 @@
                 "queryParams": [
                     {
                         "paramName": "level",
-                        "mappedField": "levelTypeAdd",
+                        "mappedField": "levelTypeAdd ",
                         "mappedValue": "value"
                     }
                 ],
@@ -1010,12 +1100,6 @@
                                 "pathParams": [],
                                 "queryParams": [],
                                 "payloadParams": [
-                                    {
-                                        "paramName": "level",
-                                        "mappedField": "levelAdd",
-                                        "mappedValue": "value",
-                                        "valueFormat": ""
-                                    },
                                     {
                                         "paramName": "name",
                                         "mappedField": "nameAdd",
