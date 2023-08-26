@@ -619,14 +619,6 @@
                 {
                     "value": "User",
                     "label": "User"
-                },
-                {
-                    "value": "Vendor Admin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "Vendor User",
-                    "label": "Vendor User"
                 }
             ],
             "optionsConfig": null,
@@ -1609,14 +1601,6 @@
                 {
                     "value": "User",
                     "label": "User"
-                },
-                {
-                    "value": "Vendor Admin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "Vendor User",
-                    "label": "Vendor User"
                 }
             ],
             "optionsConfig": null,
@@ -2955,14 +2939,6 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "Admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "User",
-                    "label": "User"
-                },
-                {
                     "value": "Vendor Admin",
                     "label": "Vendor Admin"
                 },
@@ -3944,14 +3920,6 @@
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "optionList": [
-                {
-                    "value": "Admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "User",
-                    "label": "User"
-                },
                 {
                     "value": "Vendor Admin",
                     "label": "Vendor Admin"
