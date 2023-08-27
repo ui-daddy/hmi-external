@@ -223,20 +223,6 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-45$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
-                                        "condition": "true",
-                                        "formName": "editVendorModal"
-                                    },
-                                    {
-                                        "actionType": "setfield",
-                                        "field": "$dnd-46$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
-                                        "condition": "true",
-                                        "formName": "editVendorModal"
-                                    },
-                                    {
-                                        "actionType": "setfield",
                                         "field": "$dnd-22$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.name",
                                         "condition": "true",
@@ -362,7 +348,7 @@
             "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-21",
-                "formName": "Edit Vendor"
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -399,7 +385,8 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-40",
-                "name": "idEdit"
+                "name": "idEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -427,7 +414,8 @@
                 "type": "dropdown",
                 "id": "dnd-45",
                 "name": "levelTypeEdit",
-                "label": "Level Type"
+                "label": "Level Type",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -444,6 +432,10 @@
             "expressionProperties": {},
             "optionList": [
                 {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
                     "value": "division",
                     "label": "Division"
                 },
@@ -456,7 +448,7 @@
                     "label": "Zone"
                 },
                 {
-                    "value": "substation",
+                    "value": "Substation",
                     "label": "Substation"
                 }
             ],
@@ -470,7 +462,8 @@
                 "type": "dropdown",
                 "id": "dnd-46",
                 "name": "levelEdit",
-                "label": "Level"
+                "label": "Level",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -517,7 +510,8 @@
                 "type": "text",
                 "id": "dnd-22",
                 "label": "Name",
-                "name": "nameEdit"
+                "name": "nameEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -542,7 +536,8 @@
                 "type": "textarea",
                 "id": "dnd-24",
                 "label": "Address",
-                "name": "addressEdit"
+                "name": "addressEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -568,7 +563,8 @@
                 "type": "tel",
                 "id": "dnd-25",
                 "label": "Phone Number",
-                "name": "contactEdit"
+                "name": "contactEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -594,7 +590,8 @@
                 "type": "text",
                 "id": "dnd-26",
                 "label": "Website",
-                "name": "websiteEdit"
+                "name": "websiteEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -620,7 +617,8 @@
                 "type": "text",
                 "id": "dnd-41",
                 "label": "Company Code",
-                "name": "companyCodeEdit"
+                "name": "companyCodeEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -642,7 +640,8 @@
             "baseProperties": {
                 "type": "submit",
                 "id": "dnd-19",
-                "label": "Save Vendor"
+                "label": "Save Vendor",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -864,6 +863,10 @@
             "expressionProperties": {},
             "optionList": [
                 {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
                     "value": "division",
                     "label": "Division"
                 },
@@ -876,7 +879,7 @@
                     "label": "Zone"
                 },
                 {
-                    "value": "substation",
+                    "value": "Substation",
                     "label": "Substation"
                 }
             ],
