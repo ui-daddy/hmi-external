@@ -223,14 +223,14 @@
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-43$",
+                                        "field": "$dnd-45$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
                                         "condition": "true",
                                         "formName": "editVendorModal"
                                     },
                                     {
                                         "actionType": "setfield",
-                                        "field": "$dnd-44$",
+                                        "field": "$dnd-46$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
                                         "condition": "true",
                                         "formName": "editVendorModal"
