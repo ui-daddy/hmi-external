@@ -531,6 +531,10 @@
                 {
                     "value": "zone",
                     "label": "Zone"
+                },
+                {
+                    "value": "substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -615,14 +619,6 @@
                 {
                     "value": "User",
                     "label": "User"
-                },
-                {
-                    "value": "Vendor Admin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "Vendor User",
-                    "label": "Vendor User"
                 }
             ],
             "optionsConfig": null,
@@ -741,6 +737,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {},
             "value": null,
@@ -1515,6 +1512,10 @@
                 {
                     "value": "zone",
                     "label": "Zone"
+                },
+                {
+                    "value": "substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -1601,14 +1602,6 @@
                 {
                     "value": "User",
                     "label": "User"
-                },
-                {
-                    "value": "Vendor Admin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "Vendor User",
-                    "label": "Vendor User"
                 }
             ],
             "optionsConfig": null,
@@ -1731,6 +1724,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
@@ -2865,6 +2859,10 @@
                 {
                     "value": "zone",
                     "label": "Zone"
+                },
+                {
+                    "value": "substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -2942,14 +2940,6 @@
             "events": [],
             "expressionProperties": {},
             "optionList": [
-                {
-                    "value": "Admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "User",
-                    "label": "User"
-                },
                 {
                     "value": "Vendor Admin",
                     "label": "Vendor Admin"
@@ -3075,6 +3065,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {},
             "value": null,
@@ -3849,6 +3840,10 @@
                 {
                     "value": "zone",
                     "label": "Zone"
+                },
+                {
+                    "value": "substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -3928,14 +3923,6 @@
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "optionList": [
-                {
-                    "value": "Admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "User",
-                    "label": "User"
-                },
                 {
                     "value": "Vendor Admin",
                     "label": "Vendor Admin"
@@ -4065,6 +4052,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
