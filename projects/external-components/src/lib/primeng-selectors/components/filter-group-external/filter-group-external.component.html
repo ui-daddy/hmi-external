@@ -1,29 +1,3 @@
-<div class="d-flex" style="gap: 20px" *ngIf="filterFormGrp.length">
-    <ng-container *ngFor="let filter of filterFormGrp">
-        <ng-container [ngSwitch]="filter.type">
-            <ng-container *ngSwitchCase="'dependent'">
-                <ng-template *ngIf="filter.filterApplied" let-dependentFilter [ngFor] [ngForOf]="filter.dependentList">
-                    <ng-container *ngTemplateOutlet="filterTpl;context: { $implicit: dependentFilter}"></ng-container>
-                </ng-template>
-            </ng-container>
-            <ng-container *ngSwitchDefault>
-                <ng-container *ngIf="filter.filterApplied">
-                    <ng-container *ngTemplateOutlet="filterTpl;context: { $implicit: filter}" ></ng-container>
-                </ng-container>
-            </ng-container>
-        </ng-container>
-        <ng-template #filterTpl let-filter>
-            {{filter.label}}
-            <p-tag severity="info">
-                <div class="d-flex align-items-center">
-                    <span class="text-base">{{filter.value}}</span>
-                    <i class="pi pi-times text-xs"></i>
-                </div>
-            </p-tag>
-        </ng-template>
-        
-    </ng-container>
-</div>
 <div [attr.id]="'filter-group-'+fieldObj.baseProperties.id"
     [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName" class="filter-group-container">
     <button pButton type="button" (click)="handleShowPopup()" id="filter-group-btn-{{fieldObj.baseProperties.id}}"
@@ -31,6 +5,9 @@
         <span *ngIf="fieldObj.customAttributes.buttonOptions?.leftIcon" class="p-button-icon-left pi {{fieldObj.customAttributes.buttonOptions?.leftIcon}}"></span>
         <span *ngIf="fieldObj.customAttributes.buttonOptions?.label" class="p-button-label">{{fieldObj.customAttributes.buttonOptions?.label}}</span>
         <span *ngIf="fieldObj.customAttributes.buttonOptions?.rightIcon" class="p-button-icon-right pi {{fieldObj.customAttributes.buttonOptions?.rightIcon}}"></span>
+        <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="filterLoader">
+            <div class="spinner-border text-info loader-placement"></div>
+        </div>
     </button>
     <p-menu [model]="items" *ngIf="showPopup" id="filter-menu-popup-{{fieldObj.baseProperties.id}}" class="filter-menu-popup"></p-menu>
     <div *ngIf="showSubMenuOption" class="menu-filter-option" id="filter-menu-subpopup-{{fieldObj.baseProperties.id}}">
@@ -46,16 +23,34 @@
             </div>
         </ng-container>
     </div>
-
+    <div class="d-flex pills-wrapper" *ngIf="appliedFilterPills.length">
+        <ng-container *ngFor="let filter of appliedFilterPills; let i = index">
+            <ng-container *ngIf="filter.filterApplied">
+                <ng-container *ngTemplateOutlet="filterTpl;context: { $implicit: getFilterPillValue(filter)}" ></ng-container>
+            </ng-container>
+            <ng-template #filterTpl let-filter>
+                <p-tag severity="info" class="filter-pills">
+                    <div class="d-flex align-items-center">
+                        <span class="text-base" title="{{filter.pillLabel}}">{{filter.pillLabel}}</span>
+                        <i class="pi pi-times text-xs close-pills" (click)="removeFilter(filter, i)"></i>
+                    </div>
+                </p-tag>
+            </ng-template>
+            
+        </ng-container>
+    </div>
 </div>
 
 <ng-template #dependentIf let-dependentList let-filter="filter">
-    <label *ngFor="let dependentObj of dependentList; let i = index">
-        {{dependentObj.label}}
+    <div class="dependent-dd-container" *ngFor="let dependentObj of dependentList; let i = index">
+        <div class="dependent-dd-label">{{dependentObj.label}}</div>
         <p-dropdown [options]="dependentObj.optionList" placeholder="Select" [(ngModel)]="dependentObj.value" 
             [optionLabel]="dependentObj.labelKey ? dependentObj.labelKey: 'label'" [optionValue]="dependentObj.valueKey ? dependentObj.valueKey: 'value'" 
             (onChange)="changeDependentDropdown(i, dependentObj.value, dependentList)"></p-dropdown>
-    </label>
+        <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="dependentObj.showLoader">
+            <div class="spinner-border text-info loader-placement"></div>
+        </div>
+    </div>
     <div>
         <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
         <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDependentEvent(filter)"></p-button>
@@ -71,6 +66,9 @@
 <ng-template #dropdownIf let-filter>
     <p-dropdown [options]="filter.optionList" placeholder="Select" [(ngModel)]="filter.value" 
     [optionLabel]="filter.labelKey ? filter.labelKey: 'label'" [optionValue]="filter.valueKey ? filter.valueKey: 'value'"></p-dropdown>
+    <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="filter.showLoader">
+        <div class="spinner-border text-info loader-placement"></div>
+    </div>
     <div>
         <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
         <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDropdownEvent(filter)"></p-button>

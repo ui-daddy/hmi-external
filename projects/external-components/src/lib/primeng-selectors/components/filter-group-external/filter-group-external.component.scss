@@ -17,6 +17,8 @@
 }
 
 .filter-group-container {
+    display: flex;
+    gap: 10px;
     position: relative;
 }
 
@@ -48,14 +50,53 @@
     }
 }
 
+.dependent-dd-container {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    .dependent-dd-label {
+        max-width: 200px;
+    }
+}
+
+.pills-wrapper {
+    gap: 10px;
+    align-self: center;
+}
+
 :host ::ng-deep {
     .dropdown-event-container,
     .dependent-event-container {
         .p-dropdown {
             margin-bottom: 20px;
+            width: 200px;
         }
         .p-dropdown-label {
             padding: 5px;
+        }
+    }
+    .filter-pills {
+        .p-tag {
+            border: 1px solid black;
+            font-weight: 500;
+            background-color: #0288d12b;
+            color: black;
+        }
+        .pi {
+            margin-left: 10px;
+            margin-top: 2px;
+            font-size: 11px;
+            font-weight: 300;
+        }
+        .text-base {
+            display: inline-block;
+            max-width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .close-pills {
+            cursor: pointer;
         }
     }
 }

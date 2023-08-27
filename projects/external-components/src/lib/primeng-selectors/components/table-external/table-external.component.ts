@@ -21,6 +21,9 @@ export class TableExternalComponent extends CommonExternalComponent implements O
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
         this.refreshTable();
+      }  
+      if (actionObj.actionType === "setfield") {
+        this.data = actionObj.data;
       }      
     });
   }

@@ -12,14 +12,24 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": "p-button-outlined p-button-icon-only"
+                    "customClassName": "filter-group-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".filter-group-css",
+                            "xs": {
+                                "position": "absolute",
+                                "z-index": "1",
+                                "top": "30px",
+                                "left": "30px",
+                                "width": "68%"
+                            }
+                        }
+                    ],
+                    "themeClass": "p-button-icon-only"
                 },
                 "orientation": null
             },
             "libraryComponent": "FilterGroupExternalComponent",
-            "events": [],
             "expressionProperties": {
                 "visibleValue": "true"
             },
@@ -30,7 +40,7 @@
                 },
                 "filterOptions": [
                     {
-                        "label": "Area",
+                        "label": "Filter By Area",
                         "icon": "",
                         "type": "dependent",
                         "dependentList": [
@@ -82,7 +92,7 @@
                                     "fetch": "ONLOAD"
                                 }
                             }, {
-                                "label": "substation",
+                                "label": "Substation",
                                 "optionList": [],
                                 "labelKey": "name",
                                 "valueKey": "name",
@@ -99,22 +109,75 @@
                                 }
                             }
                         ]
-                    },
-                    {
-                        "label": "Area",
-                        "icon": "",
-                        "type": "text"
-                    },
-                    {
-                        "label": "Area",
-                        "icon": "",
-                        "type": "dropdown",
-                        "optionList": [
-                            { "label": "New York", "value": "NY" },
-                            { "label": "New York1", "value": "NY1" }
-                        ]
                     }
-                ]
+                ],
+                "filterConfig": {
+                    "name": "Filter Report",
+                    "url": "/api/v1/Report/OverDueReport",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "zone",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "circle",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "circle",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "division",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "dividion",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "substation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "name",
+                            "valueFormat": ""
+                        }
+                    ],
+                    "postTransform": "dateTransform",
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "responseType": "",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        "pageUrl": "",
+                        "deleteTableRow": false,
+                        "showSuccessMessage": false,
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "",
+                        "actions": [{
+                            "actionType": "setfield",
+                            "field": "$dnd-2$",
+                            "fieldValue": "$RESPONSE$",
+                            "condition": "true",
+                            "formName": ""
+                        }]
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                }
             }
         },
         {
@@ -224,7 +287,7 @@
                         }
                     }
                 ],
-                "caption": "Reports",
+                "caption": "",
                 "summary": null,
                 "globalFilterFields": [
                     "Priority",
@@ -244,9 +307,14 @@
                     "params": {},
                     "postTransform": "dateTransform",
                     "onSuccess": {
-                        "apiDataAccessor": ""
+                        "apiDataAccessor": "",
+                        "actions": [{
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "componentName": "reports-filter"
+                        }]
                     }
                 },
+                "refreshTableActions": [],
                 "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
