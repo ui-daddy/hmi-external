@@ -737,6 +737,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {},
             "value": null,
@@ -3064,6 +3065,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {},
             "value": null,
@@ -4050,6 +4052,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
