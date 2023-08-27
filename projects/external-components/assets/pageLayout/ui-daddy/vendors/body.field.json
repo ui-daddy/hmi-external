@@ -223,6 +223,14 @@
                                     },
                                     {
                                         "actionType": "setfield",
+                                        "field": "$dnd-45$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    
+                                    {
+                                        "actionType": "setfield",
                                         "field": "$dnd-22$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.name",
                                         "condition": "true",
@@ -260,6 +268,13 @@
                                         "actionType": "setfield",
                                         "field": "$dnd-41$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.companyCode",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-46$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
                                         "condition": "true",
                                         "formName": "editVendorModal"
                                     }
@@ -348,7 +363,7 @@
             "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-21",
-                "formName": "Edit Vendor"
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -385,7 +400,8 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-40",
-                "name": "idEdit"
+                "name": "idEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -410,10 +426,107 @@
         },
         {
             "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-45",
+                "name": "levelTypeEdit",
+                "label": "Level Type",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-46",
+                "name": "levelEdit",
+                "label": "Level",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeEdit != null or levelTypeEdit != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeEdit",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-22",
                 "label": "Name",
-                "name": "nameEdit"
+                "name": "nameEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -438,7 +551,8 @@
                 "type": "textarea",
                 "id": "dnd-24",
                 "label": "Address",
-                "name": "addressEdit"
+                "name": "addressEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -464,7 +578,8 @@
                 "type": "tel",
                 "id": "dnd-25",
                 "label": "Phone Number",
-                "name": "contactEdit"
+                "name": "contactEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -490,7 +605,8 @@
                 "type": "text",
                 "id": "dnd-26",
                 "label": "Website",
-                "name": "websiteEdit"
+                "name": "websiteEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -516,7 +632,8 @@
                 "type": "text",
                 "id": "dnd-41",
                 "label": "Company Code",
-                "name": "companyCodeEdit"
+                "name": "companyCodeEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -538,7 +655,8 @@
             "baseProperties": {
                 "type": "submit",
                 "id": "dnd-19",
-                "label": "Save Vendor"
+                "label": "Save Vendor",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -628,6 +746,12 @@
                                         "paramName": "id",
                                         "mappedField": "idEdit",
                                         "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelEdit",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     }
                                 ],
@@ -734,6 +858,100 @@
         },
         {
             "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-43",
+                "name": "levelTypeAdd",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-44",
+                "name": "levelAdd",
+                "label": "Level"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeAdd ",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-13",
                 "label": "Name",
@@ -753,7 +971,8 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
-                "visibleValue": "true"
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -779,7 +998,8 @@
             "events": [],
             "expressionProperties": {
                 "visibleValue": "true",
-                "requiredValue": "false"
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -805,7 +1025,8 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "true"
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -831,7 +1052,8 @@
             "events": [],
             "expressionProperties": {
                 "visibleValue": "true",
-                "requiredValue": "false"
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -855,7 +1077,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
@@ -942,6 +1166,12 @@
                                         "paramName": "companyCode",
                                         "mappedField": "companyCodeAdd",
                                         "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelEdit",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     }
                                 ],

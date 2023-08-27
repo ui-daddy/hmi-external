@@ -12,8 +12,34 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "reports_table_status",
+                    "configuration": [
+                        {
+                            "selectorName": ".reports_table_status",
+                            "xs": {}
+                        },
+                        {
+                            "selectorName": "[aria-label=\"Assigned\"]",
+                            "xs": {
+                                "color": "white",
+                                "background-color": "#8f369f"
+                            }
+                        },
+                        {
+                            "selectorName": "[aria-label=\"In Progress\"]",
+                            "xs": {
+                                "color": "white",
+                                "background-color": "#c19b3e"
+                            }
+                        },
+                        {
+                            "selectorName": "[aria-label=\"Completed\"]",
+                            "xs": {
+                                "color": "white",
+                                "background-color": "#0f9d15"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -47,6 +73,7 @@
                         "colName": "Status",
                         "filterType": "multiselect",
                         "accessor": "status",
+                        "pill": "true",
                         "colWidth": {
                             "unit": "px",
                             "value": 120
