@@ -223,6 +223,20 @@
                                     },
                                     {
                                         "actionType": "setfield",
+                                        "field": "$dnd-43$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-44$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
                                         "field": "$dnd-22$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.name",
                                         "condition": "true",
@@ -1151,6 +1165,12 @@
                                         "paramName": "companyCode",
                                         "mappedField": "companyCodeAdd",
                                         "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelEdit",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     }
                                 ],
