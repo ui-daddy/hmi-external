@@ -2,6 +2,10 @@ header.header-container {
     background-color: rgba(255, 255, 255, 1)!important;
     color: rgba(31, 41, 55, 1) !important;
 }
+.nav-tabs .nav-link.active {
+ color: white;
+ background-color: #7465f7;
+}
 .nav-item nav-link .nav-item {
     color: rgba(31, 41, 55, 1) !important;
 }

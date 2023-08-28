@@ -77,7 +77,7 @@
                     </td>
                     <ng-template #defaultCol>
                         <td [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
-                           <span [title]="col.title || rowData[col.accessor]" [rowDataHandler]="rowData[col.accessor]"></span>
+                           <span [title]="col.title || rowData[col.accessor]" [rowDataHandler]="rowData[col.accessor]" [ngClass]=" {'pill-style': rowData[col.accessor] && col.pill} " [attr.aria-label]="rowData[col.accessor]"></span>
                         </td>
                     </ng-template>
                     <!-- <td [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }"
