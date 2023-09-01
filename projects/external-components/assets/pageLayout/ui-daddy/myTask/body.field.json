@@ -2,6 +2,28 @@
     "dnd-0": [
         {
             "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-2",
+                "name": "userId"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "userId",
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "dnd-1",
                 "name": "myTask-table",
