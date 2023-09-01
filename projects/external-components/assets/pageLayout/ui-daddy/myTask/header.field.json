@@ -101,7 +101,7 @@
     ],
     "logout-header-dashboard": [
         {
-            "value": "Welcome {0} {1} {2}",
+            "value": "Welcome {0} {1}",
             "baseProperties": {
                 "name": "givenName",
                 "type": "staticText",
