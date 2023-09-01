@@ -118,7 +118,7 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "myTaskList",
-                    "url": "/api/v1/tasks/MyTask/:id",
+                    "url": "/api/v1/tasks/MyTask/1",
                     "method": "GET",
                     "params": {},
                     "postTransform": "multiDateTransform",
