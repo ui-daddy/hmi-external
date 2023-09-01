@@ -19,7 +19,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "userId"
+            "value": "userId {0}"
         },
         {
             "baseProperties": {
