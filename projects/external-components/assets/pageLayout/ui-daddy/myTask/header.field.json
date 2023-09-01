@@ -101,7 +101,7 @@
     ],
     "logout-header-dashboard": [
         {
-            "value": "Welcome {0} {1}",
+            "value": "Welcome {0} {1} {2}",
             "baseProperties": {
                 "name": "givenName",
                 "type": "staticText",
@@ -112,7 +112,11 @@
                 "familyName"
             ],
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
+                    "customClassName": "header__org",
                     "configuration": [
                         {
                             "selectorName": ".header__org",
@@ -130,9 +134,12 @@
                             }
                         }
                     ],
-                    "customClassName": "header__org"
-                }
-            }
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         },
         {
             "value": "userId",
