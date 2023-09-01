@@ -1,4 +1,5 @@
 {
+    "header-dashboard": [],
     "menu-header-dashboard": [
         {
             "value": "",
@@ -78,7 +79,11 @@
                 }
             ],
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
+                    "customClassName": "header__nav-items",
                     "configuration": [
                         {
                             "selectorName": ".header__nav-items",
@@ -94,9 +99,12 @@
                             }
                         }
                     ],
-                    "customClassName": "header__nav-items"
-                }
-            }
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         }
     ],
     "logout-header-dashboard": [
@@ -151,7 +159,20 @@
             "dynamicValueAccessor": [
                 "id"
             ],
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "placeholder": null
         },
         {
             "baseProperties": {
