@@ -37,29 +37,6 @@
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-1",
-                "name": "test",
-                "label": "test"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": null,
-            "placeholder": null
-        },
-        {
-            "baseProperties": {
                 "name": "email",
                 "id": "email",
                 "type": "text",
