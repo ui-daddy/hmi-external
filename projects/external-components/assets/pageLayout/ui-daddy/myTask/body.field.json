@@ -145,6 +145,13 @@
                     "name": "myTaskList",
                     "url": "/api/v1/tasks/MyTask/:userId",
                     "method": "GET",
+                    "pathParams": [
+                        {
+                          "paramName": "userId",
+                          "mappedField": "userId",
+                          "mappedValue": ""
+                        }
+                      ], 
                     "params": {},
                     "postTransform": "multiDateTransform",
                     "onSuccess": {
