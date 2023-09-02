@@ -1170,7 +1170,7 @@
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "levelEdit",
+                                        "mappedField": "levelAdd",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     }

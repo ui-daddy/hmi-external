@@ -2,6 +2,31 @@
     "dnd-0": [
         {
             "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-2",
+                "name": "userId"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "userId",
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "dnd-1",
                 "name": "myTask-table",
@@ -118,8 +143,16 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "myTaskList",
-                    "url": "/api/v1/tasks/MyTask/1",
+                    "url": "/api/v1/tasks/MyTask/:userId",
                     "method": "GET",
+                    "pathParams": [
+                        {
+                          "paramName": "userId",
+                          "mappedField": "userId",
+                          "mappedValue": "",
+                          "valueFormat": "$SHARED_DATA(id)"
+                        }
+                      ], 
                     "params": {},
                     "postTransform": "multiDateTransform",
                     "onSuccess": {
