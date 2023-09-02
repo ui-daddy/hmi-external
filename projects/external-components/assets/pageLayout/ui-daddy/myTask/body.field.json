@@ -149,7 +149,8 @@
                         {
                           "paramName": "userId",
                           "mappedField": "userId",
-                          "mappedValue": ""
+                          "mappedValue": "",
+                          "valueFormat": "$SHARED_DATA(id)"
                         }
                       ], 
                     "params": {},
