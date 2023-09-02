@@ -19,13 +19,13 @@
                             "xs": {
                                 "position": "absolute",
                                 "z-index": "1",
-                                "top": "30px",
+                                "top": "33px",
                                 "left": "30px",
                                 "width": "68%"
                             }
                         }
                     ],
-                    "themeClass": "p-button-icon-only"
+                    "themeClass": "p-button-icon-only p-button-outlined"
                 },
                 "orientation": null
             },

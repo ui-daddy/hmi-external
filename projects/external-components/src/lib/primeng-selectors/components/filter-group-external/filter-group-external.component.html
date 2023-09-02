@@ -43,22 +43,21 @@
 
 <ng-template #dependentIf let-dependentList let-filter="filter">
     <div class="dependent-dd-container" *ngFor="let dependentObj of dependentList; let i = index">
-        <div class="dependent-dd-label">{{dependentObj.label}}</div>
-        <p-dropdown [options]="dependentObj.optionList" placeholder="Select" [(ngModel)]="dependentObj.value" 
+        <p-dropdown [options]="dependentObj.optionList" placeholder="{{dependentObj.label}}" [(ngModel)]="dependentObj.value" 
             [optionLabel]="dependentObj.labelKey ? dependentObj.labelKey: 'label'" [optionValue]="dependentObj.valueKey ? dependentObj.valueKey: 'value'" 
             (onChange)="changeDependentDropdown(i, dependentObj.value, dependentList)"></p-dropdown>
         <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="dependentObj.showLoader">
             <div class="spinner-border text-info loader-placement"></div>
         </div>
     </div>
-    <div>
+    <div class="filter-btn-group">
         <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
         <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDependentEvent(filter)"></p-button>
     </div>
 </ng-template>
 <ng-template #textIf let-filter>
     <input pInputText type="text" class="p-inputtext-sm" placeholder="Filter By text" [(ngModel)]="filter.value"/>
-    <div>
+    <div class="filter-btn-group">
         <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
         <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyTextEvent(filter)"></p-button>
     </div>
@@ -69,7 +68,7 @@
     <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="filter.showLoader">
         <div class="spinner-border text-info loader-placement"></div>
     </div>
-    <div>
+    <div class="filter-btn-group">
         <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
         <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDropdownEvent(filter)"></p-button>
     </div>
