@@ -82,12 +82,12 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Remark",
+                        "colName": "Activity Name",
                         "filterType": "text",
-                        "accessor": "remark",
+                        "accessor": "activityname",
                         "colWidth": {
                             "unit": "px",
-                            "value": 175
+                            "value": 300
                         }
                     },
                     {
@@ -100,12 +100,12 @@
                         }
                     },
                     {
-                        "colName": "Activity Name",
+                        "colName": "Remark",
                         "filterType": "text",
-                        "accessor": "activityname",
+                        "accessor": "remark",
                         "colWidth": {
                             "unit": "px",
-                            "value": 300
+                            "value": 175
                         }
                     },
                     {
@@ -310,11 +310,11 @@
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-23",
+                "type": "dropdown",
+                "id": "dnd-31",
                 "formName": "editImpedimentModal",
-                "name": "remarkEdit",
-                "label": "Remark"
+                "name": "activityDropdown-editModal",
+                "label": "Activity"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -329,8 +329,27 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/1",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
         },
         {
             "baseProperties": {
@@ -378,11 +397,11 @@
         },
         {
             "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-31",
+                "type": "text",
+                "id": "dnd-23",
                 "formName": "editImpedimentModal",
-                "name": "activityDropdown-editModal",
-                "label": "Activity"
+                "name": "remarkEdit",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -397,27 +416,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Activities",
-                "url": "/api/v1/tasks/MyTask/1",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                },
-                "onSuccess": {
-                    "apiDataAccessor": "payload"
-                }
-            },
-            "labelKey": "title",
-            "valueKey": "id",
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -608,11 +608,11 @@
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-18",
+                "type": "dropdown",
+                "id": "dnd-30",
+                "name": "activityDropdown-addModal",
                 "formName": "addImpedimentModal",
-                "name": "remarkAdd",
-                "label": "Remark"
+                "label": "Activity"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -627,8 +627,27 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/1",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
         },
         {
             "baseProperties": {
@@ -676,11 +695,11 @@
         },
         {
             "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-30",
-                "name": "activityDropdown-addModal",
+                "type": "text",
+                "id": "dnd-18",
                 "formName": "addImpedimentModal",
-                "label": "Activity"
+                "name": "remarkAdd",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -695,27 +714,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Activities",
-                "url": "/api/v1/tasks/MyTask/1",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                },
-                "onSuccess": {
-                    "apiDataAccessor": "payload"
-                }
-            },
-            "labelKey": "title",
-            "valueKey": "id",
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
