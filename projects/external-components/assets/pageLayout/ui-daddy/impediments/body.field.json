@@ -82,7 +82,7 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Activity Name",
+                        "colName": "Activity",
                         "filterType": "text",
                         "accessor": "activityname",
                         "colWidth": {
