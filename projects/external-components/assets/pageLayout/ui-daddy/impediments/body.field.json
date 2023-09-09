@@ -247,6 +247,29 @@
         {
             "baseProperties": {
                 "type": "hidden",
+                "id": "dnd-32",
+                "name": "userId",
+                "formName": "editImpedimentModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "hidden",
                 "id": "dnd-29",
                 "name": "impedimentIdEdit",
                 "formName": "editImpedimentModal",
@@ -570,6 +593,29 @@
     ],
     "dnd-11": [],
     "dnd-12": [
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-33",
+                "name": "userId",
+                "formName": "addImpedimentModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "userId",
+            "placeholder": null
+        },
         {
             "baseProperties": {
                 "type": "staticText",
