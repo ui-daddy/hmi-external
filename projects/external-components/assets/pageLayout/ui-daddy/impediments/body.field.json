@@ -251,6 +251,9 @@
                 "name": "userId",
                 "formName": "editImpedimentModal"
             },
+            "dynamicValueAccessor": [
+                "id"
+            ],
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -355,9 +358,16 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Activities",
-                "url": "/api/v1/tasks/MyTask/1",
+                "url": "/api/v1/tasks/MyTask/:userId",
                 "method": "GET",
-                "pathParams": [],
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
                 "queryParams": [],
                 "payloadParams": [],
                 "fetch": "ONLOAD",
@@ -600,6 +610,9 @@
                 "name": "userId",
                 "formName": "addImpedimentModal"
             },
+            "dynamicValueAccessor": [
+                "id"
+            ],
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -676,9 +689,16 @@
             "optionList": [],
             "optionsConfig": {
                 "name": "Get Activities",
-                "url": "/api/v1/tasks/MyTask/1",
+                "url": "/api/v1/tasks/MyTask/:userId",
                 "method": "GET",
-                "pathParams": [],
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
                 "queryParams": [],
                 "payloadParams": [],
                 "fetch": "ONLOAD",
