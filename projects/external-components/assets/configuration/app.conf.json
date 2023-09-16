@@ -101,8 +101,13 @@
             "localURL": "./assets/pageLayout/ui-daddy/dashboard/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
-            "conditions": []
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "dashboard",
@@ -381,6 +386,7 @@
     },
     "hmiAppConfiguration": {
         "ifPageNotFound": "login",
+        "sessionTimeoutInMinutes": 1,
         "title": "UI Daddy",
         "baseUrl": "https://upms-api.azurewebsites.net",
         "metaTags": [
@@ -480,8 +486,13 @@
             "localURL": "./assets/pageLayout/ui-daddy/vendors/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
-            "conditions": []
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "vendors",
@@ -526,8 +537,13 @@
             "localURL": "./assets/pageLayout/ui-daddy/users/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
-            "conditions": []
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "users",
@@ -572,8 +588,13 @@
             "localURL": "./assets/pageLayout/ui-daddy/impediments/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
-            "conditions": []
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "impediments",
@@ -669,8 +690,13 @@
             "localURL": "./assets/pageLayout/ui-daddy/myTask/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
-            "conditions": []
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "myTask",
@@ -715,8 +741,13 @@
             "localURL": "./assets/pageLayout/ui-daddy/boards/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
-            "conditions": []
+            "conditions": [
+                {
+                    "if": "authenticated != 'yes'",
+                    "onConditionSuccess": "login"
+                }
+            ],
+            "enabled": true
         },
         "globalPageSettings": {
             "title": "boards",
