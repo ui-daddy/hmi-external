@@ -204,15 +204,6 @@
                                 "event": "",
                                 "actions": [
                                     {
-                                        "actionType": "OPEN_MODAL",
-                                        "showLoading": true,
-                                        "target": "dnd-17"
-                                    },
-                                    {
-                                        "actionType": "WAIT_IN_MS",
-                                        "timer": 100
-                                    },
-                                    {
                                         "actionType": "SET_SHARED_DATA",
                                         "sharedData": [
                                             {
@@ -220,6 +211,13 @@
                                                 "staticData": "$ROW_DATA$"
                                             }
                                         ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-46$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
                                     },
                                     {
                                         "actionType": "setfield",
@@ -272,11 +270,13 @@
                                         "formName": "editVendorModal"
                                     },
                                     {
-                                        "actionType": "setfield",
-                                        "field": "$dnd-46$",
-                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
-                                        "condition": "true",
-                                        "formName": "editVendorModal"
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-17"
                                     }
                                 ],
                                 "debounce": 3000
@@ -1170,7 +1170,7 @@
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "levelEdit",
+                                        "mappedField": "levelAdd",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     }
