@@ -34,6 +34,7 @@
                 "visibleValue": "true"
             },
             "customAttributes": {
+                "showComponentLoaderOnApply": "reports-table",
                 "buttonOptions": {
                     "label": "",
                     "leftIcon": "pi-filter"
@@ -334,13 +335,9 @@
                     "params": {},
                     "postTransform": "dateTransform",
                     "onSuccess": {
-                        "apiDataAccessor": "",
-                        "actions": [{
-                            "actionType": "RELOAD_COMPONENT_DATA",
-                            "componentName": "reports-filter"
-                        }]
                     }
                 },
+                "triggerFilterGroupOnRefresh": "reports-filter",
                 "refreshTableActions": [],
                 "columnFilter": true,
                 "showExportExcelBtn": true,

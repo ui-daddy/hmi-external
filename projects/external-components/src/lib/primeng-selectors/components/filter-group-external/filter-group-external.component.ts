@@ -92,6 +92,12 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       } else if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
         this.applyFilter();
       } 
+      if (actionObj.actionType === "SHOW_COMPONENT_LOADER") {
+        this.filterLoader = true;
+      } 
+      if (actionObj.actionType === "HIDE_COMPONENT_LOADER") {
+        this.filterLoader = false;
+      }  
     });
 
     this.items = this.fieldObj.customAttributes?.filterOptions?.map((item: any, index:number) => {
@@ -222,6 +228,18 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     config.queryParams = this.filterParams(config.queryParams, data);
     config.pathParams = this.filterParams(config.pathParams, data);
     config.payloadParams = this.filterParams(config.payloadParams, data);
+
+    if (this.fieldObj.customAttributes?.showComponentLoaderOnApply) {
+      this.initializeEvents.emit({ name: "fireEvent", events: [
+        {
+          "event": "click",
+          "actions": [{
+            "actionType": "SHOW_COMPONENT_LOADER",
+            "componentName": this.fieldObj.customAttributes?.showComponentLoaderOnApply
+          }]
+        }
+      ], data: null});
+    }
     
     this.customApiCall(config, data).subscribe((data: any[]) => {
       this.updateFilterPill();  
@@ -229,6 +247,17 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       console.error(err);
     }), (() => {
       this.filterLoader = false;
+      if (this.fieldObj.customAttributes?.showComponentLoaderOnApply) {
+        this.initializeEvents.emit({ name: "fireEvent", events: [
+          {
+            "event": "click",
+            "actions": [{
+              "actionType": "HIDE_COMPONENT_LOADER",
+              "componentName": this.fieldObj.customAttributes?.showComponentLoaderOnApply
+            }]
+          }
+        ], data: null});
+      }
     }));
   }
 
