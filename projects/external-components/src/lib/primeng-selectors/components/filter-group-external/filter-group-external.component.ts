@@ -152,6 +152,14 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     }
   }
 
+  removeDependentDropdown(index: number, selectedValue: any,list: any[], event: any) {
+    event.stopPropagation();
+    if (list[index + 1]?.optionsConfig) {
+      list[index].value= null;
+      this.clearOtherDependentDropdown(list, index + 1);
+    }
+  }
+
   clearOtherDependentDropdown(list: any[], index: number) {
     for (; index < list.length; index++) {
       list[index].optionList = [];

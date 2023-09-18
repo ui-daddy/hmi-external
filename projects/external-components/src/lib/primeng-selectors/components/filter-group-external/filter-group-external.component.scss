@@ -102,4 +102,32 @@
             cursor: pointer;
         }
     }
+
+    .p-menuitem-text::after {
+        content: ">";
+        position: absolute;
+        right: 10px;
+        top: 46%;
+        transform: translateY(-50%);
+        font-size: 25px;
+    }
+
+    .pi-times {
+        cursor: pointer;
+    }
+
+    .dependent-dropdown-container {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dropdown-content {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
 }

@@ -45,7 +45,14 @@
     <div class="dependent-dd-container" *ngFor="let dependentObj of dependentList; let i = index">
         <p-dropdown [options]="dependentObj.optionList" placeholder="{{dependentObj.label}}" [(ngModel)]="dependentObj.value" 
             [optionLabel]="dependentObj.labelKey ? dependentObj.labelKey: 'label'" [optionValue]="dependentObj.valueKey ? dependentObj.valueKey: 'value'" 
-            (onChange)="changeDependentDropdown(i, dependentObj.value, dependentList)"></p-dropdown>
+            (onChange)="changeDependentDropdown(i, dependentObj.value, dependentList)">
+            <ng-template let-option pTemplate="selectedItem">
+                <div class="dependent-dropdown-container">
+                    <span class="dropdown-content" *ngIf="dependentObj.value">{{ dependentObj.value }}</span>
+                    <i class="pi pi-times" (click)="removeDependentDropdown(i, dependentObj.value, dependentList, $event)"></i>
+                </div>
+              </ng-template>
+        </p-dropdown>
         <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="dependentObj.showLoader">
             <div class="spinner-border text-info loader-placement"></div>
         </div>
