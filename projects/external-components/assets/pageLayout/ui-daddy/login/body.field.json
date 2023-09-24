@@ -186,23 +186,16 @@
                                             "varName": "familyName",
                                             "responseAccessor": "familyName",
                                             "cache": true
-                                        },
-                                        {
-                                            "varName": "authenticated",
-                                            "staticData": "yes",
-                                            "cache": true
                                         }
                                     ],
                                     "clearSharedData": [
-                                        "name",
-                                        "authenticated"
+                                        "name"
                                     ]
                                 },
                                 "onError": {
                                     "showErrorMessage": true,
                                     "clearSharedData": [
-                                        "name",
-                                        "authenticated"
+                                        "name"
                                     ]
                                 }
                             }
