@@ -1,30 +1,5 @@
 {
-    "dnd-73": [
-        {
-            "baseProperties": {
-                "id": "dnd-75",
-                "label": "MSETCL users",
-                "type": "tab"
-            },
-            "layoutProperties":{
-                "css": {
-                    "customClassName": "section__tab-full-width"
-                }
-            }
-        },
-        {
-            "baseProperties": {
-                "id": "dnd-76",
-                "label": "Vendor Users",
-                "type": "tab"
-            },
-            "layoutProperties":{
-                "css": {
-                    "customClassName": "section__tab-full-width"
-                }
-            }
-        }
-    ],
+    "dnd-73": [],
     "dnd-75": [],
     "dnd-0": [],
     "dnd-1": [],
@@ -521,16 +496,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
@@ -1502,16 +1477,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
@@ -2849,16 +2824,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
@@ -3763,7 +3738,7 @@
                 }
             ],
             "expressionProperties": {}
-        } 
+        }
     ],
     "dnd-80": [],
     "dnd-84": [
@@ -3830,16 +3805,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
