@@ -546,7 +546,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-53",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "msetclLevelEdit",
                 "formName": "editUserModal"
             },
@@ -1527,7 +1527,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-51",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "msetclLevelAdd",
                 "formName": "addUserModal"
             },
@@ -2874,7 +2874,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-153",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "levelEdit",
                 "formName": "editUserModal"
             },
@@ -3855,7 +3855,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-151",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "levelAdd",
                 "formName": "addUserModal"
             },
