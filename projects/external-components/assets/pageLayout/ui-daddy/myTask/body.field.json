@@ -147,12 +147,12 @@
                     "method": "GET",
                     "pathParams": [
                         {
-                          "paramName": "userId",
-                          "mappedField": "userId",
-                          "mappedValue": "",
-                          "valueFormat": "$SHARED_DATA(id)"
+                            "paramName": "userId",
+                            "mappedField": "userId",
+                            "mappedValue": "",
+                            "valueFormat": "$SHARED_DATA(id)"
                         }
-                      ], 
+                    ],
                     "params": {},
                     "postTransform": "multiDateTransform",
                     "onSuccess": {
