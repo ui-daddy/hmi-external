@@ -673,8 +673,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "myTask",
-            "layoutProperties": null
+            "title": "My Tasks",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "boards": {
