@@ -521,16 +521,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
@@ -546,7 +546,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-53",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "msetclLevelEdit",
                 "formName": "editUserModal"
             },
@@ -1502,16 +1502,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
@@ -1527,7 +1527,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-51",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "msetclLevelAdd",
                 "formName": "addUserModal"
             },
@@ -2849,16 +2849,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
@@ -2874,7 +2874,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-153",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "levelEdit",
                 "formName": "editUserModal"
             },
@@ -3763,7 +3763,7 @@
                 }
             ],
             "expressionProperties": {}
-        } 
+        }
     ],
     "dnd-80": [],
     "dnd-84": [
@@ -3830,16 +3830,16 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
                 },
                 {
                     "value": "substation",
@@ -3855,7 +3855,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-151",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "levelAdd",
                 "formName": "addUserModal"
             },
