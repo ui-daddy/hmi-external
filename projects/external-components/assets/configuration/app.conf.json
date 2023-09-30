@@ -105,8 +105,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "dashboard",
-            "layoutProperties": null
+            "title": "Dashboard",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "chart": {
