@@ -164,7 +164,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "Project Plan",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "projects": {
