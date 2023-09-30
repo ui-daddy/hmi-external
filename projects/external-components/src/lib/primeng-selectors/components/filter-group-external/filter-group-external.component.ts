@@ -16,7 +16,7 @@ export interface IFilterGroup {
   valueKey?: string;
   filterApplied?: boolean;
   optionList?: any[];
-  dependentList?: IFilterGroup[];
+  filterGroup?: IFilterGroup[];
   pillLabel: string;
   showLoader: boolean;
 }
@@ -48,8 +48,8 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     this.filterFormGrp = this.fieldObj.customAttributes?.filterOptions?.map((v: any)=> {
       const data = { ...v, show: false };
       if (v.type === FilterEventType.DEPENDENT) {
-        const dependentList = v.dependentList.map((dep:any)=> ({ ...dep, value: '' }))
-        return {...data, dependentList}
+        const filterGroup = v.filterGroup.map((dep:any)=> ({ ...dep, value: '' }))
+        return {...data, filterGroup}
       }
       return data;
     });
@@ -80,6 +80,12 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     this.unlistener();
   }
 
+  restoreValue() {
+    if (this.appliedFilterPills.length > 0) {
+      this.filterFormGrp = JSON.parse(JSON.stringify(this.appliedFilterPills));
+    }
+  }
+
   ngOnInit() {
     this.initializeFilterFormGrp();
 
@@ -102,13 +108,14 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
 
     this.items = this.fieldObj.customAttributes?.filterOptions?.map((item: any, index:number) => {
       item.command = () => {
+        this.restoreValue();
         this.hideFilterFormGrp();
         const filterObj = this.filterFormGrp[index];
         switch(item.type.toLowerCase()) {
           case FilterEventType.DEPENDENT:            
             filterObj.show = true;
-            if(filterObj.dependentList && filterObj.dependentList.length) {
-              this.loadDropdownDataFromAPI((filterObj.dependentList[0]) || []);
+            if(filterObj.filterGroup && filterObj.filterGroup.length) {
+              this.loadDropdownDataFromAPI((filterObj.filterGroup[0]) || []);
             }
             break;
           case FilterEventType.TEXT:
@@ -179,7 +186,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   getFilterPillValue(filter: IFilterGroup): IFilterGroup {
     filter.pillLabel = "";
     if (filter.type === 'dependent') {
-      filter.dependentList?.forEach(((depF: IFilterGroup) => {
+      filter.filterGroup?.forEach(((depF: IFilterGroup) => {
         filter.pillLabel += depF.label + ": " + depF.value + ", ";
       }));
       if (filter.pillLabel.length >=2 && filter.pillLabel[filter.pillLabel.length - 2] === ", ") {
@@ -214,7 +221,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     this.filterFormGrp.forEach((filter: IFilterGroup) => {
       if(filter.filterApplied) {
         if (filter.type === 'dependent') {
-          filter.dependentList?.forEach(((depF: IFilterGroup) => {
+          filter.filterGroup?.forEach(((depF: IFilterGroup) => {
             if (depF.valueKey) {
               data[depF.valueKey] = depF.value;
             }
