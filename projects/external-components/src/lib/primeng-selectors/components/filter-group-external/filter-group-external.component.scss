@@ -28,7 +28,7 @@
 
 .menu-filter-option {
     position: absolute;
-    left: 13rem;
+    left: 12.6rem;
     top: calc(100% + 5px);
     z-index: 1001;
     background-color: white;
@@ -107,13 +107,17 @@
         content: ">";
         position: absolute;
         right: 10px;
-        top: 46%;
+        top: 43%;
         transform: translateY(-50%);
         font-size: 25px;
     }
 
     .pi-times {
         cursor: pointer;
+        font-size: 12px;
+        position: absolute;
+        cursor: pointer;
+        right: 31px;
     }
 
     .dependent-dropdown-container {
