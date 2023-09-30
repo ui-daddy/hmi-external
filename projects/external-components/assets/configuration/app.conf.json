@@ -537,8 +537,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "users",
-            "layoutProperties": null
+            "title": "Users",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "impediments": {
