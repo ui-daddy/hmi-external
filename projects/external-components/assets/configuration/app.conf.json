@@ -615,8 +615,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "impediments",
-            "layoutProperties": null
+            "title": "Issues",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "reports": {
