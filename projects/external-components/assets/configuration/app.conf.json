@@ -511,8 +511,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "vendors",
-            "layoutProperties": null
+            "title": "Vendor Management",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "users": {
