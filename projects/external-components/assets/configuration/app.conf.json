@@ -334,7 +334,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "My Profile",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "forget-password": {
