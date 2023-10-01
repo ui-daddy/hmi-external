@@ -55,12 +55,12 @@
                                     "url": "/api/v1/Levels/Get?level=zone",
                                     "method": "GET",
                                     "pathParams": [],
-                                    "queryParams": [                                        
-                                    ],
+                                    "queryParams": [],
                                     "payloadParams": [],
-                                    "fetch": "ONLOAD"                                    
+                                    "fetch": "ONLOAD"
                                 }
-                            }, {
+                            },
+                            {
                                 "label": "Circle",
                                 "optionList": [],
                                 "labelKey": "circle",
@@ -71,12 +71,12 @@
                                     "url": "/api/v1/Levels/Get?level=circle",
                                     "method": "GET",
                                     "pathParams": [],
-                                    "queryParams": [                                       
-                                    ],
+                                    "queryParams": [],
                                     "payloadParams": [],
-                                    "fetch": "ONLOAD"                                    
+                                    "fetch": "ONLOAD"
                                 }
-                            }, {
+                            },
+                            {
                                 "label": "Division",
                                 "optionList": [],
                                 "labelKey": "dividion",
@@ -87,12 +87,12 @@
                                     "url": "/api/v1/Levels/Get?level=division",
                                     "method": "GET",
                                     "pathParams": [],
-                                    "queryParams": [                                        
-                                    ],
+                                    "queryParams": [],
                                     "payloadParams": [],
                                     "fetch": "ONLOAD"
                                 }
-                            }, {
+                            },
+                            {
                                 "label": "Substation",
                                 "optionList": [],
                                 "labelKey": "name",
@@ -103,8 +103,7 @@
                                     "url": "/api/v1/Levels/Get?level=substation",
                                     "method": "GET",
                                     "pathParams": [],
-                                    "queryParams": [
-                                    ],
+                                    "queryParams": [],
                                     "payloadParams": [],
                                     "fetch": "ONLOAD"
                                 }
@@ -160,13 +159,15 @@
                         "clearSharedData": [],
                         "apiDataAccessor": "",
                         "message": "",
-                        "actions": [{
-                            "actionType": "setfield",
-                            "field": "$dnd-2$",
-                            "fieldValue": "$RESPONSE$",
-                            "condition": "true",
-                            "formName": ""
-                        }]
+                        "actions": [
+                            {
+                                "actionType": "setfield",
+                                "field": "$dnd-2$",
+                                "fieldValue": "$RESPONSE$",
+                                "condition": "true",
+                                "formName": ""
+                            }
+                        ]
                     },
                     "onError": {
                         "pageUrl": "",
@@ -334,8 +335,7 @@
                     "method": "GET",
                     "params": {},
                     "postTransform": "dateTransform",
-                    "onSuccess": {
-                    }
+                    "onSuccess": {}
                 },
                 "triggerFilterGroupOnRefresh": "reports-filter",
                 "refreshTableActions": [],
