@@ -672,8 +672,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "reports",
-            "layoutProperties": null
+            "title": "Reports",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "myTask": {
