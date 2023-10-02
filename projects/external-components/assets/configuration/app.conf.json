@@ -334,7 +334,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "My Profile",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "forget-password": {
@@ -504,8 +511,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "vendors",
-            "layoutProperties": null
+            "title": "Vendor Management",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "users": {
@@ -602,8 +615,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "impediments",
-            "layoutProperties": null
+            "title": "Issues",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "reports": {
@@ -653,8 +672,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "reports",
-            "layoutProperties": null
+            "title": "Reports",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "myTask": {
