@@ -146,10 +146,10 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       if (data && data.length && ddOption.filterOptionListBy) {
         ddOption.optionList = ddOption.optionList.filter((v:any)=> v[ddOption.filterOptionListBy] === selectedValue);
       }
+      ddOption.showLoader = false;
     }, ((err: any) => {
       ddOption.optionList = [];
       console.error(err);
-    }), (() => {
       ddOption.showLoader = false;
     }));
   }
@@ -185,7 +185,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
 
   getFilterPillValue(filter: IFilterGroup): IFilterGroup {
     filter.pillLabel = "";
-    if (filter.type === 'dependent') {
+    if (filter.type === FilterEventType.DEPENDENT) {
       filter.filterGroup?.forEach(((depF: IFilterGroup) => {
         filter.pillLabel += depF.label + ": " + depF.value + ", ";
       }));
@@ -236,7 +236,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     return data;
   }
 
-  applyFilter() {
+  applyFilter(isRemove?: boolean, filter?: IFilterGroup) {
     this.filterLoader = true;
     const data = this.prepareData(),
           config = JSON.parse(JSON.stringify(this.fieldObj.customAttributes?.filterConfig));
@@ -257,23 +257,35 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     }
     
     this.customApiCall(config, data).subscribe((data: any[]) => {
-      this.updateFilterPill();  
+      if (isRemove && filter) {
+        filter.filterApplied = false;
+        if (filter.type === FilterEventType.DEPENDENT) {
+          filter.filterGroup?.map((fObj) => { fObj.value = ''});
+        } else {
+          filter.value = '';
+        }
+      }
+      this.updateFilterPill();
+      this.hideComponentLoader();
     }, ((err: any) => {
       console.error(err);
-    }), (() => {
-      this.filterLoader = false;
-      if (this.fieldObj.customAttributes?.showComponentLoaderOnApply) {
-        this.initializeEvents.emit({ name: "fireEvent", events: [
-          {
-            "event": "click",
-            "actions": [{
-              "actionType": "HIDE_COMPONENT_LOADER",
-              "componentName": this.fieldObj.customAttributes?.showComponentLoaderOnApply
-            }]
-          }
-        ], data: null});
-      }
+      this.hideComponentLoader();
     }));
+  }
+
+  hideComponentLoader() {
+    this.filterLoader = false;
+    if (this.fieldObj.customAttributes?.showComponentLoaderOnApply) {
+      this.initializeEvents.emit({ name: "fireEvent", events: [
+        {
+          "event": "click",
+          "actions": [{
+            "actionType": "HIDE_COMPONENT_LOADER",
+            "componentName": this.fieldObj.customAttributes?.showComponentLoaderOnApply
+          }]
+        }
+      ], data: null});
+    }
   }
 
   filterParams(params: any, data: any): any[] {
@@ -281,9 +293,8 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   }
 
   removeFilter(filter: IFilterGroup, index: number) {
-    filter.filterApplied = false;
     this.filterFormGrp[index].filterApplied = false;
-    this.applyFilter();
+    this.applyFilter(true, this.filterFormGrp[index]);
   }
 
   ngOnDestroy(): void {
