@@ -9,6 +9,7 @@ export * from './lib/primeng-selectors/components/table-external/table-external.
 export * from './lib/primeng-selectors/components/dropdown-external/dropdown-external.component';
 export * from './lib/primeng-selectors/components/charts-external/charts-external.component';
 export * from './lib/primeng-selectors/components/iframe-external/iframe-external.component';
+export * from './lib/primeng-selectors/components/filter-group-external/filter-group-external.component';
 export * from 'primeng/dropdown';
 export * from 'primeng/password';
 export * from 'primeng/checkbox';

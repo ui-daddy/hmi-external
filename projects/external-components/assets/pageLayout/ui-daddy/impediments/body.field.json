@@ -7,7 +7,7 @@
                 "type": "button",
                 "id": "dnd-4",
                 "name": "",
-                "label": "Add Impedement"
+                "label": "Add Issue"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -82,12 +82,12 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Remark",
+                        "colName": "Activity",
                         "filterType": "text",
-                        "accessor": "remark",
+                        "accessor": "activityname",
                         "colWidth": {
                             "unit": "px",
-                            "value": 175
+                            "value": 300
                         }
                     },
                     {
@@ -100,12 +100,12 @@
                         }
                     },
                     {
-                        "colName": "Activity Name",
+                        "colName": "Remark",
                         "filterType": "text",
-                        "accessor": "activityname",
+                        "accessor": "remark",
                         "colWidth": {
                             "unit": "px",
-                            "value": 300
+                            "value": 175
                         }
                     },
                     {
@@ -216,7 +216,7 @@
                         }
                     }
                 ],
-                "caption": "Impediments",
+                "caption": "Issues",
                 "summary": null,
                 "globalFilterFields": [
                     "remark",
@@ -244,6 +244,32 @@
     ],
     "dnd-6": [],
     "dnd-21": [
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-32",
+                "name": "userId",
+                "formName": "editImpedimentModal"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
         {
             "baseProperties": {
                 "type": "hidden",
@@ -306,15 +332,15 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Edit Impediment"
+            "value": "Edit Issue"
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-23",
+                "type": "dropdown",
+                "id": "dnd-31",
                 "formName": "editImpedimentModal",
-                "name": "remarkEdit",
-                "label": "Remark"
+                "name": "activityDropdown-editModal",
+                "label": "Activity"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -329,8 +355,34 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/:userId",
+                "method": "GET",
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
         },
         {
             "baseProperties": {
@@ -378,11 +430,11 @@
         },
         {
             "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-31",
+                "type": "text",
+                "id": "dnd-23",
                 "formName": "editImpedimentModal",
-                "name": "activityDropdown-editModal",
-                "label": "Activity"
+                "name": "remarkEdit",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -397,27 +449,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Activities",
-                "url": "/api/v1/tasks/MyTask/1",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                },
-                "onSuccess": {
-                    "apiDataAccessor": "payload"
-                }
-            },
-            "labelKey": "title",
-            "valueKey": "id",
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -572,6 +605,32 @@
     "dnd-12": [
         {
             "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-33",
+                "name": "userId",
+                "formName": "addImpedimentModal"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "userId",
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-13",
                 "name": "addImpedimentTitle",
@@ -604,15 +663,15 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Add Impedement"
+            "value": "Add Issue"
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-18",
+                "type": "dropdown",
+                "id": "dnd-30",
+                "name": "activityDropdown-addModal",
                 "formName": "addImpedimentModal",
-                "name": "remarkAdd",
-                "label": "Remark"
+                "label": "Activity"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -627,8 +686,34 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/:userId",
+                "method": "GET",
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
         },
         {
             "baseProperties": {
@@ -676,11 +761,11 @@
         },
         {
             "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-30",
-                "name": "activityDropdown-addModal",
+                "type": "text",
+                "id": "dnd-18",
                 "formName": "addImpedimentModal",
-                "label": "Activity"
+                "name": "remarkAdd",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -695,27 +780,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Activities",
-                "url": "/api/v1/tasks/MyTask/1",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                },
-                "onSuccess": {
-                    "apiDataAccessor": "payload"
-                }
-            },
-            "labelKey": "title",
-            "valueKey": "id",
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {

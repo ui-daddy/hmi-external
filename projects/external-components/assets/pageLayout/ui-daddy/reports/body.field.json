@@ -3,6 +3,187 @@
         {
             "baseProperties": {
                 "type": "dynamicField",
+                "id": "dnd-3",
+                "name": "reports-filter",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "filter-group-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".filter-group-css",
+                            "xs": {
+                                "position": "absolute",
+                                "z-index": "1",
+                                "top": "33px",
+                                "left": "30px",
+                                "width": "68%"
+                            }
+                        }
+                    ],
+                    "themeClass": "p-button-icon-only p-button-outlined"
+                },
+                "orientation": null
+            },
+            "libraryComponent": "FilterGroupExternalComponent",
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "showComponentLoaderOnApply": "reports-table",
+                "buttonOptions": {
+                    "label": "",
+                    "leftIcon": "pi-filter"
+                },
+                "filterOptions": [
+                    {
+                        "label": "Filter By Area",
+                        "icon": "",
+                        "type": "dependent",
+                        "dependentList": [
+                            {
+                                "label": "Zone",
+                                "optionList": [],
+                                "labelKey": "zone",
+                                "valueKey": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get?level=zone",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [                                        
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"                                    
+                                }
+                            }, {
+                                "label": "Circle",
+                                "optionList": [],
+                                "labelKey": "circle",
+                                "valueKey": "circle",
+                                "filterOptionListBy": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Circle",
+                                    "url": "/api/v1/Levels/Get?level=circle",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [                                       
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"                                    
+                                }
+                            }, {
+                                "label": "Division",
+                                "optionList": [],
+                                "labelKey": "dividion",
+                                "valueKey": "dividion",
+                                "filterOptionListBy": "circle",
+                                "optionsConfig": {
+                                    "name": "Get Division",
+                                    "url": "/api/v1/Levels/Get?level=division",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [                                        
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            }, {
+                                "label": "Substation",
+                                "optionList": [],
+                                "labelKey": "name",
+                                "valueKey": "name",
+                                "filterOptionListBy": "division",
+                                "optionsConfig": {
+                                    "name": "Get substation",
+                                    "url": "/api/v1/Levels/Get?level=substation",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [
+                                    ],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "filterConfig": {
+                    "name": "Filter Report",
+                    "url": "/api/v1/Report/OverDueReport",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "zone",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "zone",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "circle",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "circle",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "division",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "dividion",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "substation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "name",
+                            "valueFormat": ""
+                        }
+                    ],
+                    "postTransform": "dateTransform",
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "responseType": "",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        "pageUrl": "",
+                        "deleteTableRow": false,
+                        "showSuccessMessage": false,
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "",
+                        "actions": [{
+                            "actionType": "setfield",
+                            "field": "$dnd-2$",
+                            "fieldValue": "$RESPONSE$",
+                            "condition": "true",
+                            "formName": ""
+                        }]
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
                 "id": "dnd-2",
                 "name": "reports-table",
                 "library": "primeng"
@@ -12,7 +193,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reports_table_status [aria-label=\"Assigned\"] [aria-label=\"In Progress\"] ",
+                    "customClassName": "reports_table_status",
                     "configuration": [
                         {
                             "selectorName": ".reports_table_status",
@@ -134,7 +315,7 @@
                         }
                     }
                 ],
-                "caption": "Reports",
+                "caption": "",
                 "summary": null,
                 "globalFilterFields": [
                     "Priority",
@@ -154,9 +335,10 @@
                     "params": {},
                     "postTransform": "dateTransform",
                     "onSuccess": {
-                        "apiDataAccessor": ""
                     }
                 },
+                "triggerFilterGroupOnRefresh": "reports-filter",
+                "refreshTableActions": [],
                 "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
