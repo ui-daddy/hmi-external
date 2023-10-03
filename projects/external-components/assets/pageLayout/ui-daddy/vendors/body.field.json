@@ -874,7 +874,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-44",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelAdd",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
