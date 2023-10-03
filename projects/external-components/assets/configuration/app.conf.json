@@ -105,8 +105,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "dashboard",
-            "layoutProperties": null
+            "title": "Dashboard",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "chart": {
@@ -158,7 +164,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "Project Plan",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "projects": {
@@ -210,7 +223,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "Project",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "my-task": {
@@ -314,7 +334,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "My Profile",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "forget-password": {
@@ -484,8 +511,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "vendors",
-            "layoutProperties": null
+            "title": "Vendor Management",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "users": {
@@ -530,8 +563,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "users",
-            "layoutProperties": null
+            "title": "Users",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "impediments": {
@@ -576,8 +615,14 @@
             "conditions": []
         },
         "globalPageSettings": {
-            "title": "impediments",
-            "layoutProperties": null
+            "title": "Issues",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "reports": {
@@ -627,8 +672,14 @@
             "enabled": true
         },
         "globalPageSettings": {
-            "title": "reports",
-            "layoutProperties": null
+            "title": "Reports",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     },
     "myTask": {
