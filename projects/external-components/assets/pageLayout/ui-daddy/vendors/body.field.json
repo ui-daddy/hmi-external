@@ -934,7 +934,7 @@
                 "queryParams": [
                     {
                         "paramName": "level",
-                        "mappedField": "levelTypeAdd ",
+                        "mappedField": "levelTypeAdd",
                         "mappedValue": "value"
                     }
                 ],
