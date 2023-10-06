@@ -187,9 +187,11 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     filter.pillLabel = "";
     if (filter.type === FilterEventType.DEPENDENT) {
       filter.filterGroup?.forEach(((depF: IFilterGroup) => {
-        filter.pillLabel += depF.label + ": " + depF.value + ", ";
+        if (depF.value) {
+          filter.pillLabel += depF.label + ": " + depF.value + ", ";
+        }
       }));
-      if (filter.pillLabel.length >=2 && filter.pillLabel[filter.pillLabel.length - 2] === ", ") {
+      if (filter.pillLabel.length >=2 && filter.pillLabel[filter.pillLabel.length - 2] === ",") {
         filter.pillLabel = filter.pillLabel.slice(0, filter.pillLabel.length - 2);
       }
     } else {
@@ -298,6 +300,8 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   }
 
   ngOnDestroy(): void {
-    this.unlistener();
+    if (this.unlistener) {
+      this.unlistener();
+    }
   }
 }

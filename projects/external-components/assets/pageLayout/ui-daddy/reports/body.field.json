@@ -146,6 +146,7 @@
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
                     "responseType": "",
                     "beforeSubmit": {
                         "action": []
