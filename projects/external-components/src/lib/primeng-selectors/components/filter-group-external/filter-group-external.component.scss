@@ -103,21 +103,15 @@
         }
     }
 
-    .p-menuitem-text::after {
-        content: ">";
-        position: absolute;
-        right: 10px;
-        top: 43%;
-        transform: translateY(-50%);
-        font-size: 25px;
-    }
-
-    .pi-times {
-        cursor: pointer;
-        font-size: 12px;
-        position: absolute;
-        cursor: pointer;
-        right: 31px;
+    .filter-menu-popup {
+        .p-menuitem-text::after {
+            content: ">";
+            position: absolute;
+            right: 10px;
+            top: 43%;
+            transform: translateY(-50%);
+            font-size: 25px;
+        }
     }
 
     .dependent-dropdown-container {
@@ -126,12 +120,19 @@
         align-items: center;
         width: 100%;
         justify-content: space-between;
-    }
 
-    .dropdown-content {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
+        .pi-times {
+            cursor: pointer;
+            font-size: 12px;
+            position: absolute;
+            cursor: pointer;
+            right: 31px;
+        }
 
+        .dropdown-content {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
 }
