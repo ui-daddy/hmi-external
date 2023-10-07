@@ -17,11 +17,20 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   ngOnInit(): void {
-    this.refreshTable();
+    this.refreshTable(true);
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
         this.refreshTable();
-      }      
+      }
+      if (actionObj.actionType === "setfield") {
+        this.data = actionObj.data;
+      }
+      if (actionObj.actionType === "SHOW_COMPONENT_LOADER") {
+        this.primeElement.loading = true;
+      }
+      if (actionObj.actionType === "HIDE_COMPONENT_LOADER") {
+        this.primeElement.loading = false;
+      }
     });
   }
 
@@ -29,13 +38,25 @@ export class TableExternalComponent extends CommonExternalComponent implements O
     this.primeElement!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
   }
 
-  refreshTable() {
-    this.primeElement.loading = true;
-    if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
-      this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {        
-        this.data = data;
-        this.primeElement.loading = false;
-      });
+  refreshTable(isOnLoad?: boolean) {
+    if (this.fieldObj.customAttributes?.triggerFilterGroupOnRefresh && !isOnLoad) {
+      this.initializeEvents.emit({ name: "fireEvent", events: [
+        {
+          "event": "click",
+          "actions": [{
+            "actionType": "RELOAD_COMPONENT_DATA",
+            "componentName": this.fieldObj.customAttributes?.triggerFilterGroupOnRefresh
+          }]
+        }
+      ], data: null});
+    } else {
+      this.primeElement.loading = true;
+      if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
+        this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {
+          this.data = data;
+          this.primeElement.loading = false;
+        });
+      }
     }
   }
 
