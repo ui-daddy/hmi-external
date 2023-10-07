@@ -513,7 +513,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-53",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "msetclLevelEdit",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -1494,7 +1516,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-51",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "msetclLevelAdd",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -2841,7 +2885,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-153",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelEdit",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -3822,7 +3888,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-151",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelAdd",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
