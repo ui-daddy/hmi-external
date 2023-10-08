@@ -555,7 +555,7 @@
                     "label": "Division"
                 },
                 {
-                    "value": "substation",
+                    "value": "Substation",
                     "label": "Substation"
                 }
             ],
@@ -1558,7 +1558,7 @@
                     "label": "Division"
                 },
                 {
-                    "value": "substation",
+                    "value": "Substation",
                     "label": "Substation"
                 }
             ],
@@ -2293,7 +2293,7 @@
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "levelAdd",
+                                        "mappedField": "msetclLevelAdd",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
@@ -2927,7 +2927,7 @@
                     "label": "Division"
                 },
                 {
-                    "value": "substation",
+                    "value": "Substation",
                     "label": "Substation"
                 }
             ],
@@ -3930,7 +3930,7 @@
                     "label": "Division"
                 },
                 {
-                    "value": "substation",
+                    "value": "Substation",
                     "label": "Substation"
                 }
             ],
