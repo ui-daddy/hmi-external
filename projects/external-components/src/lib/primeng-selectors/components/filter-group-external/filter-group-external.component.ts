@@ -16,7 +16,7 @@ export interface IFilterGroup {
   valueKey?: string;
   filterApplied?: boolean;
   optionList?: any[];
-  dependentList?: IFilterGroup[];
+  filterGroup?: IFilterGroup[];
   pillLabel: string;
   showLoader: boolean;
 }
@@ -48,8 +48,8 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     this.filterFormGrp = this.fieldObj.customAttributes?.filterOptions?.map((v: any)=> {
       const data = { ...v, show: false };
       if (v.type === FilterEventType.DEPENDENT) {
-        const dependentList = v.dependentList.map((dep:any)=> ({ ...dep, value: '' }))
-        return {...data, dependentList}
+        const filterGroup = v.filterGroup.map((dep:any)=> ({ ...dep, value: '' }))
+        return {...data, filterGroup}
       }
       return data;
     });
@@ -80,6 +80,12 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     this.unlistener();
   }
 
+  restoreValue() {
+    if (this.appliedFilterPills.length > 0) {
+      this.filterFormGrp = JSON.parse(JSON.stringify(this.appliedFilterPills));
+    }
+  }
+
   ngOnInit() {
     this.initializeFilterFormGrp();
 
@@ -102,13 +108,14 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
 
     this.items = this.fieldObj.customAttributes?.filterOptions?.map((item: any, index:number) => {
       item.command = () => {
+        this.restoreValue();
         this.hideFilterFormGrp();
         const filterObj = this.filterFormGrp[index];
         switch(item.type.toLowerCase()) {
           case FilterEventType.DEPENDENT:            
             filterObj.show = true;
-            if(filterObj.dependentList && filterObj.dependentList.length) {
-              this.loadDropdownDataFromAPI((filterObj.dependentList[0]) || []);
+            if(filterObj.filterGroup && filterObj.filterGroup.length) {
+              this.loadDropdownDataFromAPI((filterObj.filterGroup[0]) || []);
             }
             break;
           case FilterEventType.TEXT:
@@ -139,10 +146,10 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       if (data && data.length && ddOption.filterOptionListBy) {
         ddOption.optionList = ddOption.optionList.filter((v:any)=> v[ddOption.filterOptionListBy] === selectedValue);
       }
+      ddOption.showLoader = false;
     }, ((err: any) => {
       ddOption.optionList = [];
       console.error(err);
-    }), (() => {
       ddOption.showLoader = false;
     }));
   }
@@ -178,11 +185,13 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
 
   getFilterPillValue(filter: IFilterGroup): IFilterGroup {
     filter.pillLabel = "";
-    if (filter.type === 'dependent') {
-      filter.dependentList?.forEach(((depF: IFilterGroup) => {
-        filter.pillLabel += depF.label + ": " + depF.value + ", ";
+    if (filter.type === FilterEventType.DEPENDENT) {
+      filter.filterGroup?.forEach(((depF: IFilterGroup) => {
+        if (depF.value) {
+          filter.pillLabel += depF.label + ": " + depF.value + ", ";
+        }
       }));
-      if (filter.pillLabel.length >=2 && filter.pillLabel[filter.pillLabel.length - 2] === ", ") {
+      if (filter.pillLabel.length >=2 && filter.pillLabel[filter.pillLabel.length - 2] === ",") {
         filter.pillLabel = filter.pillLabel.slice(0, filter.pillLabel.length - 2);
       }
     } else {
@@ -214,7 +223,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     this.filterFormGrp.forEach((filter: IFilterGroup) => {
       if(filter.filterApplied) {
         if (filter.type === 'dependent') {
-          filter.dependentList?.forEach(((depF: IFilterGroup) => {
+          filter.filterGroup?.forEach(((depF: IFilterGroup) => {
             if (depF.valueKey) {
               data[depF.valueKey] = depF.value;
             }
@@ -229,7 +238,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     return data;
   }
 
-  applyFilter() {
+  applyFilter(isRemove?: boolean, filter?: IFilterGroup) {
     this.filterLoader = true;
     const data = this.prepareData(),
           config = JSON.parse(JSON.stringify(this.fieldObj.customAttributes?.filterConfig));
@@ -250,23 +259,35 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     }
     
     this.customApiCall(config, data).subscribe((data: any[]) => {
-      this.updateFilterPill();  
+      if (isRemove && filter) {
+        filter.filterApplied = false;
+        if (filter.type === FilterEventType.DEPENDENT) {
+          filter.filterGroup?.map((fObj) => { fObj.value = ''});
+        } else {
+          filter.value = '';
+        }
+      }
+      this.updateFilterPill();
+      this.hideComponentLoader();
     }, ((err: any) => {
       console.error(err);
-    }), (() => {
-      this.filterLoader = false;
-      if (this.fieldObj.customAttributes?.showComponentLoaderOnApply) {
-        this.initializeEvents.emit({ name: "fireEvent", events: [
-          {
-            "event": "click",
-            "actions": [{
-              "actionType": "HIDE_COMPONENT_LOADER",
-              "componentName": this.fieldObj.customAttributes?.showComponentLoaderOnApply
-            }]
-          }
-        ], data: null});
-      }
+      this.hideComponentLoader();
     }));
+  }
+
+  hideComponentLoader() {
+    this.filterLoader = false;
+    if (this.fieldObj.customAttributes?.showComponentLoaderOnApply) {
+      this.initializeEvents.emit({ name: "fireEvent", events: [
+        {
+          "event": "click",
+          "actions": [{
+            "actionType": "HIDE_COMPONENT_LOADER",
+            "componentName": this.fieldObj.customAttributes?.showComponentLoaderOnApply
+          }]
+        }
+      ], data: null});
+    }
   }
 
   filterParams(params: any, data: any): any[] {
@@ -274,12 +295,13 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   }
 
   removeFilter(filter: IFilterGroup, index: number) {
-    filter.filterApplied = false;
     this.filterFormGrp[index].filterApplied = false;
-    this.applyFilter();
+    this.applyFilter(true, this.filterFormGrp[index]);
   }
 
   ngOnDestroy(): void {
-    this.unlistener();
+    if (this.unlistener) {
+      this.unlistener();
+    }
   }
 }

@@ -13,7 +13,7 @@
     <div *ngIf="showSubMenuOption" class="menu-filter-option" id="filter-menu-subpopup-{{fieldObj.baseProperties.id}}">
         <ng-container *ngFor="let filter of filterFormGrp">
             <div class="dependent-event-container" *ngIf="filter.show && filter.type ==='dependent'">
-                <ng-template *ngTemplateOutlet="dependentIf;context: { $implicit: filter.dependentList && filter.dependentList.length ? filter.dependentList : [], filter: filter }"></ng-template>
+                <ng-template *ngTemplateOutlet="dependentIf;context: { $implicit: filter.filterGroup && filter.filterGroup.length ? filter.filterGroup : [], filter: filter }"></ng-template>
             </div>
             <div class="text-event-container" *ngIf="filter.show && filter.type ==='text'">
                 <ng-template *ngTemplateOutlet="textIf;context: { $implicit: filter }"></ng-template>
@@ -41,15 +41,15 @@
     </div>
 </div>
 
-<ng-template #dependentIf let-dependentList let-filter="filter">
-    <div class="dependent-dd-container" *ngFor="let dependentObj of dependentList; let i = index">
+<ng-template #dependentIf let-filterGroup let-filter="filter">
+    <div class="dependent-dd-container" *ngFor="let dependentObj of filterGroup; let i = index">
         <p-dropdown [options]="dependentObj.optionList" placeholder="{{dependentObj.label}}" [(ngModel)]="dependentObj.value" 
             [optionLabel]="dependentObj.labelKey ? dependentObj.labelKey: 'label'" [optionValue]="dependentObj.valueKey ? dependentObj.valueKey: 'value'" 
-            (onChange)="changeDependentDropdown(i, dependentObj.value, dependentList)">
+            (onChange)="changeDependentDropdown(i, dependentObj.value, filterGroup)">
             <ng-template let-option pTemplate="selectedItem">
                 <div class="dependent-dropdown-container">
                     <span class="dropdown-content" *ngIf="dependentObj.value">{{ dependentObj.value }}</span>
-                    <i class="pi pi-times" (click)="removeDependentDropdown(i, dependentObj.value, dependentList, $event)"></i>
+                    <i class="pi pi-times" (click)="removeDependentDropdown(i, dependentObj.value, filterGroup, $event)"></i>
                 </div>
               </ng-template>
         </p-dropdown>
