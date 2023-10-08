@@ -2293,7 +2293,7 @@
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "levelAdd",
+                                        "mappedField": "msetclLevelAdd",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
