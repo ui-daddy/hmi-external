@@ -44,7 +44,7 @@
                         "label": "Filter By Area",
                         "icon": "",
                         "type": "dependent",
-                        "dependentList": [
+                        "filterGroup": [
                             {
                                 "label": "Zone",
                                 "optionList": [],
@@ -146,6 +146,7 @@
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
                     "responseType": "",
                     "beforeSubmit": {
                         "action": []
