@@ -34,14 +34,10 @@
                     "actions": [
                         {
                             "actionType": "setfield",
-                            "field": "$dnd-12$",
+                            "field": "dnd-12",
                             "fieldValue": "",
                             "condition": "true",
                             "formName": ""
-                        },
-                        {
-                            "actionType": "WAIT_IN_MS",
-                            "timer": 100
                         },
                         {
                             "actionType": "OPEN_MODAL",
