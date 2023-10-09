@@ -33,6 +33,17 @@
                     "debounce": null,
                     "actions": [
                         {
+                            "actionType": "setfield",
+                            "field": "$dnd-12$",
+                            "fieldValue": "",
+                            "condition": "true",
+                            "formName": ""
+                        },
+                        {
+                            "actionType": "WAIT_IN_MS",
+                            "timer": 100
+                        },
+                        {
                             "actionType": "OPEN_MODAL",
                             "url": "",
                             "condition": "",
@@ -78,21 +89,6 @@
                                     "actions": []
                                 }
                             }
-                        },
-                        {
-                            "actionType": "setfield",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "dnd-12",
-                            "fieldValue": "\"\"",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": null
                         }
                     ]
                 }
