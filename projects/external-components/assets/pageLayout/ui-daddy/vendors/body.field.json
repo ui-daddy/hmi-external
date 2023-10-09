@@ -33,6 +33,21 @@
                     "debounce": null,
                     "actions": [
                         {
+                            "actionType": "setfield",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "dnd-12",
+                            "fieldValue": "a",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "addVendorModal",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        },
+                        {
                             "actionType": "OPEN_MODAL",
                             "url": "",
                             "condition": "",
@@ -78,22 +93,7 @@
                                     "actions": []
                                 }
                             }
-                        },
-                        {
-                            "actionType": "setfield",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "dnd-12",
-                            "fieldValue": "a",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "addVendorModal",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": null
-                        }
+                        } 
                     ]
                 }
             ],
