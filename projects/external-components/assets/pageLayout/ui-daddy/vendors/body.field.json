@@ -33,13 +33,6 @@
                     "debounce": null,
                     "actions": [
                         {
-                            "actionType": "setfield",
-                            "field": "dnd-12",
-                            "fieldValue": "",
-                            "condition": "true",
-                            "formName": ""
-                        },
-                        {
                             "actionType": "OPEN_MODAL",
                             "url": "",
                             "condition": "",
