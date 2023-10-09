@@ -78,6 +78,21 @@
                                     "actions": []
                                 }
                             }
+                        },
+                        {
+                            "actionType": "setfield",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "dnd-12",
+                            "fieldValue": "\"\"",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
                         }
                     ]
                 }
