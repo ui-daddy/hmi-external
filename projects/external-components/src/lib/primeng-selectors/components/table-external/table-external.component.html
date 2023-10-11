@@ -1,10 +1,10 @@
 <p-table [attr.id]="'tableExternal-'+fieldObj.baseProperties.id" #primeElement [value]="data">
-    <ng-template pTemplate="caption" *ngIf="fieldObj.customAttributes.caption">
+    <ng-template pTemplate="caption">
         <div class="table-header">
             <span class="table-header-caption">{{fieldObj.customAttributes.caption}}</span>
             <div class="align-self-center mr-3">
+                <button *ngIf="fieldObj.customAttributes.showExportPdfBtn" type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-danger mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
                 <button *ngIf="fieldObj.customAttributes.showExportExcelBtn" type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
-                <button *ngIf="fieldObj.customAttributes.showExportPdfBtn" type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
                 <button *ngIf="fieldObj.customAttributes.showPrintPreviewBtn" type="button" pButton pRipple icon="pi pi-print" (click)="printPreview()" class="p-button-warning mr-2" pTooltip="Print Preview" tooltipPosition="bottom"></button>
             </div>
             <span>
@@ -77,7 +77,7 @@
                     </td>
                     <ng-template #defaultCol>
                         <td [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }">
-                           <span [title]="col.title || rowData[col.accessor]" [rowDataHandler]="rowData[col.accessor]"></span>
+                           <span [title]="col.title || rowData[col.accessor]" [rowDataHandler]="rowData[col.accessor]" [ngClass]=" {'pill-style': rowData[col.accessor] && col.pill} " [attr.aria-label]="rowData[col.accessor]"></span>
                         </td>
                     </ng-template>
                     <!-- <td [ngStyle]="{'width': col.colWidth ? col.colWidth.value + col.colWidth.unit : 'auto' }"
