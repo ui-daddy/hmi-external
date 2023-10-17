@@ -14,16 +14,16 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "add-vendor-btn",
+                    "customClassName": "add-vendor-btn theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".add-vendor-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0"
+                                "padding": "25px 0 15px 0"
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -121,12 +121,48 @@
                         }
                     },
                     {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
                         "colName": "Address",
                         "filterType": "text",
                         "accessor": "address",
                         "colWidth": {
                             "unit": "px",
-                            "value": 250
+                            "value": 200
                         }
                     },
                     {
@@ -144,7 +180,7 @@
                         "accessor": "website",
                         "colWidth": {
                             "unit": "px",
-                            "value": 250
+                            "value": 200
                         }
                     },
                     {
@@ -162,19 +198,11 @@
                         "html": "<i class='fas fa-edit'></i>",
                         "sortable": false,
                         "disableColumnSorting": true,
+                        "cellDisableAccessor": "edit",
                         "events": [
                             {
                                 "event": "",
                                 "actions": [
-                                    {
-                                        "actionType": "OPEN_MODAL",
-                                        "showLoading": true,
-                                        "target": "dnd-17"
-                                    },
-                                    {
-                                        "actionType": "WAIT_IN_MS",
-                                        "timer": 100
-                                    },
                                     {
                                         "actionType": "SET_SHARED_DATA",
                                         "sharedData": [
@@ -183,6 +211,24 @@
                                                 "staticData": "$ROW_DATA$"
                                             }
                                         ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-45$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-46$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
                                     },
                                     {
                                         "actionType": "setfield",
@@ -225,6 +271,15 @@
                                         "fieldValue": "$SHARED_DATA$.tableRowData.companyCode",
                                         "condition": "true",
                                         "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-17"
                                     }
                                 ],
                                 "debounce": 3000
@@ -241,11 +296,12 @@
                         "html": "<i class='fas fa-trash'></i>",
                         "sortable": false,
                         "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
                         "action": {
                             "name": "ROW_ACTION",
                             "apiConfig": {
                                 "name": "deleteVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Delete/:vendorId",
+                                "url": "/api/v1/Vendor/Delete/:vendorId",
                                 "method": "DELETE",
                                 "pathParams": [
                                     {
@@ -279,14 +335,18 @@
                 "caption": "Vendors",
                 "summary": null,
                 "globalFilterFields": [
-                    "name"
+                    "name",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
                 "responsive": null,
                 "dataConfig": {
                     "name": "vendorList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/List",
+                    "url": "/api/v1/Vendor/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -306,7 +366,7 @@
             "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-21",
-                "formName": "Edit Vendor"
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -314,7 +374,21 @@
                 "height": null,
                 "css": {
                     "customClassName": "vendor-modal-title",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".vendor-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -329,7 +403,8 @@
             "baseProperties": {
                 "type": "hidden",
                 "id": "dnd-40",
-                "name": "idEdit"
+                "name": "idEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -354,10 +429,129 @@
         },
         {
             "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-45",
+                "name": "levelTypeEdit",
+                "label": "Level Type",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-46",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelEdit",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-46",
+                "name": "levelEdit",
+                "label": "Level",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeEdit != null or levelTypeEdit != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeEdit",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
                 "type": "text",
                 "id": "dnd-22",
                 "label": "Name",
-                "name": "nameEdit"
+                "name": "nameEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -382,7 +576,8 @@
                 "type": "textarea",
                 "id": "dnd-24",
                 "label": "Address",
-                "name": "addressEdit"
+                "name": "addressEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -408,7 +603,8 @@
                 "type": "tel",
                 "id": "dnd-25",
                 "label": "Phone Number",
-                "name": "contactEdit"
+                "name": "contactEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -434,7 +630,8 @@
                 "type": "text",
                 "id": "dnd-26",
                 "label": "Website",
-                "name": "websiteEdit"
+                "name": "websiteEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -460,7 +657,8 @@
                 "type": "text",
                 "id": "dnd-41",
                 "label": "Company Code",
-                "name": "companyCodeEdit"
+                "name": "companyCodeEdit",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -482,16 +680,30 @@
             "baseProperties": {
                 "type": "submit",
                 "id": "dnd-19",
-                "label": "Save Vendor"
+                "label": "Save Vendor",
+                "formName": "editVendorModal"
             },
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-vendor",
-                    "configuration": [],
-                    "themeClass": "btn-warning"
+                    "customClassName": "save-vendor theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-vendor",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -515,7 +727,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "UpdateVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Update/:id",
+                                "url": "/api/v1/Vendor/Update/:id",
                                 "method": "PATCH",
                                 "pathParams": [
                                     {
@@ -559,6 +771,12 @@
                                         "paramName": "id",
                                         "mappedField": "idEdit",
                                         "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelEdit",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     }
                                 ],
@@ -644,8 +862,13 @@
                         {
                             "selectorName": ".vendor-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -657,6 +880,122 @@
             "events": [],
             "expressionProperties": {},
             "value": "Add Vendor"
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-43",
+                "name": "levelTypeAdd",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-44",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelAdd",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-44",
+                "name": "levelAdd",
+                "label": "Level"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeAdd",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
         },
         {
             "baseProperties": {
@@ -679,7 +1018,8 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
-                "visibleValue": "true"
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -705,7 +1045,8 @@
             "events": [],
             "expressionProperties": {
                 "visibleValue": "true",
-                "requiredValue": "false"
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -731,7 +1072,8 @@
             "events": [],
             "expressionProperties": {
                 "requiredValue": "false",
-                "visibleValue": "true"
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -757,7 +1099,8 @@
             "events": [],
             "expressionProperties": {
                 "visibleValue": "true",
-                "requiredValue": "false"
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "value": null,
             "placeholder": null
@@ -781,7 +1124,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
             "value": null,
             "placeholder": null
         },
@@ -796,17 +1141,22 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-vendor",
+                    "customClassName": "save-vendor theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".save-vendor",
                             "xs": {
-                                "parent-padding-top": "30px",
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }
                     ],
-                    "themeClass": "btn-warning"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -830,7 +1180,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "AddVendor",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Vendor/Create",
+                                "url": "/api/v1/Vendor/Create",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
@@ -863,6 +1213,12 @@
                                         "paramName": "companyCode",
                                         "mappedField": "companyCodeAdd",
                                         "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelAdd",
+                                        "mappedValue": "value",
                                         "valueFormat": ""
                                     }
                                 ],

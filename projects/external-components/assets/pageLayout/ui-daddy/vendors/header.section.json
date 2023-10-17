@@ -1,94 +1,91 @@
 {
-  "layout": [
-      {
-          "id": "header-dashboard",
-          "type": "content",
-          "layout": {
-            "column": {
-            "count": 3,
-            "ratio": {
-              "lg": "6:2:4",
-              "md": "6:2:4",
-              "sm": "6:2:4",
-              "xs": "6:2:4"                
-            },
-            "autoPlace": "false"
-            }
-          },
-          "sectionList": [
-            {
-          
-              "id": "menu-header-dashboard",
-              "type": "content",
-              "layout": {
+    "layout": [
+        {
+            "id": "header-dashboard",
+            "type": "content",
+            "layout": {
                 "column": {
-                "count": 1,
-                "ratio": {
-                  "lg": "1:1:2:1:1:1:5",
-                  "md": "1:1:2:1:1:1:5",
-                  "sm": "1:1:2:1:1:1:5",
-                  "xs": "1:1:2:1:1:1:5"
+                    "count": 3,
+                    "ratio": {
+                        "lg": "7:5",
+                        "md": "7:5",
+                        "sm": "6:2:4",
+                        "xs": "6:2:4"
+                    },
+                    "autoPlace": "false"
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "menu-header-dashboard",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 1,
+                            "ratio": {
+                                "lg": "2:10",
+                                "md": "3:9",
+                                "sm": "4:8",
+                                "xs": "4:8"
+                            },
+                            "autoPlace": "false"
+                        },
+                        "css": {
+                            "customClassName": "",
+                            "configuration": {}
+                        }
+                    },
+                    "sectionList": []
                 },
-                "autoPlace": "false"
+                {
+                    "id": "logout-header-dashboard",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 3,
+                            "ratio": {
+                                "lg": "6:0:6",
+                                "md": "6:0:6",
+                                "sm": "6:0:6",
+                                "xs": "6:0:6"
+                            },
+                            "autoPlace": "false"
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        },
+        {
+            "id": "dnd-1",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
                 },
                 "css": {
-                  "customClassName": "menu-header-style",
-                  "configuration": {
-                    "selectorName": ".menu-header-style > div > div",
-                    "xs": {
-                        "padding":"0px",
-                        "background-color":"red"
-                    }
+                    "customClassName": "tooltip-container",
+                    "configuration": [
+                        {
+                            "selectorName": ".tooltip-container",
+                            "xs": {
+                                "background-color": "#91e2ed",
+                                "paddig": "0",
+                                "margin": "0",
+                                "max-width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
                 }
-              }
-              }
-  
-          },
-          {
-          
-            "id": "menu-dropdown-dashboard",
-            "type": "content",
-            "layout": {
-              "column": {
-              "count": 1,
-              "ratio": {
-                "lg": "6:6",
-                "md": "6:6",
-                "sm": "6:6",
-                "xs": "6:6"
-              },
-              "autoPlace": "false"
-              },
-              "css": {
-                "customClassName": "menu-header-style",
-                "configuration": {
-                  "selectorName": ".menu-header-style > div > div",
-                  "xs": {
-                      "padding":"0px",
-                      "background-color":"red"
-                  }
-              }
-            }
-            }   
+            },
+            "sectionList": []
         }
-          ,{
-          
-            "id": "logout-header-dashboard",
-            "type": "content",
-            "layout": {
-              "column": {
-              "count": 3,
-              "ratio": {
-                "lg": "8:1:3",
-                "md": "8:1:3",
-                "sm": "8:1:3",
-                "xs": "8:1:3"
-              },
-              "autoPlace": "false"
-              }
-            }
-            
-        }]
-      }
-  ]
+    ]
 }

@@ -18,10 +18,15 @@
                         {
                             "selectorName": ".element-child",
                             "xs": {
+                                "margin-bottom": "20px",
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".element-child .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "color": "white",
-                                "parent-margin-bottom": "20px",
-                                "parent-font-size": "30px"
+                                "color": "white"
                             }
                         }
                     ],
@@ -54,12 +59,8 @@
                         {
                             "selectorName": ".temp-class-9",
                             "xs": {
-                                "parent-color": "white"
+                                "color": "white"
                             }
-                        },
-                        {
-                            "selectorName": "",
-                            "xs": {}
                         }
                     ],
                     "themeClass": ""
@@ -83,15 +84,18 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reset-button",
+                    "customClassName": "reset-button theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".reset-button",
                             "xs": {
-                                "parent-margin": "10px",
-                                "parent-justify-content": "center",
-                                "background-color": "#ffc107",
-                                "color": "black",
+                                "margin": "10px",
+                                "justify-content": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".reset-button .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }
@@ -100,7 +104,70 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Forget Password",
+                                "url": "/api/v1/EmployeeAccount/ResetPassword",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [
+                                    {
+                                        "paramName": "email",
+                                        "mappedField": "email",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "payloadParams": [],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Password reset successfully. Please check your email.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Something went wrong !",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {}
         },
         {
@@ -120,7 +187,7 @@
                         {
                             "selectorName": ".loginPageLink",
                             "xs": {
-                                "parent-justify-content": "center"
+                                "justify-content": "center"
                             }
                         }
                     ],
@@ -128,7 +195,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "navigate",
+                            "url": "login",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {}
         }
     ]

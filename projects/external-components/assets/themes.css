@@ -2,6 +2,10 @@ header.header-container {
     background-color: rgba(255, 255, 255, 1)!important;
     color: rgba(31, 41, 55, 1) !important;
 }
+.nav-tabs .nav-link.active {
+ color: white;
+ background-color: #7465f7;
+}
 .nav-item nav-link .nav-item {
     color: rgba(31, 41, 55, 1) !important;
 }
@@ -9,34 +13,40 @@ header.header-container {
     color: rgba(31, 41, 55, 1) !important; 
 }
 .navbar-dark .navbar-nav .nav-link.active {
-    color: rgba(31, 41, 55, 1) !important; 
+    color: #6550eb !important; 
+    font-weight: 700;
+    background: white;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: #e9ecef;
+    border-radius: 5px;
 }
 .navbar-dark .navbar-nav .nav-link{
     color: rgba(31, 41, 55, 1) !important;
 }
+.dropdown-nav.dynamic-style-parent a.dynamic-style-child:hover,
+.dropdown-nav.dynamic-style-parent a.dynamic-style-child:active,
+.dropdown-nav.dynamic-style-parent .dynamic-style-child.active {
+    background-color: #e9ecef;
+    color: #212529;
+}
 body {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji" !important
-}
-.navbar .dynamic-style-child {
-    width: 140px !important;
-}
-.navbar {
-    margin-left:115px;
+    font-family: Arial,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Noto Sans,Liberation Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji" !important
 }
 
-.dropdown-nav {
-    margin-top:9px;
+.theme-btn.dynamic-style-parent .dynamic-style-child {
+    color: white;
+    background-image: linear-gradient(135deg, #7a65fd 0%, #1d6fa3 100%);
+    border-radius: 0.375rem;
 }
-.dropdown-nav .nav-link{
-    color: #1f2937!important
+.theme-btn.dynamic-style-parent .dynamic-style-child:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
 }
-.dropdown-nav .dropdown-menu {
-    padding: 0px !important;
+.theme-btn.dynamic-style-parent button.dynamic-style-child:focus { 
+    outline: 2px solid #654ff8;
+    outline-offset: 2px;
+    box-shadow: none !important;
 }
 
-.dropdown-nav .dynamic-style-parent {
-    border-bottom: 1px solid #dee1e6;
-    padding: 5px;;
-}
 
 

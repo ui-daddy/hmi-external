@@ -1,0 +1,169 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-2",
+                "name": "userId"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "userId",
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-1",
+                "name": "myTask-table",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "reports_table_status",
+                    "configuration": [
+                        {
+                            "selectorName": "[aria-label=\"Assigned\"]",
+                            "xs": {
+                                "color": "white",
+                                "background-color": "#8f369f"
+                            }
+                        },
+                        {
+                            "selectorName": "[aria-label=\"In Progress\"]",
+                            "xs": {
+                                "color": "white",
+                                "background-color": "#c19b3e"
+                            }
+                        },
+                        {
+                            "selectorName": "[aria-label=\"Completed\"]",
+                            "xs": {
+                                "color": "white",
+                                "background-color": "#0f9d15"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Task Id",
+                        "accessor": "id",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 60
+                        }
+                    },
+                    {
+                        "colName": "Task Name",
+                        "filterType": "text",
+                        "accessor": "title",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 250
+                        }
+                    },
+                    {
+                        "colName": "Status",
+                        "filterType": "multiselect",
+                        "accessor": "status",
+                        "pill": "true",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 130
+                        }
+                    },
+                    {
+                        "colName": "Scheduled Start Date",
+                        "accessor": "expectedStartDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Scheduled End Date",
+                        "accessor": "expectedEndDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Actual Start Date",
+                        "accessor": "actualStartDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Actual End Date",
+                        "accessor": "actualEndDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    }
+                ],
+                "caption": "My Tasks",
+                "summary": null,
+                "globalFilterFields": [
+                    "Task Name",
+                    "Status"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": true,
+                "dataConfig": {
+                    "name": "myTaskList",
+                    "url": "/api/v1/tasks/MyTask/:userId",
+                    "method": "GET",
+                    "pathParams": [
+                        {
+                            "paramName": "userId",
+                            "mappedField": "userId",
+                            "mappedValue": "",
+                            "valueFormat": "$SHARED_DATA(id)"
+                        }
+                    ],
+                    "params": {},
+                    "postTransform": "multiDateTransform",
+                    "onSuccess": {
+                        "apiDataAccessor": "payload"
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
+            }
+        }
+    ]
+}
