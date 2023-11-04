@@ -302,7 +302,7 @@
             "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-22",
-                "name": "editImpedimentModalTitle",
+                "name": "editImpedimentModalTitl",
                 "formName": "editImpedimentModal"
             },
             "layoutProperties": {
