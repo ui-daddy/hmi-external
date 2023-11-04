@@ -1,0 +1,52 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-1",
+                "name": "FullName",
+                "label": "Full Name",
+                "formName": "Profile"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Enter your name"
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "dnd-2",
+                "name": "email",
+                "label": "Email",
+                "formName": "Profile"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Enter your email"
+        }
+    ]
+}
