@@ -83,7 +83,7 @@
                 "visibleValue": "true",
                 "readOnlyValue": "false",
                 "disabledValue": "false",
-                "visible": "levelData.type == 'circle'"
+                "visible": "levelData.type == 'management'"
             }
         },
         {
@@ -2411,6 +2411,9 @@
                 "id": "dnd-85",
                 "label": "Add User"
             },
+            "dynamicValueAccessor": [
+                "levelData.type"
+            ],
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -2455,7 +2458,8 @@
             "expressionProperties": {
                 "visibleValue": "true",
                 "readOnlyValue": "false",
-                "disabledValue": "false"
+                "disabledValue": "false",
+                "visible": "levelData.type == 'management'"
             }
         },
         {
