@@ -35,6 +35,9 @@
                 "id": "dnd-3",
                 "label": "Add User"
             },
+            "dynamicValueAccessor": [
+                "levelData.type"
+            ],
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -80,7 +83,7 @@
                 "visibleValue": "true",
                 "readOnlyValue": "false",
                 "disabledValue": "false",
-                "visible": "levelData.type == circle"
+                "visible": "levelData.type == 'circle'"
             }
         },
         {
