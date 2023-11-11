@@ -188,6 +188,11 @@
                                             "cache": true
                                         },
                                         {
+                                            "varName": "levelData.type",
+                                            "responseAccessor": "levelData.type",
+                                            "cache": true
+                                        },
+                                        {
                                             "varName": "authenticated",
                                             "staticData": "yes",
                                             "cache": true
