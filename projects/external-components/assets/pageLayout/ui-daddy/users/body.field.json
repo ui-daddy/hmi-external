@@ -36,7 +36,7 @@
                 "label": "Add User"
             },
             "dynamicValueAccessor": [
-                "levelData.type"
+                "userType"
             ],
             "layoutProperties": {
                 "labelPlacement": null,
@@ -83,7 +83,7 @@
                 "visibleValue": "true",
                 "readOnlyValue": "false",
                 "disabledValue": "false",
-                "visible": "levelData.type == 'management'"
+                "visible": "userType == 'management'"
             }
         },
         {

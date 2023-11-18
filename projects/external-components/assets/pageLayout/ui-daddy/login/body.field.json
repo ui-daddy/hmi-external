@@ -188,7 +188,7 @@
                                             "cache": true
                                         },
                                         {
-                                            "varName": "levelData.type",
+                                            "varName": "userType",
                                             "responseAccessor": "levelData.type",
                                             "cache": true
                                         },
