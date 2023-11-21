@@ -29,8 +29,8 @@
     "dnd-2": [
         {
             "baseProperties": {
-                "type": "table",
-                "id": "dnd-4",
+                "type": "dynamicField",
+                "id": "dnd-5",
                 "name": "userTable"
             },
             "layoutProperties": {
@@ -44,11 +44,95 @@
                 },
                 "orientation": null
             },
+            "libraryComponent": "TableExternalComponent",
             "events": [],
             "expressionProperties": {},
-            "colNameAccessorMap": null,
-            "dataConfig": null,
-            "accessor": null
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Employee Name",
+                        "filterType": "text",
+                        "accessor": "employeeName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Designation",
+                        "filterType": "multiselect",
+                        "accessor": "designation",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Role",
+                        "filterType": "multiselect",
+                        "accessor": "role",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "E-Mail",
+                        "filterType": "multiselect",
+                        "accessor": "email",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Company",
+                        "filterType": "multiselect",
+                        "accessor": "companyName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "EmpId",
+                        "filterType": "text",
+                        "accessor": "empId",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    }
+                ],
+                "caption": "All Users",
+                "summary": null,
+                "globalFilterFields": null,
+                "dataKey": "id",
+                "resizableColumns": true,
+                "responsive": null,
+                "dataConfig": {
+                    "name": "userList",
+                    "url": "https://uidad.free.beeceptor.com/users",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": "payload"
+                    }
+                },
+                "columnFilter": null,
+                "showExportExcelBtn": null,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": null
+            }
         }
     ]
 }
