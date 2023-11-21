@@ -26,5 +26,29 @@
             "placeholder": null
         }
     ],
-    "dnd-2": []
+    "dnd-2": [
+        {
+            "baseProperties": {
+                "type": "table",
+                "id": "dnd-4",
+                "name": "userTable"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "colNameAccessorMap": null,
+            "dataConfig": null,
+            "accessor": null
+        }
+    ]
 }
