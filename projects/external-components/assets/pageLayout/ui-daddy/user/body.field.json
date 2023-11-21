@@ -1,0 +1,30 @@
+{
+    "dnd-0": [],
+    "dnd-1": [
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-3",
+                "name": "fullname",
+                "formName": "userForm",
+                "label": "Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        }
+    ],
+    "dnd-2": []
+}
