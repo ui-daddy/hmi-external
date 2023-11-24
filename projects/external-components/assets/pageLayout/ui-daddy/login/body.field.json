@@ -189,7 +189,7 @@
                                         },
                                         {
                                             "varName": "userType",
-                                            "responseAccessor": "levelData.type",
+                                            "responseAccessor": "role",
                                             "cache": true
                                         },
                                         {
