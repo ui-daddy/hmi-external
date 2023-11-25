@@ -35,9 +35,6 @@
                 "id": "dnd-3",
                 "label": "Add User"
             },
-            "dynamicValueAccessor": [
-                "userType"
-            ],
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -2411,9 +2408,6 @@
                 "id": "dnd-85",
                 "label": "Add User"
             },
-            "dynamicValueAccessor": [
-                "userType"
-            ],
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
