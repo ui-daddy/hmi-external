@@ -78,21 +78,6 @@
                                     "actions": []
                                 }
                             }
-                        },
-                        {
-                            "actionType": "setfield",
-                            "url": "",
-                            "condition": "1==1",
-                            "field": "dnd-12",
-                            "fieldValue": "a",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "addVendorModal",
-                            "componentName": "",
-                            "sharedData": [],
-                            "apiConfig": null
                         }
                     ]
                 }
@@ -865,7 +850,7 @@
             "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-20",
-                "formName": "addVendorModal"
+                "formName": "Add Vendor"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -901,8 +886,7 @@
                 "type": "dropdown",
                 "id": "dnd-43",
                 "name": "levelTypeAdd",
-                "label": "Level Type",
-                "formName": "addVendorModal"
+                "label": "Level Type"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -971,8 +955,7 @@
                 "type": "dropdown",
                 "id": "dnd-44",
                 "name": "levelAdd",
-                "label": "Level",
-                "formName": "addVendorModal"
+                "label": "Level"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1019,8 +1002,7 @@
                 "type": "text",
                 "id": "dnd-13",
                 "label": "Name",
-                "name": "nameAdd",
-                "formName": "addVendorModal"
+                "name": "nameAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1047,8 +1029,7 @@
                 "type": "textarea",
                 "id": "dnd-12",
                 "label": "Address",
-                "name": "addressAdd",
-                "formName": "addVendorModal"
+                "name": "addressAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1075,8 +1056,7 @@
                 "type": "tel",
                 "id": "dnd-11",
                 "label": "Phone Number",
-                "name": "contactAdd",
-                "formName": "addVendorModal"
+                "name": "contactAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1103,8 +1083,7 @@
                 "type": "text",
                 "id": "dnd-9",
                 "label": "Website",
-                "name": "websiteAdd",
-                "formName": "addVendorModal"
+                "name": "websiteAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1131,8 +1110,7 @@
                 "type": "text",
                 "id": "dnd-42",
                 "label": "Company Code",
-                "name": "companyCodeAdd",
-                "formName": "addVendorModal"
+                "name": "companyCodeAdd"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1156,8 +1134,7 @@
             "baseProperties": {
                 "type": "submit",
                 "id": "dnd-14",
-                "label": "Save Vendor",
-                "formName": "addVendorModal"
+                "label": "Save Vendor"
             },
             "layoutProperties": {
                 "labelPlacement": null,
