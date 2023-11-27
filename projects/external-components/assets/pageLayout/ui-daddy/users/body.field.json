@@ -6,7 +6,7 @@
                 "label": "MSETCL users",
                 "type": "tab"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "customClassName": "section__tab-full-width"
                 }
@@ -18,7 +18,7 @@
                 "label": "Vendor Users",
                 "type": "tab"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "customClassName": "section__tab-full-width"
                 }
@@ -79,7 +79,8 @@
             "expressionProperties": {
                 "visibleValue": "true",
                 "readOnlyValue": "false",
-                "disabledValue": "false"
+                "disabledValue": "false",
+                "visible": "userType == 'Vendor Admin' or userType == 'Admin'"
             }
         },
         {
@@ -2451,7 +2452,8 @@
             "expressionProperties": {
                 "visibleValue": "true",
                 "readOnlyValue": "false",
-                "disabledValue": "false"
+                "disabledValue": "false",
+                "visible": "userType == 'Vendor Admin' or userType == 'Admin'"
             }
         },
         {
