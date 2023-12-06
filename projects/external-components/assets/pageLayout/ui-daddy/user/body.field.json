@@ -124,7 +124,7 @@
                     "url": "https://uidad.free.beeceptor.com/users",
                     "method": "GET",
                     "params": {},
-                    "withCredentials": false,
+                    "isWithCredentials": false,
                     "onSuccess": {
                         "apiDataAccessor": "payload"
                     }
