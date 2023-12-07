@@ -3,11 +3,9 @@
     "dnd-1": [
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-3",
-                "name": "fullname",
-                "formName": "userForm",
-                "label": "Name"
+                "type": "staticText",
+                "id": "dnd-6",
+                "name": "headText"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -22,8 +20,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "value": "Vendor Users"
         }
     ],
     "dnd-2": [
@@ -113,7 +110,7 @@
                         }
                     }
                 ],
-                "caption": "All Users",
+                "caption": "Users List",
                 "summary": null,
                 "globalFilterFields": null,
                 "dataKey": "id",
@@ -129,8 +126,8 @@
                         "apiDataAccessor": "payload"
                     }
                 },
-                "columnFilter": null,
-                "showExportExcelBtn": null,
+                "columnFilter": true,
+                "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
                 "showPrintPreviewBtn": null
             }
