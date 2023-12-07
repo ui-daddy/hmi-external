@@ -9,7 +9,7 @@
                 "label": "First Name"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "top",
                 "width": null,
                 "height": null,
                 "css": {
@@ -23,6 +23,29 @@
             "expressionProperties": {},
             "value": null,
             "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-3",
+                "name": "LastName",
+                "label": "Last Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Enter your last Name"
         }
     ]
 }
