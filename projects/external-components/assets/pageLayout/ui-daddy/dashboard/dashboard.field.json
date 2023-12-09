@@ -14,19 +14,21 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": [{
-                        "selectorName": ".add-project-modal-title",
-                        "xs": {
-                            "parent-font-size": "30px"
+                    "configuration": [
+                        {
+                            "selectorName": ".add-project-modal-title",
+                            "xs": {
+                                "parent-font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".add-project-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
                         }
-                    },
-                    {
-                        "selectorName": ".add-project-modal-title .dynamic-style-child",
-                        "xs": {
-                            "text-align": "center",
-                            "font-weight": "500"
-                        }
-                    }],
+                    ],
                     "customClassName": "add-project-modal-title"
                 }
             }
@@ -156,18 +158,20 @@
                 "css": {
                     "themeClass": "btn-warning",
                     "customClassName": "add-project__save-details",
-                    "configuration": [{
-                        "selectorName": ".add-project__save-details",
-                        "xs": {
-                            "padding-top": "30px"
+                    "configuration": [
+                        {
+                            "selectorName": ".add-project__save-details",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".add-project__save-details .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
                         }
-                    },
-                    {
-                        "selectorName": ".add-project__save-details .dynamic-style-child",
-                        "xs": {
-                            "width": "100%"
-                        }
-                    }]
+                    ]
                 }
             },
             "expressionProperties": {
@@ -249,19 +253,21 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": [{
-                        "selectorName": ".edit-project-modal-title",
-                        "xs": {
-                            "font-size": "30px"
+                    "configuration": [
+                        {
+                            "selectorName": ".edit-project-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-project-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
                         }
-                    },
-                    {
-                        "selectorName": ".edit-project-modal-title .dynamic-style-child",
-                        "xs": {
-                            "text-align": "center",
-                            "font-weight": "500"
-                        }
-                    }],
+                    ],
                     "customClassName": "edit-project-modal-title"
                 }
             }
@@ -411,18 +417,20 @@
                 "css": {
                     "themeClass": "btn-warning",
                     "customClassName": "add-project__save-details",
-                    "configuration": [{
-                        "selectorName": ".add-project__save-details",
-                        "xs": {
-                            "padding-top": "30px"
+                    "configuration": [
+                        {
+                            "selectorName": ".add-project__save-details",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".add-project__save-details .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
                         }
-                    },
-                    {
-                        "selectorName": ".add-project__save-details .dynamic-style-child",
-                        "xs": {
-                            "width": "100%"
-                        }
-                    }]
+                    ]
                 }
             },
             "expressionProperties": {
