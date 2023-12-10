@@ -20,7 +20,31 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Vendor Users"
+            "value": "Vendor Users",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "dnd-7",
+                "name": "Email",
+                "label": "Prasads Email"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Enter your email"
         }
     ],
     "dnd-2": [
