@@ -6,7 +6,7 @@
                 "label": "MSETCL users",
                 "type": "tab"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "customClassName": "section__tab-full-width"
                 }
@@ -18,7 +18,7 @@
                 "label": "Vendor Users",
                 "type": "tab"
             },
-            "layoutProperties":{
+            "layoutProperties": {
                 "css": {
                     "customClassName": "section__tab-full-width"
                 }
@@ -79,7 +79,8 @@
             "expressionProperties": {
                 "visibleValue": "true",
                 "readOnlyValue": "false",
-                "disabledValue": "false"
+                "disabledValue": "false",
+                "visible": "userType == 'Vendor Admin' or userType == 'Admin'"
             }
         },
         {
@@ -513,7 +514,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-53",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "msetclLevelEdit",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -521,16 +544,20 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -542,7 +569,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-53",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "msetclLevelEdit",
                 "formName": "editUserModal"
             },
@@ -615,14 +642,6 @@
                 {
                     "value": "User",
                     "label": "User"
-                },
-                {
-                    "value": "Vendor Admin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "Vendor User",
-                    "label": "Vendor User"
                 }
             ],
             "optionsConfig": null,
@@ -741,6 +760,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {},
             "value": null,
@@ -1497,7 +1517,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-51",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "msetclLevelAdd",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -1505,16 +1547,20 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -1526,7 +1572,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-51",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "msetclLevelAdd",
                 "formName": "addUserModal"
             },
@@ -1601,14 +1647,6 @@
                 {
                     "value": "User",
                     "label": "User"
-                },
-                {
-                    "value": "Vendor Admin",
-                    "label": "Vendor Admin"
-                },
-                {
-                    "value": "Vendor User",
-                    "label": "Vendor User"
                 }
             ],
             "optionsConfig": null,
@@ -1731,6 +1769,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",
@@ -2255,7 +2294,7 @@
                                     },
                                     {
                                         "paramName": "level",
-                                        "mappedField": "levelAdd",
+                                        "mappedField": "msetclLevelAdd",
                                         "mappedValue": "value",
                                         "valueFormat": ""
                                     },
@@ -2413,7 +2452,8 @@
             "expressionProperties": {
                 "visibleValue": "true",
                 "readOnlyValue": "false",
-                "disabledValue": "false"
+                "disabledValue": "false",
+                "visible": "userType == 'Vendor Admin' or userType == 'Admin'"
             }
         },
         {
@@ -2847,7 +2887,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-153",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelEdit",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -2855,16 +2917,20 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -2876,7 +2942,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-153",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "levelEdit",
                 "formName": "editUserModal"
             },
@@ -2942,14 +3008,6 @@
             "events": [],
             "expressionProperties": {},
             "optionList": [
-                {
-                    "value": "Admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "User",
-                    "label": "User"
-                },
                 {
                     "value": "Vendor Admin",
                     "label": "Vendor Admin"
@@ -3075,6 +3133,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {},
             "value": null,
@@ -3772,7 +3831,7 @@
                 }
             ],
             "expressionProperties": {}
-        } 
+        }
     ],
     "dnd-80": [],
     "dnd-84": [
@@ -3831,7 +3890,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-151",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelAdd",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "optionList": [
                 {
@@ -3839,16 +3920,20 @@
                     "label": "Management"
                 },
                 {
-                    "value": "division",
-                    "label": "Division"
+                    "value": "zone",
+                    "label": "Zone"
                 },
                 {
                     "value": "circle",
                     "label": "Circle"
                 },
                 {
-                    "value": "zone",
-                    "label": "Zone"
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
                 }
             ],
             "optionsConfig": null,
@@ -3860,7 +3945,7 @@
             "baseProperties": {
                 "type": "dropdown",
                 "id": "dnd-151",
-                "label": "Level",
+                "label": "Level Value",
                 "name": "levelAdd",
                 "formName": "addUserModal"
             },
@@ -3928,14 +4013,6 @@
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "optionList": [
-                {
-                    "value": "Admin",
-                    "label": "Admin"
-                },
-                {
-                    "value": "User",
-                    "label": "User"
-                },
                 {
                     "value": "Vendor Admin",
                     "label": "Vendor Admin"
@@ -4065,6 +4142,7 @@
                 },
                 "orientation": null
             },
+            "minRequirementPattern": "^.{10,10}$",
             "events": [],
             "expressionProperties": {
                 "requiredValue": "true",

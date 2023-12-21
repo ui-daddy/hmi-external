@@ -190,6 +190,11 @@
                                             "cache": true
                                         },
                                         {
+                                            "varName": "userType",
+                                            "responseAccessor": "role",
+                                            "cache": true
+                                        },
+                                        {
                                             "varName": "authenticated",
                                             "staticData": "yes",
                                             "cache": true
