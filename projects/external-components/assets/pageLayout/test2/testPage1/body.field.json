@@ -1,0 +1,71 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-1",
+                "name": "username",
+                "label": "User Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Enter your user name"
+        },
+        {
+            "baseProperties": {
+                "type": "textarea",
+                "id": "db-2",
+                "name": "Address",
+                "label": "Address"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Enter your address"
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "db-3",
+                "name": "Submit",
+                "label": "Submit"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ]
+}
