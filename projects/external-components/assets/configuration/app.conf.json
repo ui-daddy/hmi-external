@@ -32,7 +32,14 @@
             "serverURL": ""
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "Projects1",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         },
         "headerField": {
             "fetchFromLocal": true,
