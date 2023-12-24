@@ -102,25 +102,44 @@
         }
     },
     "hmiAppConfiguration": {
-        "apiConfigurations": [],
+        "title": "UI Daddy",
+        "baseUrl": "",
+        "metaTags": [
+            {
+                "content": "uidaddy",
+                "name": "keywords"
+            },
+            {
+                "charset": "",
+                "content": "The uidaddy",
+                "httpEquiv": "",
+                "name": "description"
+            }
+        ],
+        "linkTags": [],
         "ifPageNotFound": "login",
         "interceptorConfigurations": [
             {
+                "statusCode": "401",
+                "type": "error",
+                "messageCode": "",
+                "msgResponseAccessor": "message",
+                "messageCodeResponseAccessor": "messageCode",
+                "message": "Session Error",
+                "pageUrl": "login",
                 "clearSharedData": [
                     "authenticated",
                     "name"
-                ],
-                "message": "Session Error",
-                "messageCode": "",
-                "messageCodeResponseAccessor": "messageCode",
-                "msgResponseAccessor": "message",
-                "pageUrl": "login",
-                "statusCode": "401",
-                "type": "error"
+                ]
             }
         ],
+        "apiConfigurations": [],
         "layoutProperties": {
+            "labelPlacement": null,
+            "width": null,
+            "height": null,
             "css": {
+                "customClassName": "",
                 "configuration": [
                     {
                         "lg": {
@@ -138,28 +157,10 @@
                         }
                     }
                 ],
-                "customClassName": "",
                 "themeClass": ""
             },
-            "height": null,
-            "labelPlacement": null,
-            "orientation": null,
-            "width": null
-        },
-        "linkTags": [],
-        "metaTags": [
-            {
-                "content": "uidaddy",
-                "name": "keywords"
-            },
-            {
-                "charset": "",
-                "content": "The uidaddy",
-                "httpEquiv": "",
-                "name": "description"
-            }
-        ],
-        "title": "UI Daddy"
+            "orientation": null
+        }
     },
     "login": {
         "authGuardConfig": {
