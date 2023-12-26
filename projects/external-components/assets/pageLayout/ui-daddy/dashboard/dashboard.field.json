@@ -3,27 +3,32 @@
         {
             "value": "Add Your Project",
             "baseProperties": {
-              "name": "staticTitle",
-              "id": "staticTitle",
-              "type": "staticText",
-              "formName": ""
+                "name": "staticTitle",
+                "id": "staticTitle",
+                "type": "staticText",
+                "formName": ""
             },
             "expressionProperties": {
-              "visible": "",
-              "visibleValue": true
+                "visible": "",
+                "visibleValue": true
             },
             "layoutProperties": {
-              "css": {
-                "configuration": {
-                  "selectorName": ".add-project-modal-title",
-                  "xs": {
-                    "text-align": "center",
-                    "parent-font-size": "30px",
-                    "font-weight": "500"
-                  }
-                },
-                "customClassName": "add-project-modal-title"
-              }
+                "css": {
+                    "configuration": [{
+                        "selectorName": ".add-project-modal-title",
+                        "xs": {
+                            "parent-font-size": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".add-project-modal-title .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "font-weight": "500"
+                        }
+                    }],
+                    "customClassName": "add-project-modal-title"
+                }
             }
         },
         {
@@ -53,11 +58,11 @@
                     "configuration": {
                         "selectorName": ".add-project__title",
                         "xs": {
-                            "parent-padding-top": "15px"
+                            "padding-top": "15px"
                         }
                     }
                 }
-            }, 
+            },
             "minRequirementPattern": "^.{2,100}$"
         },
         {
@@ -92,8 +97,8 @@
                 "formName": "addProject",
                 "label": "Github URL",
                 "type": "url",
-                "tooltip":"Please fork from the github repo https://github.com/ui-ankush/hmi-external and add it here.",
-                "tooltipPlacement":"top"
+                "tooltip": "Please fork from the github repo https://github.com/ui-ankush/hmi-external and add it here.",
+                "tooltipPlacement": "top"
             },
             "placeholder": "",
             "accessor": "",
@@ -119,8 +124,8 @@
                 "formName": "addProject",
                 "label": "Branch Name",
                 "type": "text",
-                "tooltip":"Please create your branch from develop and add it here.",
-                "tooltipPlacement":"top"
+                "tooltip": "Please create your branch from develop and add it here.",
+                "tooltipPlacement": "top"
             },
             "placeholder": "",
             "accessor": "",
@@ -151,15 +156,20 @@
                 "css": {
                     "themeClass": "btn-warning",
                     "customClassName": "add-project__save-details",
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".add-project__save-details",
                         "xs": {
-                            "parent-padding-top": "30px",
+                            "padding-top": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".add-project__save-details .dynamic-style-child",
+                        "xs": {
                             "width": "100%"
                         }
-                    }
+                    }]
                 }
-            },            
+            },
             "expressionProperties": {
                 "requiredValue": true,
                 "required": "",
@@ -169,87 +179,91 @@
                 "disabledValue": false,
                 "visible": "",
                 "visibleValue": true
-            }, 
+            },
             "events": [
                 {
-                   "event": "click",
-                    "actions" :[ 
-                           {
-                               "actionType" : "INVOKE_API",
-                                "showLoading": true,
-                                "apiConfig": {
-                                    "name": "addProjectAPI",
-                                    "url": "/rest/addProject",
-                                    "method": "POST",
-                                    "payloadParams": [
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "showLoading": true,
+                            "apiConfig": {
+                                "name": "addProjectAPI",
+                                "url": "/rest/addProject",
+                                "method": "POST",
+                                "payloadParams": [
+                                    {
+                                        "paramName": "description",
+                                        "mappedField": "projectDesc"
+                                    },
+                                    {
+                                        "paramName": "title",
+                                        "mappedField": "projectTitle"
+                                    },
+                                    {
+                                        "paramName": "branchName",
+                                        "mappedField": "branchName"
+                                    },
+                                    {
+                                        "paramName": "forkUrl",
+                                        "mappedField": "gitUrl"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true,
+                                    "actions": [
                                         {
-                                            "paramName": "description",
-                                            "mappedField": "projectDesc"
-                                        },
-                                        {
-                                            "paramName": "title",
-                                            "mappedField": "projectTitle"
-                                        },
-                                        {
-                                            "paramName": "branchName",
-                                            "mappedField": "branchName"
-                                        },
-                                        {
-                                            "paramName": "forkUrl",
-                                            "mappedField": "gitUrl"
-                                        }
-                                    ],
-                                    "onSuccess": {
-                                        "showSuccessMessage": true,
-                                        "actions": [
-                                            {
                                             "actionType": "RELOAD_COMPONENT_DATA",
                                             "componentName": "projectList"
-                                            },
-                                            {
-                                                "actionType" : "CLOSE_MODAL",
-                                                 "showLoading": true,
-                                                 "target": "add-project-modal"
-                                            }
-                                        ]
-                                    },
-                                    "onError": {
-                                      "showErrorMessage": true
-                                    }
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "showLoading": true,
+                                            "target": "add-project-modal"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
                                 }
-                           }
+                            }
+                        }
                     ],
                     "debounce": 3000
                 }
             ]
-            
         }
     ],
     "edit-project-modal-content": [
         {
             "value": "Edit Your Project",
             "baseProperties": {
-              "name": "editStaticTitle",
-              "id": "editStaticTitle",
-              "type": "staticText",
-              "formName": ""
+                "name": "editStaticTitle",
+                "id": "editStaticTitle",
+                "type": "staticText",
+                "formName": ""
             },
             "expressionProperties": {
-              "visible": "",
-              "visibleValue": true
+                "visible": "",
+                "visibleValue": true
             },
             "layoutProperties": {
-              "css": {
-                "configuration": {
-                  "selectorName": ".edit-project-modal-title",
-                  "xs": {
-                    "text-align": "center",
-                    "parent-font-size": "30px",
-                    "font-weight": "500"
-                  }
-                },
-                "customClassName": "edit-project-modal-title"
-              }
+                "css": {
+                    "configuration": [{
+                        "selectorName": ".edit-project-modal-title",
+                        "xs": {
+                            "font-size": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".edit-project-modal-title .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "font-weight": "500"
+                        }
+                    }],
+                    "customClassName": "edit-project-modal-title"
+                }
             }
         },
         {
@@ -279,11 +293,11 @@
                     "configuration": {
                         "selectorName": ".add-project__title",
                         "xs": {
-                            "parent-padding-top": "15px"
+                            "padding-top": "15px"
                         }
                     }
                 }
-            }, 
+            },
             "minRequirementPattern": "^.{2,100}$"
         },
         {
@@ -397,15 +411,20 @@
                 "css": {
                     "themeClass": "btn-warning",
                     "customClassName": "add-project__save-details",
-                    "configuration": {
+                    "configuration": [{
                         "selectorName": ".add-project__save-details",
                         "xs": {
-                            "parent-padding-top": "30px",
+                            "padding-top": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".add-project__save-details .dynamic-style-child",
+                        "xs": {
                             "width": "100%"
                         }
-                    }
+                    }]
                 }
-            },            
+            },
             "expressionProperties": {
                 "requiredValue": true,
                 "required": "",
@@ -418,55 +437,54 @@
             },
             "events": [
                 {
-                   "event": "click",
-                    "actions" :[ 
-                           {
-                               "actionType" : "INVOKE_API",
-                                "showLoading": true,
-                                "apiConfig": {
-                                    "name": "editProjectAPI",
-                                    "url": "/rest/project/:projectId",
-                                    "method": "POST",
-                                    "pathParams": [
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "showLoading": true,
+                            "apiConfig": {
+                                "name": "editProjectAPI",
+                                "url": "/rest/project/:projectId",
+                                "method": "POST",
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectId",
+                                        "mappedField": "projectId"
+                                    }
+                                ],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "description",
+                                        "mappedField": "editProjectDesc"
+                                    },
+                                    {
+                                        "paramName": "branchName",
+                                        "mappedField": "editBranchName"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true,
+                                    "actions": [
                                         {
-                                            "paramName": "projectId",
-                                            "mappedField": "projectId"
-                                        }
-                                    ],
-                                    "payloadParams": [
-                                        {
-                                            "paramName": "description",
-                                            "mappedField": "editProjectDesc"
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "projectList"
                                         },
                                         {
-                                            "paramName": "branchName",
-                                            "mappedField": "editBranchName"
+                                            "actionType": "CLOSE_MODAL",
+                                            "showLoading": true,
+                                            "target": "edit-project-modal"
                                         }
-                                    ],
-                                    "onSuccess": {
-                                        "showSuccessMessage": true,
-                                        "actions": [
-                                            {
-                                                "actionType": "RELOAD_COMPONENT_DATA",
-                                                "componentName": "projectList"
-                                            },
-                                            {
-                                                "actionType" : "CLOSE_MODAL",
-                                                 "showLoading": true,
-                                                 "target": "edit-project-modal"
-                                            }
-                                        ]
-                                    },
-                                    "onError": {
-                                      "showErrorMessage": true
-                                    }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
                                 }
-                           }
+                            }
+                        }
                     ],
                     "debounce": 3000
                 }
             ]
-            
         }
     ],
     "project-list": [
@@ -488,11 +506,11 @@
                     "configuration": {
                         "selectorName": ".add-project__btn",
                         "xs": {
-                            "parent-padding": "25px 0 15px 0"
+                            "padding": "25px 0 15px 0"
                         }
                     }
                 }
-            },            
+            },
             "expressionProperties": {
                 "requiredValue": true,
                 "required": "",
@@ -505,18 +523,17 @@
             },
             "events": [
                 {
-                   "event": "click",
-                    "actions" :[ 
-                           {
-                               "actionType" : "OPEN_MODAL",
-                                "showLoading": true,
-                                "target": "add-project-modal"
-                           }
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "OPEN_MODAL",
+                            "showLoading": true,
+                            "target": "add-project-modal"
+                        }
                     ],
                     "debounce": 0
                 }
             ]
-            
         },
         {
             "baseProperties": {
@@ -538,208 +555,311 @@
                 "visibleValue": true
             },
             "customAttributes": {
-              "caption": "My Projects",
-              "summary": "",
-              "globalFilterFields": ["title","description"],
-              "currentPageReportTemplate": "Showing {first} to {last} of {totalRecords} entries",
-              "dataKey": "tokenNumber",
-              "resizableColumns": true,
-              "responsive": false,
-              "dataConfig": {
-                "name": "projectList",
-                "url": "/rest/getProjects",
-                "method": "GET",
-                "params": {},
-                "onSuccess": {
-                  "apiDataAccessor": "projects"
-                }
-              },
-              "rows": "5",
-              "paginator": "true",
-              "columns": [
-                { "colName": "Project Name", "accessor": "title", "colWidth": { "unit": "px", "value": 200 } }, 
-                { "colName": "Description", "accessor": "description", "colWidth": { "unit": "px", "value": 200 } },
-                { "colName": "Github Forked URL", "accessor": "forkUrl"},
-                { "colName": "Branch Name", "accessor": "branchName", "colWidth": { "unit": "px", "value": 200 } },
-                { "colName": "Status", "accessor": "buildStatus", "colWidth": { "unit": "px", "value": 120 } },
-                { "colName": "Build", "title": "Build Project", "sortable": false, "html": "<a href='javascript:void(0)'>Build</a>", 
-                    "disableColumnSorting": true, 
-                    "action": {
-                    "name": "ROW_ACTION",
-                    "apiConfig": {
-                      "name": "buildProject",
-                      "url": "/rest/build/:projectGuid",
-                      "method": "POST",
-                      "pathParams": [
-                          {
-                              "paramName": "projectGuid",
-                              "mappedField": "CUSTOM_FIELD_OBJECT",
-                              "mappedValue": "guid"
-                          }
-                      ],
-                      "onSuccess": {
-                        "showSuccessMessage": true
-                      },
-                      "onError": {
-                        "showErrorMessage": true
-                      }
-                    }
-                  }, "colWidth": { "unit": "px", "value": 50 } 
-                },
-                { "colName": "Deployment Link", "accessor": "deployLink", "colWidth": { "unit": "px", "value": 480 } },
-                { "colName": "Edit Form", "title":"Edit Form", "html": "<i class='fas fa-th'></i>", "sortable": false, "colWidth": { "unit": "px", "value": 50 },
-                   "action": {
-                        "name": "ROW_ACTION",
-                        "pageUrl": "/edit-form"
-                   }
-                },
-                { "colName": "Download Build", "title": "Download Build", "html": "<i class='fas fa-download'></i>", "sortable": false, 
-                    "disableColumnSorting": true, 
-                    "action": {
-                    "name": "ROW_ACTION",
-                    "apiConfig": {
-                      "name": "downloadCode",
-                      "url": "/rest/download/build/:projectGuid",
-                      "method": "GET",
-                      "responseType": "arraybuffer",
-                      "pathParams": [
-                          {
-                              "paramName": "projectGuid",
-                              "mappedField": "CUSTOM_FIELD_OBJECT",
-                              "mappedValue": "guid"
-                          }
-                      ],
-                      "onSuccess": {
-                        "showSuccessMessage": true
-                      },
-                      "onError": {
-                        "showErrorMessage": true
-                      }
-                    }
-                  }, "colWidth": { "unit": "px", "value": 50 } 
-                },
-                { "colName": "Download logs", "title": "Download logs", "html": "<i class='fas fa-file-download'></i>", "sortable": false, 
-                    "disableColumnSorting": true, 
-                    "action": {
-                    "name": "ROW_ACTION",
-                    "apiConfig": {
-                      "name": "downloadLogs",
-                      "url": "/rest/download/log/:projectGuid",
-                      "method": "GET",
-                      "responseType": "arraybuffer",
-                      "pathParams": [
-                          {
-                              "paramName": "projectGuid",
-                              "mappedField": "CUSTOM_FIELD_OBJECT",
-                              "mappedValue": "guid"
-                          }
-                      ],
-                      "onSuccess": {
-                        "showSuccessMessage": true
-                      },
-                      "onError": {
-                        "showErrorMessage": true
-                      }
-                    }
-                  }, "colWidth": { "unit": "px", "value": 50 } 
-                },
-                { "colName": "Edit Project", "title": "Edit Project", "html": "<i class='fas fa-edit'></i>", "sortable": false, 
-                    "disableColumnSorting": true, 
-                    "events": [
+                "columns": [
                     {
-                        "event": "",
-                        "actions": [
-                            {
-                                "actionType" : "OPEN_MODAL",
-                                 "showLoading": true,
-                                 "target": "edit-project-modal"
-                            },
-                            {
-                                 "actionType": "WAIT_IN_MS",
-                                 "timer": 100
-                             },
-                             {
-                                "actionType": "SET_SHARED_DATA",
-                                "sharedData": [
+                        "colName": "Project Name",
+                        "filterType": "multiselect",
+                        "accessor": "title",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Description",
+                        "filterType": "text",
+                        "accessor": "description",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Github Forked URL",
+                        "accessor": "forkUrl"
+                    },
+                    {
+                        "colName": "Branch Name",
+                        "accessor": "branchName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Status",
+                        "accessor": "buildStatus",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 120
+                        }
+                    },
+                    {
+                        "colName": "Build",
+                        "title": "Build Project",
+                        "sortable": false,
+                        "html": "<a href='javascript:void(0)'>Build</a>",
+                        "disableColumnSorting": true,
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "buildProject",
+                                "url": "/rest/build/:projectGuid",
+                                "method": "POST",
+                                "pathParams": [
                                     {
-                                        "varName": "tableRowData",
-                                        "staticData": "$ROW_DATA$"
+                                        "paramName": "projectGuid",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "guid"
                                     }
-                                ]
-                            },
-                             {
-                                 "actionType": "setfield",
-                                 "field": "$editProjectDesc$",
-                                 "fieldValue": "$SHARED_DATA$.tableRowData.description",
-                                 "condition": "true",
-                                 "formName": "editProject"
-                             },
-                             {
-                                "actionType": "setfield",
-                                "field": "$projectId$",
-                                "fieldValue": "$SHARED_DATA$.tableRowData.id",
-                                "condition": "true",
-                                "formName": "editProject"
-                            },
-                             {
-                                 "actionType": "setfield",
-                                 "field": "$editBranchName$",
-                                 "fieldValue": "$SHARED_DATA$.tableRowData.branchName",
-                                 "condition": "true",
-                                 "formName": "editProject"
-                             },
-                             {
-                                "actionType": "setfield",
-                                "field": "$editProjectTitle$",
-                                "fieldValue": "$SHARED_DATA$.tableRowData.title",
-                                "condition": "true",
-                                "formName": "editProject"
-                            },
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Deployment Link",
+                        "accessor": "deployLink",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 480
+                        }
+                    },
+                    {
+                        "colName": "Edit Form",
+                        "title": "Edit Form",
+                        "html": "<i class='fas fa-th'></i>",
+                        "sortable": false,
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        },
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "pageUrl": "/edit-form"
+                        }
+                    },
+                    {
+                        "colName": "Download Build",
+                        "title": "Download Build",
+                        "html": "<i class='fas fa-download'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "downloadCode",
+                                "url": "/rest/download/build/:projectGuid",
+                                "method": "GET",
+                                "responseType": "arraybuffer",
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectGuid",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "guid"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Download logs",
+                        "title": "Download logs",
+                        "html": "<i class='fas fa-file-download'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "downloadLogs",
+                                "url": "/rest/download/log/:projectGuid",
+                                "method": "GET",
+                                "responseType": "arraybuffer",
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectGuid",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "guid"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Edit Project",
+                        "title": "Edit Project",
+                        "html": "<i class='fas fa-edit'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "events": [
                             {
-                                "actionType": "setfield",
-                                "field": "$editGitUrl$",
-                                "fieldValue": "$SHARED_DATA$.tableRowData.forkUrl",
-                                "condition": "true",
-                                "formName": "editProject"
+                                "event": "",
+                                "actions": [
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "edit-project-modal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "SET_SHARED_DATA",
+                                        "sharedData": [
+                                            {
+                                                "varName": "tableRowData",
+                                                "staticData": "$ROW_DATA$"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$editProjectDesc$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.description",
+                                        "condition": "true",
+                                        "formName": "editProject"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$projectId$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
+                                        "condition": "true",
+                                        "formName": "editProject"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$editBranchName$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.branchName",
+                                        "condition": "true",
+                                        "formName": "editProject"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$editProjectTitle$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.title",
+                                        "condition": "true",
+                                        "formName": "editProject"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$editGitUrl$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.forkUrl",
+                                        "condition": "true",
+                                        "formName": "editProject"
+                                    }
+                                ],
+                                "debounce": 3000
                             }
                         ],
-                        "debounce": 3000
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Delete Project",
+                        "title": "Delete Project",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteProject",
+                                "url": "/rest/project/:projectId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "projectList"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
                     }
-                ], "colWidth": { "unit": "px", "value": 50 } 
+                ],
+                "caption": "My Projects",
+                "summary": "",
+                "globalFilterFields": [
+                    "title",
+                    "description"
+                ],
+                "dataKey": "tokenNumber",
+                "resizableColumns": false,
+                "responsive": false,
+                "dataConfig": {
+                    "name": "projectList",
+                    "url": "/rest/getProjects",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": "projects"
+                    }
                 },
-                { "colName": "Delete Project", "title": "Delete Project", "html": "<i class='fas fa-trash'></i>", "sortable": false, 
-                    "disableColumnSorting": true, 
-                    "action": {
-                    "name": "ROW_ACTION",
-                    "apiConfig": {
-                      "name": "deleteProject",
-                      "url": "/rest/project/:projectId",
-                      "method": "DELETE",
-                      "pathParams": [
-                          {
-                              "paramName": "projectId",
-                              "mappedField": "CUSTOM_FIELD_OBJECT",
-                              "mappedValue": "id"
-                          }
-                      ],
-                      "onSuccess": {
-                        "deleteTableRow": false,
-                        "showSuccessMessage": true,
-                        "actions": [
-                          {
-                            "actionType": "RELOAD_COMPONENT_DATA",
-                            "componentName": "projectList"
-                          }
-                        ]
-                      },
-                      "onError": {
-                        "showErrorMessage": true
-                      }
-                    }
-                  }, "colWidth": { "unit": "px", "value": 50 } 
-                }
-              ]
-            }
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": []
         }
     ]
 }
