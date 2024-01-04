@@ -109,5 +109,18 @@
             "label": "Source Url",
             "placeholder": "Enter iFrame Source Url"
         }]        
-  }
+    },
+    {
+        "widgetList": [
+            {
+                "name": "ChartsExternalComponent",
+                "icon": "bi bi-box",
+                "label": "ChartsExternalComponent"
+            }
+        ],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": []        
+    }
 ]
