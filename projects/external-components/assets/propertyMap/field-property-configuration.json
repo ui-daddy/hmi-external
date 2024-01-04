@@ -132,7 +132,7 @@
               {
                 "propertyName": "options",
                 "defaultValueMapping": "options",
-                "type": "text",
+                "type": "textarea",
                 "label": "options",
                 "placeholder": "Enter options"
               },
