@@ -121,6 +121,49 @@
         "hiddenBaseProperties": ["label"],
         "hiddenLayoutProperties": ["orientation", "themeClass"],
         "hiddenExpressionProperties":["required", "readOnly", "disabled"],
-        "customAttributes": []        
+        "customAttributes": [
+            {
+                "propertyName": "type",
+                "defaultValueMapping": "type",
+                "type": "text",
+                "label": "type",
+                "placeholder": "Enter type"
+              },
+              {
+                "propertyName": "options",
+                "defaultValueMapping": "options",
+                "type": "text",
+                "label": "options",
+                "placeholder": "Enter options"
+              },
+              {
+                "propertyName": "dataKey",
+                "defaultValueMapping": "dataKey",
+                "type": "text",
+                "label": "Data Key",
+                "placeholder": "Enter dataKey"
+            },
+            {
+                "propertyName": "dataConfig",
+                "defaultValueMapping": "dataConfig",
+                "type": "textarea",
+                "label": "Data Config",
+                "placeholder": "Enter data configuration"
+            },
+            {
+                "propertyName": "dataToChartMapping",
+                "defaultValueMapping": "dataToChartMapping",
+                "type": "textarea",
+                "label": "Data To Chart Mapping",
+                "placeholder": "Enter Data To Chart Mapping configuration"
+            },
+            {
+                "propertyName": "backgroundColor",
+                "defaultValueMapping": "backgroundColor",
+                "type": "textarea",
+                "label": "background Color",
+                "placeholder": "Enter background Color"
+            }
+        ]        
     }
 ]
