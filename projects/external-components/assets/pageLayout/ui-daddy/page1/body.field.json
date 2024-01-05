@@ -21,7 +21,7 @@
             "events": [],
             "expressionProperties": {},
             "customAttributes": {
-                "type": "bar",
+                "type": "pie",
                 "options": {
                     "title": {
                         "display": true,
