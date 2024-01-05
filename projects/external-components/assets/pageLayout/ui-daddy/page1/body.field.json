@@ -44,8 +44,8 @@
                 "dataKey": "tokenNumber",
                 "dataConfig": {
                     "name": "customerTokenList",
-                    "url": "http://3.70.21.178:8888/api/auth/shipmentvslocation",
-                    "method": "POST",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Dashboards/PieChartData?zone=All&circle=All&division=All&substation=All",
+                    "method": "GET",
                     "payloadParams": [
                         {
                             "paramName": "location",
@@ -54,17 +54,17 @@
                         }
                     ],
                     "onSuccess": {
-                        "apiDataAccessor": "results"
+                        "apiDataAccessor": "projectProgressDto"
                     }
                 },
                 "dataToChartMapping": [
                     {
                         "chartConfigKey": "labels",
-                        "resultDataKey": "forward_agent_name"
+                        "resultDataKey": "x"
                     },
                     {
                         "chartConfigKey": "data",
-                        "resultDataKey": "count"
+                        "resultDataKey": "y"
                     }
                 ],
                 "backgroundColor": [
