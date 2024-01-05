@@ -3,10 +3,78 @@
         {
             "baseProperties": {
                 "type": "dynamicField",
-                "id": "db-1"
+                "id": "db-1",
+                "name": "barChart"
             },
-            "layoutProperties": {},
-            "libraryComponent": "ChartsExternalComponent"
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "bar",
+                "options": {
+                    "title": {
+                        "display": true,
+                        "text": "Shipments for Location",
+                        "fontSize": 16
+                    },
+                    "legend": {
+                        "position": "bottom"
+                    },
+                    "scales": {
+                        "yAxes": [
+                            {
+                                "ticks": {
+                                    "precision": 0
+                                }
+                            }
+                        ]
+                    }
+                },
+                "dataKey": "tokenNumber",
+                "dataConfig": {
+                    "name": "customerTokenList",
+                    "url": "http://3.70.21.178:8888/api/auth/shipmentvslocation",
+                    "method": "POST",
+                    "payloadParams": [
+                        {
+                            "paramName": "location",
+                            "mappedField": "city",
+                            "mappedValue": "location_of_the_ship_to_party"
+                        }
+                    ],
+                    "onSuccess": {
+                        "apiDataAccessor": "results"
+                    }
+                },
+                "dataToChartMapping": [
+                    {
+                        "chartConfigKey": "labels",
+                        "resultDataKey": "forward_agent_name"
+                    },
+                    {
+                        "chartConfigKey": "data",
+                        "resultDataKey": "count"
+                    }
+                ],
+                "backgroundColor": [
+                    "#42A5F5",
+                    "#424BF5",
+                    "#9242F5",
+                    "#F542A5",
+                    "#F542A5"
+                ]
+            }
         }
     ]
 }
