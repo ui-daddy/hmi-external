@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Define the directories you want to check
+codeDir="projects/external-components/src"
+jsonDir="projects/external-components/assets"
+
+# Check if changes are staged for both directories
+if git diff --cached --name-only | grep -E "^$codeDir/" >/dev/null && git diff --cached --name-only | grep -E "^$jsonDir/" >/dev/null; then
+    echo "Error: Changes in both $codeDir and $jsonDir cannot be committed together."
+    echo "Please commit them separately."
+    exit 1
+fi
+
+# If no issues are found, allow the commit to proceed
+exit 0

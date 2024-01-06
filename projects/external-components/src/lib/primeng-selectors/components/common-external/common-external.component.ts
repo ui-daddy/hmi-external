@@ -17,7 +17,7 @@ export class CommonExternalComponent implements AfterViewInit {
   public set fieldObj(theFieldObj: any) {
     this._fieldObj = theFieldObj;
     if (this.primeElement) {
-      Object.assign(this.isDirective? this.primeElement?.nativeElement : this.primeElement, this._fieldObj.customAttributes); 
+      Object.assign(this.isDirective? this.primeElement?.nativeElement : this.primeElement, this._fieldObj.customAttributes);
     }
   }
   @Input() dynamicAttributes: any;
