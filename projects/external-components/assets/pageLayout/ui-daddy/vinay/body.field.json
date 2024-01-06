@@ -1,0 +1,24 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "db-1",
+                "label": "?Viing"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ]
+}
