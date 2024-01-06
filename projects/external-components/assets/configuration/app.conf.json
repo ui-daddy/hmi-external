@@ -343,7 +343,8 @@
         },
         "data": {
             "fetchFromLocal": true,
-            "localURL": "./assets/pageLayout/ui-daddy/profile/body.data.json"
+            "localURL": "./assets/pageLayout/ui-daddy/profile/body.data.json",
+            "serverURL": []
         },
         "navField": {
             "fetchFromLocal": true,
@@ -354,12 +355,18 @@
             "localURL": "./assets/pageLayout/ui-daddy/profile/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": false,
+            "enabled": true,
             "conditions": []
         },
         "globalPageSettings": {
             "title": "profile",
-            "layoutProperties": null
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         }
     }
 }
