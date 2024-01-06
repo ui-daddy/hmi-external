@@ -22,6 +22,7 @@
             "expressionProperties": {},
             "customAttributes": {
                 "type": "pie",
+                "height": "",
                 "options": {
                     "title": {
                         "display": true,
