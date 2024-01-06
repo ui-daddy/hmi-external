@@ -355,7 +355,7 @@
             "localURL": "./assets/pageLayout/ui-daddy/profile/nav.section.json"
         },
         "authGuardConfig": {
-            "enabled": true,
+            "enabled": false,
             "conditions": []
         },
         "globalPageSettings": {
