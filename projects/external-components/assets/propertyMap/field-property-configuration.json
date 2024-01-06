@@ -126,14 +126,21 @@
                 "propertyName": "type",
                 "defaultValueMapping": "type",
                 "type": "text",
-                "label": "type",
+                "label": "Type",
                 "placeholder": "Enter type"
+              },
+              {
+                "propertyName": "height",
+                "defaultValueMapping": "height",
+                "type": "text",
+                "label": "Height",
+                "placeholder": "Enter height"
               },
               {
                 "propertyName": "options",
                 "defaultValueMapping": "options",
                 "type": "textarea",
-                "label": "options",
+                "label": "Options",
                 "placeholder": "Enter options"
               },
               {
@@ -141,7 +148,7 @@
                 "defaultValueMapping": "dataKey",
                 "type": "text",
                 "label": "Data Key",
-                "placeholder": "Enter dataKey"
+                "placeholder": "Enter data Key"
             },
             {
                 "propertyName": "dataConfig",
@@ -154,15 +161,15 @@
                 "propertyName": "dataToChartMapping",
                 "defaultValueMapping": "dataToChartMapping",
                 "type": "textarea",
-                "label": "Data To Chart Mapping",
-                "placeholder": "Enter Data To Chart Mapping configuration"
+                "label": "Data to chart mapping",
+                "placeholder": "Enter data to chart mapping configuration"
             },
             {
                 "propertyName": "backgroundColor",
                 "defaultValueMapping": "backgroundColor",
                 "type": "textarea",
-                "label": "background Color",
-                "placeholder": "Enter background Color"
+                "label": "Background color",
+                "placeholder": "Enter background color"
             }
         ]        
     }
