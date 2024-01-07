@@ -97,13 +97,13 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
         this.updateFilterPill();
       } else if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
         this.applyFilter();
-      } 
+      }
       if (actionObj.actionType === "SHOW_COMPONENT_LOADER") {
         this.filterLoader = true;
-      } 
+      }
       if (actionObj.actionType === "HIDE_COMPONENT_LOADER") {
         this.filterLoader = false;
-      }  
+      }
     });
 
     this.items = this.fieldObj.customAttributes?.filterOptions?.map((item: any, index:number) => {
@@ -112,7 +112,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
         this.hideFilterFormGrp();
         const filterObj = this.filterFormGrp[index];
         switch(item.type.toLowerCase()) {
-          case FilterEventType.DEPENDENT:            
+          case FilterEventType.DEPENDENT:
             filterObj.show = true;
             if(filterObj.filterGroup && filterObj.filterGroup.length) {
               this.loadDropdownDataFromAPI((filterObj.filterGroup[0]) || []);
@@ -140,7 +140,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   }
 
   loadData(ddOption: any, selectedValue?: string) {
-    ddOption.showLoader = true;   
+    ddOption.showLoader = true;
     this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
       ddOption.optionList = data;
       if (data && data.length && ddOption.filterOptionListBy) {
