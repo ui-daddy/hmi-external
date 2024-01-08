@@ -1,3 +1,118 @@
 {
-    "db-0": []
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-1",
+                "name": "reports-filter",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "filter-group-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".filter-group-css",
+                            "xs": {
+                                "position": "absolute",
+                                "z-index": "1",
+                                "top": "33px",
+                                "left": "30px",
+                                "width": "68%"
+                            }
+                        }
+                    ],
+                    "themeClass": "p-button-icon-only p-button-outlined"
+                },
+                "orientation": null
+            },
+            "libraryComponent": "FilterGroupExternalComponent",
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "showComponentLoaderOnApply": "",
+                "buttonOptions": {
+                    "label": "",
+                    "leftIcon": "pi-filter"
+                },
+                "filterOptions": [
+                    {
+                        "label": "Filter By Area",
+                        "icon": "",
+                        "type": "dependent",
+                        "filterGroup": [
+                            {
+                                "label": "Zone",
+                                "optionList": [],
+                                "labelKey": "zone",
+                                "valueKey": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get?level=zone",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Circle",
+                                "optionList": [],
+                                "labelKey": "circle",
+                                "valueKey": "circle",
+                                "filterOptionListBy": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Circle",
+                                    "url": "/api/v1/Levels/Get?level=circle",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Division",
+                                "optionList": [],
+                                "labelKey": "dividion",
+                                "valueKey": "dividion",
+                                "filterOptionListBy": "circle",
+                                "optionsConfig": {
+                                    "name": "Get Division",
+                                    "url": "/api/v1/Levels/Get?level=division",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Substation",
+                                "optionList": [],
+                                "labelKey": "name",
+                                "valueKey": "name",
+                                "filterOptionListBy": "division",
+                                "optionsConfig": {
+                                    "name": "Get substation",
+                                    "url": "/api/v1/Levels/Get?level=substation",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "filterConfig": {}
+            }
+        }
+    ]
 }
