@@ -213,7 +213,7 @@
             "optionList": null,
             "optionsConfig": {
                 "name": "Get Task",
-                "url": "api/v1/Report/GetTasksForReport",
+                "url": "/api/v1/Report/GetTasksForReport",
                 "method": "GET",
                 "pathParams": [],
                 "queryParams": [],
