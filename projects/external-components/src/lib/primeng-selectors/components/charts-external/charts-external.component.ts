@@ -14,7 +14,7 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
   type: any;
   loading: boolean = false;
   dataBuild: any;
-  height:any = "100vh";
+  height:any;
 
   constructor() {
     super();      
