@@ -112,7 +112,6 @@
                                 "label": "test",
                                 "optionList": [],
                                 "labelKey": "name",
-                                
                                 "optionsConfig": {
                                     "name": "Get substation",
                                     "url": "api/v1/Report/GetTasksForReport",
@@ -176,9 +175,7 @@
                         "apiDataAccessor": "",
                         "message": "",
                         "actions": [
-                            {
-                               
-                            }
+                            {}
                         ]
                     },
                     "onError": {
@@ -193,6 +190,38 @@
                     }
                 }
             }
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "db-2"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Task",
+                "url": "api/v1/Report/GetTasksForReport",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD"
+            },
+            "labelKey": "task",
+            "valueKey": null,
+            "value": null
         }
     ]
 }
