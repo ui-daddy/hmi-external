@@ -107,6 +107,21 @@
                                     "payloadParams": [],
                                     "fetch": "ONLOAD"
                                 }
+                            },
+                            {
+                                "label": "test",
+                                "optionList": [],
+                                "labelKey": "name",
+                                
+                                "optionsConfig": {
+                                    "name": "Get substation",
+                                    "url": "api/v1/Report/GetTasksForReport",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
                             }
                         ]
                     }
@@ -161,7 +176,9 @@
                         "apiDataAccessor": "",
                         "message": "",
                         "actions": [
-                            
+                            {
+                               
+                            }
                         ]
                     },
                     "onError": {
