@@ -194,7 +194,8 @@
         {
             "baseProperties": {
                 "type": "dropdown",
-                "id": "db-2"
+                "id": "db-2",
+                "label": "tasks"
             },
             "layoutProperties": {
                 "labelPlacement": null,
