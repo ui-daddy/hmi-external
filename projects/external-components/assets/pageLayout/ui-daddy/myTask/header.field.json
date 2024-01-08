@@ -76,6 +76,11 @@
                     "id": "reports",
                     "label": "Reports",
                     "navigateToPage": "/reports"
+                },
+                {
+                    "id": "tasks-report",
+                    "label": "Tasks Reports",
+                    "navigateToPage": "/tasks-report"
                 }
             ],
             "layoutProperties": {
