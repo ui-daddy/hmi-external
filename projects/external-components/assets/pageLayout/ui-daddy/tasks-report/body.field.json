@@ -116,7 +116,7 @@
                                 "isArray": true,
                                 "optionsConfig": {
                                     "name": "Get task",
-                                    "url": "/api/v1/Dashboards/PieChartData",
+                                    "url": "/api/v1/Report/GetTasksForReport",
                                     "method": "GET",
                                     "pathParams": [],
                                     "queryParams": [],
@@ -129,7 +129,7 @@
                 ],
                 "filterConfig": {
                     "name": "Filter Report",
-                    "url": "/api/v1/Report/OverDueReport",
+                    "url": "/api/v1/Dashboards/PieChartData",
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [
