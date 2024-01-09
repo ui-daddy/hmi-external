@@ -109,12 +109,13 @@
                                 }
                             },
                             {
-                                "label": "test",
+                                "label": "select Task",
                                 "optionList": [],
-                                "labelKey": "name",
+                                "labelKey": "task",
+                                "valueKey": "task",
                                 "isArray": true,
                                 "optionsConfig": {
-                                    "name": "Get substation",
+                                    "name": "Get task",
                                     "url": "/api/v1/Report/GetTasksForReport",
                                     "method": "GET",
                                     "pathParams": [],
@@ -154,6 +155,12 @@
                             "paramName": "substation",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
                             "mappedValue": "name",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "task",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "task",
                             "valueFormat": ""
                         }
                     ],
