@@ -164,7 +164,6 @@
                             "valueFormat": ""
                         }
                     ],
-                    "postTransform": "dateTransform",
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "",
