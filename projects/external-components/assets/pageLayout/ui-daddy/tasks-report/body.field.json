@@ -116,7 +116,7 @@
                                 "isArray": true,
                                 "optionsConfig": {
                                     "name": "Get task",
-                                    "url": "/api/v1/Report/GetTasksForReport",
+                                    "url": "/api/v1/Dashboards/PieChartData",
                                     "method": "GET",
                                     "pathParams": [],
                                     "queryParams": [],
@@ -183,7 +183,13 @@
                         "apiDataAccessor": "",
                         "message": "",
                         "actions": [
-                            {}
+                            {
+                                "actionType": "setfield",
+                                "field": "$db-2$",
+                                "fieldValue": "$RESPONSE$",
+                                "condition": "true",
+                                "formName": ""
+                            }
                         ]
                     },
                     "onError": {
