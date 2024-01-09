@@ -112,10 +112,9 @@
                                 "label": "test",
                                 "optionList": [],
                                 "labelKey": "name",
-                                
                                 "optionsConfig": {
                                     "name": "Get substation",
-                                    "url": "api/v1/Report/GetTasksForReport",
+                                    "url": "/api/v1/Report/GetTasksForReport",
                                     "method": "GET",
                                     "pathParams": [],
                                     "queryParams": [],
