@@ -226,7 +226,7 @@
             "expressionProperties": {},
             "customAttributes": {
                 "type": "pie",
-                "height": "100vh",
+                "height": "90vh",
                 "options": {
                     "title": {
                         "display": true,
