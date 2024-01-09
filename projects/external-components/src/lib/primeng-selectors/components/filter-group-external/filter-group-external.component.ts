@@ -14,6 +14,7 @@ export interface IFilterGroup {
   show: boolean;
   labelKey?: string;
   valueKey?: string;
+  isArray?: boolean;
   filterApplied?: boolean;
   optionList?: any[];
   filterGroup?: IFilterGroup[];
@@ -142,7 +143,11 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   loadData(ddOption: any, selectedValue?: string) {
     ddOption.showLoader = true;
     this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
-      ddOption.optionList = data;
+      if(ddOption.isArray === true){ 
+        ddOption.optionList = data.map(item => ({ [ddOption.labelKey]: item })); //tranformimg array of strings to array of objects
+      }else{
+        ddOption.optionList = data;
+      }
       if (data && data.length && ddOption.filterOptionListBy) {
         ddOption.optionList = ddOption.optionList.filter((v:any)=> v[ddOption.filterOptionListBy] === selectedValue);
       }
