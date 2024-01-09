@@ -183,9 +183,7 @@
                         "apiDataAccessor": "",
                         "message": "",
                         "actions": [
-                            {
-                               
-                            }
+                            {}
                         ]
                     },
                     "onError": {
@@ -199,6 +197,77 @@
                         "actions": []
                     }
                 }
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-2",
+                "name": "pieChartForTasks"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "pie",
+                "height": "100vh",
+                "options": {
+                    "title": {
+                        "display": true,
+                        "text": "Tasks",
+                        "fontSize": 16
+                    },
+                    "legend": {
+                        "position": "bottom"
+                    },
+                    "scales": {
+                        "yAxes": [
+                            {
+                                "ticks": {
+                                    "precision": 0
+                                }
+                            }
+                        ]
+                    }
+                },
+                "dataKey": null,
+                "dataConfig": {
+                    "name": "tasksReport",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Dashboards/PieChartData?zone=All&circle=All&division=All&substation=All",
+                    "method": "GET",
+                    "payloadParams": [],
+                    "onSuccess": {
+                        "apiDataAccessor": "projectProgressDto"
+                    }
+                },
+                "dataToChartMapping": [
+                    {
+                        "chartConfigKey": "labels",
+                        "resultDataKey": "x"
+                    },
+                    {
+                        "chartConfigKey": "data",
+                        "resultDataKey": "y"
+                    }
+                ],
+                "backgroundColor": [
+                    "#42A5F5",
+                    "#424BF5",
+                    "#9242F5",
+                    "#F542A5",
+                    "#F542A5"
+                ]
             }
         }
     ]
