@@ -177,7 +177,7 @@
                         "sharedData": [],
                         "fieldData": [],
                         "clearSharedData": [],
-                        "apiDataAccessor": "projectProgressDto",
+                        "apiDataAccessor": "",
                         "message": "",
                         "actions": [
                             {
