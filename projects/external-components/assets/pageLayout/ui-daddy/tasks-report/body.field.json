@@ -109,7 +109,7 @@
                                 }
                             },
                             {
-                                "label": "select Task",
+                                "label": "task",
                                 "optionList": [],
                                 "isArrayOfString": true,
                                 "optionsConfig": {
