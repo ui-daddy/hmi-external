@@ -111,9 +111,7 @@
                             {
                                 "label": "select Task",
                                 "optionList": [],
-                                "labelKey": "task",
-                                "valueKey": "task",
-                                "isArray": true,
+                                "isArrayOfString": true,
                                 "optionsConfig": {
                                     "name": "Get task",
                                     "url": "/api/v1/Report/GetTasksForReport",
@@ -185,7 +183,7 @@
                             {
                                 "actionType": "setfield",
                                 "field": "$db-2$",
-                                "fieldValue": "$RESPONSE$",
+                                "fieldValue": "$RESPONSE$.projectProgressDto",
                                 "condition": "true",
                                 "formName": ""
                             }
