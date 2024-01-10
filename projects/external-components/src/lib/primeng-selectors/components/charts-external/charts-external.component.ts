@@ -36,7 +36,10 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
         this.loadData();
-      }      
+      };
+      if (actionObj.actionType === "setfield") {
+        this.data = actionObj.data;
+      }
     });
   }
 
