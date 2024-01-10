@@ -179,7 +179,7 @@
                         "sharedData": [],
                         "fieldData": [],
                         "clearSharedData": [],
-                        "apiDataAccessor": "",
+                        "apiDataAccessor": "projectProgressDto",
                         "message": "",
                         "actions": [
                             {
@@ -226,7 +226,7 @@
             "expressionProperties": {},
             "customAttributes": {
                 "type": "pie",
-                "height": "90vh",
+                "height": "80vh",
                 "options": {
                     "title": {
                         "display": true,
