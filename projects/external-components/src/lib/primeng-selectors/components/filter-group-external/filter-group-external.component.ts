@@ -14,7 +14,7 @@ export interface IFilterGroup {
   show: boolean;
   labelKey?: string;
   valueKey?: string;
-  isArray?: boolean;
+  isArrayOfString?: boolean;
   filterApplied?: boolean;
   optionList?: any[];
   filterGroup?: IFilterGroup[];
@@ -143,8 +143,8 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   loadData(ddOption: any, selectedValue?: string) {
     ddOption.showLoader = true;
     this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
-      if(ddOption.isArray === true){ 
-        ddOption.optionList = data.map(item => ({ [ddOption.labelKey]: item })); //tranformimg array of strings to array of objects
+      if(ddOption.isArrayOfString === true){ 
+        ddOption.optionList = data.map(item => ({ "label": item, "value": item })); //tranformimg array of strings to array of objects
       }else{
         ddOption.optionList = data;
       }

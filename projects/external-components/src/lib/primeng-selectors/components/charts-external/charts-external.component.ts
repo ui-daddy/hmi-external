@@ -38,7 +38,7 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
         this.loadData();
       };
       if (actionObj.actionType === "setfield") {
-        let result= actionObj.data[this.fieldObj.customAttributes.dataConfig.onSuccess.apiDataAccessor];
+        let result= actionObj.data;
         this.dataFormation(result)
 
       }
