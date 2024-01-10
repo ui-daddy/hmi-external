@@ -14,6 +14,7 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
   type: any;
   loading: boolean = false;
   dataBuild: any;
+  height:any;
 
   constructor() {
     super();      
@@ -22,6 +23,11 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
   ngOnInit(): void {   
     this.options = this.fieldObj.customAttributes.options;
     this.type = this.fieldObj.customAttributes.type;
+    if (this.fieldObj.customAttributes.height === null || this.fieldObj.customAttributes.height === undefined || this.fieldObj.customAttributes.height === "") {
+      this.height = "100vh";     
+    } else {
+      this.height = this.fieldObj.customAttributes.height;
+    }
     if (this.fieldObj.customAttributes.dataConfig) {
       this.loadData();     
     } else {
