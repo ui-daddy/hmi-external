@@ -47,6 +47,7 @@
                         "filterGroup": [
                             {
                                 "label": "Zone",
+                                "filterName": "zone",
                                 "optionList": [],
                                 "labelKey": "zone",
                                 "valueKey": "zone",
@@ -62,6 +63,7 @@
                             },
                             {
                                 "label": "Circle",
+                                "filterName": "circle",
                                 "optionList": [],
                                 "labelKey": "circle",
                                 "valueKey": "circle",
@@ -78,6 +80,7 @@
                             },
                             {
                                 "label": "Division",
+                                "filterName": "division",
                                 "optionList": [],
                                 "labelKey": "dividion",
                                 "valueKey": "dividion",
@@ -94,6 +97,7 @@
                             },
                             {
                                 "label": "Substation",
+                                "filterName": "substation",
                                 "optionList": [],
                                 "labelKey": "name",
                                 "valueKey": "name",
@@ -109,7 +113,8 @@
                                 }
                             },
                             {
-                                "label": "task",
+                                "label": "Task",
+                                "filterName": "task",
                                 "optionList": [],
                                 "isArrayOfString": true,
                                 "optionsConfig": {
