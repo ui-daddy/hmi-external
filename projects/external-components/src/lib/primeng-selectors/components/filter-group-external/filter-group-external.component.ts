@@ -47,6 +47,12 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   appliedFilterPills: IFilterGroup[] = [];
   initializeFilterFormGrp() {
     this.filterFormGrp = this.fieldObj.customAttributes?.filterOptions?.map((v: any)=> {
+      v.map((item:any)=>{
+        if(item.isArrayOfString === true){
+          item.labelKey = "label";
+          item.valueKey = "value"; 
+        }
+      })
       const data = { ...v, show: false };
       if (v.type === FilterEventType.DEPENDENT) {
         const filterGroup = v.filterGroup.map((dep:any)=> ({ ...dep, value: '' }))
@@ -144,8 +150,6 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     ddOption.showLoader = true;
     this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
       if(ddOption.isArrayOfString === true){
-        ddOption.labelKey = "label";
-        ddOption.valueKey = "value"; 
         ddOption.optionList = data.map(item => ({ [ddOption.labelKey]: item, [ddOption.valueKey]: item })); //tranformimg array of strings to array of objects
       }else{
         ddOption.optionList = data;
