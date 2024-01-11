@@ -50,7 +50,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       v.filterGroup.map((item:any)=>{
         if(item.isArrayOfString === true){
           item.labelKey = "label";
-          item.valueKey = "value"; 
+          item.valueKey = "task"; 
         }
       })
       const data = { ...v, show: false };
