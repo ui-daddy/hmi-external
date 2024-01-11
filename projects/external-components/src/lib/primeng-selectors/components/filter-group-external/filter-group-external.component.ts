@@ -47,7 +47,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   appliedFilterPills: IFilterGroup[] = [];
   initializeFilterFormGrp() {
     this.filterFormGrp = this.fieldObj.customAttributes?.filterOptions?.map((v: any)=> {
-      v.map((item:any)=>{
+      v.filterGroup.map((item:any)=>{
         if(item.isArrayOfString === true){
           item.labelKey = "label";
           item.valueKey = "value"; 
