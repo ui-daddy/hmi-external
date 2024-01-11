@@ -143,8 +143,10 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   loadData(ddOption: any, selectedValue?: string) {
     ddOption.showLoader = true;
     this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
-      if(ddOption.isArrayOfString === true){ 
-        ddOption.optionList = data.map(item => ({ "label": item, "value": item })); //tranformimg array of strings to array of objects
+      if(ddOption.isArrayOfString === true){
+        ddOption.labelKey = "label";
+        ddOption.valueKey = "value"; 
+        ddOption.optionList = data.map(item => ({ [ddOption.labelKey]: item, [ddOption.valueKey]: item })); //tranformimg array of strings to array of objects
       }else{
         ddOption.optionList = data;
       }
