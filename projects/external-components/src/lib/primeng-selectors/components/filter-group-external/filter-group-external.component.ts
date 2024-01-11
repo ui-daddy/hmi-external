@@ -8,6 +8,7 @@ export const FilterEventType = {
 };
 
 export interface IFilterGroup {
+  filterName: any;
   label: string;
   type: string;
   value: string;
@@ -50,7 +51,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       v.filterGroup.map((item:any)=>{
         if(item.isArrayOfString === true){
           item.labelKey = "label";
-          item.valueKey = "task"; 
+          item.valueKey = "value"
         }
       })
       const data = { ...v, show: false };
@@ -235,13 +236,13 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       if(filter.filterApplied) {
         if (filter.type === 'dependent') {
           filter.filterGroup?.forEach(((depF: IFilterGroup) => {
-            if (depF.valueKey) {
-              data[depF.valueKey] = depF.value;
+            if (depF.filterName) {
+              data[depF.filterName] = depF.value;
             }
           }));
         } else {
-          if (filter.valueKey) {
-            data[filter.valueKey] = filter.value;
+          if (filter.filterName) {
+            data[filter.filterName] = filter.value;
           }
         }
       }
