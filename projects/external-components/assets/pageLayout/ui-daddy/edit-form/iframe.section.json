@@ -4,6 +4,9 @@
         "id": "iframeFrm",
         "type": "form",
         "layout": {
+          "css": {
+            "customClassName": "iframe-form"
+          },
           "column" : {
             "count": 1,
             "ratio": {
@@ -21,7 +24,7 @@
           "type": "content",
           "layout": {
             "css": {
-              "customClassName": "hmi-section-card"
+              "customClassName": "iframe-content"
             },
             "column":{
               "count": 2,

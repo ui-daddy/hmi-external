@@ -4,19 +4,19 @@
             "id": "footer-dashboard",
             "type": "content",
             "layout": {
-              "column": {
-                "count": 2,
-                "ratio": {
-                  "lg": "12",
-                  "md": "12",
-                  "sm": "12",
-                  "xs": "12"
+                "column": {
+                    "count": 2,
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "autoPlace": "false"
                 },
-                "autoPlace": "false"
-              },
-              "css": {
-                "customClassName": "section-container__no-margin"
-              }
+                "css": {
+                    "customClassName": "section-container__no-margin"
+                }
             }
         }
     ]

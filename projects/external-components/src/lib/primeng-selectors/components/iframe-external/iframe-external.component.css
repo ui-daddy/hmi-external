@@ -1,0 +1,3 @@
+.fd__iframe-height {
+    height: calc(100vh - 110px);
+}

@@ -1,0 +1,138 @@
+.filter-menu-popup {
+    left: 0;
+    position: absolute;
+    top: calc(100% + 5px);
+    z-index: 1001;
+}
+
+.filter-btn-group {
+    margin-top: 10px;
+}
+
+.filter-group-container {
+    button.filter-button.p-element {
+        width: 42px;
+        height: 42px;
+    }
+    
+    button.filter-button.p-element span {
+        font-size: 16px;
+    }
+}
+
+.filter-group-container {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.menu-filter-option {
+    position: absolute;
+    left: 12.6rem;
+    top: calc(100% + 5px);
+    z-index: 1001;
+    background-color: white;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+}
+
+.dependent-event-container,
+.text-event-container,
+.dropdown-event-container {
+    padding: 20px;
+    input {
+        margin-bottom: 20px;
+    }
+    .p-element + .p-element,
+    label + label {
+        margin-left: 20px;
+    }
+    label {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+}
+
+.dependent-dd-container {
+    position: relative;
+    .dependent-dd-label {
+        max-width: 200px;
+    }
+}
+
+.pills-wrapper {
+    gap: 10px;
+    align-self: center;
+}
+
+:host ::ng-deep {
+    .dropdown-event-container,
+    .dependent-event-container {
+        .p-dropdown {
+            margin-bottom: 15px;
+            width: 200px;
+        }
+        .p-dropdown-label {
+            padding: 5px;
+        }
+    }
+    .filter-pills {
+        .p-tag {
+            border-radius: 10px;
+            border: 1px solid #0288d12b;
+            font-weight: 500;
+            background-color: #0288d12b;
+            color: #000;
+        }
+        .pi {
+            margin-left: 10px;
+            margin-top: 2px;
+            font-size: 11px;
+            font-weight: 300;
+        }
+        .text-base {
+            display: inline-block;
+            max-width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .close-pills {
+            cursor: pointer;
+        }
+    }
+
+    .filter-menu-popup {
+        .p-menuitem-text::after {
+            content: ">";
+            position: absolute;
+            right: 10px;
+            top: 43%;
+            transform: translateY(-50%);
+            font-size: 25px;
+        }
+    }
+
+    .dependent-dropdown-container {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+
+        .pi-times {
+            cursor: pointer;
+            font-size: 12px;
+            position: absolute;
+            cursor: pointer;
+            right: 31px;
+        }
+
+        .dropdown-content {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}

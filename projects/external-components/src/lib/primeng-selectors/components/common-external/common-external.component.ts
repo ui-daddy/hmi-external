@@ -16,7 +16,9 @@ export class CommonExternalComponent implements AfterViewInit {
   @Input()
   public set fieldObj(theFieldObj: any) {
     this._fieldObj = theFieldObj;
-    Object.assign(this.isDirective? this.primeElement.nativeElement : this.primeElement, this._fieldObj.customAttributes); 
+    if (this.primeElement) {
+      Object.assign(this.isDirective? this.primeElement?.nativeElement : this.primeElement, this._fieldObj.customAttributes);
+    }
   }
   @Input() dynamicAttributes: any;
   @Input() formGroupObj: any;
@@ -29,11 +31,13 @@ export class CommonExternalComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
-    const nativeElement = this.primeElement.nativeElement || (this.primeElement.input && this.primeElement.input.nativeElement);
-    if (nativeElement) {
-      nativeElement.readOnly = this.dynamicAttributes.readOnlyValue;
-    } else {
-      this.primeElement.readonly = this.dynamicAttributes.readOnlyValue;
+    if (this.primeElement) {
+      const nativeElement = this.primeElement?.nativeElement || (this.primeElement.input && this.primeElement.input.nativeElement);
+      if (nativeElement) {
+        nativeElement.readOnly = this.dynamicAttributes.readOnlyValue;
+      } else {
+        this.primeElement.readonly = this.dynamicAttributes.readOnlyValue;
+      }
     }
 
     if (!this.isEventInitialized) {
