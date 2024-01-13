@@ -114,7 +114,7 @@
                             },
                             {
                                 "label": "Task",
-                                "filterName": "task",
+                                "filterName": "act",
                                 "optionList": [],
                                 "isArrayOfString": true,
                                 "optionsConfig": {
@@ -132,7 +132,7 @@
                 ],
                 "filterConfig": {
                     "name": "Filter Report",
-                    "url": "/api/v1/Dashboards/PieChartData",
+                    "url": "/api/v1/Report/GetTasksProgressReport",
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [
@@ -161,9 +161,9 @@
                             "valueFormat": ""
                         },
                         {
-                            "paramName": "task",
+                            "paramName": "act",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
-                            "mappedValue": "task",
+                            "mappedValue": "act",
                             "valueFormat": ""
                         }
                     ],
@@ -252,7 +252,7 @@
                 "dataKey": null,
                 "dataConfig": {
                     "name": "tasksReport",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Dashboards/PieChartData?zone=All&circle=All&division=All&substation=All",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
                     "method": "GET",
                     "payloadParams": [],
                     "onSuccess": {
