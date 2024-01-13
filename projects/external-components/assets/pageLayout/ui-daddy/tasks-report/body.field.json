@@ -188,7 +188,7 @@
                             {
                                 "actionType": "setfield",
                                 "field": "$db-2$",
-                                "fieldValue": "projectProgressDto",
+                                "fieldValue": "",
                                 "condition": "true",
                                 "formName": ""
                             }
