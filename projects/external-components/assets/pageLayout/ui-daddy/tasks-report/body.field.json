@@ -80,7 +80,7 @@
                             },
                             {
                                 "label": "Division",
-                                "filterName": "division",
+                                "filterName": "dividion",
                                 "optionList": [],
                                 "labelKey": "dividion",
                                 "valueKey": "dividion",
@@ -97,7 +97,7 @@
                             },
                             {
                                 "label": "Substation",
-                                "filterName": "substation",
+                                "filterName": "name",
                                 "optionList": [],
                                 "labelKey": "name",
                                 "valueKey": "name",
