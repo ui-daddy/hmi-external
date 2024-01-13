@@ -256,7 +256,7 @@
                     "method": "GET",
                     "payloadParams": [],
                     "onSuccess": {
-                        "apiDataAccessor": "projectProgressDto"
+                        "apiDataAccessor": ""
                     }
                 },
                 "dataToChartMapping": [
