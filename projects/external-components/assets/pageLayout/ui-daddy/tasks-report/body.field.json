@@ -127,7 +127,6 @@
                                     "fetch": "ONLOAD"
                                 }
                             }
-                            
                         ]
                     }
                 ],
@@ -230,6 +229,7 @@
             "expressionProperties": {},
             "customAttributes": {
                 "type": "pie",
+                "label": "Task",
                 "height": "80vh",
                 "options": {
                     "title": {
