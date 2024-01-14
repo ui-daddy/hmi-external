@@ -46,6 +46,21 @@
                         "type": "dependent",
                         "filterGroup": [
                             {
+                                "label": "Task",
+                                "filterName": "act",
+                                "optionList": [],
+                                "isArrayOfString": true,
+                                "optionsConfig": {
+                                    "name": "Get task",
+                                    "url": "/api/v1/Report/GetTasksForReport",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
                                 "label": "Zone",
                                 "filterName": "zone",
                                 "optionList": [],
@@ -111,22 +126,8 @@
                                     "payloadParams": [],
                                     "fetch": "ONLOAD"
                                 }
-                            },
-                            {
-                                "label": "Task",
-                                "filterName": "act",
-                                "optionList": [],
-                                "isArrayOfString": true,
-                                "optionsConfig": {
-                                    "name": "Get task",
-                                    "url": "/api/v1/Report/GetTasksForReport",
-                                    "method": "GET",
-                                    "pathParams": [],
-                                    "queryParams": [],
-                                    "payloadParams": [],
-                                    "fetch": "ONLOAD"
-                                }
                             }
+                            
                         ]
                     }
                 ],
@@ -136,6 +137,12 @@
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [
+                        {
+                            "paramName": "act",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "act",
+                            "valueFormat": ""
+                        },
                         {
                             "paramName": "zone",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
@@ -158,12 +165,6 @@
                             "paramName": "substation",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
                             "mappedValue": "name",
-                            "valueFormat": ""
-                        },
-                        {
-                            "paramName": "act",
-                            "mappedField": "CUSTOM_FIELD_OBJECT",
-                            "mappedValue": "act",
                             "valueFormat": ""
                         }
                     ],
