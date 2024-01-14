@@ -154,8 +154,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
         ddOption.optionList = data.map(item => ({ [ddOption.labelKey]: item, [ddOption.valueKey]: item })); //tranformimg array of strings to array of objects
       }else{
         ddOption.optionList = data;
-      }
-      if (data && data.length && ddOption.filterOptionListBy) {
+      }      if (data && data.length && ddOption.filterOptionListBy) {
         ddOption.optionList = ddOption.optionList.filter((v:any)=> v[ddOption.filterOptionListBy] === selectedValue);
       }
       ddOption.showLoader = false;
