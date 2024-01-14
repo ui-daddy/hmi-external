@@ -53,35 +53,6 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
         let result = data;
         this.dataFormation(result)
  
-        //     dataToChartMap: any = {};
-        // this.dataBuild  = {
-        //   labels: [],
-        //   datasets: []
-        // };
-        // if (this.fieldObj.customAttributes.dataToChartMapping && this.fieldObj.customAttributes.dataToChartMapping.length) {
-        //   for(let mappingObj of this.fieldObj.customAttributes.dataToChartMapping) {
-        //     dataToChartMap[mappingObj.chartConfigKey] = mappingObj.resultDataKey;            
-        //   }
-        //   let singleDataSet: {label: string, backgroundColor: string, data: Array<number>} = {
-        //     label: "Shippment Carriers",
-        //     backgroundColor: "#42A5F5",
-        //     data: []
-        //   };
-        //   for (let resultDataObj of result) {
-        //     singleDataSet.data.push(parseInt(resultDataObj[dataToChartMap.data]));
-        //     this.dataBuild.labels.push(resultDataObj[dataToChartMap.labels]);              
-        //   }
-        //   if (this.fieldObj.customAttributes.backgroundColor && this.fieldObj.customAttributes.backgroundColor.length) {
-        //     singleDataSet.backgroundColor = this.fieldObj.customAttributes.backgroundColor;
-        //   }            
-        //   this.dataBuild.datasets.push(singleDataSet);
-        //   //this.data.dataSet = result.map(this.resultsToChartMapper, this);
-        // } else {
-        //   this.dataBuild.datasets = result;
-        //   this.dataBuild.labels = this.fieldObj.customAttributes.labels;
-        // }
-        // this.data = this.dataBuild;
-        // this.loading = false;
       });
     }
   }
