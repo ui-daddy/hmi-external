@@ -1,3 +1,4 @@
 <div>
-    <p-chart #primeElement class="chart_height" [style.height]="height" type="{{type}}" [data]="data" [options]="options"></p-chart>
+    <p-chart *ngIf="data.length > 0" #primeElement class="chart_height" [style.height]="height" type="{{type}}" [data]="data" [options]="options"></p-chart>
+    <p *ngIf="!data.length">No data</p>
 </div>
