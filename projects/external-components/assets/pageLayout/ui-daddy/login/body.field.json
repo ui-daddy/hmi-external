@@ -15,8 +15,7 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": [
-                        {
+                    "configuration": [{
                             "selectorName": ".element-child",
                             "xs": {
                                 "margin-bottom": "35px",
@@ -29,8 +28,7 @@
                                 "text-align": "center",
                                 "color": "white"
                             }
-                        }
-                    ],
+                        }],
                     "customClassName": "element-child"
                 }
             }
