@@ -88,7 +88,7 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
     if (this.fieldObj.customAttributes.backgroundColor && this.fieldObj.customAttributes.backgroundColor.length) {
       singleDataSet.backgroundColor = this.fieldObj.customAttributes.backgroundColor;
     }    
-    if (this.fieldObj.customAttributes.label && this.fieldObj.customAttributes.label.length) {
+    if (this.fieldObj.customAttributes.label) {
       singleDataSet.label = this.fieldObj.customAttributes.label;
     }         
     this.dataBuild.datasets.push(singleDataSet);
