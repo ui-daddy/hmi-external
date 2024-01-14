@@ -1,9 +1,9 @@
 {
-    "dnd-0": [
+    "db-0": [
         {
             "baseProperties": {
                 "type": "dynamicField",
-                "id": "dnd-3",
+                "id": "db-1",
                 "name": "reports-filter",
                 "library": "primeng"
             },
@@ -34,7 +34,7 @@
                 "visibleValue": "true"
             },
             "customAttributes": {
-                "showComponentLoaderOnApply": "reports-table",
+                "showComponentLoaderOnApply": "",
                 "buttonOptions": {
                     "label": "",
                     "leftIcon": "pi-filter"
@@ -45,6 +45,21 @@
                         "icon": "",
                         "type": "dependent",
                         "filterGroup": [
+                            {
+                                "label": "Task",
+                                "filterName": "act",
+                                "optionList": [],
+                                "isArrayOfString": true,
+                                "optionsConfig": {
+                                    "name": "Get task",
+                                    "url": "/api/v1/Report/GetTasksForReport",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
                             {
                                 "label": "Zone",
                                 "filterName": "zone",
@@ -112,15 +127,22 @@
                                     "fetch": "ONLOAD"
                                 }
                             }
+                            
                         ]
                     }
                 ],
                 "filterConfig": {
                     "name": "Filter Report",
-                    "url": "/api/v1/Report/OverDueReport",
+                    "url": "/api/v1/Report/GetTasksProgressReport",
                     "method": "GET",
                     "pathParams": [],
                     "queryParams": [
+                        {
+                            "paramName": "act",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "act",
+                            "valueFormat": ""
+                        },
                         {
                             "paramName": "zone",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
@@ -146,7 +168,6 @@
                             "valueFormat": ""
                         }
                     ],
-                    "postTransform": "dateTransform",
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "",
@@ -167,8 +188,8 @@
                         "actions": [
                             {
                                 "actionType": "setfield",
-                                "field": "$dnd-2$",
-                                "fieldValue": "$RESPONSE$",
+                                "field": "$db-2$",
+                                "fieldValue": "",
                                 "condition": "true",
                                 "formName": ""
                             }
@@ -190,164 +211,72 @@
         {
             "baseProperties": {
                 "type": "dynamicField",
-                "id": "dnd-2",
-                "name": "reports-table",
-                "library": "primeng"
+                "id": "db-2",
+                "name": "pieChartForTasks"
             },
             "layoutProperties": {
-                "labelPlacement": "top",
+                "labelPlacement": null,
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reports_table_status",
-                    "configuration": [
-                        {
-                            "selectorName": ".reports_table_status",
-                            "xs": {}
-                        },
-                        {
-                            "selectorName": "[aria-label=\"Assigned\"]",
-                            "xs": {
-                                "color": "white",
-                                "background-color": "#8f369f"
-                            }
-                        },
-                        {
-                            "selectorName": "[aria-label=\"In Progress\"]",
-                            "xs": {
-                                "color": "white",
-                                "background-color": "#c19b3e"
-                            }
-                        },
-                        {
-                            "selectorName": "[aria-label=\"Completed\"]",
-                            "xs": {
-                                "color": "white",
-                                "background-color": "#0f9d15"
-                            }
-                        }
-                    ],
+                    "customClassName": "",
+                    "configuration": [],
                     "themeClass": ""
                 },
                 "orientation": null
             },
-            "libraryComponent": "TableExternalComponent",
+            "libraryComponent": "ChartsExternalComponent",
             "events": [],
-            "expressionProperties": {
-                "visibleValue": "true"
-            },
+            "expressionProperties": {},
             "customAttributes": {
-                "columns": [
+                "type": "pie",
+                "height": "80vh",
+                "options": {
+                    "title": {
+                        "display": true,
+                        "text": "Tasks",
+                        "fontSize": 16
+                    },
+                    "legend": {
+                        "position": "bottom"
+                    },
+                    "scales": {
+                        "yAxes": [
+                            {
+                                "ticks": {
+                                    "precision": 0
+                                }
+                            }
+                        ]
+                    }
+                },
+                "dataKey": null,
+                "dataConfig": {
+                    "name": "tasksReport",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
+                    "method": "GET",
+                    "payloadParams": [],
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    }
+                },
+                "dataToChartMapping": [
                     {
-                        "colName": "Title",
-                        "filterType": "text",
-                        "accessor": "title",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 200
-                        }
+                        "chartConfigKey": "labels",
+                        "resultDataKey": "x"
                     },
                     {
-                        "colName": "Priority",
-                        "filterType": "multiselect",
-                        "accessor": "priority",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
-                    },
-                    {
-                        "colName": "Status",
-                        "filterType": "multiselect",
-                        "accessor": "status",
-                        "pill": "true",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 120
-                        }
-                    },
-                    {
-                        "colName": "Zone",
-                        "filterType": "multiselect",
-                        "accessor": "zoneLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Circle",
-                        "filterType": "multiselect",
-                        "accessor": "circleLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Division",
-                        "filterType": "multiselect",
-                        "accessor": "divisionLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Substation",
-                        "filterType": "multiselect",
-                        "accessor": "substationLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Expected Start Date",
-                        "filterType": "multiselect",
-                        "accessor": "expectedStartDate",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
-                    },
-                    {
-                        "colName": "Expected End Date",
-                        "filterType": "text",
-                        "accessor": "expectedEndDate",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
+                        "chartConfigKey": "data",
+                        "resultDataKey": "y"
                     }
                 ],
-                "caption": "",
-                "summary": null,
-                "globalFilterFields": [
-                    "Priority",
-                    "Status",
-                    "Zone",
-                    "Circle",
-                    "Division",
-                    "Substation"
-                ],
-                "dataKey": "id",
-                "resizableColumns": false,
-                "responsive": true,
-                "dataConfig": {
-                    "name": "userList",
-                    "url": "/api/v1/Report/OverDueReport",
-                    "method": "GET",
-                    "params": {},
-                    "postTransform": "dateTransform",
-                    "onSuccess": {}
-                },
-                "triggerFilterGroupOnRefresh": "reports-filter",
-                "refreshTableActions": [],
-                "columnFilter": true,
-                "showExportExcelBtn": true,
-                "showExportPdfBtn": true,
-                "showPrintPreviewBtn": true
+                "backgroundColor": [
+                    "#42A5F5",
+                    "#424BF5",
+                    "#9242F5",
+                    "#F542A5",
+                    "#F542A5"
+                ]
             }
         }
     ]
