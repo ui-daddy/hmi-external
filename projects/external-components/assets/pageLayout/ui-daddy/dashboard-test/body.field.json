@@ -1,0 +1,54 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "db-2",
+                "name": "email",
+                "label": "Email",
+                "formName": "emailId"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "password",
+                "id": "db-3",
+                "label": "Password",
+                "name": "password",
+                "formName": "password"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
+        }
+    ]
+}
