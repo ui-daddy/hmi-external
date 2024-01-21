@@ -1,0 +1,183 @@
+[
+    {
+          "widgetList": [
+            {
+                "name": "TableExternalComponent",
+                "icon": "bi bi-box",
+                "label": "TableExternalComponent"
+            }
+          ],
+          "hiddenBaseProperties": ["label"],
+          "hiddenLayoutProperties": ["orientation"],
+          "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+          "customAttributes": [
+            {
+              "propertyName": "columns",
+              "defaultValueMapping": "columns",
+              "type": "textarea",
+              "label": "Columns Array",
+              "placeholder": "Enter columns array colWidth,colName,accessor,title,html etc"
+            },
+            {
+                "propertyName": "caption",
+                "defaultValueMapping": "caption",
+                "type": "text",
+                "label": "Caption",
+                "placeholder": "Enter caption"
+            },
+            {
+                "propertyName": "summary",
+                "defaultValueMapping": "summary",
+                "type": "text",
+                "label": "Summary",
+                "placeholder": "Enter summary"
+            },
+            {
+                "propertyName": "globalFilterFields",
+                "defaultValueMapping": "globalFilterFields",
+                "type": "textarea",
+                "label": "Global Filter Fields",
+                "placeholder": "Enter global filter fields array of fields name"
+            },
+            {
+                "propertyName": "dataKey",
+                "defaultValueMapping": "dataKey",
+                "type": "text",
+                "label": "Data Key",
+                "placeholder": "Enter dataKey"
+            },
+            {
+                "propertyName": "resizableColumns",
+                "defaultValueMapping": "resizableColumns",
+                "type": "checkbox",
+                "label": "Resizable Columns"
+            },
+            {
+                "propertyName": "responsive",
+                "defaultValueMapping": "responsive",
+                "type": "checkbox",
+                "label": "Responsive"
+            },
+            {
+                "propertyName": "dataConfig",
+                "defaultValueMapping": "dataConfig",
+                "type": "textarea",
+                "label": "Data Config",
+                "placeholder": "Enter data configuration"
+            },
+            {
+                "propertyName": "columnFilter",
+                "defaultValueMapping": "columnFilter",
+                "type": "checkbox",
+                "label": "Column Filter"
+            },
+            {
+                "propertyName": "showExportExcelBtn",
+                "defaultValueMapping": "showExportExcelBtn",
+                "type": "checkbox",
+                "label": "Show Export Excel Button"
+            },
+            {
+                "propertyName": "showExportPdfBtn",
+                "defaultValueMapping": "showExportPdfBtn",
+                "type": "checkbox",
+                "label": "Show Export PDF Button"
+            },
+            {
+                "propertyName": "showPrintPreviewBtn",
+                "defaultValueMapping": "showPrintPreviewBtn",
+                "type": "checkbox",
+                "label": "Show PDF Print Preview"
+            }
+          ]        
+    },
+    {
+        "widgetList": [
+            {
+                "name": "IframeExternalComponent",
+                "icon": "bi bi-box",
+                "label": "IframeExternalComponent"
+            }
+        ],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [{
+            "propertyName": "src",
+            "defaultValueMapping": "src",
+            "type": "text",
+            "label": "Source Url",
+            "placeholder": "Enter iFrame Source Url"
+        }]        
+    },
+    {
+        "widgetList": [
+            {
+                "name": "ChartsExternalComponent",
+                "icon": "bi bi-box",
+                "label": "ChartsExternalComponent"
+            }
+        ],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [
+            {
+                "propertyName": "type",
+                "defaultValueMapping": "type",
+                "type": "text",
+                "label": "Type",
+                "placeholder": "Enter type"
+              },
+              {
+                "propertyName": "label",
+                "defaultValueMapping": "label",
+                "type": "text",
+                "label": "Label",
+                "placeholder": "Enter label"
+              },
+              {
+                "propertyName": "height",
+                "defaultValueMapping": "height",
+                "type": "text",
+                "label": "Height",
+                "placeholder": "Enter height"
+              },
+              {
+                "propertyName": "options",
+                "defaultValueMapping": "options",
+                "type": "textarea",
+                "label": "Options",
+                "placeholder": "Enter options"
+              },
+              {
+                "propertyName": "dataKey",
+                "defaultValueMapping": "dataKey",
+                "type": "text",
+                "label": "Data Key",
+                "placeholder": "Enter data Key"
+            },
+            {
+                "propertyName": "dataConfig",
+                "defaultValueMapping": "dataConfig",
+                "type": "textarea",
+                "label": "Data Config",
+                "placeholder": "Enter data configuration"
+            },
+            {
+                "propertyName": "dataToChartMapping",
+                "defaultValueMapping": "dataToChartMapping",
+                "type": "textarea",
+                "label": "Data to chart mapping",
+                "placeholder": "Enter data to chart mapping configuration"
+            },
+            {
+                "propertyName": "backgroundColor",
+                "defaultValueMapping": "backgroundColor",
+                "type": "textarea",
+                "label": "Background color",
+                "placeholder": "Enter background color"
+            }
+        ]        
+    }
+]
