@@ -1,0 +1,28 @@
+{
+    "dh-0": [
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dh-1",
+                "name": "login",
+                "label": "Login"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
+        }
+    ]
+}
