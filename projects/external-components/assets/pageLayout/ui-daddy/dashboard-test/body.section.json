@@ -1,0 +1,35 @@
+{
+    "layout": [
+        {
+            "id": "db-0",
+            "type": "form",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": ".temp-class-1",
+                            "xs": {
+                                "display": "flex",
+                                "justify-content": "center",
+                                "align-items": "center",
+                                "height": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": []
+        }
+    ]
+}
