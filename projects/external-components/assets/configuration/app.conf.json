@@ -90,5 +90,25 @@
             "title": "abc",
             "layoutProperties": null
         }
+    },
+    "hmiAppConfiguration": {
+        "title": "myApp",
+        "baseUrl": "",
+        "metaTags": [],
+        "linkTags": [],
+        "ifPageNotFound": "",
+        "interceptorConfigurations": [],
+        "apiConfigurations": [],
+        "layoutProperties": {
+            "labelPlacement": "top",
+            "width": null,
+            "height": null,
+            "css": {
+                "customClassName": "",
+                "configuration": [],
+                "themeClass": ""
+            },
+            "orientation": null
+        }
     }
 }
