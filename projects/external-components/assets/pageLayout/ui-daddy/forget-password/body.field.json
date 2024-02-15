@@ -18,10 +18,15 @@
                         {
                             "selectorName": ".element-child",
                             "xs": {
+                                "margin-bottom": "20px",
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".element-child .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "color": "white",
-                                "parent-margin-bottom": "20px",
-                                "parent-font-size": "30px"
+                                "color": "white"
                             }
                         }
                     ],
@@ -54,12 +59,8 @@
                         {
                             "selectorName": ".temp-class-9",
                             "xs": {
-                                "parent-color": "white"
+                                "color": "white"
                             }
-                        },
-                        {
-                            "selectorName": "",
-                            "xs": {}
                         }
                     ],
                     "themeClass": ""
@@ -83,15 +84,18 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reset-button",
+                    "customClassName": "reset-button theme-btn",
                     "configuration": [
                         {
                             "selectorName": ".reset-button",
                             "xs": {
-                                "parent-margin": "10px",
-                                "parent-justify-content": "center",
-                                "background-color": "#ffc107",
-                                "color": "black",
+                                "margin": "10px",
+                                "justify-content": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".reset-button .dynamic-style-child",
+                            "xs": {
                                 "width": "100%"
                             }
                         }
@@ -120,7 +124,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Forget Password",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/EmployeeAccount/ResetPassword",
+                                "url": "/api/v1/EmployeeAccount/ResetPassword",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [
@@ -183,7 +187,7 @@
                         {
                             "selectorName": ".loginPageLink",
                             "xs": {
-                                "parent-justify-content": "center"
+                                "justify-content": "center"
                             }
                         }
                     ],

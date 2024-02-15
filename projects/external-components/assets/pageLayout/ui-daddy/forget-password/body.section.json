@@ -14,15 +14,8 @@
                     "count": 1
                 },
                 "css": {
-                    "customClassName": "section-card__center login-section-card__opaque",
-                    "configuration": [
-                        {
-                            "selectorName": ".login-section-card__opaque",
-                            "xs": {
-                                "opacity": "0.5"
-                            }
-                        }
-                    ],
+                    "customClassName": "section-card__center",
+                    "configuration": [],
                     "themeClass": ""
                 }
             },

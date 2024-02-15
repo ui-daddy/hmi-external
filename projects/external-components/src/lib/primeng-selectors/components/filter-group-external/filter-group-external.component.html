@@ -1,0 +1,81 @@
+<div [attr.id]="'filter-group-'+fieldObj.baseProperties.id"
+    [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName" class="filter-group-container">
+    <button pButton type="button" (click)="handleShowPopup()" id="filter-group-btn-{{fieldObj.baseProperties.id}}"
+        class="{{fieldObj.layoutProperties.css.themeClass}} filter-button">
+        <span *ngIf="fieldObj.customAttributes.buttonOptions?.leftIcon" class="p-button-icon-left pi {{fieldObj.customAttributes.buttonOptions?.leftIcon}}"></span>
+        <span *ngIf="fieldObj.customAttributes.buttonOptions?.label" class="p-button-label">{{fieldObj.customAttributes.buttonOptions?.label}}</span>
+        <span *ngIf="fieldObj.customAttributes.buttonOptions?.rightIcon" class="p-button-icon-right pi {{fieldObj.customAttributes.buttonOptions?.rightIcon}}"></span>
+        <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="filterLoader">
+            <div class="spinner-border text-info loader-placement"></div>
+        </div>
+    </button>
+    <p-menu [model]="items" *ngIf="showPopup" id="filter-menu-popup-{{fieldObj.baseProperties.id}}" class="filter-menu-popup"></p-menu>
+    <div *ngIf="showSubMenuOption" class="menu-filter-option" id="filter-menu-subpopup-{{fieldObj.baseProperties.id}}">
+        <ng-container *ngFor="let filter of filterFormGrp">
+            <div class="dependent-event-container" *ngIf="filter.show && filter.type ==='dependent'">
+                <ng-template *ngTemplateOutlet="dependentIf;context: { $implicit: filter.filterGroup && filter.filterGroup.length ? filter.filterGroup : [], filter: filter }"></ng-template>
+            </div>
+            <div class="text-event-container" *ngIf="filter.show && filter.type ==='text'">
+                <ng-template *ngTemplateOutlet="textIf;context: { $implicit: filter }"></ng-template>
+            </div>
+            <div class="dropdown-event-container" *ngIf="filter.show && filter.type ==='dropdown'">
+                <ng-template *ngTemplateOutlet="dropdownIf;context: { $implicit: filter }" ></ng-template>
+            </div>
+        </ng-container>
+    </div>
+    <div class="d-flex pills-wrapper" *ngIf="appliedFilterPills.length">
+        <ng-container *ngFor="let filter of appliedFilterPills; let i = index">
+            <ng-container *ngIf="filter.filterApplied">
+                <ng-container *ngTemplateOutlet="filterTpl;context: { $implicit: getFilterPillValue(filter)}" ></ng-container>
+            </ng-container>
+            <ng-template #filterTpl let-filter>
+                <p-tag severity="info" class="filter-pills">
+                    <div class="d-flex align-items-center">
+                        <span class="text-base" title="{{filter.pillLabel}}">{{filter.pillLabel}}</span>
+                        <i class="pi pi-times text-xs close-pills" (click)="removeFilter(filter, i)"></i>
+                    </div>
+                </p-tag>
+            </ng-template>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #dependentIf let-filterGroup let-filter="filter">
+    <div class="dependent-dd-container" *ngFor="let dependentObj of filterGroup; let i = index">
+        <p-dropdown [options]="dependentObj.optionList" placeholder="{{dependentObj.label}}" [(ngModel)]="dependentObj.value"
+            [optionLabel]="dependentObj.labelKey ? dependentObj.labelKey: 'label'" [optionValue]="dependentObj.valueKey ? dependentObj.valueKey: 'value'"
+            (onChange)="changeDependentDropdown(i, dependentObj.value, filterGroup)">
+            <ng-template let-option pTemplate="selectedItem">
+                <div class="dependent-dropdown-container">
+                    <span class="dropdown-content" *ngIf="dependentObj.value">{{ dependentObj.value }}</span>
+                    <i class="pi pi-times" (click)="removeDependentDropdown(i, dependentObj.value, filterGroup, $event)"></i>
+                </div>
+              </ng-template>
+        </p-dropdown>
+        <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="dependentObj.showLoader">
+            <div class="spinner-border text-info loader-placement"></div>
+        </div>
+    </div>
+    <div class="filter-btn-group">
+        <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
+        <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDependentEvent(filter)"></p-button>
+    </div>
+</ng-template>
+<ng-template #textIf let-filter>
+    <input pInputText type="text" class="p-inputtext-sm" placeholder="Filter By text" [(ngModel)]="filter.value"/>
+    <div class="filter-btn-group">
+        <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
+        <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyTextEvent(filter)"></p-button>
+    </div>
+</ng-template>
+<ng-template #dropdownIf let-filter>
+    <p-dropdown [options]="filter.optionList" placeholder="Select" [(ngModel)]="filter.value"
+    [optionLabel]="filter.labelKey ? filter.labelKey: 'label'" [optionValue]="filter.valueKey ? filter.valueKey: 'value'"></p-dropdown>
+    <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="filter.showLoader">
+        <div class="spinner-border text-info loader-placement"></div>
+    </div>
+    <div class="filter-btn-group">
+        <p-button label="Cancel" styleClass="p-button-sm p-button-secondary" (click)="closeSubMenuPopup()"></p-button>
+        <p-button label="Apply Filter" styleClass="p-button-sm" (click)="applyDropdownEvent(filter)"></p-button>
+    </div>
+</ng-template>

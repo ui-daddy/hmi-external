@@ -7,22 +7,19 @@
                 "type": "button",
                 "id": "dnd-4",
                 "name": "",
-                "label": "Add Impedement"
+                "label": "Add Issue"
             },
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "add-impedement-btn",
+                    "customClassName": "theme-btn add-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".add-impedement-btn",
+                            "selectorName": ".add-impediment-btn",
                             "xs": {
-                                "parent-padding": "25px 0 15px 0",
-                                "border-color": "#BDBDBD",
-                                "color": "white",
-                                "background-color": "primary-gradient"
+                                "padding": "25px 0 15px 0"
                             }
                         }
                     ],
@@ -85,12 +82,12 @@
             "customAttributes": {
                 "columns": [
                     {
-                        "colName": "Remark",
+                        "colName": "Activity",
                         "filterType": "text",
-                        "accessor": "remark",
+                        "accessor": "activityname",
                         "colWidth": {
                             "unit": "px",
-                            "value": 150
+                            "value": 300
                         }
                     },
                     {
@@ -103,16 +100,16 @@
                         }
                     },
                     {
-                        "colName": "Activity",
-                        "filterType": "multiselect",
-                        "accessor": "activity",
+                        "colName": "Remark",
+                        "filterType": "text",
+                        "accessor": "remark",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 175
                         }
                     },
                     {
-                        "colName": "Edit Impediment",
+                        "colName": "Edit",
                         "title": "Edit Impediment",
                         "html": "<i class='fas fa-edit'></i>",
                         "sortable": false,
@@ -178,7 +175,7 @@
                         }
                     },
                     {
-                        "colName": "Delete Impediment",
+                        "colName": "Delete",
                         "title": "Delete Impediment",
                         "html": "<i class='fas fa-trash'></i>",
                         "sortable": false,
@@ -188,7 +185,7 @@
                             "name": "ROW_ACTION",
                             "apiConfig": {
                                 "name": "deleteImpediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Delete/:impedimentId",
+                                "url": "/api/v1/Impediment/Delete/:impedimentId",
                                 "method": "DELETE",
                                 "pathParams": [
                                     {
@@ -219,7 +216,7 @@
                         }
                     }
                 ],
-                "caption": "Impediments",
+                "caption": "Issues",
                 "summary": null,
                 "globalFilterFields": [
                     "remark",
@@ -231,7 +228,7 @@
                 "responsive": true,
                 "dataConfig": {
                     "name": "impedimentList",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/List",
+                    "url": "/api/v1/Impediment/List",
                     "method": "GET",
                     "params": {},
                     "onSuccess": {
@@ -247,6 +244,32 @@
     ],
     "dnd-6": [],
     "dnd-21": [
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-32",
+                "name": "userId",
+                "formName": "editImpedimentModal"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
         {
             "baseProperties": {
                 "type": "hidden",
@@ -292,8 +315,13 @@
                         {
                             "selectorName": ".impediment-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -304,15 +332,15 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Edit Impediment"
+            "value": "Edit Issue"
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-23",
+                "type": "dropdown",
+                "id": "dnd-31",
                 "formName": "editImpedimentModal",
-                "name": "remarkEdit",
-                "label": "Remark"
+                "name": "activityDropdown-editModal",
+                "label": "Activity"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -327,8 +355,34 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/:userId",
+                "method": "GET",
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
         },
         {
             "baseProperties": {
@@ -376,11 +430,11 @@
         },
         {
             "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-31",
+                "type": "text",
+                "id": "dnd-23",
                 "formName": "editImpedimentModal",
-                "name": "activityDropdown-editModal",
-                "label": "Activity"
+                "name": "remarkEdit",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -395,27 +449,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Activities",
-                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                },
-                "onSuccess": {
-                    "apiDataAccessor": "payload"
-                }
-            },
-            "labelKey": "title",
-            "valueKey": "id",
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -430,19 +465,22 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-impediment",
+                    "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".save-impediment",
+                            "selectorName": ".edit-impediment-btn",
                             "xs": {
-                                "parent-padding-top": "30px",
-                                "width": "100%",
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
                             }
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -466,7 +504,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Edit Impediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Update/:id",
+                                "url": "/api/v1/Impediment/Update/:id",
                                 "method": "PATCH",
                                 "pathParams": [
                                     {
@@ -567,6 +605,32 @@
     "dnd-12": [
         {
             "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-33",
+                "name": "userId",
+                "formName": "addImpedimentModal"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "userId",
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "staticText",
                 "id": "dnd-13",
                 "name": "addImpedimentTitle",
@@ -582,8 +646,13 @@
                         {
                             "selectorName": ".impediment-modal-title",
                             "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
                                 "text-align": "center",
-                                "parent-font-size": "30px",
                                 "font-weight": "500"
                             }
                         }
@@ -594,15 +663,15 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Add Impedement"
+            "value": "Add Issue"
         },
         {
             "baseProperties": {
-                "type": "text",
-                "id": "dnd-18",
+                "type": "dropdown",
+                "id": "dnd-30",
+                "name": "activityDropdown-addModal",
                 "formName": "addImpedimentModal",
-                "name": "remarkAdd",
-                "label": "Remark"
+                "label": "Activity"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -617,8 +686,34 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": null,
-            "placeholder": null
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/:userId",
+                "method": "GET",
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
         },
         {
             "baseProperties": {
@@ -666,11 +761,11 @@
         },
         {
             "baseProperties": {
-                "type": "dropdown",
-                "id": "dnd-30",
-                "name": "activityDropdown-addModal",
+                "type": "text",
+                "id": "dnd-18",
                 "formName": "addImpedimentModal",
-                "label": "Activity"
+                "name": "remarkAdd",
+                "label": "Remark"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -685,27 +780,8 @@
             },
             "events": [],
             "expressionProperties": {},
-            "optionList": [],
-            "optionsConfig": {
-                "name": "Get Activities",
-                "url": "https://upms-api.azurewebsites.net/api/v1/tasks/MyTask/1",
-                "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
-                "fetch": "ONLOAD",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                },
-                "onSuccess": {
-                    "apiDataAccessor": "payload"
-                }
-            },
-            "labelKey": "title",
-            "valueKey": "id",
-            "value": null
+            "value": null,
+            "placeholder": null
         },
         {
             "baseProperties": {
@@ -720,19 +796,22 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "save-impediment",
+                    "customClassName": "theme-btn edit-impediment-btn",
                     "configuration": [
                         {
-                            "selectorName": ".save-impediment",
+                            "selectorName": ".edit-impediment-btn",
                             "xs": {
-                                "parent-padding-top": "30px",
-                                "width": "100%",
-                                "background-color": "#9E9E9E",
-                                "border-color": "#9E9E9E"
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
                             }
                         }
                     ],
-                    "themeClass": "btn-secondary"
+                    "themeClass": ""
                 },
                 "orientation": null
             },
@@ -756,7 +835,7 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "Add impediment",
-                                "url": "https://upms-api.azurewebsites.net/api/v1/Impediment/Create",
+                                "url": "/api/v1/Impediment/Create",
                                 "method": "POST",
                                 "pathParams": [],
                                 "queryParams": [],
