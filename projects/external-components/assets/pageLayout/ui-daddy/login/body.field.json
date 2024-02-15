@@ -15,20 +15,22 @@
             },
             "layoutProperties": {
                 "css": {
-                    "configuration": [{
-                        "selectorName": ".element-child",
-                        "xs": {
-                            "margin-bottom": "35px",
-                            "font-size": "30px"
+                    "configuration": [
+                        {
+                            "selectorName": ".element-child",
+                            "xs": {
+                                "margin-bottom": "35px",
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".element-child .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "color": "white"
+                            }
                         }
-                    },
-                    {
-                        "selectorName": ".element-child .dynamic-style-child",
-                        "xs": {
-                            "text-align": "center",
-                            "color": "white"
-                        }
-                    }],
+                    ],
                     "customClassName": "element-child"
                 }
             }
