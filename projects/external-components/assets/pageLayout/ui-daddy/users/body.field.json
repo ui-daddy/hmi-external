@@ -136,24 +136,6 @@
                         }
                     },
                     {
-                        "colName": "E-Mail",
-                        "filterType": "multiselect",
-                        "accessor": "email",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 200
-                        }
-                    },
-                    {
-                        "colName": "Company",
-                        "filterType": "multiselect",
-                        "accessor": "companyName",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
-                    },
-                    {
                         "colName": "EmpId",
                         "filterType": "text",
                         "accessor": "empId",
@@ -2503,24 +2485,6 @@
                         "colName": "Role",
                         "filterType": "multiselect",
                         "accessor": "role",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
-                    },
-                    {
-                        "colName": "E-Mail",
-                        "filterType": "multiselect",
-                        "accessor": "email",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 200
-                        }
-                    },
-                    {
-                        "colName": "Company",
-                        "filterType": "multiselect",
-                        "accessor": "companyName",
                         "colWidth": {
                             "unit": "px",
                             "value": 100
