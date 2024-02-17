@@ -1390,7 +1390,7 @@
                                         "profilePath"
                                     ],
                                     "apiDataAccessor": "",
-                                    "message": "Vendor updated successfully.",
+                                    "message": "user updated successfully.",
                                     "actions": [
                                         {
                                             "actionType": "RELOAD_COMPONENT_DATA",
