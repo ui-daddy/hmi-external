@@ -1371,6 +1371,24 @@
                                         "mappedField": "msetclEditIdProof",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(idProofVar)"
+                                    },
+                                    {
+                                        "paramName": "vendorId",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photoName",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "idProofName",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
@@ -3726,6 +3744,24 @@
                                         "mappedField": "editIdProof",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(idProofVar)"
+                                    },
+                                    {
+                                        "paramName": "vendorId",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "photoName",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "idProofName",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
