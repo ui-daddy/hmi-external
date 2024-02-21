@@ -300,6 +300,13 @@
                                     },
                                     {
                                         "actionType": "setfield",
+                                        "field": "$dnd-65$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.vendorId",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
                                         "field": "$dnd-34$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.empId",
                                         "condition": "true",
@@ -419,6 +426,90 @@
                 "id": "dnd-26",
                 "name": "msetclUserIdEdit",
                 "label": "userId",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "false",
+                "disabledValue": "true",
+                "readOnlyValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-65",
+                "name": "msetclVendorIdEdit",
+                "label": "vendorId",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "false",
+                "disabledValue": "true",
+                "readOnlyValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-66",
+                "name": "msetclphotoNameIdEdit",
+                "label": "photoName",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "false",
+                "disabledValue": "true",
+                "readOnlyValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-67",
+                "name": "msetclidProofNameIdEdit",
+                "label": "idProofName",
                 "formName": "editUserModal"
             },
             "layoutProperties": {
@@ -1374,19 +1465,7 @@
                                     },
                                     {
                                         "paramName": "vendorId",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "photoName",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "idProofName",
-                                        "mappedField": "",
+                                        "mappedField": "msetclVendorIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
@@ -2673,6 +2752,13 @@
                                     },
                                     {
                                         "actionType": "setfield",
+                                        "field": "$dnd-165$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.vendorId",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
                                         "field": "$dnd-134$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.empId",
                                         "condition": "true",
@@ -2792,6 +2878,34 @@
                 "id": "dnd-126",
                 "name": "userIdEdit",
                 "label": "userId",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "false",
+                "disabledValue": "true",
+                "readOnlyValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-165",
+                "name": "userVendorIdEdit",
+                "label": "vendorId",
                 "formName": "editUserModal"
             },
             "layoutProperties": {
@@ -3747,19 +3861,7 @@
                                     },
                                     {
                                         "paramName": "vendorId",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "photoName",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": ""
-                                    },
-                                    {
-                                        "paramName": "idProofName",
-                                        "mappedField": "",
+                                        "mappedField": "userVendorIdEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     }
