@@ -87,7 +87,7 @@
                 "readOnlyValue": "false",
                 "disabledValue": "false",
                 "disabled": "",
-                "visible": "userType == 'Vendor Admin' or userType == 'Vendor User'"
+                "visible": "userType != 'Vendor Admin' and userType != 'Vendor User'"
             }
         },
         {
