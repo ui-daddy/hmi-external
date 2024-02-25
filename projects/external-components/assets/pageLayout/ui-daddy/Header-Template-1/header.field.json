@@ -1,0 +1,32 @@
+{
+    "dh-0": [
+        {
+            "baseProperties": {
+                "type": "nav-menu",
+                "id": "dh-2"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "staticImage",
+                "id": "dh-1"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dh-3"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dh-4"
+            },
+            "layoutProperties": {}
+        }
+    ]
+}
