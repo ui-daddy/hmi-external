@@ -85,7 +85,9 @@
             "expressionProperties": {
                 "visibleValue": "true",
                 "readOnlyValue": "false",
-                "disabledValue": "false"
+                "disabledValue": "false",
+                "disabled": "",
+                "visible": "userType != 'Vendor Admin' and userType != 'Vendor User' and userType != 'User'"
             }
         },
         {
