@@ -253,7 +253,7 @@
                 "dataKey": null,
                 "dataConfig": {
                     "name": "tasksReport",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
+                    "url": "/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
                     "method": "GET",
                     "payloadParams": [],
                     "onSuccess": {
