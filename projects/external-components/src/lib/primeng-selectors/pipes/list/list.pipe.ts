@@ -5,7 +5,8 @@ export class ListPipe implements PipeTransform {
   transform(arr: Array<any>, fieldName: string): Array<any> {
     arr = this.uniqArr(arr, fieldName);
     return arr.map((v)=> {
-      if(v != null && v != "") {
+      if(v !== null && v !== "") {
+        console.log(v);
         ({label: v , value: v });
       }
     } )
