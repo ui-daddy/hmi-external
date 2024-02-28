@@ -1,0 +1,275 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-1",
+                "name": "vendorList"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Name",
+                        "filterType": "text",
+                        "accessor": "name",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Address",
+                        "filterType": "text",
+                        "accessor": "address",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Contact",
+                        "filterType": "text",
+                        "accessor": "contact",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Website",
+                        "filterType": "text",
+                        "accessor": "website",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Company Code",
+                        "filterType": "text",
+                        "accessor": "companyCode",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Edit Vendor",
+                        "title": "Edit Vendor",
+                        "html": "<i class='fas fa-edit'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "edit",
+                        "events": [
+                            {
+                                "event": "",
+                                "actions": [
+                                    {
+                                        "actionType": "SET_SHARED_DATA",
+                                        "sharedData": [
+                                            {
+                                                "varName": "tableRowData",
+                                                "staticData": "$ROW_DATA$"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-45$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-46$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-22$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.name",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-40$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-24$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.address",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-25$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.contact",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-26$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.website",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-41$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyCode",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-17"
+                                    }
+                                ],
+                                "debounce": 3000
+                            }
+                        ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Delete Vendor",
+                        "title": "Delete Vendor",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteVendor",
+                                "url": "/api/v1/Vendor/Delete/:vendorId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "vendorId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": true,
+                                    "showSuccessMessage": true,
+                                    "message": "Vendor deleted successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "vendorList"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    }
+                ],
+                "caption": "Vendors",
+                "summary": null,
+                "globalFilterFields": [
+                    "name",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
+                ],
+                "dataKey": "id",
+                "resizableColumns": true,
+                "responsive": true,
+                "dataConfig": {
+                    "name": "vendorList",
+                    "url": "https://vendorupmstest.free.beeceptor.com/vendor",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    },
+                    "isWithCredentials": false
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
+            }
+        }
+    ]
+}
