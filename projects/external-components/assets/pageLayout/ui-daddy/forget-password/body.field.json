@@ -1,0 +1,224 @@
+{
+    "dnd-0": [],
+    "dnd-2": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-4",
+                "formName": "dnd-0",
+                "name": "forgetPassword"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "element-child",
+                    "configuration": [
+                        {
+                            "selectorName": ".element-child",
+                            "xs": {
+                                "margin-bottom": "20px",
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".element-child .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "color": "white"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Reset Password"
+        }
+    ],
+    "dnd-3": [
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "dnd-5",
+                "name": "email",
+                "label": "Enter your Email :"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "temp-class-9",
+                    "configuration": [
+                        {
+                            "selectorName": ".temp-class-9",
+                            "xs": {
+                                "color": "white"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "",
+            "placeholder": "Email id"
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-7",
+                "name": "button",
+                "label": "Reset Password"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "reset-button theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".reset-button",
+                            "xs": {
+                                "margin": "10px",
+                                "justify-content": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".reset-button .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Forget Password",
+                                "url": "/api/v1/EmployeeAccount/ResetPassword",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [
+                                    {
+                                        "paramName": "email",
+                                        "mappedField": "email",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "payloadParams": [],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Password reset successfully. Please check your email.",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Something went wrong !",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "link",
+                "id": "dnd-9",
+                "name": "loginPageLink",
+                "label": "Go back to login page"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "loginPageLink",
+                    "configuration": [
+                        {
+                            "selectorName": ".loginPageLink",
+                            "xs": {
+                                "justify-content": "center"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "navigate",
+                            "url": "login",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        }
+    ]
+}

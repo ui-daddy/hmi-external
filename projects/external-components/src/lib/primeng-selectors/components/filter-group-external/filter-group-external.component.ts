@@ -268,7 +268,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
         }
       ], data: null});
     }
-
+    
     this.customApiCall(config, data).subscribe((data: any[]) => {
       if (isRemove && filter) {
         filter.filterApplied = false;

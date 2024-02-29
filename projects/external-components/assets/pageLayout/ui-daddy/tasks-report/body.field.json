@@ -1,0 +1,283 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-1",
+                "name": "reports-filter",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "filter-group-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".filter-group-css",
+                            "xs": {
+                                "position": "absolute",
+                                "z-index": "1",
+                                "top": "33px",
+                                "left": "30px",
+                                "width": "68%"
+                            }
+                        }
+                    ],
+                    "themeClass": "p-button-icon-only p-button-outlined"
+                },
+                "orientation": null
+            },
+            "libraryComponent": "FilterGroupExternalComponent",
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "showComponentLoaderOnApply": "",
+                "buttonOptions": {
+                    "label": "",
+                    "leftIcon": "pi-filter"
+                },
+                "filterOptions": [
+                    {
+                        "label": "Filter By Area",
+                        "icon": "",
+                        "type": "dependent",
+                        "filterGroup": [
+                            {
+                                "label": "Task",
+                                "filterName": "act",
+                                "optionList": [],
+                                "isArrayOfString": true,
+                                "optionsConfig": {
+                                    "name": "Get task",
+                                    "url": "/api/v1/Report/GetTasksForReport",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Zone",
+                                "filterName": "zone",
+                                "optionList": [],
+                                "labelKey": "zone",
+                                "valueKey": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Zone",
+                                    "url": "/api/v1/Levels/Get?level=zone",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Circle",
+                                "filterName": "circle",
+                                "optionList": [],
+                                "labelKey": "circle",
+                                "valueKey": "circle",
+                                "filterOptionListBy": "zone",
+                                "optionsConfig": {
+                                    "name": "Get Circle",
+                                    "url": "/api/v1/Levels/Get?level=circle",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Division",
+                                "filterName": "dividion",
+                                "optionList": [],
+                                "labelKey": "dividion",
+                                "valueKey": "dividion",
+                                "filterOptionListBy": "circle",
+                                "optionsConfig": {
+                                    "name": "Get Division",
+                                    "url": "/api/v1/Levels/Get?level=division",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            },
+                            {
+                                "label": "Substation",
+                                "filterName": "name",
+                                "optionList": [],
+                                "labelKey": "name",
+                                "valueKey": "name",
+                                "filterOptionListBy": "division",
+                                "optionsConfig": {
+                                    "name": "Get substation",
+                                    "url": "/api/v1/Levels/Get?level=substation",
+                                    "method": "GET",
+                                    "pathParams": [],
+                                    "queryParams": [],
+                                    "payloadParams": [],
+                                    "fetch": "ONLOAD"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "filterConfig": {
+                    "name": "Filter Report",
+                    "url": "/api/v1/Report/GetTasksProgressReport",
+                    "method": "GET",
+                    "pathParams": [],
+                    "queryParams": [
+                        {
+                            "paramName": "act",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "act",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "zone",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "zone",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "circle",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "circle",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "division",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "dividion",
+                            "valueFormat": ""
+                        },
+                        {
+                            "paramName": "substation",
+                            "mappedField": "CUSTOM_FIELD_OBJECT",
+                            "mappedValue": "name",
+                            "valueFormat": ""
+                        }
+                    ],
+                    "payloadParams": [],
+                    "fetch": "",
+                    "downloadFileName": "",
+                    "encodePathAndQueryParams": true,
+                    "responseType": "",
+                    "beforeSubmit": {
+                        "action": []
+                    },
+                    "onSuccess": {
+                        "pageUrl": "",
+                        "deleteTableRow": false,
+                        "showSuccessMessage": false,
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "",
+                        "actions": [
+                            {
+                                "actionType": "setfield",
+                                "field": "$db-2$",
+                                "fieldValue": "",
+                                "condition": "true",
+                                "formName": ""
+                            }
+                        ]
+                    },
+                    "onError": {
+                        "pageUrl": "",
+                        "sharedData": [],
+                        "fieldData": [],
+                        "clearSharedData": [],
+                        "apiDataAccessor": "",
+                        "message": "Something went wrong !",
+                        "showErrorMessage": true,
+                        "actions": []
+                    }
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-2",
+                "name": "pieChartForTasks"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "pie",
+                "label": "Tasks",
+                "height": "80vh",
+                "options": {
+                    "title": {
+                        "display": true,
+                        "text": "Tasks",
+                        "fontSize": 16
+                    },
+                    "legend": {
+                        "position": "bottom"
+                    },
+                    "scales": {
+                        "yAxes": [
+                            {
+                                "ticks": {
+                                    "precision": 0
+                                }
+                            }
+                        ]
+                    }
+                },
+                "dataKey": null,
+                "dataConfig": {
+                    "name": "tasksReport",
+                    "url": "/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
+                    "method": "GET",
+                    "payloadParams": [],
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    }
+                },
+                "dataToChartMapping": [
+                    {
+                        "chartConfigKey": "labels",
+                        "resultDataKey": "x"
+                    },
+                    {
+                        "chartConfigKey": "data",
+                        "resultDataKey": "y"
+                    }
+                ],
+                "backgroundColor": [
+                    "#42A5F5",
+                    "#424BF5",
+                    "#9242F5",
+                    "#F542A5",
+                    "#F542A5"
+                ]
+            }
+        }
+    ]
+}

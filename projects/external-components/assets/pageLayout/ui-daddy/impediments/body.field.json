@@ -1,0 +1,928 @@
+{
+    "dnd-0": [],
+    "dnd-1": [],
+    "dnd-3": [
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-4",
+                "name": "",
+                "label": "Add Issue"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "theme-btn add-impediment-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".add-impediment-btn",
+                            "xs": {
+                                "padding": "25px 0 15px 0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "OPEN_MODAL",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-11",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "readOnlyValue": "false",
+                "disabledValue": "false"
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-20",
+                "name": "impedimentList",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Activity",
+                        "filterType": "text",
+                        "accessor": "activityname",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 300
+                        }
+                    },
+                    {
+                        "colName": "Type",
+                        "filterType": "text",
+                        "accessor": "type",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Remark",
+                        "filterType": "text",
+                        "accessor": "remark",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 175
+                        }
+                    },
+                    {
+                        "colName": "Edit",
+                        "title": "Edit Impediment",
+                        "html": "<i class='fas fa-edit'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "edit",
+                        "events": [
+                            {
+                                "event": "",
+                                "actions": [
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-6"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "SET_SHARED_DATA",
+                                        "sharedData": [
+                                            {
+                                                "varName": "tableRowData",
+                                                "staticData": "$ROW_DATA$"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-23$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.remark",
+                                        "condition": "true",
+                                        "formName": "editImpedimentModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-24$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.type",
+                                        "condition": "true",
+                                        "formName": "editImpedimentModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-29$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
+                                        "condition": "true",
+                                        "formName": "editImpedimentModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-31$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.activity",
+                                        "condition": "true",
+                                        "formName": "editImpedimentModal"
+                                    }
+                                ],
+                                "debounce": 3000
+                            }
+                        ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Delete",
+                        "title": "Delete Impediment",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteImpediment",
+                                "url": "/api/v1/Impediment/Delete/:impedimentId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "impedimentId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": true,
+                                    "showSuccessMessage": true,
+                                    "message": "Impediment deleted successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "impedimentList"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    }
+                ],
+                "caption": "Issues",
+                "summary": null,
+                "globalFilterFields": [
+                    "remark",
+                    "type",
+                    "activity"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": true,
+                "dataConfig": {
+                    "name": "impedimentList",
+                    "url": "/api/v1/Impediment/List",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": null
+            }
+        }
+    ],
+    "dnd-6": [],
+    "dnd-21": [
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-32",
+                "name": "userId",
+                "formName": "editImpedimentModal"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-29",
+                "name": "impedimentIdEdit",
+                "formName": "editImpedimentModal",
+                "label": "impedimentId"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "false",
+                "readOnlyValue": "true",
+                "disabledValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-22",
+                "name": "editImpedimentModalTitle",
+                "formName": "editImpedimentModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "impediment-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".impediment-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Edit Issue"
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-31",
+                "formName": "editImpedimentModal",
+                "name": "activityDropdown-editModal",
+                "label": "Activity"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/:userId",
+                "method": "GET",
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-24",
+                "name": "typeEdit",
+                "label": "Type",
+                "formName": "editImpedimentModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "Flood",
+                    "label": "Flood"
+                },
+                {
+                    "value": " Fire",
+                    "label": " Fire"
+                },
+                {
+                    "value": "Earthquake",
+                    "label": "Earthquake"
+                },
+                {
+                    "value": "Riots",
+                    "label": "Riots"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-23",
+                "formName": "editImpedimentModal",
+                "name": "remarkEdit",
+                "label": "Remark"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-27",
+                "formName": "editImpedimentModal",
+                "name": "saveImpedimentBtn",
+                "label": "Save"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "theme-btn edit-impediment-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".edit-impediment-btn",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "Success",
+                            "messageText": "Impedements updated successfully",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Edit Impediment",
+                                "url": "/api/v1/Impediment/Update/:id",
+                                "method": "PATCH",
+                                "pathParams": [
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "impedimentIdEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "remark",
+                                        "mappedField": "remarkEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "type",
+                                        "mappedField": "typeEdit",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "activity",
+                                        "mappedField": "activityDropdown-editModal",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Impediment updated successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "impedimentList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-6",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while editing impediments.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        }
+    ],
+    "dnd-11": [],
+    "dnd-12": [
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-33",
+                "name": "userId",
+                "formName": "addImpedimentModal"
+            },
+            "dynamicValueAccessor": [
+                "id"
+            ],
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "userId",
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-13",
+                "name": "addImpedimentTitle",
+                "formName": "addImpedimentModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "impediment-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".impediment-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".impediment-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Add Issue"
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-30",
+                "name": "activityDropdown-addModal",
+                "formName": "addImpedimentModal",
+                "label": "Activity"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [],
+            "optionsConfig": {
+                "name": "Get Activities",
+                "url": "/api/v1/tasks/MyTask/:userId",
+                "method": "GET",
+                "pathParams": [
+                    {
+                        "paramName": "userId",
+                        "mappedField": "userId",
+                        "mappedValue": "",
+                        "valueFormat": "$SHARED_DATA(id)"
+                      }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                },
+                "onSuccess": {
+                    "apiDataAccessor": "payload"
+                }
+            },
+            "labelKey": "title",
+            "valueKey": "id",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-15",
+                "formName": "addImpedimentModal",
+                "name": "typeAdd",
+                "label": "Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "Flood",
+                    "label": "Flood"
+                },
+                {
+                    "value": "Fire",
+                    "label": "Fire"
+                },
+                {
+                    "value": "Earthquake",
+                    "label": "Earthquake"
+                },
+                {
+                    "value": "Riots",
+                    "label": "Riots"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": "3"
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-18",
+                "formName": "addImpedimentModal",
+                "name": "remarkAdd",
+                "label": "Remark"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-19",
+                "formName": "addImpedimentModal",
+                "name": "submitImpediment",
+                "label": "Save"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "theme-btn edit-impediment-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".edit-impediment-btn",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-impediment-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "Add impediment",
+                                "url": "/api/v1/Impediment/Create",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "remark",
+                                        "mappedField": "remarkAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "type",
+                                        "mappedField": "typeAdd",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "activity",
+                                        "mappedField": "activityDropdown-addModal",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Impediment added successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "impedimentList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-11",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while adding user.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        }
+    ]
+}

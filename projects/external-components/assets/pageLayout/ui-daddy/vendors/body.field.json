@@ -1,0 +1,1291 @@
+{
+    "dnd-27": [],
+    "dnd-1": [],
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-2",
+                "label": "Add Vendor",
+                "name": "addProjectButton"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "add-vendor-btn theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".add-vendor-btn",
+                            "xs": {
+                                "padding": "25px 0 15px 0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "OPEN_MODAL",
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-3",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "",
+                                "url": "",
+                                "method": "",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "readOnlyValue": "false",
+                "disabledValue": "false",
+                "disabled": "",
+                "visible": "userType != 'Vendor Admin' and userType != 'Vendor User' and userType != 'User'"
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "dnd-39",
+                "name": "vendorList",
+                "library": "primeng"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "TableExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "columns": [
+                    {
+                        "colName": "Name",
+                        "filterType": "text",
+                        "accessor": "name",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Zone",
+                        "filterType": "multiselect",
+                        "accessor": "zoneLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Circle",
+                        "filterType": "multiselect",
+                        "accessor": "circleLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Division",
+                        "filterType": "multiselect",
+                        "accessor": "divisionLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Substation",
+                        "filterType": "multiselect",
+                        "accessor": "substationLabel",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 150
+                        }
+                    },
+                    {
+                        "colName": "Address",
+                        "filterType": "text",
+                        "accessor": "address",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Contact",
+                        "filterType": "text",
+                        "accessor": "contact",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 100
+                        }
+                    },
+                    {
+                        "colName": "Website",
+                        "filterType": "text",
+                        "accessor": "website",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 200
+                        }
+                    },
+                    {
+                        "colName": "Company Code",
+                        "filterType": "text",
+                        "accessor": "companyCode",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Edit Vendor",
+                        "title": "Edit Vendor",
+                        "html": "<i class='fas fa-edit'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "edit",
+                        "events": [
+                            {
+                                "event": "",
+                                "actions": [
+                                    {
+                                        "actionType": "SET_SHARED_DATA",
+                                        "sharedData": [
+                                            {
+                                                "varName": "tableRowData",
+                                                "staticData": "$ROW_DATA$"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-45$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.type",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-46$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.levelData.code",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-22$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.name",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-40$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.id",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-24$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.address",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-25$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.contact",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-26$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.website",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
+                                        "field": "$dnd-41$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.companyCode",
+                                        "condition": "true",
+                                        "formName": "editVendorModal"
+                                    },
+                                    {
+                                        "actionType": "WAIT_IN_MS",
+                                        "timer": 100
+                                    },
+                                    {
+                                        "actionType": "OPEN_MODAL",
+                                        "showLoading": true,
+                                        "target": "dnd-17"
+                                    }
+                                ],
+                                "debounce": 3000
+                            }
+                        ],
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    },
+                    {
+                        "colName": "Delete Vendor",
+                        "title": "Delete Vendor",
+                        "html": "<i class='fas fa-trash'></i>",
+                        "sortable": false,
+                        "disableColumnSorting": true,
+                        "cellDisableAccessor": "delete",
+                        "action": {
+                            "name": "ROW_ACTION",
+                            "apiConfig": {
+                                "name": "deleteVendor",
+                                "url": "/api/v1/Vendor/Delete/:vendorId",
+                                "method": "DELETE",
+                                "pathParams": [
+                                    {
+                                        "paramName": "vendorId",
+                                        "mappedField": "CUSTOM_FIELD_OBJECT",
+                                        "mappedValue": "id"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "deleteTableRow": true,
+                                    "showSuccessMessage": true,
+                                    "message": "Vendor deleted successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "vendorList"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        },
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 50
+                        }
+                    }
+                ],
+                "caption": "Vendors",
+                "summary": null,
+                "globalFilterFields": [
+                    "name",
+                    "Zone",
+                    "Circle",
+                    "Division",
+                    "Substation"
+                ],
+                "dataKey": "id",
+                "resizableColumns": null,
+                "responsive": null,
+                "dataConfig": {
+                    "name": "vendorList",
+                    "url": "/api/v1/Vendor/List",
+                    "method": "GET",
+                    "params": {},
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    }
+                },
+                "columnFilter": true,
+                "showExportExcelBtn": true,
+                "showExportPdfBtn": true,
+                "showPrintPreviewBtn": true
+            }
+        }
+    ],
+    "dnd-17": [],
+    "dnd-18": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-21",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "vendor-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".vendor-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Edit Vendor"
+        },
+        {
+            "baseProperties": {
+                "type": "hidden",
+                "id": "dnd-40",
+                "name": "idEdit",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visibleValue": "false",
+                "readOnlyValue": "true",
+                "disabledValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-45",
+                "name": "levelTypeEdit",
+                "label": "Level Type",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-46",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelEdit",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-46",
+                "name": "levelEdit",
+                "label": "Level",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeEdit != null or levelTypeEdit != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeEdit",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-22",
+                "label": "Name",
+                "name": "nameEdit",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "textarea",
+                "id": "dnd-24",
+                "label": "Address",
+                "name": "addressEdit",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "requiredValue": "false"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "tel",
+                "id": "dnd-25",
+                "label": "Phone Number",
+                "name": "contactEdit",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "false",
+                "visibleValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-26",
+                "label": "Website",
+                "name": "websiteEdit",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "false",
+                "visibleValue": "true"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-41",
+                "label": "Company Code",
+                "name": "companyCodeEdit",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-19",
+                "label": "Save Vendor",
+                "formName": "editVendorModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "save-vendor theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-vendor",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "UpdateVendor",
+                                "url": "/api/v1/Vendor/Update/:id",
+                                "method": "PATCH",
+                                "pathParams": [
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "idEdit"
+                                    }
+                                ],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "name",
+                                        "mappedField": "nameEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "address",
+                                        "mappedField": "addressEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "contact",
+                                        "mappedField": "contactEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "website",
+                                        "mappedField": "websiteEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyCode",
+                                        "mappedField": "companyCodeEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "id",
+                                        "mappedField": "idEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelEdit",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Vendor updated successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "vendorList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-17",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        }
+    ],
+    "dnd-3": [],
+    "dnd-4": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "dnd-20",
+                "formName": "Add Vendor"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "vendor-modal-title",
+                    "configuration": [
+                        {
+                            "selectorName": ".vendor-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".vendor-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Add Vendor"
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-43",
+                "name": "levelTypeAdd",
+                "label": "Level Type"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "RELOAD_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "dnd-44",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "levelAdd",
+                            "sharedData": [],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "management",
+                    "label": "Management"
+                },
+                {
+                    "value": "division",
+                    "label": "Division"
+                },
+                {
+                    "value": "circle",
+                    "label": "Circle"
+                },
+                {
+                    "value": "zone",
+                    "label": "Zone"
+                },
+                {
+                    "value": "Substation",
+                    "label": "Substation"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dnd-44",
+                "name": "levelAdd",
+                "label": "Level"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "optionList": null,
+            "optionsConfig": {
+                "name": "Get Levels",
+                "url": "/api/v1/Levels/Get",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                    {
+                        "paramName": "level",
+                        "mappedField": "levelTypeAdd",
+                        "mappedValue": "value"
+                    }
+                ],
+                "payloadParams": [],
+                "fetch": "ONLOAD",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                    "action": []
+                }
+            },
+            "labelKey": "name",
+            "valueKey": "code",
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-13",
+                "label": "Name",
+                "name": "nameAdd"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "true",
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "textarea",
+                "id": "dnd-12",
+                "label": "Address",
+                "name": "addressAdd"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "tel",
+                "id": "dnd-11",
+                "label": "Phone Number",
+                "name": "contactAdd"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "requiredValue": "false",
+                "visibleValue": "true",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-9",
+                "label": "Website",
+                "name": "websiteAdd"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "requiredValue": "false",
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-42",
+                "label": "Company Code",
+                "name": "companyCodeAdd"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
+                "type": "submit",
+                "id": "dnd-14",
+                "label": "Save Vendor"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "save-vendor theme-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".save-vendor",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".save-vendor .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "AddVendor",
+                                "url": "/api/v1/Vendor/Create",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "name",
+                                        "mappedField": "nameAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "address",
+                                        "mappedField": "addressAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "contact",
+                                        "mappedField": "contactAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "website",
+                                        "mappedField": "websiteAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "companyCode",
+                                        "mappedField": "companyCodeAdd",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "level",
+                                        "mappedField": "levelAdd",
+                                        "mappedValue": "value",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": null,
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": true,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Vendor added successfully.",
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-39",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "vendorList",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "url": "",
+                                            "condition": "",
+                                            "field": "",
+                                            "fieldValue": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "dnd-3",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "Error occurred while adding vendor.",
+                                    "showErrorMessage": true,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        }
+    ]
+}

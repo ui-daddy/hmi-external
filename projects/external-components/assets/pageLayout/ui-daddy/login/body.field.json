@@ -1,0 +1,244 @@
+{
+    "loginForm": [],
+    "loginInfo": [
+        {
+            "value": "Sign in",
+            "baseProperties": {
+                "name": "signIn",
+                "id": "signIn",
+                "type": "staticText",
+                "formName": "loginForm"
+            },
+            "expressionProperties": {
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": [{
+                        "selectorName": ".element-child",
+                        "xs": {
+                            "margin-bottom": "35px",
+                            "font-size": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".element-child .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "color": "white"
+                        }
+                    }],
+                    "customClassName": "element-child"
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "name": "email",
+                "id": "email",
+                "type": "text",
+                "formName": "loginForm"
+            },
+            "placeholder": "Enter Your username",
+            "accessor": "obj.email",
+            "expressionProperties": {
+                "requiredValue": false,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "customAttributes": [
+                {
+                    "name": "disabled",
+                    "value": false
+                }
+            ],
+            "events": [
+                {
+                    "event": "",
+                    "actions": [
+                        {
+                            "actionType": "setfield",
+                            "field": "$password$",
+                            "fieldValue": "$userName$"
+                        },
+                        {
+                            "actionType": "setfield",
+                            "field": "$password$",
+                            "fieldValue": "$userName$"
+                        }
+                    ],
+                    "debounce": 3000
+                }
+            ]
+        },
+        {
+            "baseProperties": {
+                "name": "password",
+                "id": "password",
+                "formName": "loginForm",
+                "type": "password"
+            },
+            "placeholder": "Password",
+            "accessor": "obj.password",
+            "expressionProperties": {
+                "requiredValue": false,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "minRequirementPattern": "^.{4,20}$"
+        }
+    ],
+    "loginButtons": [
+        {
+            "baseProperties": {
+                "id": "loginBtn",
+                "name": "loginBtn",
+                "type": "submit",
+                "formName": "loginForm",
+                "label": "Login"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "login__btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".login__btn",
+                            "xs": {
+                                "margin-top": "20px"
+                            }
+                        },
+                        {
+                            "selectorName": ".login__btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ],
+                    "themeClass": "btn-warning"
+                },
+                "orientation": null
+            },
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "showLoading": true,
+                            "apiConfig": {
+                                "name": "loginButtonApi",
+                                "url": "/api/v1/EmployeeAccount/Login",
+                                "method": "POST",
+                                "isApplicationSessionAPI": true,
+                                "payloadParams": [
+                                    {
+                                        "paramName": "username",
+                                        "mappedField": "email"
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "password"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "pageUrl": "/dashboard",
+                                    "sharedData": [
+                                        {
+                                            "varName": "name",
+                                            "responseAccessor": "firstName",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "id",
+                                            "responseAccessor": "id",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "givenName",
+                                            "responseAccessor": "givenName",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "familyName",
+                                            "responseAccessor": "familyName",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "userType",
+                                            "responseAccessor": "role",
+                                            "cache": true
+                                        },
+                                        {
+                                            "varName": "authenticated",
+                                            "staticData": "yes",
+                                            "cache": true
+                                        }
+                                    ],
+                                    "clearSharedData": [
+                                        "name",
+                                        "authenticated"
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true,
+                                    "clearSharedData": [
+                                        "name",
+                                        "authenticated"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "debounce": 3000
+                }
+            ]
+        },
+        {
+            "baseProperties": {
+                "id": "forgotPwdLink",
+                "name": "forgotPwdLink",
+                "type": "link",
+                "formName": "",
+                "label": "Forgot Password?"
+            },
+            "accessor": "",
+            "href": "/forget-password",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "login__forgot-link",
+                    "configuration": {
+                        "selectorName": ".login__forgot-link",
+                        "xs": {
+                            "margin": "10px",
+                            "justify-content": "center"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
