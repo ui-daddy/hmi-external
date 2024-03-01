@@ -112,7 +112,7 @@
                             },
                             {
                                 "label": "Substation",
-                                "filterName": "name",
+                                "filterName": "label",
                                 "optionList": [],
                                 "labelKey": "name",
                                 "valueKey": "name",
@@ -163,7 +163,7 @@
                         {
                             "paramName": "substation",
                             "mappedField": "CUSTOM_FIELD_OBJECT",
-                            "mappedValue": "name",
+                            "mappedValue": "label",
                             "valueFormat": ""
                         }
                     ],
@@ -253,7 +253,7 @@
                 "dataKey": null,
                 "dataConfig": {
                     "name": "tasksReport",
-                    "url": "https://upms-api.azurewebsites.net/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
+                    "url": "https://upms-api.azurewebsites.net/api/v1/Report/GetTasksProgressReport?act=10%25%20service&zone=All&circle=All&division=All&substation=All",
                     "method": "GET",
                     "payloadParams": [],
                     "onSuccess": {
