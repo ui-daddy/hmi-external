@@ -42,8 +42,16 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "header-nav-menu",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-nav-menu",
+                            "xs": {
+                                "gap": "30px",
+                                "margin-top": "5px"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -80,26 +88,6 @@
                     "id": "profile",
                     "label": "My Profile",
                     "navigateToPage": "/profile"
-                },
-                {
-                    "id": "vendors",
-                    "label": "Vendor Management",
-                    "navigateToPage": "/vendors"
-                },
-                {
-                    "id": "impediments",
-                    "label": "Issues",
-                    "navigateToPage": "/impediments"
-                },
-                {
-                    "id": "reports",
-                    "label": "Reports",
-                    "navigateToPage": "/reports"
-                },
-                {
-                    "id": "tasks-report",
-                    "label": "Tasks Reports",
-                    "navigateToPage": "/tasks-report"
                 }
             ]
         },
@@ -131,6 +119,12 @@
                             "selectorName": ".login-btn .dynamic-style-child:hover",
                             "xs": {
                                 "background-color": "black"
+                            }
+                        },
+                        {
+                            "selectorName": ".login-btn",
+                            "xs": {
+                                "justify-content": "end"
                             }
                         }
                     ],
