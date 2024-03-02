@@ -115,8 +115,25 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "login-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child",
+                            "xs": {
+                                "padding": "7px 25px",
+                                "border-radius": "30px",
+                                "background-color": "transparent",
+                                "border-color": "transparent",
+                                "outline": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child:hover",
+                            "xs": {
+                                "background-color": "black"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -136,8 +153,25 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "signup-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".signup-btn .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#2E2B44",
+                                "border-color": "#2E2B44",
+                                "padding": "7px 25px",
+                                "border-radius": "30px",
+                                "outline": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".signup-btn .dynamic-style-child:hover",
+                            "xs": {
+                                "background-color": "black"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
