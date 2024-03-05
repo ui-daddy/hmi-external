@@ -1,0 +1,24 @@
+{
+    "layout": [
+        {
+            "id": "dh-0",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "3:9",
+                        "md": "3:9",
+                        "sm": "3:9",
+                        "xs": "3:9"
+                    },
+                    "count": "2"
+                },
+                "css": {
+                    "configuration": [],
+                    "customClassName": null
+                }
+            },
+            "sectionList": []
+        }
+    ]
+}
