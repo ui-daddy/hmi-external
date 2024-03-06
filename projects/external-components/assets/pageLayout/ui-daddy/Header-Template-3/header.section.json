@@ -33,11 +33,12 @@
                     "layout": {
                         "column": {
                             "ratio": {
-                                "lg": "12",
-                                "md": "12",
+                                "lg": "8:2:2",
+                                "md": "8:2:2",
                                 "sm": "12",
                                 "xs": "12"
-                            }
+                            },
+                            "count": 1
                         },
                         "css": {
                             "configuration": [],
@@ -46,17 +47,54 @@
                     },
                     "sectionList": [
                         {
-                            "id": "dh-0",
+                            "id": "dh-16",
                             "type": "content",
                             "layout": {
                                 "column": {
                                     "ratio": {
-                                        "lg": "9:1:2",
-                                        "md": "9:1:2",
+                                        "lg": "12",
+                                        "md": "12",
                                         "sm": "12",
                                         "xs": "12"
-                                    },
-                                    "count": "4"
+                                    }
+                                },
+                                "css": {
+                                    "configuration": [],
+                                    "customClassName": null
+                                }
+                            },
+                            "sectionList": []
+                        },
+                        {
+                            "id": "dh-15",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    }
+                                },
+                                "css": {
+                                    "configuration": [],
+                                    "customClassName": null
+                                }
+                            },
+                            "sectionList": []
+                        },
+                        {
+                            "id": "dh-14",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    }
                                 },
                                 "css": {
                                     "configuration": [],
