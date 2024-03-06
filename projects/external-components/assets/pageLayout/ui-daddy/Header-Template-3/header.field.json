@@ -59,6 +59,58 @@
         },
         {
             "baseProperties": {
+                "type": "button",
+                "id": "dh-13",
+                "name": "header-close-search",
+                "label": "Close"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [
+                                {
+                                    "varName": "showHeaderSearch",
+                                    "staticData": "false",
+                                    "cache": true,
+                                    "responseAccessor": ""
+                                }
+                            ],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
                 "type": "staticIcon",
                 "id": "dh-2",
                 "name": "header-search-icon"
