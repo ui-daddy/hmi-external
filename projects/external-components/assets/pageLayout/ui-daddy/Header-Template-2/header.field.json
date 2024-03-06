@@ -54,7 +54,22 @@
                             "selectorName": ".header-nav-menu",
                             "xs": {
                                 "gap": "30px",
-                                "margin-top": "5px"
+                                "margin-top": "5px",
+                                "min-width": "100%",
+                                "justify-content": "end"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-nav-menu.navbar-nav .item-active",
+                            "xs": {
+                                "border-bottom": "4px solid #D57303"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-nav-menu.navbar-nav .nav-link.active",
+                            "xs": {
+                                "color": "#D57303",
+                                "font-weight": "bold"
                             }
                         }
                     ],
