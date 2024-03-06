@@ -41,12 +41,19 @@
                 "name": "header-search-textbox"
             },
             "layoutProperties": {
-                "labelPlacement": null,
+                "labelPlacement": "top",
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "header-search-txtbox",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-search-txtbox .field-label",
+                            "xs": {
+                                "display": "none"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -73,7 +80,7 @@
                 "css": {
                     "customClassName": "",
                     "configuration": [],
-                    "themeClass": ""
+                    "themeClass": "btn-light"
                 },
                 "orientation": null
             },
@@ -130,7 +137,9 @@
                             "selectorName": ".header-search-icon",
                             "xs": {
                                 "color": "black",
-                                "text-align": "right"
+                                "text-align": "right",
+                                "line-height": "45px",
+                                "cursor": "pointer"
                             }
                         }
                     ],
@@ -189,8 +198,22 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "header-nav-menu",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-nav-menu .nav-item",
+                            "xs": {
+                                "text-align": "right"
+                            }
+                        },
+                        {
+                            "selectorName": ".nav-link",
+                            "xs": {
+                                "color": "black",
+                                "font-weight": "normal"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
