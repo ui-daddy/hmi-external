@@ -1,182 +1,43 @@
 {
     "dh-4": [],
     "dh-5": [],
-    "dh-0": [
+    "dh-16": [
         {
             "baseProperties": {
                 "type": "staticImage",
-                "id": "dh-1",
-                "name": "headerLogo"
+                "id": "dh-1"
             },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "header-logo",
-                    "configuration": [
-                        {
-                            "selectorName": ".header-logo .dynamic-style-child",
-                            "xs": {
-                                "width": "45px",
-                                "height": "45px"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
-            "altText": null,
-            "showDownload": null
-        },
+            "layoutProperties": {}
+        }
+    ],
+    "dh-15": [
         {
             "baseProperties": {
                 "type": "text",
                 "id": "dh-11"
             },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {
-                "visible": "showHeaderSearch == \"true\""
-            },
-            "value": null,
-            "placeholder": null,
-            "accessor": null
+            "layoutProperties": {}
         },
         {
             "baseProperties": {
                 "type": "button",
-                "id": "dh-13",
-                "name": "header-close-search",
-                "label": "Close"
+                "id": "dh-13"
             },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "SET_SHARED_DATA",
-                            "url": "",
-                            "condition": "1==1",
-                            "fileName": "",
-                            "field": "",
-                            "fieldValue": "",
-                            "fieldAccessor": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [
-                                {
-                                    "varName": "showHeaderSearch",
-                                    "staticData": "false",
-                                    "cache": true,
-                                    "responseAccessor": ""
-                                }
-                            ],
-                            "apiConfig": null
-                        }
-                    ]
-                }
-            ],
-            "expressionProperties": {}
+            "layoutProperties": {}
         },
         {
             "baseProperties": {
                 "type": "staticIcon",
-                "id": "dh-2",
-                "name": "header-search-icon"
+                "id": "dh-2"
             },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "header-search-icon",
-                    "configuration": [
-                        {
-                            "selectorName": ".header-search-icon",
-                            "xs": {
-                                "color": "black",
-                                "text-align": "right",
-                                "line-height": "45px",
-                                "cursor": "pointer"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "debounce": null,
-                    "actions": [
-                        {
-                            "actionType": "SET_SHARED_DATA",
-                            "url": "",
-                            "condition": "1==1",
-                            "fileName": "",
-                            "field": "",
-                            "fieldValue": "",
-                            "fieldAccessor": "",
-                            "messagetype": "",
-                            "messageText": "",
-                            "target": "",
-                            "timer": null,
-                            "formName": "",
-                            "componentName": "",
-                            "sharedData": [
-                                {
-                                    "varName": "showHeaderSearch",
-                                    "staticData": "true",
-                                    "cache": true,
-                                    "responseAccessor": ""
-                                }
-                            ],
-                            "apiConfig": null
-                        }
-                    ]
-                }
-            ],
-            "expressionProperties": {
-                "visible": "showHeaderSearch != \"true\""
-            },
-            "iconClass": "fas fa-search"
-        },
+            "layoutProperties": {}
+        }
+    ],
+    "dh-14": [
         {
             "baseProperties": {
                 "type": "nav-menu",
-                "id": "dh-10",
+                "id": "dh-17",
                 "name": "header-nav-menu",
                 "label": "Your Name"
             },
@@ -185,15 +46,8 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "header-nav-menu",
-                    "configuration": [
-                        {
-                            "selectorName": ".header-nav-menu .nav-item.dynamic-style-child",
-                            "xs": {
-                                "text-align": "right"
-                            }
-                        }
-                    ],
+                    "customClassName": "",
+                    "configuration": [],
                     "themeClass": ""
                 },
                 "orientation": null
