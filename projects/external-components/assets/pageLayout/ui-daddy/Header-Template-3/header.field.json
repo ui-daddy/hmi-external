@@ -18,8 +18,8 @@
                         {
                             "selectorName": ".header-logo .dynamic-style-child",
                             "xs": {
-                                "width": "70px",
-                                "height": "70px"
+                                "width": "45px",
+                                "height": "45px"
                             }
                         }
                     ],
@@ -35,26 +35,127 @@
         },
         {
             "baseProperties": {
-                "type": "staticIcon",
-                "id": "dh-2"
+                "type": "text",
+                "id": "dh-11"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "showHeaderSearch == \"true\""
+            },
+            "value": null,
+            "placeholder": null,
+            "accessor": null
         },
         {
             "baseProperties": {
                 "type": "staticIcon",
-                "id": "dh-3"
+                "id": "dh-2",
+                "name": "header-search-icon"
             },
-            "layoutProperties": {}
-        }
-    ],
-    "dh-6": [
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-search-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-search-icon",
+                            "xs": {
+                                "color": "black",
+                                "text-align": "right",
+                                "line-height": "45px",
+                                "cursor": "pointer"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [
+                                {
+                                    "varName": "showHeaderSearch",
+                                    "staticData": "true",
+                                    "cache": true,
+                                    "responseAccessor": ""
+                                }
+                            ],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visible": "showHeaderSearch != \"true\""
+            },
+            "iconClass": "fas fa-search"
+        },
         {
             "baseProperties": {
-                "type": "dropdownMenu",
-                "id": "dh-7"
+                "type": "nav-menu",
+                "id": "dh-10",
+                "name": "header-nav-menu",
+                "label": "Your Name"
             },
-            "layoutProperties": {}
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-nav-menu",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-nav-menu .nav-item.dynamic-style-child",
+                            "xs": {
+                                "text-align": "right"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "type": "link",
+                    "label": "Log Out"
+                }
+            ],
+            "icon": null,
+            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png"
         }
     ]
 }
