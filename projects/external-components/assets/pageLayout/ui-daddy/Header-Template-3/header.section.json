@@ -6,16 +6,24 @@
             "layout": {
                 "column": {
                     "ratio": {
-                        "lg": "8:4",
-                        "md": "8:4",
+                        "lg": "12",
+                        "md": "12",
                         "sm": "12",
                         "xs": "12"
                     },
                     "count": 1
                 },
                 "css": {
-                    "configuration": [],
-                    "customClassName": null
+                    "customClassName": "header-css",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-css",
+                            "xs": {
+                                "background-color": "white"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
                 }
             },
             "sectionList": [
@@ -43,8 +51,8 @@
                             "layout": {
                                 "column": {
                                     "ratio": {
-                                        "lg": "8:1:1:2",
-                                        "md": "8:1:1:2",
+                                        "lg": "9:1:2",
+                                        "md": "9:1:2",
                                         "sm": "12",
                                         "xs": "12"
                                     },
@@ -60,25 +68,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "id": "dh-6",
-            "type": "content",
-            "layout": {
-                "column": {
-                    "ratio": {
-                        "lg": "12",
-                        "md": "12",
-                        "sm": "12",
-                        "xs": "12"
-                    }
-                },
-                "css": {
-                    "configuration": [],
-                    "customClassName": null
-                }
-            },
-            "sectionList": []
         }
     ]
 }
