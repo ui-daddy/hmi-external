@@ -14,8 +14,16 @@
                     "count": "3"
                 },
                 "css": {
-                    "configuration": [],
-                    "customClassName": null
+                    "customClassName": "header-section",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-section",
+                            "xs": {
+                                "background-color": "white"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
                 }
             },
             "sectionList": [
@@ -44,11 +52,12 @@
                     "layout": {
                         "column": {
                             "ratio": {
-                                "lg": "12",
-                                "md": "12",
+                                "lg": "10:2",
+                                "md": "10:2",
                                 "sm": "12",
                                 "xs": "12"
-                            }
+                            },
+                            "count": 1
                         },
                         "css": {
                             "configuration": [],
