@@ -1,0 +1,60 @@
+{
+    "dh-4": [],
+    "dh-5": [],
+    "dh-0": [
+        {
+            "baseProperties": {
+                "type": "staticImage",
+                "id": "dh-1",
+                "name": "headerLogo"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-logo",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-logo .dynamic-style-child",
+                            "xs": {
+                                "width": "70px",
+                                "height": "70px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+            "altText": null,
+            "showDownload": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dh-2"
+            },
+            "layoutProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dh-3"
+            },
+            "layoutProperties": {}
+        }
+    ],
+    "dh-6": [
+        {
+            "baseProperties": {
+                "type": "dropdownMenu",
+                "id": "dh-7"
+            },
+            "layoutProperties": {}
+        }
+    ]
+}
