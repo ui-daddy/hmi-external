@@ -52,7 +52,20 @@
                 "height": null,
                 "css": {
                     "customClassName": "lang-dd",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".lang-dd",
+                            "xs": {
+                                "margin-bottom": "0"
+                            }
+                        },
+                        {
+                            "selectorName": ".lang-dd .field-label",
+                            "xs": {
+                                "display": "none"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -90,8 +103,7 @@
                         {
                             "selectorName": ".mail-icon",
                             "xs": {
-                                "color": "black",
-                                "margin-left": "25px"
+                                "color": "black"
                             }
                         }
                     ],
