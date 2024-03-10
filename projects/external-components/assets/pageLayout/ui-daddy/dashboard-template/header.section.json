@@ -1,0 +1,81 @@
+{
+    "layout": [
+        {
+            "id": "dh-0",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "6:6",
+                        "sm": "6:6",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "main-header-style",
+                    "configuration": [
+                        {
+                            "selectorName": ".main-header-style",
+                            "xs": {
+                                "background": "#f8f8f8",
+                                "border": "1px solid #e9e9e9",
+                                "padding-top": "10px",
+                                "padding-bottom": "10px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "dh-1",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "dh-2",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "2:0:0:0",
+                                "md": "2:0:0:0",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "header-second-section",
+                            "configuration": [
+                                {
+                                    "selectorName": ".header-second-section .row",
+                                    "xs": {}
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        }
+    ]
+}
