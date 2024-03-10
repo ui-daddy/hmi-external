@@ -56,13 +56,26 @@
                         {
                             "selectorName": ".lang-dd",
                             "xs": {
-                                "margin-bottom": "0"
+                                "margin-bottom": "0",
+                                "color": "#464dee"
                             }
                         },
                         {
                             "selectorName": ".lang-dd .field-label",
                             "xs": {
                                 "display": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".lang-dd select",
+                            "xs": {
+                                "color": "#464dee",
+                                "border": "none",
+                                "font-weight": "500",
+                                "cursor": "pointer",
+                                "background": "inherit",
+                                "padding-right": "0",
+                                "width": "90px"
                             }
                         }
                     ],
@@ -103,7 +116,7 @@
                         {
                             "selectorName": ".mail-icon",
                             "xs": {
-                                "color": "black",
+                                "color": "#464dee",
                                 "cursor": "pointer"
                             }
                         }
@@ -132,7 +145,7 @@
                         {
                             "selectorName": ".notify-icon",
                             "xs": {
-                                "color": "black",
+                                "color": "#464dee",
                                 "cursor": "pointer"
                             }
                         }
@@ -168,7 +181,8 @@
                         {
                             "selectorName": ".header-nav-menu .nav-link",
                             "xs": {
-                                "color": "black"
+                                "color": "#464dee",
+                                "font-weight": "500"
                             }
                         },
                         {
