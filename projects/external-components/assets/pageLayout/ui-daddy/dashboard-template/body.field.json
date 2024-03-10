@@ -1,1 +1,90 @@
-{}
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-2",
+                "name": "welcome-txt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "welcome-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".welcome-txt",
+                            "xs": {
+                                "font-size": "24px",
+                                "font-weight": "500",
+                                "justify-content": "left"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Welcome to Dashboard",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "db-3",
+                "name": "day-dd"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "day-dd",
+                    "configuration": [
+                        {
+                            "selectorName": ".day-dd",
+                            "xs": {
+                                "justify-content": "end",
+                                "text-align": "right"
+                            }
+                        },
+                        {
+                            "selectorName": ".day-dd .field-label",
+                            "xs": {
+                                "display": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".input-label__placement-top",
+                            "xs": {
+                                "display": "inline-block"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "today",
+                    "label": "Today"
+                },
+                {
+                    "value": "yesterday",
+                    "label": "Yesterday"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": "yesterday"
+        }
+    ],
+    "db-1": []
+}
