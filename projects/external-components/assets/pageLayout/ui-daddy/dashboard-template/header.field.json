@@ -1,0 +1,135 @@
+{
+    "dh-0": [],
+    "dh-1": [
+        {
+            "baseProperties": {
+                "type": "staticImage",
+                "id": "dh-3",
+                "name": "headerLogo"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-logo",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-logo .dynamic-style-child",
+                            "xs": {
+                                "height": "22px"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-logo",
+                            "xs": {
+                                "display": "flex",
+                                "cursor": "pointer"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "imageUrl": "https://demo.bootstrapdash.com/dashflat/template/images/logo.svg",
+            "altText": null,
+            "showDownload": null
+        }
+    ],
+    "dh-2": [
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dh-4",
+                "name": "lang-dd"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "lang-dd",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "english",
+                    "label": "English"
+                },
+                {
+                    "value": "hindi",
+                    "label": "Hindi"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": "english"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dh-5",
+                "name": "mail-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "mail-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".mail-icon",
+                            "xs": {
+                                "color": "black",
+                                "margin-left": "25px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "far fa-envelope"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dh-6",
+                "name": "notify-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "notify-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".notify-icon",
+                            "xs": {
+                                "color": "black"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fas fa-bell"
+        }
+    ]
+}
