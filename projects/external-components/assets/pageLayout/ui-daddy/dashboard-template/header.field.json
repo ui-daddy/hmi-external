@@ -103,7 +103,8 @@
                         {
                             "selectorName": ".mail-icon",
                             "xs": {
-                                "color": "black"
+                                "color": "black",
+                                "cursor": "pointer"
                             }
                         }
                     ],
@@ -131,7 +132,8 @@
                         {
                             "selectorName": ".notify-icon",
                             "xs": {
-                                "color": "black"
+                                "color": "black",
+                                "cursor": "pointer"
                             }
                         }
                     ],
@@ -172,17 +174,18 @@
                         {
                             "selectorName": ".header-nav-menu",
                             "xs": {
-                                "margin-left": "-10px"
+                                "margin-left": "-5px"
                             }
                         },
                         {
                             "selectorName": ".nav-menu-image",
                             "xs": {
-                                "margin-right": "5px"
+                                "margin-right": "10px",
+                                "width": "35px"
                             }
                         },
                         {
-                            "selectorName": ".temp-class-5",
+                            "selectorName": ".temp-class-2",
                             "xs": {
                                 "property1": "value"
                             }
@@ -205,7 +208,7 @@
                 }
             ],
             "icon": null,
-            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png"
+            "imageUrl": "https://demo.bootstrapdash.com/dashflat/template/images/faces/face28.png"
         }
     ]
 }
