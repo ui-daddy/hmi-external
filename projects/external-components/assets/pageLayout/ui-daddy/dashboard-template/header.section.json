@@ -46,20 +46,11 @@
                                 "md": "12",
                                 "sm": "12",
                                 "xs": "12"
-                            },
-                            "count": 1
+                            }
                         },
                         "css": {
-                            "customClassName": "logo-section",
-                            "configuration": [
-                                {
-                                    "selectorName": ".logo-section .row",
-                                    "xs": {
-                                        "align-items": "center"
-                                    }
-                                }
-                            ],
-                            "themeClass": ""
+                            "configuration": [],
+                            "customClassName": null
                         }
                     },
                     "sectionList": []
@@ -70,21 +61,20 @@
                     "layout": {
                         "column": {
                             "ratio": {
-                                "lg": "2:auto:auto:auto",
-                                "md": "2:auto:auto:auto",
+                                "lg": "auto:auto:auto:auto",
+                                "md": "auto:auto:auto:auto",
                                 "sm": "12",
                                 "xs": "12"
                             },
                             "count": 1
                         },
                         "css": {
-                            "customClassName": "header-second-section",
+                            "customClassName": "header-section-2",
                             "configuration": [
                                 {
-                                    "selectorName": ".header-second-section .row",
+                                    "selectorName": ".header-section-2 .row",
                                     "xs": {
-                                        "justify-content": "end",
-                                        "align-items": "center"
+                                        "justify-content": "end"
                                     }
                                 }
                             ],
