@@ -35,18 +35,79 @@
             "layout": {
                 "column": {
                     "ratio": {
-                        "lg": "12",
-                        "md": "12",
-                        "sm": "12",
+                        "lg": "4:4:4",
+                        "md": "4:4:4",
+                        "sm": "6:6",
                         "xs": "12"
-                    }
+                    },
+                    "count": 1
                 },
                 "css": {
                     "configuration": [],
                     "customClassName": null
                 }
             },
-            "sectionList": []
+            "sectionList": [
+                {
+                    "id": "db-4",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-5",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-6",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
         }
     ]
 }
