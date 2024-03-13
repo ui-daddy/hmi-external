@@ -151,6 +151,13 @@
                 "placeholder": "Enter options"
               },
               {
+                "propertyName": "data",
+                "defaultValueMapping": "data",
+                "type": "textarea",
+                "label": "Static Data Object",
+                "placeholder": "Enter Static Data Configuration"
+              },
+              {
                 "propertyName": "dataKey",
                 "defaultValueMapping": "dataKey",
                 "type": "text",
