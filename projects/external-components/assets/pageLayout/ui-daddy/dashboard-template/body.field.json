@@ -108,7 +108,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "iconClass": null
+            "iconClass": "fa fa-briefcase"
         },
         {
             "baseProperties": {
@@ -165,8 +165,15 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "ticket-sold",
+                    "configuration": [
+                        {
+                            "selectorName": ".ticket-sold",
+                            "xs": {
+                                "font-weight": "bold"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -209,8 +216,15 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "ticket-available",
+                    "configuration": [
+                        {
+                            "selectorName": ".ticket-available",
+                            "xs": {
+                                "font-weight": "bold"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -253,8 +267,15 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "revenue-style",
+                    "configuration": [
+                        {
+                            "selectorName": ".revenue-style",
+                            "xs": {
+                                "font-weight": "bold"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
