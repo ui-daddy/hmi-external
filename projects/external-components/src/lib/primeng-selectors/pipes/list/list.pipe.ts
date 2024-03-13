@@ -4,7 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ListPipe implements PipeTransform {
   transform(arr: Array<any>, fieldName: string): Array<any> {
     arr = this.uniqArr(arr, fieldName);
-    return arr.map(v=> ({label: v , value: v }));
+    return arr.filter(value => value !== null && value !== undefined).map((v)=> {
+        return ({label: v , value: v });
+    });
   }
 
   private uniqArr(arr: Array<any>,fieldName:string): Array<any> {

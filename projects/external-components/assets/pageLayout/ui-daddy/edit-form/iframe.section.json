@@ -5,7 +5,7 @@
         "type": "form",
         "layout": {
           "css": {
-            "customClassName": "px-0"
+            "customClassName": "iframe-form"
           },
           "column" : {
             "count": 1,
@@ -24,7 +24,7 @@
           "type": "content",
           "layout": {
             "css": {
-              "customClassName": "px-0"
+              "customClassName": "iframe-content"
             },
             "column":{
               "count": 2,

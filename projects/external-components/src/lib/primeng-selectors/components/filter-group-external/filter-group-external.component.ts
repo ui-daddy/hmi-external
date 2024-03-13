@@ -8,12 +8,14 @@ export const FilterEventType = {
 };
 
 export interface IFilterGroup {
+  filterName: any;
   label: string;
   type: string;
   value: string;
   show: boolean;
   labelKey?: string;
   valueKey?: string;
+  isArrayOfString?: boolean;
   filterApplied?: boolean;
   optionList?: any[];
   filterGroup?: IFilterGroup[];
@@ -46,6 +48,12 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   appliedFilterPills: IFilterGroup[] = [];
   initializeFilterFormGrp() {
     this.filterFormGrp = this.fieldObj.customAttributes?.filterOptions?.map((v: any)=> {
+      v.filterGroup.map((item:any)=>{
+        if(item.isArrayOfString === true){
+          item.labelKey = "label";
+          item.valueKey = "value"
+        }
+      })
       const data = { ...v, show: false };
       if (v.type === FilterEventType.DEPENDENT) {
         const filterGroup = v.filterGroup.map((dep:any)=> ({ ...dep, value: '' }))
@@ -142,8 +150,11 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
   loadData(ddOption: any, selectedValue?: string) {
     ddOption.showLoader = true;
     this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
-      ddOption.optionList = data;
-      if (data && data.length && ddOption.filterOptionListBy) {
+      if(ddOption.isArrayOfString === true){
+        ddOption.optionList = data.map(item => ({ [ddOption.labelKey]: item, [ddOption.valueKey]: item })); //tranformimg array of strings to array of objects
+      }else{
+        ddOption.optionList = data;
+      }      if (data && data.length && ddOption.filterOptionListBy) {
         ddOption.optionList = ddOption.optionList.filter((v:any)=> v[ddOption.filterOptionListBy] === selectedValue);
       }
       ddOption.showLoader = false;
@@ -224,13 +235,13 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       if(filter.filterApplied) {
         if (filter.type === 'dependent') {
           filter.filterGroup?.forEach(((depF: IFilterGroup) => {
-            if (depF.valueKey) {
-              data[depF.valueKey] = depF.value;
+            if (depF.filterName) {
+              data[depF.filterName] = depF.value;
             }
           }));
         } else {
-          if (filter.valueKey) {
-            data[filter.valueKey] = filter.value;
+          if (filter.filterName) {
+            data[filter.filterName] = filter.value;
           }
         }
       }
