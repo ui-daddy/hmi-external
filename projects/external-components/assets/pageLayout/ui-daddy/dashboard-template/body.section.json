@@ -134,11 +134,13 @@
                                                 "md": "12",
                                                 "sm": "12",
                                                 "xs": "12"
-                                            }
+                                            },
+                                            "count": 1
                                         },
                                         "css": {
+                                            "customClassName": "p-0",
                                             "configuration": [],
-                                            "customClassName": null
+                                            "themeClass": ""
                                         }
                                     },
                                     "sectionList": []
@@ -153,11 +155,13 @@
                                                 "md": "12",
                                                 "sm": "12",
                                                 "xs": "12"
-                                            }
+                                            },
+                                            "count": 1
                                         },
                                         "css": {
+                                            "customClassName": "p-0",
                                             "configuration": [],
-                                            "customClassName": null
+                                            "themeClass": ""
                                         }
                                     },
                                     "sectionList": []
@@ -172,11 +176,13 @@
                                                 "md": "12",
                                                 "sm": "12",
                                                 "xs": "12"
-                                            }
+                                            },
+                                            "count": 1
                                         },
                                         "css": {
+                                            "customClassName": "p-0",
                                             "configuration": [],
-                                            "customClassName": null
+                                            "themeClass": ""
                                         }
                                     },
                                     "sectionList": []
