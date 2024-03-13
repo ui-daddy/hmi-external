@@ -87,7 +87,80 @@
         }
     ],
     "db-1": [],
-    "db-4": [],
+    "db-4": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-7",
+                "name": "salesOverviewPieChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "pie",
+                "label": "Sales Overview",
+                "height": "200px",
+                "options": {
+                    "title": {
+                        "display": true,
+                        "text": "Tasks",
+                        "fontSize": 16
+                    },
+                    "legend": {
+                        "position": "bottom"
+                    },
+                    "scales": {
+                        "yAxes": [
+                            {
+                                "ticks": {
+                                    "precision": 0
+                                }
+                            }
+                        ]
+                    }
+                },
+                "dataKey": null,
+                "dataConfig": {
+                    "name": "tasksReport",
+                    "url": "/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
+                    "method": "GET",
+                    "payloadParams": [],
+                    "onSuccess": {
+                        "apiDataAccessor": ""
+                    }
+                },
+                "dataToChartMapping": [
+                    {
+                        "chartConfigKey": "labels",
+                        "resultDataKey": "x"
+                    },
+                    {
+                        "chartConfigKey": "data",
+                        "resultDataKey": "y"
+                    }
+                ],
+                "backgroundColor": [
+                    "#42A5F5",
+                    "#424BF5",
+                    "#9242F5",
+                    "#F542A5",
+                    "#F542A5"
+                ]
+            }
+        }
+    ],
     "db-5": [],
     "db-6": []
 }
