@@ -87,12 +87,13 @@
         }
     ],
     "db-1": [],
-    "db-4": [
+    "db-4": [],
+    "db-8": [
         {
             "baseProperties": {
-                "type": "dynamicField",
-                "id": "db-7",
-                "name": "salesOverviewPieChart"
+                "type": "staticIcon",
+                "id": "db-10",
+                "name": "recentEarningIcon"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -105,60 +106,163 @@
                 },
                 "orientation": null
             },
-            "libraryComponent": "ChartsExternalComponent",
             "events": [],
             "expressionProperties": {},
-            "customAttributes": {
-                "type": "pie",
-                "label": "Sales Overview",
-                "height": "200px",
-                "options": {
-                    "title": {
-                        "display": true,
-                        "text": "Tasks",
-                        "fontSize": 16
-                    },
-                    "legend": {
-                        "position": "bottom"
-                    },
-                    "scales": {
-                        "yAxes": [
-                            {
-                                "ticks": {
-                                    "precision": 0
-                                }
-                            }
-                        ]
-                    }
+            "iconClass": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-11"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
                 },
-                "dataKey": null,
-                "dataConfig": {
-                    "name": "tasksReport",
-                    "url": "/api/v1/Report/GetTasksProgressReport?zone=All&circle=All&division=All&substation=All&act=10%25%20service",
-                    "method": "GET",
-                    "payloadParams": [],
-                    "onSuccess": {
-                        "apiDataAccessor": ""
-                    }
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "$423333",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-9": [],
+    "db-13": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-15"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
                 },
-                "dataToChartMapping": [
-                    {
-                        "chartConfigKey": "labels",
-                        "resultDataKey": "x"
-                    },
-                    {
-                        "chartConfigKey": "data",
-                        "resultDataKey": "y"
-                    }
-                ],
-                "backgroundColor": [
-                    "#42A5F5",
-                    "#424BF5",
-                    "#9242F5",
-                    "#F542A5",
-                    "#F542A5"
-                ]
-            }
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Tickets Sold",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-16"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "24995",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-14": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-17"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Tickets Available",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-18"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "12,281",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-12": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-19"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Revenue",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-20"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "11,200",
+            "dynamicValueAccessor": null
         }
     ],
     "db-5": [],
