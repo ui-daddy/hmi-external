@@ -94,11 +94,12 @@
                             "layout": {
                                 "column": {
                                     "ratio": {
-                                        "lg": "12",
-                                        "md": "12",
+                                        "lg": "4:4:4",
+                                        "md": "4:4:4",
                                         "sm": "12",
                                         "xs": "12"
-                                    }
+                                    },
+                                    "count": 1
                                 },
                                 "css": {
                                     "configuration": [],
