@@ -100,8 +100,19 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "suitcase-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".suitcase-icon",
+                            "xs": {
+                                "border": "1px solid #e9e9e9",
+                                "padding": "14px 20px",
+                                "font-size": "34px",
+                                "border-radius": "10px",
+                                "color": "#464dee"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -120,15 +131,25 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "recent-earning-lbl",
+                    "configuration": [
+                        {
+                            "selectorName": ".recent-earning-lbl",
+                            "xs": {
+                                "font-size": "20px",
+                                "font-weight": "bold",
+                                "justify-content": "start",
+                                "line-height": "30px"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
             },
             "events": [],
             "expressionProperties": {},
-            "value": "$423333",
+            "value": "$423333<br/> Recent Earnings",
             "dynamicValueAccessor": null
         }
     ],
