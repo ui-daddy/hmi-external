@@ -2793,6 +2793,13 @@
                                     },
                                     {
                                         "actionType": "setfield",
+                                        "field": "$dnd-140$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.password",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
                                         "field": "$dnd-165$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.vendorId",
                                         "condition": "true",
@@ -3750,6 +3757,33 @@
         },
         {
             "baseProperties": {
+                "type": "email",
+                "id": "dnd-140",
+                "name": "passwordEdit",
+                "label": "Password",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "visible": "userType == 'Admin'"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "submit",
                 "id": "dnd-127",
                 "name": "saveUserBtn",
@@ -3879,6 +3913,12 @@
                                     {
                                         "paramName": "email",
                                         "mappedField": "emailEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "passwordEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
