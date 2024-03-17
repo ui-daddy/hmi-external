@@ -1320,7 +1320,7 @@
         },
         {
             "baseProperties": {
-                "type": "password",
+                "type": "email",
                 "id": "dnd-40",
                 "name": "msetclPasswordEdit",
                 "label": "Password",
@@ -1339,6 +1339,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "visibleValue": "true",
                 "visible": "userType == 'Admin'"
             },
             "value": null,
@@ -3756,7 +3757,7 @@
         },
         {
             "baseProperties": {
-                "type": "password",
+                "type": "email",
                 "id": "dnd-140",
                 "name": "passwordEdit",
                 "label": "Password",
@@ -3775,6 +3776,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "visibleValue": "true",
                 "visible": "userType == 'Admin'"
             },
             "value": null,
