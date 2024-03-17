@@ -300,6 +300,13 @@
                                     },
                                     {
                                         "actionType": "setfield",
+                                        "field": "$dnd-40$",
+                                        "fieldValue": "$SHARED_DATA$.tableRowData.password",
+                                        "condition": "true",
+                                        "formName": "editUserModal"
+                                    },
+                                    {
+                                        "actionType": "setfield",
                                         "field": "$dnd-65$",
                                         "fieldValue": "$SHARED_DATA$.tableRowData.vendorId",
                                         "condition": "true",
@@ -1313,6 +1320,33 @@
         },
         {
             "baseProperties": {
+                "type": "email",
+                "id": "dnd-40",
+                "name": "msetclPasswordEdit",
+                "label": "Password",
+                "formName": "editUserModal"
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true",
+                "visible": "userType == 'Admin'"
+            },
+            "value": null,
+            "placeholder": null
+        },
+        {
+            "baseProperties": {
                 "type": "submit",
                 "id": "dnd-27",
                 "name": "msetclSaveUserBtn",
@@ -1442,6 +1476,12 @@
                                     {
                                         "paramName": "email",
                                         "mappedField": "msetclEmailEdit",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    },
+                                    {
+                                        "paramName": "password",
+                                        "mappedField": "msetclPasswordEdit",
                                         "mappedValue": "",
                                         "valueFormat": ""
                                     },
