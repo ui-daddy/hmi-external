@@ -407,39 +407,23 @@
         }
     },
     "hmiAppConfiguration": {
-        "ifPageNotFound": "login",
         "title": "UI Daddy",
-        "baseUrl": "https://pams-api.azurewebsites.net",
+        "baseUrl": "https://upms-api.azurewebsites.net",
         "metaTags": [
             {
                 "name": "keyword",
                 "content": "uidaddy"
             }
         ],
-        "apiConfigurations": [
-            {
-                "name": "getSession",
-                "url": "/rest/session",
-                "method": "GET",
-                "isApplicationSessionAPI": true,
-                "onSuccess": {
-                    "sharedData": [
-                        {
-                            "varName": "authenticated",
-                            "staticData": "true",
-                            "cache": true
-                        }
-                    ]
-                }
-            }
-        ],
+        "linkTags": [],
+        "ifPageNotFound": "login",
         "interceptorConfigurations": [
             {
                 "statusCode": "401",
-                "messageCode": "",
-                "messageCodeResponseAccessor": "messageCode",
                 "type": "error",
+                "messageCode": "",
                 "msgResponseAccessor": "message",
+                "messageCodeResponseAccessor": "messageCode",
                 "message": "Session Error",
                 "pageUrl": "login",
                 "clearSharedData": [
@@ -448,25 +432,73 @@
                 ]
             }
         ],
-        "linkTags": [],
-        "layoutProperties": {
-            "css": {
-                "configuration": {
-                    "selectorName": "",
-                    "xs": {
-                        "background-color": "#f1f3f6"
-                    },
-                    "sm": {
-                        "background-color": "#f1f3f6"
-                    },
-                    "md": {
-                        "background-color": "#f1f3f6"
-                    },
-                    "lg": {
-                        "background-color": "#f1f3f6"
-                    }
+        "apiConfigurations": [
+            {
+                "name": "getSession",
+                "url": "/rest/session",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": null,
+                "onSuccess": {
+                    "pageUrl": "",
+                    "deleteTableRow": false,
+                    "showSuccessMessage": false,
+                    "sharedData": [
+                        {
+                            "varName": "authenticated",
+                            "staticData": "true",
+                            "cache": true
+                        }
+                    ],
+                    "fieldData": [],
+                    "clearSharedData": [],
+                    "apiDataAccessor": "",
+                    "message": "",
+                    "actions": []
+                },
+                "onError": {
+                    "pageUrl": "",
+                    "sharedData": [],
+                    "fieldData": [],
+                    "clearSharedData": [],
+                    "apiDataAccessor": "",
+                    "message": "",
+                    "showErrorMessage": false,
+                    "actions": []
                 }
             }
+        ],
+        "layoutProperties": {
+            "labelPlacement": null,
+            "width": null,
+            "height": null,
+            "css": {
+                "customClassName": "",
+                "configuration": [
+                    {
+                        "selectorName": "",
+                        "xs": {
+                            "background-color": "#f1f3f6"
+                        },
+                        "sm": {
+                            "background-color": "#f1f3f6"
+                        },
+                        "md": {
+                            "background-color": "#f1f3f6"
+                        },
+                        "lg": {
+                            "background-color": "#f1f3f6"
+                        }
+                    }
+                ],
+                "themeClass": ""
+            },
+            "orientation": null
         }
     },
     "vendors": {
