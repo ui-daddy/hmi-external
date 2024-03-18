@@ -141,7 +141,7 @@
                         "accessor": "empId",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 100
                         }
                     },
                     {
@@ -2634,7 +2634,7 @@
                         "accessor": "empId",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 100
                         }
                     },
                     {
