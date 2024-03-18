@@ -119,7 +119,7 @@
                         "accessor": "name",
                         "colWidth": {
                             "unit": "px",
-                            "value": 150
+                            "value": 200
                         }
                     },
                     {
@@ -160,16 +160,16 @@
                     },
                     {
                         "colName": "Address",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "address",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 180
                         }
                     },
                     {
                         "colName": "Contact",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "contact",
                         "colWidth": {
                             "unit": "px",
@@ -178,16 +178,16 @@
                     },
                     {
                         "colName": "Website",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "website",
                         "colWidth": {
                             "unit": "px",
-                            "value": 200
+                            "value": 180
                         }
                     },
                     {
                         "colName": "Company Code",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "companyCode",
                         "colWidth": {
                             "unit": "px",
