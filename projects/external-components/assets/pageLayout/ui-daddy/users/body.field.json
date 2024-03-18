@@ -137,11 +137,11 @@
                     },
                     {
                         "colName": "EmpId",
-                        "filterType": "multiselect",
+                        "filterType": "text",
                         "accessor": "empId",
                         "colWidth": {
                             "unit": "px",
-                            "value": 100
+                            "value": 200
                         }
                     },
                     {
@@ -2630,11 +2630,11 @@
                     },
                     {
                         "colName": "EmpId",
-                        "filterType": "multiselect",
+                        "filterType": "text",
                         "accessor": "empId",
                         "colWidth": {
                             "unit": "px",
-                            "value": 100
+                            "value": 200
                         }
                     },
                     {
