@@ -115,7 +115,7 @@
                 "columns": [
                     {
                         "colName": "Name",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "name",
                         "colWidth": {
                             "unit": "px",
