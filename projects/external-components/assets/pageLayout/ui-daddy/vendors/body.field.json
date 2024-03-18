@@ -119,7 +119,7 @@
                         "accessor": "name",
                         "colWidth": {
                             "unit": "px",
-                            "value": 250
+                            "value": 150
                         }
                     },
                     {
@@ -164,7 +164,7 @@
                         "accessor": "address",
                         "colWidth": {
                             "unit": "px",
-                            "value": 180
+                            "value": 200
                         }
                     },
                     {
@@ -182,7 +182,7 @@
                         "accessor": "website",
                         "colWidth": {
                             "unit": "px",
-                            "value": 180
+                            "value": 200
                         }
                     },
                     {
