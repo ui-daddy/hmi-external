@@ -115,7 +115,7 @@
                 "columns": [
                     {
                         "colName": "Name",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "name",
                         "colWidth": {
                             "unit": "px",
@@ -160,7 +160,7 @@
                     },
                     {
                         "colName": "Address",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "address",
                         "colWidth": {
                             "unit": "px",
@@ -169,7 +169,7 @@
                     },
                     {
                         "colName": "Contact",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "contact",
                         "colWidth": {
                             "unit": "px",
@@ -178,7 +178,7 @@
                     },
                     {
                         "colName": "Website",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "website",
                         "colWidth": {
                             "unit": "px",
@@ -187,7 +187,7 @@
                     },
                     {
                         "colName": "Company Code",
-                        "filterType": "text",
+                        "filterType": "",
                         "accessor": "companyCode",
                         "colWidth": {
                             "unit": "px",
