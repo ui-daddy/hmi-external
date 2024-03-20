@@ -1320,7 +1320,7 @@
         },
         {
             "baseProperties": {
-                "type": "email",
+                "type": "password",
                 "id": "dnd-40",
                 "name": "msetclPasswordEdit",
                 "label": "Password",
@@ -3757,7 +3757,7 @@
         },
         {
             "baseProperties": {
-                "type": "email",
+                "type": "password",
                 "id": "dnd-140",
                 "name": "passwordEdit",
                 "label": "Password",
