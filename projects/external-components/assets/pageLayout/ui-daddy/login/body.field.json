@@ -77,19 +77,7 @@
                     ],
                     "debounce": 3000
                 }
-            ],
-            "layoutProperties": {
-                "labelPlacement": "top",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "value": null
+            ]
         },
         {
             "baseProperties": {
@@ -110,20 +98,7 @@
                 "visible": "",
                 "visibleValue": true
             },
-            "minRequirementPattern": "^.{4,20}$",
-            "layoutProperties": {
-                "labelPlacement": "top",
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "value": null
+            "minRequirementPattern": "^.{4,20}$"
         }
     ],
     "loginButtons": [
