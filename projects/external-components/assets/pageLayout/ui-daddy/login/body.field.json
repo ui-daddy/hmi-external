@@ -45,7 +45,7 @@
             "placeholder": "Enter Your username",
             "accessor": "obj.email",
             "expressionProperties": {
-                "requiredValue": false,
+                "requiredValue": "true",
                 "required": "",
                 "readOnly": "",
                 "readOnlyValue": false,
@@ -77,7 +77,19 @@
                     ],
                     "debounce": 3000
                 }
-            ]
+            ],
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "value": null
         },
         {
             "baseProperties": {
@@ -89,7 +101,7 @@
             "placeholder": "Password",
             "accessor": "obj.password",
             "expressionProperties": {
-                "requiredValue": false,
+                "requiredValue": "true",
                 "required": "",
                 "readOnly": "",
                 "readOnlyValue": false,
@@ -98,7 +110,20 @@
                 "visible": "",
                 "visibleValue": true
             },
-            "minRequirementPattern": "^.{4,20}$"
+            "minRequirementPattern": "^.{4,20}$",
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "value": null
         }
     ],
     "loginButtons": [
