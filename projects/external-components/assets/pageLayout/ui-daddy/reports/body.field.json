@@ -325,11 +325,11 @@
                 "summary": null,
                 "globalFilterFields": [
                     "Priority",
-                    "Status",
-                    "Zone",
-                    "Circle",
-                    "Division",
-                    "Substation"
+                    "status",
+                    "zoneLabel",
+                    "circleLabel",
+                    "divisionLabel",
+                    "substationLabel"
                 ],
                 "dataKey": "id",
                 "resizableColumns": false,
@@ -342,8 +342,6 @@
                     "postTransform": "dateTransform",
                     "onSuccess": {}
                 },
-                "triggerFilterGroupOnRefresh": "reports-filter",
-                "refreshTableActions": [],
                 "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
