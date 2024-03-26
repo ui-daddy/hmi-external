@@ -343,6 +343,8 @@
                     "postTransform": "dateTransform",
                     "onSuccess": {}
                 },
+                "triggerFilterGroupOnRefresh": "reports-filter",
+                "refreshTableActions": [],
                 "columnFilter": true,
                 "showExportExcelBtn": true,
                 "showExportPdfBtn": true,
