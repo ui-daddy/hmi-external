@@ -135,8 +135,8 @@
                 "caption": "My Tasks",
                 "summary": null,
                 "globalFilterFields": [
-                    "Task Name",
-                    "Status"
+                    "title",
+                    "status"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,

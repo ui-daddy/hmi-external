@@ -324,12 +324,13 @@
                 "caption": "",
                 "summary": null,
                 "globalFilterFields": [
-                    "Priority",
-                    "Status",
-                    "Zone",
-                    "Circle",
-                    "Division",
-                    "Substation"
+                    "title",
+                    "priority",
+                    "status",
+                    "zoneLabel",
+                    "circleLabel",
+                    "divisionLabel",
+                    "substationLabel"
                 ],
                 "dataKey": "id",
                 "resizableColumns": false,
