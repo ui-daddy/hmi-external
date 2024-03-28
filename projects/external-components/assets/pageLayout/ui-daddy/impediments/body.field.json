@@ -221,7 +221,7 @@
                 "globalFilterFields": [
                     "remark",
                     "type",
-                    "activity"
+                    "activityname"
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
@@ -366,7 +366,7 @@
                         "mappedField": "userId",
                         "mappedValue": "",
                         "valueFormat": "$SHARED_DATA(id)"
-                      }
+                    }
                 ],
                 "queryParams": [],
                 "payloadParams": [],
@@ -697,7 +697,7 @@
                         "mappedField": "userId",
                         "mappedValue": "",
                         "valueFormat": "$SHARED_DATA(id)"
-                      }
+                    }
                 ],
                 "queryParams": [],
                 "payloadParams": [],
