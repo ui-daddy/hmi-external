@@ -1,34 +1,6 @@
 {
     "layout": [
         {
-            "id": "db-1",
-            "type": "form",
-            "layout": {
-                "column": {
-                    "ratio": {
-                        "lg": "12",
-                        "md": "12",
-                        "sm": "12",
-                        "xs": "12"
-                    },
-                    "count": 1
-                },
-                "css": {
-                    "customClassName": "temp-class-1",
-                    "configuration": [
-                        {
-                            "selectorName": ".temp-class-1",
-                            "xs": {
-                                "padding-top": "35px"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                }
-            },
-            "sectionList": []
-        },
-        {
             "id": "loginForm",
             "type": "form",
             "layout": {
