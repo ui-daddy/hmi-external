@@ -10,11 +10,20 @@
                         "md": "12",
                         "sm": "12",
                         "xs": "12"
-                    }
+                    },
+                    "count": 1
                 },
                 "css": {
-                    "configuration": [],
-                    "customClassName": null
+                    "customClassName": "temp-class-1",
+                    "configuration": [
+                        {
+                            "selectorName": ".temp-class-1",
+                            "xs": {
+                                "padding-top": "70px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
                 }
             },
             "sectionList": []
