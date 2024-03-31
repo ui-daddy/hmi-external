@@ -2,7 +2,7 @@
     "loginForm": [],
     "loginInfo": [
         {
-            "value": "Sign in",
+            "value": "Project Activity Management System",
             "baseProperties": {
                 "name": "signIn",
                 "id": "signIn",
@@ -14,26 +14,33 @@
                 "visibleValue": true
             },
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
+                    "customClassName": "element-child",
                     "configuration": [
                         {
                             "selectorName": ".element-child",
                             "xs": {
                                 "margin-bottom": "35px",
-                                "font-size": "30px"
+                                "font-size": "22px"
                             }
                         },
                         {
                             "selectorName": ".element-child .dynamic-style-child",
                             "xs": {
                                 "text-align": "center",
-                                "color": "white"
+                                "color": "#ffc107"
                             }
                         }
                     ],
-                    "customClassName": "element-child"
-                }
-            }
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "dynamicValueAccessor": null
         },
         {
             "baseProperties": {
