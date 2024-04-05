@@ -130,6 +130,13 @@
                 "placeholder": "Enter type"
               },
               {
+                "propertyName": "label",
+                "defaultValueMapping": "label",
+                "type": "text",
+                "label": "Label",
+                "placeholder": "Enter label"
+              },
+              {
                 "propertyName": "height",
                 "defaultValueMapping": "height",
                 "type": "text",
@@ -142,6 +149,13 @@
                 "type": "textarea",
                 "label": "Options",
                 "placeholder": "Enter options"
+              },
+              {
+                "propertyName": "data",
+                "defaultValueMapping": "data",
+                "type": "textarea",
+                "label": "Static Data Object",
+                "placeholder": "Enter Static Data Configuration"
               },
               {
                 "propertyName": "dataKey",
