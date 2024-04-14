@@ -511,9 +511,10 @@
                     "customClassName": "",
                     "configuration": [
                         {
-                            "selectorName": "section-padding",
+                            "selectorName": ".section-container [class*=\"col-\"]",
                             "xs": {
-                                "padding": "0"
+                                "padding-left": "0",
+                                "padding-right": "0"
                             }
                         }
                     ],
