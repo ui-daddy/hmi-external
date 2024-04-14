@@ -149,17 +149,18 @@
                 "customClassName": "",
                 "configuration": [
                     {
-                        "lg": {
+                        "selectorName": ".no-gutter [class*=\"col-\"]",
+                        "xs": {
+                            "padding-left": "0",
+                            "padding-right": "0"
+                        },
+                        "sm": {
                             "background-color": "#f1f3f6"
                         },
                         "md": {
                             "background-color": "#f1f3f6"
                         },
-                        "selectorName": "",
-                        "sm": {
-                            "background-color": "#f1f3f6"
-                        },
-                        "xs": {
+                        "lg": {
                             "background-color": "#f1f3f6"
                         }
                     }
