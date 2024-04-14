@@ -146,7 +146,7 @@
             "width": null,
             "height": null,
             "css": {
-                "customClassName": "",
+                "customClassName": "dashboard-body",
                 "configuration": [
                     {
                         "selectorName": ".no-gutter [class*=\"col-\"]",
