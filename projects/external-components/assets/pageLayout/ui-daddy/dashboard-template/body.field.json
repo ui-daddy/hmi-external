@@ -418,73 +418,6 @@
             "dynamicValueAccessor": null
         }
     ],
-    "db-30": [
-        {
-            "baseProperties": {
-                "type": "dynamicField",
-                "id": "db-22",
-                "name": "pieChart"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "customAttributes": {
-                "type": "pie",
-                "label": "Pie Chart",
-                "height": "200",
-                "options": {
-                    "plugins": {
-                        "legend": {
-                            "labels": {
-                                "usePointStyle": true,
-                                "color": "black"
-                            }
-                        }
-                    }
-                },
-                "data": {
-                    "labels": [
-                        "Social Media",
-                        "Entertainment",
-                        "Other"
-                    ],
-                    "datasets": [
-                        {
-                            "data": [
-                                540,
-                                325,
-                                702
-                            ],
-                            "backgroundColor": [
-                                "#EAB308",
-                                "#3B82F6",
-                                "#22C55E"
-                            ],
-                            "hoverBackgroundColor": [
-                                "#EAB308",
-                                "#3B82F6",
-                                "#22C55E"
-                            ]
-                        }
-                    ]
-                },
-                "dataKey": null,
-                "dataConfig": null,
-                "dataToChartMapping": null,
-                "backgroundColor": null
-            }
-        }
-    ],
     "db-5": [
         {
             "baseProperties": {
@@ -675,6 +608,73 @@
                             "fill": false,
                             "borderColor": "#EAB308",
                             "tension": 0.4
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-30": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-22",
+                "name": "pieChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "pie",
+                "label": "Pie Chart",
+                "height": "200",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "usePointStyle": true,
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Social Media",
+                        "Entertainment",
+                        "Other"
+                    ],
+                    "datasets": [
+                        {
+                            "data": [
+                                540,
+                                325,
+                                702
+                            ],
+                            "backgroundColor": [
+                                "#EAB308",
+                                "#3B82F6",
+                                "#22C55E"
+                            ],
+                            "hoverBackgroundColor": [
+                                "#EAB308",
+                                "#3B82F6",
+                                "#22C55E"
+                            ]
                         }
                     ]
                 },
