@@ -201,11 +201,13 @@
                                 "md": "12",
                                 "sm": "12",
                                 "xs": "12"
-                            }
+                            },
+                            "count": 1
                         },
                         "css": {
+                            "customClassName": "hmi-section-card",
                             "configuration": [],
-                            "customClassName": null
+                            "themeClass": ""
                         }
                     },
                     "sectionList": []
@@ -220,11 +222,13 @@
                                 "md": "12",
                                 "sm": "12",
                                 "xs": "12"
-                            }
+                            },
+                            "count": 1
                         },
                         "css": {
+                            "customClassName": "hmi-section-card",
                             "configuration": [],
-                            "customClassName": null
+                            "themeClass": ""
                         }
                     },
                     "sectionList": []
