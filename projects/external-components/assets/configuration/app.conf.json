@@ -489,7 +489,8 @@
         },
         "data": {
             "fetchFromLocal": true,
-            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/body.data.json"
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/body.data.json",
+            "serverURL": []
         },
         "navField": {
             "fetchFromLocal": true,
@@ -505,7 +506,20 @@
         },
         "globalPageSettings": {
             "title": "dashboard-template",
-            "layoutProperties": null
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-padding",
+                            "xs": {
+                                "padding": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            }
         }
     }
 }
