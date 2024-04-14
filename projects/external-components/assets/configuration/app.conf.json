@@ -511,7 +511,7 @@
                     "customClassName": "",
                     "configuration": [
                         {
-                            "selectorName": ".section-padding",
+                            "selectorName": "section-padding",
                             "xs": {
                                 "padding": "0"
                             }
