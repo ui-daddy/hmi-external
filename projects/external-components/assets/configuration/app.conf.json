@@ -509,7 +509,7 @@
             "title": "dashboard-template",
             "layoutProperties": {
                 "css": {
-                    "customClassName": "",
+                    "customClassName": "dashboard-page",
                     "configuration": [
                         {
                             "selectorName": ".no-gutter [class*=\"col-\"]",
