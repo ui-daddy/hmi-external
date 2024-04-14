@@ -511,7 +511,7 @@
                     "customClassName": "",
                     "configuration": [
                         {
-                            "selectorName": ".section-container [class*=\"col-\"]",
+                            "selectorName": ".no-gutter [class*=\"col-\"]",
                             "xs": {
                                 "padding-left": "0",
                                 "padding-right": "0"
