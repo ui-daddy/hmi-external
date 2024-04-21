@@ -75,12 +75,39 @@
                     "layout": {
                         "column": {
                             "ratio": {
-                                "lg": "auto:auto:auto",
-                                "md": "auto:auto:auto",
-                                "sm": "auto:auto:auto",
-                                "xs": "auto:auto:auto"
+                                "lg": "auto",
+                                "md": "auto",
+                                "sm": "auto",
+                                "xs": "auto"
                             },
                             "count": "3"
+                        },
+                        "css": {
+                            "customClassName": "icon-section",
+                            "configuration": [
+                                {
+                                    "selectorName": ".icon-section",
+                                    "xs": {
+                                        "margin-top": "20px"
+                                    }
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-12",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
                         },
                         "css": {
                             "configuration": [],
