@@ -236,5 +236,26 @@
             "expressionProperties": {}
         }
     ],
-    "db-8": []
+    "db-8": [
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "db-9"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fab fa-facebook-f"
+        }
+    ]
 }
