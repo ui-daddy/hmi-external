@@ -75,15 +75,22 @@
                     "layout": {
                         "column": {
                             "ratio": {
-                                "lg": "12",
-                                "md": "12",
-                                "sm": "12",
-                                "xs": "12"
-                            }
+                                "lg": "0:0:0",
+                                "md": "0:0:0",
+                                "sm": "0:0:0",
+                                "xs": "0:0:0"
+                            },
+                            "count": "3"
                         },
                         "css": {
-                            "configuration": [],
-                            "customClassName": null
+                            "customClassName": "",
+                            "configuration": [
+                                {
+                                    "selectorName": ".temp-class-1",
+                                    "xs": {}
+                                }
+                            ],
+                            "themeClass": ""
                         }
                     },
                     "sectionList": []
