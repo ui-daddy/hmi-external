@@ -240,15 +240,33 @@
         {
             "baseProperties": {
                 "type": "staticIcon",
-                "id": "db-9"
+                "id": "db-9",
+                "name": "fb-icon"
             },
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "fb-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".fb-icon",
+                            "xs": {
+                                "cursor": "pointer",
+                                "color": "#fff",
+                                "font-size": "25px",
+                                "justify-content": "center",
+                                "align-items": "center",
+                                "background": "#3b5998",
+                                "margin": "5px",
+                                "border-radius": "50%",
+                                "height": "50px",
+                                "width": "50px",
+                                "display": "flex"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
