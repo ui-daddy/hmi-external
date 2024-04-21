@@ -550,7 +550,8 @@
         },
         "data": {
             "fetchFromLocal": true,
-            "localURL": "./assets/pageLayout/ui-daddy/login-1/body.data.json"
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/body.data.json",
+            "serverURL": []
         },
         "navField": {
             "fetchFromLocal": true,
@@ -566,7 +567,22 @@
         },
         "globalPageSettings": {
             "title": "login-1",
-            "layoutProperties": null
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-page-1",
+                            "xs": {
+                                "background-image": "url(assets/images/loginPage.jpg)",
+                                "background-size": "cover",
+                                "background-position": "center center"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            }
         }
     }
 }
