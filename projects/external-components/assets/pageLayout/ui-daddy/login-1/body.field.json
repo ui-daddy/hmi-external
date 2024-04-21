@@ -1,7 +1,8 @@
 {
+    "loginForm": [],
     "loginInfo": [
         {
-            "value": "Sign in",
+            "value": "Login",
             "baseProperties": {
                 "name": "signIn",
                 "id": "signIn",
@@ -13,26 +14,119 @@
                 "visibleValue": true
             },
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
+                    "customClassName": "element-child",
                     "configuration": [
                         {
                             "selectorName": ".element-child",
                             "xs": {
                                 "margin-bottom": "35px",
-                                "font-size": "30px"
+                                "font-size": "39px"
                             }
                         },
                         {
                             "selectorName": ".element-child .dynamic-style-child",
                             "xs": {
                                 "text-align": "center",
-                                "color": "white"
+                                "color": "#333",
+                                "font-weight": "500"
                             }
                         }
                     ],
-                    "customClassName": "element-child"
-                }
-            }
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-4",
+                "name": "username",
+                "label": "Username",
+                "formName": "login-form"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-3",
+                "name": "password",
+                "label": "Password",
+                "formName": "login-form"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "link",
+                "id": "db-5",
+                "name": "forgotPwd",
+                "label": "Forgot Password?"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "forgot-pwd",
+                    "configuration": [
+                        {
+                            "selectorName": ".forgot-pwd .dynamic-style-child",
+                            "xs": {
+                                "color": "#666",
+                                "font-size": "14px"
+                            }
+                        },
+                        {
+                            "selectorName": ".forgot-pwd",
+                            "xs": {
+                                "justify-content": "end"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         }
     ],
     "loginButtons": [
@@ -42,22 +136,31 @@
                 "name": "githubLoginLink",
                 "type": "link",
                 "formName": "",
-                "label": "Log in with GitHub"
+                "label": "SIGN UP"
             },
             "accessor": "",
             "href": "https://github.com/login/oauth/authorize?client_id=5260dbf9a0fefd183580&scope=repo&state=aRandomUnguessableString&allow_signup=true",
             "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
                 "css": {
                     "customClassName": "github__login-link",
-                    "configuration": {
-                        "selectorName": ".github__login-link",
-                        "xs": {
-                            "margin": "10px",
-                            "justify-content": "center"
+                    "configuration": [
+                        {
+                            "selectorName": ".github__login-link",
+                            "xs": {
+                                "margin": "10px",
+                                "justify-content": "center"
+                            }
                         }
-                    }
-                }
-            }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         }
     ]
 }
