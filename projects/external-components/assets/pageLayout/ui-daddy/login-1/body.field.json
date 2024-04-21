@@ -353,8 +353,7 @@
                             "selectorName": ".sign-up-txt",
                             "xs": {
                                 "font-size": "14px",
-                                "color": "#666",
-                                "margin-top": "60px"
+                                "color": "#666"
                             }
                         }
                     ],
@@ -370,8 +369,8 @@
         {
             "baseProperties": {
                 "type": "link",
-                "id": "githubLoginLink",
-                "name": "signup",
+                "id": "db-14",
+                "name": "custom-signup-link",
                 "label": "SIGN UP"
             },
             "layoutProperties": {
@@ -379,8 +378,22 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "custom-signup-link",
+                    "configuration": [
+                        {
+                            "selectorName": ".custom-signup-link .dynamic-style-child",
+                            "xs": {
+                                "color": "#333",
+                                "font-size": "14px"
+                            }
+                        },
+                        {
+                            "selectorName": ".custom-signup-link",
+                            "xs": {
+                                "justify-content": "center"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
