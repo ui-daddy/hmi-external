@@ -202,38 +202,6 @@
             "expressionProperties": {},
             "value": "Or Sign Up Using",
             "dynamicValueAccessor": null
-        },
-        {
-            "baseProperties": {
-                "id": "githubLoginLink",
-                "name": "githubLoginLink",
-                "type": "link",
-                "formName": "",
-                "label": "SIGN UP"
-            },
-            "accessor": "",
-            "href": "https://github.com/login/oauth/authorize?client_id=5260dbf9a0fefd183580&scope=repo&state=aRandomUnguessableString&allow_signup=true",
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "github__login-link",
-                    "configuration": [
-                        {
-                            "selectorName": ".github__login-link",
-                            "xs": {
-                                "margin": "10px",
-                                "justify-content": "center"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {}
         }
     ],
     "db-8": [
@@ -296,7 +264,7 @@
                         {
                             "selectorName": ".tweet-icon",
                             "xs": {
-                                "cursor": "value",
+                                "cursor": "pointer",
                                 "color": "#fff",
                                 "font-size": "25px",
                                 "justify-content": "center",
@@ -365,6 +333,60 @@
             "events": [],
             "expressionProperties": {},
             "iconClass": "fab fa-google"
+        }
+    ],
+    "db-12": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-13",
+                "name": "signUpTxt2"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "sign-up-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".sign-up-txt",
+                            "xs": {
+                                "font-size": "14px",
+                                "color": "#666",
+                                "margin-top": "60px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Or Sign Up Using",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "link",
+                "id": "githubLoginLink",
+                "name": "signup",
+                "label": "SIGN UP"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
         }
     ]
 }
