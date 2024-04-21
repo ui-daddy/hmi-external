@@ -11,13 +11,12 @@
                             "selectorName": ".section-card__center-form",
                             "xs": {
                                 "width": "500px",
-                                "position": "fixed",
                                 "left": "50%",
                                 "top": "50%",
                                 "border-radius": "10px",
                                 "padding": "40px",
-                                "transform": "translate(-50%, -50%)",
-                                "background": "white"
+                                "background": "white",
+                                "margin-top": "20px"
                             }
                         }
                     ],
