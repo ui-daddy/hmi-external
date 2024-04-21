@@ -574,7 +574,7 @@
                         {
                             "selectorName": ".login-page-1",
                             "xs": {
-                                "background-image": "url(assets/images/loginPage.jpg)",
+                                "background-image": "url(assets/images/login1-template-bg.jpg)",
                                 "background-size": "cover",
                                 "background-position": "center center"
                             }
