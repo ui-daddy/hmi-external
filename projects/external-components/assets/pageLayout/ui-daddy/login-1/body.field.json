@@ -265,6 +265,12 @@
                                 "width": "50px",
                                 "display": "flex"
                             }
+                        },
+                        {
+                            "selectorName": ".fb-icon:hover",
+                            "xs": {
+                                "background": "#333"
+                            }
                         }
                     ],
                     "themeClass": ""
@@ -274,6 +280,50 @@
             "events": [],
             "expressionProperties": {},
             "iconClass": "fab fa-facebook-f"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "db-10",
+                "name": "tweet-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "tweet-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".tweet-icon",
+                            "xs": {
+                                "cursor": "value",
+                                "color": "#fff",
+                                "font-size": "25px",
+                                "justify-content": "center",
+                                "align-items": "center",
+                                "background": "#1da1f2",
+                                "margin": "5px",
+                                "border-radius": "50%",
+                                "height": "50px",
+                                "width": "50px",
+                                "display": "flex"
+                            }
+                        },
+                        {
+                            "selectorName": ".tweet-icon:hover",
+                            "xs": {
+                                "background": "#333"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fab fa-twitter"
         }
     ]
 }
