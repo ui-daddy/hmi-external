@@ -149,10 +149,9 @@
                 "customClassName": "dashboard-body",
                 "configuration": [
                     {
-                        "selectorName": ".no-gutter [class*=\"col-\"]",
+                        "selectorName": ".body",
                         "xs": {
-                            "padding-left": "0",
-                            "padding-right": "0"
+                            "background": "linear-gradient(right,#00dbde,#fc00ff,#00dbde,#fc00ff)"
                         },
                         "sm": {
                             "background-color": "#f1f3f6"
