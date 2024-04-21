@@ -324,6 +324,49 @@
             "events": [],
             "expressionProperties": {},
             "iconClass": "fab fa-twitter"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "db-11",
+                "name": "google-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "google-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".google-icon",
+                            "xs": {
+                                "cursor": "pointer",
+                                "color": "#fff",
+                                "justify-content": "center",
+                                "align-items": "center",
+                                "background": "#ea4335",
+                                "margin": "5px",
+                                "border-radius": "50%",
+                                "height": "50px",
+                                "width": "50px",
+                                "display": "flex"
+                            }
+                        },
+                        {
+                            "selectorName": ".google-icon:hover",
+                            "xs": {
+                                "background": "#333"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fab fa-google"
         }
     ]
 }
