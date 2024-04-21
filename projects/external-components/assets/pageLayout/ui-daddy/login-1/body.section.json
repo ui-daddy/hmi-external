@@ -75,11 +75,12 @@
                     "layout": {
                         "column": {
                             "ratio": {
-                                "lg": "12",
-                                "md": "12",
-                                "sm": "12",
-                                "xs": "12"
-                            }
+                                "lg": "auto:auto:auto",
+                                "md": "auto:auto:auto",
+                                "sm": "auto:auto:auto",
+                                "xs": "auto:auto:auto"
+                            },
+                            "count": "3"
                         },
                         "css": {
                             "configuration": [],
