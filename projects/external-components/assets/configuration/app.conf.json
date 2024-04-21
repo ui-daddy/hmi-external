@@ -151,7 +151,7 @@
                     {
                         "selectorName": ".body",
                         "xs": {
-                            "background": "linear-gradient(right,#00dbde,#fc00ff,#00dbde,#fc00ff)"
+                            "background": "linear-gradient(-135deg,#fc00ff,#00dbde)"
                         },
                         "sm": {
                             "background-color": "#f1f3f6"
