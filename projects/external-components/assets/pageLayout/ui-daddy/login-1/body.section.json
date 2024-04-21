@@ -88,7 +88,7 @@
                                 {
                                     "selectorName": ".icon-section",
                                     "xs": {
-                                        "margin-top": "20px"
+                                        "margin-top": "10px"
                                     }
                                 }
                             ],
@@ -107,11 +107,20 @@
                                 "md": "12",
                                 "sm": "12",
                                 "xs": "12"
-                            }
+                            },
+                            "count": 1
                         },
                         "css": {
-                            "configuration": [],
-                            "customClassName": null
+                            "customClassName": "custom-signup-section",
+                            "configuration": [
+                                {
+                                    "selectorName": ".custom-signup-section",
+                                    "xs": {
+                                        "margin-top": "60px"
+                                    }
+                                }
+                            ],
+                            "themeClass": ""
                         }
                     },
                     "sectionList": []
