@@ -132,6 +132,48 @@
     "loginButtons": [
         {
             "baseProperties": {
+                "type": "button",
+                "id": "db-6",
+                "name": "loginBtn",
+                "label": "LOGIN"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "login-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%",
+                                "font-size": "16px",
+                                "color": "#fff",
+                                "background": "-webkit-linear-gradient(-135deg,#00dbde,#fc00ff)",
+                                "border": "1px solid white",
+                                "border-radius": "25px",
+                                "padding": "12px",
+                                "transition": "all .4s",
+                                "margin-top": "40px"
+                            }
+                        },
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child:hover",
+                            "xs": {
+                                "background": "-webkit-linear-gradient(0deg,#00dbde,#fc00ff)"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
                 "id": "githubLoginLink",
                 "name": "githubLoginLink",
                 "type": "link",
