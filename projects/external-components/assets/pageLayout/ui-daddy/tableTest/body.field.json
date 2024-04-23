@@ -254,7 +254,7 @@
                 ],
                 "dataKey": "id",
                 "resizableColumns": null,
-                "responsive": null,
+                "responsive": true,
                 "dataConfig": {
                     "name": "vendorList",
                     "url": "https://vendorupmstest.free.beeceptor.com/vendor",
