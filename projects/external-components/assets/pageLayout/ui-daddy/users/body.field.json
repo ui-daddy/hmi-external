@@ -713,7 +713,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
             "optionList": [
                 {
                     "value": "Admin",
@@ -1756,6 +1758,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "requiredValue": "true",
                 "visible": "msetclLevelTypeAdd != null or msetclLevelTypeAdd != undefined"
             },
             "optionList": [
@@ -3150,7 +3153,9 @@
                 "orientation": null
             },
             "events": [],
-            "expressionProperties": {},
+            "expressionProperties": {
+                "requiredValue": "true"
+            },
             "optionList": [
                 {
                     "value": "Vendor Admin",
@@ -4193,6 +4198,7 @@
             },
             "events": [],
             "expressionProperties": {
+                "requiredValue": "true",
                 "visible": "levelTypeAdd != null or levelTypeAdd != undefined"
             },
             "optionList": [
