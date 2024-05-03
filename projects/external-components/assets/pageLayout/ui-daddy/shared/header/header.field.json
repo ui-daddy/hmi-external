@@ -80,6 +80,11 @@
                     "id": "tasks-report",
                     "label": "Tasks Reports",
                     "navigateToPage": "/tasks-report"
+                },
+                {
+                    "id": "boards",
+                    "label": "Boards",
+                    "navigateToPage": "/boards"
                 }
             ],
             "layoutProperties": {
