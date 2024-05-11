@@ -95,6 +95,30 @@
             "value": null,
             "placeholder": null,
             "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "tel",
+                "id": "db-5",
+                "name": "mob",
+                "label": "Mobile Number"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
         }
     ]
 }
