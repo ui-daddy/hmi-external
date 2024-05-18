@@ -1,0 +1,11 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-1"
+            },
+            "layoutProperties": {}
+        }
+    ]
+}

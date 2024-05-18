@@ -32,7 +32,14 @@
             "serverURL": ""
         },
         "globalPageSettings": {
-            "title": "Projects"
+            "title": "Projects",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                }
+            }
         },
         "headerField": {
             "fetchFromLocal": true,
@@ -102,53 +109,8 @@
         }
     },
     "hmiAppConfiguration": {
-        "apiConfigurations": [
-        ],
-        "ifPageNotFound": "login",
-        "interceptorConfigurations": [
-            {
-                "clearSharedData": [
-                    "authenticated",
-                    "name"
-                ],
-                "message": "Session Error",
-                "messageCode": "",
-                "messageCodeResponseAccessor": "messageCode",
-                "msgResponseAccessor": "message",
-                "pageUrl": "login",
-                "statusCode": "401",
-                "type": "error"
-            }
-        ],
-        "layoutProperties": {
-            "css": {
-                "configuration": [
-                    {
-                        "lg": {
-                            "background-color": "#f1f3f6"
-                        },
-                        "md": {
-                            "background-color": "#f1f3f6"
-                        },
-                        "selectorName": "",
-                        "sm": {
-                            "background-color": "#f1f3f6"
-                        },
-                        "xs": {
-                            "background-color": "#f1f3f6"
-                        }
-                    }
-                ],
-                "customClassName": "",
-                "themeClass": ""
-            },
-            "height": null,
-            "labelPlacement": null,
-            "orientation": null,
-            "width": null
-        },
-        "linkTags": [
-        ],
+        "title": "UI Daddy",
+        "baseUrl": "",
         "metaTags": [
             {
                 "content": "uidaddy",
@@ -161,7 +123,51 @@
                 "name": "description"
             }
         ],
-        "title": "UI Daddy"
+        "linkTags": [],
+        "ifPageNotFound": "login",
+        "interceptorConfigurations": [
+            {
+                "statusCode": "401",
+                "type": "error",
+                "messageCode": "",
+                "msgResponseAccessor": "message",
+                "messageCodeResponseAccessor": "messageCode",
+                "message": "Session Error",
+                "pageUrl": "login",
+                "clearSharedData": [
+                    "authenticated",
+                    "name"
+                ]
+            }
+        ],
+        "apiConfigurations": [],
+        "layoutProperties": {
+            "labelPlacement": null,
+            "width": null,
+            "height": null,
+            "css": {
+                "customClassName": "dashboard-body",
+                "configuration": [
+                    {
+                        "selectorName": ".body",
+                        "xs": {
+                            "background": "-webkit-linear-gradient(-135deg,#fc00ff,#00dbde)"
+                        },
+                        "sm": {
+                            "background-color": "#f1f3f6"
+                        },
+                        "md": {
+                            "background-color": "#f1f3f6"
+                        },
+                        "lg": {
+                            "background-color": "#f1f3f6"
+                        }
+                    }
+                ],
+                "themeClass": ""
+            },
+            "orientation": null
+        }
     },
     "login": {
         "authGuardConfig": {
@@ -224,6 +230,359 @@
             "fetchFromLocal": true,
             "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json",
             "serverURL": "/api/section/forgotPasword.section"
+        }
+    },
+    "new-page": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/new-page/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "new-page",
+            "layoutProperties": null
+        }
+    },
+    "vinay": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/vinay/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "vinay",
+            "layoutProperties": null
+        }
+    },
+    "Header-Template-1": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-1/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "Header-Template-1",
+            "layoutProperties": null
+        }
+    },
+    "Header-Template-2": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-2/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "Header-Template-2",
+            "layoutProperties": null
+        }
+    },
+    "Header-Template-3": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/body.data.json"
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/Header-Template-3/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "Header-Template-3",
+            "layoutProperties": null
+        }
+    },
+    "dashboard-template": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/body.data.json",
+            "serverURL": []
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/dashboard-template/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "dashboard-template",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "dashboard-page",
+                    "configuration": [
+                        {
+                            "selectorName": ".no-gutter [class*=\"col-\"]",
+                            "xs": {
+                                "padding-left": "0",
+                                "padding-right": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            }
+        }
+    },
+    "login-1": {
+        "headerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/header.field.json"
+        },
+        "headerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/header.section.json"
+        },
+        "field": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/body.field.json"
+        },
+        "section": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/body.section.json"
+        },
+        "footerField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/footer.field.json"
+        },
+        "footerSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/footer.section.json"
+        },
+        "data": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/body.data.json",
+            "serverURL": []
+        },
+        "navField": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/nav.field.json"
+        },
+        "navSection": {
+            "fetchFromLocal": true,
+            "localURL": "./assets/pageLayout/ui-daddy/login-1/nav.section.json"
+        },
+        "authGuardConfig": {
+            "enabled": false,
+            "conditions": []
+        },
+        "globalPageSettings": {
+            "title": "login-1",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-page-1",
+                            "xs": {
+                                "background-image": "url(assets/images/login1-template-bg.jpg)",
+                                "background-size": "cover",
+                                "background-position": "center center"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            }
         }
     }
 }

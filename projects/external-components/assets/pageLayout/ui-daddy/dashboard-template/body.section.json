@@ -1,0 +1,346 @@
+{
+    "layout": [
+        {
+            "id": "db-0",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "welcome-section",
+                    "configuration": [
+                        {
+                            "selectorName": ".welcome-section",
+                            "xs": {
+                                "margin-top": "16px",
+                                "margin-bottom": "16px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": []
+        },
+        {
+            "id": "db-23",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "configuration": [],
+                    "customClassName": null
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-25",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-24",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": [
+                        {
+                            "id": "db-6",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "",
+                                    "configuration": [],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": [
+                                {
+                                    "id": "db-1",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "6:6",
+                                                "md": "6:6",
+                                                "sm": "6:6",
+                                                "xs": "12"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "configuration": [],
+                                            "customClassName": null
+                                        }
+                                    },
+                                    "sectionList": [
+                                        {
+                                            "id": "db-4",
+                                            "type": "content",
+                                            "layout": {
+                                                "column": {
+                                                    "ratio": {
+                                                        "lg": "12",
+                                                        "md": "12",
+                                                        "sm": "12",
+                                                        "xs": "12"
+                                                    },
+                                                    "count": 1
+                                                },
+                                                "css": {
+                                                    "customClassName": "hmi-section-card",
+                                                    "configuration": [],
+                                                    "themeClass": ""
+                                                }
+                                            },
+                                            "sectionList": [
+                                                {
+                                                    "id": "db-8",
+                                                    "type": "content",
+                                                    "layout": {
+                                                        "column": {
+                                                            "ratio": {
+                                                                "lg": "auto:6",
+                                                                "md": "auto:6",
+                                                                "sm": "12",
+                                                                "xs": "12"
+                                                            },
+                                                            "count": "2"
+                                                        },
+                                                        "css": {
+                                                            "customClassName": "recent-earning-sec1",
+                                                            "configuration": [
+                                                                {
+                                                                    "selectorName": ".recent-earning-sec1",
+                                                                    "xs": {
+                                                                        "margin-top": "22px",
+                                                                        "border-bottom": "1px solid #e9e9e9"
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "themeClass": ""
+                                                        }
+                                                    },
+                                                    "sectionList": []
+                                                },
+                                                {
+                                                    "id": "db-9",
+                                                    "type": "content",
+                                                    "layout": {
+                                                        "column": {
+                                                            "ratio": {
+                                                                "lg": "4:4:4",
+                                                                "md": "4:4:4",
+                                                                "sm": "12",
+                                                                "xs": "12"
+                                                            },
+                                                            "count": 1
+                                                        },
+                                                        "css": {
+                                                            "customClassName": "recent-earning-sec2",
+                                                            "configuration": [
+                                                                {
+                                                                    "selectorName": ".recent-earning-sec2",
+                                                                    "xs": {
+                                                                        "padding": "15px 0 20px 0"
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "themeClass": ""
+                                                        }
+                                                    },
+                                                    "sectionList": [
+                                                        {
+                                                            "id": "db-13",
+                                                            "type": "content",
+                                                            "layout": {
+                                                                "column": {
+                                                                    "ratio": {
+                                                                        "lg": "12",
+                                                                        "md": "12",
+                                                                        "sm": "12",
+                                                                        "xs": "12"
+                                                                    },
+                                                                    "count": 1
+                                                                },
+                                                                "css": {
+                                                                    "customClassName": "p-0",
+                                                                    "configuration": [],
+                                                                    "themeClass": ""
+                                                                }
+                                                            },
+                                                            "sectionList": []
+                                                        },
+                                                        {
+                                                            "id": "db-14",
+                                                            "type": "content",
+                                                            "layout": {
+                                                                "column": {
+                                                                    "ratio": {
+                                                                        "lg": "12",
+                                                                        "md": "12",
+                                                                        "sm": "12",
+                                                                        "xs": "12"
+                                                                    },
+                                                                    "count": 1
+                                                                },
+                                                                "css": {
+                                                                    "customClassName": "p-0",
+                                                                    "configuration": [],
+                                                                    "themeClass": ""
+                                                                }
+                                                            },
+                                                            "sectionList": []
+                                                        },
+                                                        {
+                                                            "id": "db-12",
+                                                            "type": "content",
+                                                            "layout": {
+                                                                "column": {
+                                                                    "ratio": {
+                                                                        "lg": "12",
+                                                                        "md": "12",
+                                                                        "sm": "12",
+                                                                        "xs": "12"
+                                                                    },
+                                                                    "count": 1
+                                                                },
+                                                                "css": {
+                                                                    "customClassName": "p-0",
+                                                                    "configuration": [],
+                                                                    "themeClass": ""
+                                                                }
+                                                            },
+                                                            "sectionList": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": "db-30",
+                                            "type": "content",
+                                            "layout": {
+                                                "column": {
+                                                    "ratio": {
+                                                        "lg": "12",
+                                                        "md": "12",
+                                                        "sm": "12",
+                                                        "xs": "12"
+                                                    },
+                                                    "count": 1
+                                                },
+                                                "css": {
+                                                    "customClassName": "hmi-section-card",
+                                                    "configuration": [],
+                                                    "themeClass": ""
+                                                }
+                                            },
+                                            "sectionList": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "db-5",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "hmi-section-card",
+                                    "configuration": [],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": []
+                        }
+                    ]
+                },
+                {
+                    "id": "db-26",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        }
+    ]
+}
