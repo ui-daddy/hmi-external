@@ -119,6 +119,30 @@
             "value": null,
             "placeholder": null,
             "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "date",
+                "id": "db-7",
+                "name": "dob",
+                "label": "Date Of Birth"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "backgroundCss": null,
+            "accessor": null,
+            "value": null
         }
     ]
 }
