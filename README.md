@@ -26,4 +26,5 @@ Direct shortcut commands if you have followed above steps atleast once::
 1. npm run build
 2. Open another command prompt and  -> npm run link
 
-## Project config comments:
+## To clone this repository into private github repository :
+Use [Import Link](https://github.com/new/import)
