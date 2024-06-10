@@ -1,0 +1,12 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-1"
+            },
+            "layoutProperties": {},
+            "libraryComponent": "GenerateWithAiComponent"
+        }
+    ]
+}
