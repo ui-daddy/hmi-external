@@ -109,5 +109,82 @@
             "label": "Source Url",
             "placeholder": "Enter iFrame Source Url"
         }]        
-  }
+    },
+    {
+        "widgetList": [
+            {
+                "name": "ChartsExternalComponent",
+                "icon": "bi bi-box",
+                "label": "ChartsExternalComponent"
+            }
+        ],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [
+            {
+                "propertyName": "type",
+                "defaultValueMapping": "type",
+                "type": "text",
+                "label": "Type",
+                "placeholder": "Enter type"
+              },
+              {
+                "propertyName": "label",
+                "defaultValueMapping": "label",
+                "type": "text",
+                "label": "Label",
+                "placeholder": "Enter label"
+              },
+              {
+                "propertyName": "height",
+                "defaultValueMapping": "height",
+                "type": "text",
+                "label": "Height",
+                "placeholder": "Enter height"
+              },
+              {
+                "propertyName": "options",
+                "defaultValueMapping": "options",
+                "type": "textarea",
+                "label": "Options",
+                "placeholder": "Enter options"
+              },
+              {
+                "propertyName": "data",
+                "defaultValueMapping": "data",
+                "type": "textarea",
+                "label": "Static Data Object",
+                "placeholder": "Enter Static Data Configuration"
+              },
+              {
+                "propertyName": "dataKey",
+                "defaultValueMapping": "dataKey",
+                "type": "text",
+                "label": "Data Key",
+                "placeholder": "Enter data Key"
+            },
+            {
+                "propertyName": "dataConfig",
+                "defaultValueMapping": "dataConfig",
+                "type": "textarea",
+                "label": "Data Config",
+                "placeholder": "Enter data configuration"
+            },
+            {
+                "propertyName": "dataToChartMapping",
+                "defaultValueMapping": "dataToChartMapping",
+                "type": "textarea",
+                "label": "Data to chart mapping",
+                "placeholder": "Enter data to chart mapping configuration"
+            },
+            {
+                "propertyName": "backgroundColor",
+                "defaultValueMapping": "backgroundColor",
+                "type": "textarea",
+                "label": "Background color",
+                "placeholder": "Enter background color"
+            }
+        ]        
+    }
 ]
