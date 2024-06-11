@@ -23,6 +23,8 @@ import {ButtonModule} from 'primeng/button';
 import {TooltipModule} from 'primeng/tooltip';
 import { MenuModule } from 'primeng/menu';
 import { TagModule } from 'primeng/tag';
+import { GenerateWithAiComponent } from './components/generate-with-ai/generate-with-ai.component';
+import { MessagesModule } from 'primeng/messages';
 
 
 @NgModule({
@@ -35,11 +37,14 @@ import { TagModule } from 'primeng/tag';
         ChartsExternalComponent,
         RowDataHandlerDirective,
         IframeExternalComponent,
-        ListPipe
+        ListPipe,
+        GenerateWithAiComponent,
+        
     ],
     imports: [
         CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
-        TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, TooltipModule, MenuModule, TagModule
+        TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, TooltipModule, MenuModule, TagModule,
+        MessagesModule
     ],
     exports: [
         PasswordExternalComponent,
@@ -49,7 +54,9 @@ import { TagModule } from 'primeng/tag';
         TableModule,
         DropdownExternal,
         IframeExternalComponent,
-        ChartsExternalComponent, PasswordModule, DropdownModule
+        ChartsExternalComponent, PasswordModule, DropdownModule,
+        GenerateWithAiComponent,
+        MessagesModule
     ]
 })
 export class PrimengSelectorsModule { }
