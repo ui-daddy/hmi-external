@@ -1,0 +1,36 @@
+{
+    "loginInfo": [
+        {
+            "value": "Sign in",
+            "baseProperties": {
+                "name": "signIn",
+                "id": "signIn",
+                "type": "staticText",
+                "formName": "loginForm"
+            },
+            "expressionProperties": {
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": [{
+                        "selectorName": ".element-child",
+                        "xs": {
+                            "margin-bottom": "35px",
+                            "font-size": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".element-child .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "color": "white"
+                        }
+                    }],
+                    "customClassName": "element-child"
+                }
+            }
+        }
+    ]
+}
