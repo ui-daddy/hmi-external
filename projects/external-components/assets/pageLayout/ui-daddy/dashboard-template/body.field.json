@@ -302,7 +302,37 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "$42,981<br/> Recent Earnings",
+            "value": "$42,981",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-36"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "recent-earning-lbl2",
+                    "configuration": [
+                        {
+                            "selectorName": ".recent-earning-lbl2",
+                            "xs": {
+                                "font-size": "16px",
+                                "justify-content": "start",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "RECENT EARNINGS",
             "dynamicValueAccessor": null
         }
     ],
