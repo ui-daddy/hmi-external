@@ -90,6 +90,36 @@
     "db-25": [
         {
             "baseProperties": {
+                "type": "staticText",
+                "id": "db-32"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "justify-content": "start",
+                                "font-weight": "700",
+                                "padding": "15px 0 0 15px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Resource Overview(Horizontal Bar Chart)",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-27",
                 "name": "horizontal Bar"
@@ -100,7 +130,15 @@
                 "height": null,
                 "css": {
                     "customClassName": "",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": "> span",
+                            "xs": {
+                                "padding": "0 10px 20px 10px",
+                                "display": "block"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -260,7 +298,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "$423333<br/> Recent Earnings",
+            "value": "$42,981<br/> Recent Earnings",
             "dynamicValueAccessor": null
         }
     ],
@@ -276,8 +314,16 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "widget-ticket",
+                    "configuration": [
+                        {
+                            "selectorName": ".widget-ticket",
+                            "xs": {
+                                "font-size": "12px",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -312,7 +358,7 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "24995",
+            "value": "24,995",
             "dynamicValueAccessor": null
         }
     ],
@@ -327,8 +373,16 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "widget-ticket",
+                    "configuration": [
+                        {
+                            "selectorName": ".widget-ticket",
+                            "xs": {
+                                "font-size": "12px",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -378,8 +432,16 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "widget-ticket",
+                    "configuration": [
+                        {
+                            "selectorName": ".widget-ticket",
+                            "xs": {
+                                "font-size": "12px",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -431,7 +493,15 @@
                 "height": null,
                 "css": {
                     "customClassName": "",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": "> span",
+                            "xs": {
+                                "display": "block",
+                                "padding": "20px 0"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
