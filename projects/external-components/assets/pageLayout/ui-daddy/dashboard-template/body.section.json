@@ -35,12 +35,12 @@
             "layout": {
                 "column": {
                     "ratio": {
-                        "lg": "6:6",
-                        "md": "6:6",
+                        "lg": "5:7",
+                        "md": "5:7",
                         "sm": "12",
                         "xs": "12"
                     },
-                    "count": 1
+                    "count": "2"
                 },
                 "css": {
                     "customClassName": "padding-0",
@@ -259,8 +259,15 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0",
-                                                                    "configuration": [],
+                                                                    "customClassName": "p-0 mb-5",
+                                                                    "configuration": [
+                                                                        {
+                                                                            "selectorName": ".mb-5 > .row > div[class*=col-]",
+                                                                            "xs": {
+                                                                                "margin-bottom": "5px"
+                                                                            }
+                                                                        }
+                                                                    ],
                                                                     "themeClass": ""
                                                                 }
                                                             },
@@ -280,8 +287,15 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0",
-                                                                    "configuration": [],
+                                                                    "customClassName": "p-0 mb-5",
+                                                                    "configuration": [
+                                                                        {
+                                                                            "selectorName": ".mb-5 > .row > div[class*=col-]",
+                                                                            "xs": {
+                                                                                "margin-bottom": "5px"
+                                                                            }
+                                                                        }
+                                                                    ],
                                                                     "themeClass": ""
                                                                 }
                                                             },
@@ -301,8 +315,15 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0",
-                                                                    "configuration": [],
+                                                                    "customClassName": "p-0 mb-5",
+                                                                    "configuration": [
+                                                                        {
+                                                                            "selectorName": ".mb-5 > .row > div[class*=col-]",
+                                                                            "xs": {
+                                                                                "margin-bottom": "5px"
+                                                                            }
+                                                                        }
+                                                                    ],
                                                                     "themeClass": ""
                                                                 }
                                                             },
