@@ -231,16 +231,8 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "padding-0",
-                                                                    "configuration": [
-                                                                        {
-                                                                            "selectorName": ".padding-0 > .row > div[class*=col-]",
-                                                                            "xs": {
-                                                                                "padding": "0"
-                                                                            }
-                                                                        }
-                                                                    ],
-                                                                    "themeClass": ""
+                                                                    "configuration": [],
+                                                                    "customClassName": null
                                                                 }
                                                             },
                                                             "sectionList": [
@@ -250,24 +242,16 @@
                                                                     "layout": {
                                                                         "column": {
                                                                             "ratio": {
-                                                                                "lg": "12",
-                                                                                "md": "12",
-                                                                                "sm": "12",
-                                                                                "xs": "12"
+                                                                                "lg": "auto",
+                                                                                "md": "auto",
+                                                                                "sm": "auto",
+                                                                                "xs": "auto"
                                                                             },
                                                                             "count": 1
                                                                         },
                                                                         "css": {
-                                                                            "customClassName": "padding-0",
-                                                                            "configuration": [
-                                                                                {
-                                                                                    "selectorName": ".padding-0 > .row > div[class*=col-]",
-                                                                                    "xs": {
-                                                                                        "padding": "0"
-                                                                                    }
-                                                                                }
-                                                                            ],
-                                                                            "themeClass": ""
+                                                                            "configuration": [],
+                                                                            "customClassName": null
                                                                         }
                                                                     },
                                                                     "sectionList": []
@@ -282,11 +266,20 @@
                                                                                 "md": "12",
                                                                                 "sm": "12",
                                                                                 "xs": "12"
-                                                                            }
+                                                                            },
+                                                                            "count": 1
                                                                         },
                                                                         "css": {
-                                                                            "configuration": [],
-                                                                            "customClassName": null
+                                                                            "customClassName": "cmb-5",
+                                                                            "configuration": [
+                                                                                {
+                                                                                    "selectorName": ".cmb-5 > .row > div[class*=col-]",
+                                                                                    "xs": {
+                                                                                        "margin-bottom": "5px"
+                                                                                    }
+                                                                                }
+                                                                            ],
+                                                                            "themeClass": ""
                                                                         }
                                                                     },
                                                                     "sectionList": []
