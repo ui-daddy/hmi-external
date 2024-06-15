@@ -259,10 +259,10 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0 mb-5",
+                                                                    "customClassName": "p-0 cmb-5",
                                                                     "configuration": [
                                                                         {
-                                                                            "selectorName": ".mb-5 > .row > div[class*=col-]",
+                                                                            "selectorName": ".cmb-5 > .row > div[class*=col-]",
                                                                             "xs": {
                                                                                 "margin-bottom": "5px"
                                                                             }
@@ -287,10 +287,10 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0 mb-5",
+                                                                    "customClassName": "p-0 cmb-5",
                                                                     "configuration": [
                                                                         {
-                                                                            "selectorName": ".mb-5 > .row > div[class*=col-]",
+                                                                            "selectorName": ".cmb-5 > .row > div[class*=col-]",
                                                                             "xs": {
                                                                                 "margin-bottom": "5px"
                                                                             }
@@ -315,10 +315,10 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0 mb-5",
+                                                                    "customClassName": "p-0 cmb-5",
                                                                     "configuration": [
                                                                         {
-                                                                            "selectorName": ".mb-5 > .row > div[class*=col-]",
+                                                                            "selectorName": ".cmb-5 > .row > div[class*=col-]",
                                                                             "xs": {
                                                                                 "margin-bottom": "5px"
                                                                             }
