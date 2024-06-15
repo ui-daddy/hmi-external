@@ -43,8 +43,27 @@
                     "count": 1
                 },
                 "css": {
-                    "configuration": [],
-                    "customClassName": null
+                    "customClassName": "padding-0",
+                    "configuration": [
+                        {
+                            "selectorName": ".abc<br>",
+                            "xs": {}
+                        },
+                        {
+                            "selectorName": ".temp-class-2",
+                            "sm": {
+                                "property1": "value"
+                            }
+                        },
+                        {
+                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                            "xs": {
+                                "padding-left": "0",
+                                "padding-right": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
                 }
             },
             "sectionList": [
@@ -83,8 +102,15 @@
                             "count": 1
                         },
                         "css": {
-                            "customClassName": "",
-                            "configuration": [],
+                            "customClassName": "padding-0",
+                            "configuration": [
+                                {
+                                    "selectorName": ".padding-0 > .row > div[class*=col-]",
+                                    "xs": {
+                                        "padding": "0"
+                                    }
+                                }
+                            ],
                             "themeClass": ""
                         }
                     },
@@ -103,8 +129,15 @@
                                     "count": 1
                                 },
                                 "css": {
-                                    "customClassName": "",
-                                    "configuration": [],
+                                    "customClassName": "padding-0",
+                                    "configuration": [
+                                        {
+                                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                                            "xs": {
+                                                "padding": "0"
+                                            }
+                                        }
+                                    ],
                                     "themeClass": ""
                                 }
                             },
@@ -123,8 +156,16 @@
                                             "count": 1
                                         },
                                         "css": {
-                                            "configuration": [],
-                                            "customClassName": null
+                                            "customClassName": "padding-0",
+                                            "configuration": [
+                                                {
+                                                    "selectorName": ".padding-0 > .row > div[class*=col-]",
+                                                    "xs": {
+                                                        "padding": "0"
+                                                    }
+                                                }
+                                            ],
+                                            "themeClass": ""
                                         }
                                     },
                                     "sectionList": [
