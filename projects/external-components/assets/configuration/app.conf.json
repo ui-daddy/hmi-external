@@ -151,16 +151,16 @@
                     {
                         "selectorName": ".body",
                         "xs": {
-                            "background": "-webkit-linear-gradient(-135deg,#fc00ff,#00dbde)"
+                            "background-color": "#EAEAEA"
                         },
                         "sm": {
-                            "background-color": "#f1f3f6"
+                            "background-color": "#EAEAEA"
                         },
                         "md": {
-                            "background-color": "#f1f3f6"
+                            "background-color": "#EAEAEA"
                         },
                         "lg": {
-                            "background-color": "#f1f3f6"
+                            "background-color": "#EAEAEA"
                         }
                     }
                 ],
