@@ -216,7 +216,84 @@
                                                             "themeClass": ""
                                                         }
                                                     },
-                                                    "sectionList": []
+                                                    "sectionList": [
+                                                        {
+                                                            "id": "db-33",
+                                                            "type": "content",
+                                                            "layout": {
+                                                                "column": {
+                                                                    "ratio": {
+                                                                        "lg": "auto",
+                                                                        "md": "auto",
+                                                                        "sm": "auto",
+                                                                        "xs": "auto"
+                                                                    },
+                                                                    "count": 1
+                                                                },
+                                                                "css": {
+                                                                    "customClassName": "padding-0",
+                                                                    "configuration": [
+                                                                        {
+                                                                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                                                                            "xs": {
+                                                                                "padding": "0"
+                                                                            }
+                                                                        }
+                                                                    ],
+                                                                    "themeClass": ""
+                                                                }
+                                                            },
+                                                            "sectionList": [
+                                                                {
+                                                                    "id": "db-35",
+                                                                    "type": "content",
+                                                                    "layout": {
+                                                                        "column": {
+                                                                            "ratio": {
+                                                                                "lg": "12",
+                                                                                "md": "12",
+                                                                                "sm": "12",
+                                                                                "xs": "12"
+                                                                            },
+                                                                            "count": 1
+                                                                        },
+                                                                        "css": {
+                                                                            "customClassName": "padding-0",
+                                                                            "configuration": [
+                                                                                {
+                                                                                    "selectorName": ".padding-0 > .row > div[class*=col-]",
+                                                                                    "xs": {
+                                                                                        "padding": "0"
+                                                                                    }
+                                                                                }
+                                                                            ],
+                                                                            "themeClass": ""
+                                                                        }
+                                                                    },
+                                                                    "sectionList": []
+                                                                },
+                                                                {
+                                                                    "id": "db-34",
+                                                                    "type": "content",
+                                                                    "layout": {
+                                                                        "column": {
+                                                                            "ratio": {
+                                                                                "lg": "12",
+                                                                                "md": "12",
+                                                                                "sm": "12",
+                                                                                "xs": "12"
+                                                                            }
+                                                                        },
+                                                                        "css": {
+                                                                            "configuration": [],
+                                                                            "customClassName": null
+                                                                        }
+                                                                    },
+                                                                    "sectionList": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "id": "db-9",
@@ -259,15 +336,8 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0 cmb-5",
-                                                                    "configuration": [
-                                                                        {
-                                                                            "selectorName": ".cmb-5 > .row > div[class*=col-]",
-                                                                            "xs": {
-                                                                                "margin-bottom": "5px"
-                                                                            }
-                                                                        }
-                                                                    ],
+                                                                    "customClassName": "p-0",
+                                                                    "configuration": [],
                                                                     "themeClass": ""
                                                                 }
                                                             },
@@ -287,15 +357,8 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0 cmb-5",
-                                                                    "configuration": [
-                                                                        {
-                                                                            "selectorName": ".cmb-5 > .row > div[class*=col-]",
-                                                                            "xs": {
-                                                                                "margin-bottom": "5px"
-                                                                            }
-                                                                        }
-                                                                    ],
+                                                                    "customClassName": "p-0",
+                                                                    "configuration": [],
                                                                     "themeClass": ""
                                                                 }
                                                             },
@@ -315,15 +378,8 @@
                                                                     "count": 1
                                                                 },
                                                                 "css": {
-                                                                    "customClassName": "p-0 cmb-5",
-                                                                    "configuration": [
-                                                                        {
-                                                                            "selectorName": ".cmb-5 > .row > div[class*=col-]",
-                                                                            "xs": {
-                                                                                "margin-bottom": "5px"
-                                                                            }
-                                                                        }
-                                                                    ],
+                                                                    "customClassName": "p-0",
+                                                                    "configuration": [],
                                                                     "themeClass": ""
                                                                 }
                                                             },
