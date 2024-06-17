@@ -204,6 +204,10 @@
             "type": "text",
             "label": "name",
             "placeholder": "Enter name"
-        }]        
+        }],
+        "customEvent": [{
+            "value": "sendmessage",
+            "label": "send message"
+        }]    
     }
 ]
