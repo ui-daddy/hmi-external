@@ -846,7 +846,7 @@
                                 "Green",
                                 "Yellow",
                                 "Grey",
-                                "Blue"
+                                "#3B82F6"
                             ],
                             "label": "My dataset"
                         }
@@ -856,7 +856,7 @@
                         "Green",
                         "Yellow",
                         "Grey",
-                        "Blue"
+                        "#3B82F6"
                     ]
                 },
                 "dataKey": null,
@@ -924,10 +924,10 @@
                         {
                             "label": "My First dataset",
                             "borderColor": "Grey",
-                            "pointBackgroundColor": "Blue",
-                            "pointBorderColor": "Blue",
+                            "pointBackgroundColor": "#3B82F6",
+                            "pointBorderColor": "#3B82F6",
                             "pointHoverBackgroundColor": "Black",
-                            "pointHoverBorderColor": "Blue",
+                            "pointHoverBorderColor": "#3B82F6",
                             "data": [
                                 65,
                                 59,
@@ -1013,12 +1013,12 @@
                                 100
                             ],
                             "backgroundColor": [
-                                "Blue",
+                                "#3B82F6",
                                 "Yellow",
                                 "Green"
                             ],
                             "hoverBackgroundColor": [
-                                "Blue",
+                                "#3B82F6",
                                 "Yellow",
                                 "Green"
                             ]
