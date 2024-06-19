@@ -795,7 +795,7 @@
             "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-38",
-                "name": "polarArea"
+                "name": "polarAreaChart"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -857,6 +857,104 @@
                         "Yellow",
                         "Grey",
                         "Blue"
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-39": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-40",
+                "name": "radarChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "radar",
+                "label": null,
+                "height": "200",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "r": {
+                            "grid": {
+                                "color": "black"
+                            },
+                            "pointLabels": {
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Eating",
+                        "Drinking",
+                        "Sleeping",
+                        "Designing",
+                        "Coding",
+                        "Cycling",
+                        "Running"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "My First dataset",
+                            "borderColor": "Grey",
+                            "pointBackgroundColor": "Blue",
+                            "pointBorderColor": "Blue",
+                            "pointHoverBackgroundColor": "Black",
+                            "pointHoverBorderColor": "Blue",
+                            "data": [
+                                65,
+                                59,
+                                90,
+                                81,
+                                56,
+                                55,
+                                40
+                            ]
+                        },
+                        {
+                            "label": "My Second dataset",
+                            "borderColor": "Pink",
+                            "pointBackgroundColor": "Pink",
+                            "pointBorderColor": "Pink",
+                            "pointHoverBackgroundColor": "Black",
+                            "pointHoverBorderColor": "Pink",
+                            "data": [
+                                28,
+                                48,
+                                40,
+                                19,
+                                96,
+                                27,
+                                100
+                            ]
+                        }
                     ]
                 },
                 "dataKey": null,
