@@ -86,7 +86,154 @@
             "value": "yesterday"
         }
     ],
-    "db-43": [],
+    "db-48": [],
+    "db-25": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-32",
+                "name": "txtResourceOv"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "justify-content": "start",
+                                "font-weight": "700",
+                                "padding": "15px 0 0 15px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Resource Overview(Horizontal Bar Chart)",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-27",
+                "name": "horizontal Bar"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": "> span",
+                            "xs": {
+                                "padding": "0 10px 20px 10px",
+                                "display": "block"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "bar",
+                "label": null,
+                "height": "380",
+                "options": {
+                    "indexAxis": "y",
+                    "maintainAspectRatio": false,
+                    "aspectRatio": 0.8,
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "x": {
+                            "ticks": {
+                                "color": "black",
+                                "font": {
+                                    "weight": 500
+                                }
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        },
+                        "y": {
+                            "ticks": {
+                                "color": "black"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Active Resource",
+                            "backgroundColor": "#3B82F6",
+                            "borderColor": "#3B82F6",
+                            "data": [
+                                65,
+                                59,
+                                80,
+                                81,
+                                56,
+                                55,
+                                40
+                            ]
+                        },
+                        {
+                            "label": "Inactive Resource",
+                            "backgroundColor": "#EAB308",
+                            "borderColor": "#EAB308",
+                            "data": [
+                                28,
+                                48,
+                                40,
+                                19,
+                                86,
+                                27,
+                                90
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
     "db-39": [
         {
             "baseProperties": {
@@ -216,6 +363,7 @@
             }
         }
     ],
+    "db-43": [],
     "db-37": [
         {
             "baseProperties": {
@@ -323,12 +471,12 @@
             }
         }
     ],
-    "db-41": [
+    "db-26": [
         {
             "baseProperties": {
                 "type": "staticText",
-                "id": "db-46",
-                "name": "doughnutHeader"
+                "id": "db-49",
+                "name": "lineChartTxt"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -352,14 +500,14 @@
             },
             "events": [],
             "expressionProperties": {},
-            "value": "Doughnut Chart",
+            "value": "Line Chart",
             "dynamicValueAccessor": null
         },
         {
             "baseProperties": {
                 "type": "dynamicField",
-                "id": "db-42",
-                "name": "doughnutChart"
+                "id": "db-28",
+                "name": "lineChart"
             },
             "layoutProperties": {
                 "labelPlacement": null,
@@ -376,42 +524,80 @@
             "events": [],
             "expressionProperties": {},
             "customAttributes": {
-                "type": "doughnut",
+                "type": "line",
                 "label": null,
                 "height": "400",
                 "options": {
-                    "cutout": "60%",
+                    "maintainAspectRatio": false,
+                    "aspectRatio": 0.6,
                     "plugins": {
                         "legend": {
                             "labels": {
                                 "color": "black"
                             }
                         }
+                    },
+                    "scales": {
+                        "x": {
+                            "ticks": {
+                                "color": "black"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        },
+                        "y": {
+                            "ticks": {
+                                "color": "black"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        }
                     }
                 },
                 "data": {
                     "labels": [
-                        "Social Media",
-                        "Entertainment",
-                        "Others"
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July"
                     ],
                     "datasets": [
                         {
+                            "label": "Active Resource",
                             "data": [
-                                300,
-                                50,
-                                100
+                                65,
+                                59,
+                                80,
+                                81,
+                                56,
+                                55,
+                                40
                             ],
-                            "backgroundColor": [
-                                "#3B82F6",
-                                "Yellow",
-                                "Green"
+                            "fill": false,
+                            "borderColor": "#3B82F6",
+                            "tension": 0.4
+                        },
+                        {
+                            "label": "Inactive Resource",
+                            "data": [
+                                28,
+                                48,
+                                40,
+                                19,
+                                86,
+                                27,
+                                90
                             ],
-                            "hoverBackgroundColor": [
-                                "#3B82F6",
-                                "Yellow",
-                                "Green"
-                            ]
+                            "fill": false,
+                            "borderColor": "#EAB308",
+                            "tension": 0.4
                         }
                     ]
                 },
@@ -526,157 +712,7 @@
             }
         }
     ],
-    "db-23": [],
-    "db-25": [
-        {
-            "baseProperties": {
-                "type": "staticText",
-                "id": "db-32",
-                "name": "txtResourceOv"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "section-header",
-                    "configuration": [
-                        {
-                            "selectorName": ".section-header",
-                            "xs": {
-                                "justify-content": "start",
-                                "font-weight": "700",
-                                "padding": "15px 0 0 15px"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Resource Overview(Horizontal Bar Chart)",
-            "dynamicValueAccessor": null
-        },
-        {
-            "baseProperties": {
-                "type": "dynamicField",
-                "id": "db-27",
-                "name": "horizontal Bar"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [
-                        {
-                            "selectorName": "> span",
-                            "xs": {
-                                "padding": "0 10px 20px 10px",
-                                "display": "block"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "libraryComponent": "ChartsExternalComponent",
-            "events": [],
-            "expressionProperties": {},
-            "customAttributes": {
-                "type": "bar",
-                "label": null,
-                "height": "",
-                "options": {
-                    "indexAxis": "y",
-                    "maintainAspectRatio": false,
-                    "aspectRatio": 0.8,
-                    "plugins": {
-                        "legend": {
-                            "labels": {
-                                "color": "black"
-                            }
-                        }
-                    },
-                    "scales": {
-                        "x": {
-                            "ticks": {
-                                "color": "black",
-                                "font": {
-                                    "weight": 500
-                                }
-                            },
-                            "grid": {
-                                "color": "black",
-                                "drawBorder": false
-                            }
-                        },
-                        "y": {
-                            "ticks": {
-                                "color": "black"
-                            },
-                            "grid": {
-                                "color": "black",
-                                "drawBorder": false
-                            }
-                        }
-                    }
-                },
-                "data": {
-                    "labels": [
-                        "January",
-                        "February",
-                        "March",
-                        "April",
-                        "May",
-                        "June",
-                        "July"
-                    ],
-                    "datasets": [
-                        {
-                            "label": "Active Resource",
-                            "backgroundColor": "#3B82F6",
-                            "borderColor": "#3B82F6",
-                            "data": [
-                                65,
-                                59,
-                                80,
-                                81,
-                                56,
-                                55,
-                                40
-                            ]
-                        },
-                        {
-                            "label": "Inactive Resource",
-                            "backgroundColor": "#EAB308",
-                            "borderColor": "#EAB308",
-                            "data": [
-                                28,
-                                48,
-                                40,
-                                19,
-                                86,
-                                27,
-                                90
-                            ]
-                        }
-                    ]
-                },
-                "dataKey": null,
-                "dataConfig": null,
-                "dataToChartMapping": null,
-                "backgroundColor": null
-            }
-        }
-    ],
-    "db-24": [],
-    "db-6": [],
-    "db-1": [],
+    "db-50": [],
     "db-4": [],
     "db-8": [],
     "db-33": [],
@@ -955,6 +991,107 @@
             "dynamicValueAccessor": null
         }
     ],
+    "db-41": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-46",
+                "name": "doughnutHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Doughnut Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-42",
+                "name": "doughnutChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "doughnut",
+                "label": null,
+                "height": "400",
+                "options": {
+                    "cutout": "60%",
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Social Media",
+                        "Entertainment",
+                        "Others"
+                    ],
+                    "datasets": [
+                        {
+                            "data": [
+                                300,
+                                50,
+                                100
+                            ],
+                            "backgroundColor": [
+                                "#3B82F6",
+                                "Yellow",
+                                "Green"
+                            ],
+                            "hoverBackgroundColor": [
+                                "#3B82F6",
+                                "Yellow",
+                                "Green"
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-23": [],
+    "db-24": [],
     "db-5": [
         {
             "baseProperties": {
@@ -1039,112 +1176,6 @@
                                 "rgb(153, 102, 255)"
                             ],
                             "borderWidth": 1
-                        }
-                    ]
-                },
-                "dataKey": null,
-                "dataConfig": null,
-                "dataToChartMapping": null,
-                "backgroundColor": null
-            }
-        }
-    ],
-    "db-26": [
-        {
-            "baseProperties": {
-                "type": "dynamicField",
-                "id": "db-28",
-                "name": "lineChart"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "libraryComponent": "ChartsExternalComponent",
-            "events": [],
-            "expressionProperties": {},
-            "customAttributes": {
-                "type": "line",
-                "label": null,
-                "height": "400",
-                "options": {
-                    "maintainAspectRatio": false,
-                    "aspectRatio": 0.6,
-                    "plugins": {
-                        "legend": {
-                            "labels": {
-                                "color": "black"
-                            }
-                        }
-                    },
-                    "scales": {
-                        "x": {
-                            "ticks": {
-                                "color": "black"
-                            },
-                            "grid": {
-                                "color": "black",
-                                "drawBorder": false
-                            }
-                        },
-                        "y": {
-                            "ticks": {
-                                "color": "black"
-                            },
-                            "grid": {
-                                "color": "black",
-                                "drawBorder": false
-                            }
-                        }
-                    }
-                },
-                "data": {
-                    "labels": [
-                        "January",
-                        "February",
-                        "March",
-                        "April",
-                        "May",
-                        "June",
-                        "July"
-                    ],
-                    "datasets": [
-                        {
-                            "label": "Active Resource",
-                            "data": [
-                                65,
-                                59,
-                                80,
-                                81,
-                                56,
-                                55,
-                                40
-                            ],
-                            "fill": false,
-                            "borderColor": "#3B82F6",
-                            "tension": 0.4
-                        },
-                        {
-                            "label": "Inactive Resource",
-                            "data": [
-                                28,
-                                48,
-                                40,
-                                19,
-                                86,
-                                27,
-                                90
-                            ],
-                            "fill": false,
-                            "borderColor": "#EAB308",
-                            "tension": 0.4
                         }
                     ]
                 },
