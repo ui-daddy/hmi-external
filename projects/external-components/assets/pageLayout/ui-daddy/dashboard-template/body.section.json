@@ -168,27 +168,6 @@
                         }
                     },
                     "sectionList": []
-                },
-                {
-                    "id": "db-30",
-                    "type": "content",
-                    "layout": {
-                        "column": {
-                            "ratio": {
-                                "lg": "12",
-                                "md": "12",
-                                "sm": "12",
-                                "xs": "12"
-                            },
-                            "count": 1
-                        },
-                        "css": {
-                            "customClassName": "hmi-section-card",
-                            "configuration": [],
-                            "themeClass": ""
-                        }
-                    },
-                    "sectionList": []
                 }
             ]
         },
@@ -379,7 +358,8 @@
                                         {
                                             "selectorName": ".recent-earning-sec2",
                                             "xs": {
-                                                "padding": "15px 0 20px 0"
+                                                "padding": "25px 0 20px 0",
+                                                "border-bottom": "1px solid #e9e9e9"
                                             }
                                         }
                                     ],
@@ -451,6 +431,66 @@
                                     "sectionList": []
                                 }
                             ]
+                        },
+                        {
+                            "id": "db-52",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "6:6",
+                                        "md": "6:6",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "p-2",
+                                    "configuration": [],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": [
+                                {
+                                    "id": "db-53",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            }
+                                        },
+                                        "css": {
+                                            "configuration": [],
+                                            "customClassName": null
+                                        }
+                                    },
+                                    "sectionList": []
+                                },
+                                {
+                                    "id": "db-54",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            }
+                                        },
+                                        "css": {
+                                            "configuration": [],
+                                            "customClassName": null
+                                        }
+                                    },
+                                    "sectionList": []
+                                }
+                            ]
                         }
                     ]
                 },
@@ -483,8 +523,8 @@
             "layout": {
                 "column": {
                     "ratio": {
-                        "lg": "5:7",
-                        "md": "5:7",
+                        "lg": "8:4",
+                        "md": "6:6",
                         "sm": "12",
                         "xs": "12"
                     },
@@ -516,7 +556,7 @@
             },
             "sectionList": [
                 {
-                    "id": "db-24",
+                    "id": "db-5",
                     "type": "content",
                     "layout": {
                         "column": {
@@ -529,41 +569,33 @@
                             "count": 1
                         },
                         "css": {
-                            "customClassName": "padding-0",
-                            "configuration": [
-                                {
-                                    "selectorName": ".padding-0 > .row > div[class*=col-]",
-                                    "xs": {
-                                        "padding": "0"
-                                    }
-                                }
-                            ],
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
                             "themeClass": ""
                         }
                     },
-                    "sectionList": [
-                        {
-                            "id": "db-5",
-                            "type": "content",
-                            "layout": {
-                                "column": {
-                                    "ratio": {
-                                        "lg": "12",
-                                        "md": "12",
-                                        "sm": "12",
-                                        "xs": "12"
-                                    },
-                                    "count": 1
-                                },
-                                "css": {
-                                    "customClassName": "hmi-section-card",
-                                    "configuration": [],
-                                    "themeClass": ""
-                                }
+                    "sectionList": []
+                },
+                {
+                    "id": "db-30",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
                             },
-                            "sectionList": []
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
                         }
-                    ]
+                    },
+                    "sectionList": []
                 }
             ]
         }
