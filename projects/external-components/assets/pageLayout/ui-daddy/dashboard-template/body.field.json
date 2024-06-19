@@ -90,6 +90,37 @@
     "db-39": [
         {
             "baseProperties": {
+                "type": "staticText",
+                "id": "db-44",
+                "name": "radarTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Radar Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-40",
                 "name": "radarChart"
@@ -111,7 +142,7 @@
             "customAttributes": {
                 "type": "radar",
                 "label": null,
-                "height": "200",
+                "height": "400",
                 "options": {
                     "plugins": {
                         "legend": {
@@ -188,6 +219,37 @@
     "db-37": [
         {
             "baseProperties": {
+                "type": "staticText",
+                "id": "db-45",
+                "name": "polarHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Polar Area Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-38",
                 "name": "polarAreaChart"
@@ -209,7 +271,7 @@
             "customAttributes": {
                 "type": "polarArea",
                 "label": null,
-                "height": "200",
+                "height": "400",
                 "options": {
                     "plugins": {
                         "legend": {
@@ -264,6 +326,37 @@
     "db-41": [
         {
             "baseProperties": {
+                "type": "staticText",
+                "id": "db-46",
+                "name": "doughnutHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Doughnut Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-42",
                 "name": "doughnutChart"
@@ -285,7 +378,7 @@
             "customAttributes": {
                 "type": "doughnut",
                 "label": null,
-                "height": "200",
+                "height": "400",
                 "options": {
                     "cutout": "60%",
                     "plugins": {
@@ -332,6 +425,37 @@
     "db-30": [
         {
             "baseProperties": {
+                "type": "staticText",
+                "id": "db-47",
+                "name": "pieHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Pie Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-31",
                 "name": "pieChart"
@@ -344,11 +468,8 @@
                     "customClassName": "",
                     "configuration": [
                         {
-                            "selectorName": "> span",
-                            "xs": {
-                                "display": "block",
-                                "padding": "20px 0"
-                            }
+                            "selectorName": ".temp-class-1",
+                            "xs": {}
                         }
                     ],
                     "themeClass": ""
@@ -361,7 +482,7 @@
             "customAttributes": {
                 "type": "pie",
                 "label": null,
-                "height": "200",
+                "height": "400",
                 "options": {
                     "plugins": {
                         "legend": {
@@ -410,7 +531,8 @@
         {
             "baseProperties": {
                 "type": "staticText",
-                "id": "db-32"
+                "id": "db-32",
+                "name": "txtResourceOv"
             },
             "layoutProperties": {
                 "labelPlacement": null,
