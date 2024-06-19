@@ -789,5 +789,81 @@
                 "backgroundColor": null
             }
         }
+    ],
+    "db-37": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-38",
+                "name": "polarArea"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "polarArea",
+                "label": null,
+                "height": "200",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "r": {
+                            "grid": {
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "datasets": [
+                        {
+                            "data": [
+                                11,
+                                16,
+                                7,
+                                3,
+                                14
+                            ],
+                            "backgroundColor": [
+                                "Red",
+                                "Green",
+                                "Yellow",
+                                "Grey",
+                                "Blue"
+                            ],
+                            "label": "My dataset"
+                        }
+                    ],
+                    "labels": [
+                        "Red",
+                        "Green",
+                        "Yellow",
+                        "Grey",
+                        "Blue"
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
     ]
 }
