@@ -963,5 +963,73 @@
                 "backgroundColor": null
             }
         }
+    ],
+    "db-41": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-42",
+                "name": "doughnutChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "doughnut",
+                "label": null,
+                "height": "200",
+                "options": {
+                    "cutout": "60%",
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Social Media",
+                        "Entertainment",
+                        "Others"
+                    ],
+                    "datasets": [
+                        {
+                            "data": [
+                                300,
+                                50,
+                                100
+                            ],
+                            "backgroundColor": [
+                                "Blue",
+                                "Yellow",
+                                "Green"
+                            ],
+                            "hoverBackgroundColor": [
+                                "Blue",
+                                "Yellow",
+                                "Green"
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
     ]
 }
