@@ -608,110 +608,6 @@
             }
         }
     ],
-    "db-30": [
-        {
-            "baseProperties": {
-                "type": "staticText",
-                "id": "db-47",
-                "name": "pieHeader"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "section-header",
-                    "configuration": [
-                        {
-                            "selectorName": ".section-header",
-                            "xs": {
-                                "padding": "15px 0 0 15px",
-                                "justify-content": "start",
-                                "font-weight": "700"
-                            }
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "events": [],
-            "expressionProperties": {},
-            "value": "Pie Chart",
-            "dynamicValueAccessor": null
-        },
-        {
-            "baseProperties": {
-                "type": "dynamicField",
-                "id": "db-31",
-                "name": "pieChart"
-            },
-            "layoutProperties": {
-                "labelPlacement": null,
-                "width": null,
-                "height": null,
-                "css": {
-                    "customClassName": "",
-                    "configuration": [
-                        {
-                            "selectorName": ".temp-class-1",
-                            "xs": {}
-                        }
-                    ],
-                    "themeClass": ""
-                },
-                "orientation": null
-            },
-            "libraryComponent": "ChartsExternalComponent",
-            "events": [],
-            "expressionProperties": {},
-            "customAttributes": {
-                "type": "pie",
-                "label": null,
-                "height": "400",
-                "options": {
-                    "plugins": {
-                        "legend": {
-                            "labels": {
-                                "usePointStyle": true,
-                                "color": "black"
-                            }
-                        }
-                    }
-                },
-                "data": {
-                    "labels": [
-                        "Social Media",
-                        "Entertainment",
-                        "Other"
-                    ],
-                    "datasets": [
-                        {
-                            "data": [
-                                540,
-                                325,
-                                702
-                            ],
-                            "backgroundColor": [
-                                "#EAB308",
-                                "#3B82F6",
-                                "#22C55E"
-                            ],
-                            "hoverBackgroundColor": [
-                                "#EAB308",
-                                "#3B82F6",
-                                "#22C55E"
-                            ]
-                        }
-                    ]
-                },
-                "dataKey": null,
-                "dataConfig": null,
-                "dataToChartMapping": null,
-                "backgroundColor": null
-            }
-        }
-    ],
     "db-50": [],
     "db-4": [],
     "db-8": [],
@@ -991,6 +887,129 @@
             "dynamicValueAccessor": null
         }
     ],
+    "db-52": [],
+    "db-53": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-57",
+                "name": "doughtnutDailyChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "doughnut",
+                "label": null,
+                "height": "200",
+                "options": {
+                    "cutout": "80%",
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "display": "false"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "datasets": [
+                        {
+                            "data": [
+                                300,
+                                50,
+                                100
+                            ],
+                            "backgroundColor": [
+                                "#3B82F6",
+                                "Yellow",
+                                "Green"
+                            ],
+                            "hoverBackgroundColor": [
+                                "#3B82F6",
+                                "Yellow",
+                                "Green"
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-54": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-55"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "avg-daily-sales",
+                    "configuration": [
+                        {
+                            "selectorName": ".avg-daily-sales",
+                            "xs": {
+                                "font-weight": "700",
+                                "justify-content": "start"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Avg. Daily sales",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-56"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "lorem-ipsum",
+                    "configuration": [
+                        {
+                            "selectorName": ".lorem-ipsum",
+                            "xs": {
+                                "justify-content": "start"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+            "dynamicValueAccessor": null
+        }
+    ],
     "db-41": [
         {
             "baseProperties": {
@@ -1091,8 +1110,38 @@
         }
     ],
     "db-23": [],
-    "db-24": [],
     "db-5": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-51",
+                "name": "barChartTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Bar Chart",
+            "dynamicValueAccessor": null
+        },
         {
             "baseProperties": {
                 "type": "dynamicField",
@@ -1116,7 +1165,7 @@
             "customAttributes": {
                 "type": "bar",
                 "label": "Bar Chart",
-                "height": "200",
+                "height": "400",
                 "options": {
                     "plugins": {
                         "legend": {
@@ -1176,6 +1225,110 @@
                                 "rgb(153, 102, 255)"
                             ],
                             "borderWidth": 1
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-30": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-47",
+                "name": "pieHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Pie Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-31",
+                "name": "pieChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": ".temp-class-1",
+                            "xs": {}
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "pie",
+                "label": null,
+                "height": "400",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "usePointStyle": true,
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Social Media",
+                        "Entertainment",
+                        "Other"
+                    ],
+                    "datasets": [
+                        {
+                            "data": [
+                                540,
+                                325,
+                                702
+                            ],
+                            "backgroundColor": [
+                                "#EAB308",
+                                "#3B82F6",
+                                "#22C55E"
+                            ],
+                            "hoverBackgroundColor": [
+                                "#EAB308",
+                                "#3B82F6",
+                                "#22C55E"
+                            ]
                         }
                     ]
                 },
