@@ -30,6 +30,119 @@
             "sectionList": []
         },
         {
+            "id": "db-43",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "padding-0",
+                    "configuration": [
+                        {
+                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                            "xs": {
+                                "padding": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-39",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-37",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-41",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-30",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        },
+        {
             "id": "db-23",
             "type": "content",
             "layout": {
@@ -403,27 +516,6 @@
                                                     ]
                                                 }
                                             ]
-                                        },
-                                        {
-                                            "id": "db-30",
-                                            "type": "content",
-                                            "layout": {
-                                                "column": {
-                                                    "ratio": {
-                                                        "lg": "12",
-                                                        "md": "12",
-                                                        "sm": "12",
-                                                        "xs": "12"
-                                                    },
-                                                    "count": 1
-                                                },
-                                                "css": {
-                                                    "customClassName": "hmi-section-card",
-                                                    "configuration": [],
-                                                    "themeClass": ""
-                                                }
-                                            },
-                                            "sectionList": []
                                         }
                                     ]
                                 }
@@ -454,69 +546,6 @@
                 },
                 {
                     "id": "db-26",
-                    "type": "content",
-                    "layout": {
-                        "column": {
-                            "ratio": {
-                                "lg": "12",
-                                "md": "12",
-                                "sm": "12",
-                                "xs": "12"
-                            },
-                            "count": 1
-                        },
-                        "css": {
-                            "customClassName": "hmi-section-card",
-                            "configuration": [],
-                            "themeClass": ""
-                        }
-                    },
-                    "sectionList": []
-                },
-                {
-                    "id": "db-37",
-                    "type": "content",
-                    "layout": {
-                        "column": {
-                            "ratio": {
-                                "lg": "12",
-                                "md": "12",
-                                "sm": "12",
-                                "xs": "12"
-                            },
-                            "count": 1
-                        },
-                        "css": {
-                            "customClassName": "hmi-section-card",
-                            "configuration": [],
-                            "themeClass": ""
-                        }
-                    },
-                    "sectionList": []
-                },
-                {
-                    "id": "db-39",
-                    "type": "content",
-                    "layout": {
-                        "column": {
-                            "ratio": {
-                                "lg": "12",
-                                "md": "12",
-                                "sm": "12",
-                                "xs": "12"
-                            },
-                            "count": 1
-                        },
-                        "css": {
-                            "customClassName": "hmi-section-card",
-                            "configuration": [],
-                            "themeClass": ""
-                        }
-                    },
-                    "sectionList": []
-                },
-                {
-                    "id": "db-41",
                     "type": "content",
                     "layout": {
                         "column": {
