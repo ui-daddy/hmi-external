@@ -489,6 +489,47 @@
                                         }
                                     },
                                     "sectionList": []
+                                },
+                                {
+                                    "id": "db-58",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "customClassName": "avg-price-section",
+                                            "configuration": [
+                                                {
+                                                    "selectorName": ".avg-price-section",
+                                                    "xs": {
+                                                        "position": "absolute",
+                                                        "top": "-215px"
+                                                    }
+                                                },
+                                                {
+                                                    "selectorName": ".avg-price-section",
+                                                    "sm": {
+                                                        "top": "-135px"
+                                                    }
+                                                },
+                                                {
+                                                    "selectorName": ".avg-price-section .row div[class*=col-]",
+                                                    "xs": {
+                                                        "margin-bottom": "0"
+                                                    }
+                                                }
+                                            ],
+                                            "themeClass": ""
+                                        }
+                                    },
+                                    "sectionList": []
                                 }
                             ]
                         }
