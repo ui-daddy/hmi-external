@@ -447,7 +447,16 @@
                                 },
                                 "css": {
                                     "customClassName": "p-2",
-                                    "configuration": [],
+                                    "configuration": [
+                                        {
+                                            "selectorName": "#db-54",
+                                            "sm": {
+                                                "display": "flex",
+                                                "height": "100%",
+                                                "align-items": "center"
+                                            }
+                                        }
+                                    ],
                                     "themeClass": ""
                                 }
                             },
@@ -481,11 +490,20 @@
                                                 "md": "12",
                                                 "sm": "12",
                                                 "xs": "12"
-                                            }
+                                            },
+                                            "count": 1
                                         },
                                         "css": {
-                                            "configuration": [],
-                                            "customClassName": null
+                                            "customClassName": "",
+                                            "configuration": [
+                                                {
+                                                    "selectorName": ".temp-class-3",
+                                                    "xs": {
+                                                        "property1": "value"
+                                                    }
+                                                }
+                                            ],
+                                            "themeClass": ""
                                         }
                                     },
                                     "sectionList": []
