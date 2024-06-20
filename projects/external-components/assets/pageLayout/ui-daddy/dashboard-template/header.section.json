@@ -7,11 +7,11 @@
                 "column": {
                     "ratio": {
                         "lg": "6:6",
-                        "md": "6:6",
-                        "sm": "6:6",
+                        "md": "4:8",
+                        "sm": "12",
                         "xs": "12"
                     },
-                    "count": 1
+                    "count": "2"
                 },
                 "css": {
                     "customClassName": "main-header-style",
@@ -63,8 +63,8 @@
                             "ratio": {
                                 "lg": "auto:auto:auto:auto",
                                 "md": "auto:auto:auto:auto",
-                                "sm": "12",
-                                "xs": "12"
+                                "sm": "auto:auto:auto:auto",
+                                "xs": "auto"
                             },
                             "count": 1
                         },
@@ -74,6 +74,12 @@
                                 {
                                     "selectorName": ".header-section-2 .row",
                                     "xs": {
+                                        "justify-content": "center"
+                                    }
+                                },
+                                {
+                                    "selectorName": ".header-section-2 .row",
+                                    "sm": {
                                         "justify-content": "end"
                                     }
                                 }
