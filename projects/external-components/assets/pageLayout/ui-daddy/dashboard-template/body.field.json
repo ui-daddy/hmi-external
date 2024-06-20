@@ -928,18 +928,15 @@
                         {
                             "data": [
                                 300,
-                                50,
-                                100
+                                50
                             ],
                             "backgroundColor": [
-                                "#3B82F6",
-                                "Yellow",
-                                "Green"
+                                "#464DEE",
+                                "#EEEEEE"
                             ],
                             "hoverBackgroundColor": [
-                                "#3B82F6",
-                                "Yellow",
-                                "Green"
+                                "#464DEE",
+                                "#EEEEEE"
                             ]
                         }
                     ]
@@ -1007,6 +1004,70 @@
             "events": [],
             "expressionProperties": {},
             "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-58": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-59",
+                "name": "profitPercTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profit-perc-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".profit-perc-txt",
+                            "xs": {
+                                "font-weight": "700",
+                                "margin-left": "-20px",
+                                "font-size": "18px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "80%",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-60",
+                "name": "profitLabelText"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profit-label-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".profit-label-txt",
+                            "xs": {
+                                "color": "#a7afb7",
+                                "font-weight": "700",
+                                "margin-left": "-22px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "PROFIT",
             "dynamicValueAccessor": null
         }
     ],
