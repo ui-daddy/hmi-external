@@ -24,7 +24,14 @@
                             "selectorName": ".header-logo",
                             "xs": {
                                 "display": "flex",
-                                "cursor": "pointer"
+                                "cursor": "pointer",
+                                "justify-content": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-logo",
+                            "sm": {
+                                "justify-content": "start"
                             }
                         }
                     ],
