@@ -5,8 +5,70 @@
                 "type": "dynamicField",
                 "id": "db-1"
             },
-            "layoutProperties": {},
-            "libraryComponent": "GenerateWithAiComponent"
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "GenerateWithAiComponent",
+            "events": [
+                {
+                    "event": "sendmessage",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "chatAi",
+                                "url": "/rest/chat/:projectGuid",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [
+                                    {
+                                        "paramName": "query",
+                                        "mappedField": "fieldObj.value.newMessage",
+                                        "mappedValue": "",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "payloadParams": [],
+                                "onSuccess": {},
+                                "onError": {},
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "encodePathAndQueryParams": false,
+                                "isWithCredentials": true
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {},
+            "customAttributes": {
+                "name": null
+            }
         }
     ]
 }
