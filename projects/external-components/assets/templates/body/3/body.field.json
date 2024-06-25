@@ -1,0 +1,383 @@
+{
+    "db-5": [],
+    "db-0": [],
+    "db-1": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-2",
+                "name": "signIn"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "login-text",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-text",
+                            "xs": {
+                                "font-size": "44px",
+                                "color": "#2299c7",
+                                "font-weight": "600",
+                                "justify-content": "start"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visibleValue": "true"
+            },
+            "value": "Sign Up",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-3"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "new-here-text",
+                    "configuration": [
+                        {
+                            "selectorName": ".new-here-text",
+                            "xs": {
+                                "font-size": "1.225rem",
+                                "justify-content": "start",
+                                "color": "#6c7293",
+                                "font-weight": "550",
+                                "line-height": "1"
+                            }
+                        },
+                        {
+                            "selectorName": ".temp-class-1",
+                            "xs": {}
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "New here?",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-4"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "join-us-text",
+                    "configuration": [
+                        {
+                            "selectorName": ".join-us-text",
+                            "xs": {
+                                "justify-content": "start",
+                                "font-weight": "350",
+                                "font-size": ".950rem",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Join us today! It takes only few steps",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-7",
+                "name": "username",
+                "label": "Username"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "username",
+                    "configuration": [
+                        {
+                            "selectorName": ".username",
+                            "xs": {
+                                "font-size": ".85rem",
+                                "line-height": "1.5rem",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Username",
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "db-8",
+                "name": "email",
+                "label": "Email"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "email",
+                    "configuration": [
+                        {
+                            "selectorName": ".email",
+                            "xs": {
+                                "font-size": ".85rem",
+                                "line-height": "1.5rem",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Email",
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "db-9",
+                "name": "dropdown",
+                "label": "Country"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "dropdown",
+                    "configuration": [
+                        {
+                            "selectorName": ".dropdown",
+                            "xs": {
+                                "font-size": ".85rem",
+                                "line-height": "1.5rem",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "label": "United States of America "
+                },
+                {
+                    "label": "United kingdom"
+                },
+                {
+                    "label": "India"
+                },
+                {
+                    "label": "Germany"
+                },
+                {
+                    "label": "Argentina"
+                }
+            ],
+            "optionsConfig": {},
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": "Country"
+        },
+        {
+            "baseProperties": {
+                "type": "password",
+                "id": "db-10",
+                "name": "password",
+                "label": "Password"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "password",
+                    "configuration": [
+                        {
+                            "selectorName": ".password",
+                            "xs": {
+                                "font-size": ".85rem",
+                                "line-height": "1.5rem",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Password",
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "checkbox",
+                "id": "db-11"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "checkbox",
+                    "configuration": [
+                        {
+                            "selectorName": ".checkbox",
+                            "xs": {
+                                "font-size": ".85rem",
+                                "line-height": "1.5rem",
+                                "color": "#a7afb7"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": "horizontal"
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "label": "I agree to all Terms & Conditions"
+                }
+            ],
+            "value": "value"
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "db-12",
+                "name": "loginBtn",
+                "label": "SIGN UP"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "login-Btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-Btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%",
+                                "height": "50px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ],
+    "db-13": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-14"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "bottom-text",
+                    "configuration": [
+                        {
+                            "selectorName": ".bottom-text",
+                            "xs": {
+                                "justify-content": "flex-end",
+                                "font-size": ".85rem",
+                                "line-height": "1.5rem",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Already have an account? ",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "link",
+                "id": "db-15",
+                "label": "Login"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "bottom-link",
+                    "configuration": [
+                        {
+                            "selectorName": ".bottom-link",
+                            "xs": {
+                                "justify-content": "flex-start",
+                                "font-size": ".85rem",
+                                "line-height": "1.5rem"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ],
+    "db-6": []
+}

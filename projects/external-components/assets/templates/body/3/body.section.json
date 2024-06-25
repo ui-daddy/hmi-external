@@ -1,0 +1,192 @@
+{
+    "layout": [
+        {
+            "id": "db-5",
+            "type": "form",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "6:6",
+                        "sm": "6:6",
+                        "xs": "6:6"
+                    },
+                    "count": "2"
+                },
+                "css": {
+                    "customClassName": "main-section",
+                    "configuration": [
+                        {
+                            "selectorName": ".main-section",
+                            "xs": {
+                                "height": "100%"
+                            }
+                        },
+                        {
+                            "selectorName": ".main-section > .row > .col6",
+                            "lg": {
+                                "padding": "0"
+                            }
+                        },
+                        {
+                            "selectorName": ".main-section > .row > .col-6",
+                            "xs": {
+                                "padding": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-0",
+                    "type": "form",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "section-card__center-form",
+                            "configuration": [
+                                {
+                                    "selectorName": ".section-card__center-form",
+                                    "xs": {
+                                        "top": "50%",
+                                        "left": "50%",
+                                        "background-color": "#eaeaea"
+                                    }
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": [
+                        {
+                            "id": "db-1",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "containt-form",
+                                    "configuration": [
+                                        {
+                                            "selectorName": ".containt-form",
+                                            "xs": {
+                                                "width": "65%",
+                                                "align-items": "left"
+                                            }
+                                        },
+                                        {
+                                            "selectorName": ".containt-form > .row > .col-12:nth-child(2)",
+                                            "xs": {
+                                                "margin-bottom": "0"
+                                            }
+                                        },
+                                        {
+                                            "selectorName": ".containt-form > .row > .col-12:nth-child(6)",
+                                            "xs": {
+                                                "margin-bottom": "0"
+                                            }
+                                        },
+                                        {
+                                            "selectorName": ".containt-form > .row > .col-12:nth-child(7)",
+                                            "xs": {
+                                                "margin-bottom": "0"
+                                            }
+                                        }
+                                    ],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": []
+                        },
+                        {
+                            "id": "db-13",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "auto:auto",
+                                        "md": "auto:auto",
+                                        "sm": "auto:auto",
+                                        "xs": "auto:auto"
+                                    },
+                                    "count": "2"
+                                },
+                                "css": {
+                                    "customClassName": "bottom-content",
+                                    "configuration": [
+                                        {
+                                            "selectorName": ".bottom-content > .row > .col-auto",
+                                            "xs": {
+                                                "padding": "1px"
+                                            }
+                                        },
+                                        {
+                                            "selectorName": ".bottom-content > .row",
+                                            "xs": {
+                                                "justify-content": "center"
+                                            }
+                                        }
+                                    ],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": []
+                        }
+                    ]
+                },
+                {
+                    "id": "db-6",
+                    "type": "form",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "section-card_right-form",
+                            "configuration": [
+                                {
+                                    "selectorName": ".section-card_right-form",
+                                    "xs": {
+                                        "background-image": "url(assets/images/buildings.jpg)",
+                                        "height": "100%",
+                                        "background-position": "center center",
+                                        "background-size": "100% 100%"
+                                    }
+                                },
+                                {
+                                    "selectorName": ".temp-class-1",
+                                    "xs": {}
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        }
+    ]
+}
