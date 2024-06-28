@@ -23,6 +23,15 @@
                     "debounce": null,
                     "actions": [
                         {
+                            "actionType": "SET_SHARED_DATA",
+                            "sharedData": [
+                                {
+                                    "varName": "chatApiDatas",
+                                    "staticData": "$chatApiDatas$"
+                                }
+                            ]
+                        },
+                        {
                             "actionType": "INVOKE_API",
                             "url": "",
                             "condition": "1==1",
