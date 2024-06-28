@@ -50,13 +50,18 @@
                                 "name": "chatAi",
                                 "url": "/rest/chat/:projectGuid",
                                 "method": "POST",
-                                "pathParams": [],
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectGuid",
+                                        "valueFormat": "$SHARED_DATA(chatApiDatas.projectId)"
+                                    }
+                                ],
                                 "queryParams": [
                                     {
                                         "paramName": "query",
-                                        "mappedField": "fieldObj.value.newMessage",
+                                        "mappedField": "",
                                         "mappedValue": "",
-                                        "valueFormat": ""
+                                        "valueFormat": "$SHARED_DATA(chatApiDatas.newMessage)"
                                     }
                                 ],
                                 "payloadParams": [],
