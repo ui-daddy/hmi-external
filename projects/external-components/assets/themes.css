@@ -21,6 +21,6 @@ color: red;
 color: blue;
 }
 
-.abc {
+.abc .dynamic-style-child {
 color: blue;
 }
