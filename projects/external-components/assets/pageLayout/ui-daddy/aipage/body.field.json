@@ -90,10 +90,10 @@
                                     "showSuccessMessage": false,
                                     "sharedData": [
                                         {
-                                            "varName": "",
+                                            "varName": "response",
                                             "staticData": "",
                                             "cache": false,
-                                            "responseAccessor": ""
+                                            "responseAccessor": "response"
                                         }
                                     ],
                                     "fieldData": [],
