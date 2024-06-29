@@ -96,9 +96,15 @@
                                             "responseAccessor": ""
                                         }
                                     ],
-                                    "fieldData": [],
+                                    "fieldData": [
+                                        {
+                                            "id": "",
+                                            "responseAccessor": "",
+                                            "staticValue": ""
+                                        }
+                                    ],
                                     "clearSharedData": [],
-                                    "apiDataAccessor": "",
+                                    "apiDataAccessor": "response",
                                     "message": "",
                                     "actions": []
                                 },
