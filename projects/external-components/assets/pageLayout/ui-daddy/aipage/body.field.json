@@ -24,12 +24,25 @@
                     "actions": [
                         {
                             "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
                             "sharedData": [
                                 {
                                     "varName": "chatApiDatas",
                                     "staticData": "$chatApiDatas$"
                                 }
-                            ]
+                            ],
+                            "apiConfig": null
                         },
                         {
                             "actionType": "INVOKE_API",
@@ -65,15 +78,40 @@
                                     }
                                 ],
                                 "payloadParams": [],
-                                "onSuccess": {},
-                                "onError": {},
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
                                 "beforeSubmit": {
                                     "action": []
                                 },
-                                "downloadFileName": "",
-                                "responseType": "",
-                                "encodePathAndQueryParams": false,
-                                "isWithCredentials": true
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
+                                    "sharedData": [
+                                        {
+                                            "varName": "messageData",
+                                            "staticData": "",
+                                            "cache": false,
+                                            "responseAccessor": ""
+                                        }
+                                    ],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
                             }
                         }
                     ]
