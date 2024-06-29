@@ -49,7 +49,7 @@
                             "apiConfig": {
                                 "name": "chatAi",
                                 "url": "/rest/chat/:projectGuid",
-                                "method": "POST",
+                                "method": "GET",
                                 "pathParams": [
                                     {
                                         "paramName": "projectGuid",
