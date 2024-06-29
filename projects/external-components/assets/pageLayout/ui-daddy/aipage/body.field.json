@@ -90,7 +90,7 @@
                                     "showSuccessMessage": false,
                                     "sharedData": [
                                         {
-                                            "varName": "messageData",
+                                            "varName": "",
                                             "staticData": "",
                                             "cache": false,
                                             "responseAccessor": ""
