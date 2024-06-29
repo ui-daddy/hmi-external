@@ -91,9 +91,9 @@
                                     "sharedData": [
                                         {
                                             "varName": "response",
-                                            "staticData": "",
+                                            "staticData": "$response$",
                                             "cache": false,
-                                            "responseAccessor": "response"
+                                            "responseAccessor": ""
                                         }
                                     ],
                                     "fieldData": [],
