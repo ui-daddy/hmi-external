@@ -88,23 +88,10 @@
                                     "pageUrl": "",
                                     "deleteTableRow": false,
                                     "showSuccessMessage": false,
-                                    "sharedData": [
-                                        {
-                                            "varName": "response",
-                                            "staticData": "$response$",
-                                            "cache": false,
-                                            "responseAccessor": ""
-                                        }
-                                    ],
-                                    "fieldData": [
-                                        {
-                                            "id": "",
-                                            "responseAccessor": "",
-                                            "staticValue": ""
-                                        }
-                                    ],
+                                    "sharedData": [],
+                                    "fieldData": [],
                                     "clearSharedData": [],
-                                    "apiDataAccessor": "response",
+                                    "apiDataAccessor": "",
                                     "message": "",
                                     "actions": []
                                 },
