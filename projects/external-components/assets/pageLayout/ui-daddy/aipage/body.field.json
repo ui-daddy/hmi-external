@@ -96,8 +96,8 @@
                                     "actions": [
                                         {
                                             "actionType": "setfield",
-                                            "field": "",
-                                            "fieldValue": "$SHARED_DATA$.chatApiDatas.resp",
+                                            "field": "db-1",
+                                            "fieldValue": "",
                                             "condition": "true",
                                             "formName": ""
                                         }
