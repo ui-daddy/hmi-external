@@ -93,7 +93,15 @@
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
                                     "message": "",
-                                    "actions": []
+                                    "actions": [
+                                        {
+                                            "actionType": "setfield",
+                                            "field": "",
+                                            "fieldValue": "$SHARED_DATA$.chatApiDatas.resp",
+                                            "condition": "true",
+                                            "formName": ""
+                                        }
+                                    ]
                                 },
                                 "onError": {
                                     "pageUrl": "",
