@@ -185,7 +185,7 @@
                                 "queryParams": [],
                                 "payloadParams": [
                                     {
-                                        "paramName": "code$SHARED_DATA(chatApiDatas.projectId)",
+                                        "paramName": "code",
                                         "mappedField": "",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(chatApiDatas.code)"
