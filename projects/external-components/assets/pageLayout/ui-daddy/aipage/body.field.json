@@ -172,20 +172,52 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "copyCode",
-                                "url": "/rest/chat/:projectGuid",
+                                "url": "/rest/copycode/:projectGuid",
                                 "method": "POST",
-                                "pathParams": [],
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectGuid",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(chatApiDatas.projectId)"
+                                    }
+                                ],
                                 "queryParams": [],
-                                "payloadParams": [],
-                                "onSuccess": {},
-                                "onError": {},
+                                "payloadParams": [
+                                    {
+                                        "paramName": "code$SHARED_DATA(chatApiDatas.projectId)",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(chatApiDatas.code)"
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
                                 "beforeSubmit": {
                                     "action": []
                                 },
-                                "downloadFileName": "",
-                                "responseType": "",
-                                "encodePathAndQueryParams": false,
-                                "isWithCredentials": true
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
                             }
                         }
                     ]
