@@ -96,10 +96,20 @@
                                     "actions": [
                                         {
                                             "actionType": "setfield",
+                                            "url": "",
+                                            "condition": "true",
+                                            "fileName": "",
                                             "field": "db-1",
                                             "fieldValue": "",
-                                            "condition": "true",
-                                            "formName": ""
+                                            "fieldAccessor": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
                                         }
                                     ]
                                 },
@@ -113,6 +123,69 @@
                                     "showErrorMessage": false,
                                     "actions": []
                                 }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "event": "copycode",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [
+                                {
+                                    "varName": "copyCodeDatas",
+                                    "staticData": "$copyCodeDatas$",
+                                    "cache": false,
+                                    "responseAccessor": ""
+                                }
+                            ],
+                            "apiConfig": null
+                        },
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "copyCode",
+                                "url": "/rest/chat/:projectGuid",
+                                "method": "POST",
+                                "pathParams": [],
+                                "queryParams": [],
+                                "payloadParams": [],
+                                "onSuccess": {},
+                                "onError": {},
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "encodePathAndQueryParams": false,
+                                "isWithCredentials": true
                             }
                         }
                     ]
