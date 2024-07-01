@@ -207,7 +207,10 @@
         }],
         "customEvent": [{
             "value": "sendmessage",
-            "label": "send message"
+            "label": "Send Message"
+        },{
+            "value": "copycode",
+            "label": "Copy Code"
         }]    
     }
 ]
