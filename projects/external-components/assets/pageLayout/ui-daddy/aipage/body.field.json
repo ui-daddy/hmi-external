@@ -66,7 +66,8 @@
                                 "pathParams": [
                                     {
                                         "paramName": "projectGuid",
-                                        "valueFormat": "$SHARED_DATA(chatApiDatas.projectId)"
+                                        "valueFormat": "$URL_QUERY_PARAMS(projectId)",
+                                        "mappedField": ""
                                     }
                                 ],
                                 "queryParams": [
