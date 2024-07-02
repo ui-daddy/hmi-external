@@ -66,8 +66,8 @@
                                 "pathParams": [
                                     {
                                         "paramName": "projectGuid",
-                                        "valueFormat": "",
-                                        "mappedField": "$URL_QUERY_PARAMS(projectId)"
+                                        "valueFormat": "$URL_QUERY_PARAMS(projectId)",
+                                        "mappedField": ""
                                     }
                                 ],
                                 "queryParams": [
