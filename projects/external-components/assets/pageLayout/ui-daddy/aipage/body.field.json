@@ -190,7 +190,7 @@
                                         "paramName": "code",
                                         "mappedField": "",
                                         "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(chatApiDatas.code)"
+                                        "valueFormat": "$SHARED_DATA(copyCodeDatas.code)"
                                     },
                                     {
                                         "paramName": "pageName",
