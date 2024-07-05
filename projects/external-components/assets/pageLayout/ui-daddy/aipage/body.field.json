@@ -74,9 +74,9 @@
                                 "queryParams": [
                                     {
                                         "paramName": "query",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(chatApiDatas.newMessage)"
+                                        "mappedField": "$URL_QUERY_PARAMS",
+                                        "mappedValue": "pageName",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "payloadParams": [],
@@ -179,9 +179,9 @@
                                 "pathParams": [
                                     {
                                         "paramName": "projectGuid",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(chatApiDatas.projectId)"
+                                        "mappedField": "$URL_QUERY_PARAMS",
+                                        "mappedValue": "projectId",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "queryParams": [],
@@ -191,6 +191,12 @@
                                         "mappedField": "",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(chatApiDatas.code)"
+                                    },
+                                    {
+                                        "paramName": "pageName",
+                                        "mappedField": "$URL_QUERY_PARAMS",
+                                        "mappedValue": "pageName",
+                                        "valueFormat": ""
                                     }
                                 ],
                                 "fetch": "",
