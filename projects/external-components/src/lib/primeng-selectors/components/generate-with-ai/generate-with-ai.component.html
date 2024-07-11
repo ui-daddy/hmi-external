@@ -1,3 +1,18 @@
-<div class="card">
-    <p-messages [(value)]="messages" [enableService]="false" />
+<div class="chat-container">
+  <div class="messages" #messagesContainer>
+    <div *ngFor="let message of messages" [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
+      <ng-container *ngFor="let part of message.parts">
+        <div *ngIf="part.type === 'text'" class="message-text">{{ part.content }}</div>
+        <pre *ngIf="part.type === 'code'" class="message-code"><code>{{ part.content }}</code>
+          <div class="code-import-holder">
+            <button class="code-import-button" (click)="copycode( part.content)">Copy Code</button>
+          </div>
+        </pre>
+      </ng-container>
+    </div>
+  </div>
+  <div class="input-container">
+    <input [(ngModel)]="fieldObj.value.newMessage" placeholder="Type your message" (keyup.enter)="sendMessage()" />
+    <button (click)="sendMessage()">Send</button>
+  </div>
 </div>
