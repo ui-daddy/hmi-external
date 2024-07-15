@@ -37,8 +37,22 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
    }
 
    ngOnInit(): void {
-    
     this.fieldObj.value = { newMessage: '' };   
+    this.fieldObj.action.subscribe((actionObj: any) => {
+      
+      if (actionObj.actionType === "setfield") {
+        console.log( actionObj.data);
+        this.content = actionObj.data;
+        const parts = this.parseMessage(this.content.response);
+        this.messages.push({
+          isUser: false,
+          parts
+        });
+      }
+      
+      this.cdr.detectChanges();
+      this.scrollToBottom();
+    });
   }
 
   ngAfterViewInit() {
@@ -52,27 +66,13 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
         isUser: true,
         parts: [{ type: 'text', content: this.fieldObj.value.newMessage.trim() }]
       });
-      this.fieldObj.value.newMessage = '';      
-      this.initializeEvents.emit({ name: "fireEvent", "events": [this.fieldObj.events[0]], data: null});
-
-      this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
-      
-        if (actionObj.actionType === "setfield") {
-          console.log( actionObj.data);
-          this.content = actionObj.data;
-          const parts = this.parseMessage(this.content.response);
-          this.messages.push({
-            isUser: false,
-            parts
-          });
-        }
-        this.subscription.unsubscribe();
-        
-        this.cdr.detectChanges();
-        this.scrollToBottom();
-      });
-
-      this.scrollToBottom();
+      this.fieldObj.value.newMessage = '';
+      const sendMsgEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "sendmessage");
+      if (sendMsgEvent) {
+        this.initializeEvents.emit({ name: "fireEvent", "events": [sendMsgEvent], data: null});
+      } else {
+        console.error("No Send Message event detected");
+      }
     }
     this.scrollToBottom();
 
@@ -112,20 +112,22 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     //console.log(code)
     this.clipboard.copy(code);
     this.messageData.code = code;
-    this.fieldObj.events.forEach((event: any) => {
-      event.actions.forEach((action: any) => {
-        if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
-          action.sharedData.forEach((shareDataObj: any) => {
-            if (shareDataObj.staticData === "$copyCodeDatas$") {
-              shareDataObj.staticData = this.messageData;
-            }
-          });
-        }
+    const copyCodeEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "copycode");
+    if (copyCodeEvent) {
+      copyCodeEvent.actions.forEach((action: any) => {
+          if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
+            action.sharedData.forEach((shareDataObj: any) => {
+              if (shareDataObj.staticData === "$copyCodeDatas$") {
+                shareDataObj.staticData = this.messageData;
+              }
+            });
+          }
       });
-    });
 
-    this.initializeEvents.emit({ name: "fireEvent", "events": [this.fieldObj.events[1]], data: null});
-
+      this.initializeEvents.emit({ name: "fireEvent", "events": [copyCodeEvent], data: null});
+    } else {
+      console.error("No Copy Code event detected");
+    }
   }
 
   private scrollToBottom(): void {
