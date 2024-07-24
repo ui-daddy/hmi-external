@@ -1,0 +1,14 @@
+{
+  "Vinay": [
+    {
+      "baseProperties": {
+        "name": "VinayField",
+        "id": "VinayField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "VinayExternalComponent"
+    }
+  ]
+}
