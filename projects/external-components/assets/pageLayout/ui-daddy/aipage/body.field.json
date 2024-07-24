@@ -174,29 +174,30 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "copyCode",
-                                "url": "/rest/copycode/:projectGuid",
+                                "url": "/rest/formDesigner/:projectGuid/pages/:pageName/component",
                                 "method": "POST",
+                                "contentType": "text/plain",
                                 "pathParams": [
                                     {
                                         "paramName": "projectGuid",
                                         "mappedField": "$URL_QUERY_PARAMS",
                                         "mappedValue": "projectId",
                                         "valueFormat": ""
-                                    }
-                                ],
-                                "queryParams": [],
-                                "payloadParams": [
-                                    {
-                                        "paramName": "code",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(copyCodeDatas.code)"
                                     },
                                     {
                                         "paramName": "pageName",
                                         "mappedField": "$URL_QUERY_PARAMS",
                                         "mappedValue": "pageName",
                                         "valueFormat": ""
+                                    }
+                                ],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(copyCodeDatas.code)"
                                     }
                                 ],
                                 "fetch": "",
