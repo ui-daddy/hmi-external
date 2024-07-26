@@ -141,6 +141,5 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
 
  
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   } 
 }
