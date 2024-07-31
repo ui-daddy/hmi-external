@@ -1,6 +1,6 @@
 {
   "id": 4,
   "name": "Header 4",
-  "thumbnail": "templates/header/4/header4.jpg",
+  "thumbnailPath": "header4.jpg",
   "rank": 4
 }
