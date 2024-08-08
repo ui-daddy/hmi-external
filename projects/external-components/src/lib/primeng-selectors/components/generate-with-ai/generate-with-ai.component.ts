@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 import { Observable } from 'rxjs';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { StackblitzEditorComponent } from '../stackblitz-editor/stackblitz-editor.component';
+import { DialogService } from 'primeng/dynamicdialog';
 
 
 
@@ -20,7 +22,6 @@ interface Message {
   selector: 'hmi-ext-generate-with-ai',
   templateUrl: './generate-with-ai.component.html',
   styleUrls: ['./generate-with-ai.component.css']
-
 })
 export class GenerateWithAiComponent extends CommonExternalComponent implements OnInit, AfterViewInit, OnDestroy {
   messages: Message[] = [];
@@ -32,7 +33,9 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
   response$!: Observable<any>
   content: any;
 
-  constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, private clipboard: Clipboard) {
+  constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, private clipboard: Clipboard,
+    public dialogService: DialogService
+  ) {
     super();
    }
 
@@ -57,6 +60,16 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
 
   ngAfterViewInit() {
     this.scrollToBottom();
+  }
+
+  preview(code: string): void {
+    this.dialogService.open(StackblitzEditorComponent, {
+      header: 'Component Preview',
+      width: '100%',
+      data: code,
+      height: "100vh"
+    }).onClose.subscribe((data: any) =>{
+    });
   }
 
   sendMessage() {
@@ -141,5 +154,6 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
 
  
   ngOnDestroy(): void {
+    
   } 
 }

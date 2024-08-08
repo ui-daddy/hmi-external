@@ -6,9 +6,14 @@
         <div *ngIf="part.type === 'code'"  class="code-holder ">
           <div class="button-code">
             <div class="language-code">typescript</div>
-            <div class="code-import-button" (click)="copycode( part.content)">
+            <div class="code-import-button" (click)="copycode(part.content)">
               <i class="pi pi-copy"></i>
-               Copy Code</div>
+               Copy Code
+            </div>
+            <div class="code-import-button" (click)="preview(part.content)">
+              <i class="pi pi-copy"></i>
+               Preview
+            </div>
           </div>
           <pre class="message-code" ><code>{{ part.content }}</code></pre>
         </div>
