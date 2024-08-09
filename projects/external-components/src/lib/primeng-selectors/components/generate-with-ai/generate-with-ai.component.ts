@@ -72,6 +72,10 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     });
   }
 
+  copycode(code: string): void {
+    this.clipboard.copy(code);
+  }
+
   sendMessage() {
     this.messageData.newMessage = this.fieldObj.value.newMessage; 
     if (this.fieldObj.value.newMessage.trim()) {
@@ -121,7 +125,7 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     return parts;
   }
 
-  copycode(code:any){
+  createComponent(code:any){
     //console.log(code)
     this.clipboard.copy(code);
     this.messageData.code = code;

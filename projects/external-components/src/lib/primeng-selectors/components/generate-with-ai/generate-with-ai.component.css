@@ -72,6 +72,7 @@
   color: #d63384;
   font-family: 'Courier New', Courier, monospace;
   white-space: pre-wrap; /* Maintain whitespace and line breaks */
+  margin-top: 10px;
 }
 
 .input-container {
@@ -112,30 +113,35 @@ button:hover {
   margin: 5px 0; /* Separate code blocks from text */
 }
 
-.code-import-button{
+.code-import-button {
   background-color: #f5f5f5;
   color: #000;
-  position: absolute;
-  top: 5px;
-  right: 10px;
   display: flex;
   gap: 5px;
   cursor: pointer;
   align-items: center;
+  border-radius: 5px;
+  padding: 3px 10px;
 }
 
-.button-code{
+.code-import-button:hover {
+  background-color: #e6e0e0;
+}
+
+.button-code {
     background-color: #f5f5f5;
-    padding: 10px;
+    padding: 0 10px 7px 2px;
     border-bottom: 4px solid white;
-    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.language-code{
+.button-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.language-code {
   background-color: #f5f5f5;
   color: #000;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-
 }

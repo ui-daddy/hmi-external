@@ -9,7 +9,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
-import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_DEPENDENCIES, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
+import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
 
 
 @Component({
@@ -20,7 +20,11 @@ import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_DEPENDENC
 })
 export class StackblitzEditorComponent implements OnInit {
   @ViewChild('editorContainer', { static: true }) editorContainer!: ElementRef;
-  projectSnapshot: any
+  projectSnapshot: any;
+  component = {
+    selector: '',
+    className: '',
+  };
 
   constructor(private config: DynamicDialogConfig) {}
 
@@ -28,12 +32,36 @@ export class StackblitzEditorComponent implements OnInit {
     this.embedEditor();
   }
 
+  getSelectorName(componentString: string): string {
+    const selectorRegex = /selector:\s*['"`]([^'"`]+)['"`]/;
+    const match = componentString.match(selectorRegex);
+    return match ? match[1] : "";
+  }
+
+  getClassName(componentString: string): string {
+    const classRegex = /export\s+class\s+([A-Za-z0-9_]+)/;
+    const match = componentString.match(classRegex);
+    return match ? match[1] : "";
+  }
+
   embedEditor(): void {
+    this.component = {
+      selector: this.getSelectorName(this.config.data),
+      className: this.getClassName(this.config.data),
+    };
+    if (!this.component.selector || !this.component.className) {
+      console.error("Not able to find component selector or class name", this.component.selector, this.component.className);
+      return;
+    }
+    let finalAppModule: any = STACKBLITZ_APP_MODULE_TS;
+    finalAppModule = finalAppModule.replaceAll(STACKBLITZ_COMPONENT_CLASS_NAME, this.component.className).replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector);
     const files = {
       'src/main.ts': STACKBLITZ_MAIN_TS,
-      'src/styles.css': ``,
-      'src/app/app.component.ts': this.config.data,
-      'src/app/app.module.ts': STACKBLITZ_APP_MODULE_TS,
+      [`src/app/${this.component.selector}.component.ts`]: this.config.data,
+      'src/styles.css': '',
+      'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
+      'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
+      'src/app/app.module.ts': finalAppModule,
       'angular.json': STACKBLITZ_ANGULAR_JSON,
       'src/index.html': STACKBLITZ_INDEX_HTML,
       'src/polyfills.ts': STACKBLITZ_POLLYFILL_TS,
@@ -49,7 +77,7 @@ export class StackblitzEditorComponent implements OnInit {
       },
       {
         height: 500,
-        openFile: 'src/app/app.component.ts',
+        openFile: `src/app/${this.component.selector}.component.ts`,
         view: 'preview',
         hideDevTools: true,
         hideExplorer: true,
@@ -61,22 +89,26 @@ export class StackblitzEditorComponent implements OnInit {
       this.projectSnapshot = snapshot;
       snapshot._rdc.port.onmessage = (event: MessageEvent) => {
         console.log('Message received from StackBlitz VM:', event.data);
-        //event.data?.payload["src/app/app.component.ts"]
         // Handle different types of messages here
-        if (event.data.type === 'customEvent') {
-          console.log('Custom event received:', event.data.payload);
+        if (
+          event.data.type === 'SDK_GET_FS_SNAPSHOT_SUCCESS' &&
+          event?.data?.payload?.[
+            `src/app/${this.component.selector}.component.ts`
+          ]
+        ) {
+          console.log(
+            'Custom event received:',
+            event.data.payload[
+              `src/app/${this.component.selector}.component.ts`
+            ]
+          );
         }
       };
     });
   }
 
   fetchCode(): void {
-    // Fetch the updated code from StackBlitz
-    this.projectSnapshot.getFsSnapshot().then((files: any) => {
-      Object.keys(files).forEach((fileName) => {
-        if (fileName === 'app.component.ts')
-          console.log(`File: ${fileName}, Code: ${files[fileName]}`);
-      });
-    });
+    // below code will trigger the onmessage event
+    this.projectSnapshot.getFsSnapshot();
   }
 }

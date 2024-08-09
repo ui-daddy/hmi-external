@@ -5,14 +5,20 @@
         <div *ngIf="part.type === 'text'" class="message-text">{{ part.content }}</div>
         <div *ngIf="part.type === 'code'"  class="code-holder ">
           <div class="button-code">
-            <div class="language-code">typescript</div>
-            <div class="code-import-button" (click)="copycode(part.content)">
-              <i class="pi pi-copy"></i>
-               Copy Code
-            </div>
-            <div class="code-import-button" (click)="preview(part.content)">
-              <i class="pi pi-copy"></i>
-               Preview
+            <div class="language-code">Typescript</div>
+            <div class="button-actions">
+              <div class="code-import-button" (click)="copycode(part.content)">
+                <i class="pi pi-copy"></i>
+                Copy Code
+              </div>
+              <div class="code-import-button" (click)="createComponent(part.content)">
+                <i class="pi pi-plus"></i>
+                Create Component
+              </div>
+              <div class="code-import-button" (click)="preview(part.content)">
+                <i class="pi pi-eye"></i>
+                Preview
+              </div>
             </div>
           </div>
           <pre class="message-code" ><code>{{ part.content }}</code></pre>

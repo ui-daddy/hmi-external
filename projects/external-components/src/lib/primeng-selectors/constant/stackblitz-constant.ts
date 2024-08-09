@@ -63,18 +63,35 @@ export const STACKBLITZ_MAIN_TS = `
         // Otherwise, log the boot error
     }).catch(err => console.error(err));`;
 
+export const STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS = `
+    import { Component } from '@angular/core';
+
+    @Component({
+        selector: 'hmi-preview-app-root',
+        templateUrl: './hmi-preview-app.component.html',
+        styles: ['']
+    })
+    export class HMIPreviewAppComponent {}
+    `;
+
+export const STACKBLITZ_COMPONENT_CLASS_NAME = "$STACKBLITZ_COMPONENT_CLASS_NAME$";
+export const STACKBLITZ_COMPONENT_SELECTOR = "$STACKBLITZ_COMPONENT_SELECTOR$";
+
+export const STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML: any = `<${STACKBLITZ_COMPONENT_SELECTOR}></${STACKBLITZ_COMPONENT_SELECTOR}>`;
+
 export const STACKBLITZ_APP_MODULE_TS = `
     import { NgModule } from '@angular/core';
-    import { AppComponent } from './app.component';
+    import { HMIPreviewAppComponent } from './hmi-preview-app.component';
+    import { ${STACKBLITZ_COMPONENT_CLASS_NAME} } from './${STACKBLITZ_COMPONENT_SELECTOR}.component';
     ${STACKBLITZ_IMPORT_STATEMENT}
 
     @NgModule({
     declarations: [
-        AppComponent
+        HMIPreviewAppComponent, ${STACKBLITZ_COMPONENT_CLASS_NAME}
     ],
     imports: ${STACKBLITZ_IMPORT_MODULES},
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [HMIPreviewAppComponent]
     })
     export class AppModule { }`;
 
@@ -163,7 +180,7 @@ export const STACKBLITZ_INDEX_HTML = `
             <meta name="viewport" content="width=device-width, initial-scale=1">
         </head>
         <body>
-            <app-root></app-root>
+            <hmi-preview-app-root></hmi-preview-app-root>
         </body>
     </html>`;
 
