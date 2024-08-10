@@ -7,15 +7,15 @@
           <div class="button-code">
             <div class="language-code">Typescript</div>
             <div class="button-actions">
-              <div class="code-import-button" (click)="copycode(part.content)">
+              <div class="code-import-button" (click)="copycode(part.content)" pTooltip="Copy Code to Clipboard" tooltipPosition="top">
                 <i class="pi pi-copy"></i>
                 Copy Code
               </div>
-              <div class="code-import-button" (click)="createComponent(part.content)">
+              <div class="code-import-button" (click)="createComponent(part.content)" pTooltip="Save/update code to the GitHub repository" tooltipPosition="top">
                 <i class="pi pi-plus"></i>
-                Save Code
+                Save
               </div>
-              <div class="code-import-button" (click)="preview(part.content)">
+              <div class="code-import-button" (click)="preview(part.content)" pTooltip="Preview code on StackBlitz" tooltipPosition="top">
                 <i class="pi pi-eye"></i>
                 Preview
               </div>
@@ -28,6 +28,6 @@
   </div>
   <div class="input-container">
     <input [(ngModel)]="fieldObj.value.newMessage" placeholder="Type your message" (keyup.enter)="sendMessage()" />
-    <button (click)="sendMessage()">Send</button>
+    <button pButton type="button" class="p-button p-button-sm theme" (click)="sendMessage()">Send</button>
   </div>
 </div>
