@@ -1,0 +1,240 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-1"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "GenerateWithAiComponent",
+            "events": [
+                {
+                    "event": "sendmessage",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [
+                                {
+                                    "varName": "chatApiDatas",
+                                    "staticData": "$chatApiDatas$"
+                                }
+                            ],
+                            "apiConfig": null
+                        },
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "chatAi",
+                                "url": "/rest/chat/:projectGuid",
+                                "method": "GET",
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectGuid",
+                                        "valueFormat": "",
+                                        "mappedField": "$URL_QUERY_PARAMS",
+                                        "mappedValue": "projectId"
+                                    }
+                                ],
+                                "queryParams": [
+                                    {
+                                        "paramName": "query",
+                                        "mappedField": "$URL_QUERY_PARAMS",
+                                        "mappedValue": "pageName",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "payloadParams": [],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": [
+                                        {
+                                            "actionType": "setfield",
+                                            "url": "",
+                                            "condition": "true",
+                                            "fileName": "",
+                                            "field": "db-1",
+                                            "fieldValue": "",
+                                            "fieldAccessor": "",
+                                            "messagetype": "",
+                                            "messageText": "",
+                                            "target": "",
+                                            "timer": null,
+                                            "formName": "",
+                                            "componentName": "",
+                                            "sharedData": [],
+                                            "apiConfig": null
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "event": "copycode",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [
+                                {
+                                    "varName": "copyCodeDatas",
+                                    "staticData": "$copyCodeDatas$",
+                                    "cache": false,
+                                    "responseAccessor": ""
+                                }
+                            ],
+                            "apiConfig": null
+                        },
+                        {
+                            "actionType": "INVOKE_API",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": {
+                                "name": "copyCode",
+                                "url": "/rest/copycode/:projectGuid",
+                                "method": "POST",
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectGuid",
+                                        "mappedField": "$URL_QUERY_PARAMS",
+                                        "mappedValue": "projectId",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "code",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(copyCodeDatas.code)"
+                                    },
+                                    {
+                                        "paramName": "pageName",
+                                        "mappedField": "$URL_QUERY_PARAMS",
+                                        "mappedValue": "pageName",
+                                        "valueFormat": ""
+                                    }
+                                ],
+                                "fetch": "",
+                                "downloadFileName": "",
+                                "responseType": "",
+                                "beforeSubmit": {
+                                    "action": []
+                                },
+                                "onSuccess": {
+                                    "pageUrl": "",
+                                    "deleteTableRow": false,
+                                    "showSuccessMessage": false,
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "actions": []
+                                },
+                                "onError": {
+                                    "pageUrl": "",
+                                    "sharedData": [],
+                                    "fieldData": [],
+                                    "clearSharedData": [],
+                                    "apiDataAccessor": "",
+                                    "message": "",
+                                    "showErrorMessage": false,
+                                    "actions": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {},
+            "customAttributes": {
+                "name": null
+            }
+        }
+    ]
+}
