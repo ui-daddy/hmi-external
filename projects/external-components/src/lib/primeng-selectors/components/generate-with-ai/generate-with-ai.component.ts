@@ -64,11 +64,14 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
 
   preview(code: string): void {
     this.dialogService.open(StackblitzEditorComponent, {
-      header: 'Component Preview',
+      header: 'Page Preview',
       width: '100%',
       data: code,
       height: "100vh"
     }).onClose.subscribe((data: any) =>{
+      if (data.action === "SAVE") {
+        this.createComponent(data.code);
+      }
     });
   }
 

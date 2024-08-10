@@ -1,4 +1,4 @@
-import { DynamicDialogConfig } from 'primeng/dynamicdialog';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import {
   Component,
   OnInit,
@@ -26,7 +26,7 @@ export class StackblitzEditorComponent implements OnInit {
     className: '',
   };
 
-  constructor(private config: DynamicDialogConfig) {}
+  constructor(private config: DynamicDialogConfig, public ref: DynamicDialogRef) {}
 
   ngOnInit(): void {
     this.embedEditor();
@@ -102,13 +102,21 @@ export class StackblitzEditorComponent implements OnInit {
               `src/app/${this.component.selector}.component.ts`
             ]
           );
+
+          this.ref.close({action: "SAVE", code: event.data.payload[
+            `src/app/${this.component.selector}.component.ts`
+          ]});
         }
       };
     });
   }
 
-  fetchCode(): void {
+  saveCode(): void {
     // below code will trigger the onmessage event
     this.projectSnapshot.getFsSnapshot();
+  }
+
+  cancel() {
+    this.ref.close();
   }
 }
