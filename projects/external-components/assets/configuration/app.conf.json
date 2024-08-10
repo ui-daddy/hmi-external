@@ -269,51 +269,5 @@
       "title": "test",
       "layoutProperties": null
     }
-  },
-  "Vinay": {
-    "headerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/header.field.json"
-    },
-    "headerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/header.section.json"
-    },
-    "field": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/body.field.json"
-    },
-    "section": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/body.section.json"
-    },
-    "footerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/footer.field.json"
-    },
-    "footerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/footer.section.json"
-    },
-    "data": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/body.data.json"
-    },
-    "navField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/nav.field.json"
-    },
-    "navSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/Vinay/nav.section.json"
-    },
-    "authGuardConfig": {
-      "enabled": false,
-      "conditions": []
-    },
-    "globalPageSettings": {
-      "title": "Vinay",
-      "layoutProperties": null
-    }
   }
 }
