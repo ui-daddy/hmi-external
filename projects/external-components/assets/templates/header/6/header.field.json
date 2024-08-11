@@ -1,0 +1,242 @@
+{
+    "dh-0": [],
+    "dh-1": [
+        {
+            "baseProperties": {
+                "type": "staticImage",
+                "id": "dh-3",
+                "name": "headerLogo"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-logo",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-logo .dynamic-style-child",
+                            "xs": {
+                                "height": "22px",
+                                "margin-bottom": "10px"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-logo",
+                            "xs": {
+                                "display": "flex",
+                                "cursor": "pointer",
+                                "justify-content": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-logo",
+                            "sm": {
+                                "justify-content": "start"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-logo .dynamic-style-child",
+                            "sm": {
+                                "margin-bottom": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "imageUrl": "https://demo.bootstrapdash.com/dashflat/template/images/logo.svg",
+            "altText": null,
+            "showDownload": null
+        }
+    ],
+    "dh-2": [
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "dh-4",
+                "name": "lang-dd"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "lang-dd",
+                    "configuration": [
+                        {
+                            "selectorName": ".lang-dd",
+                            "xs": {
+                                "margin-bottom": "0",
+                                "color": "#464dee"
+                            }
+                        },
+                        {
+                            "selectorName": ".lang-dd .field-label",
+                            "xs": {
+                                "display": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".lang-dd select",
+                            "xs": {
+                                "color": "#464dee",
+                                "border": "none",
+                                "font-weight": "500",
+                                "cursor": "pointer",
+                                "background": "inherit",
+                                "padding-right": "0",
+                                "width": "90px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "english",
+                    "label": "English"
+                },
+                {
+                    "value": "hindi",
+                    "label": "Hindi"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": "english"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dh-5",
+                "name": "mail-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "mail-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".mail-icon",
+                            "xs": {
+                                "color": "#464dee",
+                                "cursor": "pointer"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "far fa-envelope"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dh-6",
+                "name": "notify-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "notify-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".notify-icon",
+                            "xs": {
+                                "color": "#464dee",
+                                "cursor": "pointer"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fas fa-bell"
+        },
+        {
+            "baseProperties": {
+                "type": "nav-menu",
+                "id": "dh-7",
+                "name": "header-nav-menu",
+                "label": "Your Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-nav-menu",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-nav-menu .navbar-nav .nav-link",
+                            "xs": {
+                                "padding": "0"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-nav-menu .nav-link",
+                            "xs": {
+                                "color": "#464dee",
+                                "font-weight": "500"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-nav-menu",
+                            "xs": {
+                                "margin-left": "-5px"
+                            }
+                        },
+                        {
+                            "selectorName": ".nav-menu-image",
+                            "xs": {
+                                "margin-right": "10px",
+                                "width": "35px"
+                            }
+                        },
+                        {
+                            "selectorName": ".temp-class-2",
+                            "xs": {
+                                "property1": "value"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "type": "link",
+                    "label": "My Profile"
+                },
+                {
+                    "type": "link",
+                    "label": "Log Out"
+                }
+            ],
+            "icon": null,
+            "imageUrl": "https://demo.bootstrapdash.com/dashflat/template/images/faces/face28.png"
+        }
+    ]
+}
