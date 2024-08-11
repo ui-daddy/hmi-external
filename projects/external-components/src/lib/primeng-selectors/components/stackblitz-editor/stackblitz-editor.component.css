@@ -1,0 +1,12 @@
+:host ::ng-deep .editor-container { 
+    height: calc(100% - 65px); 
+    width: 100%;
+    border: none; 
+}
+
+.button-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: end;
+}
