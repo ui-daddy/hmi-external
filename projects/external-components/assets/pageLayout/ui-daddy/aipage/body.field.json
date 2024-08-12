@@ -38,8 +38,8 @@
                             "componentName": "",
                             "sharedData": [
                                 {
-                                    "varName": "chatApiDatas",
-                                    "staticData": "$chatApiDatas$"
+                                    "varName": "userQuery",
+                                    "staticData": "$USER_QUERY$"
                                 }
                             ],
                             "apiConfig": null
@@ -74,9 +74,9 @@
                                 "queryParams": [
                                     {
                                         "paramName": "query",
-                                        "mappedField": "$URL_QUERY_PARAMS",
-                                        "mappedValue": "pageName",
-                                        "valueFormat": ""
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(userQuery)"
                                     }
                                 ],
                                 "payloadParams": [],
@@ -130,7 +130,7 @@
                     ]
                 },
                 {
-                    "event": "copycode",
+                    "event": "savecomponent",
                     "debounce": null,
                     "actions": [
                         {
@@ -149,8 +149,8 @@
                             "componentName": "",
                             "sharedData": [
                                 {
-                                    "varName": "copyCodeDatas",
-                                    "staticData": "$copyCodeDatas$",
+                                    "varName": "saveCodeData",
+                                    "staticData": "$SAVE_CODE_DATA$",
                                     "cache": false,
                                     "responseAccessor": ""
                                 }
@@ -173,7 +173,7 @@
                             "componentName": "",
                             "sharedData": [],
                             "apiConfig": {
-                                "name": "copyCode",
+                                "name": "saveComponent",
                                 "url": "/rest/formDesigner/:projectGuid/pages/:pageName/component",
                                 "method": "POST",
                                 "contentType": "text/plain",
@@ -197,7 +197,7 @@
                                         "paramName": "",
                                         "mappedField": "",
                                         "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(copyCodeDatas.code)"
+                                        "valueFormat": "$SHARED_DATA(saveCodeData.code)"
                                     }
                                 ],
                                 "fetch": "",
