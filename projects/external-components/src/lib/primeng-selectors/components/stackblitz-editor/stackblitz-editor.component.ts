@@ -9,7 +9,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
-import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
+import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
 
 
 @Component({
@@ -62,6 +62,7 @@ export class StackblitzEditorComponent implements OnInit {
       'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
       'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
       'src/app/app.module.ts': finalAppModule,
+      'src/app/common-external.component.ts': STACKBLITZ_COMMON_EXTERNAL_TS,
       'angular.json': STACKBLITZ_ANGULAR_JSON,
       'src/index.html': STACKBLITZ_INDEX_HTML,
       'src/polyfills.ts': STACKBLITZ_POLLYFILL_TS,

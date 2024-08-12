@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { StackblitzEditorComponent } from '../stackblitz-editor/stackblitz-editor.component';
 import { DialogService } from 'primeng/dynamicdialog';
+import { deepClone } from '../../util/util';
 
 
 
@@ -32,6 +33,7 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
   actions:any;
   response$!: Observable<any>
   content: any;
+  showCopiedLabel: boolean = false;
 
   constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, private clipboard: Clipboard,
     public dialogService: DialogService
@@ -76,7 +78,18 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
   }
 
   copycode(code: string): void {
-    this.clipboard.copy(code);
+    if (!this.showCopiedLabel) {
+      let copyCodeEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "copycode");
+      if (copyCodeEvent) {
+        copyCodeEvent = deepClone(copyCodeEvent);
+        this.initializeEvents.emit({ name: "fireEvent", "events": [copyCodeEvent], data: null});
+      }
+      this.clipboard.copy(code);
+      this.showCopiedLabel = true;
+      setTimeout(() => {
+        this.showCopiedLabel = false;
+      }, 3000);
+    }
   }
 
   sendMessage() {
@@ -86,10 +99,20 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
         isUser: true,
         parts: [{ type: 'text', content: this.fieldObj.value.newMessage.trim() }]
       });
-      this.fieldObj.value.newMessage = '';
-      const sendMsgEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "sendmessage");
+      let sendMsgEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "sendmessage");
       if (sendMsgEvent) {
+        sendMsgEvent = deepClone(sendMsgEvent);
+        sendMsgEvent.actions.forEach((action: any) => {
+          if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
+            action.sharedData.forEach((shareDataObj: any) => {
+              if (shareDataObj.staticData === "$USER_QUERY$") {
+                shareDataObj.staticData = this.messageData.newMessage;
+              }
+            });
+          }
+        });
         this.initializeEvents.emit({ name: "fireEvent", "events": [sendMsgEvent], data: null});
+        this.fieldObj.value.newMessage = '';
       } else {
         console.error("No Send Message event detected");
       }
@@ -128,23 +151,22 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     return parts;
   }
 
-  createComponent(code:any){
-    //console.log(code)
-    this.clipboard.copy(code);
+  createComponent(code:any) {
     this.messageData.code = code;
-    const copyCodeEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "copycode");
-    if (copyCodeEvent) {
-      copyCodeEvent.actions.forEach((action: any) => {
+    let saveCompEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "savecomponent");
+    if (saveCompEvent) {
+      saveCompEvent = deepClone(saveCompEvent);
+      saveCompEvent.actions.forEach((action: any) => {
           if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
             action.sharedData.forEach((shareDataObj: any) => {
-              if (shareDataObj.staticData === "$copyCodeDatas$") {
+              if (shareDataObj.staticData === "$SAVE_CODE_DATA$") {
                 shareDataObj.staticData = this.messageData;
               }
             });
           }
       });
 
-      this.initializeEvents.emit({ name: "fireEvent", "events": [copyCodeEvent], data: null});
+      this.initializeEvents.emit({ name: "fireEvent", "events": [saveCompEvent], data: null});
     } else {
       console.error("No Copy Code event detected");
     }
