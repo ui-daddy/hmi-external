@@ -1,0 +1,131 @@
+{
+    "layout": [
+        {
+            "id": "loginForm",
+            "type": "form",
+            "layout": {
+                "css": {
+                    "customClassName": "section-card__center-form",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-card__center-form",
+                            "xs": {
+                                "width": "500px",
+                                "left": "50%",
+                                "top": "50%",
+                                "border-radius": "10px",
+                                "padding": "40px",
+                                "background": "white",
+                                "margin-top": "20px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "column": {
+                    "count": 1,
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "autoPlace": "false"
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "loginInfo",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 4,
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "autoPlace": "false"
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "loginButtons",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "count": 2,
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "autoPlace": "false"
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-8",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "auto",
+                                "md": "auto",
+                                "sm": "auto",
+                                "xs": "auto"
+                            },
+                            "count": "3"
+                        },
+                        "css": {
+                            "customClassName": "icon-section",
+                            "configuration": [
+                                {
+                                    "selectorName": ".icon-section",
+                                    "xs": {
+                                        "margin-top": "18px",
+                                        "padding-left": "103px"
+                                    }
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-12",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "custom-signup-section",
+                            "configuration": [
+                                {
+                                    "selectorName": ".custom-signup-section",
+                                    "xs": {
+                                        "margin-top": "60px"
+                                    }
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        }
+    ]
+}

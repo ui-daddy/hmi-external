@@ -1,0 +1,95 @@
+{
+    "layout": [
+        {
+            "id": "dh-0",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "4:8",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": "2"
+                },
+                "css": {
+                    "customClassName": "main-header-style",
+                    "configuration": [
+                        {
+                            "selectorName": ".main-header-style",
+                            "xs": {
+                                "background": "#f8f8f8",
+                                "border": "1px solid #e9e9e9",
+                                "padding-top": "10px",
+                                "padding-bottom": "10px"
+                            }
+                        },
+                        {
+                            "selectorName": ".main-header-style .row",
+                            "xs": {
+                                "align-items": "center"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "dh-1",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "dh-2",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "auto:auto:auto:auto",
+                                "md": "auto:auto:auto:auto",
+                                "sm": "auto:auto:auto:auto",
+                                "xs": "auto"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "header-section-2",
+                            "configuration": [
+                                {
+                                    "selectorName": ".header-section-2 .row",
+                                    "xs": {
+                                        "justify-content": "center"
+                                    }
+                                },
+                                {
+                                    "selectorName": ".header-section-2 .row",
+                                    "sm": {
+                                        "justify-content": "end"
+                                    }
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        }
+    ]
+}

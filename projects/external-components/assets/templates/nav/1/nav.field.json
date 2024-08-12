@@ -1,0 +1,105 @@
+{
+    "dn-0": [
+        {
+            "baseProperties": {
+                "type": "navItemGroup",
+                "id": "dn-1",
+                "name": "nav-item-group"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "nav-item-group",
+                    "configuration": [
+                        {
+                            "selectorName": ".nav-item-group",
+                            "xs": {
+                                "color": "black",
+                                "gap": "75px",
+                                "font-size": "18px"
+                            }
+                        },
+                        {
+                            "selectorName": ".nav-link",
+                            "xs": {
+                                "color": "black",
+                                "padding-left": "0",
+                                "padding-right": "20px",
+                                "font-weight": "500"
+                            }
+                        },
+                        {
+                            "selectorName": ".fa-fw",
+                            "xs": {
+                                "width": "auto"
+                            }
+                        },
+                        {
+                            "selectorName": ".fas",
+                            "xs": {
+                                "padding-right": "15px",
+                                "color": "#007bff"
+                            }
+                        },
+                        {
+                            "selectorName": ".navbar",
+                            "xs": {
+                                "justify-content": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".nav-link:hover",
+                            "xs": {
+                                "color": "#464dee"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "navItems": [
+                {
+                    "id": "dashboard",
+                    "label": "Dashboard",
+                    "navigateToPage": "/dashboard",
+                    "icon": "fa-home"
+                },
+                {
+                    "id": "widgets",
+                    "label": "Widgets",
+                    "navigateToPage": "/widgets",
+                    "icon": "fa-tv"
+                },
+                {
+                    "id": "forms",
+                    "label": "Forms",
+                    "navigateToPage": "/forms",
+                    "icon": "fa-file-alt"
+                },
+                {
+                    "id": "data",
+                    "label": "Data",
+                    "navigateToPage": "/data",
+                    "icon": "fa-table"
+                },
+                {
+                    "id": "apps",
+                    "label": "Apps",
+                    "navigateToPage": "/apps",
+                    "icon": "fa-globe"
+                },
+                {
+                    "id": "documentation",
+                    "label": "Documentation",
+                    "navigateToPage": "/documentation",
+                    "icon": "fa-book"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "layout": [
+        {
+            "id": "dh-18",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "8:2:2",
+                        "md": "8:2:2",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": "3"
+                },
+                "css": {
+                    "customClassName": "header-section",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-section",
+                            "xs": {
+                                "background-color": "white"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "dh-16",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "dh-15",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "10:2",
+                                "md": "10:2",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "dh-14",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            }
+                        },
+                        "css": {
+                            "configuration": [],
+                            "customClassName": null
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        }
+    ]
+}
