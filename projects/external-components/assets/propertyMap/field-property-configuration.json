@@ -209,8 +209,8 @@
             "value": "sendmessage",
             "label": "Send Message"
         },{
-            "value": "copycode",
-            "label": "Copy Code"
+            "value": "savecomponent",
+            "label": "Save"
         }]    
     }
 ]

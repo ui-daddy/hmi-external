@@ -23,7 +23,7 @@ export const IMPORT_MODULES = [
 export const STACKBLITZ_IMPORT_MODULES = `
 [
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
-    TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
+    TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
     TooltipModule, MenuModule, TagModule, DynamicDialogModule
 ]`;
 
@@ -33,7 +33,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
-import { ChartModule } from "primeng/chart";
 import { DropdownModule } from "primeng/dropdown";
 import { DynamicDialogModule } from "primeng/dynamicdialog";
 import { InputTextModule } from "primeng/inputtext";
@@ -199,11 +198,56 @@ export const STACKBLITZ_DEPENDENCIES = {
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4",
-    "chart.js": "^4.1.1",
-    "xlsx": "0.18.5",
-    "file-saver": "2.0.5",
-    "jspdf": "2.5.1",
-    "jspdf-autotable": "3.5.29",
     "primeicons": "^4.1.0",
     "primeng": "^14.2.3"
 };
+
+export const STACKBLITZ_COMMON_EXTERNAL_TS = `
+import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+
+@Component({
+  selector: 'hmi-ext-common-external',
+  template: ''
+})
+export class CommonExternalComponent implements AfterViewInit {
+
+  private _fieldObj: any;
+  public isDirective: boolean = false;
+  private isEventInitialized = false;
+  public get fieldObj() {
+    return this._fieldObj;
+  }
+  @Input()
+  public set fieldObj(theFieldObj: any) {
+    this._fieldObj = theFieldObj;
+    if (this.primeElement) {
+      Object.assign(this.isDirective? this.primeElement?.nativeElement : this.primeElement, this._fieldObj.customAttributes);
+    }
+  }
+  @Input() dynamicAttributes: any;
+  @Input() formGroupObj: any;
+  @Input() customApiCall: any;
+  @Output('initializeEvents') protected initializeEvents = new EventEmitter<any>();
+
+  @ViewChild('primeElement', {static: true}) primeElement!: any; 
+  subscription: any;
+
+  constructor() { }
+
+  ngAfterViewInit() {
+    if (this.primeElement) {
+      const nativeElement = this.primeElement?.nativeElement || (this.primeElement.input && this.primeElement.input.nativeElement);
+      if (nativeElement) {
+        nativeElement.readOnly = this.dynamicAttributes.readOnlyValue;
+      } else {
+        this.primeElement.readonly = this.dynamicAttributes.readOnlyValue;
+      }
+    }
+
+    if (!this.isEventInitialized) {
+      this.isEventInitialized = true;
+      this.initializeEvents.emit();
+    }
+  }
+}
+`;
