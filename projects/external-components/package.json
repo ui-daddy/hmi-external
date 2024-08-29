@@ -11,7 +11,7 @@
     "file-saver": "2.0.5",
     "jspdf": "2.5.1",
     "jspdf-autotable": "3.5.29",
-    "primeicons": "^4.1.0",
+    "primeicons": "^6.0.1",
     "primeng": "^14.2.3",
     "tslib": "^2.0.0",
     "xlsx": "0.18.5",
