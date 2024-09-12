@@ -77,6 +77,12 @@
                                         "mappedField": "",
                                         "mappedValue": "",
                                         "valueFormat": "$SHARED_DATA(userQuery)"
+                                    },
+                                    {
+                                        "paramName": "chatId",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(chatId)"
                                     }
                                 ],
                                 "payloadParams": [],
@@ -90,7 +96,12 @@
                                     "pageUrl": "",
                                     "deleteTableRow": false,
                                     "showSuccessMessage": false,
-                                    "sharedData": [],
+                                    "sharedData": [
+                                        {
+                                            "varName": "chatId",
+                                            "responseAccessor": "id"
+                                        }
+                                    ],
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
