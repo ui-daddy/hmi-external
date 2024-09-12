@@ -18,6 +18,7 @@ export const multiDateTransform = (value:any)=> {
         const expectedEndDate = datePipe.transform(v.expectedEndDate, dateFormat);
         const actualStartDate = datePipe.transform(v.actualStartDate, dateFormat);
         const actualEndDate = datePipe.transform(v.actualEndDate, dateFormat);
-        return { ...v, expectedStartDate, expectedEndDate, actualStartDate, actualEndDate };
+        const createdDate = datePipe.transform(v.createdDate, dateFormat);
+        return { ...v, expectedStartDate, expectedEndDate, actualStartDate, actualEndDate, createdDate };
     });
 }
