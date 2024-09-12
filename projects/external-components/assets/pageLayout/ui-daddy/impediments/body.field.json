@@ -82,6 +82,60 @@
             "customAttributes": {
                 "columns": [
                     {
+                        "colName": "Name of Zone",
+                        "filterType": "text",
+                        "accessor": "zone",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 300
+                        }
+                    },
+                    {
+                        "colName": "Name of Circle",
+                        "filterType": "text",
+                        "accessor": "circle",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 300
+                        }
+                    },
+                    {
+                        "colName": "Name of Division",
+                        "filterType": "text",
+                        "accessor": "division",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 300
+                        }
+                    },
+                    {
+                        "colName": "Name of Substation",
+                        "filterType": "text",
+                        "accessor": "substation",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 300
+                        }
+                    },
+                    {
+                        "colName": "Issue registered by Name",
+                        "filterType": "text",
+                        "accessor": "createdByName",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 300
+                        }
+                    },
+                    {
+                        "colName": "Date of issue register",
+                        "filterType": "text",
+                        "accessor": "createdDate",
+                        "colWidth": {
+                            "unit": "px",
+                            "value": 300
+                        }
+                    },
+                    {
                         "colName": "Activity",
                         "filterType": "text",
                         "accessor": "activityname",
@@ -231,6 +285,7 @@
                     "url": "/api/v1/Impediment/List",
                     "method": "GET",
                     "params": {},
+                    "postTransform": "multiDateTransform",
                     "onSuccess": {
                         "apiDataAccessor": ""
                     }
@@ -407,21 +462,46 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "Flood",
-                    "label": "Flood"
+                    "value": "Site Survey",
+                    "label": "Site Survey"
                 },
                 {
-                    "value": " Fire",
-                    "label": " Fire"
+                    "value": "Approvals",
+                    "label": "Approvals"
                 },
                 {
-                    "value": "Earthquake",
-                    "label": "Earthquake"
+                    "value": "FAT",
+                    "label": "FAT"
                 },
                 {
-                    "value": "Riots",
-                    "label": "Riots"
+                    "value": "Material",
+                    "label": "Material"
+                },
+                {
+                    "value": "Installation",
+                    "label": "Installation"
+                },
+                {
+                    "value": "Testing",
+                    "label": "Testing"
+                },
+                {
+                    "value": "Commissioning",
+                    "label": "Commissioning"
+                },
+                {
+                    "value": "Billing - Finance",
+                    "label": "Billing - Finance"
+                },
+                {
+                    "value": "System Related",
+                    "label": "System Related"
+                },
+                {
+                    "value": "Others",
+                    "label": "Others"
                 }
+                
             ],
             "optionsConfig": null,
             "labelKey": "label",
@@ -738,20 +818,44 @@
             "expressionProperties": {},
             "optionList": [
                 {
-                    "value": "Flood",
-                    "label": "Flood"
+                    "value": "Site Survey",
+                    "label": "Site Survey"
                 },
                 {
-                    "value": "Fire",
-                    "label": "Fire"
+                    "value": "Approvals",
+                    "label": "Approvals"
                 },
                 {
-                    "value": "Earthquake",
-                    "label": "Earthquake"
+                    "value": "FAT",
+                    "label": "FAT"
                 },
                 {
-                    "value": "Riots",
-                    "label": "Riots"
+                    "value": "Material",
+                    "label": "Material"
+                },
+                {
+                    "value": "Installation",
+                    "label": "Installation"
+                },
+                {
+                    "value": "Testing",
+                    "label": "Testing"
+                },
+                {
+                    "value": "Commissioning",
+                    "label": "Commissioning"
+                },
+                {
+                    "value": "Billing - Finance",
+                    "label": "Billing - Finance"
+                },
+                {
+                    "value": "System Related",
+                    "label": "System Related"
+                },
+                {
+                    "value": "Others",
+                    "label": "Others"
                 }
             ],
             "optionsConfig": null,

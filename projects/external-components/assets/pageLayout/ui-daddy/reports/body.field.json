@@ -146,7 +146,7 @@
                             "valueFormat": ""
                         }
                     ],
-                    "postTransform": "dateTransform",
+                    "postTransform": "multiDateTransform",
                     "payloadParams": [],
                     "fetch": "",
                     "downloadFileName": "",
@@ -236,102 +236,130 @@
             "expressionProperties": {
                 "visibleValue": "true"
             },
-            "customAttributes": {
-                "columns": [
-                    {
-                        "colName": "Title",
-                        "filterType": "text",
-                        "accessor": "title",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 200
-                        }
-                    },
-                    {
-                        "colName": "Priority",
-                        "filterType": "multiselect",
-                        "accessor": "priority",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
-                    },
-                    {
-                        "colName": "Status",
-                        "filterType": "multiselect",
-                        "accessor": "status",
-                        "pill": "true",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 120
-                        }
-                    },
-                    {
-                        "colName": "Zone",
-                        "filterType": "multiselect",
-                        "accessor": "zoneLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Circle",
-                        "filterType": "multiselect",
-                        "accessor": "circleLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Division",
-                        "filterType": "multiselect",
-                        "accessor": "divisionLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Substation",
-                        "filterType": "multiselect",
-                        "accessor": "substationLabel",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 150
-                        }
-                    },
-                    {
-                        "colName": "Expected Start Date",
-                        "filterType": "multiselect",
-                        "accessor": "expectedStartDate",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
-                    },
-                    {
-                        "colName": "Expected End Date",
-                        "filterType": "text",
-                        "accessor": "expectedEndDate",
-                        "colWidth": {
-                            "unit": "px",
-                            "value": 100
-                        }
+            "customAttributes": {  
+            "columns": [
+                {
+                    "colName": "Title",
+                    "filterType": "text",
+                    "accessor": "title",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 200
                     }
-                ],
-                "caption": "",
-                "summary": null,
-                "globalFilterFields": [
-                    "title",
-                    "priority",
-                    "status",
-                    "zoneLabel",
-                    "circleLabel",
-                    "divisionLabel",
-                    "substationLabel"
-                ],
+                },
+                {
+                    "colName": "Priority",
+                    "filterType": "multiselect",
+                    "accessor": "priority",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 100
+                    }
+                },
+                {
+                    "colName": "% Progress",
+                    "filterType": "multiselect",
+                    "accessor": "progress",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 100
+                    }
+                },
+                {
+                    "colName": "Status",
+                    "filterType": "multiselect",
+                    "accessor": "status",
+                    "pill": "true",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 120
+                    }
+                },
+                {
+                    "colName": "Zone",
+                    "filterType": "multiselect",
+                    "accessor": "zoneLabel",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 150
+                    }
+                },
+                {
+                    "colName": "Circle",
+                    "filterType": "multiselect",
+                    "accessor": "circleLabel",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 150
+                    }
+                },
+                {
+                    "colName": "Division",
+                    "filterType": "multiselect",
+                    "accessor": "divisionLabel",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 150
+                    }
+                },
+                {
+                    "colName": "Substation",
+                    "filterType": "multiselect",
+                    "accessor": "substationLabel",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 150
+                    }
+                },
+                {
+                    "colName": "Expected Start Date",
+                    "filterType": "multiselect",
+                    "accessor": "expectedStartDate",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 100
+                    }
+                },
+                {
+                    "colName": "Actual Start Date",
+                    "filterType": "actualStartDate",
+                    "accessor": "actualStartDate",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 100
+                    }
+                },
+                {
+                    "colName": "Expected End Date",
+                    "filterType": "text",
+                    "accessor": "expectedEndDate",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 100
+                    }
+                },
+                {
+                    "colName": "Actual End Date",
+                    "filterType": "text",
+                    "accessor": "actualEndDate",
+                    "colWidth": {
+                        "unit": "px",
+                        "value": 100
+                    }
+                }
+            ],
+            "caption": "",
+            "summary": null,
+            "globalFilterFields": [
+                "title",
+                "priority",
+                "progress",
+                "status",
+                "zoneLabel",
+                "circleLabel",
+                "divisionLabel",
+                "substationLabel"
+            ],
                 "dataKey": "id",
                 "resizableColumns": false,
                 "responsive": true,
@@ -340,7 +368,7 @@
                     "url": "/api/v1/Report/OverDueReport",
                     "method": "GET",
                     "params": {},
-                    "postTransform": "dateTransform",
+                    "postTransform": "multiDateTransform",
                     "onSuccess": {}
                 },
                 "triggerFilterGroupOnRefresh": "reports-filter",
