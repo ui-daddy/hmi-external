@@ -1,5 +1,6 @@
 header.header-container {
-    background-color: #222121 !important;
+    background-color: white !important;
+    border-bottom: 1px solid var(--gray-300);
 }
 
 .iframe-form > .row > [class*="col-"] {
