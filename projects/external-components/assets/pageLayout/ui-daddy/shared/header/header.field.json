@@ -50,7 +50,7 @@
                 "type": "staticText",
                 "id": "dnd-2"
             },
-            "value": "Welcome {0}",
+            "value": "",
             "dynamicValueAccessor": [
                 "name"
             ],
