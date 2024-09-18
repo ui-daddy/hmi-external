@@ -186,5 +186,31 @@
                 "placeholder": "Enter background color"
             }
         ]        
+    },
+    {
+        "widgetList": [
+            {
+                "name": "GenerateWithAiComponent",
+                "icon": "bi bi-box",
+                "label": "GenerateWithAiComponent"
+            }
+        ],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [{
+            "propertyName": "name",
+            "defaultValueMapping": "name",
+            "type": "text",
+            "label": "name",
+            "placeholder": "Enter name"
+        }],
+        "customEvent": [{
+            "value": "sendmessage",
+            "label": "Send Message"
+        },{
+            "value": "savecomponent",
+            "label": "Save"
+        }]    
     }
 ]

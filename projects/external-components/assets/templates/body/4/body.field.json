@@ -1,0 +1,203 @@
+{
+    "db-0": [],
+    "db-1": [
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "db-3",
+                "label": "SIGN IN"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "signin-btn ",
+                    "configuration": [
+                        {
+                            "selectorName": ".signin-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "180px",
+                                "background": "-webkit-linear-gradient(90deg,#0367a6,#008997)",
+                                "border": "1px solid #0367a6",
+                                "border-radius": "20px",
+                                "font-weight": "bold",
+                                "font-size": "16px",
+                                "cursor": "pointer",
+                                "padding": "12px;",
+                                "color": "#e9e9e9"
+                            }
+                        },
+                        {
+                            "selectorName": ".signin-btn",
+                            "xs": {
+                                "transform": "translate(40px, 195px)"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ],
+    "db-2": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-4",
+                "name": ""
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "singup-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".singup-txt",
+                            "xs": {
+                                "font-size": "30px",
+                                "padding-top": "20px"
+                            }
+                        },
+                        {
+                            "selectorName": ".singup-txt .dynamic-style-parent",
+                            "xs": {
+                                "margin-bottom": "-10px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Sign Up",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-5",
+                "formName": "username"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "User",
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "db-6",
+                "name": "email"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "email-field",
+                    "configuration": [
+                        {
+                            "selectorName": ".email-field .dynamic-style-parent .section-container__field",
+                            "xs": {
+                                "margin-botom": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Email",
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "password",
+                "id": "db-7",
+                "name": "password"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": "Password",
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "db-8",
+                "label": "SIGN UP",
+                "name": "signupBtn"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "signup-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".signup-btn",
+                            "xs": {
+                                "justify-content": "center"
+                            }
+                        },
+                        {
+                            "selectorName": ".signup-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "180px",
+                                "margin": "10px",
+                                "background": "-webkit-linear-gradient(90deg,#0367a6,#008997)",
+                                "border": "1px solid #0367a6",
+                                "border-radius": "20px",
+                                "font-weight": "bold",
+                                "font-size": "16px",
+                                "cursor": "pointer",
+                                "padding": "12px",
+                                "color": "#e9e9e9"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ]
+}

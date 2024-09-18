@@ -21,3 +21,7 @@ export const multiDateTransform = (value:any)=> {
         return { ...v, expectedStartDate, expectedEndDate, actualStartDate, actualEndDate };
     });
 }
+
+export const deepClone = (originalObject: any) => {
+    return JSON.parse(JSON.stringify(originalObject));
+}

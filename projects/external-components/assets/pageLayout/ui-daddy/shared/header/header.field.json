@@ -7,6 +7,18 @@
                 "type": "staticText",
                 "id": "dnd-1"
             },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "navigate",
+                            "url": "/dashboard"
+                            
+                        }
+                    ]
+                }
+            ],
             "layoutProperties": {
                 "css": {
                     "configuration": [{
@@ -21,7 +33,10 @@
                         "xs": {
                             "min-height": "40px",
                             "font-size": "30px",
-                            "margin-left": "15px"
+                            "margin-left": "15px",
+                            "color": "white",
+                            "text-decoration": "none",
+                            "cursor": "pointer"
                         }
                     }],
                     "customClassName": "header__logo"

@@ -1,0 +1,33 @@
+<div class="chat-container">
+  <div class="messages" #messagesContainer>
+    <div *ngFor="let message of messages" [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
+      <ng-container *ngFor="let part of message.parts">
+        <div *ngIf="part.type === 'text'" class="message-text">{{ part.content }}</div>
+        <div *ngIf="part.type === 'code'"  class="code-holder ">
+          <div class="button-code">
+            <div class="language-code">Typescript</div>
+            <div class="button-actions">
+              <div class="code-import-button" (click)="copycode(part.content)" pTooltip="{{showCopiedLabel ? 'Copied' : 'Copy Code to Clipboard'}}" tooltipPosition="top">
+                <i class="pi" [ngClass]="showCopiedLabel ? 'pi-check' : 'pi-copy'"></i>
+                {{showCopiedLabel ? 'Copied' : 'Copy Code'}}
+              </div>
+              <div class="code-import-button" (click)="createComponent(part.content)" pTooltip="Save/update code to the GitHub repository" tooltipPosition="top">
+                <i class="pi pi-plus"></i>
+                Save
+              </div>
+              <div class="code-import-button" (click)="preview(part.content)" pTooltip="Preview code on StackBlitz" tooltipPosition="top">
+                <i class="pi pi-eye"></i>
+                Preview
+              </div>
+            </div>
+          </div>
+          <pre class="message-code" ><code>{{ part.content }}</code></pre>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="input-container">
+    <input [(ngModel)]="fieldObj.value.newMessage" placeholder="Type your message" (keyup.enter)="sendMessage()" />
+    <button pButton type="button" class="p-button p-button-sm theme" (click)="sendMessage()">Send</button>
+  </div>
+</div>
