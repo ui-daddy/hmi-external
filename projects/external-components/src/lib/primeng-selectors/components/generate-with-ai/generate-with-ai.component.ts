@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 import { Observable } from 'rxjs';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { StackblitzEditorComponent } from '../stackblitz-editor/stackblitz-editor.component';
+import { DialogService } from 'primeng/dynamicdialog';
+import { deepClone } from '../../util/util';
 
 
 
@@ -20,7 +23,6 @@ interface Message {
   selector: 'hmi-ext-generate-with-ai',
   templateUrl: './generate-with-ai.component.html',
   styleUrls: ['./generate-with-ai.component.css']
-
 })
 export class GenerateWithAiComponent extends CommonExternalComponent implements OnInit, AfterViewInit, OnDestroy {
   messages: Message[] = [];
@@ -31,18 +33,63 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
   actions:any;
   response$!: Observable<any>
   content: any;
+  showCopiedLabel: boolean = false;
 
-  constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, private clipboard: Clipboard) {
+  constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, private clipboard: Clipboard,
+    public dialogService: DialogService
+  ) {
     super();
    }
 
    ngOnInit(): void {
-    
     this.fieldObj.value = { newMessage: '' };   
+    this.fieldObj.action.subscribe((actionObj: any) => {
+      
+      if (actionObj.actionType === "setfield") {
+        console.log( actionObj.data);
+        this.content = actionObj.data;
+        const parts = this.parseMessage(this.content.response);
+        this.messages.push({
+          isUser: false,
+          parts
+        });
+      }
+      
+      this.cdr.detectChanges();
+      this.scrollToBottom();
+    });
   }
 
   ngAfterViewInit() {
     this.scrollToBottom();
+  }
+
+  preview(code: string): void {
+    this.dialogService.open(StackblitzEditorComponent, {
+      header: 'Page Preview',
+      width: '100%',
+      data: code,
+      height: "100vh"
+    }).onClose.subscribe((data: any) =>{
+      if (data.action === "SAVE") {
+        this.createComponent(data.code);
+      }
+    });
+  }
+
+  copycode(code: string): void {
+    if (!this.showCopiedLabel) {
+      let copyCodeEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "copycode");
+      if (copyCodeEvent) {
+        copyCodeEvent = deepClone(copyCodeEvent);
+        this.initializeEvents.emit({ name: "fireEvent", "events": [copyCodeEvent], data: null});
+      }
+      this.clipboard.copy(code);
+      this.showCopiedLabel = true;
+      setTimeout(() => {
+        this.showCopiedLabel = false;
+      }, 3000);
+    }
   }
 
   sendMessage() {
@@ -52,27 +99,23 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
         isUser: true,
         parts: [{ type: 'text', content: this.fieldObj.value.newMessage.trim() }]
       });
-      this.fieldObj.value.newMessage = '';      
-      this.initializeEvents.emit({ name: "fireEvent", "events": [this.fieldObj.events[0]], data: null});
-
-      this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
-      
-        if (actionObj.actionType === "setfield") {
-          console.log( actionObj.data);
-          this.content = actionObj.data;
-          const parts = this.parseMessage(this.content.response);
-          this.messages.push({
-            isUser: false,
-            parts
-          });
-        }
-        this.subscription.unsubscribe();
-        
-        this.cdr.detectChanges();
-        this.scrollToBottom();
-      });
-
-      this.scrollToBottom();
+      let sendMsgEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "sendmessage");
+      if (sendMsgEvent) {
+        sendMsgEvent = deepClone(sendMsgEvent);
+        sendMsgEvent.actions.forEach((action: any) => {
+          if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
+            action.sharedData.forEach((shareDataObj: any) => {
+              if (shareDataObj.staticData === "$USER_QUERY$") {
+                shareDataObj.staticData = this.messageData.newMessage;
+              }
+            });
+          }
+        });
+        this.initializeEvents.emit({ name: "fireEvent", "events": [sendMsgEvent], data: null});
+        this.fieldObj.value.newMessage = '';
+      } else {
+        console.error("No Send Message event detected");
+      }
     }
     this.scrollToBottom();
 
@@ -108,24 +151,25 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     return parts;
   }
 
-  copycode(code:any){
-    //console.log(code)
-    this.clipboard.copy(code);
+  createComponent(code:any) {
     this.messageData.code = code;
-    this.fieldObj.events.forEach((event: any) => {
-      event.actions.forEach((action: any) => {
-        if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
-          action.sharedData.forEach((shareDataObj: any) => {
-            if (shareDataObj.staticData === "$copyCodeDatas$") {
-              shareDataObj.staticData = this.messageData;
-            }
-          });
-        }
+    let saveCompEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "savecomponent");
+    if (saveCompEvent) {
+      saveCompEvent = deepClone(saveCompEvent);
+      saveCompEvent.actions.forEach((action: any) => {
+          if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
+            action.sharedData.forEach((shareDataObj: any) => {
+              if (shareDataObj.staticData === "$SAVE_CODE_DATA$") {
+                shareDataObj.staticData = this.messageData;
+              }
+            });
+          }
       });
-    });
 
-    this.initializeEvents.emit({ name: "fireEvent", "events": [this.fieldObj.events[1]], data: null});
-
+      this.initializeEvents.emit({ name: "fireEvent", "events": [saveCompEvent], data: null});
+    } else {
+      console.error("No Copy Code event detected");
+    }
   }
 
   private scrollToBottom(): void {
@@ -139,6 +183,6 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
 
  
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    
   } 
 }

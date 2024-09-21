@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hmi-ext-common-external',

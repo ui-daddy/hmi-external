@@ -38,8 +38,8 @@
                             "componentName": "",
                             "sharedData": [
                                 {
-                                    "varName": "chatApiDatas",
-                                    "staticData": "$chatApiDatas$"
+                                    "varName": "userQuery",
+                                    "staticData": "$USER_QUERY$"
                                 }
                             ],
                             "apiConfig": null
@@ -74,9 +74,15 @@
                                 "queryParams": [
                                     {
                                         "paramName": "query",
-                                        "mappedField": "$URL_QUERY_PARAMS",
-                                        "mappedValue": "pageName",
-                                        "valueFormat": ""
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(userQuery)"
+                                    },
+                                    {
+                                        "paramName": "chatId",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(chatId)"
                                     }
                                 ],
                                 "payloadParams": [],
@@ -90,7 +96,12 @@
                                     "pageUrl": "",
                                     "deleteTableRow": false,
                                     "showSuccessMessage": false,
-                                    "sharedData": [],
+                                    "sharedData": [
+                                        {
+                                            "varName": "chatId",
+                                            "responseAccessor": "id"
+                                        }
+                                    ],
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
@@ -130,7 +141,7 @@
                     ]
                 },
                 {
-                    "event": "copycode",
+                    "event": "savecomponent",
                     "debounce": null,
                     "actions": [
                         {
@@ -149,8 +160,8 @@
                             "componentName": "",
                             "sharedData": [
                                 {
-                                    "varName": "copyCodeDatas",
-                                    "staticData": "$copyCodeDatas$",
+                                    "varName": "saveCodeData",
+                                    "staticData": "$SAVE_CODE_DATA$",
                                     "cache": false,
                                     "responseAccessor": ""
                                 }
@@ -173,30 +184,31 @@
                             "componentName": "",
                             "sharedData": [],
                             "apiConfig": {
-                                "name": "copyCode",
-                                "url": "/rest/copycode/:projectGuid",
+                                "name": "saveComponent",
+                                "url": "/rest/formDesigner/:projectGuid/pages/:pageName/component",
                                 "method": "POST",
+                                "contentType": "text/plain",
                                 "pathParams": [
                                     {
                                         "paramName": "projectGuid",
                                         "mappedField": "$URL_QUERY_PARAMS",
                                         "mappedValue": "projectId",
                                         "valueFormat": ""
-                                    }
-                                ],
-                                "queryParams": [],
-                                "payloadParams": [
-                                    {
-                                        "paramName": "code",
-                                        "mappedField": "",
-                                        "mappedValue": "",
-                                        "valueFormat": "$SHARED_DATA(copyCodeDatas.code)"
                                     },
                                     {
                                         "paramName": "pageName",
                                         "mappedField": "$URL_QUERY_PARAMS",
                                         "mappedValue": "pageName",
                                         "valueFormat": ""
+                                    }
+                                ],
+                                "queryParams": [],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "",
+                                        "mappedField": "",
+                                        "mappedValue": "",
+                                        "valueFormat": "$SHARED_DATA(saveCodeData.code)"
                                     }
                                 ],
                                 "fetch": "",
