@@ -2,10 +2,10 @@
     <ng-template pTemplate="caption">
         <div class="table-header">
             <span class="table-header-caption">{{fieldObj.customAttributes.caption}}</span>
-            <div class="align-self-center mr-3">
-                <button *ngIf="fieldObj.customAttributes.showExportPdfBtn" type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-danger mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
-                <button *ngIf="fieldObj.customAttributes.showExportExcelBtn" type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
-                <button *ngIf="fieldObj.customAttributes.showPrintPreviewBtn" type="button" pButton pRipple icon="pi pi-print" (click)="printPreview()" class="p-button-warning mr-2" pTooltip="Print Preview" tooltipPosition="bottom"></button>
+            <div class="align-self-center me-3">
+                <button *ngIf="fieldObj.customAttributes.showExportPdfBtn" type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-danger me-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+                <button *ngIf="fieldObj.customAttributes.showExportExcelBtn" type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success me-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
+                <button *ngIf="fieldObj.customAttributes.showPrintPreviewBtn" type="button" pButton pRipple icon="pi pi-print" (click)="printPreview()" class="p-button-warning me-2" pTooltip="Print Preview" tooltipPosition="bottom"></button>
             </div>
             <span>
                 <span class="p-input-icon-left"
@@ -14,7 +14,7 @@
                     <input pInputText type="text" (input)="applyGlobalFilter($event, 'contains')" placeholder="Search" />
                 </span>                
             </span>
-            <span class="ml-2">
+            <span class="ms-2">
                 <button type="button" class="btn btn-primary" (click)="refreshTable()">
                     <i class="fa fa-sync-alt"></i>
                 </button>
