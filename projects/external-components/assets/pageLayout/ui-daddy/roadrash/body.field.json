@@ -1,0 +1,14 @@
+{
+  "roadrash": [
+    {
+      "baseProperties": {
+        "name": "roadrashField",
+        "id": "roadrashField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "roadrashExternalComponent"
+    }
+  ]
+}
