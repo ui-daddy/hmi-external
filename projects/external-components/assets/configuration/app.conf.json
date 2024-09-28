@@ -369,52 +369,6 @@
       }
     }
   },
-  "enquiry": {
-    "headerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/header.field.json"
-    },
-    "headerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/header.section.json"
-    },
-    "field": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/body.field.json"
-    },
-    "section": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/body.section.json"
-    },
-    "footerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/footer.field.json"
-    },
-    "footerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/footer.section.json"
-    },
-    "data": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/body.data.json"
-    },
-    "navField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/nav.field.json"
-    },
-    "navSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/enquiry/nav.section.json"
-    },
-    "authGuardConfig": {
-      "enabled": false,
-      "conditions": []
-    },
-    "globalPageSettings": {
-      "title": "enquiry",
-      "layoutProperties": null
-    }
-  },
   "test": {
     "headerField": {
       "fetchFromLocal": true,
