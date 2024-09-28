@@ -149,5 +149,26 @@
       "disabled"
     ],
     "customAttributes": []
+  },
+  {
+    "widgetList": [
+      {
+        "name": "AssetExternalComponent",
+        "icon": "bi bi-box",
+        "label": "AssetExternalComponent"
+      }
+    ],
+    "hiddenBaseProperties": [
+      "label"
+    ],
+    "hiddenLayoutProperties": [
+      "themeClass"
+    ],
+    "hiddenExpressionProperties": [
+      "required",
+      "readOnly",
+      "disabled"
+    ],
+    "customAttributes": []
   }
 ]
