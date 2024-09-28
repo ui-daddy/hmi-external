@@ -1,0 +1,14 @@
+{
+  "enquiry": [
+    {
+      "baseProperties": {
+        "name": "enquiryField",
+        "id": "enquiryField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "enquiryExternalComponent"
+    }
+  ]
+}
