@@ -1,0 +1,14 @@
+{
+  "Asset": [
+    {
+      "baseProperties": {
+        "name": "AssetField",
+        "id": "AssetField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "AssetExternalComponent"
+    }
+  ]
+}
