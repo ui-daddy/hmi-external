@@ -1,0 +1,41 @@
+{
+  "layout": [
+    {
+      "id": "AssetForm",
+      "type": "form",
+      "layout": {
+        "column": {
+          "count": 1,
+          "ratio": {
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
+          },
+          "autoPlace": "false"
+        }
+      },
+      "sectionList": [
+        {
+          "id": "Asset",
+          "type": "content",
+          "layout": {
+            "css": {
+              "customClassName": "Asset-content"
+            },
+            "column": {
+              "count": 2,
+              "ratio": {
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
+              },
+              "autoPlace": "false"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
