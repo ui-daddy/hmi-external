@@ -1,0 +1,41 @@
+{
+  "layout": [
+    {
+      "id": "NatureForm",
+      "type": "form",
+      "layout": {
+        "column": {
+          "count": 1,
+          "ratio": {
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
+          },
+          "autoPlace": "false"
+        }
+      },
+      "sectionList": [
+        {
+          "id": "Nature",
+          "type": "content",
+          "layout": {
+            "css": {
+              "customClassName": "Nature-content"
+            },
+            "column": {
+              "count": 2,
+              "ratio": {
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
+              },
+              "autoPlace": "false"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
