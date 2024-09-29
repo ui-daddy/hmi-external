@@ -170,5 +170,26 @@
       "disabled"
     ],
     "customAttributes": []
+  },
+  {
+    "widgetList": [
+      {
+        "name": "NatureExternalComponent",
+        "icon": "bi bi-box",
+        "label": "NatureExternalComponent"
+      }
+    ],
+    "hiddenBaseProperties": [
+      "label"
+    ],
+    "hiddenLayoutProperties": [
+      "themeClass"
+    ],
+    "hiddenExpressionProperties": [
+      "required",
+      "readOnly",
+      "disabled"
+    ],
+    "customAttributes": []
   }
 ]
