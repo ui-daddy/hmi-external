@@ -1,0 +1,14 @@
+{
+  "Nature": [
+    {
+      "baseProperties": {
+        "name": "NatureField",
+        "id": "NatureField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "NatureExternalComponent"
+    }
+  ]
+}
