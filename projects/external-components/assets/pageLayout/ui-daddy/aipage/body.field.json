@@ -2,6 +2,64 @@
     "db-0": [
         {
             "baseProperties": {
+                "id": "db-2",
+                "name": "close",
+                "type": "button",
+                "formName": "",
+                "label": ""
+            },
+            "icon": {
+                "postIconClass": "fas fa-times"
+            },
+            "layoutProperties": {
+                "css": {
+                    "themeClass": "btn-primary theme",
+                    "customClassName": "close-btn",
+                    "configuration": [{
+                        "selectorName": ".close-btn",
+                        "xs": {
+                            "top": "22px",
+                            "right": "18px",
+                            "height": "auto",
+                            "position": "absolute"
+                        }
+                    }, {
+                        "selectorName": ".close-btn .dynamic-style-child i",
+                        "xs": {
+                            "margin-left": "0"
+                        }
+                    }, {
+                        "selectorName": ".close-btn .dynamic-style-child",
+                        "xs": {
+                            "border-radius": "50%"
+                        }
+                    }]
+                }
+            },
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "HISTORY_BACK"
+                        }
+                    ],
+                    "debounce": 0
+                }
+            ]
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-1"
             },
@@ -220,12 +278,12 @@
                                 "onSuccess": {
                                     "pageUrl": "",
                                     "deleteTableRow": false,
-                                    "showSuccessMessage": false,
+                                    "showSuccessMessage": true,
                                     "sharedData": [],
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "",
+                                    "message": "Page created successfully! Build the project to view your new page.",
                                     "actions": []
                                 },
                                 "onError": {
