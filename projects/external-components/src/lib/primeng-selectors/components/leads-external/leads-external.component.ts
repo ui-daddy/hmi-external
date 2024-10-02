@@ -69,7 +69,7 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export class LeadCaptureComponent {
+export class LeadsExternalComponent {
   lead = {
     name: '',
     email: '',
