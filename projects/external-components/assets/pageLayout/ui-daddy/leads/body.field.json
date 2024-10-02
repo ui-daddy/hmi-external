@@ -1,0 +1,14 @@
+{
+  "leads": [
+    {
+      "baseProperties": {
+        "name": "leadsField",
+        "id": "leadsField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "leadsExternalComponent"
+    }
+  ]
+}
