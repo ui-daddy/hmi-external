@@ -1,0 +1,14 @@
+{
+  "cookingBlog": [
+    {
+      "baseProperties": {
+        "name": "cookingBlogField",
+        "id": "cookingBlogField",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "cookingBlogExternalComponent"
+    }
+  ]
+}
