@@ -2,11 +2,9 @@ import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import {
   Component,
   OnInit,
-  Input,
-  OnChanges,
-  SimpleChanges,
   ViewChild,
   ElementRef,
+  NgZone 
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
@@ -25,8 +23,9 @@ export class StackblitzEditorComponent implements OnInit {
     selector: '',
     className: '',
   };
+  onLoad = true;
 
-  constructor(private config: DynamicDialogConfig, public ref: DynamicDialogRef) {}
+  constructor(private config: DynamicDialogConfig, public ref: DynamicDialogRef, private zone: NgZone) {}
 
   ngOnInit(): void {
     this.embedEditor();
@@ -88,27 +87,34 @@ export class StackblitzEditorComponent implements OnInit {
       }
     ).then((snapshot: any) => {
       this.projectSnapshot = snapshot;
+      
       snapshot._rdc.port.onmessage = (event: MessageEvent) => {
         console.log('Message received from StackBlitz VM:', event.data);
         // Handle different types of messages here
-        if (
-          event.data.type === 'SDK_GET_FS_SNAPSHOT_SUCCESS' &&
-          event?.data?.payload?.[
-            `src/app/${this.component.selector}.component.ts`
-          ]
-        ) {
-          console.log(
-            'Custom event received:',
-            event.data.payload[
+        this.zone.run(() => {
+          if (this.onLoad) {
+            this.onLoad = false;
+          } else if (
+            event.data.type === 'SDK_GET_FS_SNAPSHOT_SUCCESS' &&
+            event?.data?.payload?.[
               `src/app/${this.component.selector}.component.ts`
-            ]
-          );
-
-          this.ref.close({action: "SAVE", code: event.data.payload[
-            `src/app/${this.component.selector}.component.ts`
-          ]});
-        }
-      };
+            ] && !this.onLoad
+          ) {
+            console.log(
+              'Custom event received:',
+              event.data.payload[
+                `src/app/${this.component.selector}.component.ts`
+              ]
+            );
+  
+            this.ref.close({action: "SAVE", code: event.data.payload[
+              `src/app/${this.component.selector}.component.ts`
+            ]});
+          }
+        });
+      }
+        
+      this.projectSnapshot.getFsSnapshot();
     });
   }
 

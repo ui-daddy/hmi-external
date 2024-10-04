@@ -13,18 +13,19 @@ import { TableModule } from "primeng/table";
 import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule
+    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule
+    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
@@ -43,6 +44,7 @@ import { TableModule } from "primeng/table";
 import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 `;
 
 export const STACKBLITZ_MAIN_TS = `
