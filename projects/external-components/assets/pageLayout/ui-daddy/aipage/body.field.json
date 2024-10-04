@@ -51,7 +51,16 @@
                     "event": "click",
                     "actions": [
                         {
-                            "actionType": "HISTORY_BACK"
+                            "actionType": "navigate",
+                            "apiConfig": {
+                                "url": "/edit-form/:projectGuid",
+                                "pathParams": [{
+                                    "paramName": "projectGuid",
+                                    "mappedField": "$URL_QUERY_PARAMS",
+                                    "mappedValue": "projectId",
+                                    "valueFormat": ""
+                                }]
+                            }
                         }
                     ],
                     "debounce": 0
@@ -119,14 +128,14 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "chatAi",
-                                "url": "/rest/chat/:projectGuid",
+                                "url": "/rest/chat/:pageName",
                                 "method": "GET",
                                 "pathParams": [
                                     {
-                                        "paramName": "projectGuid",
+                                        "paramName": "pageName",
                                         "valueFormat": "",
                                         "mappedField": "$URL_QUERY_PARAMS",
-                                        "mappedValue": "projectId"
+                                        "mappedValue": "pageName"
                                     }
                                 ],
                                 "queryParams": [
