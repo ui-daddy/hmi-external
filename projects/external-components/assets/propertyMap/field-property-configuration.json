@@ -107,7 +107,14 @@
             "defaultValueMapping": "src",
             "type": "text",
             "label": "Source Url",
-            "placeholder": "Enter iFrame Source Url"
+            "placeholder": "Enter IFrame Source Url"
+        },
+        {
+            "propertyName": "height",
+            "defaultValueMapping": "height",
+            "type": "text",
+            "label": "Iframe Height",
+            "placeholder": "Enter IFrame Height"
         }]        
     },
     {
