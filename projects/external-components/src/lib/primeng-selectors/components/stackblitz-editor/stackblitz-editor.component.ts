@@ -56,12 +56,12 @@ export class StackblitzEditorComponent implements OnInit {
     finalAppModule = finalAppModule.replaceAll(STACKBLITZ_COMPONENT_CLASS_NAME, this.component.className).replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector);
     const files = {
       'src/main.ts': STACKBLITZ_MAIN_TS,
-      [`src/app/${this.component.selector}.component.ts`]: this.config.data,
+      [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.config.data,
       'src/styles.css': '',
       'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
       'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
       'src/app/app.module.ts': finalAppModule,
-      'src/app/common-external.component.ts': STACKBLITZ_COMMON_EXTERNAL_TS,
+      'src/app/common-external/common-external.component.ts': STACKBLITZ_COMMON_EXTERNAL_TS,
       'angular.json': STACKBLITZ_ANGULAR_JSON,
       'src/index.html': STACKBLITZ_INDEX_HTML,
       'src/polyfills.ts': STACKBLITZ_POLLYFILL_TS,
@@ -77,7 +77,7 @@ export class StackblitzEditorComponent implements OnInit {
       },
       {
         height: 500,
-        openFile: `src/app/${this.component.selector}.component.ts`,
+        openFile: `src/app/${this.component.selector}/${this.component.selector}.component.ts`,
         view: 'preview',
         hideDevTools: true,
         hideExplorer: true,
@@ -97,18 +97,11 @@ export class StackblitzEditorComponent implements OnInit {
           } else if (
             event.data.type === 'SDK_GET_FS_SNAPSHOT_SUCCESS' &&
             event?.data?.payload?.[
-              `src/app/${this.component.selector}.component.ts`
+              `src/app/${this.component.selector}/${this.component.selector}.component.ts`
             ] && !this.onLoad
-          ) {
-            console.log(
-              'Custom event received:',
-              event.data.payload[
-                `src/app/${this.component.selector}.component.ts`
-              ]
-            );
-  
+          ) {  
             this.ref.close({action: "SAVE", code: event.data.payload[
-              `src/app/${this.component.selector}.component.ts`
+              `src/app/${this.component.selector}/${this.component.selector}.component.ts`
             ]});
           }
         });
