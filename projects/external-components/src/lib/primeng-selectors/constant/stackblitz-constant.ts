@@ -83,7 +83,7 @@ export const STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML: any = `<${STACKBLITZ_COMPONEN
 export const STACKBLITZ_APP_MODULE_TS = `
     import { NgModule } from '@angular/core';
     import { HMIPreviewAppComponent } from './hmi-preview-app.component';
-    import { ${STACKBLITZ_COMPONENT_CLASS_NAME} } from './${STACKBLITZ_COMPONENT_SELECTOR}.component';
+    import { ${STACKBLITZ_COMPONENT_CLASS_NAME} } from './${STACKBLITZ_COMPONENT_SELECTOR}/${STACKBLITZ_COMPONENT_SELECTOR}.component';
     ${STACKBLITZ_IMPORT_STATEMENT}
 
     @NgModule({
