@@ -19,3 +19,4 @@ export * from './lib/primeng-selectors/util/util';
 export * from './lib/primeng-selectors/components/generate-with-ai/generate-with-ai.component';
  
 export * from './lib/primeng-selectors/components/barChart-external/barChart-external.component';
+export * from './lib/primeng-selectors/components/weather-external/weather-external.component';
