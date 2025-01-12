@@ -1,3 +1,4 @@
+import { MetricAIComponent } from './components/metricAI-external/metricAI-external.component';
 import { WeatherComponent } from './components/weather-external/weather-external.component';
 import { BarChartComponent } from './components/barChart-external/barChart-external.component';
 import { NgModule } from '@angular/core';
@@ -30,7 +31,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent, BarChartComponent, WeatherComponent],
+        StackblitzEditorComponent, BarChartComponent, WeatherComponent, MetricAIComponent],
     imports: IMPORT_MODULES,
     exports: [PasswordExternalComponent,
         TextExternalComponent,
@@ -40,7 +41,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent, BarChartComponent, WeatherComponent],
+        GenerateWithAiComponent, BarChartComponent, WeatherComponent, MetricAIComponent],
     providers: [
         DialogService 
     ]
