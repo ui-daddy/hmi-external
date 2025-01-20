@@ -359,5 +359,26 @@
       "disabled"
     ],
     "customAttributes": []
+  },
+  {
+    "widgetList": [
+      {
+        "name": "aip2ExternalComponent",
+        "icon": "bi bi-box",
+        "label": "aip2ExternalComponent"
+      }
+    ],
+    "hiddenBaseProperties": [
+      "label"
+    ],
+    "hiddenLayoutProperties": [
+      "themeClass"
+    ],
+    "hiddenExpressionProperties": [
+      "required",
+      "readOnly",
+      "disabled"
+    ],
+    "customAttributes": []
   }
 ]
