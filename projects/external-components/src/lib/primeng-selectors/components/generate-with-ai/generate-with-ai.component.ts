@@ -69,9 +69,11 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
       header: 'Page Preview',
       width: '100%',
       data: code,
-      height: "100vh"
+      height: "100vh",
+      keepInViewport: true,
+      baseZIndex: 500
     }).onClose.subscribe((data: any) =>{
-      if (data.action === "SAVE") {
+      if (data?.action === "SAVE") {
         this.createComponent(data.code);
       }
     });

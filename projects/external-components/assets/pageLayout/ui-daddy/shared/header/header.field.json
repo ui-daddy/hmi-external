@@ -1,12 +1,13 @@
 {
     "header-dashboard": [
         {
-            "value": "UI Daddy",
+            "altText": "UI Daddy",
             "baseProperties": {
                 "name": "menu",
-                "type": "staticText",
+                "type": "staticImage",
                 "id": "dnd-1"
             },
+            "imageUrl": "assets/images/ui-daddy-logo.svg",
             "events": [
                 {
                     "event": "click",
@@ -49,7 +50,7 @@
                 "type": "staticText",
                 "id": "dnd-2"
             },
-            "value": "Welcome {0}",
+            "value": "",
             "dynamicValueAccessor": [
                 "name"
             ],
@@ -59,7 +60,8 @@
                         "selectorName": ".header__user-name",
                         "xs": {
                             "right": "40px",
-                            "justify-content": "flex-end"
+                            "justify-content": "flex-end",
+                            "color": "#64748b"
                         }
                     },
                     "customClassName": "header__user-name hide-xs"
@@ -69,28 +71,32 @@
         {
             "baseProperties": {
                 "name": "logout",
-                "label": "Log Out",
-                "type": "submit",
+                "type": "staticIcon",
                 "id": "logout"
             },
+            "iconClass": "fas fa-sign-out-alt",
             "layoutProperties": {
                 "css": {
                     "configuration": [{
                         "selectorName": ".header-common__logout",
                         "xs": {
                             "white-space": "nowrap",
-                            "justify-content": "flex-end"
+                            "justify-content": "end",
+                            "cursor": "pointer",
+                            "display": "flex",
+                            "height": "100%",
+                            "align-items": "center"
                         }
                     },
                     {
                         "selectorName": ".header-common__logout .dynamic-style-child",
                         "xs": {
-                            "background-color": "#222121",
-                            "border-color": "#222121"
+                            "font-size": "26px",
+                            "color": "white",
+                            "margin-right": "10px"
                         }
                     }],
-                    "customClassName": "header-common__logout",
-                    "themeClass": "btn btn-dark"
+                    "customClassName": "header-common__logout"
                 }
             },
             "events": [

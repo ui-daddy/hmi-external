@@ -1,7 +1,16 @@
 :host ::ng-deep .editor-container { 
-    height: calc(100% - 65px); 
+    height: 100%; 
     width: 100%;
     border: none; 
+}
+
+.full-height {
+    height: calc(100% - 65px); 
+}
+
+.loader {
+    justify-content: center;
+    align-items: center;
 }
 
 .button-actions {

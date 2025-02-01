@@ -4,7 +4,7 @@ import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
 import { ChartModule } from "primeng/chart";
 import { DropdownModule } from "primeng/dropdown";
-import { DynamicDialogModule } from "primeng/dynamicdialog";
+import { DynamicDialog } from "primeng/dynamicdialog";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
 import { MultiSelectModule } from "primeng/multiselect";
@@ -13,18 +13,21 @@ import { TableModule } from "primeng/table";
 import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
 
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
@@ -34,7 +37,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
 import { DropdownModule } from "primeng/dropdown";
-import { DynamicDialogModule } from "primeng/dynamicdialog";
+import { DynamicDialog } from "primeng/dynamicdialog";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
 import { MultiSelectModule } from "primeng/multiselect";
@@ -43,6 +46,7 @@ import { TableModule } from "primeng/table";
 import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 `;
 
 export const STACKBLITZ_MAIN_TS = `
@@ -81,7 +85,7 @@ export const STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML: any = `<${STACKBLITZ_COMPONEN
 export const STACKBLITZ_APP_MODULE_TS = `
     import { NgModule } from '@angular/core';
     import { HMIPreviewAppComponent } from './hmi-preview-app.component';
-    import { ${STACKBLITZ_COMPONENT_CLASS_NAME} } from './${STACKBLITZ_COMPONENT_SELECTOR}.component';
+    import { ${STACKBLITZ_COMPONENT_CLASS_NAME} } from './${STACKBLITZ_COMPONENT_SELECTOR}/${STACKBLITZ_COMPONENT_SELECTOR}.component';
     ${STACKBLITZ_IMPORT_STATEMENT}
 
     @NgModule({

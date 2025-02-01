@@ -25,3 +25,7 @@ export const multiDateTransform = (value:any)=> {
 export const deepClone = (originalObject: any) => {
     return JSON.parse(JSON.stringify(originalObject));
 }
+
+export const dropDownOptionTransform = (options:any[]) => {
+    return options.map(option =>({ label:option, value:option }))
+}

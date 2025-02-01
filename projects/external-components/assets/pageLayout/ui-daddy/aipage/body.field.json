@@ -2,6 +2,73 @@
     "db-0": [
         {
             "baseProperties": {
+                "id": "db-2",
+                "name": "close",
+                "type": "button",
+                "formName": "",
+                "label": ""
+            },
+            "icon": {
+                "postIconClass": "fas fa-times"
+            },
+            "layoutProperties": {
+                "css": {
+                    "themeClass": "btn-primary theme",
+                    "customClassName": "close-btn",
+                    "configuration": [{
+                        "selectorName": ".close-btn",
+                        "xs": {
+                            "top": "22px",
+                            "right": "18px",
+                            "height": "auto",
+                            "position": "absolute"
+                        }
+                    }, {
+                        "selectorName": ".close-btn .dynamic-style-child i",
+                        "xs": {
+                            "margin-left": "0"
+                        }
+                    }, {
+                        "selectorName": ".close-btn .dynamic-style-child",
+                        "xs": {
+                            "border-radius": "50%"
+                        }
+                    }]
+                }
+            },
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "navigate",
+                            "apiConfig": {
+                                "url": "/edit-form/:projectGuid",
+                                "pathParams": [{
+                                    "paramName": "projectGuid",
+                                    "mappedField": "$URL_QUERY_PARAMS",
+                                    "mappedValue": "projectId",
+                                    "valueFormat": ""
+                                }]
+                            }
+                        }
+                    ],
+                    "debounce": 0
+                }
+            ]
+        },
+        {
+            "baseProperties": {
                 "type": "dynamicField",
                 "id": "db-1"
             },
@@ -61,14 +128,14 @@
                             "sharedData": [],
                             "apiConfig": {
                                 "name": "chatAi",
-                                "url": "/rest/chat/:projectGuid",
+                                "url": "/rest/chat/:pageName",
                                 "method": "GET",
                                 "pathParams": [
                                     {
-                                        "paramName": "projectGuid",
+                                        "paramName": "pageName",
                                         "valueFormat": "",
                                         "mappedField": "$URL_QUERY_PARAMS",
-                                        "mappedValue": "projectId"
+                                        "mappedValue": "pageName"
                                     }
                                 ],
                                 "queryParams": [
@@ -220,12 +287,12 @@
                                 "onSuccess": {
                                     "pageUrl": "",
                                     "deleteTableRow": false,
-                                    "showSuccessMessage": false,
+                                    "showSuccessMessage": true,
                                     "sharedData": [],
                                     "fieldData": [],
                                     "clearSharedData": [],
                                     "apiDataAccessor": "",
-                                    "message": "",
+                                    "message": "Page created successfully! Build the project to view your new page.",
                                     "actions": []
                                 },
                                 "onError": {
