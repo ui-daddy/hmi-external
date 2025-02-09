@@ -76,12 +76,12 @@
         "showSecondaryBtn": true,
         "secondaryBtnLabel": "Preview",
         "apiConfig": {
-          "name": "projectList",
-          "url": "https://fakestoreapi.com/products",
+          "name": "myApps",
+          "url": "/rest/getProjects",
           "method": "GET",
           "params": {},
           "onSuccess": {
-            "apiDataAccessor": "cardList"
+            "apiDataAccessor": "projects"
           }
         }
       }
