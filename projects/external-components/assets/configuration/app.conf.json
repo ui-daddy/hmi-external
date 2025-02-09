@@ -44,5 +44,25 @@
       "title": "projects",
       "layoutProperties": null
     }
+  },
+  "hmiAppConfiguration": {
+    "title": "Quick SPA",
+    "baseUrl": "",
+    "metaTags": [],
+    "linkTags": [],
+    "ifPageNotFound": "",
+    "interceptorConfigurations": [],
+    "apiConfigurations": [],
+    "layoutProperties": {
+      "labelPlacement": "top",
+      "width": null,
+      "height": null,
+      "css": {
+        "customClassName": "",
+        "configuration": [],
+        "themeClass": ""
+      },
+      "orientation": null
+    }
   }
 }
