@@ -18,6 +18,7 @@ import { StackblitzEditorComponent } from './components/stackblitz-editor/stackb
 import { IMPORT_MODULES } from './constant/stackblitz-constant';
 import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
+import { CardListComponent } from './components/card-list/card-list.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import CustomPreset from './custom-theme';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent
+        StackblitzEditorComponent,
+        CardListComponent,
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -43,7 +45,8 @@ import CustomPreset from './custom-theme';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent
+        GenerateWithAiComponent,
+        CardListComponent
     ],
     providers: [
         DialogService,
