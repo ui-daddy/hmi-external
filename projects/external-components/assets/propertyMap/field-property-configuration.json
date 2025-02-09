@@ -245,7 +245,29 @@
         "hiddenBaseProperties": ["label"],
         "hiddenLayoutProperties": ["orientation", "themeClass"],
         "hiddenExpressionProperties":["required", "readOnly", "disabled"],
-        "customAttributes": [],
+        "customAttributes": [
+            {
+                "propertyName": "cardList",
+                "defaultValueMapping": "cardList",
+                "type": "textarea",
+                "label": "Card List Array",
+                "placeholder": "Enter card list array title, thumbnail path"
+            },
+            {
+                "propertyName": "editBtnLabel",
+                "defaultValueMapping": "editBtnLabel",
+                "type": "text",
+                "label": "Edit Button Label",
+                "placeholder": "Enter edit button label"
+            },
+            {
+                "propertyName": "previewBtnLabel",
+                "defaultValueMapping": "previewBtnLabel",
+                "type": "text",
+                "label": "Preview Button Label",
+                "placeholder": "Enter preview button label"
+            }
+        ],
         "customEvent": []    
     }
 ]
