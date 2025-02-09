@@ -16,3 +16,5 @@ export * from 'primeng/checkbox';
 export * from 'primeng/calendar';
 export {ToggleButtonModule, ToggleButton} from 'primeng/togglebutton';
 export * from './lib/primeng-selectors/util/util';
+export * from './lib/primeng-selectors/components/generate-with-ai/generate-with-ai.component';
+ 

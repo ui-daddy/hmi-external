@@ -1,0 +1,24 @@
+{
+    "footer-dashboard": [
+        {
+            "baseProperties": {
+                "name": "copyright",
+                "type": "staticText",
+                "id": "copyright"
+            },
+            "value": "©2024 Company Name",
+            "layoutProperties": {
+                "css": {
+                    "configuration": {
+                        "selectorName": ".footer__copyright",
+                        "xs": {
+                            "border-top": "1px solid #ced4da",
+                            "padding": "8px"
+                        }
+                    },
+                    "customClassName": "footer__copyright"
+                }
+            }
+        }
+    ]
+}

@@ -10,13 +10,17 @@
 }
 
 .filter-group-container {
-    button.filter-button.p-element {
+    button.filter-button {
         width: 42px;
         height: 42px;
     }
     
-    button.filter-button.p-element span {
+    button.filter-button span {
         font-size: 16px;
+    }
+    button.filter-button span.p-button-label {
+        font-weight: 400;
+        padding-left: 10px;
     }
 }
 
@@ -42,9 +46,10 @@
 .dropdown-event-container {
     padding: 20px;
     input {
+        width: 200px;
         margin-bottom: 20px;
     }
-    .p-element + .p-element,
+    p-button + p-button,
     label + label {
         margin-left: 20px;
     }
@@ -104,7 +109,7 @@
     }
 
     .filter-menu-popup {
-        .p-menuitem-text::after {
+        .p-menu-item-label::after {
             content: ">";
             position: absolute;
             right: 10px;

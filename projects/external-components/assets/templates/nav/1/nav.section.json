@@ -1,0 +1,33 @@
+{
+    "layout": [
+        {
+            "id": "dn-0",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "nav-menu-section",
+                    "configuration": [
+                        {
+                            "selectorName": ".nav-menu-section",
+                            "xs": {
+                                "box-shadow": "0 19px 34px -15px #d2d2f2",
+                                "background": "white"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": []
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "layout": [
+        {
+            "id": "db-9",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "12",
+                        "md": "12",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "background-image",
+                    "configuration": [
+                        {
+                            "selectorName": ".background-image",
+                            "xs": {
+                                "background-size": "100%",
+                                "background-repeat": "no-repeat",
+                                "background-image": "url(assets/images/mountain.jpg)",
+                                "background-position": "center center",
+                                "height": "100vh"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-0",
+                    "type": "form",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "6:6",
+                                "md": "6:6",
+                                "sm": "6:6",
+                                "xs": "6:6"
+                            },
+                            "count": "2"
+                        },
+                        "css": {
+                            "customClassName": "form section-card__center",
+                            "configuration": [
+                                {
+                                    "selectorName": ".form",
+                                    "xs": {
+                                        "width": "600px",
+                                        "top": "50%",
+                                        "left": "50%",
+                                        "background": "#e9e9e9",
+                                        "padding": "0"
+                                    }
+                                }
+                            ],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": [
+                        {
+                            "id": "db-1",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "left-container",
+                                    "configuration": [
+                                        {
+                                            "selectorName": ".left-container",
+                                            "xs": {
+                                                "background-image": "url(assets/images/mountain.jpg)",
+                                                "background-position": "center center",
+                                                "height": "100%",
+                                                "border-top-left-radius": "15px",
+                                                "border-bottom-left-radius": "15px"
+                                            }
+                                        }
+                                    ],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": []
+                        },
+                        {
+                            "id": "db-2",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "12",
+                                        "md": "12",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "right-container",
+                                    "configuration": [
+                                        {
+                                            "selectorName": ".right-container",
+                                            "xs": {
+                                                "padding-left": "0"
+                                            }
+                                        }
+                                    ],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
