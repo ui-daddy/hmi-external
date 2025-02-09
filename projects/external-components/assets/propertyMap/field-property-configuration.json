@@ -233,5 +233,19 @@
             "value": "savecomponent",
             "label": "Save"
         }]    
+    },
+    {
+        "widgetList": [
+            {
+                "name": "CardListComponent",
+                "icon": "bi bi-box",
+                "label": "CardListComponent"
+            }
+        ],
+        "hiddenBaseProperties": ["label"],
+        "hiddenLayoutProperties": ["orientation", "themeClass"],
+        "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+        "customAttributes": [],
+        "customEvent": []    
     }
 ]
