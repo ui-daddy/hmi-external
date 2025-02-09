@@ -43,5 +43,48 @@
       "events": [],
       "expressionProperties": {}
     }
+  ],
+  "db-3": [
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "db-4"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "CardListComponent",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "cardList": [
+          {
+            "title": "Project",
+            "thumbnail": "./assets/images/buildings.jpg"
+          }
+        ],
+        "showPrimaryBtn": true,
+        "primaryBtnLabel": "Edit",
+        "showSecondaryBtn": true,
+        "secondaryBtnLabel": "Preview",
+        "apiConfig": {
+          "name": "myApps",
+          "url": "/rest/getProjects",
+          "method": "GET",
+          "params": {},
+          "onSuccess": {
+            "apiDataAccessor": "projects"
+          }
+        }
+      }
+    }
   ]
 }
