@@ -1,0 +1,405 @@
+{
+    "loginForm": [],
+    "loginInfo": [
+        {
+            "value": "Login",
+            "baseProperties": {
+                "name": "signIn",
+                "id": "signIn",
+                "type": "staticText",
+                "formName": "loginForm"
+            },
+            "expressionProperties": {
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "element-child",
+                    "configuration": [
+                        {
+                            "selectorName": ".element-child",
+                            "xs": {
+                                "margin-bottom": "35px",
+                                "font-size": "39px"
+                            }
+                        },
+                        {
+                            "selectorName": ".element-child .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "color": "#333",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-4",
+                "name": "username",
+                "label": "Username",
+                "formName": "login-form"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-3",
+                "name": "password",
+                "label": "Password",
+                "formName": "login-form"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null,
+            "placeholder": null,
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "link",
+                "id": "db-5",
+                "name": "forgotPwd",
+                "label": "Forgot Password?"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "forgot-pwd",
+                    "configuration": [
+                        {
+                            "selectorName": ".forgot-pwd .dynamic-style-child",
+                            "xs": {
+                                "color": "#666",
+                                "font-size": "14px"
+                            }
+                        },
+                        {
+                            "selectorName": ".forgot-pwd",
+                            "xs": {
+                                "justify-content": "end"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ],
+    "loginButtons": [
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "db-6",
+                "name": "loginBtn",
+                "label": "LOGIN"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "login-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child",
+                            "xs": {
+                                "width": "100%",
+                                "font-size": "16px",
+                                "color": "#fff",
+                                "background": "-webkit-linear-gradient(-135deg,#00dbde,#fc00ff)",
+                                "border": "1px solid white",
+                                "border-radius": "25px",
+                                "padding": "12px",
+                                "transition": "all .4s",
+                                "margin-top": "40px"
+                            }
+                        },
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child:hover",
+                            "xs": {
+                                "background": "-webkit-linear-gradient(0deg,#00dbde,#fc00ff)"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-7",
+                "name": "signUpTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "sign-up-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".sign-up-txt",
+                            "xs": {
+                                "color": "#666",
+                                "font-size": "14px",
+                                "margin-top": "40px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Or Sign Up Using",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-8": [
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "db-9",
+                "name": "fb-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "fb-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".fb-icon",
+                            "xs": {
+                                "cursor": "pointer",
+                                "color": "#fff",
+                                "font-size": "25px",
+                                "justify-content": "center",
+                                "align-items": "center",
+                                "background": "#3b5998",
+                                "border-radius": "50%",
+                                "height": "50px",
+                                "width": "50px",
+                                "display": "flex"
+                            }
+                        },
+                        {
+                            "selectorName": ".fb-icon:hover",
+                            "xs": {
+                                "background": "#333"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fab fa-facebook-f"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "db-10",
+                "name": "tweet-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "tweet-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".tweet-icon",
+                            "xs": {
+                                "cursor": "pointer",
+                                "color": "#fff",
+                                "font-size": "25px",
+                                "justify-content": "center",
+                                "align-items": "center",
+                                "background": "#1da1f2",
+                                "border-radius": "50%",
+                                "height": "50px",
+                                "width": "50px",
+                                "display": "flex"
+                            }
+                        },
+                        {
+                            "selectorName": ".tweet-icon:hover",
+                            "xs": {
+                                "background": "#333"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fab fa-twitter"
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "db-11",
+                "name": "google-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "google-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".google-icon",
+                            "xs": {
+                                "cursor": "pointer",
+                                "color": "#fff",
+                                "justify-content": "center",
+                                "align-items": "center",
+                                "background": "#ea4335",
+                                "border-radius": "50%",
+                                "height": "50px",
+                                "width": "50px",
+                                "display": "flex",
+                                "font-size": "25px"
+                            }
+                        },
+                        {
+                            "selectorName": ".google-icon:hover",
+                            "xs": {
+                                "background": "#333"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fab fa-google"
+        }
+    ],
+    "db-12": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-13",
+                "name": "signUpTxt2"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "sign-up-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".sign-up-txt",
+                            "xs": {
+                                "font-size": "14px",
+                                "color": "#666"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Or Sign Up Using",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "link",
+                "id": "db-14",
+                "name": "custom-signup-link",
+                "label": "SIGN UP"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "custom-signup-link",
+                    "configuration": [
+                        {
+                            "selectorName": ".custom-signup-link .dynamic-style-child",
+                            "xs": {
+                                "color": "#333",
+                                "font-size": "14px"
+                            }
+                        },
+                        {
+                            "selectorName": ".custom-signup-link",
+                            "xs": {
+                                "justify-content": "center"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ]
+}

@@ -1,0 +1,233 @@
+{
+    "dh-18": [],
+    "dh-16": [
+        {
+            "baseProperties": {
+                "type": "staticImage",
+                "id": "dh-1",
+                "name": "headerLogo"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-logo",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-logo .dynamic-style-child",
+                            "xs": {
+                                "width": "45px",
+                                "height": "45px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+            "altText": null,
+            "showDownload": null
+        }
+    ],
+    "dh-15": [
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dh-11",
+                "name": "header-search-textbox"
+            },
+            "layoutProperties": {
+                "labelPlacement": "top",
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-search-txtbox",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-search-txtbox .field-label",
+                            "xs": {
+                                "display": "none"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {
+                "visible": "showHeaderSearch == \"true\""
+            },
+            "value": null,
+            "placeholder": "Search",
+            "accessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dh-13",
+                "name": "header-close-search",
+                "label": "Close"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": "btn-light"
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [
+                                {
+                                    "varName": "showHeaderSearch",
+                                    "staticData": "false",
+                                    "cache": true,
+                                    "responseAccessor": ""
+                                }
+                            ],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visible": "showHeaderSearch == \"true\""
+            }
+        },
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "dh-2",
+                "name": "header-search-icon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-search-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-search-icon",
+                            "xs": {
+                                "color": "black",
+                                "text-align": "right",
+                                "line-height": "45px",
+                                "cursor": "pointer"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "SET_SHARED_DATA",
+                            "url": "",
+                            "condition": "1==1",
+                            "fileName": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "fieldAccessor": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [
+                                {
+                                    "varName": "showHeaderSearch",
+                                    "staticData": "true",
+                                    "cache": true,
+                                    "responseAccessor": ""
+                                }
+                            ],
+                            "apiConfig": null
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {
+                "visible": "showHeaderSearch == \"false\""
+            },
+            "iconClass": "fas fa-search"
+        }
+    ],
+    "dh-14": [
+        {
+            "baseProperties": {
+                "type": "nav-menu",
+                "id": "dh-17",
+                "name": "header-nav-menu",
+                "label": "Your Name"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-nav-menu",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-nav-menu .nav-item",
+                            "xs": {
+                                "text-align": "right"
+                            }
+                        },
+                        {
+                            "selectorName": ".nav-link",
+                            "xs": {
+                                "color": "black",
+                                "font-weight": "normal"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "type": "link",
+                    "label": "Log Out"
+                }
+            ],
+            "icon": null,
+            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png"
+        }
+    ]
+}
