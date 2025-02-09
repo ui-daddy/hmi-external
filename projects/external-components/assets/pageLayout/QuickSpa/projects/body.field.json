@@ -50,8 +50,32 @@
         "type": "dynamicField",
         "id": "db-4"
       },
-      "layoutProperties": {},
-      "libraryComponent": "CardListComponent"
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "CardListComponent",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "cardList": [
+          {
+            "title": "Project",
+            "thumbnail": "./assets/images/buildings.jpg"
+          }
+        ],
+        "showPrimaryBtn": true,
+        "primaryBtnLabel": "Edit",
+        "showSecondaryBtn": true,
+        "secondaryBtnLabel": "Preview"
+      }
     }
   ]
 }
