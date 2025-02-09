@@ -278,7 +278,14 @@
                 "type": "text",
                 "label": "Secondary Button Label",
                 "placeholder": "Enter secondary button label"
-            }            
+            },
+            {
+                "propertyName": "apiConfig",
+                "defaultValueMapping": "apiConfig",
+                "type": "textarea",
+                "label": "API Config",
+                "placeholder": "Enter API configuration"
+            }
         ],
         "customEvent": []    
     }
