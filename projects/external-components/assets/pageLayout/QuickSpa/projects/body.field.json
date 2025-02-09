@@ -74,7 +74,16 @@
         "showPrimaryBtn": true,
         "primaryBtnLabel": "Edit",
         "showSecondaryBtn": true,
-        "secondaryBtnLabel": "Preview"
+        "secondaryBtnLabel": "Preview",
+        "apiConfig": {
+          "name": "projectList",
+          "url": "https://fakestoreapi.com/products",
+          "method": "GET",
+          "params": {},
+          "onSuccess": {
+            "apiDataAccessor": "cardList"
+          }
+        }
       }
     }
   ]
