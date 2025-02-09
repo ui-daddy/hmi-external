@@ -43,5 +43,15 @@
       "events": [],
       "expressionProperties": {}
     }
+  ],
+  "db-3": [
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "db-4"
+      },
+      "layoutProperties": {},
+      "libraryComponent": "CardListComponent"
+    }
   ]
 }
