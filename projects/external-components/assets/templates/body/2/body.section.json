@@ -1,0 +1,662 @@
+{
+    "layout": [
+        {
+            "id": "db-0",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": 1
+                },
+                "css": {
+                    "customClassName": "welcome-section",
+                    "configuration": [
+                        {
+                            "selectorName": ".welcome-section",
+                            "xs": {
+                                "margin-top": "16px",
+                                "margin-bottom": "16px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": []
+        },
+        {
+            "id": "db-48",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "8:4",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": "2"
+                },
+                "css": {
+                    "customClassName": "padding-0",
+                    "configuration": [
+                        {
+                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                            "xs": {
+                                "padding": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-25",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-39",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        },
+        {
+            "id": "db-43",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "4:8",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": "21"
+                },
+                "css": {
+                    "customClassName": "padding-0",
+                    "configuration": [
+                        {
+                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                            "xs": {
+                                "padding": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-37",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-26",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        },
+        {
+            "id": "db-50",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "6:6",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": "2"
+                },
+                "css": {
+                    "customClassName": "padding-0",
+                    "configuration": [
+                        {
+                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                            "xs": {
+                                "padding": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-4",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": [
+                        {
+                            "id": "db-8",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "auto:6",
+                                        "md": "auto:6",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": "2"
+                                },
+                                "css": {
+                                    "customClassName": "recent-earning-sec1",
+                                    "configuration": [
+                                        {
+                                            "selectorName": ".recent-earning-sec1",
+                                            "xs": {
+                                                "margin-top": "22px",
+                                                "border-bottom": "1px solid #e9e9e9"
+                                            }
+                                        }
+                                    ],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": [
+                                {
+                                    "id": "db-33",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "auto",
+                                                "md": "auto",
+                                                "sm": "auto",
+                                                "xs": "auto"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "customClassName": "padding-0",
+                                            "configuration": [
+                                                {
+                                                    "selectorName": ".padding-0 > .row > div[class*=col-]",
+                                                    "xs": {
+                                                        "padding": "0"
+                                                    }
+                                                }
+                                            ],
+                                            "themeClass": ""
+                                        }
+                                    },
+                                    "sectionList": [
+                                        {
+                                            "id": "db-35",
+                                            "type": "content",
+                                            "layout": {
+                                                "column": {
+                                                    "ratio": {
+                                                        "lg": "auto",
+                                                        "md": "auto",
+                                                        "sm": "auto",
+                                                        "xs": "auto"
+                                                    },
+                                                    "count": 1
+                                                },
+                                                "css": {
+                                                    "customClassName": "padding-0",
+                                                    "configuration": [
+                                                        {
+                                                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                                                            "xs": {
+                                                                "padding": "0"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "themeClass": ""
+                                                }
+                                            },
+                                            "sectionList": []
+                                        },
+                                        {
+                                            "id": "db-34",
+                                            "type": "content",
+                                            "layout": {
+                                                "column": {
+                                                    "ratio": {
+                                                        "lg": "12",
+                                                        "md": "12",
+                                                        "sm": "12",
+                                                        "xs": "12"
+                                                    },
+                                                    "count": 1
+                                                },
+                                                "css": {
+                                                    "customClassName": "cmb-5 mt-2",
+                                                    "configuration": [
+                                                        {
+                                                            "selectorName": ".cmb-5 > .row > div[class*=col-]",
+                                                            "xs": {
+                                                                "margin-bottom": "5px"
+                                                            }
+                                                        },
+                                                        {
+                                                            "selectorName": ".cmb-5",
+                                                            "xs": {
+                                                                "property1": "value"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "themeClass": ""
+                                                }
+                                            },
+                                            "sectionList": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "db-9",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "4:4:4",
+                                        "md": "4:4:4",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "recent-earning-sec2",
+                                    "configuration": [
+                                        {
+                                            "selectorName": ".recent-earning-sec2",
+                                            "xs": {
+                                                "padding": "25px 0 20px 0",
+                                                "border-bottom": "1px solid #e9e9e9"
+                                            }
+                                        }
+                                    ],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": [
+                                {
+                                    "id": "db-13",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "customClassName": "p-0",
+                                            "configuration": [],
+                                            "themeClass": ""
+                                        }
+                                    },
+                                    "sectionList": []
+                                },
+                                {
+                                    "id": "db-14",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "customClassName": "p-0",
+                                            "configuration": [],
+                                            "themeClass": ""
+                                        }
+                                    },
+                                    "sectionList": []
+                                },
+                                {
+                                    "id": "db-12",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "customClassName": "p-0",
+                                            "configuration": [],
+                                            "themeClass": ""
+                                        }
+                                    },
+                                    "sectionList": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "db-52",
+                            "type": "content",
+                            "layout": {
+                                "column": {
+                                    "ratio": {
+                                        "lg": "6:6",
+                                        "md": "6:6",
+                                        "sm": "12",
+                                        "xs": "12"
+                                    },
+                                    "count": 1
+                                },
+                                "css": {
+                                    "customClassName": "p-2",
+                                    "configuration": [
+                                        {
+                                            "selectorName": "#db-54",
+                                            "sm": {
+                                                "display": "flex",
+                                                "height": "100%",
+                                                "align-items": "center"
+                                            }
+                                        }
+                                    ],
+                                    "themeClass": ""
+                                }
+                            },
+                            "sectionList": [
+                                {
+                                    "id": "db-53",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            }
+                                        },
+                                        "css": {
+                                            "configuration": [],
+                                            "customClassName": null
+                                        }
+                                    },
+                                    "sectionList": []
+                                },
+                                {
+                                    "id": "db-54",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "customClassName": "",
+                                            "configuration": [
+                                                {
+                                                    "selectorName": ".temp-class-3",
+                                                    "xs": {
+                                                        "property1": "value"
+                                                    }
+                                                }
+                                            ],
+                                            "themeClass": ""
+                                        }
+                                    },
+                                    "sectionList": []
+                                },
+                                {
+                                    "id": "db-58",
+                                    "type": "content",
+                                    "layout": {
+                                        "column": {
+                                            "ratio": {
+                                                "lg": "12",
+                                                "md": "12",
+                                                "sm": "12",
+                                                "xs": "12"
+                                            },
+                                            "count": 1
+                                        },
+                                        "css": {
+                                            "customClassName": "avg-price-section",
+                                            "configuration": [
+                                                {
+                                                    "selectorName": ".avg-price-section",
+                                                    "xs": {
+                                                        "position": "absolute",
+                                                        "top": "-238px"
+                                                    }
+                                                },
+                                                {
+                                                    "selectorName": ".avg-price-section",
+                                                    "sm": {
+                                                        "top": "-135px"
+                                                    }
+                                                },
+                                                {
+                                                    "selectorName": ".avg-price-section .row div[class*=col-]",
+                                                    "xs": {
+                                                        "margin-bottom": "0"
+                                                    }
+                                                }
+                                            ],
+                                            "themeClass": ""
+                                        }
+                                    },
+                                    "sectionList": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "db-41",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        },
+        {
+            "id": "db-23",
+            "type": "content",
+            "layout": {
+                "column": {
+                    "ratio": {
+                        "lg": "8:4",
+                        "md": "6:6",
+                        "sm": "12",
+                        "xs": "12"
+                    },
+                    "count": "2"
+                },
+                "css": {
+                    "customClassName": "padding-0",
+                    "configuration": [
+                        {
+                            "selectorName": ".abc<br>",
+                            "xs": {}
+                        },
+                        {
+                            "selectorName": ".temp-class-2",
+                            "sm": {
+                                "property1": "value"
+                            }
+                        },
+                        {
+                            "selectorName": ".padding-0 > .row > div[class*=col-]",
+                            "xs": {
+                                "padding-left": "0",
+                                "padding-right": "0"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                }
+            },
+            "sectionList": [
+                {
+                    "id": "db-5",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                },
+                {
+                    "id": "db-30",
+                    "type": "content",
+                    "layout": {
+                        "column": {
+                            "ratio": {
+                                "lg": "12",
+                                "md": "12",
+                                "sm": "12",
+                                "xs": "12"
+                            },
+                            "count": 1
+                        },
+                        "css": {
+                            "customClassName": "hmi-section-card",
+                            "configuration": [],
+                            "themeClass": ""
+                        }
+                    },
+                    "sectionList": []
+                }
+            ]
+        }
+    ]
+}

@@ -97,7 +97,12 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   exportPdf() {
-    import("jspdf").then((jsPDF:any) => {
+    if(this.fieldObj.customAttributes.pdfDownloadConfig && this.fieldObj.customAttributes.pdfDownloadConfig.url){    
+      this.customApiCall(this.fieldObj.customAttributes.pdfDownloadConfig).subscribe((data: Blob) => {
+       
+      });
+    } else{
+      import("jspdf").then((jsPDF:any) => {
         import("jspdf-autotable").then((autotable:any) => {
             const exportColumns:any[] = [];
             this.fieldObj.customAttributes.columns.forEach((v:any)=> {
@@ -120,6 +125,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
             doc.save(fileName+'.pdf');
         })
     })
+    }    
   }
 
   printPreview() {
@@ -139,35 +145,42 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   exportExcel() {
-      import("xlsx").then(xlsx => {
-          const customHeaders: string[] = []; // list of custom header names
-          const exportKeys: string[] = []; // list of keys to be exported in excel
-          this.fieldObj.customAttributes.columns.forEach((v:any)=> {
-            if(v.accessor) {
-              customHeaders.push(v.colName);
-              exportKeys.push(v.accessor);
-            }
-          });
-
-          // rows obj keys must follow exportKeys value
-          const exportList = this.data.map((obj:any) => {
-            const newObj:any = {};
-            for (const keyName of exportKeys) {
-              newObj[keyName] = obj[keyName]
-            }
-            return newObj;
-          });
-
-          const worksheet = xlsx.utils.json_to_sheet(exportList);
-          const workbook = xlsx.utils.book_new();
-          xlsx.utils.book_append_sheet(workbook, worksheet, "Data");
-          /* replace first row */
-          xlsx.utils.sheet_add_aoa(worksheet, [customHeaders], { origin: "A1" });
-   
-          const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
-          this.saveAsExcelFile(excelBuffer, this.fieldObj.customAttributes.downloadExcelFileName || 'downloadedExcel');
-
+    if(this.fieldObj.customAttributes.excelDownloadConfig && this.fieldObj.customAttributes.excelDownloadConfig.url){
+      this.customApiCall(this.fieldObj.customAttributes.excelDownloadConfig).subscribe((data: any) => {
+       
       });
+    } else {
+      import("xlsx").then(xlsx => {
+        const customHeaders: string[] = []; // list of custom header names
+        const exportKeys: string[] = []; // list of keys to be exported in excel
+        this.fieldObj.customAttributes.columns.forEach((v:any)=> {
+          if(v.accessor) {
+            customHeaders.push(v.colName);
+            exportKeys.push(v.accessor);
+          }
+        });
+
+        // rows obj keys must follow exportKeys value
+        const exportList = this.data.map((obj:any) => {
+          const newObj:any = {};
+          for (const keyName of exportKeys) {
+            newObj[keyName] = obj[keyName]
+          }
+          return newObj;
+        });
+
+        const worksheet = xlsx.utils.json_to_sheet(exportList);
+        const workbook = xlsx.utils.book_new();
+        xlsx.utils.book_append_sheet(workbook, worksheet, "Data");
+        /* replace first row */
+        xlsx.utils.sheet_add_aoa(worksheet, [customHeaders], { origin: "A1" });
+ 
+        const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
+        this.saveAsExcelFile(excelBuffer, this.fieldObj.customAttributes.downloadExcelFileName || 'downloadedExcel');
+
+    });
+    }
+      
   }
 
   saveAsExcelFile(buffer: any, fileName: string): void {
