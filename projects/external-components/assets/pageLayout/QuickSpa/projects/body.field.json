@@ -32,7 +32,7 @@
               "fieldAccessor": "",
               "messagetype": "",
               "messageText": "",
-              "target": "add-project-modal",
+              "target": "db-7",
               "timer": null,
               "formName": "",
               "componentName": "",
@@ -84,6 +84,109 @@
           }
         }
       }
+    }
+  ],
+  "db-7": [],
+  "db-8": [
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-9",
+        "label": "Project Name",
+        "name": "projectName",
+        "formName": "addProjectForm"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {
+        "requiredValue": "true"
+      },
+      "value": null,
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "submit",
+        "id": "db-10",
+        "label": "Save",
+        "formName": "addProjectForm",
+        "name": "saveBtn"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "addProjectAPI",
+                "url": "/rest/addProject",
+                "method": "POST",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [
+                  {
+                    "paramName": "title",
+                    "mappedField": "db-9",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  }
+                ],
+                "onSuccess": {
+                  "showSuccessMessage": true
+                },
+                "onError": {
+                  "showErrorMessage": true
+                },
+                "beforeSubmit": {
+                  "action": []
+                },
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": false,
+                "isWithCredentials": false
+              }
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
     }
   ]
 }
