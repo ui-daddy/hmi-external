@@ -90,6 +90,27 @@
   "db-8": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-11"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "fw-bold",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Add Your Project",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "text",
         "id": "db-9",
         "label": "Project Name",
