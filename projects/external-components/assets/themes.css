@@ -104,6 +104,6 @@ header.header-container {
     margin-bottom: 0 !important;
 }
 
-.project-title-field .field-label {
+.project-title-field .input-label__placement-left .field-label {
   width: auto;
 }
