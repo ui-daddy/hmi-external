@@ -110,5 +110,51 @@
       "title": "homepage",
       "layoutProperties": null
     }
+  },
+  "develop-app-using-ai": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "develop-app-using-ai",
+      "layoutProperties": null
+    }
   }
 }
