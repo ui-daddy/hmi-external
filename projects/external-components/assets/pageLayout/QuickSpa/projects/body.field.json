@@ -1,50 +1,49 @@
 {
-  "db-0": [
-    {
-      "baseProperties": {
-        "type": "email",
-        "id": "db-1",
-        "label": ""
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {},
-      "value": null,
-      "placeholder": "Enter Project Name",
-      "accessor": null
-    },
-    {
-      "baseProperties": {
-        "type": "submit",
-        "id": "db-2",
-        "label": "Create Project"
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {}
-    }
-  ],
   "db-3": [
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-6",
+        "label": "Add Project"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "float-end mt-2 me-2",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "OPEN_MODAL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "add-project-modal",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
     {
       "baseProperties": {
         "type": "dynamicField",
