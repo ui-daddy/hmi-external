@@ -186,7 +186,7 @@
                 "payloadParams": [
                   {
                     "paramName": "title",
-                    "mappedField": "db-9",
+                    "mappedField": "projectName",
                     "mappedValue": "",
                     "valueFormat": ""
                   }
