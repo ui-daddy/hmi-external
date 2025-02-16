@@ -142,6 +142,31 @@
     },
     {
       "baseProperties": {
+        "type": "text",
+        "id": "db-12",
+        "name": "branchName",
+        "formName": "addProjectForm",
+        "label": "Branch Name"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
         "type": "submit",
         "id": "db-10",
         "label": "Save",
