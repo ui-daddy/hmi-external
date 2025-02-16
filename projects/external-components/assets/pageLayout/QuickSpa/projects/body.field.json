@@ -4,7 +4,8 @@
       "baseProperties": {
         "type": "button",
         "id": "db-6",
-        "label": "Add Project"
+        "label": "Add Project",
+        "name": "addProjectBtn"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -47,7 +48,8 @@
     {
       "baseProperties": {
         "type": "dynamicField",
-        "id": "db-4"
+        "id": "db-4",
+        "name": "cardList"
       },
       "layoutProperties": {
         "labelPlacement": null,
