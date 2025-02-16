@@ -184,24 +184,38 @@
                 "payloadParams": [
                   {
                     "paramName": "title",
-                    "mappedField": "db-9",
+                    "mappedField": "db-11",
                     "mappedValue": "",
                     "valueFormat": ""
                   }
                 ],
-                "onSuccess": {
-                  "showSuccessMessage": true
-                },
-                "onError": {
-                  "showErrorMessage": true
-                },
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
                 "beforeSubmit": {
                   "action": []
                 },
-                "downloadFileName": "",
-                "responseType": "",
-                "encodePathAndQueryParams": false,
-                "isWithCredentials": false
+                "onSuccess": {
+                  "pageUrl": "",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": true,
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": []
+                },
+                "onError": {
+                  "pageUrl": "",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                }
               }
             }
           ]
