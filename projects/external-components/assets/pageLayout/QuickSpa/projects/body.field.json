@@ -151,8 +151,13 @@
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
-          "configuration": [],
+          "customClassName": "justify-content-center",
+          "configuration": [
+            {
+              "selectorName": ".temp-class-2",
+              "xs": {}
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
