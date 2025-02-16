@@ -3,15 +3,24 @@
     {
       "baseProperties": {
         "type": "staticImage",
-        "id": "dh-1"
+        "id": "dh-1",
+        "name": "headerLogo"
       },
       "layoutProperties": {
         "labelPlacement": null,
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
-          "configuration": [],
+          "customClassName": "header__logo",
+          "configuration": [
+            {
+              "selectorName": ".header__logo",
+              "xs": {
+                "justify-content": "flex-start",
+                "padding": "8px"
+              }
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null

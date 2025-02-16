@@ -4,7 +4,8 @@
       "baseProperties": {
         "type": "button",
         "id": "db-6",
-        "label": "Add Project"
+        "label": "Add Project",
+        "name": "addProjectBtn"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -47,7 +48,8 @@
     {
       "baseProperties": {
         "type": "dynamicField",
-        "id": "db-4"
+        "id": "db-4",
+        "name": "cardList"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -91,7 +93,9 @@
     {
       "baseProperties": {
         "type": "staticText",
-        "id": "db-11"
+        "id": "db-11",
+        "formName": "addProjectForm",
+        "name": "modalHeader"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -138,6 +142,60 @@
     },
     {
       "baseProperties": {
+        "type": "text",
+        "id": "db-12",
+        "name": "branchName",
+        "formName": "addProjectForm",
+        "label": "Branch Name"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {
+        "disabledValue": "true"
+      },
+      "value": "quick-spa-app",
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-13",
+        "name": "gitUrl",
+        "formName": "addProjectForm",
+        "label": "Fork Git Url"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {
+        "disabledValue": "true"
+      },
+      "value": "https://github.com/kp4499/hmi-external",
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
         "type": "submit",
         "id": "db-10",
         "label": "Save",
@@ -149,8 +207,13 @@
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
-          "configuration": [],
+          "customClassName": "justify-content-center",
+          "configuration": [
+            {
+              "selectorName": ".temp-class-2",
+              "xs": {}
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
@@ -184,24 +247,50 @@
                 "payloadParams": [
                   {
                     "paramName": "title",
-                    "mappedField": "db-9",
+                    "mappedField": "projectName",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "branchName",
+                    "mappedField": "branchName",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "forkUrl",
+                    "mappedField": "gitUrl",
                     "mappedValue": "",
                     "valueFormat": ""
                   }
                 ],
-                "onSuccess": {
-                  "showSuccessMessage": true
-                },
-                "onError": {
-                  "showErrorMessage": true
-                },
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
                 "beforeSubmit": {
                   "action": []
                 },
-                "downloadFileName": "",
-                "responseType": "",
-                "encodePathAndQueryParams": false,
-                "isWithCredentials": false
+                "onSuccess": {
+                  "pageUrl": "/develop-app-using-ai",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": true,
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": []
+                },
+                "onError": {
+                  "pageUrl": "/projects",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                }
               }
             }
           ]

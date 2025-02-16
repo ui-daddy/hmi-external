@@ -65,11 +65,11 @@
   "projects": {
     "headerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/header.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
     },
     "headerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/header.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
     },
     "field": {
       "fetchFromLocal": true,
@@ -81,11 +81,11 @@
     },
     "footerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/footer.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
     },
     "footerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/footer.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
     },
     "data": {
       "fetchFromLocal": true,
@@ -131,11 +131,11 @@
   "homepage": {
     "headerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/header.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
     },
     "headerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/header.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
     },
     "field": {
       "fetchFromLocal": true,
@@ -147,11 +147,11 @@
     },
     "footerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/footer.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
     },
     "footerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/footer.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
     },
     "data": {
       "fetchFromLocal": true,
@@ -177,11 +177,11 @@
   "develop-app-using-ai": {
     "headerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/header.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
     },
     "headerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/header.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
     },
     "field": {
       "fetchFromLocal": true,
@@ -193,11 +193,11 @@
     },
     "footerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/footer.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
     },
     "footerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/footer.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
     },
     "data": {
       "fetchFromLocal": true,
