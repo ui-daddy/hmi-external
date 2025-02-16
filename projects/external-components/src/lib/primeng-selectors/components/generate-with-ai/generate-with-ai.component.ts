@@ -12,6 +12,7 @@ import { deepClone } from '../../util/util';
 interface MessagePart {
   type: 'text' | 'code';
   content: string;
+  language?: string;
 }
 
 interface Message {
@@ -64,14 +65,18 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     this.scrollToBottom();
   }
 
-  preview(code: string): void {
+  preview(code: string, partIndex: number, messageIndex: number): void {
+    const dependencies = this.messages[messageIndex].parts.find(
+      part => part.type === 'code' && part.language === 'json'
+    )?.content || '{}';
     this.dialogService.open(StackblitzEditorComponent, {
       header: 'Page Preview',
       width: '100%',
-      data: code,
+      data: {code: code, dependencies: dependencies},
       height: "100vh",
       keepInViewport: true,
-      baseZIndex: 500
+      baseZIndex: 500,
+      contentStyle: { 'flex-grow': 1 },
     }).onClose.subscribe((data: any) =>{
       if (data?.action === "SAVE") {
         this.createComponent(data.code);
@@ -125,7 +130,7 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
 
   private parseMessage(message: string): MessagePart[] {
     const parts: MessagePart[] = [];
-    const regex = /```(?:\w+)?\n([\s\S]*?)```/g;
+    const regex = /```([\w]+)?\n([\s\S]*?)```/g;
     let lastIndex = 0;
     let match;
 
@@ -138,7 +143,8 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
       }
       parts.push({
         type: 'code',
-        content: match[1].trim()
+        content: match[2].trim(),
+        language: match[1] || ''
       });
       lastIndex = regex.lastIndex;
     }

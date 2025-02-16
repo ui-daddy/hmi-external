@@ -1,7 +1,7 @@
 <div class="chat-container">
   <div class="messages" #messagesContainer>
-    <div *ngFor="let message of messages" [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
-      <ng-container *ngFor="let part of message.parts">
+    <div *ngFor="let message of messages; let messageIndex = index;" [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
+      <ng-container *ngFor="let part of message.parts; let partIndex = index;">
         <div *ngIf="part.type === 'text'" class="message-text">{{ part.content }}</div>
         <div *ngIf="part.type === 'code'"  class="code-holder ">
           <div class="button-code">
@@ -15,7 +15,7 @@
                 <i class="pi pi-plus"></i>
                 Save
               </div>
-              <div class="code-import-button" (click)="preview(part.content)" pTooltip="Preview code on StackBlitz" tooltipPosition="top">
+              <div class="code-import-button" (click)="preview(part.content, partIndex, messageIndex)" pTooltip="Preview code on StackBlitz" tooltipPosition="top">
                 <i class="pi pi-eye"></i>
                 Preview
               </div>
