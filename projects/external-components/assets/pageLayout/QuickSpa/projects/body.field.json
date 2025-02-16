@@ -91,7 +91,9 @@
     {
       "baseProperties": {
         "type": "staticText",
-        "id": "db-11"
+        "id": "db-11",
+        "formName": "addProjectForm",
+        "name": "modalHeader"
       },
       "layoutProperties": {
         "labelPlacement": null,
