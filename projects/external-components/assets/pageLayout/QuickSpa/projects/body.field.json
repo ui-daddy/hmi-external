@@ -160,8 +160,37 @@
         "orientation": null
       },
       "events": [],
-      "expressionProperties": {},
-      "value": null,
+      "expressionProperties": {
+        "disabledValue": "true"
+      },
+      "value": "quick-spa-app",
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-13",
+        "name": "gitUrl",
+        "formName": "addProjectForm",
+        "label": "Fork Git Url"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {
+        "disabledValue": "true"
+      },
+      "value": "https://github.com/kp4499/hmi-external",
       "placeholder": null,
       "accessor": null
     },
@@ -219,6 +248,18 @@
                   {
                     "paramName": "title",
                     "mappedField": "projectName",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "branchName",
+                    "mappedField": "branchName",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "forkUrl",
+                    "mappedField": "gitUrl",
                     "mappedValue": "",
                     "valueFormat": ""
                   }
