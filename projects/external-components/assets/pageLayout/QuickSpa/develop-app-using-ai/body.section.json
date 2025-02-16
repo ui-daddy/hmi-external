@@ -1,17 +1,16 @@
 {
   "layout": [
     {
-      "id": "dh-0",
+      "id": "db-0",
       "type": "content",
       "layout": {
         "column": {
           "ratio": {
-            "lg": "4:6:2",
-            "md": "4:6:2",
-            "sm": "4:6:2",
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
             "xs": "12"
-          },
-          "count": "3"
+          }
         },
         "css": {
           "configuration": [],
