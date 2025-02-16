@@ -184,7 +184,7 @@
                 "payloadParams": [
                   {
                     "paramName": "title",
-                    "mappedField": "db-11",
+                    "mappedField": "projectName",
                     "mappedValue": "",
                     "valueFormat": ""
                   }
@@ -196,7 +196,7 @@
                   "action": []
                 },
                 "onSuccess": {
-                  "pageUrl": "",
+                  "pageUrl": "/develop-app-using-ai",
                   "deleteTableRow": false,
                   "showSuccessMessage": true,
                   "sharedData": [],
@@ -207,7 +207,7 @@
                   "actions": []
                 },
                 "onError": {
-                  "pageUrl": "",
+                  "pageUrl": "/projects",
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
