@@ -1,0 +1,61 @@
+{
+    "loginInfo": [
+        {
+            "value": "Sign in",
+            "baseProperties": {
+                "name": "signIn",
+                "id": "signIn",
+                "type": "staticText",
+                "formName": "loginForm"
+            },
+            "expressionProperties": {
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": [{
+                        "selectorName": ".element-child",
+                        "xs": {
+                            "margin-bottom": "35px",
+                            "font-size": "30px"
+                        }
+                    },
+                    {
+                        "selectorName": ".element-child .dynamic-style-child",
+                        "xs": {
+                            "text-align": "center",
+                            "color": "white"
+                        }
+                    }],
+                    "customClassName": "element-child"
+                }
+            }
+        }
+    ],
+    "loginButtons": [
+        {
+            "baseProperties": {
+                "id": "githubLoginLink",
+                "name": "githubLoginLink",
+                "type": "link",
+                "formName": "",
+                "label": "Log in with GitHub"
+            },
+            "accessor": "",
+            "href": "https://github.com/login/oauth/authorize?client_id=5260dbf9a0fefd183580&scope=repo&state=aRandomUnguessableString&allow_signup=true",
+            "layoutProperties": {
+                "css": {
+                    "customClassName": "github__login-link",
+                    "configuration": {
+                        "selectorName": ".github__login-link",
+                        "xs": {
+                            "margin": "10px",
+                            "justify-content":"center"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
