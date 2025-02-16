@@ -65,11 +65,11 @@
   "projects": {
     "headerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/header.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header.field.json"
     },
     "headerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/header.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header.section.json"
     },
     "field": {
       "fetchFromLocal": true,
@@ -81,11 +81,11 @@
     },
     "footerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/footer.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer.field.json"
     },
     "footerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/footer.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer.section.json"
     },
     "data": {
       "fetchFromLocal": true,
