@@ -65,7 +65,7 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     this.scrollToBottom();
   }
 
-  preview(code: string, partIndex: number, messageIndex: number): void {
+  preview(code: string, messageIndex: number): void {
     const dependencies = this.messages[messageIndex].parts.find(
       part => part.type === 'code' && part.language === 'json'
     )?.content || '{}';
@@ -79,7 +79,7 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
       contentStyle: { 'flex-grow': 1 },
     }).onClose.subscribe((data: any) =>{
       if (data?.action === "SAVE") {
-        this.createComponent(data.code);
+        this.createComponent(data.code, messageIndex);
       }
     });
   }
@@ -159,8 +159,15 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     return parts;
   }
 
-  createComponent(code:any) {
-    this.messageData.code = code;
+  createComponent(code:any, messageIndex: number) {
+    this.messageData.code = "```component.ts```\n" + code;
+    if (messageIndex != null) {
+      const dependencies = this.messages[messageIndex].parts.find(
+        part => part.type === 'code' && part.language === 'json'
+      )?.content || '{}';
+      this.messageData.code = this.messageData.code + "\n ```package.json``` \n" + dependencies;
+    }
+    
     let saveCompEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "savecomponent");
     if (saveCompEvent) {
       saveCompEvent = deepClone(saveCompEvent);
