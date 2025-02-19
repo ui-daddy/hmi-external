@@ -1,3 +1,4 @@
+import { MetricAIComponent } from './components/metricAI-external/metricAI-external.component';
 import { Test2Component } from './components/test2-external/test2-external.component';
 import { WeatherComponent } from './components/weather-external/weather-external.component';
 import { BarChartComponent } from './components/barChart-external/barChart-external.component';
@@ -31,7 +32,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent, BarChartComponent, WeatherComponent, Test2Component],
+        StackblitzEditorComponent, BarChartComponent, WeatherComponent, Test2Component, MetricAIComponent],
     imports: IMPORT_MODULES,
     exports: [PasswordExternalComponent,
         TextExternalComponent,
@@ -41,7 +42,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent, BarChartComponent, WeatherComponent, Test2Component],
+        GenerateWithAiComponent, BarChartComponent, WeatherComponent, Test2Component, MetricAIComponent],
     providers: [
         DialogService 
     ]

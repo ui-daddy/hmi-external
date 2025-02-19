@@ -380,5 +380,26 @@
       "disabled"
     ],
     "customAttributes": []
+  },
+  {
+    "widgetList": [
+      {
+        "name": "metricAIExternalComponent",
+        "icon": "bi bi-box",
+        "label": "metricAIExternalComponent"
+      }
+    ],
+    "hiddenBaseProperties": [
+      "label"
+    ],
+    "hiddenLayoutProperties": [
+      "themeClass"
+    ],
+    "hiddenExpressionProperties": [
+      "required",
+      "readOnly",
+      "disabled"
+    ],
+    "customAttributes": []
   }
 ]
