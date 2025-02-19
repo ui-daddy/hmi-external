@@ -26,7 +26,8 @@
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4",
     "ngx-charts": "^14.0.0",
-    "@swimlane/ngx-charts": "^14.0.0"
+    "@swimlane/ngx-charts": "^14.0.0",
+    "chart.js": "^3.5.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.3",
