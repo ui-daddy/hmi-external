@@ -22,3 +22,4 @@ export * from './lib/primeng-selectors/components/barChart-external/barChart-ext
 export * from './lib/primeng-selectors/components/weather-external/weather-external.component';
 export * from './lib/primeng-selectors/components/test2-external/test2-external.component';
 export * from './lib/primeng-selectors/components/metricAI-external/metricAI-external.component';
+export * from './lib/primeng-selectors/components/antartica-external/antartica-external.component';
