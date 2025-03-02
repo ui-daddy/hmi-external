@@ -45,8 +45,8 @@ export class StackblitzEditorComponent implements OnInit {
 
   embedEditor(): void {
     this.component = {
-      selector: this.getSelectorName(this.config.data),
-      className: this.getClassName(this.config.data),
+      selector: this.getSelectorName(this.config.data.code),
+      className: this.getClassName(this.config.data.code),
     };
     if (!this.component.selector || !this.component.className) {
       console.error("Not able to find component selector or class name", this.component.selector, this.component.className);
@@ -56,7 +56,7 @@ export class StackblitzEditorComponent implements OnInit {
     finalAppModule = finalAppModule.replaceAll(STACKBLITZ_COMPONENT_CLASS_NAME, this.component.className).replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector);
     const files = {
       'src/main.ts': STACKBLITZ_MAIN_TS,
-      [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.config.data,
+      [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.config.data.code,
       'src/styles.css': '',
       'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
       'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
@@ -73,7 +73,10 @@ export class StackblitzEditorComponent implements OnInit {
         description: 'Angular editor with live preview',
         template: 'angular-cli',
         files: files,
-        dependencies: STACKBLITZ_DEPENDENCIES,
+        dependencies: {
+          ...STACKBLITZ_DEPENDENCIES,
+          ...(this.config.data.dependencies && JSON.parse(this.config.data.dependencies).dependencies || {})
+        },
       },
       {
         height: 500,
@@ -87,7 +90,7 @@ export class StackblitzEditorComponent implements OnInit {
       }
     ).then((snapshot: any) => {
       this.projectSnapshot = snapshot;
-      
+
       snapshot._rdc.port.onmessage = (event: MessageEvent) => {
         console.log('Message received from StackBlitz VM:', event.data);
         // Handle different types of messages here
