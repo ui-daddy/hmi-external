@@ -62,7 +62,7 @@
           "serverURL": "/api/section/forgotPasword.section"
       }
   },
-  "projects": {
+  "dashboard": {
     "headerField": {
       "fetchFromLocal": true,
       "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
