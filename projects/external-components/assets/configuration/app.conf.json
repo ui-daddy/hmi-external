@@ -1,1 +1,223 @@
-{}
+{
+  "login": {
+      "authGuardConfig": {
+          "conditions": [
+              {
+                  "cookieName": "accessToken",
+                  "if": "accessToken != undefined",
+                  "onConditionSuccess": "dashboard",
+                  "type": "cookie"
+              }
+          ],
+          "enabled": true
+      },
+      "data": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/forgotPasword.data"
+      },
+      "field": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/login/login.field.json",
+          "serverURL": "/api/section/forgotPasword.field"
+      },
+      "footerField": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/footer/field"
+      },
+      "footerSection": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/footer"
+      },
+      "globalPageSettings": {
+          "layoutProperties": {
+              "css": {
+                  "configuration": {
+                      "selectorName": "",
+                      "xs": {
+                          "background-image": "url(assets/images/loginPage.jpg)",
+                          "background-position": "center center",
+                          "background-size": "cover"
+                      }
+                  }
+              }
+          },
+          "title": "Login"
+      },
+      "headerField": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/header/field"
+      },
+      "headerSection": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/header"
+      },
+      "section": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/login/login.section.json",
+          "serverURL": "/api/section/forgotPasword.section"
+      }
+  },
+  "projects": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "projects",
+      "layoutProperties": null
+    }
+  },
+  "hmiAppConfiguration": {
+    "title": "Quick SPA",
+    "baseUrl": "",
+    "metaTags": [],
+    "linkTags": [],
+    "ifPageNotFound": "login",
+    "interceptorConfigurations": [],
+    "apiConfigurations": [],
+    "layoutProperties": {
+      "labelPlacement": "top",
+      "width": null,
+      "height": null,
+      "css": {
+        "customClassName": "",
+        "configuration": [],
+        "themeClass": ""
+      },
+      "orientation": null
+    }
+  },
+  "homepage": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "homepage",
+      "layoutProperties": null
+    }
+  },
+  "develop-app-using-ai": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "develop-app-using-ai",
+      "layoutProperties": null
+    }
+  }
+}
