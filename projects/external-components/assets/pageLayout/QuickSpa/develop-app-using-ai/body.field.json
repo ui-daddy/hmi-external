@@ -19,7 +19,7 @@
       "libraryComponent": "GenerateWithAiComponent",
       "events": [
         {
-          "event": "",
+          "event": "sendmessage",
           "debounce": null,
           "actions": [
             {
@@ -65,11 +65,73 @@
                 "name": "Chat API",
                 "url": "/rest/chat/:pageName",
                 "method": "GET",
-                "pathParams": [],
-                "queryParams": [],
+                "pathParams": [
+                  {
+                    "paramName": "pageName",
+                    "valueFormat": "",
+                    "mappedField": "$URL_QUERY_PARAMS",
+                    "mappedValue": "pageName"
+                  }
+                ],
+                "queryParams": [
+                  {
+                    "paramName": "query",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(userQuery)"
+                  },
+                  {
+                    "paramName": "chatId",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(chatId)"
+                  }
+                ],
                 "payloadParams": [],
-                "onSuccess": {},
-                "onError": {},
+                "onSuccess": {
+                  "pageUrl": "",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": false,
+                  "sharedData": [
+                    {
+                      "varName": "chatId",
+                      "responseAccessor": "id"
+                    }
+                  ],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": [
+                    {
+                      "actionType": "setfield",
+                      "url": "",
+                      "condition": "true",
+                      "fileName": "",
+                      "field": "db-2",
+                      "fieldValue": "",
+                      "fieldAccessor": "",
+                      "messagetype": "",
+                      "messageText": "",
+                      "target": "",
+                      "timer": null,
+                      "formName": "",
+                      "componentName": "",
+                      "sharedData": [],
+                      "apiConfig": null
+                    }
+                  ]
+                },
+                "onError": {
+                  "pageUrl": "",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                },
                 "beforeSubmit": {
                   "action": []
                 },
