@@ -1,16 +1,22 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CommonExternalComponent } from '../common-external/common-external.component';
-import { Observable } from 'rxjs';
-import { Clipboard } from '@angular/cdk/clipboard';
-import { StackblitzEditorComponent } from '../stackblitz-editor/stackblitz-editor.component';
-import { DialogService } from 'primeng/dynamicdialog';
-import { deepClone } from '../../util/util';
-
-
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+  OnDestroy,
+  ChangeDetectorRef,
+} from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { CommonExternalComponent } from "../common-external/common-external.component";
+import { Observable } from "rxjs";
+import { Clipboard } from "@angular/cdk/clipboard";
+import { StackblitzEditorComponent } from "../stackblitz-editor/stackblitz-editor.component";
+import { DialogService } from "primeng/dynamicdialog";
+import { deepClone } from "../../util/util";
 
 interface MessagePart {
-  type: 'text' | 'code';
+  type: "text" | "code";
   content: string;
   language?: string;
 }
@@ -21,41 +27,47 @@ interface Message {
 }
 
 @Component({
-  selector: 'hmi-ext-generate-with-ai',
-  templateUrl: './generate-with-ai.component.html',
-  styleUrls: ['./generate-with-ai.component.css']
+  selector: "hmi-ext-generate-with-ai",
+  templateUrl: "./generate-with-ai.component.html",
+  styleUrls: ["./generate-with-ai.component.css"],
 })
-export class GenerateWithAiComponent extends CommonExternalComponent implements OnInit, AfterViewInit, OnDestroy {
+export class GenerateWithAiComponent
+  extends CommonExternalComponent
+  implements OnInit, AfterViewInit, OnDestroy
+{
   messages: Message[] = [];
 
-  @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
+  @ViewChild("messagesContainer") private messagesContainer!: ElementRef;
   componentName: string = "";
   messageData: any = {}; // Initialize messageData
-  actions:any;
-  response$!: Observable<any>
+  actions: any;
+  response$!: Observable<any>;
   content: any;
   showCopiedLabel: boolean = false;
 
-  constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef, private clipboard: Clipboard,
+  constructor(
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef,
+    private clipboard: Clipboard,
     public dialogService: DialogService
   ) {
     super();
-   }
+  }
 
-   ngOnInit(): void {
-    this.fieldObj.value = { newMessage: '' };   
+  ngOnInit(): void {
+    this.fieldObj.value = { newMessage: "" };
     this.fieldObj.action.subscribe((actionObj: any) => {
-      
       if (actionObj.actionType === "setfield") {
-        console.log( actionObj.data);
+        console.log(actionObj.data);
         this.content = actionObj.data;
-        const parts = this.parseMessage(this.content.response);
+        const parts = this.parseCode(this.content.response);
         this.messages.push({
           isUser: false,
-          parts
+          parts,
         });
+        console.log('messages ',this.messages)
       }
-      
+
       this.cdr.detectChanges();
       this.scrollToBottom();
     });
@@ -66,30 +78,39 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
   }
 
   preview(code: string, messageIndex: number): void {
-    const dependencies = this.messages[messageIndex].parts.find(
-      part => part.type === 'code' && part.language === 'json'
-    )?.content || '{}';
-    this.dialogService.open(StackblitzEditorComponent, {
-      header: 'Page Preview',
-      width: '100%',
-      data: {code: code, dependencies: dependencies},
-      height: "100vh",
-      keepInViewport: true,
-      baseZIndex: 500,
-      contentStyle: { 'flex-grow': 1 },
-    }).onClose.subscribe((data: any) =>{
-      if (data?.action === "SAVE") {
-        this.createComponent(data.code, messageIndex);
-      }
-    });
+    const dependencies =
+      this.messages[messageIndex].parts.find(
+        (part) => part.type === "code" && part.language === "json"
+      )?.content || "{}";
+    this.dialogService
+      .open(StackblitzEditorComponent, {
+        header: "Page Preview",
+        width: "100%",
+        data: { code: code, dependencies: dependencies },
+        height: "100vh",
+        keepInViewport: true,
+        baseZIndex: 500,
+        contentStyle: { "flex-grow": 1 },
+      })
+      .onClose.subscribe((data: any) => {
+        if (data?.action === "SAVE") {
+          this.createComponent(data.code, messageIndex);
+        }
+      });
   }
 
   copycode(code: string): void {
     if (!this.showCopiedLabel) {
-      let copyCodeEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "copycode");
+      let copyCodeEvent = this.fieldObj.events?.find(
+        (obj: { event: string }) => obj.event === "copycode"
+      );
       if (copyCodeEvent) {
         copyCodeEvent = deepClone(copyCodeEvent);
-        this.initializeEvents.emit({ name: "fireEvent", "events": [copyCodeEvent], data: null});
+        this.initializeEvents.emit({
+          name: "fireEvent",
+          events: [copyCodeEvent],
+          data: null,
+        });
       }
       this.clipboard.copy(code);
       this.showCopiedLabel = true;
@@ -100,17 +121,25 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
   }
 
   sendMessage() {
-    this.messageData.newMessage = this.fieldObj.value.newMessage; 
+    this.messageData.newMessage = this.fieldObj.value.newMessage;
     if (this.fieldObj.value.newMessage.trim()) {
       this.messages.push({
         isUser: true,
-        parts: [{ type: 'text', content: this.fieldObj.value.newMessage.trim() }]
+        parts: [
+          { type: "text", content: this.fieldObj.value.newMessage.trim() },
+        ],
       });
-      let sendMsgEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "sendmessage");
+      let sendMsgEvent = this.fieldObj.events?.find(
+        (obj: { event: string }) => obj.event === "sendmessage"
+      );
       if (sendMsgEvent) {
         sendMsgEvent = deepClone(sendMsgEvent);
         sendMsgEvent.actions.forEach((action: any) => {
-          if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
+          if (
+            action.actionType === "SET_SHARED_DATA" &&
+            action.sharedData &&
+            action.sharedData.length
+          ) {
             action.sharedData.forEach((shareDataObj: any) => {
               if (shareDataObj.staticData === "$USER_QUERY$") {
                 shareDataObj.staticData = this.messageData.newMessage;
@@ -118,14 +147,68 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
             });
           }
         });
-        this.initializeEvents.emit({ name: "fireEvent", "events": [sendMsgEvent], data: null});
-        this.fieldObj.value.newMessage = '';
+        this.initializeEvents.emit({
+          name: "fireEvent",
+          events: [sendMsgEvent],
+          data: null,
+        });
+        this.fieldObj.value.newMessage = "";
       } else {
         console.error("No Send Message event detected");
       }
     }
     this.scrollToBottom();
+  }
 
+  parseCode(response: string): MessagePart[] {
+    let i = 0;
+    let sourceCode = "";
+    const respArr = response.split("\n");
+    let codeFound = false;
+    const msgParts: MessagePart[] = [];
+    let language: string = 'typescript';
+    while (i < respArr.length) {
+      if (codeFound) {
+        if (respArr[i].endsWith("```")) {
+          msgParts.push(
+            {
+              type: 'code',
+              content: sourceCode,
+              language
+            }
+          )
+          codeFound = false;
+          sourceCode = '';
+          continue;
+        } else {
+          sourceCode += respArr[i];
+        }
+      }
+      if (respArr[i].startsWith("```") && respArr[i].length > 3) {
+        const langIndex = respArr[i].lastIndexOf('`') + 1;
+        language =  respArr[i].slice(langIndex);
+        codeFound = true;
+      }
+      i++;
+    }
+    return msgParts
+  }
+
+  parseCode2(response: string): MessagePart[] {
+    let i = 0;
+    let sourceCode = "";
+    const respArr = response.split("");
+    let codeFound = false;
+    const msgParts: MessagePart[] = [];
+    let language: string = 'typescript';
+    const tsStartStr = '```typescript';
+    const jsonStartStr = '```json';
+    const endbackTick = '```';
+    if(response.startsWith(tsStartStr)) {
+      
+    }
+
+    return msgParts;
   }
 
   private parseMessage(message: string): MessagePart[] {
@@ -137,51 +220,63 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     while ((match = regex.exec(message)) !== null) {
       if (match.index > lastIndex) {
         parts.push({
-          type: 'text',
-          content: message.slice(lastIndex, match.index).trim()
+          type: "text",
+          content: message.slice(lastIndex, match.index).trim(),
         });
       }
       parts.push({
-        type: 'code',
+        type: "code",
         content: match[2].trim(),
-        language: match[1] || ''
+        language: match[1] || "",
       });
       lastIndex = regex.lastIndex;
     }
 
     if (lastIndex < message.length) {
       parts.push({
-        type: 'text',
-        content: message.slice(lastIndex).trim()
+        type: "text",
+        content: message.slice(lastIndex).trim(),
       });
     }
 
     return parts;
   }
 
-  createComponent(code:any, messageIndex: number) {
+  createComponent(code: any, messageIndex: number) {
     this.messageData.code = "```component.ts```\n" + code;
     if (messageIndex != null) {
-      const dependencies = this.messages[messageIndex].parts.find(
-        part => part.type === 'code' && part.language === 'json'
-      )?.content || '{}';
-      this.messageData.code = this.messageData.code + "\n ```package.json``` \n" + dependencies;
+      const dependencies =
+        this.messages[messageIndex].parts.find(
+          (part) => part.type === "code" && part.language === "json"
+        )?.content || "{}";
+      this.messageData.code =
+        this.messageData.code + "\n ```package.json``` \n" + dependencies;
     }
-    
-    let saveCompEvent = this.fieldObj.events?.find((obj: { event: string; }) => obj.event === "savecomponent");
+
+    let saveCompEvent = this.fieldObj.events?.find(
+      (obj: { event: string }) => obj.event === "savecomponent"
+    );
     if (saveCompEvent) {
       saveCompEvent = deepClone(saveCompEvent);
       saveCompEvent.actions.forEach((action: any) => {
-          if (action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length) {
-            action.sharedData.forEach((shareDataObj: any) => {
-              if (shareDataObj.staticData === "$SAVE_CODE_DATA$") {
-                shareDataObj.staticData = this.messageData;
-              }
-            });
-          }
+        if (
+          action.actionType === "SET_SHARED_DATA" &&
+          action.sharedData &&
+          action.sharedData.length
+        ) {
+          action.sharedData.forEach((shareDataObj: any) => {
+            if (shareDataObj.staticData === "$SAVE_CODE_DATA$") {
+              shareDataObj.staticData = this.messageData;
+            }
+          });
+        }
       });
 
-      this.initializeEvents.emit({ name: "fireEvent", "events": [saveCompEvent], data: null});
+      this.initializeEvents.emit({
+        name: "fireEvent",
+        events: [saveCompEvent],
+        data: null,
+      });
     } else {
       console.error("No Copy Code event detected");
     }
@@ -191,13 +286,18 @@ export class GenerateWithAiComponent extends CommonExternalComponent implements 
     try {
       this.messagesContainer.nativeElement.scrollTo({
         top: this.messagesContainer.nativeElement.scrollHeight,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
-    } catch (err) { }
+    } catch (err) {}
   }
 
- 
-  ngOnDestroy(): void {
-    
-  } 
+  ngOnDestroy(): void {}
+
+  getValue(messageIndex: number, language: 'json'|'typescript') {
+    return (
+      this.messages[messageIndex].parts.find(
+        (part) => part.type === "code" && part.language === language
+      )?.content || "{}"
+    );
+  }
 }

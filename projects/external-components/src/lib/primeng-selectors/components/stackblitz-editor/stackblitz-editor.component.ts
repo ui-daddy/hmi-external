@@ -1,10 +1,10 @@
-import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import {
   Component,
   OnInit,
   ViewChild,
   ElementRef,
-  NgZone 
+  NgZone, 
+  Input
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
@@ -25,7 +25,10 @@ export class StackblitzEditorComponent implements OnInit {
   };
   onLoad = true;
 
-  constructor(private config: DynamicDialogConfig, public ref: DynamicDialogRef, private zone: NgZone) {}
+  @Input() code: string = '';
+  @Input() dependencies: string = '';
+  
+  constructor(private zone: NgZone) {}
 
   ngOnInit(): void {
     this.embedEditor();
@@ -45,8 +48,8 @@ export class StackblitzEditorComponent implements OnInit {
 
   embedEditor(): void {
     this.component = {
-      selector: this.getSelectorName(this.config.data.code),
-      className: this.getClassName(this.config.data.code),
+      selector: this.getSelectorName(this.code),
+      className: this.getClassName(this.code),
     };
     if (!this.component.selector || !this.component.className) {
       console.error("Not able to find component selector or class name", this.component.selector, this.component.className);
@@ -56,7 +59,7 @@ export class StackblitzEditorComponent implements OnInit {
     finalAppModule = finalAppModule.replaceAll(STACKBLITZ_COMPONENT_CLASS_NAME, this.component.className).replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector);
     const files = {
       'src/main.ts': STACKBLITZ_MAIN_TS,
-      [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.config.data.code,
+      [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.code,
       'src/styles.css': '',
       'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
       'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
@@ -75,7 +78,7 @@ export class StackblitzEditorComponent implements OnInit {
         files: files,
         dependencies: {
           ...STACKBLITZ_DEPENDENCIES,
-          ...(this.config.data.dependencies && JSON.parse(this.config.data.dependencies).dependencies || {})
+          ...(this.dependencies && JSON.parse(this.dependencies).dependencies || {})
         },
       },
       {
@@ -103,9 +106,9 @@ export class StackblitzEditorComponent implements OnInit {
               `src/app/${this.component.selector}/${this.component.selector}.component.ts`
             ] && !this.onLoad
           ) {  
-            this.ref.close({action: "SAVE", code: event.data.payload[
-              `src/app/${this.component.selector}/${this.component.selector}.component.ts`
-            ]});
+            // this.ref.close({action: "SAVE", code: event.data.payload[
+            //   `src/app/${this.component.selector}/${this.component.selector}.component.ts`
+            // ]});
           }
         });
       }
@@ -120,6 +123,6 @@ export class StackblitzEditorComponent implements OnInit {
   }
 
   cancel() {
-    this.ref.close();
+    // this.ref.close();
   }
 }
