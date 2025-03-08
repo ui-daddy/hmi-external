@@ -1,0 +1,142 @@
+{
+  "dh-0": [
+    {
+      "baseProperties": {
+        "type": "staticImage",
+        "id": "dh-1",
+        "name": "headerLogo"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "header__logo",
+          "configuration": [
+            {
+              "selectorName": ".header__logo",
+              "xs": {
+                "justify-content": "flex-start",
+                "padding": "8px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "imageUrl": "assets/images/ui-daddy-logo.svg",
+      "altText": "UI Daddy",
+      "showDownload": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "dh-3",
+        "name": "username"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "dynamicValueAccessor": [
+        "name"
+      ]
+    },
+    {
+      "baseProperties": {
+        "type": "staticIcon",
+        "id": "dh-2",
+        "name": "logout"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "header-common__logout d-flex justify-content-end align-items-center h-100",
+          "configuration": [
+            {
+              "selectorName": ".header-common__logout",
+              "xs": {
+                "white-space": "nowrap",
+                "cursor": "pointer"
+              }
+            },
+            {
+              "selectorName": ".header-common__logout .dynamic-style-child",
+              "xs": {
+                "font-size": "26px",
+                "color": "white",
+                "margin-right": "10px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "Logout API",
+                "url": "/rest/logout",
+                "method": "POST",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "onSuccess": {
+                  "pageUrl": "/login",
+                  "clearSharedData": [
+                    "authenticated",
+                    "name"
+                  ]
+                },
+                "onError": {},
+                "beforeSubmit": {
+                  "action": []
+                },
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": false,
+                "isWithCredentials": false
+              }
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {},
+      "iconClass": "fas fa-sign-out-alt"
+    }
+  ]
+}

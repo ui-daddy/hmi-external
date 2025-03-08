@@ -21,7 +21,7 @@
                 "visibleValue": true
             },
             "customAttributes": {
-                "src": "/form-designer/",
+                "src": "http://localhost:4300/form-designer/",
                 "height": "calc(100vh - 102px)"
             }
         } 

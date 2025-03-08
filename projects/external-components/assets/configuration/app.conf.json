@@ -1,166 +1,4 @@
 {
-  "dashboard": {
-      "authGuardConfig": {
-          "conditions": [
-              {
-                  "cookieName": "accessToken",
-                  "if": "accessToken == undefined",
-                  "onConditionSuccess": "login",
-                  "type": "cookie"
-              }
-          ],
-          "enabled": true
-      },
-      "data": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": ""
-      },
-      "field": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.field.json",
-          "serverURL": ""
-      },
-      "footerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.field.json",
-          "serverURL": ""
-      },
-      "footerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.section.json",
-          "serverURL": ""
-      },
-      "globalPageSettings": {
-          "title": "Projects"
-      },
-      "headerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json",
-          "serverURL": ""
-      },
-      "headerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json",
-          "serverURL": ""
-      },
-      "section": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/dashboard/dashboard.section.json",
-          "serverURL": ""
-      }
-  },
-  "edit-form/:projectId": {
-      "authGuardConfig": {
-          "conditions": [
-              {
-                  "cookieName": "accessToken",
-                  "if": "accessToken == undefined",
-                  "onConditionSuccess": "login",
-                  "type": "cookie"
-              }
-          ],
-          "enabled": true
-      },
-      "data": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": ""
-      },
-      "field": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/edit-form/iframe.field.json",
-          "serverURL": ""
-      },
-      "footerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.field.json",
-          "serverURL": ""
-      },
-      "footerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/footer/footer.section.json",
-          "serverURL": ""
-      },
-      "globalPageSettings": {
-          "title": "Edit Form"
-      },
-      "headerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json",
-          "serverURL": ""
-      },
-      "headerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json",
-          "serverURL": ""
-      },
-      "section": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/edit-form/iframe.section.json",
-          "serverURL": ""
-      }
-  },
-  "hmiAppConfiguration": {
-      "apiConfigurations": [],
-      "ifPageNotFound": "login",
-      "interceptorConfigurations": [
-          {
-              "clearSharedData": [
-                  "authenticated",
-                  "name"
-              ],
-              "message": "Session Error",
-              "messageCode": "",
-              "messageCodeResponseAccessor": "messageCode",
-              "msgResponseAccessor": "message",
-              "pageUrl": "login",
-              "statusCode": "401",
-              "type": "error"
-          }
-      ],
-      "layoutProperties": {
-          "css": {
-              "configuration": [
-                  {
-                      "lg": {
-                          "background-color": "#f1f3f6"
-                      },
-                      "md": {
-                          "background-color": "#f1f3f6"
-                      },
-                      "selectorName": "",
-                      "sm": {
-                          "background-color": "#f1f3f6"
-                      },
-                      "xs": {
-                          "background-color": "#f1f3f6"
-                      }
-                  }
-              ],
-              "customClassName": "",
-              "themeClass": ""
-          },
-          "height": null,
-          "labelPlacement": null,
-          "orientation": null,
-          "width": null
-      },
-      "linkTags": [],
-      "metaTags": [
-          {
-              "content": "uidaddy",
-              "name": "keywords"
-          },
-          {
-              "charset": "",
-              "content": "The uidaddy",
-              "httpEquiv": "",
-              "name": "description"
-          }
-      ],
-      "title": "UI Daddy"
-  },
   "login": {
       "authGuardConfig": {
           "conditions": [
@@ -180,7 +18,7 @@
       },
       "field": {
           "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/login/login.field.json",
+          "localURL": "./assets/pageLayout/QuickSpa/login/login.field.json",
           "serverURL": "/api/section/forgotPasword.field"
       },
       "footerField": {
@@ -220,54 +58,268 @@
       },
       "section": {
           "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json",
+          "localURL": "./assets/pageLayout/QuickSpa/login/login.section.json",
           "serverURL": "/api/section/forgotPasword.section"
       }
   },
-  "aipage": {
-      "headerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/header.field.json"
+  "dashboard": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/projects/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "projects",
+      "layoutProperties": null
+    }
+  },
+  "hmiAppConfiguration": {
+    "title": "Quick SPA",
+    "baseUrl": "",
+    "metaTags": [],
+    "linkTags": [],
+    "ifPageNotFound": "login",
+    "interceptorConfigurations": [],
+    "apiConfigurations": [],
+    "layoutProperties": {
+      "labelPlacement": "top",
+      "width": null,
+      "height": null,
+      "css": {
+        "customClassName": "",
+        "configuration": [],
+        "themeClass": ""
       },
-      "headerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/header.section.json"
-      },
-      "field": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/body.field.json"
-      },
-      "section": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/body.section.json"
-      },
-      "footerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/footer.field.json"
-      },
-      "footerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/footer.section.json"
+      "orientation": null
+    }
+  },
+  "homepage": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/homepage/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "homepage",
+      "layoutProperties": null
+    }
+  },
+  "develop-app-using-ai": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "develop-app-using-ai",
+      "layoutProperties": null
+    }
+  },
+  "dashboard": {
+      "authGuardConfig": {
+          "conditions": [
+              {
+                  "cookieName": "accessToken",
+                  "if": "accessToken == undefined",
+                  "onConditionSuccess": "login",
+                  "type": "cookie"
+              }
+          ],
+          "enabled": true
       },
       "data": {
           "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/body.data.json"
+          "localURL": "",
+          "serverURL": ""
       },
-      "navField": {
+      "field": {
           "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/nav.field.json"
+          "localURL": "./assets/pageLayout/QuickSpa/dashboard/dashboard.field.json",
+          "serverURL": ""
       },
-      "navSection": {
+      "footerField": {
           "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/ui-daddy/aipage/nav.section.json"
+          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json",
+          "serverURL": ""
       },
-      "authGuardConfig": {
-          "enabled": false,
-          "conditions": []
+      "footerSection": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json",
+          "serverURL": ""
       },
       "globalPageSettings": {
-          "title": "aipage",
-          "layoutProperties": null
+          "title": "Projects"
+      },
+      "headerField": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json",
+          "serverURL": ""
+      },
+      "headerSection": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json",
+          "serverURL": ""
+      },
+      "section": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/dashboard/dashboard.section.json",
+          "serverURL": ""
+      }
+  },
+  "edit-form/:projectId": {
+      "authGuardConfig": {
+          "conditions": [
+              {
+                  "cookieName": "accessToken",
+                  "if": "accessToken == undefined",
+                  "onConditionSuccess": "login",
+                  "type": "cookie"
+              }
+          ],
+          "enabled": true
+      },
+      "data": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": ""
+      },
+      "field": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/edit-form/iframe.field.json",
+          "serverURL": ""
+      },
+      "footerField": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json",
+          "serverURL": ""
+      },
+      "footerSection": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json",
+          "serverURL": ""
+      },
+      "globalPageSettings": {
+          "title": "Edit Form"
+      },
+      "headerField": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json",
+          "serverURL": ""
+      },
+      "headerSection": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json",
+          "serverURL": ""
+      },
+      "section": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/QuickSpa/edit-form/iframe.section.json",
+          "serverURL": ""
       }
   }
 }

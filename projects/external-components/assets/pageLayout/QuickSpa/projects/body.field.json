@@ -1,0 +1,302 @@
+{
+  "db-3": [
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-6",
+        "label": "Add Project",
+        "name": "addProjectBtn"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "float-end mt-2 me-2",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "OPEN_MODAL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "db-7",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "db-4",
+        "name": "cardList"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "CardListComponent",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "cardList": [
+          {
+            "title": "Project",
+            "thumbnail": "./assets/images/buildings.jpg"
+          }
+        ],
+        "showPrimaryBtn": true,
+        "primaryBtnLabel": "Edit",
+        "showSecondaryBtn": true,
+        "secondaryBtnLabel": "Preview",
+        "apiConfig": {
+          "name": "myApps",
+          "url": "/rest/getProjects",
+          "method": "GET",
+          "params": {},
+          "onSuccess": {
+            "apiDataAccessor": "projects"
+          }
+        }
+      }
+    }
+  ],
+  "db-7": [],
+  "db-8": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-11",
+        "formName": "addProjectForm",
+        "name": "modalHeader"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "fw-bold",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Add Your Project",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-9",
+        "label": "Project Name",
+        "name": "projectName",
+        "formName": "addProjectForm"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {
+        "requiredValue": "true"
+      },
+      "value": null,
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-12",
+        "name": "branchName",
+        "formName": "addProjectForm",
+        "label": "Branch Name"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {
+        "disabledValue": "true"
+      },
+      "value": "quick-spa-app",
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-13",
+        "name": "gitUrl",
+        "formName": "addProjectForm",
+        "label": "Fork Git Url"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {
+        "disabledValue": "true"
+      },
+      "value": "https://github.com/kp4499/hmi-external",
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "submit",
+        "id": "db-10",
+        "label": "Save",
+        "formName": "addProjectForm",
+        "name": "saveBtn"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "justify-content-center",
+          "configuration": [
+            {
+              "selectorName": ".temp-class-2",
+              "xs": {}
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "addProjectAPI",
+                "url": "/rest/addProject",
+                "method": "POST",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [
+                  {
+                    "paramName": "title",
+                    "mappedField": "projectName",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "branchName",
+                    "mappedField": "branchName",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "forkUrl",
+                    "mappedField": "gitUrl",
+                    "mappedValue": "",
+                    "valueFormat": ""
+                  }
+                ],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                  "action": []
+                },
+                "onSuccess": {
+                  "pageUrl": "/develop-app-using-ai",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": true,
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": []
+                },
+                "onError": {
+                  "pageUrl": "/projects",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    }
+  ]
+}

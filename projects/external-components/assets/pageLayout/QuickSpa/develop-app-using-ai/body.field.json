@@ -1,0 +1,153 @@
+{
+  "db-0": [
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "db-2"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "GenerateWithAiComponent",
+      "events": [
+        {
+          "event": "sendmessage",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "SET_SHARED_DATA",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [
+                {
+                  "varName": "userQuery",
+                  "staticData": "$USER_QUERY$",
+                  "cache": false,
+                  "responseAccessor": ""
+                }
+              ],
+              "apiConfig": null
+            },
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "Chat API",
+                "url": "/rest/chat/:pageName",
+                "method": "GET",
+                "pathParams": [
+                  {
+                    "paramName": "pageName",
+                    "valueFormat": "",
+                    "mappedField": "$URL_QUERY_PARAMS",
+                    "mappedValue": "pageName"
+                  }
+                ],
+                "queryParams": [
+                  {
+                    "paramName": "query",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(userQuery)"
+                  },
+                  {
+                    "paramName": "chatId",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(chatId)"
+                  }
+                ],
+                "payloadParams": [],
+                "onSuccess": {
+                  "pageUrl": "",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": false,
+                  "sharedData": [
+                    {
+                      "varName": "chatId",
+                      "responseAccessor": "id"
+                    }
+                  ],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": [
+                    {
+                      "actionType": "setfield",
+                      "url": "",
+                      "condition": "true",
+                      "fileName": "",
+                      "field": "db-2",
+                      "fieldValue": "",
+                      "fieldAccessor": "",
+                      "messagetype": "",
+                      "messageText": "",
+                      "target": "",
+                      "timer": null,
+                      "formName": "",
+                      "componentName": "",
+                      "sharedData": [],
+                      "apiConfig": null
+                    }
+                  ]
+                },
+                "onError": {
+                  "pageUrl": "",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                },
+                "beforeSubmit": {
+                  "action": []
+                },
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": false,
+                "isWithCredentials": false
+              }
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {},
+      "customAttributes": {
+        "name": null
+      }
+    }
+  ]
+}

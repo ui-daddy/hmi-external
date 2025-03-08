@@ -1,9 +1,9 @@
 <div class="chat-container">
   <div class="messages" #messagesContainer>
-    <div *ngFor="let message of messages; let messageIndex = index;" [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
+    <div *ngFor="let message of messages; let messageIndex = index;" [ngClass]="{'user-message': message.isUser, 'bot-message flex-grow-1 w-100': !message.isUser}">
       <ng-container *ngFor="let part of message.parts;">
         <div *ngIf="part.type === 'text'" class="message-text">{{ part.content }}</div>
-        <div *ngIf="part.type === 'code'"  class="code-holder ">
+         <!--<div *ngIf="part.type === 'code'"  class="code-holder ">
           <div class="button-code">
             <div class="language-code">Typescript</div>
             <div class="button-actions">
@@ -22,7 +22,8 @@
             </div>
           </div>
           <pre class="message-code" ><code>{{ part.content }}</code></pre>
-        </div>
+        </div> -->
+        <hmi-ext-stackblitz-editor *ngIf="part.type === 'code' && part.language === 'typescript'" [code]="getValue(messageIndex, 'typescript')" [dependencies]="getValue(messageIndex, 'json')"></hmi-ext-stackblitz-editor>
       </ng-container>
     </div>
   </div>
