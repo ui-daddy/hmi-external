@@ -62,6 +62,47 @@
           "serverURL": "/api/section/forgotPasword.section"
       }
   },
+  "old-dashboard": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/old-dashboard/dashboard.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/old-dashboard/dashboard.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+    },
+    "authGuardConfig": {
+          "conditions": [
+              {
+                  "cookieName": "accessToken",
+                  "if": "accessToken == undefined",
+                  "onConditionSuccess": "login",
+                  "type": "cookie"
+              }
+          ],
+          "enabled": true
+    },
+    "globalPageSettings": {
+      "title": "projects",
+      "layoutProperties": null
+    }
+  },
   "dashboard": {
     "headerField": {
       "fetchFromLocal": true,
@@ -73,11 +114,11 @@
     },
     "field": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/body.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/dashboard/body.field.json"
     },
     "section": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/body.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/dashboard/body.section.json"
     },
     "footerField": {
       "fetchFromLocal": true,
@@ -89,15 +130,7 @@
     },
     "data": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/body.data.json"
-    },
-    "navField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/nav.field.json"
-    },
-    "navSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/projects/nav.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/dashboard/body.data.json"
     },
     "authGuardConfig": {
           "conditions": [
