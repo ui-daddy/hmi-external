@@ -100,8 +100,15 @@
       "localURL": "./assets/pageLayout/QuickSpa/projects/nav.section.json"
     },
     "authGuardConfig": {
-      "enabled": false,
-      "conditions": []
+          "conditions": [
+              {
+                  "cookieName": "accessToken",
+                  "if": "accessToken == undefined",
+                  "onConditionSuccess": "login",
+                  "type": "cookie"
+              }
+          ],
+          "enabled": true
     },
     "globalPageSettings": {
       "title": "projects",
@@ -219,57 +226,6 @@
       "title": "develop-app-using-ai",
       "layoutProperties": null
     }
-  },
-  "dashboard": {
-      "authGuardConfig": {
-          "conditions": [
-              {
-                  "cookieName": "accessToken",
-                  "if": "accessToken == undefined",
-                  "onConditionSuccess": "login",
-                  "type": "cookie"
-              }
-          ],
-          "enabled": true
-      },
-      "data": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": ""
-      },
-      "field": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/dashboard/dashboard.field.json",
-          "serverURL": ""
-      },
-      "footerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json",
-          "serverURL": ""
-      },
-      "footerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json",
-          "serverURL": ""
-      },
-      "globalPageSettings": {
-          "title": "Projects"
-      },
-      "headerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json",
-          "serverURL": ""
-      },
-      "headerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json",
-          "serverURL": ""
-      },
-      "section": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/dashboard/dashboard.section.json",
-          "serverURL": ""
-      }
   },
   "edit-form/:projectId": {
       "authGuardConfig": {
