@@ -4,7 +4,9 @@ import {
   ViewChild,
   ElementRef,
   NgZone, 
-  Input
+  Input,
+  SimpleChanges,
+  OnChanges
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
@@ -16,7 +18,7 @@ import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EX
   styleUrls: ['./stackblitz-editor.component.css']
 
 })
-export class StackblitzEditorComponent implements OnInit {
+export class StackblitzEditorComponent implements OnInit, OnChanges {
   @ViewChild('editorContainer', { static: true }) editorContainer!: ElementRef;
   projectSnapshot: any;
   component = {
@@ -32,6 +34,51 @@ export class StackblitzEditorComponent implements OnInit {
 
   ngOnInit(): void {
     this.embedEditor();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.projectSnapshot) {
+      return;
+    }
+
+    if (changes['code'] && !changes['code'].firstChange) {
+      this.updateComponentFile();
+    }
+    if (changes['dependencies'] && !changes['dependencies'].firstChange) {
+      this.updateDependencies();
+    }
+  }
+
+  private async updateComponentFile(): Promise<void> {
+    if (!this.component.selector) {
+      this.component.selector = this.getSelectorName(this.code);
+      this.component.className = this.getClassName(this.code);
+    }
+    
+    try {
+      await this.projectSnapshot.applyFsDiff({
+        create: {
+          [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.code
+        },
+        destroy: []
+      });
+    } catch (error) {
+      console.error('Failed to update component file:', error);
+    }
+  }
+
+  private async updateDependencies(): Promise<void> {
+    try {
+      const newDependencies = this.dependencies ? JSON.parse(this.dependencies).dependencies : {};
+      await this.projectSnapshot.setPackageJson({
+        dependencies: {
+          ...STACKBLITZ_DEPENDENCIES,
+          ...newDependencies
+        }
+      });
+    } catch (error) {
+      console.error('Failed to update dependencies:', error);
+    }
   }
 
   getSelectorName(componentString: string): string {
