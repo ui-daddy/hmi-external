@@ -1036,7 +1036,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
@@ -2080,7 +2080,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
@@ -3824,7 +3824,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
@@ -4868,7 +4868,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
