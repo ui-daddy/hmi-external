@@ -93,7 +93,7 @@
           },
           {
             "label": "Preview",
-            "className": "btn btn-secondary",
+            "className": "btn btn-secondary ms-4",
             "visible": "true",
             "action": {
               "name": "OPEN_URL",
