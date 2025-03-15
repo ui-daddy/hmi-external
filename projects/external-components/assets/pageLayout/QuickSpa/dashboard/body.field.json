@@ -226,21 +226,38 @@
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
-                  "apiDataAccessor": "",
+                  "apiDataAccessor": "message",
                   "message": "",
                   "actions": []
                 },
                 "onError": {
-                  "pageUrl": "/projects",
+                  "pageUrl": "/dashboard",
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
-                  "apiDataAccessor": "",
+                  "apiDataAccessor": "message",
                   "message": "",
                   "showErrorMessage": true,
                   "actions": []
                 }
               }
+            },
+            {
+              "actionType": "CLOSE_MODAL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "db-7",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
             }
           ]
         }
