@@ -44,6 +44,8 @@ export class GenerateWithAiComponent
   response$!: Observable<any>;
   content: any;
   showCopiedLabel: boolean = false;
+  previewCode: string = "";
+  previewDependencies: string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -161,53 +163,7 @@ export class GenerateWithAiComponent
   }
 
   parseCode(response: string): MessagePart[] {
-    let i = 0;
-    let sourceCode = "";
-    const respArr = response.split("\n");
-    let codeFound = false;
-    const msgParts: MessagePart[] = [];
-    let language: string = 'typescript';
-    while (i < respArr.length) {
-      if (codeFound) {
-        if (respArr[i].endsWith("```")) {
-          msgParts.push(
-            {
-              type: 'code',
-              content: sourceCode,
-              language
-            }
-          )
-          codeFound = false;
-          sourceCode = '';
-          continue;
-        } else {
-          sourceCode += respArr[i];
-        }
-      }
-      if (respArr[i].startsWith("```") && respArr[i].length > 3) {
-        const langIndex = respArr[i].lastIndexOf('`') + 1;
-        language =  respArr[i].slice(langIndex);
-        codeFound = true;
-      }
-      i++;
-    }
-    return msgParts
-  }
-
-  parseCode2(response: string): MessagePart[] {
-    let i = 0;
-    let sourceCode = "";
-    const respArr = response.split("");
-    let codeFound = false;
-    const msgParts: MessagePart[] = [];
-    let language: string = 'typescript';
-    const tsStartStr = '```typescript';
-    const jsonStartStr = '```json';
-    const endbackTick = '```';
-    if(response.startsWith(tsStartStr)) {
-      
-    }
-
+    let msgParts: MessagePart[] = this.parseMessage(response);
     return msgParts;
   }
 
@@ -230,6 +186,12 @@ export class GenerateWithAiComponent
         language: match[1] || "",
       });
       lastIndex = regex.lastIndex;
+      if(match[1] === "typescript") {
+        this.previewCode = match[2].trim();
+      } else if (match[1] === "json") {
+        this.previewDependencies = match[2].trim();
+      }
+      
     }
 
     if (lastIndex < message.length) {

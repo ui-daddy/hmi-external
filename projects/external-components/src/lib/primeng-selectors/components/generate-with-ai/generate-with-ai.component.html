@@ -23,8 +23,11 @@
           </div>
           <pre class="message-code" ><code>{{ part.content }}</code></pre>
         </div> -->
-        <hmi-ext-stackblitz-editor *ngIf="part.type === 'code' && part.language === 'typescript'" [code]="getValue(messageIndex, 'typescript')" [dependencies]="getValue(messageIndex, 'json')"></hmi-ext-stackblitz-editor>
+        <!-- <hmi-ext-stackblitz-editor *ngIf="part.type === 'code' && part.language === 'typescript'" [code]="getValue(messageIndex, 'typescript')" [dependencies]="getValue(messageIndex, 'json')"></hmi-ext-stackblitz-editor> -->
       </ng-container>
+    </div>
+    <div class="bot-message flex-grow-1 w-100" *ngIf="previewCode">
+      <hmi-ext-stackblitz-editor [code]="previewCode" [dependencies]="previewDependencies"></hmi-ext-stackblitz-editor>
     </div>
   </div>
   <div class="input-container">
