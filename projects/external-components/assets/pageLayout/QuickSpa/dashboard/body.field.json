@@ -142,60 +142,6 @@
     },
     {
       "baseProperties": {
-        "type": "text",
-        "id": "db-12",
-        "name": "branchName",
-        "formName": "addProjectForm",
-        "label": "Branch Name"
-      },
-      "layoutProperties": {
-        "labelPlacement": "left",
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {
-        "disabledValue": "true"
-      },
-      "value": "quick-spa-app",
-      "placeholder": null,
-      "accessor": null
-    },
-    {
-      "baseProperties": {
-        "type": "text",
-        "id": "db-13",
-        "name": "gitUrl",
-        "formName": "addProjectForm",
-        "label": "Fork Git Url"
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {
-        "disabledValue": "true"
-      },
-      "value": "https://github.com/kp4499/hmi-external",
-      "placeholder": null,
-      "accessor": null
-    },
-    {
-      "baseProperties": {
         "type": "submit",
         "id": "db-10",
         "label": "Save",
@@ -239,8 +185,8 @@
               "componentName": "",
               "sharedData": [],
               "apiConfig": {
-                "name": "addProjectAPI",
-                "url": "/rest/addProject",
+                "name": "addMiniProjectAPI",
+                "url": "/rest/mini/addProject",
                 "method": "POST",
                 "pathParams": [],
                 "queryParams": [],
@@ -248,18 +194,6 @@
                   {
                     "paramName": "title",
                     "mappedField": "projectName",
-                    "mappedValue": "",
-                    "valueFormat": ""
-                  },
-                  {
-                    "paramName": "branchName",
-                    "mappedField": "branchName",
-                    "mappedValue": "",
-                    "valueFormat": ""
-                  },
-                  {
-                    "paramName": "forkUrl",
-                    "mappedField": "gitUrl",
                     "mappedValue": "",
                     "valueFormat": ""
                   }
