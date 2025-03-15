@@ -90,6 +90,15 @@
               "name": "OPEN_URL",
               "pageUrl": "develop-app-using-ai"
             }
+          },
+          {
+            "label": "Preview",
+            "className": "btn btn-secondary",
+            "visible": "true",
+            "action": {
+              "name": "OPEN_URL",
+              "pageUrl": "preview"
+            }
           }
         ]
       }
