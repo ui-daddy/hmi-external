@@ -72,10 +72,6 @@
             "thumbnail": "./assets/images/buildings.jpg"
           }
         ],
-        "showPrimaryBtn": true,
-        "primaryBtnLabel": "Edit",
-        "showSecondaryBtn": true,
-        "secondaryBtnLabel": "Preview",
         "apiConfig": {
           "name": "myApps",
           "url": "/rest/getProjects",
@@ -84,7 +80,26 @@
           "onSuccess": {
             "apiDataAccessor": "projects"
           }
-        }
+        },
+        "buttons": [
+          {
+            "label": "Edit",
+            "className": "btn btn-primary",
+            "visible": "true",
+            "action": {
+              "name": "OPEN_URL",
+              "pageUrl": "develop-app-using-ai"
+            }
+          },
+          {
+            "label": "Preview",
+            "className": "btn btn-secondary ms-4",
+            "visible": "true",
+            "action": {
+              "name": "OPEN_IN_NEW_WINDOW"
+            }
+          }
+        ]
       }
     }
   ],
@@ -211,21 +226,38 @@
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
-                  "apiDataAccessor": "",
+                  "apiDataAccessor": "message",
                   "message": "",
                   "actions": []
                 },
                 "onError": {
-                  "pageUrl": "/projects",
+                  "pageUrl": "/dashboard",
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
-                  "apiDataAccessor": "",
+                  "apiDataAccessor": "message",
                   "message": "",
                   "showErrorMessage": true,
                   "actions": []
                 }
               }
+            },
+            {
+              "actionType": "CLOSE_MODAL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "db-7",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
             }
           ]
         }

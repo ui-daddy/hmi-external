@@ -254,37 +254,18 @@
                 "placeholder": "Enter card list array title, thumbnail path"
             },
             {
-                "propertyName": "showPrimaryBtn",
-                "defaultValueMapping": "showPrimaryBtn",
-                "type": "checkbox",
-                "label": "Show Primary Button"
-            },
-            {
-                "propertyName": "primaryBtnLabel",
-                "defaultValueMapping": "primaryBtnLabel",
-                "type": "text",
-                "label": "Primary Button Label",
-                "placeholder": "Enter primary button label"
-            },            
-            {
-                "propertyName": "showSecondaryBtn",
-                "defaultValueMapping": "showSecondaryBtn",
-                "type": "checkbox",
-                "label": "Show Secondary Button"
-            },
-            {
-                "propertyName": "secondaryBtnLabel",
-                "defaultValueMapping": "secondaryBtnLabel",
-                "type": "text",
-                "label": "Secondary Button Label",
-                "placeholder": "Enter secondary button label"
-            },
-            {
                 "propertyName": "apiConfig",
                 "defaultValueMapping": "apiConfig",
                 "type": "textarea",
                 "label": "API Config",
                 "placeholder": "Enter API configuration"
+            },
+            {
+                "propertyName": "buttons",
+                "defaultValueMapping": "buttons",
+                "type": "textarea",
+                "label": "Buttons",
+                "placeholder": "Enter buttons list array label, visible, className, action"
             }
         ],
         "customEvent": []    
