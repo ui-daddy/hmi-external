@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "start /B ng build external-components --watch & start cmd /k \"wait-on dist/external-components/package.json && npm run after-start\"",
+    "start": "rimraf ./dist && start /B ng build external-components --watch & start cmd /k \"wait-on dist/external-components/package.json && npm run after-start\"",
     "after-start": "cd dist\\external-components && npm i",
     "build": "ng build external-components --watch",
     "build:nowatch": "ng build external-components && npm run after-start",

@@ -1,6 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { environment } from '../../../constants/environment';
+import { Router } from '@angular/router';
+
+export interface Card {
+  title: string;
+  thumbnail: string;
+}
+
+export interface CardButtonAction {
+  name: string;
+  pageUrl: string;
+}
+
+export interface CardButton {
+  label: string;
+  visible: boolean;
+  className: string;
+  action: CardButtonAction;
+}
 
 @Component({
   selector: 'hmi-ext-card-list',
@@ -9,8 +26,14 @@ import { environment } from '../../../constants/environment';
 })
 export class CardListComponent extends CommonExternalComponent {
   loading: boolean = false;
+  cardList: Card[] = [];
+  buttons: CardButton[] = [];
+
+  private router = inject(Router);
 
   ngOnInit() {
+    this.cardList = this.fieldObj.customAttributes.cardList ?? [];
+    this.buttons = this.fieldObj.customAttributes.buttons ?? [];
     this.onLoad();
   }
 
@@ -18,9 +41,24 @@ export class CardListComponent extends CommonExternalComponent {
     if (this.fieldObj.customAttributes.apiConfig && this.fieldObj.customAttributes.apiConfig.url) {
       this.loading = true;
       this.customApiCall(this.fieldObj.customAttributes.apiConfig).subscribe((response: any) => {
-        this.fieldObj.customAttributes.cardList = response;
+        this.cardList = response;
         this.loading = false;
       });
+    }
+  }
+
+  onBtnClick(card: any, action: any) {
+    if(action) {
+      switch (action.name) {
+        case 'OPEN_URL': 
+          this.router.navigate([action.pageUrl], { queryParams: { 'projectId': card.id, 'pageName': card.pageName} })
+          break;
+        case 'OPEN_IN_NEW_WINDOW': 
+          window.open(card.deployLink, '_blank');
+          break;
+        default:
+          console.error('Unknown button event');
+      }
     }
   }
 }
