@@ -96,8 +96,7 @@
             "className": "btn btn-secondary ms-4",
             "visible": "true",
             "action": {
-              "name": "OPEN_URL",
-              "pageUrl": "preview"
+              "name": "OPEN_IN_NEW_WINDOW"
             }
           }
         ]
