@@ -81,7 +81,17 @@
             "apiDataAccessor": "projects"
           }
         },
-        "buttons": null
+        "buttons": [
+          {
+            "label": "Edit",
+            "className": "btn btn-primary",
+            "visible": "true",
+            "action": {
+              "name": "OPEN_URL",
+              "pageUrl": "develop-app-using-ai"
+            }
+          }
+        ]
       }
     }
   ],
