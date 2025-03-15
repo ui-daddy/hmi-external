@@ -72,10 +72,6 @@
             "thumbnail": "./assets/images/buildings.jpg"
           }
         ],
-        "showPrimaryBtn": true,
-        "primaryBtnLabel": "Edit",
-        "showSecondaryBtn": true,
-        "secondaryBtnLabel": "Preview",
         "apiConfig": {
           "name": "myApps",
           "url": "/rest/getProjects",
