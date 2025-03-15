@@ -132,6 +132,10 @@
       "fetchFromLocal": true,
       "localURL": "./assets/pageLayout/QuickSpa/dashboard/body.data.json"
     },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/dashboard/nav.field.json"
+    },
     "authGuardConfig": {
           "conditions": [
               {
