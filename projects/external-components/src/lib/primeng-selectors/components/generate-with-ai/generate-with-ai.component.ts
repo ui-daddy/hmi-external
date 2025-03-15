@@ -262,4 +262,11 @@ export class GenerateWithAiComponent
       )?.content || "{}"
     );
   }
+
+  // Add a getter for filtered messages
+  get filteredMessages() {
+    return this.messages?.filter(message => 
+      message.parts?.some(part => part.type === 'text' && part.content)
+    ) || []; 
+  }
 }

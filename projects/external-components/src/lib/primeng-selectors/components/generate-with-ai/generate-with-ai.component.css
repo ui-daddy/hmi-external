@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 100vw;
   background-color: #f9f9f9; /* Optional: background color for the entire page */
 }
@@ -10,9 +10,9 @@
 .chat-container {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  height: 90vh; /* Adjust this if you want it to take 80% of the viewport height as well */
-  padding: 20px;
+  width: 98vw;
+  height: calc(100vh - 75px); /* Adjust this if you want it to take 80% of the viewport height as well */
+  padding: 5px;
   box-sizing: border-box;
   background-color: #ffffff;
   border: 1px solid #ccc;
@@ -144,4 +144,15 @@ button:hover {
 .language-code {
   background-color: #f5f5f5;
   color: #000;
+}
+
+.code-preview-container {
+  background-color: #e5e5ea;
+  color: black;
+  align-self: flex-start;
+  text-align: left;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+  min-height: 60vh;
 }
