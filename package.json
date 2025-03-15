@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "start /B ng build external-components --watch & start cmd /k \"wait-on dist/external-components/package.json && npm run after-start\"",
+    "after-start": "cd dist\\external-components && npm i",
     "build": "ng build external-components --watch",
-    "build:nowatch": "ng build external-components",
+    "build:nowatch": "ng build external-components && npm run after-start",
     "test": "ng test",
     "lint": "ng lint",
     "link": "cd dist\\external-components && npm link",
@@ -47,6 +48,6 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~5.4.5",
-    "husky": "^8.0.0"
+    "wait-on": "^8.0.2"
   }
 }
