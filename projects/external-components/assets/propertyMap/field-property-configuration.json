@@ -264,7 +264,7 @@
                 "propertyName": "buttons",
                 "defaultValueMapping": "buttons",
                 "type": "textarea",
-                "label": "buttons",
+                "label": "Buttons",
                 "placeholder": "Enter buttons list array label, visible, className, action"
             }
         ],
