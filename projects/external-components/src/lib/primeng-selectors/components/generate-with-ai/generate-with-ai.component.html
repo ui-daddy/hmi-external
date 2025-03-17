@@ -1,6 +1,7 @@
 <div class="chat-container">
   <div class="flex-grow-1 w-100 code-preview-container" *ngIf="previewCode">
-    <hmi-ext-stackblitz-editor [code]="previewCode" [dependencies]="previewDependencies"></hmi-ext-stackblitz-editor>
+    <hmi-ext-stackblitz-editor [code]="previewCode" [dependencies]="previewDependencies" [isDialog]="false"
+    (codeChange)="onCodeChange($event)"></hmi-ext-stackblitz-editor>
   </div>
   <div class="messages" #messagesContainer>
     <div *ngFor="let message of filteredMessages; let messageIndex = index;" [ngClass]="{'user-message': message.isUser, 'bot-message flex-grow-1 w-100': !message.isUser}">
