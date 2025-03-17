@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 export interface Card {
   title: string;
+  description: string;
   thumbnail: string;
 }
 
@@ -51,10 +52,10 @@ export class CardListComponent extends CommonExternalComponent {
     if(action) {
       switch (action.name) {
         case 'OPEN_URL': 
-          this.router.navigate([action.pageUrl], { queryParams: { 'projectId': card.id, 'pageName': card.pageName} })
+          this.router.navigate([action.pageUrl], { queryParams: { 'projectId': card.id, 'pageName': card.title, 'edit': true} })
           break;
         case 'OPEN_IN_NEW_WINDOW': 
-          window.open(card.deployLink, '_blank');
+          window.open(`${card.deployLink}/${card.title}`, '_blank');
           break;
         default:
           console.error('Unknown button event');
