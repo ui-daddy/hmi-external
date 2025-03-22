@@ -103,3 +103,7 @@ header.header-container {
     margin-top: 0;
     margin-bottom: 0 !important;
 }
+
+.dashboard__headerBtn .section-container__parent {
+    justify-content: flex-end;
+}
