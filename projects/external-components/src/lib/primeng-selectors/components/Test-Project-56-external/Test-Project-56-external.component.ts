@@ -1,57 +1,92 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-test-project-56',
   template: `
-    <div style="width: 100%; height: 400px;">
-      <canvas id="temperatureChart" style="width: 100%; height: 100%;"></canvas>
+    <div>
+      <h2>Home Loan Principal and Interest Payment</h2>
+      <label for="amount">Loan Amount:</label>
+      <input id="amount" type="number" [(ngModel)]="loanAmount" />
+      
+      <label for="interest">Interest Rate (%):</label>
+      <input id="interest" type="number" [(ngModel)]="interestRate" />
+      
+      <label for="period">Period (years):</label>
+      <input id="period" type="number" [(ngModel)]="loanPeriod" />
+      
+      <button (click)="calculate()">Calculate</button>
+      
+      <canvas id="loanChart"></canvas>
     </div>
   `,
   styles: [`
-    :host {
+    div {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    label {
       display: block;
-      padding: 16px;
+      margin: 10px 0 5px;
+    }
+    input {
+      margin-bottom: 15px;
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
     }
   `]
 })
-export class TestProject56Component extends CommonExternalComponent implements AfterViewInit {
-  private temperatureData = [30, 32, 31, 29, 28, 33, 34, 35, 36, 31]; // Example data for the last 10 days
+export class TestProject56Component extends CommonExternalComponent {
+  loanAmount: number = 0;
+  interestRate: number = 0;
+  loanPeriod: number = 0;
 
-  constructor() {
-    super();
+  calculate() {
+    const principal = this.loanAmount;
+    const interest = this.interestRate / 100 / 12;
+    const payments = this.loanPeriod * 12;
+
+    const monthlyPayment = (principal * interest) / (1 - Math.pow(1 + interest, -payments));
+    const totalPayment = monthlyPayment * payments;
+    const totalInterest = totalPayment - principal;
+
+    this.renderChart(principal, totalInterest);
   }
 
-  ngAfterViewInit() {
-    this.createChart();
-  }
-
-  private createChart() {
-    const ctx = (document.getElementById('temperatureChart') as HTMLCanvasElement).getContext('2d');
-    if (ctx) {
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7', 'Day 8', 'Day 9', 'Day 10'],
-          datasets: [{
-            label: 'Temperature in Pune (°C)',
-            data: this.temperatureData,
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
+  renderChart(principal: number, totalInterest: number) {
+    const ctx = (document.getElementById('loanChart') as HTMLCanvasElement).getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Principal', 'Interest'],
+        datasets: [{
+          label: 'Payments',
+          data: [principal, totalInterest],
+          backgroundColor: ['#36a2eb', '#ff6384']
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
           }
         }
-      });
-    } else {
-      console.error('Failed to get context for the chart.');
-    }
+      }
+    });
   }
 }
