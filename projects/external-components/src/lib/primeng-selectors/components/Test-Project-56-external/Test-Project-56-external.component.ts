@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-test-project-56',
   template: `
     <div>
-      <h2>Home Loan Principal and Interest Payment</h2>
-      <label for="amount">Loan Amount:</label>
-      <input id="amount" type="number" [(ngModel)]="loanAmount" />
-      
-      <label for="interest">Interest Rate (%):</label>
-      <input id="interest" type="number" [(ngModel)]="interestRate" />
-      
-      <label for="period">Period (years):</label>
-      <input id="period" type="number" [(ngModel)]="loanPeriod" />
-      
-      <button (click)="calculate()">Calculate</button>
-      
-      <canvas id="loanChart"></canvas>
+      <h2>EMI Calculator</h2>
+      <label for="loanAmount">Loan Amount:</label>
+      <input type="number" id="loanAmount" [(ngModel)]="loanAmount" />
+
+      <label for="interestRate">Rate of Interest (%):</label>
+      <input type="number" id="interestRate" [(ngModel)]="interestRate" />
+
+      <label for="loanTenure">Loan Tenure (in years):</label>
+      <input type="number" id="loanTenure" [(ngModel)]="loanTenure" />
+
+      <button (click)="calculateEMI()">Calculate EMI</button>
+
+      <div *ngIf="emi">
+        <h3>Your Monthly EMI is: {{ emi | currency }}</h3>
+      </div>
     </div>
   `,
   styles: [`
@@ -26,67 +27,33 @@ import { Chart } from 'chart.js';
       font-family: Arial, sans-serif;
       margin: 20px;
     }
-    h2 {
-      color: #333;
-    }
     label {
       display: block;
-      margin: 10px 0 5px;
+      margin-top: 10px;
     }
     input {
-      margin-bottom: 15px;
-      padding: 8px;
       width: 100%;
-      box-sizing: border-box;
+      padding: 8px;
+      margin-top: 5px;
     }
     button {
+      margin-top: 15px;
       padding: 10px 15px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
     }
   `]
 })
 export class TestProject56Component extends CommonExternalComponent {
   loanAmount: number = 0;
   interestRate: number = 0;
-  loanPeriod: number = 0;
+  loanTenure: number = 0;
+  emi: number | null = null;
 
-  calculate() {
+  calculateEMI() {
     const principal = this.loanAmount;
-    const interest = this.interestRate / 100 / 12;
-    const payments = this.loanPeriod * 12;
+    const calculatedInterest = this.interestRate / (12 * 100);
+    const calculatedTenure = this.loanTenure * 12;
 
-    const monthlyPayment = (principal * interest) / (1 - Math.pow(1 + interest, -payments));
-    const totalPayment = monthlyPayment * payments;
-    const totalInterest = totalPayment - principal;
-
-    this.renderChart(principal, totalInterest);
-  }
-
-  renderChart(principal: number, totalInterest: number) {
-    const ctx = (document.getElementById('loanChart') as HTMLCanvasElement).getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Principal', 'Interest'],
-        datasets: [{
-          label: 'Payments',
-          data: [principal, totalInterest],
-          backgroundColor: ['#36a2eb', '#ff6384']
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
+    this.emi = (principal * calculatedInterest * Math.pow(1 + calculatedInterest, calculatedTenure)) /
+               (Math.pow(1 + calculatedInterest, calculatedTenure) - 1);
   }
 }
