@@ -6,6 +6,34 @@
       "layout": {
         "column": {
           "ratio": {
+            "lg": "1:1",
+            "md": "2:3",
+            "sm": "2:3",
+            "xs": "2:4"
+          },
+          "count": "2"
+        },
+        "css": {
+          "customClassName": "mt-2 me-2 ",
+          "configuration": [
+            {
+              "selectorName": ".<span>section-container__parent</span>",
+              "xs": {
+                "justify-content": "flex-end"
+              }
+            }
+          ],
+          "themeClass": ""
+        }
+      },
+      "sectionList": []
+    },
+    {
+      "id": "db-13",
+      "type": "content",
+      "layout": {
+        "column": {
+          "ratio": {
             "lg": "12",
             "md": "12",
             "sm": "12",
