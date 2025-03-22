@@ -4,56 +4,42 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 @Component({
   selector: 'app-test-project-56',
   template: `
-    <div>
-      <h2>EMI Calculator</h2>
-      <label for="loanAmount">Loan Amount:</label>
-      <input type="number" id="loanAmount" [(ngModel)]="loanAmount" />
-
-      <label for="interestRate">Rate of Interest (%):</label>
-      <input type="number" id="interestRate" [(ngModel)]="interestRate" />
-
-      <label for="loanTenure">Loan Tenure (in years):</label>
-      <input type="number" id="loanTenure" [(ngModel)]="loanTenure" />
-
-      <button (click)="calculateEMI()">Calculate EMI</button>
-
-      <div *ngIf="emi">
-        <h3>Your Monthly EMI is: {{ emi | currency }}</h3>
+    <div style="padding: 20px;">
+      <h2 style="text-align: center;">EMI Calculator</h2>
+      <div style="margin-bottom: 10px;">
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="number" id="loanAmount" [(ngModel)]="loanAmount" style="margin-left: 10px;" />
       </div>
+      <div style="margin-bottom: 10px;">
+        <label for="interestRate">Interest Rate (%):</label>
+        <input type="number" id="interestRate" [(ngModel)]="interestRate" style="margin-left: 10px;" />
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="period">Period (in years):</label>
+        <input type="number" id="period" [(ngModel)]="period" style="margin-left: 10px;" />
+      </div>
+      <button (click)="calculateEMI()" style="margin-top: 10px;">Calculate EMI</button>
+      <h3 *ngIf="emi !== null" style="text-align: center; margin-top: 20px;">Monthly EMI: {{ emi | currency }}</h3>
     </div>
   `,
   styles: [`
-    div {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+    h2 {
+      color: #333;
     }
     label {
-      display: block;
-      margin-top: 10px;
-    }
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px 15px;
+      font-weight: bold;
     }
   `]
 })
-export class TestProject56Component extends CommonExternalComponent {
+export class TestProject56 extends CommonExternalComponent {
   loanAmount: number = 0;
   interestRate: number = 0;
-  loanTenure: number = 0;
+  period: number = 0;
   emi: number | null = null;
 
-  calculateEMI() {
-    const principal = this.loanAmount;
-    const calculatedInterest = this.interestRate / (12 * 100);
-    const calculatedTenure = this.loanTenure * 12;
-
-    this.emi = (principal * calculatedInterest * Math.pow(1 + calculatedInterest, calculatedTenure)) /
-               (Math.pow(1 + calculatedInterest, calculatedTenure) - 1);
+  calculateEMI(): void {
+    const monthlyRate = this.interestRate / 12 / 100;
+    const numberOfMonths = this.period * 12;
+    this.emi = (this.loanAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -numberOfMonths));
   }
 }
