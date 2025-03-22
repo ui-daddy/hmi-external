@@ -3,6 +3,66 @@
     {
       "baseProperties": {
         "type": "button",
+        "id": "db-12",
+        "label": "Refresh"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "Refresh Projects",
+                "url": "/getProjects",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "onSuccess": {},
+                "onError": {},
+                "beforeSubmit": {
+                  "action": []
+                },
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": false,
+                "isWithCredentials": false
+              }
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
         "id": "db-6",
         "label": "Add Project",
         "name": "addProjectBtn"
