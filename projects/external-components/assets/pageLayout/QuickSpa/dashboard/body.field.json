@@ -55,19 +55,20 @@
                   "pageUrl": "",
                   "deleteTableRow": false,
                   "showSuccessMessage": false,
-                  "sharedData": [
-                    {
-                      "varName": "projectsList",
-                      "staticData": "",
-                      "cache": false,
-                      "responseAccessor": "projects"
-                    }
-                  ],
+                  "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
                   "apiDataAccessor": "",
                   "message": "",
-                  "actions": []
+                  "actions": [
+                    {
+                      "actionType": "setfield",
+                      "field": "$db-4$",
+                      "fieldValue": "$RESPONSE$",
+                      "condition": "true",
+                      "formName": ""
+                    }
+                  ]
                 },
                 "onError": {
                   "pageUrl": "",
@@ -308,10 +309,17 @@
                   "action": []
                 },
                 "onSuccess": {
-                  "pageUrl": "/develop-app-using-ai",
+                  "pageUrl": "/develop-app-using-ai?projectId=$SHARED_DATA:project.id&pageName=$SHARED_DATA:project.title",
                   "deleteTableRow": false,
                   "showSuccessMessage": true,
-                  "sharedData": [],
+                  "sharedData": [
+                    {
+                      "varName": "project",
+                      "staticData": "",
+                      "cache": false,
+                      "responseAccessor": "values"
+                    }
+                  ],
                   "fieldData": [],
                   "clearSharedData": [],
                   "apiDataAccessor": "message",
