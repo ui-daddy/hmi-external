@@ -4,7 +4,8 @@
       "baseProperties": {
         "type": "button",
         "id": "db-12",
-        "label": "Refresh"
+        "label": "Refresh",
+        "name": "refreshBtn"
       },
       "layoutProperties": {
         "labelPlacement": null,
