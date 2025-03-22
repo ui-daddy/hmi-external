@@ -55,7 +55,14 @@
                   "pageUrl": "",
                   "deleteTableRow": false,
                   "showSuccessMessage": false,
-                  "sharedData": [],
+                  "sharedData": [
+                    {
+                      "varName": "projectsList",
+                      "staticData": "",
+                      "cache": false,
+                      "responseAccessor": "projects"
+                    }
+                  ],
                   "fieldData": [],
                   "clearSharedData": [],
                   "apiDataAccessor": "",
