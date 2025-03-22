@@ -14,6 +14,7 @@ import { Clipboard } from "@angular/cdk/clipboard";
 import { StackblitzEditorComponent } from "../stackblitz-editor/stackblitz-editor.component";
 import { DialogService } from "primeng/dynamicdialog";
 import { deepClone } from "../../util/util";
+import { DialogResult } from "../stackblitz-editor/stackblitz-editor.component";
 
 interface MessagePart {
   type: "text" | "code";
@@ -79,26 +80,30 @@ export class GenerateWithAiComponent
     this.scrollToBottom();
   }
 
-  preview(code: string, messageIndex: number): void {
-    const dependencies =
-      this.messages[messageIndex].parts.find(
-        (part) => part.type === "code" && part.language === "json"
-      )?.content || "{}";
-    this.dialogService
-      .open(StackblitzEditorComponent, {
-        header: "Page Preview",
-        width: "100%",
-        data: { code: code, dependencies: dependencies },
-        height: "100vh",
-        keepInViewport: true,
-        baseZIndex: 500,
-        contentStyle: { "flex-grow": 1 },
-      })
-      .onClose.subscribe((data: any) => {
-        if (data?.action === "SAVE") {
-          this.createComponent(data.code, messageIndex);
-        }
-      });
+  preview(code: string, messageIndex: number, useDialog: boolean = true): void {
+    if (useDialog) {
+      this.dialogService
+        .open(StackblitzEditorComponent, {
+          header: "Page Preview",
+          width: "100%",
+          data: { 
+            code: code, 
+            dependencies: this.messages[messageIndex].parts.find(
+              (part) => part.type === "code" && part.language === "json"
+            )?.content || "{}", 
+            isDialog: true 
+          },
+          height: "100vh",
+          keepInViewport: true,
+          baseZIndex: 500,
+          contentStyle: { "flex-grow": 1 },
+        })
+        .onClose.subscribe((data: DialogResult) => {
+          if (data?.action === "SAVE" && data.code != null) {
+            this.createComponent(data.code, messageIndex);
+          }
+        });
+    }
   }
 
   copycode(code: string): void {
@@ -204,15 +209,10 @@ export class GenerateWithAiComponent
     return parts;
   }
 
-  createComponent(code: any, messageIndex: number) {
+  private saveComponentCode(code: string, dependencies?: string): void {
     this.messageData.code = "```component.ts```\n" + code;
-    if (messageIndex != null) {
-      const dependencies =
-        this.messages[messageIndex].parts.find(
-          (part) => part.type === "code" && part.language === "json"
-        )?.content || "{}";
-      this.messageData.code =
-        this.messageData.code + "\n ```package.json``` \n" + dependencies;
+    if (dependencies) {
+      this.messageData.code += "\n ```package.json``` \n" + dependencies;
     }
 
     let saveCompEvent = this.fieldObj.events?.find(
@@ -242,6 +242,19 @@ export class GenerateWithAiComponent
     } else {
       console.error("No Copy Code event detected");
     }
+  }
+
+  createComponent(code: string, messageIndex: number): void {
+    const dependencies = this.messages[messageIndex].parts.find(
+      (part) => part.type === "code" && part.language === "json"
+    )?.content || "{}";
+    
+    this.saveComponentCode(code, dependencies);
+  }
+
+  // Add this method to handle code changes when component is directly embedded
+  onCodeChange(code: string): void {
+    this.saveComponentCode(code, this.previewDependencies);
   }
 
   private scrollToBottom(): void {

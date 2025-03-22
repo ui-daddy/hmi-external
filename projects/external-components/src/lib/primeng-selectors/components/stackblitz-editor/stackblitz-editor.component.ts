@@ -1,3 +1,8 @@
+export interface DialogResult {
+  action: 'SAVE' | 'CANCEL';
+  code?: string;
+}
+
 import {
   Component,
   OnInit,
@@ -6,17 +11,19 @@ import {
   NgZone, 
   Input,
   SimpleChanges,
-  OnChanges
+  OnChanges,
+  Output,
+  EventEmitter,
+  Optional
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
-
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'hmi-ext-stackblitz-editor',
   templateUrl: './stackblitz-editor.component.html',
   styleUrls: ['./stackblitz-editor.component.css']
-
 })
 export class StackblitzEditorComponent implements OnInit, OnChanges {
   @ViewChild('editorContainer', { static: true }) editorContainer!: ElementRef;
@@ -29,8 +36,13 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
 
   @Input() code: string = '';
   @Input() dependencies: string = '';
+  @Input() isDialog: boolean = true;
+  @Output() codeChange = new EventEmitter<string>();
   
-  constructor(private zone: NgZone) {}
+  constructor(
+    private zone: NgZone,
+    @Optional() public ref: DynamicDialogRef
+  ) {}
 
   ngOnInit(): void {
     this.embedEditor();
@@ -153,9 +165,18 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
               `src/app/${this.component.selector}/${this.component.selector}.component.ts`
             ] && !this.onLoad
           ) {  
-            // this.ref.close({action: "SAVE", code: event.data.payload[
-            //   `src/app/${this.component.selector}/${this.component.selector}.component.ts`
-            // ]});
+            const updatedCode = event.data.payload[
+              `src/app/${this.component.selector}/${this.component.selector}.component.ts`
+            ];
+            
+            if (this.isDialog) {
+              this.ref.close({
+                action: "SAVE", 
+                code: updatedCode
+              } as DialogResult);
+            } else {
+              this.codeChange.emit(updatedCode);
+            }
           }
         });
       }
@@ -170,6 +191,8 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   }
 
   cancel() {
-    // this.ref.close();
+    if (this.isDialog) {
+      this.ref.close({ action: 'CANCEL' } as DialogResult);
+    }
   }
 }

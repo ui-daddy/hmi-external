@@ -142,6 +142,108 @@
               }
             }
           ]
+        },
+        {
+          "event": "savecomponent",
+          "debounce": null,
+          "actions": [
+              {
+                  "actionType": "SET_SHARED_DATA",
+                  "url": "",
+                  "condition": "1==1",
+                  "fileName": "",
+                  "field": "",
+                  "fieldValue": "",
+                  "fieldAccessor": "",
+                  "messagetype": "",
+                  "messageText": "",
+                  "target": "",
+                  "timer": null,
+                  "formName": "",
+                  "componentName": "",
+                  "sharedData": [
+                      {
+                          "varName": "saveCodeData",
+                          "staticData": "$SAVE_CODE_DATA$",
+                          "cache": false,
+                          "responseAccessor": ""
+                      }
+                  ],
+                  "apiConfig": null
+              },
+              {
+                  "actionType": "INVOKE_API",
+                  "url": "",
+                  "condition": "1==1",
+                  "fileName": "",
+                  "field": "",
+                  "fieldValue": "",
+                  "fieldAccessor": "",
+                  "messagetype": "",
+                  "messageText": "",
+                  "target": "",
+                  "timer": null,
+                  "formName": "",
+                  "componentName": "",
+                  "sharedData": [],
+                  "apiConfig": {
+                      "name": "saveComponent",
+                      "url": "/rest/formDesigner/:projectGuid/pages/:pageName/component",
+                      "method": "POST",
+                      "contentType": "text/plain",
+                      "pathParams": [
+                          {
+                              "paramName": "projectGuid",
+                              "mappedField": "$URL_QUERY_PARAMS",
+                              "mappedValue": "projectId",
+                              "valueFormat": ""
+                          },
+                          {
+                              "paramName": "pageName",
+                              "mappedField": "$URL_QUERY_PARAMS",
+                              "mappedValue": "pageName",
+                              "valueFormat": ""
+                          }
+                      ],
+                      "queryParams": [],
+                      "payloadParams": [
+                          {
+                              "paramName": "",
+                              "mappedField": "",
+                              "mappedValue": "",
+                              "valueFormat": "$SHARED_DATA(saveCodeData.code)"
+                          }
+                      ],
+                      "fetch": "",
+                      "downloadFileName": "",
+                      "responseType": "",
+                      "beforeSubmit": {
+                          "action": []
+                      },
+                      "onSuccess": {
+                          "pageUrl": "",
+                          "deleteTableRow": false,
+                          "showSuccessMessage": true,
+                          "sharedData": [],
+                          "fieldData": [],
+                          "clearSharedData": [],
+                          "apiDataAccessor": "",
+                          "message": "Page created successfully! Build the project to view your new page.",
+                          "actions": []
+                      },
+                      "onError": {
+                          "pageUrl": "",
+                          "sharedData": [],
+                          "fieldData": [],
+                          "clearSharedData": [],
+                          "apiDataAccessor": "",
+                          "message": "",
+                          "showErrorMessage": true,
+                          "actions": []
+                      }
+                  }
+              }
+          ]
         }
       ],
       "expressionProperties": {},
