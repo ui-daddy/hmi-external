@@ -99,7 +99,7 @@
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
+          "customClassName": "ms-2",
           "configuration": [],
           "themeClass": ""
         },
