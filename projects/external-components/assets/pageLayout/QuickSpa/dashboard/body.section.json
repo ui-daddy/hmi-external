@@ -17,13 +17,11 @@
           "customClassName": "mt-2 me-2 ",
           "configuration": [
             {
-              "selectorName": ".<span>section-container__parent</span>",
-              "xs": {
-                "justify-content": "flex-end"
-              }
+              "selectorName": ".temp-class-2",
+              "xs": {}
             }
           ],
-          "themeClass": ""
+          "themeClass": "dashboard__headerBtn"
         }
       },
       "sectionList": []
