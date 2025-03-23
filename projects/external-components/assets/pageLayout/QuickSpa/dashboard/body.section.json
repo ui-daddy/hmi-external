@@ -6,9 +6,9 @@
       "layout": {
         "column": {
           "ratio": {
-            "lg": "1:2",
-            "md": "2:3",
-            "sm": "2:3",
+            "lg": "auto:auto",
+            "md": "auto:auto",
+            "sm": "auto:auto",
             "xs": "auto:auto"
           },
           "count": "2"
