@@ -1,18 +1,17 @@
-<div class="container-fluid">
-  <div class="spinner-border text-primary" role="status" *ngIf="loading">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="row" *ngIf="!loading">
-    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 mb-3" *ngFor="let card of cardList;let i=index">
-      <div class="card shadow">
-        <div class="card-body">
-          <h5 class="card-title">{{(i+1)+'. '+card.description}}</h5>
-          <!-- <img [src]="card.thumbnail" class="img-thumbnail" alt="card thumbnail"> -->
-          <div class="d-flex justify-content-center mt-3">
-            <ng-container *ngFor="let btn of buttons">
-              <button [class]="btn.className" *ngIf="btn.visible" (click)="onBtnClick(card, btn.action)">{{btn.label}}</button>
-            </ng-container>
-          </div>
+<div class="spinner-border text-primary" role="status" *ngIf="loading">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="row" *ngIf="!loading">
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 mb-3" *ngFor="let card of cardList;let i=index">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">{{(i+1)+'. '+card.description}}</h5>
+        <div>Build Status: {{card.buildStatus}}</div>
+        <!-- <img [src]="card.thumbnail" class="img-thumbnail" alt="card thumbnail"> -->
+        <div class="d-flex justify-content-center mt-3">
+          <ng-container *ngFor="let btn of buttons">
+            <button [class]="btn.className" *ngIf="btn.visible" (click)="onBtnClick(card, btn.action)">{{btn.label}}</button>
+          </ng-container>
         </div>
       </div>
     </div>

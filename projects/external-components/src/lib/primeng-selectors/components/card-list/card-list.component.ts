@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 export interface Card {
   title: string;
+  buildStatus: string;
   description: string;
   thumbnail: string;
 }
@@ -40,12 +41,21 @@ export class CardListComponent extends CommonExternalComponent {
 
   onLoad() {
     if (this.fieldObj.customAttributes.apiConfig && this.fieldObj.customAttributes.apiConfig.url) {
-      this.loading = true;
-      this.customApiCall(this.fieldObj.customAttributes.apiConfig).subscribe((response: any) => {
-        this.cardList = response;
-        this.loading = false;
-      });
+      this.refreshCards();
     }
+    this.fieldObj.action.subscribe((actionObj: any) => {
+      if (actionObj.actionType === "setfield") {
+        this.cardList = actionObj.data;
+      }
+    });
+  }
+
+  private refreshCards() {
+    this.loading = true;
+    this.customApiCall(this.fieldObj.customAttributes.apiConfig).subscribe((response: any) => {
+      this.cardList = response;
+      this.loading = false;
+    });
   }
 
   onBtnClick(card: any, action: any) {
