@@ -1,0 +1,116 @@
+{
+    "dh-0": [
+        {
+            "baseProperties": {
+                "type": "staticImage",
+                "id": "dh-1",
+                "name": "headerLogo"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-logo",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-logo .dynamic-style-child",
+                            "xs": {
+                                "width": "70px",
+                                "height": "70px"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-logo",
+                            "xs": {
+                                "text-align": "center"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+            "altText": null,
+            "showDownload": null
+        },
+        {
+            "baseProperties": {
+                "type": "navItemGroup",
+                "id": "dh-2",
+                "name": "headerNavItemGroup"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-nav-menu",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-nav-menu",
+                            "xs": {
+                                "gap": "30px",
+                                "margin-top": "5px",
+                                "min-width": "100%",
+                                "justify-content": "end"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-nav-menu.navbar-nav .item-active",
+                            "xs": {
+                                "border-bottom": "4px solid #D57303"
+                            }
+                        },
+                        {
+                            "selectorName": ".header-nav-menu.navbar-nav .nav-link.active",
+                            "xs": {
+                                "color": "#D57303",
+                                "font-weight": "bold"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "navItems": [
+                {
+                    "id": "home",
+                    "label": "Home",
+                    "navigateToPage": "/home"
+                },
+                {
+                    "id": "organization",
+                    "label": "Organization",
+                    "navigateToPage": "/organization"
+                },
+                {
+                    "id": "news",
+                    "label": "News",
+                    "navigateToPage": "/news"
+                },
+                {
+                    "id": "blog",
+                    "label": "Blog",
+                    "navigateToPage": "/blog"
+                },
+                {
+                    "id": "contactus",
+                    "label": "Contact Us",
+                    "navigateToPage": "/contactus"
+                },
+                {
+                    "id": "aboutUs",
+                    "label": "About Us",
+                    "navigateToPage": "/aboutUs"
+                }
+            ]
+        }
+    ]
+}

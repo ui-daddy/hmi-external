@@ -1,0 +1,1403 @@
+{
+    "db-0": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-2",
+                "name": "welcome-txt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "welcome-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".welcome-txt",
+                            "xs": {
+                                "font-size": "24px",
+                                "font-weight": "500",
+                                "justify-content": "left"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Welcome to Dashboard",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dropdown",
+                "id": "db-3",
+                "name": "day-dd"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "day-dd",
+                    "configuration": [
+                        {
+                            "selectorName": ".day-dd",
+                            "xs": {
+                                "justify-content": "end",
+                                "text-align": "right"
+                            }
+                        },
+                        {
+                            "selectorName": ".day-dd .field-label",
+                            "xs": {
+                                "display": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".input-label__placement-top",
+                            "xs": {
+                                "display": "inline-block"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "optionList": [
+                {
+                    "value": "today",
+                    "label": "Today"
+                },
+                {
+                    "value": "yesterday",
+                    "label": "Yesterday"
+                }
+            ],
+            "optionsConfig": null,
+            "labelKey": "label",
+            "valueKey": "value",
+            "value": "yesterday"
+        }
+    ],
+    "db-48": [],
+    "db-25": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-32",
+                "name": "txtResourceOv"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "justify-content": "start",
+                                "font-weight": "700",
+                                "padding": "15px 0 0 15px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Resource Overview(Horizontal Bar Chart)",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-27",
+                "name": "horizontal Bar"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": "> span",
+                            "xs": {
+                                "padding": "0 10px 20px 10px",
+                                "display": "block"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "bar",
+                "label": null,
+                "height": "380",
+                "options": {
+                    "indexAxis": "y",
+                    "maintainAspectRatio": false,
+                    "aspectRatio": 0.8,
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "x": {
+                            "ticks": {
+                                "color": "black",
+                                "font": {
+                                    "weight": 500
+                                }
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        },
+                        "y": {
+                            "ticks": {
+                                "color": "black"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Active Resource",
+                            "backgroundColor": "#3B82F6",
+                            "borderColor": "#3B82F6",
+                            "data": [
+                                65,
+                                59,
+                                80,
+                                81,
+                                56,
+                                55,
+                                40
+                            ]
+                        },
+                        {
+                            "label": "Inactive Resource",
+                            "backgroundColor": "#EAB308",
+                            "borderColor": "#EAB308",
+                            "data": [
+                                28,
+                                48,
+                                40,
+                                19,
+                                86,
+                                27,
+                                90
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-39": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-44",
+                "name": "radarTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Radar Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-40",
+                "name": "radarChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "radar",
+                "label": null,
+                "height": "400",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "r": {
+                            "grid": {
+                                "color": "black"
+                            },
+                            "pointLabels": {
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Eating",
+                        "Drinking",
+                        "Sleeping",
+                        "Designing",
+                        "Coding",
+                        "Cycling",
+                        "Running"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "My First dataset",
+                            "borderColor": "Grey",
+                            "pointBackgroundColor": "#3B82F6",
+                            "pointBorderColor": "#3B82F6",
+                            "pointHoverBackgroundColor": "Black",
+                            "pointHoverBorderColor": "#3B82F6",
+                            "data": [
+                                65,
+                                59,
+                                90,
+                                81,
+                                56,
+                                55,
+                                40
+                            ]
+                        },
+                        {
+                            "label": "My Second dataset",
+                            "borderColor": "Pink",
+                            "pointBackgroundColor": "Pink",
+                            "pointBorderColor": "Pink",
+                            "pointHoverBackgroundColor": "Black",
+                            "pointHoverBorderColor": "Pink",
+                            "data": [
+                                28,
+                                48,
+                                40,
+                                19,
+                                96,
+                                27,
+                                100
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-43": [],
+    "db-37": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-45",
+                "name": "polarHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Polar Area Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-38",
+                "name": "polarAreaChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "polarArea",
+                "label": null,
+                "height": "400",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "r": {
+                            "grid": {
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "datasets": [
+                        {
+                            "data": [
+                                11,
+                                16,
+                                7,
+                                3,
+                                14
+                            ],
+                            "backgroundColor": [
+                                "Red",
+                                "Green",
+                                "Yellow",
+                                "Grey",
+                                "#3B82F6"
+                            ],
+                            "label": "My dataset"
+                        }
+                    ],
+                    "labels": [
+                        "Red",
+                        "Green",
+                        "Yellow",
+                        "Grey",
+                        "#3B82F6"
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-26": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-49",
+                "name": "lineChartTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Line Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-28",
+                "name": "lineChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "line",
+                "label": null,
+                "height": "400",
+                "options": {
+                    "maintainAspectRatio": false,
+                    "aspectRatio": 0.6,
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "x": {
+                            "ticks": {
+                                "color": "black"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        },
+                        "y": {
+                            "ticks": {
+                                "color": "black"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Active Resource",
+                            "data": [
+                                65,
+                                59,
+                                80,
+                                81,
+                                56,
+                                55,
+                                40
+                            ],
+                            "fill": false,
+                            "borderColor": "#3B82F6",
+                            "tension": 0.4
+                        },
+                        {
+                            "label": "Inactive Resource",
+                            "data": [
+                                28,
+                                48,
+                                40,
+                                19,
+                                86,
+                                27,
+                                90
+                            ],
+                            "fill": false,
+                            "borderColor": "#EAB308",
+                            "tension": 0.4
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-50": [],
+    "db-4": [],
+    "db-8": [],
+    "db-33": [],
+    "db-35": [
+        {
+            "baseProperties": {
+                "type": "staticIcon",
+                "id": "db-10",
+                "name": "recentEarningIcon"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "suitcase-icon",
+                    "configuration": [
+                        {
+                            "selectorName": ".suitcase-icon",
+                            "xs": {
+                                "border": "1px solid #e9e9e9",
+                                "padding": "14px 20px",
+                                "font-size": "34px",
+                                "border-radius": "10px",
+                                "color": "#464dee"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "iconClass": "fa fa-briefcase"
+        }
+    ],
+    "db-34": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-11"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "recent-earning-lbl",
+                    "configuration": [
+                        {
+                            "selectorName": ".recent-earning-lbl",
+                            "xs": {
+                                "font-size": "20px",
+                                "font-weight": "bold",
+                                "justify-content": "start",
+                                "line-height": "30px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "$42,981",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-36"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "recent-earning-lbl2",
+                    "configuration": [
+                        {
+                            "selectorName": ".recent-earning-lbl2",
+                            "xs": {
+                                "font-size": "16px",
+                                "justify-content": "start",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "RECENT EARNINGS",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-9": [],
+    "db-13": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-15"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "widget-ticket",
+                    "configuration": [
+                        {
+                            "selectorName": ".widget-ticket",
+                            "xs": {
+                                "font-size": "12px",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Tickets Sold",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-16"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "ticket-sold",
+                    "configuration": [
+                        {
+                            "selectorName": ".ticket-sold",
+                            "xs": {
+                                "font-weight": "bold"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "24,995",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-14": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-17"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "widget-ticket",
+                    "configuration": [
+                        {
+                            "selectorName": ".widget-ticket",
+                            "xs": {
+                                "font-size": "12px",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Tickets Available",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-18"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "ticket-available",
+                    "configuration": [
+                        {
+                            "selectorName": ".ticket-available",
+                            "xs": {
+                                "font-weight": "bold"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "12,281",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-12": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-19"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "widget-ticket",
+                    "configuration": [
+                        {
+                            "selectorName": ".widget-ticket",
+                            "xs": {
+                                "font-size": "12px",
+                                "color": "#6c7293"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Revenue",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-20"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "revenue-style",
+                    "configuration": [
+                        {
+                            "selectorName": ".revenue-style",
+                            "xs": {
+                                "font-weight": "bold"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "11,200",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-52": [],
+    "db-53": [
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-57",
+                "name": "doughtnutDailyChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "doughnut",
+                "label": null,
+                "height": "200",
+                "options": {
+                    "cutout": "80%",
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "display": "false"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "datasets": [
+                        {
+                            "data": [
+                                300,
+                                50
+                            ],
+                            "backgroundColor": [
+                                "#464DEE",
+                                "#EEEEEE"
+                            ],
+                            "hoverBackgroundColor": [
+                                "#464DEE",
+                                "#EEEEEE"
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-54": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-55"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "avg-daily-sales",
+                    "configuration": [
+                        {
+                            "selectorName": ".avg-daily-sales",
+                            "xs": {
+                                "font-weight": "700",
+                                "justify-content": "start"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Avg. Daily sales",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-56"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "lorem-ipsum",
+                    "configuration": [
+                        {
+                            "selectorName": ".lorem-ipsum",
+                            "xs": {
+                                "justify-content": "start"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-58": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-59",
+                "name": "profitPercTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profit-perc-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".profit-perc-txt",
+                            "xs": {
+                                "font-weight": "700",
+                                "margin-left": "-20px",
+                                "font-size": "18px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "80%",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-60",
+                "name": "profitLabelText"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "profit-label-txt",
+                    "configuration": [
+                        {
+                            "selectorName": ".profit-label-txt",
+                            "xs": {
+                                "color": "#a7afb7",
+                                "font-weight": "700",
+                                "margin-left": "-22px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "PROFIT",
+            "dynamicValueAccessor": null
+        }
+    ],
+    "db-41": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-46",
+                "name": "doughnutHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Doughnut Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-42",
+                "name": "doughnutChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "doughnut",
+                "label": null,
+                "height": "400",
+                "options": {
+                    "cutout": "60%",
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Social Media",
+                        "Entertainment",
+                        "Others"
+                    ],
+                    "datasets": [
+                        {
+                            "data": [
+                                300,
+                                50,
+                                100
+                            ],
+                            "backgroundColor": [
+                                "#3B82F6",
+                                "Yellow",
+                                "Green"
+                            ],
+                            "hoverBackgroundColor": [
+                                "#3B82F6",
+                                "Yellow",
+                                "Green"
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-23": [],
+    "db-5": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-51",
+                "name": "barChartTxt"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Bar Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-21",
+                "name": "barChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "bar",
+                "label": "Bar Chart",
+                "height": "400",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "color": "black"
+                            }
+                        }
+                    },
+                    "scales": {
+                        "y": {
+                            "beginAtZero": true,
+                            "ticks": {
+                                "color": "gray"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        },
+                        "x": {
+                            "ticks": {
+                                "color": "gray"
+                            },
+                            "grid": {
+                                "color": "black",
+                                "drawBorder": false
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Q1",
+                        "Q2",
+                        "Q3",
+                        "Q4"
+                    ],
+                    "datasets": [
+                        {
+                            "label": "Sales",
+                            "data": [
+                                540,
+                                325,
+                                702,
+                                620
+                            ],
+                            "backgroundColor": [
+                                "rgba(255, 159, 64, 0.2)",
+                                "rgba(75, 192, 192, 0.2)",
+                                "rgba(54, 162, 235, 0.2)",
+                                "rgba(153, 102, 255, 0.2)"
+                            ],
+                            "borderColor": [
+                                "rgb(255, 159, 64)",
+                                "rgb(75, 192, 192)",
+                                "rgb(54, 162, 235)",
+                                "rgb(153, 102, 255)"
+                            ],
+                            "borderWidth": 1
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ],
+    "db-30": [
+        {
+            "baseProperties": {
+                "type": "staticText",
+                "id": "db-47",
+                "name": "pieHeader"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "section-header",
+                    "configuration": [
+                        {
+                            "selectorName": ".section-header",
+                            "xs": {
+                                "padding": "15px 0 0 15px",
+                                "justify-content": "start",
+                                "font-weight": "700"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": "Pie Chart",
+            "dynamicValueAccessor": null
+        },
+        {
+            "baseProperties": {
+                "type": "dynamicField",
+                "id": "db-31",
+                "name": "pieChart"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [
+                        {
+                            "selectorName": ".temp-class-1",
+                            "xs": {}
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "libraryComponent": "ChartsExternalComponent",
+            "events": [],
+            "expressionProperties": {},
+            "customAttributes": {
+                "type": "pie",
+                "label": null,
+                "height": "400",
+                "options": {
+                    "plugins": {
+                        "legend": {
+                            "labels": {
+                                "usePointStyle": true,
+                                "color": "black"
+                            }
+                        }
+                    }
+                },
+                "data": {
+                    "labels": [
+                        "Social Media",
+                        "Entertainment",
+                        "Other"
+                    ],
+                    "datasets": [
+                        {
+                            "data": [
+                                540,
+                                325,
+                                702
+                            ],
+                            "backgroundColor": [
+                                "#EAB308",
+                                "#3B82F6",
+                                "#22C55E"
+                            ],
+                            "hoverBackgroundColor": [
+                                "#EAB308",
+                                "#3B82F6",
+                                "#22C55E"
+                            ]
+                        }
+                    ]
+                },
+                "dataKey": null,
+                "dataConfig": null,
+                "dataToChartMapping": null,
+                "backgroundColor": null
+            }
+        }
+    ]
+}

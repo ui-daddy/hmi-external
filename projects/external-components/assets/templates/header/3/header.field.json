@@ -1,0 +1,177 @@
+{
+    "dh-0": [
+        {
+            "baseProperties": {
+                "type": "staticImage",
+                "id": "dh-1",
+                "name": "headerLogo"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-logo",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-logo .dynamic-style-child",
+                            "xs": {
+                                "width": "70px",
+                                "height": "70px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "imageUrl": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+            "altText": null,
+            "showDownload": null
+        },
+        {
+            "baseProperties": {
+                "type": "navItemGroup",
+                "id": "dh-5",
+                "name": "headerNavItemGroup"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "header-nav-menu",
+                    "configuration": [
+                        {
+                            "selectorName": ".header-nav-menu",
+                            "xs": {
+                                "gap": "30px",
+                                "margin-top": "5px"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "navItems": [
+                {
+                    "id": "dashboard",
+                    "label": "Dashboard",
+                    "navigateToPage": "/dashboard"
+                },
+                {
+                    "id": "projects",
+                    "label": "Projects",
+                    "navigateToPage": "/projects"
+                },
+                {
+                    "id": "chart",
+                    "label": "Project Plan",
+                    "navigateToPage": "/chart"
+                },
+                {
+                    "id": "myTask",
+                    "label": "My Tasks",
+                    "navigateToPage": "/myTask"
+                },
+                {
+                    "id": "users",
+                    "label": "Users",
+                    "navigateToPage": "/users"
+                },
+                {
+                    "id": "profile",
+                    "label": "My Profile",
+                    "navigateToPage": "/profile"
+                }
+            ]
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dh-3",
+                "name": "loginBtn",
+                "label": "Log In"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "login-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child",
+                            "xs": {
+                                "padding": "7px 25px",
+                                "border-radius": "30px",
+                                "background-color": "transparent",
+                                "border-color": "transparent",
+                                "outline": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".login-btn .dynamic-style-child:hover",
+                            "xs": {
+                                "background-color": "black"
+                            }
+                        },
+                        {
+                            "selectorName": ".login-btn",
+                            "xs": {
+                                "justify-content": "end"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dh-4",
+                "name": "signupBtn",
+                "label": "Sign Up"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "signup-btn",
+                    "configuration": [
+                        {
+                            "selectorName": ".signup-btn .dynamic-style-child",
+                            "xs": {
+                                "background-color": "#2E2B44",
+                                "border-color": "#2E2B44",
+                                "padding": "7px 25px",
+                                "border-radius": "30px",
+                                "outline": "none"
+                            }
+                        },
+                        {
+                            "selectorName": ".signup-btn .dynamic-style-child:hover",
+                            "xs": {
+                                "background-color": "black"
+                            }
+                        }
+                    ],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        }
+    ]
+}
