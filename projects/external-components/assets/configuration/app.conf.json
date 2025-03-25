@@ -1,66 +1,66 @@
 {
   "login": {
-      "authGuardConfig": {
-          "conditions": [
-              {
-                  "cookieName": "accessToken",
-                  "if": "accessToken != undefined",
-                  "onConditionSuccess": "dashboard",
-                  "type": "cookie"
-              }
-          ],
-          "enabled": true
+    "authGuardConfig": {
+      "conditions": [
+        {
+          "cookieName": "accessToken",
+          "if": "accessToken != undefined",
+          "onConditionSuccess": "dashboard",
+          "type": "cookie"
+        }
+      ],
+      "enabled": true
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": "/api/section/forgotPasword.data"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/login/login.field.json",
+      "serverURL": "/api/section/forgotPasword.field"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": "/api/section/footer/field"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": "/api/section/footer"
+    },
+    "globalPageSettings": {
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": "",
+            "xs": {
+              "background-image": "url(assets/images/loginPage.jpg)",
+              "background-position": "center center",
+              "background-size": "cover"
+            }
+          }
+        }
       },
-      "data": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": "/api/section/forgotPasword.data"
-      },
-      "field": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/login/login.field.json",
-          "serverURL": "/api/section/forgotPasword.field"
-      },
-      "footerField": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": "/api/section/footer/field"
-      },
-      "footerSection": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": "/api/section/footer"
-      },
-      "globalPageSettings": {
-          "layoutProperties": {
-              "css": {
-                  "configuration": {
-                      "selectorName": "",
-                      "xs": {
-                          "background-image": "url(assets/images/loginPage.jpg)",
-                          "background-position": "center center",
-                          "background-size": "cover"
-                      }
-                  }
-              }
-          },
-          "title": "Login"
-      },
-      "headerField": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": "/api/section/header/field"
-      },
-      "headerSection": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": "/api/section/header"
-      },
-      "section": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/login/login.section.json",
-          "serverURL": "/api/section/forgotPasword.section"
-      }
+      "title": "Login"
+    },
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": "/api/section/header/field"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": "/api/section/header"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/login/login.section.json",
+      "serverURL": "/api/section/forgotPasword.section"
+    }
   },
   "old-dashboard": {
     "headerField": {
@@ -88,15 +88,15 @@
       "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
     },
     "authGuardConfig": {
-          "conditions": [
-              {
-                  "cookieName": "accessToken",
-                  "if": "accessToken == undefined",
-                  "onConditionSuccess": "login",
-                  "type": "cookie"
-              }
-          ],
-          "enabled": true
+      "conditions": [
+        {
+          "cookieName": "accessToken",
+          "if": "accessToken == undefined",
+          "onConditionSuccess": "login",
+          "type": "cookie"
+        }
+      ],
+      "enabled": true
     },
     "globalPageSettings": {
       "title": "projects",
@@ -130,7 +130,8 @@
     },
     "data": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/dashboard/body.data.json"
+      "localURL": "./assets/pageLayout/QuickSpa/dashboard/body.data.json",
+      "serverURL": []
     },
     "navField": {
       "fetchFromLocal": true,
@@ -141,19 +142,25 @@
       "localURL": "./assets/pageLayout/QuickSpa/dashboard/nav.section.json"
     },
     "authGuardConfig": {
-          "conditions": [
-              {
-                  "cookieName": "accessToken",
-                  "if": "accessToken == undefined",
-                  "onConditionSuccess": "login",
-                  "type": "cookie"
-              }
-          ],
-          "enabled": true
+      "conditions": [
+        {
+          "cookieName": "accessToken",
+          "if": "accessToken == undefined",
+          "onConditionSuccess": "login",
+          "type": "cookie"
+        }
+      ],
+      "enabled": false
     },
     "globalPageSettings": {
       "title": "projects",
-      "layoutProperties": null
+      "layoutProperties": {
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        }
+      }
     }
   },
   "hmiAppConfiguration": {
@@ -269,54 +276,54 @@
     }
   },
   "edit-form/:projectId": {
-      "authGuardConfig": {
-          "conditions": [
-              {
-                  "cookieName": "accessToken",
-                  "if": "accessToken == undefined",
-                  "onConditionSuccess": "login",
-                  "type": "cookie"
-              }
-          ],
-          "enabled": true
-      },
-      "data": {
-          "fetchFromLocal": true,
-          "localURL": "",
-          "serverURL": ""
-      },
-      "field": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/edit-form/iframe.field.json",
-          "serverURL": ""
-      },
-      "footerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json",
-          "serverURL": ""
-      },
-      "footerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json",
-          "serverURL": ""
-      },
-      "globalPageSettings": {
-          "title": "Edit Form"
-      },
-      "headerField": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json",
-          "serverURL": ""
-      },
-      "headerSection": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json",
-          "serverURL": ""
-      },
-      "section": {
-          "fetchFromLocal": true,
-          "localURL": "./assets/pageLayout/QuickSpa/edit-form/iframe.section.json",
-          "serverURL": ""
-      }
+    "authGuardConfig": {
+      "conditions": [
+        {
+          "cookieName": "accessToken",
+          "if": "accessToken == undefined",
+          "onConditionSuccess": "login",
+          "type": "cookie"
+        }
+      ],
+      "enabled": true
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/edit-form/iframe.field.json",
+      "serverURL": ""
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json",
+      "serverURL": ""
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json",
+      "serverURL": ""
+    },
+    "globalPageSettings": {
+      "title": "Edit Form"
+    },
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json",
+      "serverURL": ""
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json",
+      "serverURL": ""
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/edit-form/iframe.section.json",
+      "serverURL": ""
+    }
   }
 }
