@@ -51,7 +51,7 @@ export class TicTacToeComponent extends CommonExternalComponent {
   }
 
   computerMove(): void {
-    const availableCells = this.cells.map((cell, index) => cell === null ? index : null).filter(v => v !== null);
+    const availableCells: number[] = this.cells.map((cell, index) => (cell === null ? index : -1)).filter(index => index !== -1);
     if (availableCells.length > 0) {
       const randomIndex = Math.floor(Math.random() * availableCells.length);
       this.cells[availableCells[randomIndex]] = 'O';
