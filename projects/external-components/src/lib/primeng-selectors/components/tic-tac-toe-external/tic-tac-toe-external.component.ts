@@ -4,74 +4,81 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 @Component({
   selector: 'app-tic-tac-toe',
   template: `
-    <div style="text-align: center; margin-top: 20px;">
-      <h1>Tic Tac Toe</h1>
-      <div style="display: grid; grid-template-columns: repeat(3, 100px); gap: 5px; margin: auto;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <h1 style="font-size: 2em;">Tic Tac Toe</h1>
+      <div style="display: grid; grid-template-columns: repeat(3, 100px); gap: 5px;">
         <button *ngFor="let cell of cells; let i = index" 
                 (click)="makeMove(i)" 
-                [disabled]="cell !== ''" 
-                style="width: 100px; height: 100px; font-size: 24px;">
+                [disabled]="isGameOver || cell !== null"
+                style="width: 100px; height: 100px; font-size: 2em;">
           {{ cell }}
         </button>
       </div>
-      <h2>Score: Player {{ playerScore }} - Computer {{ computerScore }}</h2>
+      <p style="margin-top: 20px; font-size: 1.5em;">Current Player: {{ currentPlayer }}</p>
+      <p *ngIf="winner" style="font-size: 1.5em; color: green;">Winner: {{ winner }}</p>
       <button (click)="resetGame()" style="margin-top: 20px;">Reset Game</button>
     </div>
   `,
-  styles: []
+  styles: [`
+    button {
+      cursor: pointer;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #e0e0e0;
+    }
+  `]
 })
 export class TicTacToeComponent extends CommonExternalComponent {
-  cells: string[] = ['', '', '', '', '', '', '', '', ''];
-  playerScore: number = 0;
-  computerScore: number = 0;
+  cells: Array<string | null> = Array(9).fill(null);
   currentPlayer: string = 'X';
+  winner: string | null = null;
+  isGameOver: boolean = false;
 
-  makeMove(index: number) {
-    if (this.cells[index] === '') {
+  makeMove(index: number): void {
+    if (!this.cells[index] && !this.isGameOver) {
       this.cells[index] = this.currentPlayer;
-      if (this.checkWin(this.currentPlayer)) {
-        this.playerScore++;
-        alert('Player X wins!');
-        this.resetGame();
-      } else if (!this.cells.includes('')) {
-        alert('It\'s a draw!');
-        this.resetGame();
+      if (this.checkWinner(this.currentPlayer)) {
+        this.winner = this.currentPlayer;
+        this.isGameOver = true;
+        return;
+      }
+      this.currentPlayer = 'O'; // Computer's turn
+      this.computerMove();
+    }
+  }
+
+  computerMove(): void {
+    const availableCells = this.cells.map((cell, index) => cell === null ? index : null).filter(v => v !== null);
+    if (availableCells.length > 0) {
+      const randomIndex = Math.floor(Math.random() * availableCells.length);
+      this.cells[availableCells[randomIndex]] = 'O';
+      if (this.checkWinner('O')) {
+        this.winner = 'O';
+        this.isGameOver = true;
       } else {
-        this.currentPlayer = 'O';
-        this.computerMove();
+        this.currentPlayer = 'X'; // Back to player's turn
       }
     }
   }
 
-  computerMove() {
-    const availableMoves = this.cells.map((cell, index) => cell === '' ? index : null).filter(v => v !== null);
-    const randomIndex = availableMoves[Math.floor(Math.random() * availableMoves.length)];
-    if (randomIndex !== undefined) {
-      this.cells[randomIndex] = this.currentPlayer;
-      if (this.checkWin(this.currentPlayer)) {
-        this.computerScore++;
-        alert('Computer O wins!');
-        this.resetGame();
-      } else if (!this.cells.includes('')) {
-        alert('It\'s a draw!');
-        this.resetGame();
-      } else {
-        this.currentPlayer = 'X';
-      }
-    }
-  }
-
-  checkWin(player: string): boolean {
-    const winPatterns = [
+  checkWinner(player: string): boolean {
+    const winningCombinations = [
       [0, 1, 2], [3, 4, 5], [6, 7, 8],
       [0, 3, 6], [1, 4, 7], [2, 5, 8],
       [0, 4, 8], [2, 4, 6]
     ];
-    return winPatterns.some(pattern => pattern.every(index => this.cells[index] === player));
+    return winningCombinations.some(combination => 
+      combination.every(index => this.cells[index] === player)
+    );
   }
 
-  resetGame() {
-    this.cells = ['', '', '', '', '', '', '', '', ''];
+  resetGame(): void {
+    this.cells.fill(null);
     this.currentPlayer = 'X';
+    this.winner = null;
+    this.isGameOver = false;
   }
 }
