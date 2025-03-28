@@ -4,35 +4,39 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 @Component({
   selector: 'app-test-project-57',
   template: `
-    <div style="padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-      <h2 style="text-align: center;">Recipe Storage</h2>
-      <form (submit)="addRecipe()" style="display: flex; flex-direction: column; gap: 10px;">
-        <input type="text" [(ngModel)]="recipeName" placeholder="Recipe Name" required 
-               style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
-        <textarea [(ngModel)]="recipeInstructions" placeholder="Instructions" required 
-                  style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
-        <button type="submit" style="padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px;">Add Recipe</button>
-      </form>
+    <div style="padding: 20px; border: 1px solid #ccc;">
+      <h2 style="color: #333;">भोजन ट्रॅकिंग अॅप</h2>
+      
+      <label for="dateInput" style="display: block; margin-bottom: 10px;">तारीख:</label>
+      <input id="dateInput" type="date" [(ngModel)]="selectedDate" style="padding: 8px; width: 100%;"/>
+      
+      <label for="foodInput" style="display: block; margin-top: 10px;">आजचे भोजन:</label>
+      <input id="foodInput" type="text" [(ngModel)]="foodItem" style="padding: 8px; width: 100%;"/>
+      
+      <button (click)="addFood()" style="margin-top: 10px; padding: 10px 15px;">जोडा</button>
+      
+      <h3 style="margin-top: 20px;">खाल्लेले भोजन {{ selectedDate | date: 'fullDate' }} रोजी:</h3>
       <ul style="list-style-type: none; padding: 0;">
-        <li *ngFor="let recipe of recipes" style="margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
-          <strong>{{ recipe.name }}</strong>
-          <p>{{ recipe.instructions }}</p>
-        </li>
+        <li *ngFor="let food of foodList" style="padding: 5px 0;">{{ food }}</li>
       </ul>
     </div>
   `,
-  styles: []
+  styles: [`
+    h2 { font-size: 24px; }
+    input { font-size: 16px; }
+    button { background-color: #007bff; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
+  `]
 })
 export class TestProject57Component extends CommonExternalComponent {
-  recipeName: string = '';
-  recipeInstructions: string = '';
-  recipes: Array<{ name: string, instructions: string }> = [];
+  foodItem: string = '';
+  foodList: string[] = [];
+  selectedDate: string = new Date().toISOString().split('T')[0]; // आजची तारीख पूर्वनिर्धारित
 
-  addRecipe() {
-    if (this.recipeName && this.recipeInstructions) {
-      this.recipes.push({ name: this.recipeName, instructions: this.recipeInstructions });
-      this.recipeName = '';
-      this.recipeInstructions = '';
+  addFood() {
+    if (this.foodItem) {
+      this.foodList.push(this.foodItem);
+      this.foodItem = '';
     }
   }
 }
