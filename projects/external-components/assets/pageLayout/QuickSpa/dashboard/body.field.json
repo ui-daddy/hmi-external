@@ -182,7 +182,7 @@
           },
           {
             "label": "Delete",
-            "className": "",
+            "className": "test",
             "visible": "true",
             "action": {
               "name": "INVOKE_API",
