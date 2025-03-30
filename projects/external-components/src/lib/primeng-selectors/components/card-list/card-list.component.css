@@ -1,4 +1,65 @@
-.card:hover {
-    transform: scale(1.02);
-    transition: transform 0.2s ease;
+.custom-card-container {
+    height: 240px;
+    padding: 12px 16px;
+    background-color: white;
+    gap: 12px; 
+    border-radius: 8px;  
+}
+
+.custom-card-header {
+    height: 17px;
+}
+
+.custom-card-body {
+    --card-body-color: #F1F3F8;
+    background-color: var(--card-body-color);
+    height: 145px;
+    border: 1px solid var(--card-body-color);
+    border-radius: 12px;
+    padding: 12px;
+    gap: 12px;
+}
+.custom-card-body .status-pill {
+    background-color: #B4D2FF;
+    border-radius: 100px;
+    width: 70px;
+    height: 21px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 400;
+}
+.custom-card-body .status-pill.COMPLETED {
+    background-color: #FFD6D8;
+}
+.custom-card-body .status-bar {
+    height: 12px;
+    border-radius: 30px;    
+}
+.custom-card-body .status-bar::after {
+    background-color: #0369FF;
+}
+.custom-card-body .status-bar.COMPLETED::after {
+    background-color: #E30513;
+}
+.custom-card-body .status-bar::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 30px;
+}
+.custom-card-body .footer .date-pill {
+    background-color: white;
+    /* width: 80px; */
+    height: 28px;
+    margin-left: auto;
+    padding: 6px 8px;
+    border-radius: 100px;
+}
+.custom-card-body .footer .date-pill .date {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.custom-card-footer {
+    height: 30px;
 }
