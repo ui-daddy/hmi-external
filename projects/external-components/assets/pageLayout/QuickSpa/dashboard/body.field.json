@@ -203,7 +203,7 @@
                   "actions": [
                     {
                       "actionType": "RELOAD_COMPONENT_DATA",
-                      "componentName": "projectList"
+                      "componentName": "cardList"
                     }
                   ]
                 },
