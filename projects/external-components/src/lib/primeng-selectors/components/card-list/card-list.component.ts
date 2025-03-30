@@ -39,6 +39,10 @@ export class CardListComponent extends CommonExternalComponent {
     this.onLoad();
   }
 
+  cardTrack(_index: number, item: any): number {
+    return item.id;
+  }
+
   onLoad() {
     if (this.fieldObj.customAttributes.apiConfig && this.fieldObj.customAttributes.apiConfig.url) {
       this.refreshCards();
