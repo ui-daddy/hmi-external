@@ -9,6 +9,11 @@
     --card-bg-color: white;
 }
 
+.btn-primary {
+    --bs-btn-bg: var(--primary-button-color);
+    --bs-btn-color: var(--primary-button-txt-color);
+}
+
 .p-button.p-button-secondary.theme {
     background: var(--secondary-button-color);
     border: 1px solid var(--secondary-button-color);
