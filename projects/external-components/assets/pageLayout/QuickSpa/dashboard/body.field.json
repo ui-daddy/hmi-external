@@ -181,6 +181,39 @@
             }
           },
           {
+            "label": "Delete",
+            "className": "btn btn-primary",
+            "visible": "true",
+            "action": {
+              "name": "INVOKE_API",
+              "apiConfig": {
+                "name": "deleteProject",
+                "url": "/rest/project/:projectId",
+                "method": "DELETE",
+                "pathParams": [
+                  {
+                    "paramName": "projectId",
+                    "mappedField": "CUSTOM_FIELD_OBJECT",
+                    "mappedValue": "id"
+                  }
+                ],
+                "onSuccess": {
+                  "deleteTableRow": false,
+                  "showSuccessMessage": true,
+                  "actions": [
+                    {
+                      "actionType": "RELOAD_COMPONENT_DATA",
+                      "componentName": "projectList"
+                    }
+                  ]
+                },
+                "onError": {
+                  "showErrorMessage": true
+                }
+              }
+            }
+          },
+          {
             "label": "Preview",
             "className": "btn btn-secondary ms-4",
             "visible": "true",
