@@ -1,5 +1,5 @@
 :root {
-    --primary-button-color: #685CFE;
+    --primary-button-color: #1889AF;
     --primary-button-txt-color: white;
     --primary-button-hover-color: #5c4ff5;
     --secondary-button-color: white;
@@ -7,6 +7,11 @@
     --secondary-button-hover-color: #e9ecef;
     --body-bg-color: #E3E9F7;
     --card-bg-color: white;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--primary-button-color);
+    --bs-btn-color: var(--primary-button-txt-color);
 }
 
 .p-button.p-button-secondary.theme {
@@ -106,4 +111,19 @@ header.header-container {
 
 .dashboard__headerBtn .section-container__parent {
     justify-content: flex-end;
+}
+
+body {
+    background-color: #F1F3F8;
+}
+
+.btn:hover, .btn:focus-visible {
+    --bs-btn-hover-color: var(--primary-button-txt-color);
+    --bs-btn-hover-bg: var(--primary-button-color);
+    --bs-btn-border-color: var(--primary-button-color);
+}
+.btn-primary {
+    --bs-btn-bg: var(--primary-button-color);
+    --bs-btn-color: var(--primary-button-txt-color);
+    --bs-btn-border-color: var(--primary-button-color);
 }
