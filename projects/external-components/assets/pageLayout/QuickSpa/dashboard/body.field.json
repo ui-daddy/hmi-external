@@ -58,7 +58,7 @@
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
-                  "apiDataAccessor": "",
+                  "apiDataAccessor": "projects",
                   "message": "",
                   "actions": [
                     {
