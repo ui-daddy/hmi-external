@@ -182,7 +182,7 @@
           },
           {
             "label": "Delete",
-            "className": "btn btn-primary",
+            "className": "",
             "visible": "true",
             "action": {
               "name": "INVOKE_API",
@@ -215,7 +215,7 @@
           },
           {
             "label": "Preview",
-            "className": "btn btn-secondary ms-4",
+            "className": "btn btn-primary",
             "visible": "true",
             "action": {
               "name": "OPEN_IN_NEW_WINDOW"
