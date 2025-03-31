@@ -6,6 +6,32 @@
       "layout": {
         "column": {
           "ratio": {
+            "lg": "auto:auto",
+            "md": "auto:auto",
+            "sm": "auto:auto",
+            "xs": "auto:auto"
+          },
+          "count": "2"
+        },
+        "css": {
+          "customClassName": "dashboard__headerBtn mt-2 me-2 ",
+          "configuration": [
+            {
+              "selectorName": ".temp-class-2",
+              "xs": {}
+            }
+          ],
+          "themeClass": ""
+        }
+      },
+      "sectionList": []
+    },
+    {
+      "id": "db-13",
+      "type": "content",
+      "layout": {
+        "column": {
+          "ratio": {
             "lg": "12",
             "md": "12",
             "sm": "12",
