@@ -1,1 +1,48 @@
-{}
+{
+  "Emi-Calculator": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Emi-Calculator/Emi-Calculator/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "Emi-Calculator",
+      "layoutProperties": null
+    }
+  }
+}
