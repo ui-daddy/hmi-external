@@ -11,7 +11,33 @@
         "height": null,
         "css": {
           "customClassName": "",
-          "configuration": [],
+          "configuration": [
+            {
+              "selectorName": ".messages",
+              "xs": {
+                "border": "0px"
+              }
+            },
+            {
+              "selectorName": ".chat-container",
+              "xs": {
+                "border": "0px"
+              }
+            },
+            {
+              "selectorName": ".input-container",
+              "xs": {
+                "border": "0px"
+              }
+            },
+            
+            {
+              "selectorName": ".input-container > input",
+              "xs": {
+                "border-radius": "48px"
+              }
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
