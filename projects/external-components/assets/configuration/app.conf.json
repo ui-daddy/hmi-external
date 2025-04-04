@@ -150,7 +150,7 @@
           "type": "cookie"
         }
       ],
-      "enabled": false
+      "enabled": true
     },
     "globalPageSettings": {
       "title": "projects",
