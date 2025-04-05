@@ -17,9 +17,9 @@
                         {
                             "selectorName": " .ai-chat-container > .section-container__parent > .section-container__field",
                             "xs": {
-                              "padding": "0px"
+                                "padding": "0px"
                             }
-                          }
+                        }
                     ],
                     "customClassName": "ai-chat-container"
                 }

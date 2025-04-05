@@ -30,6 +30,7 @@ export class CardListComponent extends CommonExternalComponent {
   loading: boolean = false;
   cardList: Card[] = [];
   buttons: CardButton[] = [];
+  todaysDate: number = Date.now();
 
   private router = inject(Router);
 
@@ -68,7 +69,11 @@ export class CardListComponent extends CommonExternalComponent {
   onBtnClick(card: any, action: any) {
     if(action) {
       switch (action.name) {
-        case 'OPEN_URL': 
+        case 'OPEN_URL':
+          this.initializeEvents.emit({
+            name: 'fireEvent',
+            events: [this.getEditButtonEvent()]
+          })
           this.router.navigate([action.pageUrl], { queryParams: { 'projectId': card.id, 'pageName': card.title, 'edit': true} })
           break;
         case 'OPEN_IN_NEW_WINDOW': 
@@ -82,6 +87,26 @@ export class CardListComponent extends CommonExternalComponent {
         default:
           console.error('Unknown button event');
       }
+    }
+  }
+
+  private getEditButtonEvent() {
+    return {
+      event: '',
+      actions: [
+        {
+          actionType: 'SET_SHARED_DATA',
+          condition: "1==1",
+          sharedData: [
+            {
+              varName: 'chatId',
+              staticData: '',
+              cache: false,
+              responseAccessor: ""
+            }
+          ],
+        }
+      ]
     }
   }
 }
