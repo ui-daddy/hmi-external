@@ -48,13 +48,26 @@ export class GenerateWithAiComponent
   previewCode: string = "";
   previewDependencies: string = "";
   currentTime!: string;
-  private texts: string[] = ["An EMI Calculator...", "A diet tracker...", "An expense tracker...", "A tic-tac-toe game...", "A daily TODO list..."];
+  defaultSuggestions: string[] = [
+    "An EMI Calculator...",
+    "A diet tracker...",
+    "An expense tracker...",
+    "A tic-tac-toe game...",
+    "A daily TODO list..."
+  ];
+  editSuggestions: string[] = [
+    "Update the color scheme.",
+    "Rearrange the layout.",
+    "Change the text size to large."
+  ];  
   private currentIndex: number = 0;
   public displayedText: string = '';
   private typingIntervalId: any;
   private erasingIntervalId: any;
   private pauseTimeoutId: any;
   isTypingActive: boolean = true;
+  isEdit!: string | null;
+  sourceTexts!: string[];
 
   constructor(
     private route: ActivatedRoute,
@@ -91,7 +104,7 @@ export class GenerateWithAiComponent
     // Combine them into the desired format
      this.currentTime = `${dayOfWeek} ${time}`;
      this.typeText();
-
+     this.isEdit = this.route.snapshot.queryParamMap.get('edit');
   }
 
   ngAfterViewInit() {
@@ -307,8 +320,10 @@ export class GenerateWithAiComponent
 
   private typeText(): void {
     if (!this.isTypingActive) return;
+    this.sourceTexts = this.isEdit === 'true' ? this.editSuggestions : this.defaultSuggestions;
 
-    const text = this.texts[this.currentIndex];
+
+    const text = this.sourceTexts[this.currentIndex];
     let charIndex = 0;
 
     this.typingIntervalId = setInterval(() => {
@@ -339,7 +354,7 @@ export class GenerateWithAiComponent
         charIndex--;
       } else {
         clearInterval(this.erasingIntervalId);
-        this.currentIndex = (this.currentIndex + 1) % this.texts.length; // Cycle through texts
+        this.currentIndex = (this.currentIndex + 1) % this.sourceTexts.length; // Cycle through sourceTexts
         this.displayedText = ''; // Clear text before typing next
         this.typeText(); // Start typing next text
       }
