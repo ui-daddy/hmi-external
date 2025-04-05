@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 75px);
   width: 100vw;
   background-color: #f9f9f9; /* Optional: background color for the entire page */
 }
@@ -41,7 +41,7 @@
 }
 
 .user-message {
-  background-color: rgb(244, 244, 244);
+  background-color: #1889AF;
   color: black;
   align-self: flex-end;
   text-align: right;
@@ -57,9 +57,9 @@
   align-self: flex-start;
   text-align: left;
   max-width: fit-content;
-  border-radius: 15px;
   padding: 10px;
   margin: 5px;
+  border-radius: 0 24px 24px 24px
 }
 
 .bot-message .message-text {
@@ -153,6 +153,57 @@ button:hover {
   text-align: left;
   border-radius: 15px;
   padding: 10px;
-  margin: 5px;
+  /* margin: 5px; */
   min-height: 60vh;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bot-container {
+  display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.default-message {
+  display: flex;
+  align-items: flex-start;
+}
+
+.bot-avatar {
+  margin: 5px;
+  background-color: #E6F9FF;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.send-button {
+  padding: 2px;
+  margin: 5px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background-color: #1889AF;
+}
+.dynamic-suggestion {
+  color: #007bff;
+  /* font-size: 24px; */
+  border-right: 3px solid;
+  display: inline-block; /* To allow blinking effect */
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
 }
