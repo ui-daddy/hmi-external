@@ -47,6 +47,27 @@ export class GenerateWithAiComponent
   showCopiedLabel: boolean = false;
   previewCode: string = "";
   previewDependencies: string = "";
+  currentTime!: string;
+  defaultSuggestions: string[] = [
+    "An EMI Calculator...",
+    "A diet tracker...",
+    "An expense tracker...",
+    "A tic-tac-toe game...",
+    "A daily TODO list..."
+  ];
+  editSuggestions: string[] = [
+    "Update the color scheme.",
+    "Rearrange the layout.",
+    "Change the text size to large."
+  ];  
+  private currentIndex: number = 0;
+  public displayedText: string = '';
+  private typingIntervalId: any;
+  private erasingIntervalId: any;
+  private pauseTimeoutId: any;
+  isTypingActive: boolean = true;
+  isEdit!: string | null;
+  sourceTexts!: string[];
 
   constructor(
     private route: ActivatedRoute,
@@ -74,6 +95,16 @@ export class GenerateWithAiComponent
       this.cdr.detectChanges();
       this.scrollToBottom();
     });
+
+    const currentDate = new Date();
+    // Format the date to get the weekday (e.g., "Sat")
+    const dayOfWeek = currentDate.toLocaleString('en-US', { weekday: 'short' });
+    // Format the time (e.g., "8:21 AM")
+    const time = currentDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    // Combine them into the desired format
+     this.currentTime = `${dayOfWeek} ${time}`;
+     this.typeText();
+     this.isEdit = this.route.snapshot.queryParamMap.get('edit');
   }
 
   ngAfterViewInit() {
@@ -128,6 +159,7 @@ export class GenerateWithAiComponent
   }
 
   sendMessage() {
+    this.stopTyping();
     this.messageData.newMessage = this.fieldObj.value.newMessage;
     if (this.fieldObj.value.newMessage.trim()) {
       this.messages.push({
@@ -266,7 +298,10 @@ export class GenerateWithAiComponent
     } catch (err) {}
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.stopTyping(); 
+  }
+ 
 
   getValue(messageIndex: number, language: 'json'|'typescript') {
     return (
@@ -281,5 +316,55 @@ export class GenerateWithAiComponent
     return this.messages?.filter(message => 
       message.parts?.some(part => part.type === 'text' && part.content)
     ) || []; 
+  }
+
+  private typeText(): void {
+    if (!this.isTypingActive) return;
+    this.sourceTexts = this.isEdit === 'true' ? this.editSuggestions : this.defaultSuggestions;
+
+
+    const text = this.sourceTexts[this.currentIndex];
+    let charIndex = 0;
+
+    this.typingIntervalId = setInterval(() => {
+      if (!this.isTypingActive) return;
+
+      if (charIndex < text.length) {
+        this.displayedText += text.charAt(charIndex);
+        charIndex++;
+      } else {
+        clearInterval(this.typingIntervalId);
+        this.pauseTimeoutId = setTimeout(() => {
+          this.eraseText(text);
+        }, 1500); // Wait before erasing
+      }
+    }, 75); // Typing speed
+  }
+
+  private eraseText(text: string): void {
+    if (!this.isTypingActive) return;
+
+    let charIndex = text.length;
+
+     this.erasingIntervalId = setInterval(() => {
+      if (!this.isTypingActive) return;
+
+      if (charIndex > 0) {
+        this.displayedText = text.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        clearInterval(this.erasingIntervalId);
+        this.currentIndex = (this.currentIndex + 1) % this.sourceTexts.length; // Cycle through sourceTexts
+        this.displayedText = ''; // Clear text before typing next
+        this.typeText(); // Start typing next text
+      }
+    }, 75); // Erasing speed
+  }
+
+  stopTyping() {
+    this.isTypingActive = false;
+    clearInterval(this.typingIntervalId);
+    clearInterval(this.erasingIntervalId);
+    clearTimeout(this.pauseTimeoutId);
   }
 }
