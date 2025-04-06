@@ -24,10 +24,10 @@ jobs:
           cache: 'npm'
 
       - name: 📦 Install dependencies
-        run: npm ci
+        run: npm i
         
       - name: 📦 Install External Component dependencies
-        run: npm ci "./projects/external-components"
+        run: npm i "./projects/external-components"
 
       - name: 🏗️ Build library
         run: npx ng build external-components
