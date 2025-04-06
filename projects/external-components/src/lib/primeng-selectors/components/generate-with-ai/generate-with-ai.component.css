@@ -42,7 +42,7 @@
 
 .user-message {
   background-color: #1889AF;
-  color: black;
+  color: white;
   align-self: flex-end;
   text-align: right;
   max-width: fit-content;
@@ -52,7 +52,7 @@
 }
 
 .bot-message {
-  background-color: #e5e5ea;
+  background-color: #F2F4F5;
   color: black;
   align-self: flex-start;
   text-align: left;
@@ -63,7 +63,7 @@
 }
 
 .bot-message .message-text {
-  background-color: #e5e5ea;
+  background-color: #F2F4F5;
   border-radius: 15px;
   padding: 10px;
 }
@@ -153,7 +153,7 @@ button:hover {
   text-align: left;
   border-radius: 15px;
   padding: 10px;
-  /* margin: 5px; */
+  margin-bottom: 5px;
   min-height: 60vh;
 }
 
