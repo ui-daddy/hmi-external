@@ -103,8 +103,8 @@ export class GenerateWithAiComponent
     const time = currentDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
     // Combine them into the desired format
      this.currentTime = `${dayOfWeek} ${time}`;
-     this.typeText();
      this.isEdit = this.route.snapshot.queryParamMap.get('edit');
+     this.typeText();
   }
 
   ngAfterViewInit() {
