@@ -149,17 +149,17 @@
       "linkTags": [],
       "metaTags": [
           {
-              "content": "uidaddy",
+              "content": "nuvoroai",
               "name": "keywords"
           },
           {
               "charset": "",
-              "content": "The uidaddy",
+              "content": "Nuvoro AI",
               "httpEquiv": "",
               "name": "description"
           }
       ],
-      "title": "UI Daddy"
+      "title": "Nuvoro AI"
   },
   "login": {
       "authGuardConfig": {
