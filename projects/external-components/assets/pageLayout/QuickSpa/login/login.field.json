@@ -43,7 +43,7 @@
                 "label": "Log in with GitHub"
             },
             "accessor": "",
-            "href": "https://github.com/login/oauth/authorize?client_id=Ov23li3tP1aGdg9ujOjv&scope=repo&state=aRandomUnguessableString&allow_signup=true&redirect_uri=http://mini.dev.uidaddy.com/rest/login/oauth",
+            "href": "https://github.com/login/oauth/authorize?client_id=Ov23li3tP1aGdg9ujOjv&scope=repo&state=aRandomUnguessableString&allow_signup=true&redirect_uri=http://mini.dev.nuvoroai.com/rest/login/oauth",
             "layoutProperties": {
                 "css": {
                     "customClassName": "github__login-link",
