@@ -89,7 +89,7 @@
 }
 
 header.header-container {
-    background-color: #1889AF!important;
+    background-color: white!important;
     border-bottom: 1px solid var(--gray-300);
 }
 
@@ -126,4 +126,5 @@ body {
     --bs-btn-bg: var(--primary-button-color);
     --bs-btn-color: var(--primary-button-txt-color);
     --bs-btn-border-color: var(--primary-button-color);
+    font-size: 14px;
 }
