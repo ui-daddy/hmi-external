@@ -19,6 +19,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
 import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
 import { CardListComponent } from './components/card-list/card-list.component';
+import { FocusableDirective } from './directives/focusable.directive';
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
         GenerateWithAiComponent,
         StackblitzEditorComponent,
         CardListComponent,
+        FocusableDirective
     ],
     imports: IMPORT_MODULES,
     exports: [

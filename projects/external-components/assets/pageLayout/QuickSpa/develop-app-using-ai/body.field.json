@@ -111,9 +111,27 @@
                     "mappedField": "",
                     "mappedValue": "",
                     "valueFormat": "$SHARED_DATA(chatId)"
+                  },
+                  {
+                    "paramName": "edit",
+                    "mappedField": "$URL_QUERY_PARAMS",
+                    "mappedValue": "edit",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "projectId",
+                    "mappedField": "$URL_QUERY_PARAMS",
+                    "mappedValue": "projectId",
+                    "valueFormat": ""
                   }
                 ],
                 "payloadParams": [],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                  "action": []
+                },
                 "onSuccess": {
                   "pageUrl": "",
                   "deleteTableRow": false,
@@ -153,18 +171,11 @@
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
-                  "apiDataAccessor": "",
+                  "apiDataAccessor": "message",
                   "message": "",
                   "showErrorMessage": true,
                   "actions": []
-                },
-                "beforeSubmit": {
-                  "action": []
-                },
-                "downloadFileName": "",
-                "responseType": "",
-                "encodePathAndQueryParams": false,
-                "isWithCredentials": false
+                }
               }
             }
           ]
@@ -173,102 +184,101 @@
           "event": "savecomponent",
           "debounce": null,
           "actions": [
-              {
-                  "actionType": "SET_SHARED_DATA",
-                  "url": "",
-                  "condition": "1==1",
-                  "fileName": "",
-                  "field": "",
-                  "fieldValue": "",
-                  "fieldAccessor": "",
-                  "messagetype": "",
-                  "messageText": "",
-                  "target": "",
-                  "timer": null,
-                  "formName": "",
-                  "componentName": "",
-                  "sharedData": [
-                      {
-                          "varName": "saveCodeData",
-                          "staticData": "$SAVE_CODE_DATA$",
-                          "cache": false,
-                          "responseAccessor": ""
-                      }
-                  ],
-                  "apiConfig": null
-              },
-              {
-                  "actionType": "INVOKE_API",
-                  "url": "",
-                  "condition": "1==1",
-                  "fileName": "",
-                  "field": "",
-                  "fieldValue": "",
-                  "fieldAccessor": "",
-                  "messagetype": "",
-                  "messageText": "",
-                  "target": "",
-                  "timer": null,
-                  "formName": "",
-                  "componentName": "",
-                  "sharedData": [],
-                  "apiConfig": {
-                      "name": "saveComponent",
-                      "url": "/rest/formDesigner/:projectGuid/pages/:pageName/component",
-                      "method": "POST",
-                      "contentType": "text/plain",
-                      "pathParams": [
-                          {
-                              "paramName": "projectGuid",
-                              "mappedField": "$URL_QUERY_PARAMS",
-                              "mappedValue": "projectId",
-                              "valueFormat": ""
-                          },
-                          {
-                              "paramName": "pageName",
-                              "mappedField": "$URL_QUERY_PARAMS",
-                              "mappedValue": "pageName",
-                              "valueFormat": ""
-                          }
-                      ],
-                      "queryParams": [],
-                      "payloadParams": [
-                          {
-                              "paramName": "",
-                              "mappedField": "",
-                              "mappedValue": "",
-                              "valueFormat": "$SHARED_DATA(saveCodeData.code)"
-                          }
-                      ],
-                      "fetch": "",
-                      "downloadFileName": "",
-                      "responseType": "",
-                      "beforeSubmit": {
-                          "action": []
-                      },
-                      "onSuccess": {
-                          "pageUrl": "",
-                          "deleteTableRow": false,
-                          "showSuccessMessage": true,
-                          "sharedData": [],
-                          "fieldData": [],
-                          "clearSharedData": [],
-                          "apiDataAccessor": "",
-                          "message": "Page created successfully! Build the project to view your new page.",
-                          "actions": []
-                      },
-                      "onError": {
-                          "pageUrl": "",
-                          "sharedData": [],
-                          "fieldData": [],
-                          "clearSharedData": [],
-                          "apiDataAccessor": "",
-                          "message": "",
-                          "showErrorMessage": true,
-                          "actions": []
-                      }
+            {
+              "actionType": "SET_SHARED_DATA",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [
+                {
+                  "varName": "saveCodeData",
+                  "staticData": "$SAVE_CODE_DATA$",
+                  "cache": false,
+                  "responseAccessor": ""
+                }
+              ],
+              "apiConfig": null
+            },
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "saveComponent",
+                "url": "/rest/formDesigner/:projectGuid/pages/:pageName/saveAndBuild",
+                "method": "POST",
+                "pathParams": [
+                  {
+                    "paramName": "projectGuid",
+                    "mappedField": "$URL_QUERY_PARAMS",
+                    "mappedValue": "projectId",
+                    "valueFormat": ""
+                  },
+                  {
+                    "paramName": "pageName",
+                    "mappedField": "$URL_QUERY_PARAMS",
+                    "mappedValue": "pageName",
+                    "valueFormat": ""
                   }
+                ],
+                "queryParams": [],
+                "payloadParams": [
+                  {
+                    "paramName": "",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(saveCodeData.code)"
+                  }
+                ],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                  "action": []
+                },
+                "onSuccess": {
+                  "pageUrl": "",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": true,
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "The changes are saved successfully. Please wait while your app is built...",
+                  "actions": []
+                },
+                "onError": {
+                  "pageUrl": "",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                }
               }
+            }
           ]
         }
       ],

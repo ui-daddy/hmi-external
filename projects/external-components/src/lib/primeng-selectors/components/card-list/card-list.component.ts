@@ -30,6 +30,7 @@ export class CardListComponent extends CommonExternalComponent {
   loading: boolean = false;
   cardList: Card[] = [];
   buttons: CardButton[] = [];
+  todaysDate: number = Date.now();
 
   private router = inject(Router);
 
@@ -39,6 +40,10 @@ export class CardListComponent extends CommonExternalComponent {
     this.onLoad();
   }
 
+  cardTrack(_index: number, item: any): number {
+    return item.id;
+  }
+
   onLoad() {
     if (this.fieldObj.customAttributes.apiConfig && this.fieldObj.customAttributes.apiConfig.url) {
       this.refreshCards();
@@ -46,6 +51,9 @@ export class CardListComponent extends CommonExternalComponent {
     this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "setfield") {
         this.cardList = actionObj.data;
+      }
+      if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
+        this.refreshCards();
       }
     });
   }
@@ -61,15 +69,44 @@ export class CardListComponent extends CommonExternalComponent {
   onBtnClick(card: any, action: any) {
     if(action) {
       switch (action.name) {
-        case 'OPEN_URL': 
+        case 'OPEN_URL':
+          this.initializeEvents.emit({
+            name: 'fireEvent',
+            events: [this.getEditButtonEvent()]
+          })
           this.router.navigate([action.pageUrl], { queryParams: { 'projectId': card.id, 'pageName': card.title, 'edit': true} })
           break;
         case 'OPEN_IN_NEW_WINDOW': 
           window.open(`${card.deployLink}/${card.title}`, '_blank');
           break;
+        case 'INVOKE_API': 
+          this.customApiCall(action.apiConfig, card).subscribe((_:any)=>{
+
+          })
+          break;
         default:
           console.error('Unknown button event');
       }
+    }
+  }
+
+  private getEditButtonEvent() {
+    return {
+      event: '',
+      actions: [
+        {
+          actionType: 'SET_SHARED_DATA',
+          condition: "1==1",
+          sharedData: [
+            {
+              varName: 'chatId',
+              staticData: '',
+              cache: false,
+              responseAccessor: ""
+            }
+          ],
+        }
+      ]
     }
   }
 }
