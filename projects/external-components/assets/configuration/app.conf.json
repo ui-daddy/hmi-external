@@ -267,8 +267,15 @@
       "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/nav.section.json"
     },
     "authGuardConfig": {
-      "enabled": false,
-      "conditions": []
+      "conditions": [
+        {
+          "cookieName": "accessToken",
+          "if": "accessToken == undefined",
+          "onConditionSuccess": "login",
+          "type": "cookie"
+        }
+      ],
+      "enabled": true
     },
     "globalPageSettings": {
       "title": "develop-app-using-ai",
