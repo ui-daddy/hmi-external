@@ -11,10 +11,10 @@
 }
 
 .custom-card-body {
-    --card-body-color: #F1F3F8;
+    --card-body-color: #F9FAFB;
     background-color: var(--card-body-color);
     height: 145px;
-    border: 1px solid var(--card-body-color);
+    border: 1px solid #EAECF0;
     border-radius: 12px;
     padding: 12px;
     gap: 12px;
