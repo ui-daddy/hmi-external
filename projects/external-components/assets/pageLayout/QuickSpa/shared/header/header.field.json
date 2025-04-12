@@ -7,7 +7,7 @@
         "type": "staticImage",
         "id": "dnd-1"
       },
-      "imageUrl": "assets/images/ui-daddy-logo.svg",
+      "imageUrl": "assets/images/Nuvoro_ai_svg.svg",
       "events": [
         {
           "event": "click",
@@ -34,7 +34,7 @@
               "xs": {
                 "min-height": "40px",
                 "font-size": "30px",
-                "margin-left": "15px",
+                "margin-left": "0",
                 "color": "white",
                 "text-decoration": "none",
                 "cursor": "pointer"
@@ -94,7 +94,7 @@
               "selectorName": ".header-common__logout .dynamic-style-child",
               "xs": {
                 "font-size": "26px",
-                "color": "white",
+                "color": "#1889AF",
                 "margin-right": "10px"
               }
             }

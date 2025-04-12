@@ -68,6 +68,7 @@ export class GenerateWithAiComponent
   isTypingActive: boolean = true;
   isEdit!: string | null;
   sourceTexts!: string[];
+  isCollapsed: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -366,5 +367,8 @@ export class GenerateWithAiComponent
     clearInterval(this.typingIntervalId);
     clearInterval(this.erasingIntervalId);
     clearTimeout(this.pauseTimeoutId);
+  }
+  toggleCodeHeight(){
+    this.isCollapsed = !this.isCollapsed;
   }
 }

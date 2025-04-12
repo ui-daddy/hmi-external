@@ -154,8 +154,14 @@ button:hover {
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 5px;
-  min-height: 60vh;
+  height: 60vh;
+  transition: height 0.3s ease
 }
+
+.collapsed {
+  height: 2vh !important;
+  /* min-height: 0 !important; /* override min-height if needed */
+} 
 
 .dot {
   height: 15px;
@@ -207,3 +213,20 @@ button:hover {
   from, to { border-color: transparent; }
   50% { border-color: black; }
 }
+
+.collapssing-button {
+  position: absolute;
+  top: 75vh;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  background-color: #1889AF;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.collapsed + .collapssing-button {
+  top: 9vh !important;
+} 
