@@ -227,6 +227,7 @@
                 "name": "saveComponent",
                 "url": "/rest/formDesigner/:projectGuid/pages/:pageName/saveAndBuild",
                 "method": "POST",
+                "contentType": "text/plain",
                 "pathParams": [
                   {
                     "paramName": "projectGuid",
