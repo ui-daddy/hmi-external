@@ -37,7 +37,13 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   @Input() code: string = '';
   @Input() dependencies: string = '';
   @Input() isDialog: boolean = true;
+  @Input() BuildStatusAction: any;
+  @Input() customApiCall: any;
+  @Input() initializeEvents:any;
   @Output() codeChange = new EventEmitter<string>();
+  isBuildAppDisabled: boolean = false;
+  intervalId: any;
+  showSuccess: boolean = false;
   
   constructor(
     private zone: NgZone,
@@ -187,7 +193,35 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
 
   saveCode(): void {
     // below code will trigger the onmessage event
+    this.isBuildAppDisabled = true;
     this.projectSnapshot.getFsSnapshot();
+    this.intervalId = setInterval(() => {
+      this.customApiCall(this.BuildStatusAction.apiConfig).subscribe(
+        (item: any) => {
+          const status = item?.data?.buildStatus;
+          console.log('Build Status:', status);
+  
+          if (status === 'COMPLETED') {
+            this.isBuildAppDisabled = false;
+            clearInterval(this.intervalId);
+            const previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
+            const successMessageWithLink = `Build completed successfully. Copy following link to preview ${previewLink}`
+            //this.showSuccess = true;
+            //console.log('Build completed.');
+            this.initializeEvents.emit({
+              name: 'fireEvent',
+              events: [this.showMessageAction(successMessageWithLink, "success")]
+            })
+          }
+        },
+        (err: any) => {
+          this.isBuildAppDisabled = false;
+          clearInterval(this.intervalId);
+          console.error('Error during build status check:', err);
+        }
+      );
+    }, 15000);
+    
   }
 
   cancel() {
@@ -195,4 +229,23 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
       this.ref.close({ action: 'CANCEL' } as DialogResult);
     }
   }
+
+  private showMessageAction(messageText:string, messagetype?:string) {
+    return {
+      event: '',
+      actions: [
+        {
+          actionType: 'message',
+          condition: "1==1",
+          messagetype: messagetype,
+          messageText: messageText,
+        }
+      ]
+    }
+  }
+  
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId); 
+  }
+ 
 }
