@@ -15,6 +15,9 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
     <div *ngIf="winner" style="margin-top: 20px; font-size: 24px;">
       {{ winner }} wins!
     </div>
+    <div *ngIf="isDraw()" style="margin-top: 20px; font-size: 24px;">
+      It's a draw!
+    </div>
     <button (click)="resetGame()" style="margin-top: 20px;">Reset Game</button>
   `,
   styles: []
@@ -29,6 +32,8 @@ export class TicTacToeComponent extends CommonExternalComponent {
       this.cells[index] = this.currentPlayer;
       if (this.checkWinner()) {
         this.winner = this.currentPlayer;
+      } else if (this.isDraw()) {
+        // Do nothing, draw message will be shown
       } else {
         this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
       }
@@ -46,6 +51,10 @@ export class TicTacToeComponent extends CommonExternalComponent {
       const [a, b, c] = combination;
       return this.cells[a] && this.cells[a] === this.cells[b] && this.cells[a] === this.cells[c];
     });
+  }
+
+  isDraw(): boolean {
+    return this.cells.every(cell => cell !== '') && !this.winner;
   }
 
   resetGame(): void {
