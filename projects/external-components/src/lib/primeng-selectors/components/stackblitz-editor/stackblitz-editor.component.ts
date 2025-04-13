@@ -37,7 +37,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   @Input() code: string = '';
   @Input() dependencies: string = '';
   @Input() isDialog: boolean = true;
-  @Input() BuildStatusAction: any;
+  @Input() buildStatusAction: any;
   @Input() customApiCall: any;
   @Input() initializeEvents:any;
   @Output() codeChange = new EventEmitter<string>();
@@ -196,7 +196,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
     this.isBuildAppDisabled = true;
     this.projectSnapshot.getFsSnapshot();
     this.intervalId = setInterval(() => {
-      this.customApiCall(this.BuildStatusAction.apiConfig).subscribe(
+      this.customApiCall(this.buildStatusAction.apiConfig).subscribe(
         (item: any) => {
           const status = item?.data?.buildStatus;
           console.log('Build Status:', status);
@@ -205,7 +205,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
             this.isBuildAppDisabled = false;
             clearInterval(this.intervalId);
             const previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
-            const successMessageWithLink = `Build completed successfully. Copy following link to preview ${previewLink}`
+            const successMessageWithLink = `Building completed successfully. Copy following link to preview ${previewLink}`
             //this.showSuccess = true;
             //console.log('Build completed.');
             this.initializeEvents.emit({
@@ -218,6 +218,10 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
           this.isBuildAppDisabled = false;
           clearInterval(this.intervalId);
           console.error('Error during build status check:', err);
+          this.initializeEvents.emit({
+            name: 'fireEvent',
+            events: [this.showMessageAction('There was some error during build. Please generate new code and try again.')]
+          })
         }
       );
     }, 15000);
