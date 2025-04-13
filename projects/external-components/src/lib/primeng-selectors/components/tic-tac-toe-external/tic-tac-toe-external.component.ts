@@ -36,6 +36,25 @@ export class TicTacToeComponent extends CommonExternalComponent {
         // Do nothing, draw message will be shown
       } else {
         this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+        if (this.currentPlayer === 'O') {
+          this.computerMove();
+        }
+      }
+    }
+  }
+
+  computerMove(): void {
+    const availableMoves = this.cells.map((cell, index) => (cell === '' ? index : null)).filter(index => index !== null);
+    const randomIndex = Math.floor(Math.random() * availableMoves.length);
+    const move = availableMoves[randomIndex];
+    if (move !== null) {
+      this.cells[move] = this.currentPlayer;
+      if (this.checkWinner()) {
+        this.winner = this.currentPlayer;
+      } else if (this.isDraw()) {
+        // Do nothing, draw message will be shown
+      } else {
+        this.currentPlayer = 'X'; // Switch back to player X
       }
     }
   }
