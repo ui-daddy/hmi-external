@@ -29,7 +29,7 @@
     font-weight: 400;
     align-self: self-start;
 }
-.custom-card-body .status-pill.COMPLETED {
+.custom-card-body .status-pill.FAILED {
     background-color: #FFD6D8;
 }
 .custom-card-body .status-bar {
@@ -39,11 +39,14 @@
 .custom-card-body .status-bar::after {
     background-color: #0369FF;
 }
-.custom-card-body .status-bar.COMPLETED::after {
-    background-color: #E30513;
-}
 .custom-card-body .status-bar.IN_PROGRESS::after {
     background: linear-gradient(to right, #0369ff 75%, #E7E7E7 25%);
+}
+.custom-card-body .status-bar.NEW::after {
+    background: linear-gradient(to right, #0369ff 20%, #E7E7E7 25%);
+}
+.custom-card-body .status-bar.FAILED::after {
+    background-color: #E30513;
 }
 
 .custom-card-body .status-bar::after {
