@@ -212,16 +212,19 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
               name: 'fireEvent',
               events: [this.showMessageAction(successMessageWithLink, "success")]
             })
+          } else if (status === 'FAILED') {
+            this.isBuildAppDisabled = false;
+            clearInterval(this.intervalId);
+            this.initializeEvents.emit({
+              name: 'fireEvent',
+              events: [this.showMessageAction('There was some error during build. Please generate new code and try again.')]
+            });
           }
         },
         (err: any) => {
           this.isBuildAppDisabled = false;
           clearInterval(this.intervalId);
           console.error('Error during build status check:', err);
-          this.initializeEvents.emit({
-            name: 'fireEvent',
-            events: [this.showMessageAction('There was some error during build. Please generate new code and try again.')]
-          })
         }
       );
     }, 15000);
