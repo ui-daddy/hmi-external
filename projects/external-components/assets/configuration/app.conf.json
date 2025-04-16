@@ -163,6 +163,106 @@
       }
     }
   },
+  "terms-condition": {
+    "authGuardConfig": {
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/terms-condition/body.field.json",
+      "serverURL": ""
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "globalPageSettings": {
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": "",
+            "xs": {
+              
+            }
+          }
+        }
+      },
+      "title": "Nuvoroai's Terms and Condition"
+    },
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header-without-logout/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header-without-logout/header.section.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/terms-condition/body.section.json",
+      "serverURL": ""
+    }
+  },
+  "privacy-policy": {
+    "authGuardConfig": {
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/privacy-policy/body.field.json",
+      "serverURL": ""
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "globalPageSettings": {
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": "",
+            "xs": {
+              
+            }
+          }
+        }
+      },
+      "title": "Nuvoroai's Privacy Policy"
+    },
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header-without-logout/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/shared/header-without-logout/header.section.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/privacy-policy/body.section.json",
+      "serverURL": ""
+    }
+  },
   "hmiAppConfiguration": {
     "title": "Quick SPA",
     "baseUrl": "",

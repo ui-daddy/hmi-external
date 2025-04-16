@@ -1,0 +1,73 @@
+{
+    "header-dashboard": [
+      {
+        "altText": "Nuvoro AI",
+        "baseProperties": {
+          "name": "menu",
+          "type": "staticImage",
+          "id": "dnd-1"
+        },
+        "imageUrl": "assets/images/Nuvoro_ai_svg.svg",
+        "events": [
+          {
+            "event": "click",
+            "actions": [
+              {
+                "actionType": "navigate",
+                "url": "/dashboard"
+              }
+            ]
+          }
+        ],
+        "layoutProperties": {
+          "css": {
+            "configuration": [
+              {
+                "selectorName": ".header__logo",
+                "xs": {
+                  "justify-content": "flex-start",
+                  "padding": "8px"
+                }
+              },
+              {
+                "selectorName": ".header__logo .dynamic-style-child",
+                "xs": {
+                  "min-height": "40px",
+                  "font-size": "30px",
+                  "margin-left": "0",
+                  "color": "white",
+                  "text-decoration": "none",
+                  "cursor": "pointer"
+                }
+              }
+            ],
+            "customClassName": "header__logo"
+          }
+        }
+      },
+      {
+        "baseProperties": {
+          "name": "userName",
+          "type": "staticText",
+          "id": "dnd-2"
+        },
+        "value": "",
+        "dynamicValueAccessor": [
+          "name"
+        ],
+        "layoutProperties": {
+          "css": {
+            "configuration": {
+              "selectorName": ".header__user-name",
+              "xs": {
+                "right": "40px",
+                "justify-content": "flex-end",
+                "color": "#64748b"
+              }
+            },
+            "customClassName": "header__user-name hide-xs"
+          }
+        }
+      }
+    ]
+  }
