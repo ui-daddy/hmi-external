@@ -4,24 +4,26 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 @Component({
   selector: 'app-emi-calculator',
   template: `
-    <div style="padding: 20px; max-width: 400px; margin: auto;">
-      <h2 style="text-align: center;">EMI Calculator</h2>
-      <label for="loanAmount">Loan Amount:</label>
-      <input id="loanAmount" type="number" [(ngModel)]="loanAmount" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+    <div style="padding: 20px; max-width: 400px; margin: auto; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+      <h2 style="text-align: center; color: #333;">EMI Calculator</h2>
+      <label for="loanAmount" style="color: #555;">Loan Amount:</label>
+      <input id="loanAmount" type="number" [(ngModel)]="loanAmount" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;" />
 
-      <label for="interestRate">Interest Rate (%):</label>
-      <input id="interestRate" type="number" [(ngModel)]="interestRate" style="width: 100%; padding: 8px; margin-bottom: 10px;" />
+      <label for="interestRate" style="color: #555;">Interest Rate (%):</label>
+      <input id="interestRate" type="number" [(ngModel)]="interestRate" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;" />
 
-      <label for="loanTenure">Loan Tenure (Years):</label>
-      <select id="loanTenure" [(ngModel)]="loanTenureYears" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+      <label for="loanTenure" style="color: #555;">Loan Tenure (Years):</label>
+      <select id="loanTenure" [(ngModel)]="loanTenureYears" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
         <option *ngFor="let year of years" [value]="year">{{ year }} Year(s)</option>
       </select>
 
-      <button (click)="calculateEMI()" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer;">Calculate EMI</button>
+      <button (click)="calculateEMI()" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+        Calculate EMI
+      </button>
 
-      <div *ngIf="emi" style="margin-top: 20px;">
-        <h4>Monthly EMI: ₹{{ emi | number:'1.0-0' }}</h4>
-        <h4>Total Interest Paid: ₹{{ totalInterest | number:'1.0-0' }}</h4>
+      <div *ngIf="emi" style="margin-top: 20px; background-color: #e7f3fe; padding: 15px; border-radius: 4px; border: 1px solid #b3d4fc;">
+        <h4 style="color: #31708f;">Monthly EMI: ₹{{ emi | number:'1.0-0' }}</h4>
+        <h4 style="color: #31708f;">Total Interest Paid: ₹{{ totalInterest | number:'1.0-0' }}</h4>
       </div>
     </div>
   `,
