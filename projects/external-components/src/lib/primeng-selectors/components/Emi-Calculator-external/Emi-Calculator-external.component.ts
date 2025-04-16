@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonExternalComponent } from '../common-external/common-external.component';
+import { CommonExternalComponent } from '../common-external/common-externalcomponent';
 
 @Component({
   selector: 'app-emi-calculator',
@@ -27,7 +27,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
       </div>
     </div>
   `,
-  styles: []
+  styles: [],
 })
 export class EmiCalculatorComponent extends CommonExternalComponent {
   loanAmount: number = 0;
@@ -41,7 +41,10 @@ export class EmiCalculatorComponent extends CommonExternalComponent {
   calculateEMI() {
     const totalMonths = this.loanTenureYears * 12;
     const monthlyInterestRate = this.interestRate / 12 / 100;
-    const numerator = this.loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalMonths);
+    const numerator =
+      this.loanAmount *
+      monthlyInterestRate *
+      Math.pow(1 + monthlyInterestRate, totalMonths);
     const denominator = Math.pow(1 + monthlyInterestRate, totalMonths) - 1;
     this.emi = numerator / denominator;
     this.totalInterest = this.emi * totalMonths - this.loanAmount;
