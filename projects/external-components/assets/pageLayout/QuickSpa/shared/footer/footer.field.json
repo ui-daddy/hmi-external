@@ -52,7 +52,7 @@
         "type": "staticText",
         "id": "copyright"
       },
-      "value": "©2025 Streetz ",
+      "value": "©2025 Nuvoroai",
       "layoutProperties": {
         "css": {
           "configuration": {
