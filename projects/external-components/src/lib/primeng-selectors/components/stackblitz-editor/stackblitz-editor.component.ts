@@ -217,7 +217,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
             clearInterval(this.intervalId);
             this.initializeEvents.emit({
               name: 'fireEvent',
-              events: [this.showMessageAction('There was some error during build. Please generate new code and try again.')]
+              events: [this.showMessageAction('There was some error during build. Please generate new code and try again.', "danger")]
             });
           }
         },
@@ -237,7 +237,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
     }
   }
 
-  private showMessageAction(messageText:string, messagetype?:string) {
+  private showMessageAction(messageText:string, messagetype:string) {
     return {
       event: '',
       actions: [
