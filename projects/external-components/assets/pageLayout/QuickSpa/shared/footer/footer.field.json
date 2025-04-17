@@ -2,11 +2,57 @@
   "footer-dashboard": [
     {
       "baseProperties": {
+        "id": "privacyPolicyLink",
+        "name": "privacyPolicyLink",
+        "type": "link",
+        "formName": "",
+        "label": "Privacy"
+      },
+      "accessor": "",
+      "href": "/privacy-policy",
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": ".footer__copyright",
+            "xs": {
+              "border-top": "1px solid #ced4da",
+              "padding": "8px"
+            }
+          },
+          "customClassName": "footer__copyright"
+        }
+      }
+    },
+    {
+      "baseProperties": {
+        "id": "termsAndConditionsLink",
+        "name": "termsAndConditionsLink",
+        "type": "link",
+        "formName": "",
+        "label": "Terms"
+      },
+      "accessor": "",
+      "href": "/terms-condition",
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": ".footer__copyright",
+            "xs": {
+              "border-top": "1px solid #ced4da",
+              "padding": "8px"
+            }
+          },
+          "customClassName": "footer__copyright"
+        }
+      }
+    },
+    {
+      "baseProperties": {
         "name": "copyright",
         "type": "staticText",
         "id": "copyright"
       },
-      "value": "©2020 Streetz e-trade Solutions LLP",
+      "value": "©2025 Nuvoroai",
       "layoutProperties": {
         "css": {
           "configuration": {

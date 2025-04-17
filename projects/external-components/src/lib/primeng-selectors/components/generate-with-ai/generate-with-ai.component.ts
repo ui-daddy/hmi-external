@@ -68,6 +68,8 @@ export class GenerateWithAiComponent
   isTypingActive: boolean = true;
   isEdit!: string | null;
   sourceTexts!: string[];
+  isCollapsed: boolean = false;
+  checkBuildStatusAction: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -105,6 +107,9 @@ export class GenerateWithAiComponent
      this.currentTime = `${dayOfWeek} ${time}`;
      this.isEdit = this.route.snapshot.queryParamMap.get('edit');
      this.typeText();
+     const checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
+     this.checkBuildStatusAction = checkBuildEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
+
   }
 
   ngAfterViewInit() {
@@ -366,5 +371,8 @@ export class GenerateWithAiComponent
     clearInterval(this.typingIntervalId);
     clearInterval(this.erasingIntervalId);
     clearTimeout(this.pauseTimeoutId);
+  }
+  toggleCodeHeight(){
+    this.isCollapsed = !this.isCollapsed;
   }
 }

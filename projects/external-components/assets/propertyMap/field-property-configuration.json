@@ -232,6 +232,9 @@
         },{
             "value": "savecomponent",
             "label": "Save"
+        },{
+            "value": "checkBuildStatus",
+            "label": "Check Build Status"
         }]    
     },
     {
