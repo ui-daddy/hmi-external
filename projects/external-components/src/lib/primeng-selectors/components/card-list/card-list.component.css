@@ -71,3 +71,8 @@
 .custom-card-footer {
     height: 30px;
 }
+
+.Default-message {
+    position: absolute;
+    top: 50%;
+}
