@@ -39,6 +39,6 @@
         <button *ngIf="buttons[2].visible" (click)="onBtnClick(card, buttons[2].action)" [class]="buttons[2].className">Preview</button>
       </div>
     </div>
-    <div *ngIf="!card?.forkUrl" class="Default-message">Looks like you don't have any projects yet. Click 'Add Project' to get started!</div>
+    <div *ngIf="!card?.forkUrl" class="default-message">Looks like you don't have any projects yet. Click 'Add Project' to get started!</div>
   </div>
 </div>
