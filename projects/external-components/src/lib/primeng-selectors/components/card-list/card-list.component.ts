@@ -7,6 +7,7 @@ export interface Card {
   buildStatus: string;
   description: string;
   thumbnail: string;
+  forkUrl?: string;
 }
 
 export interface CardButtonAction {

@@ -1,7 +1,8 @@
 <div class="chat-container">
   <div class="w-100" *ngIf="previewCode"
   [ngClass]="{ 'code-preview-container': true, 'flex-grow-1': !isCollapsed, 'collapsed': isCollapsed }">
-    <hmi-ext-stackblitz-editor [code]="previewCode" [dependencies]="previewDependencies" [isDialog]="false"
+    <hmi-ext-stackblitz-editor [code]="previewCode" [dependencies]="previewDependencies" [isDialog]="false" 
+    [buildStatusAction]="checkBuildStatusAction" [customApiCall]="customApiCall" [initializeEvents]="initializeEvents"
     (codeChange)="onCodeChange($event)"></hmi-ext-stackblitz-editor>
   </div>
   <button *ngIf="previewCode" pButton type="button" class="collapssing-button" (click)="toggleCodeHeight()"> 

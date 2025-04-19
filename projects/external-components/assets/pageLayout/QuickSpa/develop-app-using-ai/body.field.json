@@ -281,6 +281,70 @@
               }
             }
           ]
+        },
+        {
+          "event": "checkBuildStatus",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "checkBuildStatus",
+                "url": "/rest/Project/:projectId",
+                "method": "GET",
+                "pathParams": [
+                  {
+                    "paramName": "projectId",
+                    "mappedField": "$URL_QUERY_PARAMS",
+                    "mappedValue": "projectId",
+                    "valueFormat": ""
+                  }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                  "action": []
+                },
+                "onSuccess": {
+                  "pageUrl": "",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": true,
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": []
+                },
+                "onError": {
+                  "pageUrl": "",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                }
+              }
+            }
+          ]
         }
       ],
       "expressionProperties": {},
