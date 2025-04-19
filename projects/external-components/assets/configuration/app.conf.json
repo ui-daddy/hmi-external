@@ -1,1 +1,48 @@
-{}
+{
+  "cool-game": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/cool-game/cool-game/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "cool-game",
+      "layoutProperties": null
+    }
+  }
+}
