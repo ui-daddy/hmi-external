@@ -1,6 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
+interface Point {
+  x: number;
+  y: number;
+}
+
 @Component({
   selector: 'building-block',
   template: `
@@ -36,9 +41,9 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 export class BuildingBlockComponent extends CommonExternalComponent {
   size = 15;
   cell = 20;
-  snake = [{ x: 7, y: 7 }];
-  dir = { x: 0, y: 0 };
-  food = this.randomFood();
+  snake: Point[] = [{ x: 7, y: 7 }];
+  dir: Point = { x: 0, y: 0 };
+  food: Point = this.randomFood();
   gameOver = false;
   interval: any;
 
@@ -68,7 +73,7 @@ export class BuildingBlockComponent extends CommonExternalComponent {
 
   move() {
     if (this.gameOver || (this.dir.x === 0 && this.dir.y === 0)) return;
-    const head = { x: this.snake[0].x + this.dir.x, y: this.snake[0].y + this.dir.y };
+    const head: Point = { x: this.snake[0].x + this.dir.x, y: this.snake[0].y + this.dir.y };
     if (this.hit(head)) {
       this.gameOver = true;
       clearInterval(this.interval);
@@ -79,13 +84,13 @@ export class BuildingBlockComponent extends CommonExternalComponent {
     else this.snake.pop();
   }
 
-  hit(h: any) {
+  hit(h: Point) {
     return h.x < 0 || h.y < 0 || h.x >= this.size || h.y >= this.size ||
       this.snake.some(s => s.x === h.x && s.y === h.y);
   }
 
-  randomFood() {
-    let f;
+  randomFood(): Point {
+    let f: Point;
     do {
       f = { x: Math.floor(Math.random() * this.size), y: Math.floor(Math.random() * this.size) };
     } while (this.snake.some(s => s.x === f.x && s.y === f.y));
