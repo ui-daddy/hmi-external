@@ -6,6 +6,12 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
   template: `
     <div class="game-container">
       <h2>Tic Tac Toe</h2>
+      <div class="mode-toggle">
+        <label>
+          <input type="checkbox" [(ngModel)]="playWithComputer" (change)="resetGame()" />
+          Play against Computer
+        </label>
+      </div>
       <div class="board">
         <div 
           *ngFor="let cell of board; let i = index" 
@@ -37,6 +43,15 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
     h2 {
       margin-bottom: 18px;
       color: #333;
+    }
+    .mode-toggle {
+      margin-bottom: 10px;
+      text-align: left;
+      font-size: 1rem;
+    }
+    .mode-toggle label {
+      cursor: pointer;
+      user-select: none;
     }
     .board {
       display: grid;
@@ -99,9 +114,12 @@ export class CoolGameComponent extends CommonExternalComponent {
   winner: string | null = null;
   isDraw: boolean = false;
   winnerCells: number[] = [];
+  playWithComputer: boolean = false;
 
   makeMove(index: number): void {
     if (this.board[index] || this.winner) return;
+    if (this.playWithComputer && this.currentPlayer === 'O') return; // Prevent user from playing O in vs computer mode
+
     this.board[index] = this.currentPlayer;
     if (this.checkWinner()) {
       this.winner = this.currentPlayer;
@@ -109,14 +127,36 @@ export class CoolGameComponent extends CommonExternalComponent {
       this.isDraw = true;
     } else {
       this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+      if (this.playWithComputer && this.currentPlayer === 'O' && !this.winner && !this.isDraw) {
+        setTimeout(() => this.computerMove(), 400);
+      }
+    }
+  }
+
+  computerMove(): void {
+    const availableIndices = this.board
+      .map((cell, idx) => cell === '' ? idx : -1)
+      .filter(idx => idx !== -1);
+
+    // Simple AI: random available move
+    if (availableIndices.length > 0) {
+      const moveIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+      this.board[moveIndex] = 'O';
+      if (this.checkWinner()) {
+        this.winner = 'O';
+      } else if (this.board.every(cell => cell)) {
+        this.isDraw = true;
+      } else {
+        this.currentPlayer = 'X';
+      }
     }
   }
 
   checkWinner(): boolean {
     const winPatterns = [
-      [0,1,2], [3,4,5], [6,7,8], // rows
-      [0,3,6], [1,4,7], [2,5,8], // columns
-      [0,4,8], [2,4,6]           // diagonals
+      [0,1,2], [3,4,5], [6,7,8],
+      [0,3,6], [1,4,7], [2,5,8],
+      [0,4,8], [2,4,6]
     ];
     for (const pattern of winPatterns) {
       const [a, b, c] = pattern;
@@ -139,5 +179,8 @@ export class CoolGameComponent extends CommonExternalComponent {
     this.winner = null;
     this.isDraw = false;
     this.winnerCells = [];
+    if (this.playWithComputer && this.currentPlayer === 'O') {
+      setTimeout(() => this.computerMove(), 400);
+    }
   }
 }
