@@ -25,9 +25,7 @@ export const IMPORT_MODULES = [
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
-    BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
-    TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule
+    BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
@@ -35,18 +33,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { ButtonModule } from "primeng/button";
-import { DropdownModule } from "primeng/dropdown";
-import { DynamicDialog } from "primeng/dynamicdialog";
-import { InputTextModule } from "primeng/inputtext";
-import { MenuModule } from "primeng/menu";
-import { MultiSelectModule } from "primeng/multiselect";
-import { PasswordModule } from "primeng/password";
-import { TableModule } from "primeng/table";
-import { TagModule } from "primeng/tag";
-import { ToggleButtonModule } from "primeng/togglebutton";
-import { TooltipModule } from "primeng/tooltip";
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
 `;
 
 export const STACKBLITZ_MAIN_TS = `
@@ -202,8 +188,6 @@ export const STACKBLITZ_DEPENDENCIES = {
     "rxjs": "7.8.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.14.10",
-    "primeicons": "^7.0.0",
-    "primeng": "^18.0.2"
 };
 
 export const STACKBLITZ_COMMON_EXTERNAL_TS = `
