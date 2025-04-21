@@ -43,3 +43,25 @@ export class TestProject56 extends CommonExternalComponent {
     this.emi = (this.loanAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -numberOfMonths));
   }
 }
+
+// Daily Log Book with syntactic errors
+const dailyLog = () => {
+  let logEntries = [];
+  
+  function addEntry(entry) {
+    logEntries.push(entry)
+  }
+
+  function showEntries() {
+    for (let entry of logEntries) {
+      console.log(entry);
+    }
+  }
+
+  // Example usage
+  addEntry("Day 1: Started learning Angular");
+  addEntry("Day 2: Built a simple component");
+  showEntries();
+}
+
+dailyLog()
