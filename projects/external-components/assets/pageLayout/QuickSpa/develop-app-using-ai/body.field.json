@@ -343,6 +343,94 @@
                   "actions": []
                 }
               }
+            },
+            {
+              "actionType": "SET_SHARED_DATA",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [
+                {
+                  "varName": "guid",
+                  "staticData": "$guid$",
+                  "cache": false,
+                  "responseAccessor": ""
+                }
+              ],
+              "apiConfig": null
+            }
+          ]
+        },
+        {
+          "event": "showLog",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "downloadLog",
+                "url": "/rest/download/log/:guidId",
+                "method": "GET",
+                "pathParams": [
+                  {
+                    "paramName": "guidId",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(guid)"
+                  }
+                ],
+                "queryParams": [],
+                "payloadParams": [],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "text",
+                "beforeSubmit": {
+                  "action": []
+                },
+                "onSuccess": {
+                  "pageUrl": "",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": true,
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": []
+                },
+                "onError": {
+                  "pageUrl": "",
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                }
+              }
             }
           ]
         }
