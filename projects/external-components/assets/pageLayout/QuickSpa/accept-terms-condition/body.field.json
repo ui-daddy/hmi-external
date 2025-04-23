@@ -1,0 +1,138 @@
+{
+  "db-0": [
+    {
+      "baseProperties": {
+        "name": "iframeField",
+        "id": "db-1",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [
+            {
+              "selectorName": ".iframe-container",
+              "xs": {
+                "max-height": "80vh",
+                "overflow-y": "auto",
+                "overflow-x": "hidden",
+                "padding": "1rem"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "IframeExternalComponent",
+      "accessor": "",
+      "expressionProperties": {
+        "requiredValue": false,
+        "required": "",
+        "readOnly": "",
+        "readOnlyValue": false,
+        "disabled": "",
+        "disabledValue": false,
+        "visible": "",
+        "visibleValue": true
+      },
+      "customAttributes": {
+        "src": "/terms-condition/",
+        "height": "calc(100vh - 102px)"
+      }
+    }
+  ],
+  "db-2": [
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-3",
+        "label": "Accept",
+        "name": "acceptTearmsAndCondition"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "showLoading": true,
+              "apiConfig": {
+                "name": "acceptTearmsAndConditionApi",
+                "url": "/rest/acceptTerms",
+                "method": "POST",
+                "payloadParams": [],
+                "onSuccess": {
+                  "pageUrl": "/dashboard"
+                }
+              }
+            }
+          ],
+          "debounce": 3000
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-4",
+        "label": "Reject",
+        "name": "rejectTearmsAndCondition"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": "btn-danger"
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "showLoading": true,
+              "apiConfig": {
+                "name": "signupButtonApi",
+                "url": "/rest/logout",
+                "method": "POST",
+                "payloadParams": [],
+                "onSuccess": {
+                  "pageUrl": "/login",
+                  "clearSharedData": [
+                    "authenticated",
+                    "name"
+                  ]
+                }
+              }
+            }
+          ],
+          "debounce": 3000
+        }
+      ],
+      "expressionProperties": {}
+    }
+  ]
+}
