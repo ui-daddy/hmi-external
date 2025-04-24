@@ -263,6 +263,39 @@
       "serverURL": ""
     }
   },
+  "accept-terms-condition": {
+    "authGuardConfig": {
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/accept-terms-condition/body.field.json",
+      "serverURL": ""
+    },
+   
+    "globalPageSettings": {
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": "",
+            "xs": {
+              
+            }
+          }
+        }
+      },
+      "title": "Nuvoroai's Accept Terms and Condition"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/accept-terms-condition/body.section.json",
+      "serverURL": ""
+    }
+  },
   "hmiAppConfiguration": {
     "title": "Quick SPA",
     "baseUrl": "",
