@@ -4,7 +4,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 type Block = { filled: boolean; color: string };
 type Position = { x: number; y: number };
 
-const COLORS = ['#4FC3F7', '#81C784', '#FFD54F', '#E57373', '#BA68C8'];
+const COLORS: string[] = ['#4FC3F7', '#81C784', '#FFD54F', '#E57373', '#BA68C8'];
 const SHAPES: Position[][] = [
   // I
   [{ x: 0, y: 0 }, { x: 0, y: 1 }, { x: 0, y: 2 }, { x: 0, y: 3 }],
@@ -193,13 +193,13 @@ export class ConsoleComponent extends CommonExternalComponent {
   }
 
   setBoardSize(): void {
-    const vw = Math.min(window.innerWidth, 430);
-    const vh = Math.min(window.innerHeight, 800);
+    const vw: number = Math.min(window.innerWidth, 430);
+    const vh: number = Math.min(window.innerHeight, 800);
 
-    // Fit to device, prioritize height for iPhone mini (812px), keep aspect ratio
-    const cellW = Math.max(this.minCellSize, Math.min(this.maxCellSize, Math.floor(vw / this.cols)));
-    const cellH = Math.max(this.minCellSize, Math.min(this.maxCellSize, Math.floor((vh - 120) / this.rows)));
-    const cellSize = Math.min(cellW, cellH);
+    // Reduced subtraction from 120px to 40px for proper fit
+    const cellW: number = Math.max(this.minCellSize, Math.min(this.maxCellSize, Math.floor(vw / this.cols)));
+    const cellH: number = Math.max(this.minCellSize, Math.min(this.maxCellSize, Math.floor((vh - 40) / this.rows)));
+    const cellSize: number = Math.min(cellW, cellH);
 
     document.documentElement.style.setProperty('--cell-size', `${cellSize}px`);
     this.boardPxWidth = cellSize * this.cols;
@@ -253,7 +253,7 @@ export class ConsoleComponent extends CommonExternalComponent {
   }
 
   randomShape(): Position[] {
-    const idx = Math.floor(Math.random() * SHAPES.length);
+    const idx: number = Math.floor(Math.random() * SHAPES.length);
     return SHAPES[idx].map(p => ({ ...p }));
   }
 
@@ -273,14 +273,14 @@ export class ConsoleComponent extends CommonExternalComponent {
 
   rotate(): void {
     if (!this.running) return;
-    const rotated = this.pieceShape.map(({ x, y }) => ({ x: -y, y: x }));
+    const rotated: Position[] = this.pieceShape.map(({ x, y }) => ({ x: -y, y: x }));
     if (!this.collides(rotated, this.piecePos)) {
       this.pieceShape = rotated;
     }
   }
 
   movePiece(dx: number, dy: number): boolean {
-    const newPos = { x: this.piecePos.x + dx, y: this.piecePos.y + dy };
+    const newPos: Position = { x: this.piecePos.x + dx, y: this.piecePos.y + dy };
     if (!this.collides(this.pieceShape, newPos)) {
       this.piecePos = newPos;
       return true;
@@ -290,8 +290,8 @@ export class ConsoleComponent extends CommonExternalComponent {
 
   collides(shape: Position[], pos: Position): boolean {
     for (const part of shape) {
-      const x = pos.x + part.x;
-      const y = pos.y + part.y;
+      const x: number = pos.x + part.x;
+      const y: number = pos.y + part.y;
       if (
         x < 0 || x >= this.cols ||
         y < 0 || y >= this.rows ||
@@ -305,8 +305,8 @@ export class ConsoleComponent extends CommonExternalComponent {
 
   lockPiece(): void {
     for (const part of this.pieceShape) {
-      const x = this.piecePos.x + part.x;
-      const y = this.piecePos.y + part.y;
+      const x: number = this.piecePos.x + part.x;
+      const y: number = this.piecePos.y + part.y;
       if (y >= 0 && y < this.rows && x >= 0 && x < this.cols) {
         this.board[y][x] = { filled: true, color: this.pieceColor };
       }
@@ -314,7 +314,7 @@ export class ConsoleComponent extends CommonExternalComponent {
   }
 
   clearLines(): void {
-    let linesCleared = 0;
+    let linesCleared: number = 0;
     for (let y = this.rows - 1; y >= 0; y--) {
       if (this.board[y].every(cell => cell.filled)) {
         this.board.splice(y, 1);
