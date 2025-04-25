@@ -18,3 +18,12 @@
         <p>Loading...</p>
     </ng-template>
 </p-dialog>
+<p-dialog header=" Build completed" [(visible)]="buildStatusCompleted" [modal]="true"   [style]="{ background: '#d1e7dd', border: '1px solid #a3cfbb', width: '95vw' }" >
+    <ng-container *ngIf="previewLink; else loading">
+        Build was successful. Click following link to preview
+        <a href={{previewLink}} target="_blank" rel="noopener noreferrer">{{previewLink}}</a>
+    </ng-container>
+    <ng-template #loading>
+        <p>Loading...</p>
+    </ng-template>
+</p-dialog>
