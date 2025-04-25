@@ -1,0 +1,14 @@
+{
+  "db-2": [
+    {
+      "baseProperties": {
+        "name": "consoleField",
+        "id": "db-3",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "ConsoleComponent"
+    }
+  ]
+}
