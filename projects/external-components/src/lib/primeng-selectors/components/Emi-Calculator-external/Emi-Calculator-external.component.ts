@@ -1,7 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { CommonExternalComponent } from '../common-external/common-external.component';
 
 @Component({
-  selector: 'app-block-game',
+  selector: 'app-emi-calculator',
   template: `
     <div style="display: flex; flex-direction: column; align-items: center;">
       <h2 style="margin-bottom: 8px;">Building Block Game</h2>
@@ -29,20 +30,44 @@ import { Component, HostListener, OnInit } from '@angular/core';
           [style.height.px]="blockSize"
           style="position: absolute; box-sizing: border-box; border: 1px solid #fff;">
         </div>
+
+        <!-- Overlay for pause -->
+        <div *ngIf="paused" 
+          style="
+            position:absolute;top:0;left:0;width:100%;height:100%;
+            background:rgba(0,0,0,0.65);z-index:10;
+            display:flex;align-items:center;justify-content:center;
+            color:#fff;font-size:2rem;font-weight:bold;
+          ">
+          Paused
+        </div>
       </div>
-      <div style="margin-top: 12px;">
+      <div style="margin-top: 12px; display: flex; gap: 8px;">
         <button (click)="resetGame()" style="padding: 6px 18px;">Restart</button>
+        <button *ngIf="!paused && !gameOver" (click)="pauseGame()" style="padding: 6px 18px;">Pause</button>
+        <button *ngIf="paused && !gameOver" (click)="resumeGame()" style="padding: 6px 18px;">Resume</button>
       </div>
       <div style="margin-top: 10px; color: #0c0;">Score: {{ score }}</div>
       <div style="color: #e00;" *ngIf="gameOver">Game Over!</div>
       <div style="margin-top:8px;color:#888;font-size:13px;">
         Controls: ← → ↓ to move, ↑ to rotate
       </div>
+      <!-- Mobile Controls -->
+      <div style="margin-top:14px; display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 8px;">
+          <button (touchstart)="moveLeft()" style="width:48px;height:48px;font-size:1.5rem;">&#8592;</button>
+          <button (touchstart)="rotate()" style="width:48px;height:48px;font-size:1.5rem;">&#8635;</button>
+          <button (touchstart)="moveRight()" style="width:48px;height:48px;font-size:1.5rem;">&#8594;</button>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <button (touchstart)="moveDown()" style="width:48px;height:48px;font-size:1.5rem;">&#8595;</button>
+        </div>
+      </div>
     </div>
   `,
   styles: [],
 })
-export class BlockGameComponent implements OnInit {
+export class EmiCalculatorComponent extends CommonExternalComponent implements OnInit {
   readonly ROWS = 20;
   readonly COLS = 10;
   readonly blockSize = 28;
@@ -72,6 +97,7 @@ export class BlockGameComponent implements OnInit {
   intervalTime: number = 400;
   score: number = 0;
   gameOver: boolean = false;
+  paused: boolean = false;
 
   ngOnInit() {
     this.resetGame();
@@ -83,9 +109,26 @@ export class BlockGameComponent implements OnInit {
     );
     this.score = 0;
     this.gameOver = false;
+    this.paused = false;
     this.spawnShape();
     if (this.gameInterval) clearInterval(this.gameInterval);
-    this.gameInterval = setInterval(() => this.moveDown(), this.intervalTime);
+    this.startInterval();
+  }
+
+  startInterval() {
+    this.gameInterval = setInterval(() => {
+      if (!this.paused && !this.gameOver) {
+        this.moveDown();
+      }
+    }, this.intervalTime);
+  }
+
+  pauseGame() {
+    this.paused = true;
+  }
+
+  resumeGame() {
+    this.paused = false;
   }
 
   spawnShape() {
@@ -163,7 +206,7 @@ export class BlockGameComponent implements OnInit {
   }
 
   moveDown() {
-    if (this.gameOver) return;
+    if (this.gameOver || this.paused) return;
     if (!this.isCollision(this.currentRow + 1, this.currentCol, this.currentShape.blocks)) {
       this.currentRow++;
     } else {
@@ -172,18 +215,21 @@ export class BlockGameComponent implements OnInit {
   }
 
   moveLeft() {
+    if (this.gameOver || this.paused) return;
     if (!this.isCollision(this.currentRow, this.currentCol - 1, this.currentShape.blocks)) {
       this.currentCol--;
     }
   }
 
   moveRight() {
+    if (this.gameOver || this.paused) return;
     if (!this.isCollision(this.currentRow, this.currentCol + 1, this.currentShape.blocks)) {
       this.currentCol++;
     }
   }
 
   rotate() {
+    if (this.gameOver || this.paused) return;
     if (this.currentShape.blocks.length === 4 && this.currentShape !== this.shapes[3]) {
       // Don't rotate O shape
       const rotated = this.currentShape.blocks.map(([r, c]: number[]) => [-c, r]);
@@ -195,7 +241,7 @@ export class BlockGameComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   handleKey(event: KeyboardEvent) {
-    if (this.gameOver) return;
+    if (this.gameOver || this.paused) return;
     switch (event.key) {
       case 'ArrowLeft':
         this.moveLeft();
