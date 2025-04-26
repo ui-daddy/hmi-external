@@ -15,7 +15,7 @@
           "autoPlace": "false"
         },
         "css": {
-          "customClassName": "position-fixed top-0 w-100  heder-container",
+          "customClassName": "header-container",
           "configuration": [
             {
               "selectorName": ".header-container",
