@@ -10,9 +10,21 @@
             "lg": "4:6:2",
             "md": "4:6:2",
             "sm": "4:6:2",
-            "xs": "7:0:5"
+            "xs": "7:1:4"
           },
           "autoPlace": "false"
+        },
+        "css": {
+          "customClassName": "position-fixed top-0 w-100  ",
+          "configuration": [
+            {
+              "selectorName": ".header-container",
+              "xs": {
+                "height": "56px"
+              }
+            }
+          ],
+          "themeClass": ""
         }
       }
     }
