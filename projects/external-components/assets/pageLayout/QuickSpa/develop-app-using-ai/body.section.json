@@ -21,6 +21,13 @@
               "xs": {
                 "padding": "0px"
               }
+            },
+            {
+              "selectorName": ".ai-chat-container",
+              "xs": {
+                "margin-top": "var(--header-height)",
+                "height": "calc(100dvh - var(--header-container));"
+              }
             }
           ],
           "themeClass": ""
