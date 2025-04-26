@@ -20,7 +20,7 @@
             {
               "selectorName": ".header-container",
               "xs": {
-                "height": "56px"
+                "height": "var(--header-height)"
               }
             }
           ],
