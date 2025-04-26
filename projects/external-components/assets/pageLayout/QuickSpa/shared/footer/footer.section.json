@@ -1,3 +1,23 @@
 {
-  "layout": []
+  "layout": [
+    {
+      "id": "footer-dashboard",
+      "type": "content",
+      "layout": {
+        "column": {
+          "count": 2,
+          "ratio": {
+            "lg": "4:4:4",
+            "md": "4:4:4",
+            "sm": "4:4:4",
+            "xs": "2:2:8"
+          },
+          "autoPlace": "false"
+        },
+        "css": {
+          "customClassName": "section-container__no-margin"
+        }
+      }
+    }
+  ]
 }
