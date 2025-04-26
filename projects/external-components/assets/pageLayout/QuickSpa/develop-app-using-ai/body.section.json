@@ -1,30 +1,32 @@
 {
-    "layout": [
-        {
-            "id": "db-0",
-            "type": "content",
-            "layout": {
-                "column": {
-                    "ratio": {
-                        "lg": "12",
-                        "md": "12",
-                        "sm": "12",
-                        "xs": "12"
-                    }
-                },
-                "css": {
-                    "configuration": [
-                        {
-                            "selectorName": " .ai-chat-container > .section-container__parent > .section-container__field",
-                            "xs": {
-                                "padding": "0px"
-                            }
-                        }
-                    ],
-                    "customClassName": "ai-chat-container"
-                }
-            },
-            "sectionList": []
+  "layout": [
+    {
+      "id": "db-0",
+      "type": "content",
+      "layout": {
+        "column": {
+          "ratio": {
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
+          },
+          "count": 1
+        },
+        "css": {
+          "customClassName": "ai-chat-container",
+          "configuration": [
+            {
+              "selectorName": " .ai-chat-container > .section-container__parent > .section-container__field",
+              "xs": {
+                "padding": "0px"
+              }
+            }
+          ],
+          "themeClass": ""
         }
-    ]
+      },
+      "sectionList": []
+    }
+  ]
 }
