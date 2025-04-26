@@ -69,7 +69,8 @@ export class GenerateWithAiComponent
   isEdit!: string | null;
   sourceTexts!: string[];
   isCollapsed: boolean = false;
-  checkBuildStatusAction: any;
+  checkBuildEvent: any;
+  downloadLogEvent: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -107,8 +108,8 @@ export class GenerateWithAiComponent
      this.currentTime = `${dayOfWeek} ${time}`;
      this.isEdit = this.route.snapshot.queryParamMap.get('edit');
      this.typeText();
-     const checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
-     this.checkBuildStatusAction = checkBuildEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
+     this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
+     this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
 
   }
 

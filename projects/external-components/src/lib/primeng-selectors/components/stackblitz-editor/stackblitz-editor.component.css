@@ -19,3 +19,9 @@
     gap: 15px;
     justify-content: end;
 }
+
+.log-container {
+    white-space: pre-wrap; 
+    max-height: 60vh; 
+    overflow-y: auto;
+}
