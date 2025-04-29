@@ -220,6 +220,15 @@
             "action": {
               "name": "OPEN_IN_NEW_WINDOW"
             }
+          },
+          {
+            "label": "Share",
+            "className": "btn btn-primary",
+            "visible": "true",
+            "action": {
+              "name": "COPY_URL",
+              "pageUrl": "develop-app-using-ai"
+            }
           }
         ]
       }
