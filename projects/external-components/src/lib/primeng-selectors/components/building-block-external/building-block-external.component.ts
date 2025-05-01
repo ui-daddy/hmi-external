@@ -1,5 +1,6 @@
 // building-block.component.ts
-// Features: Snake game, keyboard controls, responsive fullscreen for mobile, score display, restart option.
+// Features: Snake game, keyboard & swipe controls, responsive fullscreen for mobile, score display, restart option.
+// Now ensures no horizontal scrollbar even inside padded parent containers.
 
 import { Component, HostListener, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
@@ -15,7 +16,7 @@ interface Point {
   template: `
     <div 
       [ngStyle]="containerStyle"
-      style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100vw;height:100vh;box-sizing:border-box;background:#fafafa;">
+      style="display:flex;flex-direction:column;align-items:center;justify-content:center;position:fixed;inset:0;z-index:10;box-sizing:border-box;background:#fafafa;overflow:hidden;">
       <h3 style="margin:12px 0 8px;">Snake Game</h3>
       <div 
         [style.width.px]="boardPx"
@@ -59,8 +60,8 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
   boardPx = this.size * this.cell;
   containerStyle: { [key: string]: string } = {};
 
-  private touchStartX: number = 0;
-  private touchStartY: number = 0;
+  private touchStartX = 0;
+  private touchStartY = 0;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -149,27 +150,26 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
     return f;
   }
 
-  // Responsive logic for full-screen on mobile
+  // Responsive logic for full-screen on mobile, fixed position to avoid parent padding/scroll
   setResponsive(): void {
     const isMobile = window.innerWidth <= 600 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
       const minDim = Math.min(window.innerWidth, window.innerHeight) - 24; // padding
       this.cell = Math.floor(minDim / this.size);
       this.boardPx = this.cell * this.size;
-      this.containerStyle = {
-        width: '100vw',
-        height: '100vh',
-        'padding': '0',
-        'background': '#fafafa'
-      };
     } else {
       this.cell = 20;
       this.boardPx = this.cell * this.size;
-      this.containerStyle = {
-        width: '100vw',
-        height: '100vh',
-        'background': '#fafafa'
-      };
     }
+    // Use fixed positioning and inset to fill viewport and ignore parent padding/margins
+    this.containerStyle = {
+      position: 'fixed',
+      inset: '0',
+      width: '100vw',
+      height: '100vh',
+      background: '#fafafa',
+      'z-index': '10',
+      'overflow': 'hidden'
+    };
   }
 }
