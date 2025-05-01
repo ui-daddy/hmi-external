@@ -1,6 +1,6 @@
 // building-block.component.ts
-// Features: Snake game, keyboard & swipe controls, responsive fullscreen for mobile, score display, restart option.
-// Now ensures no horizontal scrollbar even inside padded parent containers.
+// Features: Snake game with keyboard & swipe controls, responsive fullscreen for mobile, score display, restart option.
+// Now: Snake length is capped at 10 segments.
 
 import { Component, HostListener, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
@@ -44,24 +44,25 @@ interface Point {
         </div>
       </div>
       <p style="margin:12px 0 2px;">Score: {{snake.length-1}}</p>
-      <small>Use arrow keys or swipe</small>
+      <small>Use arrow keys or swipe<br>(Max length: 10)</small>
     </div>
   `,
   styles: []
 })
 export class BuildingBlockComponent extends CommonExternalComponent implements OnInit, OnDestroy {
-  size = 15;
-  cell = 20;
+  readonly size: number = 15;
+  cell: number = 20;
   snake: Point[] = [{ x: 7, y: 7 }];
   dir: Point = { x: 0, y: 0 };
   food: Point = this.randomFood();
-  gameOver = false;
+  gameOver: boolean = false;
   interval: any;
-  boardPx = this.size * this.cell;
+  boardPx: number = this.size * this.cell;
   containerStyle: { [key: string]: string } = {};
 
-  private touchStartX = 0;
-  private touchStartY = 0;
+  private touchStartX: number = 0;
+  private touchStartY: number = 0;
+  private readonly maxLength: number = 10;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -81,7 +82,7 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
     clearInterval(this.interval);
   }
 
-  start() {
+  start(): void {
     this.dir = { x: 0, y: 0 };
     this.snake = [{ x: 7, y: 7 }];
     this.food = this.randomFood();
@@ -90,14 +91,22 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
     this.interval = setInterval(() => this.move(), 120);
   }
 
-  reset() {
+  reset(): void {
     this.start();
   }
 
   @HostListener('window:keydown', ['$event'])
-  key(e: KeyboardEvent) {
-    const d = { ArrowUp: { x: 0, y: -1 }, ArrowDown: { x: 0, y: 1 }, ArrowLeft: { x: -1, y: 0 }, ArrowRight: { x: 1, y: 0 } }[e.key];
-    if (d && !(this.dir.x === -d.x && this.dir.y === -d.y)) this.dir = d;
+  key(e: KeyboardEvent): void {
+    const d: { [key: string]: Point } = {
+      ArrowUp: { x: 0, y: -1 },
+      ArrowDown: { x: 0, y: 1 },
+      ArrowLeft: { x: -1, y: 0 },
+      ArrowRight: { x: 1, y: 0 }
+    };
+    const nextDir = d[e.key];
+    if (nextDir && !(this.dir.x === -nextDir.x && this.dir.y === -nextDir.y)) {
+      this.dir = nextDir;
+    }
   }
 
   // Touch events for swipe controls on mobile
@@ -112,8 +121,8 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
   @HostListener('touchend', ['$event'])
   onTouchEnd(event: TouchEvent): void {
     if (event.changedTouches.length === 1) {
-      const dx = event.changedTouches[0].clientX - this.touchStartX;
-      const dy = event.changedTouches[0].clientY - this.touchStartY;
+      const dx: number = event.changedTouches[0].clientX - this.touchStartX;
+      const dy: number = event.changedTouches[0].clientY - this.touchStartY;
       if (Math.abs(dx) > Math.abs(dy)) {
         if (dx > 20 && this.dir.x !== -1) this.dir = { x: 1, y: 0 };
         else if (dx < -20 && this.dir.x !== 1) this.dir = { x: -1, y: 0 };
@@ -124,7 +133,7 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
     }
   }
 
-  move() {
+  move(): void {
     if (this.gameOver || (this.dir.x === 0 && this.dir.y === 0)) return;
     const head: Point = { x: this.snake[0].x + this.dir.x, y: this.snake[0].y + this.dir.y };
     if (this.hit(head)) {
@@ -133,8 +142,25 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
       return;
     }
     this.snake.unshift(head);
-    if (head.x === this.food.x && head.y === this.food.y) this.food = this.randomFood();
-    else this.snake.pop();
+
+    if (head.x === this.food.x && head.y === this.food.y) {
+      // Only grow if under maxLength
+      if (this.snake.length > this.maxLength) {
+        this.snake = this.snake.slice(0, this.maxLength); // keep only up to maxLength
+      }
+      if (this.snake.length < this.maxLength) {
+        this.food = this.randomFood();
+      } else {
+        // If at max length, just move food somewhere unreachable (or you can show a "win" message)
+        this.food = { x: -1, y: -1 };
+      }
+    } else {
+      this.snake.pop();
+    }
+    // Always trim to maxLength in case of edge cases
+    if (this.snake.length > this.maxLength) {
+      this.snake = this.snake.slice(0, this.maxLength);
+    }
   }
 
   hit(h: Point): boolean {
@@ -152,16 +178,15 @@ export class BuildingBlockComponent extends CommonExternalComponent implements O
 
   // Responsive logic for full-screen on mobile, fixed position to avoid parent padding/scroll
   setResponsive(): void {
-    const isMobile = window.innerWidth <= 600 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isMobile: boolean = window.innerWidth <= 600 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
-      const minDim = Math.min(window.innerWidth, window.innerHeight) - 24; // padding
+      const minDim: number = Math.min(window.innerWidth, window.innerHeight) - 24; // padding
       this.cell = Math.floor(minDim / this.size);
       this.boardPx = this.cell * this.size;
     } else {
       this.cell = 20;
       this.boardPx = this.cell * this.size;
     }
-    // Use fixed positioning and inset to fill viewport and ignore parent padding/margins
     this.containerStyle = {
       position: 'fixed',
       inset: '0',
