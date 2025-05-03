@@ -1,30 +1,44 @@
 {
-    "layout": [
-        {
-            "id": "db-0",
-            "type": "content",
-            "layout": {
-                "column": {
-                    "ratio": {
-                        "lg": "12",
-                        "md": "12",
-                        "sm": "12",
-                        "xs": "12"
-                    }
-                },
-                "css": {
-                    "configuration": [
-                        {
-                            "selectorName": " .ai-chat-container > .section-container__parent > .section-container__field",
-                            "xs": {
-                                "padding": "0px"
-                            }
-                        }
-                    ],
-                    "customClassName": "ai-chat-container"
-                }
+  "layout": [
+    {
+      "id": "db-0",
+      "type": "content",
+      "layout": {
+        "column": {
+          "ratio": {
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
+          },
+          "count": 1
+        },
+        "css": {
+          "customClassName": "ai-chat-container",
+          "configuration": [
+            {
+              "selectorName": " .ai-chat-container > .section-container__parent > .section-container__field",
+              "xs": {
+                "padding": "0px"
+              }
             },
-            "sectionList": []
+            {
+              "selectorName": ".ai-chat-container",
+              "xs": {
+                "height": "calc(100dvh - var(--header-height));"
+              }
+            },
+            {
+              "selectorName": ".ai-chat-container > .section-container__parent",
+              "xs": {
+                "height": "100%;"
+              }
+            }
+          ],
+          "themeClass": ""
         }
-    ]
+      },
+      "sectionList": []
+    }
+  ]
 }
