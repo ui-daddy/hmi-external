@@ -91,7 +91,7 @@
       "baseProperties": {
         "type": "button",
         "id": "db-6",
-        "label": "Add Project",
+        "label": "Create App",
         "name": "addProjectBtn"
       },
       "layoutProperties": {
