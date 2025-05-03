@@ -27,6 +27,12 @@
               "xs": {
                 "height": "calc(100dvh - var(--header-height));"
               }
+            },
+            {
+              "selectorName": ".ai-chat-container > .section-container__parent",
+              "xs": {
+                "height": "100%;"
+              }
             }
           ],
           "themeClass": ""
