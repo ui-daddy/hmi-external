@@ -25,11 +25,18 @@
             {
               "selectorName": ".ai-chat-container",
               "xs": {
-                "height": "calc(100dvh - var(--header-height));"
+                "height": "calc(100dvh - var(--header-height));",
+                "overflow": "hidden"
               }
             },
             {
               "selectorName": ".ai-chat-container > .section-container__parent",
+              "xs": {
+                "height": "100%;"
+              }
+            },
+            {
+              "selectorName": ".ai-chat-container > .section-container__parent > .section-container__field",
               "xs": {
                 "height": "100%;"
               }
