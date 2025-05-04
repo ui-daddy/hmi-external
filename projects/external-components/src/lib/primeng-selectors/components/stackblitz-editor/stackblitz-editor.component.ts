@@ -48,6 +48,8 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   buildLog: any;
   showModal: boolean = false;
   buildStatus: any;
+  previewLink!: string;
+  buildStatusCompleted: boolean = false;
   
   constructor(
     private zone: NgZone,
@@ -205,8 +207,8 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
       this.customApiCall(BuildStatusAction.apiConfig).subscribe(
         (item: any) => {
           this.buildStatus = item?.data?.buildStatus;
-          console.log('Build Status:', status);
-          
+          this.previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
+
           const guidStoreAction = this.checkBuildEvent?.actions?.find((action: any) => action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length);
           guidStoreAction.sharedData.forEach((shareDataObj: any) => {
             if (shareDataObj.staticData === "$guid$") {
@@ -222,14 +224,15 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
           if (this.buildStatus === 'COMPLETED') {
             this.isBuildAppDisabled = false;
             clearInterval(this.intervalId);
-            const previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
-            const successMessageWithLink = `Building completed successfully. Copy following link to preview ${previewLink}`
+            this.buildStatusCompleted = true;
+            // const previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
+            // const successMessageWithLink = `Building completed successfully. Copy following link to preview ${previewLink}`
             //this.showSuccess = true;
             //console.log('Build completed.');
-            this.initializeEvents.emit({
-              name: 'fireEvent',
-              events: [this.showMessageAction(successMessageWithLink, "success")]
-            })
+            // this.initializeEvents.emit({
+            //   name: 'fireEvent',
+            //   events: [this.showMessageAction(successMessageWithLink, "success")]
+            // })
           } else if (this.buildStatus === 'FAILED') {
             this.isBuildAppDisabled = false;
             clearInterval(this.intervalId);

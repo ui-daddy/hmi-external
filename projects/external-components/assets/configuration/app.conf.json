@@ -164,8 +164,7 @@
     }
   },
   "terms-condition": {
-    "authGuardConfig": {
-    },
+    "authGuardConfig": {},
     "data": {
       "fetchFromLocal": true,
       "localURL": "",
@@ -191,9 +190,7 @@
         "css": {
           "configuration": {
             "selectorName": "",
-            "xs": {
-              
-            }
+            "xs": {}
           }
         }
       },
@@ -214,8 +211,7 @@
     }
   },
   "privacy-policy": {
-    "authGuardConfig": {
-    },
+    "authGuardConfig": {},
     "data": {
       "fetchFromLocal": true,
       "localURL": "",
@@ -241,9 +237,7 @@
         "css": {
           "configuration": {
             "selectorName": "",
-            "xs": {
-              
-            }
+            "xs": {}
           }
         }
       },
@@ -260,6 +254,35 @@
     "section": {
       "fetchFromLocal": true,
       "localURL": "./assets/pageLayout/QuickSpa/privacy-policy/body.section.json",
+      "serverURL": ""
+    }
+  },
+  "accept-terms-condition": {
+    "authGuardConfig": {},
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "",
+      "serverURL": ""
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/accept-terms-condition/body.field.json",
+      "serverURL": ""
+    },
+    "globalPageSettings": {
+      "layoutProperties": {
+        "css": {
+          "configuration": {
+            "selectorName": "",
+            "xs": {}
+          }
+        }
+      },
+      "title": "Nuvoroai's Accept Terms and Condition"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/QuickSpa/accept-terms-condition/body.section.json",
       "serverURL": ""
     }
   },
@@ -283,52 +306,6 @@
       "orientation": null
     }
   },
-  "homepage": {
-    "headerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.field.json"
-    },
-    "headerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/shared/header/header.section.json"
-    },
-    "field": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.field.json"
-    },
-    "section": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.section.json"
-    },
-    "footerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
-    },
-    "footerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
-    },
-    "data": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/body.data.json"
-    },
-    "navField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/nav.field.json"
-    },
-    "navSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/homepage/nav.section.json"
-    },
-    "authGuardConfig": {
-      "enabled": false,
-      "conditions": []
-    },
-    "globalPageSettings": {
-      "title": "homepage",
-      "layoutProperties": null
-    }
-  },
   "develop-app-using-ai": {
     "headerField": {
       "fetchFromLocal": true,
@@ -348,11 +325,11 @@
     },
     "footerField": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.field.json"
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/footer.field.json"
     },
     "footerSection": {
       "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/QuickSpa/shared/footer/footer.section.json"
+      "localURL": "./assets/pageLayout/QuickSpa/develop-app-using-ai/footer.section.json"
     },
     "data": {
       "fetchFromLocal": true,

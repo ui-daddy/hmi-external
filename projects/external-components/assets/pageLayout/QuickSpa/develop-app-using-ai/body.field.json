@@ -30,7 +30,6 @@
                 "border": "0px"
               }
             },
-            
             {
               "selectorName": ".input-container > input",
               "xs": {
