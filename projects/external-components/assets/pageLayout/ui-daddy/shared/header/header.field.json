@@ -82,11 +82,6 @@
           "navigateToPage": "/tasks-report"
         },
         {
-          "id": "boards",
-          "label": "Boards",
-          "navigateToPage": "/boards"
-        },
-        {
           "id": "SubstationWiseReport",
           "label": "Substation Wise Report",
           "navigateToPage": "/SubstationWiseReport"
