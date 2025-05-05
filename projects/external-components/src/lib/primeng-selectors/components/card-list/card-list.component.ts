@@ -94,17 +94,8 @@ export class CardListComponent extends CommonExternalComponent {
           try {
             await navigator.share(shareData);
             console.log(`${card.deployLink}/${card.title}`)
-            this.initializeEvents.emit({
-              name: 'fireEvent',
-              events: [this.showMessageAction("Thanks for sharing!", "success")]
-            })
           } catch (err: any) {
             console.log(err)
-            this.initializeEvents.emit({
-              name: 'fireEvent',
-              events: [this.showMessageAction(err, "danger")]
-            });
-
           }
           break;
         default:
