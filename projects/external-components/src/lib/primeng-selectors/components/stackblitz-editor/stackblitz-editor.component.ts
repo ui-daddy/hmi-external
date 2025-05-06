@@ -50,6 +50,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   buildStatus: any;
   previewLink!: string;
   buildStatusCompleted: boolean = false;
+  override!: string | null;
   
   constructor(
     private zone: NgZone,
@@ -57,6 +58,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
+    this.override = localStorage.getItem('override');
     this.embedEditor();
   }
 
