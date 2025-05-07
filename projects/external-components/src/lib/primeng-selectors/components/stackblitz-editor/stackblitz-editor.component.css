@@ -19,3 +19,7 @@
     gap: 15px;
     justify-content: end;
 }
+
+.button-actions.ios-button {
+    justify-content: space-between;
+}

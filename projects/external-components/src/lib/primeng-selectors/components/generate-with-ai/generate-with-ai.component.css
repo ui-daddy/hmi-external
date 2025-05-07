@@ -160,6 +160,10 @@ button:hover {
   transition: height 0.3s ease
 }
 
+.code-preview-container.ios-device {
+  height: 98px;
+}
+
 .collapsed {
   height: 2vh !important;
   /* min-height: 0 !important; /* override min-height if needed */
@@ -227,6 +231,10 @@ button:hover {
   background-color: #1889AF;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.collapssing-button.ios-device {
+  display: none;
 }
 
 .collapsed + .collapssing-button {
