@@ -252,7 +252,12 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
     // below code will trigger the onmessage event
     this.isBuildAppDisabled = true;
     this.buildStatus = null;
-    this.projectSnapshot.getFsSnapshot();
+
+    if (!this.onIOS) {
+      this.projectSnapshot.getFsSnapshot();
+    } else {
+      this.codeChange.emit(this.code);
+    }
     const BuildStatusAction = this.checkBuildEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
     this.intervalId = setInterval(() => {
       this.customApiCall(BuildStatusAction.apiConfig).subscribe(
