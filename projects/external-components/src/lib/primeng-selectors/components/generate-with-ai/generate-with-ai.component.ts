@@ -15,6 +15,7 @@ import { StackblitzEditorComponent } from "../stackblitz-editor/stackblitz-edito
 import { DialogService } from "primeng/dynamicdialog";
 import { deepClone } from "../../util/util";
 import { DialogResult } from "../stackblitz-editor/stackblitz-editor.component";
+import { isIosDevice } from '../../util/platform';
 
 interface MessagePart {
   type: "text" | "code";
@@ -48,6 +49,7 @@ export class GenerateWithAiComponent
   previewCode: string = "";
   previewDependencies: string = "";
   currentTime!: string;
+  onIOS: boolean = isIosDevice(); // Flag to detect iOS devices
   defaultSuggestions: string[] = [
     "An EMI Calculator...",
     "A diet tracker...",

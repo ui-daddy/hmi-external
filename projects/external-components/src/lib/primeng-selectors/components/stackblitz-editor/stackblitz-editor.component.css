@@ -21,8 +21,8 @@
 }
 
 .log-container {
-    white-space: pre-wrap; 
-    max-height: 60vh; 
+    white-space: pre-wrap;
+    max-height: 60vh;
     overflow-y: auto;
 }
 
@@ -32,4 +32,8 @@
 
 p-dialog-content {
     color: #000;
+}
+
+.button-actions.ios-button {
+    justify-content: space-between;
 }
