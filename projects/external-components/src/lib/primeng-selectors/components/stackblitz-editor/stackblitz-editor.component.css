@@ -20,6 +20,20 @@
     justify-content: end;
 }
 
+.log-container {
+    white-space: pre-wrap;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.p-dialog-title	{
+    color: #000;
+}
+
+p-dialog-content {
+    color: #000;
+}
+
 .button-actions.ios-button {
     justify-content: space-between;
 }

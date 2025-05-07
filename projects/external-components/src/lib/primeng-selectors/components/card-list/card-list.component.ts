@@ -7,6 +7,7 @@ export interface Card {
   buildStatus: string;
   description: string;
   thumbnail: string;
+  forkUrl?: string;
 }
 
 export interface CardButtonAction {
@@ -66,7 +67,7 @@ export class CardListComponent extends CommonExternalComponent {
     });
   }
 
-  onBtnClick(card: any, action: any) {
+  async onBtnClick(card: any, action: any) {
     if(action) {
       switch (action.name) {
         case 'OPEN_URL':
@@ -84,9 +85,39 @@ export class CardListComponent extends CommonExternalComponent {
 
           })
           break;
+        case 'COPY_URL': 
+          const shareData = {
+            title: card.title,
+            text: card.description,
+            url: `${card.deployLink}/${card.title}`,
+          };
+          try {
+            await navigator.share(shareData);
+            console.log(`${card.deployLink}/${card.title}`)
+          } catch (err: any) {
+            console.log(err)
+          }
+          break;
         default:
           console.error('Unknown button event');
       }
+    }
+  }
+  async shareApp(card: any){
+    
+  }
+
+  private showMessageAction(messageText:string, messagetype:string) {
+    return {
+      event: '',
+      actions: [
+        {
+          actionType: 'message',
+          condition: "1==1",
+          messagetype: messagetype,
+          messageText: messageText,
+        }
+      ]
     }
   }
 

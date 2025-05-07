@@ -40,14 +40,28 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
   @Input() code: string = '';
   @Input() dependencies: string = '';
   @Input() isDialog: boolean = true;
+  @Input() customApiCall: any;
+  @Input() initializeEvents:any;
+  @Input() downloadLogEvent:any;
+  @Input() checkBuildEvent:any;
   @Output() codeChange = new EventEmitter<string>();
-  
+  isBuildAppDisabled: boolean = false;
+  intervalId: any;
+  showSuccess: boolean = false;
+  buildLog: any;
+  showModal: boolean = false;
+  buildStatus: any;
+  previewLink!: string;
+  buildStatusCompleted: boolean = false;
+  override!: string | null;
+
   constructor(
     private zone: NgZone,
     @Optional() public ref: DynamicDialogRef
   ) {}
 
   ngAfterViewInit(): void {
+    this.override = localStorage.getItem('override');
     if (!this.onIOS) {
       this.embedEditor();
     }
@@ -236,7 +250,57 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
 
   saveCode(): void {
     // below code will trigger the onmessage event
+    this.isBuildAppDisabled = true;
+    this.buildStatus = null;
     this.projectSnapshot.getFsSnapshot();
+    const BuildStatusAction = this.checkBuildEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
+    this.intervalId = setInterval(() => {
+      this.customApiCall(BuildStatusAction.apiConfig).subscribe(
+        (item: any) => {
+          this.buildStatus = item?.data?.buildStatus;
+          this.previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
+
+          const guidStoreAction = this.checkBuildEvent?.actions?.find((action: any) => action.actionType === "SET_SHARED_DATA" && action.sharedData && action.sharedData.length);
+          guidStoreAction.sharedData.forEach((shareDataObj: any) => {
+            if (shareDataObj.staticData === "$guid$") {
+              shareDataObj.staticData = item?.data?.guid;
+            }
+          });
+          this.initializeEvents.emit({
+            name: "fireEvent",
+            events: [this.checkBuildEvent],
+            data: null,
+          });
+
+          if (this.buildStatus === 'COMPLETED') {
+            this.isBuildAppDisabled = false;
+            clearInterval(this.intervalId);
+            this.buildStatusCompleted = true;
+            // const previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
+            // const successMessageWithLink = `Building completed successfully. Copy following link to preview ${previewLink}`
+            //this.showSuccess = true;
+            //console.log('Build completed.');
+            // this.initializeEvents.emit({
+            //   name: 'fireEvent',
+            //   events: [this.showMessageAction(successMessageWithLink, "success")]
+            // })
+          } else if (this.buildStatus === 'FAILED') {
+            this.isBuildAppDisabled = false;
+            clearInterval(this.intervalId);
+            this.initializeEvents.emit({
+              name: 'fireEvent',
+              events: [this.showMessageAction('There was some error during build. Please generate new code and try again.', "danger")]
+            });
+          }
+        },
+        (err: any) => {
+          this.isBuildAppDisabled = false;
+          clearInterval(this.intervalId);
+          console.error('Error during build status check:', err);
+        }
+      );
+    }, 15000);
+
   }
 
   cancel() {
@@ -244,4 +308,34 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
       this.ref.close({ action: 'CANCEL' } as DialogResult);
     }
   }
+
+  private showMessageAction(messageText:string, messagetype:string) {
+    return {
+      event: '',
+      actions: [
+        {
+          actionType: 'message',
+          condition: "1==1",
+          messagetype: messagetype,
+          messageText: messageText,
+        }
+      ]
+    }
+  }
+
+  loadLog() {
+    this.showModal = true;
+    this.buildLog = null;
+    const downloadLogAction = this.downloadLogEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
+    this.customApiCall(downloadLogAction.apiConfig).subscribe((data: any) => {
+      const parts = data.split("----------Errors---------");
+      this.buildLog = parts.length > 1 ? parts[1] : '';
+
+    })
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
+  }
+
 }
