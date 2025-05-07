@@ -91,7 +91,7 @@
       "baseProperties": {
         "type": "button",
         "id": "db-6",
-        "label": "Add Project",
+        "label": "Create App",
         "name": "addProjectBtn"
       },
       "layoutProperties": {
@@ -126,6 +126,18 @@
               "componentName": "",
               "sharedData": [],
               "apiConfig": null
+            },
+            {
+              "actionType": "SET_SHARED_DATA",
+              "condition": "1==1",
+              "sharedData": [
+                {
+                  "varName": "chatId",
+                  "staticData": "",
+                  "cache": false,
+                  "responseAccessor": ""
+                }
+              ]
             }
           ]
         }
@@ -219,6 +231,15 @@
             "visible": "true",
             "action": {
               "name": "OPEN_IN_NEW_WINDOW"
+            }
+          },
+          {
+            "label": "Share",
+            "className": "btn btn-primary",
+            "visible": "true",
+            "action": {
+              "name": "COPY_URL",
+              "pageUrl": "develop-app-using-ai"
             }
           }
         ]
