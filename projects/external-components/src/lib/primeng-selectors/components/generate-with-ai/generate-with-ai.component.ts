@@ -71,6 +71,8 @@ export class GenerateWithAiComponent
   isCollapsed: boolean = false;
   checkBuildEvent: any;
   downloadLogEvent: any;
+  projectId!: string | null;
+  key: string = 'history';
 
   constructor(
     private route: ActivatedRoute,
@@ -82,6 +84,16 @@ export class GenerateWithAiComponent
   }
 
   ngOnInit(): void {
+    this.projectId = this.route.snapshot.queryParamMap.get('projectId');
+    const history = JSON.parse(localStorage.getItem(this.key) || '{}');
+    const projectMessages = history[this.projectId!]?.messages;
+    if (projectMessages) {
+      this.messages = projectMessages;
+    }
+    const latestCode = history[this.projectId!]?.code;
+    if (latestCode) {
+      this.previewCode = latestCode;
+    }
     this.fieldObj.value = { newMessage: "" };
     this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "setfield") {
@@ -92,6 +104,14 @@ export class GenerateWithAiComponent
           isUser: false,
           parts,
         });
+
+        history[this.projectId!] = {
+          messages: this.messages,
+          code: this.getLatestCode(this.messages),
+          chatId: this.content.id
+        };
+        localStorage.setItem('history', JSON.stringify(history));
+
         console.log('messages ',this.messages)
       }
 
@@ -375,5 +395,18 @@ export class GenerateWithAiComponent
   }
   toggleCodeHeight(){
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  getLatestCode(chatHistory: any) {
+    for (let i = chatHistory.length - 1; i >= 0; i--) {
+      const message = chatHistory[i];
+      if (!message.isUser) {
+        const codePart = message.parts.find((part:any) => part.type === "code");
+        if (codePart) {
+          return codePart.content;
+        }
+      }
+    }
+    return null;
   }
 }
