@@ -73,6 +73,8 @@ export class GenerateWithAiComponent
   isCollapsed: boolean = false;
   checkBuildEvent: any;
   downloadLogEvent: any;
+  projectId!: string | null;
+  readonly chatHistoryKey: string = 'history';
 
   constructor(
     private route: ActivatedRoute,
@@ -84,16 +86,30 @@ export class GenerateWithAiComponent
   }
 
   ngOnInit(): void {
+    this.projectId = this.route.snapshot.queryParamMap.get('projectId');
+    const history = JSON.parse(localStorage.getItem(this.chatHistoryKey) || '{}');
+    this.getMessages(history);
+    this.previewCode = history[this.projectId!]?.code || '';
     this.fieldObj.value = { newMessage: "" };
     this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "setfield") {
-        console.log(actionObj.data);
         this.content = actionObj.data;
         const parts = this.parseCode(this.content.response);
         this.messages.push({
           isUser: false,
           parts,
         });
+
+        if (this.projectId) {
+          history[this.projectId] = {
+            messages: this.messages,
+            code: this.getLatestCode(this.messages),
+            chatId: this.content.id
+          };
+          localStorage.setItem('history', JSON.stringify(history));
+        }
+        
+
         console.log('messages ',this.messages)
       }
 
@@ -113,6 +129,13 @@ export class GenerateWithAiComponent
      this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
      this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
 
+  }
+
+  private getMessages(history:any) {
+    const projectMessages = history[this.projectId!]?.messages;
+    if (projectMessages) {
+      this.messages = projectMessages;
+    }
   }
 
   ngAfterViewInit() {
@@ -377,5 +400,18 @@ export class GenerateWithAiComponent
   }
   toggleCodeHeight(){
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  getLatestCode(chatHistory: Message[]) {
+    for (let chatHistoryLength = chatHistory.length - 1; chatHistoryLength >= 0; chatHistoryLength--) {
+      const message = chatHistory[chatHistoryLength];
+      if (!message.isUser) {
+        const codePart = message.parts.find((part:any) => part.type === "code");
+        if (codePart) {
+          return codePart.content;
+        }
+      }
+    }
+    return null;
   }
 }
