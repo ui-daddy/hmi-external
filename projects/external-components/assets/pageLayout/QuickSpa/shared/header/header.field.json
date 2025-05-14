@@ -118,7 +118,8 @@
                   "pageUrl": "/login",
                   "clearSharedData": [
                     "authenticated",
-                    "name"
+                    "name",
+                    "history"
                   ]
                 }
               }
