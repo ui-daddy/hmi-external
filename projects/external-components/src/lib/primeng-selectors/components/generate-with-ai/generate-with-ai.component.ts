@@ -86,7 +86,7 @@ export class GenerateWithAiComponent
   ngOnInit(): void {
     this.projectId = this.route.snapshot.queryParamMap.get('projectId');
     const history = JSON.parse(localStorage.getItem(this.chatHistoryKey) || '{}');
-    this.getMessages(history);
+    this.messages = history[this.projectId!]?.messages || this.messages;
     this.previewCode = history[this.projectId!]?.code || '';
     this.fieldObj.value = { newMessage: "" };
     this.fieldObj.action.subscribe((actionObj: any) => {
@@ -106,9 +106,6 @@ export class GenerateWithAiComponent
           };
           localStorage.setItem('history', JSON.stringify(history));
         }
-        
-
-        console.log('messages ',this.messages)
       }
 
       this.cdr.detectChanges();
@@ -127,13 +124,6 @@ export class GenerateWithAiComponent
      this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
      this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
 
-  }
-
-  private getMessages(history:any) {
-    const projectMessages = history[this.projectId!]?.messages;
-    if (projectMessages) {
-      this.messages = projectMessages;
-    }
   }
 
   ngAfterViewInit() {
