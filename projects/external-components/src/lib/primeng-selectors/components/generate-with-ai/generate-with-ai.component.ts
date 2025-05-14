@@ -72,7 +72,7 @@ export class GenerateWithAiComponent
   checkBuildEvent: any;
   downloadLogEvent: any;
   projectId!: string | null;
-  key: string = 'history';
+  readonly chatHistoryKey: string = 'history';
 
   constructor(
     private route: ActivatedRoute,
@@ -85,19 +85,12 @@ export class GenerateWithAiComponent
 
   ngOnInit(): void {
     this.projectId = this.route.snapshot.queryParamMap.get('projectId');
-    const history = JSON.parse(localStorage.getItem(this.key) || '{}');
-    const projectMessages = history[this.projectId!]?.messages;
-    if (projectMessages) {
-      this.messages = projectMessages;
-    }
-    const latestCode = history[this.projectId!]?.code;
-    if (latestCode) {
-      this.previewCode = latestCode;
-    }
+    const history = JSON.parse(localStorage.getItem(this.chatHistoryKey) || '{}');
+    this.getMessages(history);
+    this.previewCode = history[this.projectId!]?.code || '';
     this.fieldObj.value = { newMessage: "" };
     this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "setfield") {
-        console.log(actionObj.data);
         this.content = actionObj.data;
         const parts = this.parseCode(this.content.response);
         this.messages.push({
@@ -105,12 +98,15 @@ export class GenerateWithAiComponent
           parts,
         });
 
-        history[this.projectId!] = {
-          messages: this.messages,
-          code: this.getLatestCode(this.messages),
-          chatId: this.content.id
-        };
-        localStorage.setItem('history', JSON.stringify(history));
+        if (this.projectId) {
+          history[this.projectId] = {
+            messages: this.messages,
+            code: this.getLatestCode(this.messages),
+            chatId: this.content.id
+          };
+          localStorage.setItem('history', JSON.stringify(history));
+        }
+        
 
         console.log('messages ',this.messages)
       }
@@ -131,6 +127,13 @@ export class GenerateWithAiComponent
      this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
      this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
 
+  }
+
+  private getMessages(history:any) {
+    const projectMessages = history[this.projectId!]?.messages;
+    if (projectMessages) {
+      this.messages = projectMessages;
+    }
   }
 
   ngAfterViewInit() {
@@ -397,9 +400,9 @@ export class GenerateWithAiComponent
     this.isCollapsed = !this.isCollapsed;
   }
 
-  getLatestCode(chatHistory: any) {
-    for (let i = chatHistory.length - 1; i >= 0; i--) {
-      const message = chatHistory[i];
+  getLatestCode(chatHistory: Message[]) {
+    for (let chatHistoryLength = chatHistory.length - 1; chatHistoryLength >= 0; chatHistoryLength--) {
+      const message = chatHistory[chatHistoryLength];
       if (!message.isUser) {
         const codePart = message.parts.find((part:any) => part.type === "code");
         if (codePart) {
