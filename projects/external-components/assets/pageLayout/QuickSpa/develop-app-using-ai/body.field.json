@@ -67,6 +67,12 @@
                   "staticData": "$USER_QUERY$",
                   "cache": false,
                   "responseAccessor": ""
+                },
+                {
+                  "varName": "chatId",
+                  "staticData": "$CHAT_ID$",
+                  "cache": false,
+                  "responseAccessor": ""
                 }
               ],
               "apiConfig": null

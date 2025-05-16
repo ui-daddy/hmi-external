@@ -166,8 +166,12 @@
           "url": "/rest/getProjects",
           "method": "GET",
           "params": {},
+          "isApplicationSessionAPI" : "true",
           "onSuccess": {
             "apiDataAccessor": "projects"
+          },
+          "onError": {
+            "pageUrl": "/login"
           }
         },
         "buttons": [
