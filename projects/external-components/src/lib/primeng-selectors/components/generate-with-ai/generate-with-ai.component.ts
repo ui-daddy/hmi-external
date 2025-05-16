@@ -202,6 +202,9 @@ export class GenerateWithAiComponent
               if (shareDataObj.staticData === "$USER_QUERY$") {
                 shareDataObj.staticData = this.messageData.newMessage;
               }
+              if (shareDataObj.staticData === "$CHAT_ID$") {
+                shareDataObj.staticData = JSON.parse(localStorage.getItem(this.chatHistoryKey) || '{}')[this.projectId!]?.chatId || '';
+              }
             });
           }
         });
