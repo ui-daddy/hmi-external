@@ -137,6 +137,7 @@
                 "beforeSubmit": {
                   "action": []
                 },
+                "isApplicationSessionAPI": true,
                 "onSuccess": {
                   "pageUrl": "",
                   "deleteTableRow": false,
@@ -172,7 +173,7 @@
                   ]
                 },
                 "onError": {
-                  "pageUrl": "",
+                  "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
@@ -262,6 +263,7 @@
                 "beforeSubmit": {
                   "action": []
                 },
+                "isApplicationSessionAPI" : "true",
                 "onSuccess": {
                   "pageUrl": "",
                   "deleteTableRow": false,
@@ -274,7 +276,7 @@
                   "actions": []
                 },
                 "onError": {
-                  "pageUrl": "",
+                  "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
