@@ -1,3 +1,4 @@
+import { SampleTest1Component } from './components/sampleTest1-external/sampleTest1-external.component';
 import { NgModule } from '@angular/core';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
@@ -20,8 +21,7 @@ import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
 
 @NgModule({
-    declarations: [
-        PasswordExternalComponent,
+    declarations: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -31,11 +31,9 @@ import CustomPreset from './custom-theme';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent
-    ],
+        StackblitzEditorComponent, SampleTest1Component],
     imports: IMPORT_MODULES,
-    exports: [
-        PasswordExternalComponent,
+    exports: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -43,8 +41,7 @@ import CustomPreset from './custom-theme';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent
-    ],
+        GenerateWithAiComponent, SampleTest1Component],
     providers: [
         DialogService,
         providePrimeNG({ 
