@@ -160,7 +160,7 @@ button:hover {
 }
 
 .code-preview-container.ios-device {
-  height: 98px;
+  display: none;
 }
 
 .collapsed {
