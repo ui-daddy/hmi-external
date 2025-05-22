@@ -33,8 +33,8 @@
         </div>    
     </div>
 
-    <div *ngFor="let message of filteredMessages; let messageIndex = index;last as isLast" [ngClass]="{'user-message': message.isUser, 'bot-message flex-grow-1 w-100': !message.isUser}">
-      <ng-container *ngFor="let part of message.parts;">
+    <div *ngFor="let message of filteredMessages; let messageIndex = index; last as isLastMessage" [ngClass]="{'user-message': message.isUser, 'bot-message flex-grow-1 w-100': !message.isUser}">
+      <ng-container *ngFor="let part of message.parts; last as isLastMessagePart">
         <div *ngIf="part.type === 'text'" class="message-text">{{ part.content }}</div>
          <!--<div *ngIf="part.type === 'code'"  class="code-holder ">
           <div class="button-code">
@@ -56,7 +56,7 @@
           </div>
           <pre class="message-code" ><code>{{ part.content }}</code></pre>
         </div> -->
-        <div *ngIf="part.type === 'code' && isLast && previewCode && onIOS">
+        <div *ngIf="isLastMessage && isLastMessagePart && previewCode && onIOS">
           <hmi-ext-stackblitz-editor [code]="previewCode" [dependencies]="previewDependencies" [isDialog]="false"
             [downloadLogEvent]="downloadLogEvent" [checkBuildEvent]="checkBuildEvent" [customApiCall]="customApiCall"
             [initializeEvents]="initializeEvents" (codeChange)="onCodeChange($event)">
