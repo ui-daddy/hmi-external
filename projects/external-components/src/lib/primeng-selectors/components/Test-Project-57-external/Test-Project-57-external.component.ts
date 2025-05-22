@@ -1,12 +1,14 @@
-// TestProject57Component: भोजन ट्रॅकिंग अॅप - आकर्षक UI सह, भोजन व कॅलरीज साठवा.
+// TestProject57Component: भोजन ट्रॅकिंग अॅप - आकर्षक UI, भोजन व कॅलरीज साठवा, बटणवर स्मूद अ‍ॅनिमेशन आणि अधिक depth.
 // Features:
 // - Modern card-style layout with shadow and rounded corners.
 // - Responsive design for mobile.
 // - Highlighted input fields and action button.
 // - Add food items with calories per date; display in a styled list.
+// - "जोडा" बटणवर buttery smooth scale, deep multi-layered shadow (depth), आणि elevation animation.
 
 import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 interface FoodEntry {
   name: string;
@@ -101,6 +103,11 @@ interface FoodEntry {
 
       <button 
         (click)="addFood()" 
+        [@butteryButton]="buttonState"
+        (mouseenter)="setButtonState('hover')"
+        (mouseleave)="setButtonState('rest')"
+        (mousedown)="setButtonState('active')"
+        (mouseup)="setButtonState('hover')"
         style="
           width: 100%;
           padding: 12px 0;
@@ -112,7 +119,7 @@ interface FoodEntry {
           border: none;
           cursor: pointer;
           transition: background 0.2s;
-          box-shadow: 0 2px 8px rgba(33,102,175,0.07);
+          outline: none;
         "
         [disabled]="!foodItem || calories === null || calories < 0"
         [style.opacity]="(!foodItem || calories === null || calories < 0) ? 0.7 : 1"
@@ -160,7 +167,44 @@ interface FoodEntry {
       h2 { font-size: 21px !important; }
       h3 { font-size: 16px !important; }
     }
-  `]
+  `],
+  animations: [
+    trigger('butteryButton', [
+      state('rest', style({
+        transform: 'scale(1)',
+        boxShadow: `
+          0 2px 8px rgba(33,102,175,0.11),
+          0 6px 24px rgba(67,160,71,0.08),
+          0 1.5px 4px rgba(0,0,0,0.03)
+        `
+      })),
+      state('hover', style({
+        transform: 'scale(1.055)',
+        boxShadow: `
+          0 8px 32px rgba(33,102,175,0.17),
+          0 16px 48px rgba(67,160,71,0.12),
+          0 2px 8px rgba(0,0,0,0.06)
+        `
+      })),
+      state('active', style({
+        transform: 'scale(0.97)',
+        boxShadow: `
+          0 1.5px 6px rgba(33,102,175,0.10),
+          0 2px 8px rgba(67,160,71,0.07),
+          0 0.5px 2px rgba(0,0,0,0.02)
+        `
+      })),
+      transition('rest <=> hover', [
+        animate('190ms cubic-bezier(.4,0,.2,1)')
+      ]),
+      transition('hover <=> active', [
+        animate('70ms cubic-bezier(.4,0,.2,1)')
+      ]),
+      transition('active => rest', [
+        animate('120ms cubic-bezier(.4,0,.2,1)')
+      ])
+    ])
+  ]
 })
 export class TestProject57Component extends CommonExternalComponent {
   foodItem: string = '';
@@ -172,6 +216,13 @@ export class TestProject57Component extends CommonExternalComponent {
   inputFocus: boolean = false;
   foodInputFocus: boolean = false;
   calorieInputFocus: boolean = false;
+
+  // For buttery smooth button animation with depth
+  buttonState: 'rest' | 'hover' | 'active' = 'rest';
+
+  setButtonState(state: 'rest' | 'hover' | 'active'): void {
+    this.buttonState = state;
+  }
 
   addFood(): void {
     if (this.foodItem && this.calories !== null && this.calories >= 0) {
