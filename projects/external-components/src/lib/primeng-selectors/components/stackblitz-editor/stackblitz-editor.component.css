@@ -35,5 +35,5 @@ p-dialog-content {
 }
 
 .button-actions.ios-button {
-    justify-content: space-between;
+    justify-content: flex-start;
 }

@@ -5,13 +5,13 @@
     <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
 </div>
 <div class="button-actions"  [ngClass]="{'ios-button': onIOS}">
-    <button *ngIf="onIOS" pButton type="button" class="p-button p-button-sm theme" (click)="openInNewTab()"
-            tooltipPosition="top" pTooltip="Open the preview in a new tab">Open Preview in New Tab</button>
-    <button pButton type="button" [disabled]="isBuildAppDisabled" class="p-button p-button-sm theme" (click)="saveCode()" tooltipPosition="top" pTooltip="Save/update code to the GitHub repository">
+    <button *ngIf="onIOS" pButton type="button" class="p-button p-button-sm p-button-outlined" (click)="openInNewTab()"
+            tooltipPosition="top" pTooltip="Open the preview in a new tab">Preview App</button>
+    <button pButton type="button" [ngClass]="{ 'p-button-outlined': onIOS, 'theme': !onIOS }" [disabled]="isBuildAppDisabled" class="p-button p-button-sm" (click)="saveCode()" tooltipPosition="top" pTooltip="Save/update code to the GitHub repository">
         <span *ngIf="isBuildAppDisabled" class="spinner-border spinner-border-sm" role="status"></span>
         Build App
     </button>
-    <button  *ngIf="override === 'true' && (buildStatus === 'COMPLETED' || buildStatus === 'FAILED')" pButton type="button" class="p-button p-button-sm theme" (click)="loadLog()">Logs</button>
+    <button [ngClass]="{ 'p-button-outlined': onIOS, 'theme': !onIOS }" *ngIf="override === 'true' && (buildStatus === 'COMPLETED' || buildStatus === 'FAILED')" pButton type="button" class="p-button p-button-sm theme" (click)="loadLog()">Logs</button>
     <!-- <button pButton type="button" class="p-button p-button-sm theme p-button-secondary" (click)="cancel()">Cancel</button> -->
 </div>
 <p-dialog header="Build Log" [(visible)]="showModal" [modal]="true" [style]="{width: '70vw'}">
