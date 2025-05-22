@@ -1,14 +1,13 @@
-// TestProject57Component: भोजन ट्रॅकिंग अॅप - आकर्षक UI, भोजन व कॅलरीज साठवा, बटणवर स्मूद अ‍ॅनिमेशन आणि अधिक depth.
+// TestProject57Component: भोजन ट्रॅकिंग अॅप - आकर्षक UI, डिप्थ असलेला बटण, भोजन व कॅलरीज साठवा.
 // Features:
-// - Modern card-style layout with shadow and rounded corners.
+// - Modern card layout with shadow and rounded corners.
 // - Responsive design for mobile.
-// - Highlighted input fields and action button.
+// - Inputs and button styled for focus and usability.
+// - Button includes enhanced depth (elevation) with multiple box-shadows and hover effect.
 // - Add food items with calories per date; display in a styled list.
-// - "जोडा" बटणवर buttery smooth scale, deep multi-layered shadow (depth), आणि elevation animation.
 
 import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 
 interface FoodEntry {
   name: string;
@@ -103,24 +102,7 @@ interface FoodEntry {
 
       <button 
         (click)="addFood()" 
-        [@butteryButton]="buttonState"
-        (mouseenter)="setButtonState('hover')"
-        (mouseleave)="setButtonState('rest')"
-        (mousedown)="setButtonState('active')"
-        (mouseup)="setButtonState('hover')"
-        style="
-          width: 100%;
-          padding: 12px 0;
-          border-radius: 8px;
-          background: linear-gradient(90deg, #2166af 60%, #43a047 100%);
-          color: #fff;
-          font-size: 17px;
-          font-weight: 600;
-          border: none;
-          cursor: pointer;
-          transition: background 0.2s;
-          outline: none;
-        "
+        class="depth-btn"
         [disabled]="!foodItem || calories === null || calories < 0"
         [style.opacity]="(!foodItem || calories === null || calories < 0) ? 0.7 : 1"
       >जोडा</button>
@@ -167,44 +149,35 @@ interface FoodEntry {
       h2 { font-size: 21px !important; }
       h3 { font-size: 16px !important; }
     }
-  `],
-  animations: [
-    trigger('butteryButton', [
-      state('rest', style({
-        transform: 'scale(1)',
-        boxShadow: `
-          0 2px 8px rgba(33,102,175,0.11),
-          0 6px 24px rgba(67,160,71,0.08),
-          0 1.5px 4px rgba(0,0,0,0.03)
-        `
-      })),
-      state('hover', style({
-        transform: 'scale(1.055)',
-        boxShadow: `
-          0 8px 32px rgba(33,102,175,0.17),
-          0 16px 48px rgba(67,160,71,0.12),
-          0 2px 8px rgba(0,0,0,0.06)
-        `
-      })),
-      state('active', style({
-        transform: 'scale(0.97)',
-        boxShadow: `
-          0 1.5px 6px rgba(33,102,175,0.10),
-          0 2px 8px rgba(67,160,71,0.07),
-          0 0.5px 2px rgba(0,0,0,0.02)
-        `
-      })),
-      transition('rest <=> hover', [
-        animate('190ms cubic-bezier(.4,0,.2,1)')
-      ]),
-      transition('hover <=> active', [
-        animate('70ms cubic-bezier(.4,0,.2,1)')
-      ]),
-      transition('active => rest', [
-        animate('120ms cubic-bezier(.4,0,.2,1)')
-      ])
-    ])
-  ]
+    .depth-btn {
+      width: 100%;
+      padding: 12px 0;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #2166af 60%, #43a047 100%);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 
+        0 3px 12px 0 rgba(33,102,175,0.18),
+        0 1.5px 4px 0 rgba(67,160,71,0.11),
+        0 0.5px 1.5px 0 rgba(0,0,0,0.05);
+      transition: 
+        box-shadow 0.2s cubic-bezier(.4,0,.2,1),
+        transform 0.13s cubic-bezier(.4,0,.2,1),
+        background 0.2s;
+    }
+    .depth-btn:hover:not(:disabled), .depth-btn:focus-visible:not(:disabled) {
+      background: linear-gradient(90deg, #18508a 65%, #388e3c 100%);
+      box-shadow: 
+        0 6px 24px 0 rgba(33,102,175,0.22),
+        0 3px 8px 0 rgba(67,160,71,0.13),
+        0 1px 3px 0 rgba(0,0,0,0.07);
+      transform: translateY(-2px) scale(1.025);
+      outline: none;
+    }
+  `]
 })
 export class TestProject57Component extends CommonExternalComponent {
   foodItem: string = '';
@@ -212,17 +185,9 @@ export class TestProject57Component extends CommonExternalComponent {
   foodList: FoodEntry[] = [];
   selectedDate: string = new Date().toISOString().split('T')[0];
 
-  // Input focus states for dynamic border color
   inputFocus: boolean = false;
   foodInputFocus: boolean = false;
   calorieInputFocus: boolean = false;
-
-  // For buttery smooth button animation with depth
-  buttonState: 'rest' | 'hover' | 'active' = 'rest';
-
-  setButtonState(state: 'rest' | 'hover' | 'active'): void {
-    this.buttonState = state;
-  }
 
   addFood(): void {
     if (this.foodItem && this.calories !== null && this.calories >= 0) {
