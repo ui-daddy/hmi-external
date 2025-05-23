@@ -345,12 +345,7 @@
     },
     "authGuardConfig": {
       "conditions": [
-        {
-          "cookieName": "accessToken",
-          "if": "accessToken == undefined",
-          "onConditionSuccess": "login",
-          "type": "cookie"
-        }
+       
       ],
       "enabled": true
     },
