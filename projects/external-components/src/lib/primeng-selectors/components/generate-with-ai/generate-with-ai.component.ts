@@ -15,6 +15,8 @@ import { StackblitzEditorComponent } from "../stackblitz-editor/stackblitz-edito
 import { DialogService } from "primeng/dynamicdialog";
 import { deepClone } from "../../util/util";
 import { DialogResult } from "../stackblitz-editor/stackblitz-editor.component";
+import { TagModule } from 'primeng/tag';
+import { ToastModule } from 'primeng/toast';
 
 interface MessagePart {
   type: "text" | "code";
@@ -49,11 +51,11 @@ export class GenerateWithAiComponent
   previewDependencies: string = "";
   currentTime!: string;
   defaultSuggestions: string[] = [
-    "An EMI Calculator...",
-    "A diet tracker...",
-    "An expense tracker...",
-    "A tic-tac-toe game...",
-    "A daily TODO list..."
+    "An EMI Calculator.",
+    "A diet tracker.",
+    "An expense tracker.",
+    "A tic-tac-toe game.",
+    "A daily TODO list."
   ];
   editSuggestions: string[] = [
     "Update the color scheme.",
@@ -73,6 +75,9 @@ export class GenerateWithAiComponent
   downloadLogEvent: any;
   projectId!: string | null;
   readonly chatHistoryKey: string = 'history';
+  firstGuestMessage: boolean = false;
+  guestMessageCount: number = 0;
+  isGuestLimitExceeded: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -84,7 +89,12 @@ export class GenerateWithAiComponent
   }
 
   ngOnInit(): void {
-    this.projectId = this.route.snapshot.queryParamMap.get('projectId');
+    this.firstGuestMessage = this.isLoggedInCheck()
+    if(!this.firstGuestMessage){
+      this.projectId = "1";
+    }else{
+      this.projectId = this.route.snapshot.queryParamMap.get('projectId');
+    }
     const history = JSON.parse(localStorage.getItem(this.chatHistoryKey) || '{}');
     this.messages = history[this.projectId!]?.messages || this.messages;
     this.previewCode = history[this.projectId!]?.code || '';
@@ -118,12 +128,11 @@ export class GenerateWithAiComponent
     // Format the time (e.g., "8:21 AM")
     const time = currentDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
     // Combine them into the desired format
-     this.currentTime = `${dayOfWeek} ${time}`;
-     this.isEdit = this.route.snapshot.queryParamMap.get('edit');
-     this.typeText();
-     this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
-     this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
-
+    this.currentTime = `${dayOfWeek} ${time}`;
+    this.isEdit = this.route.snapshot.queryParamMap.get('edit');
+    this.typeText();
+    this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
+    this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
   }
 
   ngAfterViewInit() {
@@ -177,8 +186,20 @@ export class GenerateWithAiComponent
     }
   }
 
-  sendMessage() {
-    this.stopTyping();
+  sendMessage(message?:string) {
+    if(this.firstGuestMessage){
+       this.stopTyping();
+    }else{
+      this.fieldObj.value.newMessage = message;
+      this.firstGuestMessage = true;
+    }
+    if(!this.isLoggedInCheck()){
+      if(this.isGuestLimitExceeded){
+        return;
+      }
+      this.guestMessageCount += 1;
+    }
+   
     this.messageData.newMessage = this.fieldObj.value.newMessage;
     if (this.fieldObj.value.newMessage.trim()) {
       this.messages.push({
@@ -404,5 +425,15 @@ export class GenerateWithAiComponent
       }
     }
     return null;
+  }
+
+  isLoggedInCheck(): boolean{
+    return document.cookie.split('; ').some(cookie => cookie.startsWith("accessToken" + '='));
+  }
+
+  messagesLeft(){
+    if(this.guestMessageCount >= 3){
+      this.isGuestLimitExceeded = true;
+    }
   }
 }
