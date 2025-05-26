@@ -1,15 +1,21 @@
-// TestProject57Component: भोजन ट्रॅकिंग अॅप - आकर्षक UI, डिप्थ असलेला बटण, भोजन व कॅलरीज साठवा.
+// TestProject57Component: भोजन ट्रॅकिंग अॅप - डेटनिहाय साठवण व पाहण्याची सोय, प्रीसेट फूड लिस्ट, आकर्षक UI.
 // Features:
-// - Modern card layout with shadow and rounded corners.
-// - Responsive design for mobile.
-// - Inputs and button styled for focus and usability.
-// - Button includes enhanced depth (elevation) with multiple box-shadows and hover effect.
-// - Add food items with calories per date; display in a styled list.
+// - Modern card layout, responsive design.
+// - Preset food dropdown with auto-calorie fill; manual entry allowed.
+// - Stores food entries date-wise in a map.
+// - Displays only the food list for the selected date.
+// - Adds custom foods to presets for future selection.
+// - All state strictly typed.
 
 import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
 interface FoodEntry {
+  name: string;
+  calories: number;
+}
+
+interface PresetFood {
   name: string;
   calories: number;
 }
@@ -40,6 +46,7 @@ interface FoodEntry {
           id="dateInput"
           type="date"
           [(ngModel)]="selectedDate"
+          (ngModelChange)="onDateChange()"
           style="
             padding: 10px; 
             width: 100%; 
@@ -56,12 +63,33 @@ interface FoodEntry {
       </div>
       
       <div style="margin-bottom: 12px;">
-        <label for="foodInput" style="display: block; font-weight: 500; margin-bottom: 5px;">आजचे भोजन:</label>
+        <label for="foodSelect" style="display: block; font-weight: 500; margin-bottom: 5px;">भोजन निवडा किंवा टाइप करा:</label>
+        <select 
+          id="foodSelect"
+          [(ngModel)]="selectedPresetIndex"
+          (change)="onPresetChange()"
+          style="
+            padding: 10px; 
+            width: 100%; 
+            border-radius: 8px; 
+            border: 1.5px solid #cfd8dc; 
+            background: #f9fbfc; 
+            font-size: 16px;
+            margin-bottom: 7px;
+            transition: border-color 0.2s;
+          "
+          (focus)="foodSelectFocus=true"
+          (blur)="foodSelectFocus=false"
+          [style.borderColor]="foodSelectFocus ? '#2166af' : '#cfd8dc'"
+        >
+          <option value="-1">-- भोजन निवडा --</option>
+          <option *ngFor="let food of presetFoods; let i = index" [value]="i">{{ food.name }} ({{ food.calories }} कॅलरीज)</option>
+        </select>
         <input 
           id="foodInput"
           type="text"
           [(ngModel)]="foodItem"
-          placeholder="उदा. पोळी भाजी"
+          placeholder="नवीन भोजन लिहा"
           style="
             padding: 10px; 
             width: 100%; 
@@ -107,7 +135,7 @@ interface FoodEntry {
         [style.opacity]="(!foodItem || calories === null || calories < 0) ? 0.7 : 1"
       >जोडा</button>
       
-      <div *ngIf="foodList.length > 0" style="margin-top: 30px;">
+      <div *ngIf="getFoodListForSelectedDate().length > 0" style="margin-top: 30px;">
         <h3 style="
           margin-bottom: 15px; 
           color: #2166af; 
@@ -119,7 +147,7 @@ interface FoodEntry {
         </h3>
         <ul style="list-style-type: none; padding: 0; margin: 0;">
           <li 
-            *ngFor="let food of foodList" 
+            *ngFor="let food of getFoodListForSelectedDate()" 
             style="
               background: #e3f2fd;
               margin-bottom: 10px;
@@ -182,18 +210,61 @@ interface FoodEntry {
 export class TestProject57Component extends CommonExternalComponent {
   foodItem: string = '';
   calories: number | null = null;
-  foodList: FoodEntry[] = [];
+  // Map of ISO date string to array of FoodEntry
+  private foodDataByDate: Record<string, FoodEntry[]> = {};
   selectedDate: string = new Date().toISOString().split('T')[0];
 
   inputFocus: boolean = false;
   foodInputFocus: boolean = false;
   calorieInputFocus: boolean = false;
+  foodSelectFocus: boolean = false;
 
-  addFood(): void {
-    if (this.foodItem && this.calories !== null && this.calories >= 0) {
-      this.foodList.push({ name: this.foodItem, calories: this.calories });
+  presetFoods: PresetFood[] = [
+    { name: 'पोळी भाजी', calories: 250 },
+    { name: 'इडली सांबार', calories: 180 },
+    { name: 'उपमा', calories: 220 },
+    { name: 'दही भात', calories: 200 },
+    { name: 'फळे', calories: 90 },
+    { name: 'चहा', calories: 60 }
+  ];
+  selectedPresetIndex: string = '-1';
+
+  onPresetChange(): void {
+    const idx: number = Number(this.selectedPresetIndex);
+    if (!isNaN(idx) && idx >= 0 && idx < this.presetFoods.length) {
+      this.foodItem = this.presetFoods[idx].name;
+      this.calories = this.presetFoods[idx].calories;
+    } else {
       this.foodItem = '';
       this.calories = null;
     }
+  }
+
+  addFood(): void {
+    if (this.foodItem && this.calories !== null && this.calories >= 0) {
+      const dateKey: string = this.selectedDate;
+      if (!this.foodDataByDate[dateKey]) {
+        this.foodDataByDate[dateKey] = [];
+      }
+      this.foodDataByDate[dateKey].push({ name: this.foodItem, calories: this.calories });
+      // Add to presets if new
+      if (
+        this.selectedPresetIndex === '-1' &&
+        !this.presetFoods.some(f => f.name === this.foodItem)
+      ) {
+        this.presetFoods.push({ name: this.foodItem, calories: this.calories });
+      }
+      this.foodItem = '';
+      this.calories = null;
+      this.selectedPresetIndex = '-1';
+    }
+  }
+
+  getFoodListForSelectedDate(): FoodEntry[] {
+    return this.foodDataByDate[this.selectedDate] ?? [];
+  }
+
+  onDateChange(): void {
+    // No action needed here except to trigger view update
   }
 }
