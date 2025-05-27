@@ -51,6 +51,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   previewLink!: string;
   buildStatusCompleted: boolean = false;
   override!: string | null;
+  guestUser: boolean= false;
   
   constructor(
     private zone: NgZone,
@@ -58,6 +59,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
+    this.guestUser = !this.isLoggedInCheck()
     this.override = localStorage.getItem('override');
     this.embedEditor();
   }
@@ -283,6 +285,10 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
       this.buildLog = parts.length > 1 ? parts[1] : '';
       
     })
+  }
+
+  isLoggedInCheck(): boolean{
+    return document.cookie.split('; ').some(cookie => cookie.startsWith("accessToken" + '='));
   }
   
   ngOnDestroy(): void {

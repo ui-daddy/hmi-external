@@ -50,13 +50,14 @@ export class GenerateWithAiComponent
   previewCode: string = "";
   previewDependencies: string = "";
   currentTime!: string;
-  defaultSuggestions: string[] = [
-    "An EMI Calculator.",
-    "A diet tracker.",
-    "An expense tracker.",
-    "A tic-tac-toe game.",
-    "A daily TODO list."
-  ];
+  defaultSuggestionsObj: { [key: string]: string } = {
+    "An EMI Calculator.": "Build a tool that calculates Equated Monthly Installments for loans based on principal, interest rate, and tenure.",
+    "A diet tracker.": "Create an app to log daily food intake, track calories, and monitor nutrition goals.",
+    "An expense tracker.": "Develop a system to record and categorize daily expenses to manage personal finances.",
+    "A tic-tac-toe game.": "Implement a simple 2-player tic-tac-toe game with a graphical interface and win detection.",
+    "A daily TODO list.": "Design a daily task manager to add, update, and delete to-do items with due dates."
+  };
+  defaultSuggestions: string[] = []
   editSuggestions: string[] = [
     "Update the color scheme.",
     "Rearrange the layout.",
@@ -75,7 +76,7 @@ export class GenerateWithAiComponent
   downloadLogEvent: any;
   projectId!: string | null;
   readonly chatHistoryKey: string = 'history';
-  firstGuestMessage: boolean = false;
+  firstGuestMessage: boolean = true;
   guestMessageCount: number = 0;
   isGuestLimitExceeded: boolean = false;
 
@@ -89,8 +90,8 @@ export class GenerateWithAiComponent
   }
 
   ngOnInit(): void {
-    this.firstGuestMessage = this.isLoggedInCheck()
-    if(!this.firstGuestMessage){
+    this.firstGuestMessage = !this.isLoggedInCheck()
+    if(this.firstGuestMessage){
       this.projectId = "1";
     }else{
       this.projectId = this.route.snapshot.queryParamMap.get('projectId');
@@ -130,6 +131,7 @@ export class GenerateWithAiComponent
     // Combine them into the desired format
     this.currentTime = `${dayOfWeek} ${time}`;
     this.isEdit = this.route.snapshot.queryParamMap.get('edit');
+    this.defaultSuggestions = Object.keys(this.defaultSuggestionsObj);
     this.typeText();
     this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
     this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
@@ -188,10 +190,10 @@ export class GenerateWithAiComponent
 
   sendMessage(message?:string) {
     if(this.firstGuestMessage){
-       this.stopTyping();
-    }else{
       this.fieldObj.value.newMessage = message;
-      this.firstGuestMessage = true;
+      this.firstGuestMessage = false;
+    }else{
+      this.stopTyping();
     }
     if(!this.isLoggedInCheck()){
       if(this.isGuestLimitExceeded){
@@ -436,4 +438,9 @@ export class GenerateWithAiComponent
       this.isGuestLimitExceeded = true;
     }
   }
+
+  redirectToLogin() {
+    window.location.href = '/login';
+  }
+
 }

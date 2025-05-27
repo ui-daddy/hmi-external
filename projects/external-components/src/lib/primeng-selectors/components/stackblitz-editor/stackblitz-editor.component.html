@@ -3,7 +3,7 @@
     <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
 </div>
 <div class="button-actions">
-    <button pButton type="button" [disabled]="isBuildAppDisabled" class="p-button p-button-sm theme" (click)="saveCode()" tooltipPosition="top" pTooltip="Save/update code to the GitHub repository">
+    <button pButton type="button" [disabled]="isBuildAppDisabled || guestUser" class="p-button p-button-sm theme" (click)="saveCode()" tooltipPosition="top" pTooltip="Save/update code to the GitHub repository">
         <span *ngIf="isBuildAppDisabled" class="spinner-border spinner-border-sm" role="status"></span>
         Build App
     </button>
