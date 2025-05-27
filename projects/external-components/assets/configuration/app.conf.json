@@ -292,7 +292,11 @@
     "metaTags": [],
     "linkTags": [],
     "ifPageNotFound": "login",
-    "interceptorConfigurations": [],
+    "interceptorConfigurations": [{
+        "statusCode": "401",
+        "pageUrl": "login",
+        "clearSharedData": ["history"]
+      }],
     "apiConfigurations": [],
     "layoutProperties": {
       "labelPlacement": "top",

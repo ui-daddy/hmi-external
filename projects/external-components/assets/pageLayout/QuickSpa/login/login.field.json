@@ -55,6 +55,39 @@
                         }
                     }
                 }
+            },
+            "onSuccess": {
+                "clearSharedData": [
+                    "history",
+                    "loggedIn"
+                ],
+                
+                "actions": [
+                    {
+                    "actionType": "SET_SHARED_DATA",
+                    "url": "",
+                    "condition": "1==1",
+                    "fileName": "",
+                    "field": "",
+                    "fieldValue": "",
+                    "fieldAccessor": "",
+                    "messagetype": "",
+                    "messageText": "",
+                    "target": "",
+                    "timer": null,
+                    "formName": "",
+                    "componentName": "",
+                    "sharedData": [
+                        {
+                        "varName": "loggedIn",
+                        "staticData": true,
+                        "cache": false,
+                        "responseAccessor": ""
+                        }
+                    ],
+                    "apiConfig": null
+                    }
+                ]
             }
         }
     ]
