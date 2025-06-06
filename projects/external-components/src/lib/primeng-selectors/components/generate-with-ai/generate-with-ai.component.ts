@@ -17,6 +17,7 @@ import { deepClone } from "../../util/util";
 import { DialogResult } from "../stackblitz-editor/stackblitz-editor.component";
 import { TagModule } from 'primeng/tag';
 import { ToastModule } from 'primeng/toast';
+import { InitChatService } from "../../services/init-chat.service";
 
 interface MessagePart {
   type: "text" | "code";
@@ -84,7 +85,8 @@ export class GenerateWithAiComponent
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private clipboard: Clipboard,
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    public initChatService: InitChatService
   ) {
     super();
   }
@@ -93,6 +95,9 @@ export class GenerateWithAiComponent
     this.firstGuestMessage = !this.isLoggedInCheck()
     if(this.firstGuestMessage){
       this.projectId = "1";
+      this.initChatService.initializeChat().subscribe((response)=>{
+        console.log(response)
+      })
     }else{
       this.projectId = this.route.snapshot.queryParamMap.get('projectId');
     }
