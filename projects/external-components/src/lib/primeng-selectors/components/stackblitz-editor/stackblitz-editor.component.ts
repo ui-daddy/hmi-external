@@ -63,6 +63,7 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
 
   ngOnInit(): void {
     this.guestUser = !this.isLoggedInCheck()
+  }
   ngAfterViewInit(): void {
     this.override = localStorage.getItem('override');
     if (!this.onIOS) {
