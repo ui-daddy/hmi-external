@@ -14,9 +14,11 @@ import {
   OnChanges,
   Output,
   EventEmitter,
-  Optional
+  Optional,
+  AfterViewInit,
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
+import { isIosDevice } from '../../util/platform';
 import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
@@ -25,14 +27,15 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
   templateUrl: './stackblitz-editor.component.html',
   styleUrls: ['./stackblitz-editor.component.css']
 })
-export class StackblitzEditorComponent implements OnInit, OnChanges {
-  @ViewChild('editorContainer', { static: true }) editorContainer!: ElementRef;
+export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
+  @ViewChild('editorContainer', { static: false }) editorContainer!: ElementRef;
   projectSnapshot: any;
   component = {
     selector: '',
     className: '',
   };
   onLoad = true;
+  onIOS = isIosDevice(); // Flag to detect iOS devices
 
   @Input() code: string = '';
   @Input() dependencies: string = '';
@@ -52,7 +55,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   buildStatusCompleted: boolean = false;
   override!: string | null;
   guestUser: boolean= false;
-  
+
   constructor(
     private zone: NgZone,
     @Optional() public ref: DynamicDialogRef
@@ -60,8 +63,11 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.guestUser = !this.isLoggedInCheck()
+  ngAfterViewInit(): void {
     this.override = localStorage.getItem('override');
-    this.embedEditor();
+    if (!this.onIOS) {
+      this.embedEditor();
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -144,6 +150,10 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
       'src/index.html': STACKBLITZ_INDEX_HTML,
       'src/polyfills.ts': STACKBLITZ_POLLYFILL_TS,
     };
+    if (!this.editorContainer || !this.editorContainer.nativeElement) {
+      console.error('Editor container not found');
+      return;
+    }
     sdk.embedProject(
       this.editorContainer.nativeElement,
       {
@@ -201,11 +211,56 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
     });
   }
 
+  openInNewTab(): void {
+    this.component = {
+      selector: this.getSelectorName(this.code),
+      className: this.getClassName(this.code),
+    };
+    if (!this.component.selector || !this.component.className) {
+      console.error("Not able to find component selector or class name", this.component.selector, this.component.className);
+      return;
+    }
+    let finalAppModule: any = STACKBLITZ_APP_MODULE_TS;
+    finalAppModule = finalAppModule.replaceAll(STACKBLITZ_COMPONENT_CLASS_NAME, this.component.className).replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector);
+    const files = {
+      'src/main.ts': STACKBLITZ_MAIN_TS,
+      [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.code,
+      'src/styles.css': '',
+      'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
+      'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
+      'src/app/app.module.ts': finalAppModule,
+      'src/app/common-external/common-external.component.ts': STACKBLITZ_COMMON_EXTERNAL_TS,
+      'angular.json': STACKBLITZ_ANGULAR_JSON,
+      'src/index.html': STACKBLITZ_INDEX_HTML,
+      'src/polyfills.ts': STACKBLITZ_POLLYFILL_TS,
+    };
+    sdk.openProject({
+      title: 'Angular Editor',
+      description: 'Angular editor with live preview',
+      template: 'angular-cli',
+      files: files,
+      dependencies: {
+        ...STACKBLITZ_DEPENDENCIES,
+        ...(this.dependencies && JSON.parse(this.dependencies).dependencies || {})
+      },
+    },
+    {
+      openFile: `src/app/${this.component.selector}/${this.component.selector}.component.ts`,
+      view: 'preview',
+      theme: "light",
+    });
+  }
+
   saveCode(): void {
     // below code will trigger the onmessage event
     this.isBuildAppDisabled = true;
     this.buildStatus = null;
-    this.projectSnapshot.getFsSnapshot();
+
+    if (!this.onIOS) {
+      this.projectSnapshot.getFsSnapshot();
+    } else {
+      this.codeChange.emit(this.code);
+    }
     const BuildStatusAction = this.checkBuildEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
     this.intervalId = setInterval(() => {
       this.customApiCall(BuildStatusAction.apiConfig).subscribe(
@@ -224,7 +279,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
             events: [this.checkBuildEvent],
             data: null,
           });
-  
+
           if (this.buildStatus === 'COMPLETED') {
             this.isBuildAppDisabled = false;
             clearInterval(this.intervalId);
@@ -253,7 +308,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
         }
       );
     }, 15000);
-    
+
   }
 
   cancel() {
@@ -283,7 +338,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
     this.customApiCall(downloadLogAction.apiConfig).subscribe((data: any) => {
       const parts = data.split("----------Errors---------");
       this.buildLog = parts.length > 1 ? parts[1] : '';
-      
+
     })
   }
 
@@ -292,7 +347,7 @@ export class StackblitzEditorComponent implements OnInit, OnChanges {
   }
   
   ngOnDestroy(): void {
-    clearInterval(this.intervalId); 
+    clearInterval(this.intervalId);
   }
- 
+
 }

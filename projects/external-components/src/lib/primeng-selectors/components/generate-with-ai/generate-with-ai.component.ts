@@ -18,6 +18,7 @@ import { DialogResult } from "../stackblitz-editor/stackblitz-editor.component";
 import { TagModule } from 'primeng/tag';
 import { ToastModule } from 'primeng/toast';
 import { InitChatService } from "../../services/init-chat.service";
+import { isIosDevice } from '../../util/platform';
 
 interface MessagePart {
   type: "text" | "code";
@@ -59,6 +60,8 @@ export class GenerateWithAiComponent
     "A daily TODO list.": "Design a daily task manager to add, update, and delete to-do items with due dates."
   };
   defaultSuggestions: string[] = []
+  onIOS: boolean = isIosDevice(); // Flag to detect iOS devices
+  
   editSuggestions: string[] = [
     "Update the color scheme.",
     "Rearrange the layout.",

@@ -126,6 +126,18 @@
               "componentName": "",
               "sharedData": [],
               "apiConfig": null
+            },
+            {
+              "actionType": "SET_SHARED_DATA",
+              "condition": "1==1",
+              "sharedData": [
+                {
+                  "varName": "chatId",
+                  "staticData": "",
+                  "cache": false,
+                  "responseAccessor": ""
+                }
+              ]
             }
           ]
         }
