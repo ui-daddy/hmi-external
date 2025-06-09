@@ -54,12 +54,16 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
   previewLink!: string;
   buildStatusCompleted: boolean = false;
   override!: string | null;
+  guestUser: boolean= false;
 
   constructor(
     private zone: NgZone,
     @Optional() public ref: DynamicDialogRef
   ) {}
 
+  ngOnInit(): void {
+    this.guestUser = !this.isLoggedInCheck()
+  }
   ngAfterViewInit(): void {
     this.override = localStorage.getItem('override');
     if (!this.onIOS) {
@@ -339,6 +343,10 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
     })
   }
 
+  isLoggedInCheck(): boolean{
+    return document.cookie.split('; ').some(cookie => cookie.startsWith("accessToken" + '='));
+  }
+  
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
   }

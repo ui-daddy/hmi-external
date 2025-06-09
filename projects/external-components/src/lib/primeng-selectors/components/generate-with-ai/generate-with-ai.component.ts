@@ -15,6 +15,9 @@ import { StackblitzEditorComponent } from "../stackblitz-editor/stackblitz-edito
 import { DialogService } from "primeng/dynamicdialog";
 import { deepClone } from "../../util/util";
 import { DialogResult } from "../stackblitz-editor/stackblitz-editor.component";
+import { TagModule } from 'primeng/tag';
+import { ToastModule } from 'primeng/toast';
+import { InitChatService } from "../../services/init-chat.service";
 import { isIosDevice } from '../../util/platform';
 
 interface MessagePart {
@@ -49,14 +52,16 @@ export class GenerateWithAiComponent
   previewCode: string = "";
   previewDependencies: string = "";
   currentTime!: string;
+  defaultSuggestionsObj: { [key: string]: string } = {
+    "An EMI Calculator.": "Build a tool that calculates Equated Monthly Installments for loans based on principal, interest rate, and tenure.",
+    "A diet tracker.": "Create an app to log daily food intake, track calories, and monitor nutrition goals.",
+    "An expense tracker.": "Develop a system to record and categorize daily expenses to manage personal finances.",
+    "A tic-tac-toe game.": "Implement a simple 2-player tic-tac-toe game with a graphical interface and win detection.",
+    "A daily TODO list.": "Design a daily task manager to add, update, and delete to-do items with due dates."
+  };
+  defaultSuggestions: string[] = []
   onIOS: boolean = isIosDevice(); // Flag to detect iOS devices
-  defaultSuggestions: string[] = [
-    "An EMI Calculator...",
-    "A diet tracker...",
-    "An expense tracker...",
-    "A tic-tac-toe game...",
-    "A daily TODO list..."
-  ];
+  
   editSuggestions: string[] = [
     "Update the color scheme.",
     "Rearrange the layout.",
@@ -75,18 +80,30 @@ export class GenerateWithAiComponent
   downloadLogEvent: any;
   projectId!: string | null;
   readonly chatHistoryKey: string = 'history';
+  firstGuestMessage: boolean = true;
+  guestMessageCount: number = 0;
+  isGuestLimitExceeded: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private clipboard: Clipboard,
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    public initChatService: InitChatService
   ) {
     super();
   }
 
   ngOnInit(): void {
-    this.projectId = this.route.snapshot.queryParamMap.get('projectId');
+    this.firstGuestMessage = !this.isLoggedInCheck()
+    if(this.firstGuestMessage){
+      this.projectId = "1";
+      this.initChatService.initializeChat().subscribe((response)=>{
+        console.log(response)
+      })
+    }else{
+      this.projectId = this.route.snapshot.queryParamMap.get('projectId');
+    }
     const history = JSON.parse(localStorage.getItem(this.chatHistoryKey) || '{}');
     this.messages = history[this.projectId!]?.messages || this.messages;
     this.previewCode = history[this.projectId!]?.code || '';
@@ -120,12 +137,12 @@ export class GenerateWithAiComponent
     // Format the time (e.g., "8:21 AM")
     const time = currentDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
     // Combine them into the desired format
-     this.currentTime = `${dayOfWeek} ${time}`;
-     this.isEdit = this.route.snapshot.queryParamMap.get('edit');
-     this.typeText();
-     this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
-     this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
-
+    this.currentTime = `${dayOfWeek} ${time}`;
+    this.isEdit = this.route.snapshot.queryParamMap.get('edit');
+    this.defaultSuggestions = Object.keys(this.defaultSuggestionsObj);
+    this.typeText();
+    this.checkBuildEvent = this.fieldObj.events?.find((evt: any) => evt.event === "checkBuildStatus");
+    this.downloadLogEvent = this.fieldObj.events?.find((evt: any) => evt.event === "showLog");
   }
 
   ngAfterViewInit() {
@@ -179,8 +196,20 @@ export class GenerateWithAiComponent
     }
   }
 
-  sendMessage() {
-    this.stopTyping();
+  sendMessage(message?:string) {
+    if(this.firstGuestMessage){
+      this.fieldObj.value.newMessage = message;
+      this.firstGuestMessage = false;
+    }else{
+      this.stopTyping();
+    }
+    if(!this.isLoggedInCheck()){
+      if(this.isGuestLimitExceeded){
+        return;
+      }
+      this.guestMessageCount += 1;
+    }
+   
     this.messageData.newMessage = this.fieldObj.value.newMessage;
     if (this.fieldObj.value.newMessage.trim()) {
       this.messages.push({
@@ -407,4 +436,19 @@ export class GenerateWithAiComponent
     }
     return null;
   }
+
+  isLoggedInCheck(): boolean{
+    return document.cookie.split('; ').some(cookie => cookie.startsWith("accessToken" + '='));
+  }
+
+  messagesLeft(){
+    if(this.guestMessageCount >= 3){
+      this.isGuestLimitExceeded = true;
+    }
+  }
+
+  redirectToLogin() {
+    window.location.href = '/login';
+  }
+
 }

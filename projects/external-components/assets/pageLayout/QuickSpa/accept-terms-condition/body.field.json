@@ -124,7 +124,8 @@
                   "clearSharedData": [
                     "authenticated",
                     "name",
-                    "history"
+                    "history",
+                    "loggedIn"
                   ]
                 }
               }

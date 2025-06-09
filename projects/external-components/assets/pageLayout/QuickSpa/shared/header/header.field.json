@@ -102,6 +102,16 @@
           "customClassName": "header-common__logout"
         }
       },
+      "expressionProperties": {
+        "requiredValue": true,
+        "required": "",
+        "readOnly": "",
+        "readOnlyValue": false,
+        "disabled": "",
+        "disabledValue": false,
+        "visible": "loggedIn == true",
+        "visibleValue": true
+      },
       "events": [
         {
           "event": "click",
@@ -119,7 +129,8 @@
                   "clearSharedData": [
                     "authenticated",
                     "name",
-                    "history"
+                    "history",
+                    "loggedIn"
                   ]
                 }
               }
