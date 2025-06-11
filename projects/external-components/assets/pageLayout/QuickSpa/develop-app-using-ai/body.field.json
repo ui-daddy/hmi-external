@@ -176,7 +176,12 @@
                   "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [],
+                  "clearSharedData": [
+                    "authenticated",
+                    "name",
+                    "history",
+                    "loggedIn"
+                  ],
                   "apiDataAccessor": "message",
                   "message": "",
                   "showErrorMessage": true,
@@ -264,7 +269,12 @@
                   "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [],
+                  "clearSharedData": [
+                    "authenticated",
+                    "name",
+                    "history",
+                    "loggedIn"
+                 ],
                   "apiDataAccessor": "message",
                   "message": "",
                   "showErrorMessage": true,
@@ -367,7 +377,12 @@
                   "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [],
+                  "clearSharedData": [
+                    "authenticated",
+                    "name",
+                    "history",
+                    "loggedIn"
+                  ],
                   "apiDataAccessor": "",
                   "message": "",
                   "showErrorMessage": true,
