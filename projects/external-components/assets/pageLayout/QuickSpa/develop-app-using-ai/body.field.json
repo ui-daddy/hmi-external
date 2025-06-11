@@ -368,12 +368,7 @@
                   "showSuccessMessage": true,
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [
-                    "authenticated",
-                    "name",
-                    "history",
-                    "loggedIn"
-                  ],
+                  "clearSharedData": [],
                   "apiDataAccessor": "",
                   "message": "The changes are saved successfully. Please wait while your app is built...",
                   "actions": []
@@ -382,7 +377,12 @@
                   "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [],
+                  "clearSharedData": [
+                    "authenticated",
+                    "name",
+                    "history",
+                    "loggedIn"
+                  ],
                   "apiDataAccessor": "",
                   "message": "",
                   "showErrorMessage": true,
