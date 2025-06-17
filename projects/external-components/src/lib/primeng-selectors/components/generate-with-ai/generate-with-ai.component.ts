@@ -106,6 +106,16 @@ export class GenerateWithAiComponent
     }
     const history = JSON.parse(localStorage.getItem(this.chatHistoryKey) || '{}');
     this.messages = history[this.projectId!]?.messages || this.messages;
+    if(this.firstGuestMessage){
+      this.stopTyping();
+      this.guestMessageCount = this.messages.filter(item => item.isUser).length;
+      if(this.guestMessageCount >= 1){
+        this.firstGuestMessage = false;
+      }
+      if(this.guestMessageCount >= 3){
+      this.isGuestLimitExceeded = true;
+      }
+    }
     this.previewCode = history[this.projectId!]?.code || '';
     this.fieldObj.value = { newMessage: "" };
     this.fieldObj.action.subscribe((actionObj: any) => {
@@ -200,9 +210,8 @@ export class GenerateWithAiComponent
     if(this.firstGuestMessage){
       this.fieldObj.value.newMessage = message;
       this.firstGuestMessage = false;
-    }else{
-      this.stopTyping();
     }
+    this.stopTyping();
     if(!this.isLoggedInCheck()){
       if(this.isGuestLimitExceeded){
         return;
@@ -449,6 +458,6 @@ export class GenerateWithAiComponent
 
   redirectToLogin() {
     window.location.href = '/login';
-  }
+  } 
 
 }
