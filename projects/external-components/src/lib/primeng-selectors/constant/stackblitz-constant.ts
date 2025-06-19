@@ -189,6 +189,7 @@ export const STACKBLITZ_DEPENDENCIES = {
     "rxjs": "7.8.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.14.10",
+    "bootstrap": "^5.2.3"
 };
 
 export const STACKBLITZ_COMMON_EXTERNAL_TS = `
