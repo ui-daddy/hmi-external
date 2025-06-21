@@ -189,6 +189,9 @@ export const STACKBLITZ_DEPENDENCIES = {
     "rxjs": "7.8.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.14.10",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.2.3"
+    
 };
 
 export const STACKBLITZ_COMMON_EXTERNAL_TS = `
@@ -239,4 +242,8 @@ export class CommonExternalComponent implements AfterViewInit {
     }
   }
 }
+`;
+
+export const STACKBLITZ_STYLES_CSS = `
+    @import "~bootstrap/dist/css/bootstrap.min.css";
 `;

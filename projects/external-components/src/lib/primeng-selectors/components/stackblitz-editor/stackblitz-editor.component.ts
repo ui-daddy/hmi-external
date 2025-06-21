@@ -19,7 +19,7 @@ import {
 } from '@angular/core';
 import sdk from '@stackblitz/sdk';
 import { isIosDevice } from '../../util/platform';
-import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS } from '../../constant/stackblitz-constant';
+import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS, STACKBLITZ_STYLES_CSS } from '../../constant/stackblitz-constant';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
 @Component({
@@ -142,7 +142,7 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
     const files = {
       'src/main.ts': STACKBLITZ_MAIN_TS,
       [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.code,
-      'src/styles.css': '',
+      'src/styles.css': STACKBLITZ_STYLES_CSS,
       'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
       'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
       'src/app/app.module.ts': finalAppModule,
@@ -226,7 +226,7 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
     const files = {
       'src/main.ts': STACKBLITZ_MAIN_TS,
       [`src/app/${this.component.selector}/${this.component.selector}.component.ts`]: this.code,
-      'src/styles.css': '',
+      'src/styles.css':  STACKBLITZ_STYLES_CSS,
       'src/app/hmi-preview-app.component.ts': STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS,
       'src/app/hmi-preview-app.component.html': STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML.replaceAll(STACKBLITZ_COMPONENT_SELECTOR, this.component.selector),
       'src/app/app.module.ts': finalAppModule,
