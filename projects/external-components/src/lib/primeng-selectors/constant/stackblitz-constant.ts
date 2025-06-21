@@ -38,6 +38,7 @@ import { RouterModule } from "@angular/router";
 
 export const STACKBLITZ_MAIN_TS = `
     import './polyfills';
+    import 'bootstrap';
     import { enableProdMode } from '@angular/core';
     import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     
