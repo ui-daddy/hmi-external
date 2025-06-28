@@ -42,7 +42,6 @@
                 "name": "Refresh Projects",
                 "url": "/rest/getProjects",
                 "method": "GET",
-                "isApplicationSessionAPI" : "true",
                 "pathParams": [],
                 "queryParams": [],
                 "payloadParams": [],
@@ -72,13 +71,7 @@
                   ]
                 },
                 "onError": {
-                  "pageUrl": "/login",
-                  "clearSharedData": [
-                    "authenticated",
-                    "name",
-                    "history",
-                    "loggedIn"
-                  ],
+                  "clearSharedData": [],
                   "sharedData": [],
                   "fieldData": [],
                   "apiDataAccessor": "",
@@ -184,18 +177,11 @@
           "url": "/rest/getProjects",
           "method": "GET",
           "params": {},
-          "isApplicationSessionAPI" : "true",
           "onSuccess": {
             "apiDataAccessor": "projects"
           },
           "onError": {
-            "pageUrl": "/login",
-            "clearSharedData": [
-                    "authenticated",
-                    "name",
-                    "history",
-                    "loggedIn"
-              ]     
+            "clearSharedData": []     
           }
         },
         "buttons": [

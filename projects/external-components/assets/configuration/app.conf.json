@@ -293,9 +293,15 @@
     "linkTags": [],
     "ifPageNotFound": "login",
     "interceptorConfigurations": [{
-        "statusCode": "401",
-        "pageUrl": "login",
-        "clearSharedData": ["history"]
+        "statusCode": ["401", "400"],
+        "pageUrl": "/login",
+        "clearSharedData": [
+          "authenticated",
+          "name",
+          "history",
+          "loggedIn"
+        ],
+        "clearCookies": ["accessToken"]
       }],
     "apiConfigurations": [],
     "layoutProperties": {

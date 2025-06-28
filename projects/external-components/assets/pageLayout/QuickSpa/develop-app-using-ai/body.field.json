@@ -137,7 +137,6 @@
                 "beforeSubmit": {
                   "action": []
                 },
-                "isApplicationSessionAPI": true,
                 "onSuccess": {
                   "pageUrl": "",
                   "deleteTableRow": false,
@@ -173,15 +172,9 @@
                   ]
                 },
                 "onError": {
-                  "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [
-                    "authenticated",
-                    "name",
-                    "history",
-                    "loggedIn"
-                  ],
+                  "clearSharedData": [],
                   "apiDataAccessor": "message",
                   "message": "",
                   "showErrorMessage": true,
@@ -230,7 +223,6 @@
                 "beforeSubmit": {
                   "action": []
                 },
-                "isApplicationSessionAPI": true,
                 "onSuccess": {
                   "pageUrl": "",
                   "deleteTableRow": false,
@@ -266,15 +258,9 @@
                   ]
                 },
                 "onError": {
-                  "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [
-                    "authenticated",
-                    "name",
-                    "history",
-                    "loggedIn"
-                 ],
+                  "clearSharedData": [],
                   "apiDataAccessor": "message",
                   "message": "",
                   "showErrorMessage": true,
@@ -361,7 +347,6 @@
                 "beforeSubmit": {
                   "action": []
                 },
-                "isApplicationSessionAPI" : "true",
                 "onSuccess": {
                   "pageUrl": "",
                   "deleteTableRow": false,
@@ -374,15 +359,9 @@
                   "actions": []
                 },
                 "onError": {
-                  "pageUrl": "/login",
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [
-                    "authenticated",
-                    "name",
-                    "history",
-                    "loggedIn"
-                  ],
+                  "clearSharedData": [],
                   "apiDataAccessor": "",
                   "message": "",
                   "showErrorMessage": true,
