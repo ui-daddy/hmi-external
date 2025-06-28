@@ -293,7 +293,7 @@
     "linkTags": [],
     "ifPageNotFound": "login",
     "interceptorConfigurations": [{
-        "statusCode": "401",
+        "statusCode": ["401", "400"],
         "pageUrl": "/login",
         "clearSharedData": [
           "authenticated",
