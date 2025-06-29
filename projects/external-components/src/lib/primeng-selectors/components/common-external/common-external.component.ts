@@ -45,7 +45,7 @@ export class CommonExternalComponent implements AfterViewInit {
     }
   }
 
-  dataDownloading(data:any){
+  componentDataDownloader(data:any){
     const txtData = JSON.stringify(data, null, 2);
     const blob = new Blob([txtData], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
@@ -58,7 +58,7 @@ export class CommonExternalComponent implements AfterViewInit {
     URL.revokeObjectURL(url); // Clean up
   }
 
-  dataUploading(event: Event): Promise<any> {
+  componentDataUploader(event: Event): Promise<any> {
     return new Promise((resolve, reject) => {
       const input = event.target as HTMLInputElement;
       if (!input.files?.length) {
