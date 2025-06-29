@@ -19,7 +19,7 @@ interface TodoItem {
       - Mark tasks as complete/incomplete.
       - Download/upload all app data (.txt file).
       - Data auto-saved in browser local storage.
-      - Reminder notification one day before due date.
+      - Reminder notification one day before due date, including on every app open.
       - Responsive Bootstrap 5 UI.
     -->
     <div class="card shadow mt-4">
@@ -119,14 +119,15 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
 
   ngOnInit(): void {
     this.requestNotificationPermission();
-    this.checkAndNotifyReminders();
+    // Show reminders immediately when app is opened
+    setTimeout(() => this.checkAndNotifyReminders(), 500);
     setInterval(() => this.checkAndNotifyReminders(), 60 * 60 * 1000); // check every hour
   }
 
   addTask(): void {
-    const trimmed = this.newTask.trim();
+    const trimmed: string = this.newTask.trim();
     if (trimmed && this.newDueDate) {
-      const newId = this.todos.length > 0 ? Math.max(...this.todos.map(t => t.id)) + 1 : 1;
+      const newId: number = this.todos.length > 0 ? Math.max(...this.todos.map(t => t.id)) + 1 : 1;
       this.todos.push({ id: newId, task: trimmed, completed: false, dueDate: this.newDueDate });
       this.saveToLocalStorage();
       this.newTask = '';
@@ -137,13 +138,13 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   }
 
   removeTask(id: number): void {
-    this.todos = this.todos.filter(t => t.id !== id);
+    this.todos = this.todos.filter((t: TodoItem) => t.id !== id);
     this.saveToLocalStorage();
     this.cdr.detectChanges();
   }
 
   toggleComplete(id: number): void {
-    const idx = this.todos.findIndex(t => t.id === id);
+    const idx: number = this.todos.findIndex((t: TodoItem) => t.id === id);
     if (idx > -1) {
       this.todos[idx].completed = !this.todos[idx].completed;
       this.saveToLocalStorage();
@@ -152,13 +153,13 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   }
 
   downloadData(): void {
-    const data = { todos: this.todos };
+    const data: { todos: TodoItem[] } = { todos: this.todos };
     this.componentDataDownloader(data);
   }
 
   async uploadData(event: Event): Promise<void> {
     try {
-      const uploaded = await this.componentDataUploader(event);
+      const uploaded: any = await this.componentDataUploader(event);
       if (uploaded && uploaded.todos && Array.isArray(uploaded.todos)) {
         this.todos = uploaded.todos.map((t: any) => ({
           id: Number(t.id),
@@ -180,7 +181,7 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   }
 
   loadFromLocalStorage(): void {
-    const saved = window.localStorage.getItem('test-app-todos');
+    const saved: string | null = window.localStorage.getItem('test-app-todos');
     if (saved) {
       try {
         const parsed: unknown = JSON.parse(saved);
@@ -199,15 +200,15 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   }
 
   getTodayString(): string {
-    const today = new Date();
+    const today: Date = new Date();
     return today.toISOString().split('T')[0];
   }
 
   showReminderBadge(item: TodoItem): boolean {
     if (item.completed) return false;
-    const due = new Date(item.dueDate);
-    const now = new Date();
-    const diff = due.getTime() - now.getTime();
+    const due: Date = new Date(item.dueDate);
+    const now: Date = new Date();
+    const diff: number = due.getTime() - now.getTime();
     return diff > 0 && diff <= 24 * 60 * 60 * 1000;
   }
 
@@ -219,14 +220,14 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
 
   checkAndNotifyReminders(): void {
     if (!('Notification' in window) || Notification.permission !== 'granted') return;
-    const now = new Date();
+    const now: Date = new Date();
     for (const item of this.todos) {
       if (item.completed) continue;
-      const due = new Date(item.dueDate);
-      const diff = due.getTime() - now.getTime();
+      const due: Date = new Date(item.dueDate);
+      const diff: number = due.getTime() - now.getTime();
       // Notify only if due within 24h and not overdue, and not already notified today
       if (diff > 0 && diff <= 24 * 60 * 60 * 1000) {
-        const notifKey = `todo-reminder-notified-${item.id}-${now.toISOString().split('T')[0]}`;
+        const notifKey: string = `todo-reminder-notified-${item.id}-${now.toISOString().split('T')[0]}`;
         if (!window.localStorage.getItem(notifKey)) {
           new Notification('Task Reminder', {
             body: `Your task "${item.task}" is due tomorrow (${due.toLocaleDateString()})!`,
