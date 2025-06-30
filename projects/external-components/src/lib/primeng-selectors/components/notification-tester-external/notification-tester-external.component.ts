@@ -1,0 +1,225 @@
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { CommonExternalComponent } from '../common-external/common-external.component';
+import { LocalNotifications, PermissionStatus, ScheduledNotification } from '@capacitor/local-notifications';
+
+/*
+  Features:
+  - Schedule local notifications at custom date & time (Android, background supported via @capacitor/local-notifications)
+  - Handles notification permissions
+  - Stores scheduled notifications in localStorage
+  - Download/upload all app data as .txt file
+  - Bootstrap 5 styling, responsive UI
+*/
+
+@Component({
+  selector: 'app-notification-tester',
+  template: `
+    <div class="container p-4 border rounded shadow bg-white">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4>Notification Scheduler</h4>
+        <div>
+          <button class="btn btn-outline-primary me-2" (click)="downloadData()" title="Download app data"><i class="bi bi-download"></i></button>
+          <label class="btn btn-outline-secondary mb-0" title="Upload app data">
+            <i class="bi bi-upload"></i>
+            <input type="file" accept=".txt" hidden (change)="uploadData($event)" />
+          </label>
+        </div>
+      </div>
+
+      <form class="row g-3 mb-4" (ngSubmit)="scheduleNotification()" #notifForm="ngForm" autocomplete="off">
+        <div class="col-md-6">
+          <label class="form-label">Title</label>
+          <input required [(ngModel)]="notification.title" name="title" class="form-control" maxlength="50" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Body</label>
+          <input required [(ngModel)]="notification.body" name="body" class="form-control" maxlength="120" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Date</label>
+          <input required [(ngModel)]="notification.date" name="date" class="form-control" type="date" [min]="todayStr" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Time</label>
+          <input required [(ngModel)]="notification.time" name="time" class="form-control" type="time" />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-success w-100" [disabled]="!notifForm.form.valid">Schedule Notification</button>
+        </div>
+      </form>
+
+      <div *ngIf="scheduledNotifications.length > 0" class="mt-4">
+        <h5>Scheduled Notifications</h5>
+        <ul class="list-group">
+          <li *ngFor="let n of scheduledNotifications" class="list-group-item d-flex justify-content-between align-items-center">
+            <span>
+              <strong>{{n.title}}</strong> - {{n.body}}<br>
+              <small class="text-muted">{{n.scheduledAt | date:'medium'}}</small>
+            </span>
+            <button class="btn btn-sm btn-danger" (click)="cancelNotification(n.id)">Cancel</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .container { max-width: 600px; margin-top: 40px; }
+    h4 { margin-bottom: 0; }
+    input[type="file"] { display: none; }
+  `]
+})
+export class NotificationTesterComponent extends CommonExternalComponent {
+  notification: { title: string; body: string; date: string; time: string } = {
+    title: '',
+    body: '',
+    date: '',
+    time: ''
+  };
+  scheduledNotifications: Array<{
+    id: number;
+    title: string;
+    body: string;
+    scheduledAt: Date;
+  }> = [];
+  todayStr: string = new Date().toISOString().split('T')[0];
+
+  constructor(private cdr: ChangeDetectorRef) {
+    super();
+    this.loadFromLocalStorage();
+  }
+
+  // Schedules a notification using @capacitor/local-notifications
+  async scheduleNotification(): Promise<void> {
+    const { title, body, date, time } = this.notification;
+
+    if (!title || !body || !date || !time) return;
+
+    // Parse selected date and time
+    const [year, month, day] = date.split('-').map(Number);
+    const [hour, minute] = time.split(':').map(Number);
+
+    let scheduledDate = new Date(year, month - 1, day, hour, minute, 0, 0);
+    const now = new Date();
+
+    if (scheduledDate.getTime() <= now.getTime()) {
+      alert('Please select a future date and time.');
+      return;
+    }
+
+    // Request notification permission
+    const perm: PermissionStatus = await LocalNotifications.requestPermissions();
+    if (perm.display !== 'granted') {
+      alert('Notification permission not granted. Please enable it in app settings.');
+      return;
+    }
+
+    // Generate unique ID
+    const id: number = this.generateUniqueId();
+
+    try {
+      await LocalNotifications.schedule({
+        notifications: [
+          {
+            id,
+            title,
+            body,
+            schedule: { at: scheduledDate },
+            sound: 'default',
+            attachments: null,
+            actionTypeId: '',
+            extra: {}
+          }
+        ]
+      });
+
+      // Add to scheduled list and persist
+      this.scheduledNotifications.push({
+        id,
+        title,
+        body,
+        scheduledAt: scheduledDate
+      });
+      this.saveToLocalStorage();
+
+      alert(`Notification scheduled for: ${scheduledDate.toLocaleString()}`);
+      this.resetForm();
+      this.cdr.detectChanges();
+    } catch (error) {
+      console.error('Error scheduling notification:', error);
+      alert('Failed to schedule notification. Check console for details.');
+    }
+  }
+
+  // Cancels a scheduled notification by ID
+  async cancelNotification(id: number): Promise<void> {
+    try {
+      await LocalNotifications.cancel({ notifications: [{ id }] });
+      this.scheduledNotifications = this.scheduledNotifications.filter(n => n.id !== id);
+      this.saveToLocalStorage();
+      this.cdr.detectChanges();
+    } catch (err) {
+      alert('Failed to cancel notification.');
+    }
+  }
+
+  // Download app data as .txt
+  downloadData(): void {
+    const data = {
+      scheduledNotifications: this.scheduledNotifications.map(n => ({
+        ...n,
+        scheduledAt: n.scheduledAt instanceof Date ? n.scheduledAt.toISOString() : n.scheduledAt
+      }))
+    };
+    this.componentDataDownloader(data);
+  }
+
+  // Upload app data from .txt
+  async uploadData(event: Event): Promise<void> {
+    const result = await this.componentDataUploader(event);
+    if (result && result.scheduledNotifications) {
+      this.scheduledNotifications = result.scheduledNotifications.map((n: any) => ({
+        ...n,
+        scheduledAt: new Date(n.scheduledAt)
+      }));
+      this.saveToLocalStorage();
+      this.cdr.detectChanges();
+    }
+  }
+
+  // Persist to localStorage
+  private saveToLocalStorage(): void {
+    localStorage.setItem('notification-tester-data', JSON.stringify(
+      this.scheduledNotifications.map(n => ({
+        ...n,
+        scheduledAt: n.scheduledAt instanceof Date ? n.scheduledAt.toISOString() : n.scheduledAt
+      }))
+    ));
+  }
+
+  // Load from localStorage
+  private loadFromLocalStorage(): void {
+    const raw = localStorage.getItem('notification-tester-data');
+    if (raw) {
+      try {
+        const arr = JSON.parse(raw) as Array<any>;
+        this.scheduledNotifications = arr.map(n => ({
+          ...n,
+          scheduledAt: new Date(n.scheduledAt)
+        }));
+      } catch { this.scheduledNotifications = []; }
+    }
+  }
+
+  // Simple unique ID generator
+  private generateUniqueId(): number {
+    const ids = this.scheduledNotifications.map(n => n.id);
+    let next = 1;
+    while (ids.includes(next)) next++;
+    return next;
+  }
+
+  // Reset form
+  private resetForm(): void {
+    this.notification = { title: '', body: '', date: '', time: '' };
+  }
+}
