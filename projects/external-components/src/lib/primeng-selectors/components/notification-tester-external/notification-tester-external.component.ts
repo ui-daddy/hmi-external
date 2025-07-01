@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { LocalNotifications, PermissionStatus } from '@capacitor/local-notifications';
+import { LocalNotifications, PermissionStatus, ScheduleOptions, NotificationChannel, NotificationAttachment } from '@capacitor/local-notifications';
 
 /*
   Features:
@@ -100,8 +100,8 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     if (!title || !body || !date || !time) return;
 
     // Parse selected date and time
-    const [year, month, day] = date.split('-').map(Number);
-    const [hour, minute] = time.split(':').map(Number);
+    const [year, month, day]: number[] = date.split('-').map(Number);
+    const [hour, minute]: number[] = time.split(':').map(Number);
 
     const scheduledDate: Date = new Date(year, month - 1, day, hour, minute, 0, 0);
     const now: Date = new Date();
@@ -129,7 +129,8 @@ export class NotificationTesterComponent extends CommonExternalComponent {
             title,
             body,
             schedule: { at: scheduledDate },
-            sound: 'default'
+            sound: 'default',
+            attachments: [] // Fix: never set null, always use array or undefined
           }
         ]
       });
@@ -166,7 +167,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
 
   // Download app data as .txt
   downloadData(): void {
-    const data = {
+    const data: { scheduledNotifications: any[] } = {
       scheduledNotifications: this.scheduledNotifications.map((n: ScheduledNotif) => ({
         ...n,
         scheduledAt: n.scheduledAt instanceof Date ? n.scheduledAt.toISOString() : n.scheduledAt
