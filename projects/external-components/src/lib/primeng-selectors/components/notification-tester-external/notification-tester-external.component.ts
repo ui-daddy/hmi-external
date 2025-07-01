@@ -1,15 +1,23 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { LocalNotifications, PermissionStatus, ScheduledNotification } from '@capacitor/local-notifications';
+import { LocalNotifications, PermissionStatus } from '@capacitor/local-notifications';
 
 /*
   Features:
-  - Schedule local notifications at custom date & time (Android, background supported via @capacitor/local-notifications)
-  - Handles notification permissions
+  - Schedule/cancel local notifications at custom date & time (Android/iOS supported)
+  - Notification permission handling
   - Stores scheduled notifications in localStorage
   - Download/upload all app data as .txt file
   - Bootstrap 5 styling, responsive UI
+  - Inline HTML and CSS
 */
+
+interface ScheduledNotif {
+  id: number;
+  title: string;
+  body: string;
+  scheduledAt: Date;
+}
 
 @Component({
   selector: 'app-notification-tester',
@@ -18,7 +26,9 @@ import { LocalNotifications, PermissionStatus, ScheduledNotification } from '@ca
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4>Notification Scheduler</h4>
         <div>
-          <button class="btn btn-outline-primary me-2" (click)="downloadData()" title="Download app data"><i class="bi bi-download"></i></button>
+          <button class="btn btn-outline-primary me-2" (click)="downloadData()" title="Download app data">
+            <i class="bi bi-download"></i>
+          </button>
           <label class="btn btn-outline-secondary mb-0" title="Upload app data">
             <i class="bi bi-upload"></i>
             <input type="file" accept=".txt" hidden (change)="uploadData($event)" />
@@ -75,12 +85,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     date: '',
     time: ''
   };
-  scheduledNotifications: Array<{
-    id: number;
-    title: string;
-    body: string;
-    scheduledAt: Date;
-  }> = [];
+  scheduledNotifications: ScheduledNotif[] = [];
   todayStr: string = new Date().toISOString().split('T')[0];
 
   constructor(private cdr: ChangeDetectorRef) {
@@ -98,8 +103,8 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     const [year, month, day] = date.split('-').map(Number);
     const [hour, minute] = time.split(':').map(Number);
 
-    let scheduledDate = new Date(year, month - 1, day, hour, minute, 0, 0);
-    const now = new Date();
+    const scheduledDate: Date = new Date(year, month - 1, day, hour, minute, 0, 0);
+    const now: Date = new Date();
 
     if (scheduledDate.getTime() <= now.getTime()) {
       alert('Please select a future date and time.');
@@ -124,10 +129,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
             title,
             body,
             schedule: { at: scheduledDate },
-            sound: 'default',
-            attachments: null,
-            actionTypeId: '',
-            extra: {}
+            sound: 'default'
           }
         ]
       });
@@ -154,7 +156,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
   async cancelNotification(id: number): Promise<void> {
     try {
       await LocalNotifications.cancel({ notifications: [{ id }] });
-      this.scheduledNotifications = this.scheduledNotifications.filter(n => n.id !== id);
+      this.scheduledNotifications = this.scheduledNotifications.filter((n: ScheduledNotif) => n.id !== id);
       this.saveToLocalStorage();
       this.cdr.detectChanges();
     } catch (err) {
@@ -165,7 +167,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
   // Download app data as .txt
   downloadData(): void {
     const data = {
-      scheduledNotifications: this.scheduledNotifications.map(n => ({
+      scheduledNotifications: this.scheduledNotifications.map((n: ScheduledNotif) => ({
         ...n,
         scheduledAt: n.scheduledAt instanceof Date ? n.scheduledAt.toISOString() : n.scheduledAt
       }))
@@ -175,8 +177,8 @@ export class NotificationTesterComponent extends CommonExternalComponent {
 
   // Upload app data from .txt
   async uploadData(event: Event): Promise<void> {
-    const result = await this.componentDataUploader(event);
-    if (result && result.scheduledNotifications) {
+    const result: any = await this.componentDataUploader(event);
+    if (result && Array.isArray(result.scheduledNotifications)) {
       this.scheduledNotifications = result.scheduledNotifications.map((n: any) => ({
         ...n,
         scheduledAt: new Date(n.scheduledAt)
@@ -188,31 +190,36 @@ export class NotificationTesterComponent extends CommonExternalComponent {
 
   // Persist to localStorage
   private saveToLocalStorage(): void {
-    localStorage.setItem('notification-tester-data', JSON.stringify(
-      this.scheduledNotifications.map(n => ({
-        ...n,
-        scheduledAt: n.scheduledAt instanceof Date ? n.scheduledAt.toISOString() : n.scheduledAt
-      }))
-    ));
+    localStorage.setItem(
+      'notification-tester-data',
+      JSON.stringify(
+        this.scheduledNotifications.map((n: ScheduledNotif) => ({
+          ...n,
+          scheduledAt: n.scheduledAt instanceof Date ? n.scheduledAt.toISOString() : n.scheduledAt
+        }))
+      )
+    );
   }
 
   // Load from localStorage
   private loadFromLocalStorage(): void {
-    const raw = localStorage.getItem('notification-tester-data');
+    const raw: string | null = localStorage.getItem('notification-tester-data');
     if (raw) {
       try {
-        const arr = JSON.parse(raw) as Array<any>;
-        this.scheduledNotifications = arr.map(n => ({
+        const arr: any[] = JSON.parse(raw);
+        this.scheduledNotifications = arr.map((n: any) => ({
           ...n,
           scheduledAt: new Date(n.scheduledAt)
         }));
-      } catch { this.scheduledNotifications = []; }
+      } catch {
+        this.scheduledNotifications = [];
+      }
     }
   }
 
   // Simple unique ID generator
   private generateUniqueId(): number {
-    const ids = this.scheduledNotifications.map(n => n.id);
+    const ids: number[] = this.scheduledNotifications.map((n: ScheduledNotif) => n.id);
     let next = 1;
     while (ids.includes(next)) next++;
     return next;
