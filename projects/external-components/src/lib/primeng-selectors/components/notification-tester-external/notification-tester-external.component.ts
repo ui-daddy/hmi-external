@@ -1,15 +1,16 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { LocalNotifications, PermissionStatus, ScheduleOptions, NotificationChannel, NotificationAttachment } from '@capacitor/local-notifications';
+import { LocalNotifications, PermissionStatus } from '@capacitor/local-notifications';
 
 /*
   Features:
   - Schedule/cancel local notifications at custom date & time (Android/iOS supported)
   - Notification permission handling
   - Stores scheduled notifications in localStorage
-  - Download/upload all app data as .txt file
-  - Bootstrap 5 styling, responsive UI
+  - Download/upload all app data as .txt file using CommonExternalComponent helpers
+  - Bootstrap 5 + PrimeIcons for UI/icons
   - Inline HTML and CSS
+  - Strict type checking
 */
 
 interface ScheduledNotif {
@@ -26,11 +27,13 @@ interface ScheduledNotif {
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4>Notification Scheduler</h4>
         <div>
+          <!-- Download Button -->
           <button class="btn btn-outline-primary me-2" (click)="downloadData()" title="Download app data">
-            <i class="bi bi-download"></i>
+            <i class="pi pi-download"></i>
           </button>
+          <!-- Upload Button -->
           <label class="btn btn-outline-secondary mb-0" title="Upload app data">
-            <i class="bi bi-upload"></i>
+            <i class="pi pi-upload"></i>
             <input type="file" accept=".txt" hidden (change)="uploadData($event)" />
           </label>
         </div>
@@ -76,6 +79,7 @@ interface ScheduledNotif {
     .container { max-width: 600px; margin-top: 40px; }
     h4 { margin-bottom: 0; }
     input[type="file"] { display: none; }
+    .pi { font-size: 1.1rem; vertical-align: middle; }
   `]
 })
 export class NotificationTesterComponent extends CommonExternalComponent {
@@ -130,12 +134,11 @@ export class NotificationTesterComponent extends CommonExternalComponent {
             body,
             schedule: { at: scheduledDate },
             sound: 'default',
-            attachments: [] // Fix: never set null, always use array or undefined
+            attachments: []
           }
         ]
       });
 
-      // Add to scheduled list and persist
       this.scheduledNotifications.push({
         id,
         title,
