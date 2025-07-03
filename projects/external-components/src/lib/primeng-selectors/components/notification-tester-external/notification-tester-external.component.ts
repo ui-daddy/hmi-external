@@ -4,13 +4,14 @@ import { LocalNotifications, PermissionStatus } from '@capacitor/local-notificat
 
 /*
   Features:
-  - Schedule/cancel local notifications at custom date & time (Android/iOS)
-  - Notification permission handling
-  - Stores scheduled notifications in localStorage
-  - Download/upload all app data as .txt file using CommonExternalComponent helpers
-  - Bootstrap 5 for UI styling
-  - Inline HTML and CSS
-  - Strict type checking
+  - Uses @capacitor/local-notifications v7.0.1 for scheduling/cancelling notifications (Android/iOS).
+  - Handles notification permission requests.
+  - Stores scheduled notifications in localStorage by default.
+  - Download/upload all app data as .txt file using CommonExternalComponent helpers.
+  - Bootstrap 5 for UI styling.
+  - Inline HTML and CSS.
+  - Strict type checking for all variables.
+  - Triggers Angular change detection after upload.
 */
 
 interface ScheduledNotif {
@@ -97,13 +98,12 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     this.loadFromLocalStorage();
   }
 
-  // Schedules a notification using @capacitor/local-notifications v7
+  // Schedule a notification using @capacitor/local-notifications v7.0.1
   async scheduleNotification(): Promise<void> {
     const { title, body, date, time } = this.notification;
 
     if (!title || !body || !date || !time) return;
 
-    // Parse selected date and time
     const [year, month, day]: number[] = date.split('-').map(Number);
     const [hour, minute]: number[] = time.split(':').map(Number);
 
@@ -115,14 +115,13 @@ export class NotificationTesterComponent extends CommonExternalComponent {
       return;
     }
 
-    // Request notification permission (v7 API)
+    // Request notification permission using v7.0.1 API
     const perm: PermissionStatus = await LocalNotifications.requestPermissions();
     if (perm.display !== 'granted') {
       alert('Notification permission not granted. Please enable it in app settings.');
       return;
     }
 
-    // Generate unique ID
     const id: number = this.generateUniqueId();
 
     try {
@@ -155,7 +154,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     }
   }
 
-  // Cancels a scheduled notification by ID
+  // Cancel a scheduled notification by ID
   async cancelNotification(id: number): Promise<void> {
     try {
       await LocalNotifications.cancel({ notifications: [{ id }] });
@@ -191,7 +190,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     }
   }
 
-  // Persist to localStorage
+  // Save to localStorage
   private saveToLocalStorage(): void {
     localStorage.setItem(
       'notification-tester-data',
@@ -220,7 +219,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     }
   }
 
-  // Simple unique ID generator
+  // Generate unique ID
   private generateUniqueId(): number {
     const ids: number[] = this.scheduledNotifications.map((n: ScheduledNotif) => n.id);
     let next = 1;
