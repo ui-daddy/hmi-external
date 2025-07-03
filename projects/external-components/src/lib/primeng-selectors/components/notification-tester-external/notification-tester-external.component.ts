@@ -4,11 +4,11 @@ import { LocalNotifications, PermissionStatus } from '@capacitor/local-notificat
 
 /*
   Features:
-  - Schedule/cancel local notifications at custom date & time (Android/iOS supported)
+  - Schedule/cancel local notifications at custom date & time (Android/iOS)
   - Notification permission handling
   - Stores scheduled notifications in localStorage
   - Download/upload all app data as .txt file using CommonExternalComponent helpers
-  - Bootstrap 5 + PrimeIcons for UI/icons
+  - Bootstrap 5 for UI styling
   - Inline HTML and CSS
   - Strict type checking
 */
@@ -29,11 +29,11 @@ interface ScheduledNotif {
         <div>
           <!-- Download Button -->
           <button class="btn btn-outline-primary me-2" (click)="downloadData()" title="Download app data">
-            <i class="pi pi-download"></i>
+            <i class="bi bi-download"></i>
           </button>
           <!-- Upload Button -->
           <label class="btn btn-outline-secondary mb-0" title="Upload app data">
-            <i class="pi pi-upload"></i>
+            <i class="bi bi-upload"></i>
             <input type="file" accept=".txt" hidden (change)="uploadData($event)" />
           </label>
         </div>
@@ -79,7 +79,7 @@ interface ScheduledNotif {
     .container { max-width: 600px; margin-top: 40px; }
     h4 { margin-bottom: 0; }
     input[type="file"] { display: none; }
-    .pi { font-size: 1.1rem; vertical-align: middle; }
+    .bi { font-size: 1.1rem; vertical-align: middle; }
   `]
 })
 export class NotificationTesterComponent extends CommonExternalComponent {
@@ -97,7 +97,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
     this.loadFromLocalStorage();
   }
 
-  // Schedules a notification using @capacitor/local-notifications
+  // Schedules a notification using @capacitor/local-notifications v7
   async scheduleNotification(): Promise<void> {
     const { title, body, date, time } = this.notification;
 
@@ -115,7 +115,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
       return;
     }
 
-    // Request notification permission
+    // Request notification permission (v7 API)
     const perm: PermissionStatus = await LocalNotifications.requestPermissions();
     if (perm.display !== 'granted') {
       alert('Notification permission not granted. Please enable it in app settings.');
@@ -133,8 +133,7 @@ export class NotificationTesterComponent extends CommonExternalComponent {
             title,
             body,
             schedule: { at: scheduledDate },
-            sound: 'default',
-            attachments: []
+            sound: 'default'
           }
         ]
       });
