@@ -18,17 +18,26 @@ interface TodoItem {
       - Add, list, remove daily todo tasks with due dates.
       - Mark tasks as complete/incomplete.
       - Download/upload all app data (.txt file).
+      - Download is triggered by clicking only a Bootstrap download icon.
       - Data auto-saved in browser local storage.
       - Reminder notification one day before due date, including on every app open.
       - Responsive Bootstrap 5 UI.
+      - Strict type checking throughout.
     -->
     <div class="card shadow mt-4">
       <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
         <span>Todo App - Daily Tasks with Due Dates</span>
         <div>
-          <button class="btn btn-light btn-sm me-2" (click)="downloadData()">
-            <i class="bi bi-download"></i> Download
-          </button>
+          <i 
+            class="bi bi-download fs-4 me-3 text-success cursor-pointer"
+            role="button"
+            tabindex="0"
+            aria-label="Download data"
+            (click)="downloadData()"
+            (keydown.enter)="downloadData()"
+            (keydown.space)="downloadData()"
+            style="vertical-align: middle;"
+          ></i>
           <label class="btn btn-light btn-sm mb-0">
             <i class="bi bi-upload"></i> Upload
             <input type="file" accept=".txt" hidden (change)="uploadData($event)">
@@ -98,6 +107,7 @@ interface TodoItem {
     .form-control { font-size: 1rem; }
     .list-group-item { font-size: 1.05rem; }
     .text-decoration-line-through { color: #6c757d !important; }
+    .cursor-pointer { cursor: pointer; }
     @media (max-width: 576px) {
       .card { margin: 1rem; }
       .col-md-6, .col-md-4, .col-md-2, .col-12, .col-8, .col-4 { flex: 0 0 100%; max-width: 100%; }
