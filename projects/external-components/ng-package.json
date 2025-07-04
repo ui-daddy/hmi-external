@@ -4,6 +4,21 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": ["jspdf", "jspdf-autotable", "file-saver", "xlsx", "primeng", "primeicons", "chart.js", "@stackblitz/sdk", "@primeng/themes"],
-  "assets": ["styles.scss", "./assets"]
+  "allowedNonPeerDependencies": [
+    "jspdf",
+    "jspdf-autotable",
+    "file-saver",
+    "xlsx",
+    "primeng",
+    "primeicons",
+    "chart.js",
+    "@stackblitz/sdk",
+    "@primeng/themes",
+    "bootstrap",
+    "bootstrap-icons"
+  ],
+  "assets": [
+    "styles.scss",
+    "./assets"
+  ]
 }
