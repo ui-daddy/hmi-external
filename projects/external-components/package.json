@@ -17,6 +17,7 @@
     "primeng": "^18.0.2",
     "tslib": "^2.0.0",
     "xlsx": "0.18.5",
-    "@capacitor/local-notifications": "7.0.1"
+    "@capacitor/local-notifications": "7.0.1",
+    "@capacitor/core": "7.0.1"
   }
 }
