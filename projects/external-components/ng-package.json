@@ -14,7 +14,8 @@
     "chart.js",
     "@stackblitz/sdk",
     "@primeng/themes",
-    "@capacitor/local-notifications"
+    "@capacitor/local-notifications",
+    "@capacitor/core"
   ],
   "assets": [
     "styles.scss",
