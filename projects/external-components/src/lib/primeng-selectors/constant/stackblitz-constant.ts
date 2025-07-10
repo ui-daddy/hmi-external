@@ -296,4 +296,5 @@ export class CommonExternalComponent implements AfterViewInit {
 
 export const STACKBLITZ_STYLES_CSS = `
     @import "~bootstrap/dist/css/bootstrap.min.css";
+    @import "~primeicons/primeicons.css";
 `;
