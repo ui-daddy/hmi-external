@@ -191,8 +191,8 @@ export const STACKBLITZ_DEPENDENCIES = {
     "tslib": "^2.0.0",
     "zone.js": "~0.14.10",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.2.3"
-    
+    "bootstrap": "^5.2.3",
+    "primeicons": "^7.0.0"
 };
 
 export const STACKBLITZ_COMMON_EXTERNAL_TS = `
