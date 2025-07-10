@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
 /*
@@ -8,7 +8,8 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
   - Delete a note
   - Add multiple notes at once (multi-note mode)
   - All data is persisted in local storage by default
-  - Uses Bootstrap 5 for styling
+  - Download/upload your notes as a .txt file for backup or transfer
+  - Uses Bootstrap 5 for styling and PrimeIcons v7 for icons
 */
 
 @Component({
@@ -16,9 +17,34 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
   template: `
     <div class="container my-4">
       <div class="card shadow-sm">
+        <!-- Header with Download/Upload -->
+        <div class="card-header d-flex justify-content-between align-items-center bg-light">
+          <h2 class="card-title mb-0 text-center flex-grow-1">Simple Notes App</h2>
+          <div class="d-flex gap-2 align-items-center ms-2">
+            <!-- Download Button -->
+            <button 
+              type="button"
+              class="btn btn-outline-primary btn-sm"
+              [disabled]="notes.length === 0"
+              (click)="downloadNotes()"
+              aria-label="Download Notes"
+              title="Download Notes"
+            >
+              <i class="pi pi-download"></i>
+            </button>
+            <!-- Upload Button -->
+            <label class="btn btn-outline-secondary btn-sm mb-0" title="Upload Notes">
+              <i class="pi pi-upload"></i>
+              <input 
+                type="file" 
+                accept=".txt"
+                (change)="uploadNotes($event)"
+                hidden
+              />
+            </label>
+          </div>
+        </div>
         <div class="card-body">
-          <h2 class="card-title text-center mb-3">Simple Notes App</h2>
-          
           <!-- Toggle for multi-note mode -->
           <div class="form-check form-switch mb-3">
             <input 
@@ -122,8 +148,9 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
                 class="btn btn-sm btn-danger ms-2"
                 (click)="deleteNote(i)"
                 aria-label="Delete"
+                title="Delete Note"
               >
-                &times;
+                <i class="pi pi-trash"></i>
               </button>
             </li>
           </ul>
@@ -151,6 +178,13 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
       padding: 0 0.7em;
       line-height: 1;
     }
+    .card-header {
+      border-bottom: 1px solid #dee2e6;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .pi {
+      vertical-align: middle;
+    }
   `]
 })
 export class SampleTest1Component extends CommonExternalComponent {
@@ -160,16 +194,16 @@ export class SampleTest1Component extends CommonExternalComponent {
   multiNoteMode: boolean = false;
   multiNotesInput: string = '';
 
-  private readonly STORAGE_KEY = 'sampleTest1_notes';
+  private readonly STORAGE_KEY: string = 'sampleTest1_notes';
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef) {
     super();
     this.loadNotes();
   }
 
   // Load notes from local storage on init
   loadNotes(): void {
-    const stored = localStorage.getItem(this.STORAGE_KEY);
+    const stored: string | null = localStorage.getItem(this.STORAGE_KEY);
     this.notes = stored ? JSON.parse(stored) as Array<{ title: string; content: string }> : [];
   }
 
@@ -193,7 +227,7 @@ export class SampleTest1Component extends CommonExternalComponent {
     const lines: string[] = this.multiNotesInput.split('\n');
     for (const line of lines) {
       const [title, ...rest] = line.split('|');
-      const content = rest.join('|');
+      const content: string = rest.join('|');
       if (title && content) {
         this.notes.push({ title: title.trim().slice(0, 50), content: content.trim().slice(0, 200) });
       }
@@ -213,5 +247,23 @@ export class SampleTest1Component extends CommonExternalComponent {
     this.newTitle = '';
     this.newContent = '';
     this.multiNotesInput = '';
+  }
+
+  // Download notes as .txt using parent function
+  downloadNotes(): void {
+    this.componentDataDownloader({ notes: this.notes });
+  }
+
+  // Upload notes from .txt using parent function, update view on upload
+  async uploadNotes(event: Event): Promise<void> {
+    const data: any = await this.componentDataUploader(event);
+    if (data && data.notes && Array.isArray(data.notes)) {
+      this.notes = data.notes.map((n: any) => ({
+        title: typeof n.title === 'string' ? n.title.slice(0, 50) : '',
+        content: typeof n.content === 'string' ? n.content.slice(0, 200) : ''
+      }));
+      this.saveNotes();
+      this.cdr.detectChanges(); // Ensure UI updates after upload
+    }
   }
 }
