@@ -292,7 +292,29 @@
     "metaTags": [],
     "linkTags": [],
     "ifPageNotFound": "login",
-    "interceptorConfigurations": [],
+    "interceptorConfigurations": [{
+        "statusCode": "401",
+        "pageUrl": "/login",
+        "clearSharedData": [
+          "authenticated",
+          "name",
+          "history",
+          "loggedIn"
+        ],
+        "clearCookies": ["accessToken"]
+      },
+      {
+        "statusCode": "400",
+        "pageUrl": "/login",
+        "clearSharedData": [
+          "authenticated",
+          "name",
+          "history",
+          "loggedIn"
+        ],
+        "clearCookies": ["accessToken"]
+      }
+    ],
     "apiConfigurations": [],
     "layoutProperties": {
       "labelPlacement": "top",
@@ -345,14 +367,14 @@
     },
     "authGuardConfig": {
       "conditions": [
-        {
+       {
           "cookieName": "accessToken",
           "if": "accessToken == undefined",
           "onConditionSuccess": "login",
           "type": "cookie"
         }
       ],
-      "enabled": true
+      "enabled": false
     },
     "globalPageSettings": {
       "title": "develop-app-using-ai",

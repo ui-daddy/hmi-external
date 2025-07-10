@@ -38,6 +38,7 @@ import { RouterModule } from "@angular/router";
 
 export const STACKBLITZ_MAIN_TS = `
     import './polyfills';
+    import 'bootstrap';
     import { enableProdMode } from '@angular/core';
     import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     
@@ -189,6 +190,9 @@ export const STACKBLITZ_DEPENDENCIES = {
     "rxjs": "7.8.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.14.10",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.2.3"
+    
 };
 
 export const STACKBLITZ_COMMON_EXTERNAL_TS = `
@@ -238,5 +242,58 @@ export class CommonExternalComponent implements AfterViewInit {
       this.initializeEvents.emit();
     }
   }
+
+  componentDataDownloader(data:any){
+    const txtData = JSON.stringify(data, null, 2);
+    const blob = new Blob([txtData], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'output.txt';
+    link.click();
+
+    URL.revokeObjectURL(url); // Clean up
+  }
+
+  componentDataUploader(event: Event): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const input = event.target as HTMLInputElement;
+      if (!input.files?.length) {
+        reject('No file selected.');
+        return;
+      }
+
+      const file = input.files[0];
+
+      if (file.type === 'text/plain') {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+          try {
+            const text = reader.result as string;
+            const jsonData = JSON.parse(text);
+            resolve(jsonData);
+          } catch (err) {
+            console.error('Invalid JSON in file:', err);
+            reject('The file does not contain valid JSON.');
+          }
+        };
+
+        reader.onerror = () => {
+          reject('Error reading the file.');
+        };
+
+        reader.readAsText(file);
+      } else {
+        reject('Please upload a .txt file.');
+      }
+    });
+  }
+    
 }
+`;
+
+export const STACKBLITZ_STYLES_CSS = `
+    @import "~bootstrap/dist/css/bootstrap.min.css";
 `;

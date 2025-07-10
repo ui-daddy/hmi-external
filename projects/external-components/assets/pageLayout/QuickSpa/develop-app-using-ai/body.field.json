@@ -67,6 +67,12 @@
                   "staticData": "$USER_QUERY$",
                   "cache": false,
                   "responseAccessor": ""
+                },
+                {
+                  "varName": "chatId",
+                  "staticData": "$CHAT_ID$",
+                  "cache": false,
+                  "responseAccessor": ""
                 }
               ],
               "apiConfig": null
@@ -74,7 +80,7 @@
             {
               "actionType": "INVOKE_API",
               "url": "",
-              "condition": "1==1",
+              "condition": "$SHARED_DATA.loggedIn == true",
               "fileName": "",
               "field": "",
               "fieldValue": "",
@@ -166,7 +172,92 @@
                   ]
                 },
                 "onError": {
+                  "sharedData": [],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "message",
+                  "message": "",
+                  "showErrorMessage": true,
+                  "actions": []
+                }
+              }
+            },
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "$SHARED_DATA.loggedIn == undefined",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "Chat API",
+                "url": "/rest/chat",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [
+                  {
+                    "paramName": "query",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(userQuery)"
+                  },
+                  {
+                    "paramName": "chatId",
+                    "mappedField": "",
+                    "mappedValue": "",
+                    "valueFormat": "$SHARED_DATA(chatId)"
+                  }
+                ],
+                "payloadParams": [],
+                "fetch": "",
+                "downloadFileName": "",
+                "responseType": "",
+                "beforeSubmit": {
+                  "action": []
+                },
+                "onSuccess": {
                   "pageUrl": "",
+                  "deleteTableRow": false,
+                  "showSuccessMessage": false,
+                  "sharedData": [
+                    {
+                      "varName": "chatId",
+                      "responseAccessor": "id"
+                    }
+                  ],
+                  "fieldData": [],
+                  "clearSharedData": [],
+                  "apiDataAccessor": "",
+                  "message": "",
+                  "actions": [
+                    {
+                      "actionType": "setfield",
+                      "url": "",
+                      "condition": "true",
+                      "fileName": "",
+                      "field": "db-2",
+                      "fieldValue": "",
+                      "fieldAccessor": "",
+                      "messagetype": "",
+                      "messageText": "",
+                      "target": "",
+                      "timer": null,
+                      "formName": "",
+                      "componentName": "",
+                      "sharedData": [],
+                      "apiConfig": null
+                    }
+                  ]
+                },
+                "onError": {
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],
@@ -268,7 +359,6 @@
                   "actions": []
                 },
                 "onError": {
-                  "pageUrl": "",
                   "sharedData": [],
                   "fieldData": [],
                   "clearSharedData": [],

@@ -1,13 +1,17 @@
-<div class="full-height" [ngStyle]="{'display': onLoad ? 'none' : 'block'}"><div #editorContainer class="editor-container" style="border: none"></div></div>
-<div class="loader full-height" [ngStyle]="{'display': onLoad ? 'flex' : 'none'}">
+<div *ngIf="!onIOS" class="full-height" [ngStyle]="{'display': onLoad ? 'none' : 'block'}">
+    <div #editorContainer class="editor-container" style="border: none"></div>
+</div>
+<div class="loader full-height" *ngIf="!onIOS" [ngStyle]="{'display': onLoad ? 'flex' : 'none'}">
     <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
 </div>
-<div class="button-actions">
-    <button pButton type="button" [disabled]="isBuildAppDisabled" class="p-button p-button-sm theme" (click)="saveCode()" tooltipPosition="top" pTooltip="Save/update code to the GitHub repository">
+<div class="button-actions"  [ngClass]="{'ios-button': onIOS}">
+    <button *ngIf="onIOS" pButton type="button" class="p-button p-button-sm p-button-outlined" (click)="openInNewTab()"
+            tooltipPosition="top" pTooltip="Open the preview in a new tab">Preview App</button>
+    <button pButton type="button" [ngClass]="{ 'p-button-outlined': onIOS, 'theme': !onIOS }" [disabled]="isBuildAppDisabled || guestUser" class="p-button p-button-sm" (click)="saveCode()" tooltipPosition="top" pTooltip="Save/update code to the GitHub repository">
         <span *ngIf="isBuildAppDisabled" class="spinner-border spinner-border-sm" role="status"></span>
         Build App
     </button>
-    <button  *ngIf="false && (buildStatus === 'COMPLETED' || buildStatus === 'FAILED')" pButton type="button" class="p-button p-button-sm theme" (click)="loadLog()">Logs</button>
+    <button [ngClass]="{ 'p-button-outlined': onIOS, 'theme': !onIOS }" *ngIf="override === 'true' && (buildStatus === 'COMPLETED' || buildStatus === 'FAILED')" pButton type="button" class="p-button p-button-sm theme" (click)="loadLog()">Logs</button>
     <!-- <button pButton type="button" class="p-button p-button-sm theme p-button-secondary" (click)="cancel()">Cancel</button> -->
 </div>
 <p-dialog header="Build Log" [(visible)]="showModal" [modal]="true" [style]="{width: '70vw'}">

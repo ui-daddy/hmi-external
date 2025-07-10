@@ -38,12 +38,11 @@
             "baseProperties": {
                 "id": "githubLoginLink",
                 "name": "githubLoginLink",
-                "type": "link",
+                "type": "button",
                 "formName": "",
                 "label": "Log in with GitHub"
             },
             "accessor": "",
-            "href": "https://github.com/login/oauth/authorize?client_id=Ov23li3tP1aGdg9ujOjv&scope=repo&state=aRandomUnguessableString&allow_signup=true&redirect_uri=http://mini.dev.nuvoroai.com/rest/login/oauth",
             "layoutProperties": {
                 "css": {
                     "customClassName": "github__login-link",
@@ -55,7 +54,50 @@
                         }
                     }
                 }
-            }
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                        "actionType": "SET_SHARED_DATA",
+                        "url": "",
+                        "condition": "1==1",
+                        "fileName": "",
+                        "field": "",
+                        "fieldValue": "",
+                        "fieldAccessor": "",
+                        "messagetype": "",
+                        "messageText": "",
+                        "target": "",
+                        "timer": null,
+                        "formName": "",
+                        "componentName": "",
+                        "sharedData": [
+                            {
+                            "varName": "loggedIn",
+                            "staticData": "true",
+                            "cache": true,
+                            "responseAccessor": ""
+                            },
+                            {
+                            "varName": "history",
+                            "staticData": "",
+                            "cache": true,
+                            "responseAccessor": ""
+                            }
+                        ],
+                        "apiConfig": null
+                        },
+                        {
+                            "actionType": "openurl",
+                            "condition":"1==1",
+                            "target": "_self",
+                            "url": "https://github.com/login/oauth/authorize?client_id=5260dbf9a0fefd183580&scope=repo&state=aRandomUnguessableString&allow_signup=true&redirect_uri=https://mini.nuvoroai.com/rest/login/oauth"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

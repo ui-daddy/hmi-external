@@ -71,10 +71,9 @@
                   ]
                 },
                 "onError": {
-                  "pageUrl": "",
+                  "clearSharedData": [],
                   "sharedData": [],
                   "fieldData": [],
-                  "clearSharedData": [],
                   "apiDataAccessor": "",
                   "message": "",
                   "showErrorMessage": false,
@@ -180,6 +179,9 @@
           "params": {},
           "onSuccess": {
             "apiDataAccessor": "projects"
+          },
+          "onError": {
+            "clearSharedData": []     
           }
         },
         "buttons": [
