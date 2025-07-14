@@ -75,13 +75,14 @@ export const STACKBLITZ_APP_MODULE_TS = `
     import { HMIPreviewAppComponent } from './hmi-preview-app.component';
     import { ${STACKBLITZ_COMPONENT_CLASS_NAME} } from './${STACKBLITZ_COMPONENT_SELECTOR}/${STACKBLITZ_COMPONENT_SELECTOR}.component';
     ${STACKBLITZ_IMPORT_STATEMENT}
+    import { provideHttpClient } from '@angular/common/http';
 
     @NgModule({
     declarations: [
         HMIPreviewAppComponent, ${STACKBLITZ_COMPONENT_CLASS_NAME}
     ],
     imports: ${STACKBLITZ_IMPORT_MODULES},
-    providers: [],
+    providers: [provideHttpClient()],
     bootstrap: [HMIPreviewAppComponent]
     })
     export class AppModule { }`;
