@@ -1,3 +1,4 @@
+import { RemindersComponent } from './components/Reminders-external/Reminders-external.component';
 import { NgModule } from '@angular/core';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
@@ -20,8 +21,7 @@ import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
 
 @NgModule({
-    declarations: [
-        PasswordExternalComponent,
+    declarations: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -31,11 +31,9 @@ import CustomPreset from './custom-theme';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent
-    ],
+        StackblitzEditorComponent, RemindersComponent],
     imports: IMPORT_MODULES,
-    exports: [
-        PasswordExternalComponent,
+    exports: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -43,8 +41,7 @@ import CustomPreset from './custom-theme';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent
-    ],
+        GenerateWithAiComponent, RemindersComponent],
     providers: [
         DialogService,
         providePrimeNG({ 
