@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   - Reminders are saved to local storage for persistence across sessions.
   - Download/upload all reminders as .txt file for backup/restore.
   - Clean, modern UI using Bootstrap 5 and PrimeIcons v7.
-  - REST API call on save now uses https://mini.nuvoroai.com/rest/reminders.
+  - REST API call on save uses https://mini.nuvoroai.com/rest/reminders with credentials (cookies/session).
 */
 
 interface Reminder {
@@ -135,20 +135,23 @@ export class RemindersComponent extends CommonExternalComponent {
       redirectUrl: this.newReminder.redirectUrl || ''
     };
 
-    this.http.post<{message: string}>('https://mini.nuvoroai.com/rest/reminders', reminderToSave)
-      .subscribe({
-        next: () => {
-          this.reminders.unshift(reminderToSave);
-          this.saveReminders();
-          this.newReminder = this.getEmptyReminder();
-          this.isSaving = false;
-          this.cdr.detectChanges();
-        },
-        error: () => {
-          this.isSaving = false;
-          alert('Failed to save reminder. Please try again.');
-        }
-      });
+    this.http.post<{message: string}>(
+      'https://mini.nuvoroai.com/rest/reminders',
+      reminderToSave,
+      { withCredentials: true }
+    ).subscribe({
+      next: () => {
+        this.reminders.unshift(reminderToSave);
+        this.saveReminders();
+        this.newReminder = this.getEmptyReminder();
+        this.isSaving = false;
+        this.cdr.detectChanges();
+      },
+      error: () => {
+        this.isSaving = false;
+        alert('Failed to save reminder. Please try again.');
+      }
+    });
   }
 
   downloadReminders(): void {
