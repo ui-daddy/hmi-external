@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 
 /*
   Features:
-  - Add new reminders with title, message, date & time.
-  - Reminders are saved to local storage for persistence.
-  - Download/upload all reminders as .txt file.
-  - Simple, clear UI with Bootstrap 5 and PrimeIcons.
-  - REST API call on save to /rest/reminders.
+  - Add, view, and save new reminders with title, message, date & time, and redirect URL.
+  - Reminders are saved to local storage for persistence across sessions.
+  - Download/upload all reminders as .txt file for backup/restore.
+  - Clean, modern UI using Bootstrap 5 and PrimeIcons v7.
+  - REST API call on save now uses https://mini.nuvoroai.com/rest/reminders.
 */
 
 interface Reminder {
@@ -97,7 +97,7 @@ export class RemindersComponent extends CommonExternalComponent {
   newReminder: Reminder = this.getEmptyReminder();
   isSaving: boolean = false;
 
-  private readonly STORAGE_KEY = 'remindersAppData';
+  private readonly STORAGE_KEY: string = 'remindersAppData';
 
   constructor(
     private http: HttpClient,
@@ -117,8 +117,8 @@ export class RemindersComponent extends CommonExternalComponent {
   }
 
   loadReminders(): void {
-    const data = localStorage.getItem(this.STORAGE_KEY);
-    this.reminders = data ? JSON.parse(data) : [];
+    const data: string | null = localStorage.getItem(this.STORAGE_KEY);
+    this.reminders = data ? JSON.parse(data) as Reminder[] : [];
   }
 
   saveReminders(): void {
@@ -129,14 +129,13 @@ export class RemindersComponent extends CommonExternalComponent {
     if (!this.newReminder.title || !this.newReminder.message || !this.newReminder.scheduledDate) return;
     this.isSaving = true;
 
-    // Prepare data for REST API
     const reminderToSave: Reminder = {
       ...this.newReminder,
       scheduledDate: new Date(this.newReminder.scheduledDate).toISOString(),
       redirectUrl: this.newReminder.redirectUrl || ''
     };
 
-    this.http.post<{message: string}>('/rest/reminders', reminderToSave)
+    this.http.post<{message: string}>('https://mini.nuvoroai.com/rest/reminders', reminderToSave)
       .subscribe({
         next: () => {
           this.reminders.unshift(reminderToSave);
@@ -158,9 +157,9 @@ export class RemindersComponent extends CommonExternalComponent {
 
   async uploadReminders(event: Event): Promise<void> {
     try {
-      const uploaded = await this.componentDataUploader(event);
+      const uploaded: any = await this.componentDataUploader(event);
       if (uploaded && uploaded.reminders && Array.isArray(uploaded.reminders)) {
-        this.reminders = uploaded.reminders;
+        this.reminders = uploaded.reminders as Reminder[];
         this.saveReminders();
         this.cdr.detectChanges();
       }
