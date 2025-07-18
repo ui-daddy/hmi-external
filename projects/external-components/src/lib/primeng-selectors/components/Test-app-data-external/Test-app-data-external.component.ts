@@ -15,17 +15,41 @@ interface TodoItem {
   template: `
     <!-- 
       Features:
-      - Add, list, remove daily todo tasks with due dates.
+      - Add, edit, list, remove daily todo tasks with due dates.
       - Mark tasks as complete/incomplete.
+      - Edit task or due date inline with save/cancel actions.
       - Data auto-saved in browser local storage.
+      - Backup & restore: Download/upload all saved data (.txt).
       - Reminder notification one day before due date, including on every app open.
       - Responsive Bootstrap 5 UI.
       - Strict type checking throughout.
       - Delete uses a visible trash icon (PrimeIcons).
+      - Edit uses a pencil icon (PrimeIcons).
+      - Backup uses cloud-download and cloud-upload icons (PrimeIcons).
     -->
     <div class="card shadow mt-4">
       <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
         <span>Todo App - Daily Tasks with Due Dates</span>
+        <div>
+          <button 
+            class="btn btn-outline-light btn-sm me-2" 
+            (click)="downloadBackup()" 
+            aria-label="Download backup"
+            title="Download backup"
+          >
+            <i class="pi pi-cloud-download"></i>
+          </button>
+          <label class="btn btn-outline-light btn-sm mb-0" title="Upload backup">
+            <i class="pi pi-cloud-upload"></i>
+            <input 
+              type="file" 
+              accept=".txt"
+              class="d-none"
+              (change)="uploadBackup($event)"
+              aria-label="Upload backup"
+            >
+          </label>
+        </div>
       </div>
       <div class="card-body">
         <form class="row g-2 mb-3" (ngSubmit)="addTask()">
@@ -58,25 +82,64 @@ interface TodoItem {
         </form>
         <ul class="list-group">
           <li *ngFor="let item of todos" class="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <input 
-                class="form-check-input me-2" 
-                type="checkbox" 
-                [checked]="item.completed" 
-                (change)="toggleComplete(item.id)"
-                [attr.aria-label]="'Mark ' + item.task + ' as complete'"
-              >
-              <span [class.text-decoration-line-through]="item.completed">{{ item.task }}</span>
-              <span class="badge bg-secondary ms-2">
-                Due: {{ item.dueDate | date:'mediumDate' }}
-              </span>
-              <span *ngIf="showReminderBadge(item)" class="badge bg-warning text-dark ms-2">
-                Reminder!
-              </span>
+            <div class="flex-grow-1">
+              <ng-container *ngIf="editId !== item.id; else editBlock">
+                <input 
+                  class="form-check-input me-2" 
+                  type="checkbox" 
+                  [checked]="item.completed" 
+                  (change)="toggleComplete(item.id)"
+                  [attr.aria-label]="'Mark ' + item.task + ' as complete'"
+                >
+                <span [class.text-decoration-line-through]="item.completed">{{ item.task }}</span>
+                <span class="badge bg-secondary ms-2">
+                  Due: {{ item.dueDate | date:'mediumDate' }}
+                </span>
+                <span *ngIf="showReminderBadge(item)" class="badge bg-warning text-dark ms-2">
+                  Reminder!
+                </span>
+              </ng-container>
+              <ng-template #editBlock>
+                <input 
+                  type="text" 
+                  class="form-control d-inline-block w-auto me-2"
+                  [(ngModel)]="editTask"
+                  maxlength="100"
+                  required
+                  [ngModelOptions]="{standalone: true}"
+                  style="max-width:180px;"
+                  aria-label="Edit task"
+                >
+                <input 
+                  type="date" 
+                  class="form-control d-inline-block w-auto me-2"
+                  [(ngModel)]="editDueDate"
+                  [min]="today"
+                  required
+                  [ngModelOptions]="{standalone: true}"
+                  style="max-width:140px;"
+                  aria-label="Edit due date"
+                >
+              </ng-template>
             </div>
-            <button class="btn btn-danger btn-sm" (click)="removeTask(item.id)" aria-label="Delete task">
-              <i class="pi pi-trash fs-5"></i>
-            </button>
+            <div class="d-flex align-items-center ms-2">
+              <ng-container *ngIf="editId !== item.id; else editActions">
+                <button class="btn btn-outline-secondary btn-sm me-1" (click)="startEdit(item)" aria-label="Edit task">
+                  <i class="pi pi-pencil"></i>
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="removeTask(item.id)" aria-label="Delete task">
+                  <i class="pi pi-trash fs-5"></i>
+                </button>
+              </ng-container>
+              <ng-template #editActions>
+                <button class="btn btn-success btn-sm me-1" (click)="saveEdit(item.id)" aria-label="Save">
+                  <i class="pi pi-check"></i>
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" (click)="cancelEdit()" aria-label="Cancel">
+                  <i class="pi pi-times"></i>
+                </button>
+              </ng-template>
+            </div>
           </li>
         </ul>
         <div *ngIf="todos.length === 0" class="alert alert-info mt-3 mb-0">
@@ -104,6 +167,11 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   public newDueDate: string = '';
   public today: string = '';
 
+  // For editing
+  public editId: number | null = null;
+  public editTask: string = '';
+  public editDueDate: string = '';
+
   constructor(private cdr: ChangeDetectorRef) {
     super();
     this.today = this.getTodayString();
@@ -112,9 +180,8 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
 
   ngOnInit(): void {
     this.requestNotificationPermission();
-    // Show reminders immediately when app is opened
     setTimeout(() => this.checkAndNotifyReminders(), 500);
-    setInterval(() => this.checkAndNotifyReminders(), 60 * 60 * 1000); // check every hour
+    setInterval(() => this.checkAndNotifyReminders(), 60 * 60 * 1000);
   }
 
   addTask(): void {
@@ -134,6 +201,9 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     this.todos = this.todos.filter((t: TodoItem) => t.id !== id);
     this.saveToLocalStorage();
     this.cdr.detectChanges();
+    if (this.editId === id) {
+      this.cancelEdit();
+    }
   }
 
   toggleComplete(id: number): void {
@@ -143,6 +213,37 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
       this.saveToLocalStorage();
       this.cdr.detectChanges();
     }
+  }
+
+  // Edit functions
+  startEdit(item: TodoItem): void {
+    this.editId = item.id;
+    this.editTask = item.task;
+    this.editDueDate = item.dueDate;
+    this.cdr.detectChanges();
+  }
+
+  saveEdit(id: number): void {
+    const trimmed: string = this.editTask.trim();
+    if (!trimmed || !this.editDueDate) return;
+    const idx: number = this.todos.findIndex((t: TodoItem) => t.id === id);
+    if (idx > -1) {
+      this.todos[idx].task = trimmed;
+      this.todos[idx].dueDate = this.editDueDate;
+      this.saveToLocalStorage();
+      this.editId = null;
+      this.editTask = '';
+      this.editDueDate = '';
+      this.cdr.detectChanges();
+      this.checkAndNotifyReminders();
+    }
+  }
+
+  cancelEdit(): void {
+    this.editId = null;
+    this.editTask = '';
+    this.editDueDate = '';
+    this.cdr.detectChanges();
   }
 
   saveToLocalStorage(): void {
@@ -194,7 +295,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
       if (item.completed) continue;
       const due: Date = new Date(item.dueDate);
       const diff: number = due.getTime() - now.getTime();
-      // Notify only if due within 24h and not overdue, and not already notified today
       if (diff > 0 && diff <= 24 * 60 * 60 * 1000) {
         const notifKey: string = `todo-reminder-notified-${item.id}-${now.toISOString().split('T')[0]}`;
         if (!window.localStorage.getItem(notifKey)) {
@@ -206,5 +306,36 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
         }
       }
     }
+  }
+
+  // Backup/restore
+  downloadBackup(): void {
+    // Passes the todos object to the downloader function from CommonExternalComponent
+    this.componentDataDownloader(this.todos);
+  }
+
+  async uploadBackup(event: Event): Promise<void> {
+    await this.componentDataUploader(event).then((data: any) => {
+      if (Array.isArray(data)) {
+        // Validate structure
+        const valid: boolean = data.every((t: any) =>
+          typeof t.id === 'number' &&
+          typeof t.task === 'string' &&
+          typeof t.completed === 'boolean' &&
+          typeof t.dueDate === 'string'
+        );
+        if (valid) {
+          this.todos = data.map((t: any) => ({
+            id: Number(t.id),
+            task: String(t.task),
+            completed: Boolean(t.completed),
+            dueDate: String(t.dueDate)
+          }));
+          this.saveToLocalStorage();
+          this.cdr.detectChanges();
+          this.checkAndNotifyReminders();
+        }
+      }
+    });
   }
 }
