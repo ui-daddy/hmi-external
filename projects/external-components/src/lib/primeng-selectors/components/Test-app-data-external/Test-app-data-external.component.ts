@@ -17,32 +17,15 @@ interface TodoItem {
       Features:
       - Add, list, remove daily todo tasks with due dates.
       - Mark tasks as complete/incomplete.
-      - Download/upload all app data (.txt file).
-      - Download is triggered by clicking only a Bootstrap download icon.
       - Data auto-saved in browser local storage.
       - Reminder notification one day before due date, including on every app open.
       - Responsive Bootstrap 5 UI.
       - Strict type checking throughout.
+      - Delete uses a visible trash icon (PrimeIcons).
     -->
     <div class="card shadow mt-4">
       <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
         <span>Todo App - Daily Tasks with Due Dates</span>
-        <div>
-          <i 
-            class="bi bi-download fs-4 me-3 text-success cursor-pointer"
-            role="button"
-            tabindex="0"
-            aria-label="Download data"
-            (click)="downloadData()"
-            (keydown.enter)="downloadData()"
-            (keydown.space)="downloadData()"
-            style="vertical-align: middle;"
-          ></i>
-          <label class="btn btn-light btn-sm mb-0">
-            <i class="bi bi-upload"></i> Upload
-            <input type="file" accept=".txt" hidden (change)="uploadData($event)">
-          </label>
-        </div>
       </div>
       <div class="card-body">
         <form class="row g-2 mb-3" (ngSubmit)="addTask()">
@@ -91,8 +74,8 @@ interface TodoItem {
                 Reminder!
               </span>
             </div>
-            <button class="btn btn-danger btn-sm" (click)="removeTask(item.id)">
-              <i class="bi bi-trash"></i>
+            <button class="btn btn-danger btn-sm" (click)="removeTask(item.id)" aria-label="Delete task">
+              <i class="pi pi-trash fs-5"></i>
             </button>
           </li>
         </ul>
@@ -159,30 +142,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
       this.todos[idx].completed = !this.todos[idx].completed;
       this.saveToLocalStorage();
       this.cdr.detectChanges();
-    }
-  }
-
-  downloadData(): void {
-    const data: { todos: TodoItem[] } = { todos: this.todos };
-    this.componentDataDownloader(data);
-  }
-
-  async uploadData(event: Event): Promise<void> {
-    try {
-      const uploaded: any = await this.componentDataUploader(event);
-      if (uploaded && uploaded.todos && Array.isArray(uploaded.todos)) {
-        this.todos = uploaded.todos.map((t: any) => ({
-          id: Number(t.id),
-          task: String(t.task),
-          completed: Boolean(t.completed),
-          dueDate: String(t.dueDate)
-        }));
-        this.saveToLocalStorage();
-        this.cdr.detectChanges();
-        this.checkAndNotifyReminders();
-      }
-    } catch (err) {
-      // Optionally handle error
     }
   }
 
