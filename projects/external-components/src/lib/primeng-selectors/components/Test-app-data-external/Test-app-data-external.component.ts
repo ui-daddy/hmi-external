@@ -13,7 +13,7 @@ interface TodoItem {
   id: number;
   task: string;
   completed: boolean;
-  dueDateTime: string; // ISO string with timezone (YYYY-MM-DDTHH:mm:ss.sssZ)
+  dueDateTime: string;
   timezone: string;
   subtasks: SubTask[];
 }
@@ -32,7 +32,8 @@ interface TodoItem {
       - Reminder notification:
         - One day before due date/time.
         - Popup alert with modern UI when less than 1 minute remains.
-      - Responsive Bootstrap 5 UI.
+      - Mobile-first Bootstrap 5 UI, simplified layout for small screens.
+      - Filters/search in an accordion for mobile usability.
       - Strict type checking throughout.
       - Delete uses a visible trash icon (PrimeIcons).
       - Edit uses a pencil icon (PrimeIcons).
@@ -40,326 +41,196 @@ interface TodoItem {
       - Timezone selection per task.
       - Search/filter by text, date, time, and timezone.
     -->
-    <div class="card shadow mt-4">
-      <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
-        <span>Todo App - Daily Tasks with Due Date, Time & Timezone</span>
-        <div>
-          <button 
-            class="btn btn-outline-light btn-sm me-2" 
-            (click)="downloadBackup()" 
-            aria-label="Download backup"
-            title="Download backup"
-          >
+    <div class="card shadow-sm mt-3 mobile-max-w">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center px-2 py-2">
+        <span class="fw-semibold fs-6">Todo</span>
+        <div class="d-flex gap-1">
+          <button class="btn btn-outline-light btn-sm p-1" (click)="downloadBackup()" aria-label="Download backup" title="Download backup">
             <i class="pi pi-cloud-download"></i>
           </button>
-          <label class="btn btn-outline-light btn-sm mb-0" title="Upload backup">
+          <label class="btn btn-outline-light btn-sm mb-0 p-1" title="Upload backup">
             <i class="pi pi-cloud-upload"></i>
-            <input 
-              type="file" 
-              accept=".txt"
-              class="d-none"
-              (change)="uploadBackup($event)"
-              aria-label="Upload backup"
-            >
+            <input type="file" accept=".txt" class="d-none" (change)="uploadBackup($event)" aria-label="Upload backup">
           </label>
         </div>
       </div>
-      <div class="card-body">
-        <!-- Search & Filter Section -->
-        <form class="row g-2 mb-3 align-items-end" (ngSubmit)="$event.preventDefault()">
-          <div class="col-md-3 col-12">
-            <input 
-              type="text" 
-              class="form-control" 
-              placeholder="Search tasks..." 
-              [(ngModel)]="searchText"
-              name="searchText"
-              maxlength="100"
-              [ngModelOptions]="{standalone: true}"
-              aria-label="Search tasks"
-            >
+      <div class="card-body p-2">
+
+        <!-- Filter/Search Accordion -->
+        <div class="accordion mb-2" id="filterAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFilter">
+              <button class="accordion-button collapsed py-2 px-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFilter"
+                aria-expanded="false" aria-controls="collapseFilter">
+                <i class="pi pi-filter me-2"></i>Filters &amp; Search
+              </button>
+            </h2>
+            <div id="collapseFilter" class="accordion-collapse collapse" aria-labelledby="headingFilter" data-bs-parent="#filterAccordion">
+              <div class="accordion-body py-2 px-2">
+                <form class="row g-1" (ngSubmit)="$event.preventDefault()">
+                  <div class="col-12">
+                    <input type="text" class="form-control form-control-sm" placeholder="Search..." [(ngModel)]="searchText" name="searchText" maxlength="100" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="col-6">
+                    <input type="date" class="form-control form-control-sm" [(ngModel)]="filterDate" name="filterDate" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="col-6">
+                    <input type="time" class="form-control form-control-sm" [(ngModel)]="filterTime" name="filterTime" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="col-8">
+                    <select class="form-select form-select-sm" [(ngModel)]="filterTimezone" name="filterTimezone" [ngModelOptions]="{standalone: true}">
+                      <option value="">All Timezones</option>
+                      <option *ngFor="let tz of timezones" [value]="tz">{{tz}}</option>
+                    </select>
+                  </div>
+                  <div class="col-4 d-grid">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" (click)="clearFilters()" title="Clear filters">
+                      <i class="pi pi-filter-slash"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="col-md-2 col-6">
-            <input 
-              type="date"
-              class="form-control"
-              [(ngModel)]="filterDate"
-              name="filterDate"
-              [ngModelOptions]="{standalone: true}"
-              aria-label="Filter by date"
-            >
+        </div>
+
+        <!-- Add Task Compact -->
+        <form class="row g-1 mb-2" (ngSubmit)="addTask()">
+          <div class="col-12">
+            <input type="text" class="form-control form-control-sm" placeholder="New task..." [(ngModel)]="newTask" name="task" required maxlength="100" [ngModelOptions]="{standalone: true}">
           </div>
-          <div class="col-md-2 col-6">
-            <input 
-              type="time"
-              class="form-control"
-              [(ngModel)]="filterTime"
-              name="filterTime"
-              [ngModelOptions]="{standalone: true}"
-              aria-label="Filter by time"
-            >
+          <div class="col-6">
+            <input type="date" class="form-control form-control-sm" [(ngModel)]="newDueDate" name="dueDate" required min="{{today}}" [ngModelOptions]="{standalone: true}">
           </div>
-          <div class="col-md-2 col-8">
-            <select 
-              class="form-select"
-              [(ngModel)]="filterTimezone"
-              name="filterTimezone"
-              [ngModelOptions]="{standalone: true}"
-              aria-label="Filter by timezone"
-            >
-              <option value="">All Timezones</option>
+          <div class="col-6">
+            <input type="time" class="form-control form-control-sm" [(ngModel)]="newDueTime" name="dueTime" required [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="col-8">
+            <select class="form-select form-select-sm" [(ngModel)]="newTimezone" name="timezone" required [ngModelOptions]="{standalone: true}">
               <option *ngFor="let tz of timezones" [value]="tz">{{tz}}</option>
             </select>
           </div>
-          <div class="col-md-1 col-4 d-grid">
-            <button type="button" class="btn btn-outline-secondary" (click)="clearFilters()" title="Clear filters">
-              <i class="pi pi-filter-slash"></i>
-            </button>
+          <div class="col-4 d-grid">
+            <button type="submit" class="btn btn-success btn-sm w-100">Add</button>
           </div>
         </form>
-        <!-- Add Task Form -->
-        <form class="row g-2 mb-3" (ngSubmit)="addTask()">
-          <div class="col-md-4 col-12">
-            <input 
-              type="text" 
-              class="form-control" 
-              placeholder="Enter new task..." 
-              [(ngModel)]="newTask"
-              name="task"
-              required
-              maxlength="100"
-              [ngModelOptions]="{standalone: true}"
-            >
-          </div>
-          <div class="col-md-2 col-6">
-            <input 
-              type="date" 
-              class="form-control" 
-              [(ngModel)]="newDueDate"
-              name="dueDate"
-              required
-              min="{{today}}"
-              [ngModelOptions]="{standalone: true}"
-            >
-          </div>
-          <div class="col-md-2 col-6">
-            <input 
-              type="time" 
-              class="form-control" 
-              [(ngModel)]="newDueTime"
-              name="dueTime"
-              required
-              [ngModelOptions]="{standalone: true}"
-            >
-          </div>
-          <div class="col-md-2 col-8">
-            <select 
-              class="form-select"
-              [(ngModel)]="newTimezone"
-              name="timezone"
-              required
-              [ngModelOptions]="{standalone: true}"
-            >
-              <option *ngFor="let tz of timezones" [value]="tz">{{tz}}</option>
-            </select>
-          </div>
-          <div class="col-md-2 col-4 d-grid">
-            <button type="submit" class="btn btn-success">Add Task</button>
-          </div>
-        </form>
-        <!-- Tasks List -->
-        <ul class="list-group">
-          <li *ngFor="let item of filteredTodos()" class="list-group-item d-flex flex-column gap-2">
-            <div class="d-flex justify-content-between align-items-center w-100">
+        <!-- Tasks List (Mobile Card Style) -->
+        <ul class="list-group border-0">
+          <li *ngFor="let item of filteredTodos()" class="list-group-item px-1 py-2 border-0 border-bottom mobile-list-li">
+            <div class="d-flex align-items-center justify-content-between">
               <div class="flex-grow-1">
                 <ng-container *ngIf="editId !== item.id; else editBlock">
-                  <input 
-                    class="form-check-input me-2" 
-                    type="checkbox" 
-                    [checked]="item.completed" 
-                    (change)="toggleComplete(item.id)"
-                    [attr.aria-label]="'Mark ' + item.task + ' as complete'"
-                  >
-                  <span [class.text-decoration-line-through]="item.completed">{{ item.task }}</span>
-                  <span class="badge bg-secondary ms-2">
-                    Due: {{ displayLocalDateTime(item.dueDateTime, item.timezone) }}
-                  </span>
-                  <span class="badge bg-info text-dark ms-2">{{item.timezone}}</span>
-                  <span *ngIf="showReminderBadge(item)" class="badge bg-warning text-dark ms-2">
-                    Reminder!
-                  </span>
+                  <div class="d-flex align-items-center">
+                    <input class="form-check-input me-2" type="checkbox" [checked]="item.completed" (change)="toggleComplete(item.id)">
+                    <span [class.text-decoration-line-through]="item.completed" class="fw-semibold small">{{ item.task }}</span>
+                  </div>
+                  <div class="small ms-4 mt-1">
+                    <span class="badge bg-secondary me-1 mb-1">
+                      {{ displayLocalDateTime(item.dueDateTime, item.timezone) }}
+                    </span>
+                    <span class="badge bg-info text-dark me-1 mb-1">{{item.timezone}}</span>
+                    <span *ngIf="showReminderBadge(item)" class="badge bg-warning text-dark mb-1">Reminder!</span>
+                  </div>
                 </ng-container>
                 <ng-template #editBlock>
-                  <input 
-                    type="text" 
-                    class="form-control d-inline-block w-auto me-2"
-                    [(ngModel)]="editTask"
-                    maxlength="100"
-                    required
-                    [ngModelOptions]="{standalone: true}"
-                    style="max-width:160px;"
-                    aria-label="Edit task"
-                  >
-                  <input 
-                    type="date" 
-                    class="form-control d-inline-block w-auto me-2"
-                    [(ngModel)]="editDueDate"
-                    [min]="today"
-                    required
-                    [ngModelOptions]="{standalone: true}"
-                    style="max-width:120px;"
-                    aria-label="Edit due date"
-                  >
-                  <input 
-                    type="time"
-                    class="form-control d-inline-block w-auto me-2"
-                    [(ngModel)]="editDueTime"
-                    required
-                    [ngModelOptions]="{standalone: true}"
-                    style="max-width:100px;"
-                    aria-label="Edit due time"
-                  >
-                  <select 
-                    class="form-select d-inline-block w-auto me-2"
-                    [(ngModel)]="editTimezone"
-                    required
-                    [ngModelOptions]="{standalone: true}"
-                    style="max-width:130px;"
-                  >
-                    <option *ngFor="let tz of timezones" [value]="tz">{{tz}}</option>
-                  </select>
+                  <div class="d-flex flex-wrap gap-1 align-items-center">
+                    <input type="text" class="form-control form-control-sm w-auto" [(ngModel)]="editTask" maxlength="100" required [ngModelOptions]="{standalone: true}" style="max-width:130px;">
+                    <input type="date" class="form-control form-control-sm w-auto" [(ngModel)]="editDueDate" [min]="today" required [ngModelOptions]="{standalone: true}" style="max-width:90px;">
+                    <input type="time" class="form-control form-control-sm w-auto" [(ngModel)]="editDueTime" required [ngModelOptions]="{standalone: true}" style="max-width:80px;">
+                    <select class="form-select form-select-sm w-auto" [(ngModel)]="editTimezone" required [ngModelOptions]="{standalone: true}" style="max-width:110px;">
+                      <option *ngFor="let tz of timezones" [value]="tz">{{tz}}</option>
+                    </select>
+                  </div>
                 </ng-template>
               </div>
-              <div class="d-flex align-items-center ms-2">
+              <div class="ms-2 d-flex flex-column gap-1 align-items-end">
                 <ng-container *ngIf="editId !== item.id; else editActions">
-                  <button class="btn btn-outline-secondary btn-sm me-1" (click)="startEdit(item)" aria-label="Edit task">
-                    <i class="pi pi-pencil"></i>
-                  </button>
-                  <button class="btn btn-danger btn-sm" (click)="removeTask(item.id)" aria-label="Delete task">
-                    <i class="pi pi-trash fs-5"></i>
-                  </button>
+                  <button class="btn btn-outline-secondary btn-xs btn-sm p-1" (click)="startEdit(item)" aria-label="Edit"><i class="pi pi-pencil"></i></button>
+                  <button class="btn btn-danger btn-xs btn-sm p-1" (click)="removeTask(item.id)" aria-label="Delete"><i class="pi pi-trash"></i></button>
                 </ng-container>
                 <ng-template #editActions>
-                  <button class="btn btn-success btn-sm me-1" (click)="saveEdit(item.id)" aria-label="Save">
-                    <i class="pi pi-check"></i>
-                  </button>
-                  <button class="btn btn-outline-secondary btn-sm" (click)="cancelEdit()" aria-label="Cancel">
-                    <i class="pi pi-times"></i>
-                  </button>
+                  <button class="btn btn-success btn-xs btn-sm p-1" (click)="saveEdit(item.id)" aria-label="Save"><i class="pi pi-check"></i></button>
+                  <button class="btn btn-outline-secondary btn-xs btn-sm p-1" (click)="cancelEdit()" aria-label="Cancel"><i class="pi pi-times"></i></button>
                 </ng-template>
               </div>
             </div>
-            <!-- Subtasks Section -->
-            <div class="ms-4 w-100">
-              <div class="d-flex align-items-center mb-2">
-                <strong class="me-2">Subtasks:</strong>
-                <input 
-                  type="text" 
-                  class="form-control form-control-sm me-2"
-                  placeholder="Add subtask..."
-                  [(ngModel)]="subtaskInputs[item.id]"
-                  [ngModelOptions]="{standalone: true}"
-                  maxlength="80"
-                  style="max-width:170px; display:inline-block;"
-                  (keyup.enter)="addSubtask(item.id)"
-                >
-                <button class="btn btn-sm btn-outline-primary" (click)="addSubtask(item.id)">
-                  <i class="pi pi-plus"></i>
-                </button>
+            <!-- Subtasks (Accordion style on mobile) -->
+            <div class="mt-1 ms-4">
+              <div class="d-flex align-items-center mb-1 gap-1">
+                <input type="text" class="form-control form-control-sm me-1" placeholder="Subtask..." [(ngModel)]="subtaskInputs[item.id]" [ngModelOptions]="{standalone: true}" maxlength="60" style="max-width:120px;" (keyup.enter)="addSubtask(item.id)">
+                <button class="btn btn-outline-primary btn-xs btn-sm p-1" (click)="addSubtask(item.id)"><i class="pi pi-plus"></i></button>
               </div>
               <ul class="list-group list-group-flush ps-2">
                 <li *ngFor="let st of item.subtasks" class="list-group-item py-1 px-0 d-flex align-items-center border-0">
-                  <input 
-                    class="form-check-input me-2" 
-                    type="checkbox" 
-                    [checked]="st.completed" 
-                    (change)="toggleSubtaskComplete(item.id, st.id)"
-                  >
-                  <span [class.text-decoration-line-through]="st.completed" class="flex-grow-1" *ngIf="!isEditingSubtask(item.id, st.id); else subEditBlock">
-                    {{st.title}}
-                  </span>
+                  <input class="form-check-input me-2" type="checkbox" [checked]="st.completed" (change)="toggleSubtaskComplete(item.id, st.id)">
+                  <span [class.text-decoration-line-through]="st.completed" class="flex-grow-1 small" *ngIf="!isEditingSubtask(item.id, st.id); else subEditBlock">{{st.title}}</span>
                   <ng-template #subEditBlock>
-                    <input 
-                      type="text"
-                      class="form-control form-control-sm d-inline-block w-auto me-2"
-                      [(ngModel)]="editingSubtaskTitle"
-                      maxlength="80"
-                      required
-                      [ngModelOptions]="{standalone: true}"
-                      style="max-width:140px;"
-                      aria-label="Edit subtask"
-                    >
+                    <input type="text" class="form-control form-control-sm d-inline-block w-auto me-2" [(ngModel)]="editingSubtaskTitle" maxlength="60" required [ngModelOptions]="{standalone: true}" style="max-width:90px;">
                   </ng-template>
                   <ng-container *ngIf="!isEditingSubtask(item.id, st.id); else subEditActions">
-                    <button class="btn btn-outline-secondary btn-xs btn-sm me-1" (click)="startEditSubtask(item.id, st)" aria-label="Edit subtask">
-                      <i class="pi pi-pencil"></i>
-                    </button>
-                    <button class="btn btn-danger btn-xs btn-sm" (click)="removeSubtask(item.id, st.id)" aria-label="Delete subtask">
-                      <i class="pi pi-trash"></i>
-                    </button>
+                    <button class="btn btn-outline-secondary btn-xs btn-sm me-1 p-1" (click)="startEditSubtask(item.id, st)" aria-label="Edit"><i class="pi pi-pencil"></i></button>
+                    <button class="btn btn-danger btn-xs btn-sm p-1" (click)="removeSubtask(item.id, st.id)" aria-label="Delete"><i class="pi pi-trash"></i></button>
                   </ng-container>
                   <ng-template #subEditActions>
-                    <button class="btn btn-success btn-xs btn-sm me-1" (click)="saveEditSubtask(item.id, st.id)" aria-label="Save subtask">
-                      <i class="pi pi-check"></i>
-                    </button>
-                    <button class="btn btn-outline-secondary btn-xs btn-sm" (click)="cancelEditSubtask()" aria-label="Cancel subtask edit">
-                      <i class="pi pi-times"></i>
-                    </button>
+                    <button class="btn btn-success btn-xs btn-sm me-1 p-1" (click)="saveEditSubtask(item.id, st.id)" aria-label="Save"><i class="pi pi-check"></i></button>
+                    <button class="btn btn-outline-secondary btn-xs btn-sm p-1" (click)="cancelEditSubtask()" aria-label="Cancel"><i class="pi pi-times"></i></button>
                   </ng-template>
                 </li>
               </ul>
             </div>
           </li>
         </ul>
-        <div *ngIf="filteredTodos().length === 0" class="alert alert-info mt-3 mb-0">
-          No tasks found. Try adjusting your search or filters!
+        <div *ngIf="filteredTodos().length === 0" class="alert alert-info mt-2 mb-0 py-2 px-1 text-center small">
+          No tasks found.
         </div>
       </div>
     </div>
-
     <!-- Modern Popup for Final Reminder -->
-    <div 
-      *ngIf="finalReminderPopup.visible" 
-      class="modal fade show d-block"
-      tabindex="-1"
-      style="background:rgba(0,0,0,0.45);"
-      aria-modal="true"
-      role="dialog"
-    >
+    <div *ngIf="finalReminderPopup.visible" class="modal fade show d-block" tabindex="-1" style="background:rgba(0,0,0,0.45);" aria-modal="true" role="dialog">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-warning shadow-lg">
-          <div class="modal-header bg-warning text-dark">
-            <h5 class="modal-title"><i class="pi pi-bell me-2"></i>Final Reminder</h5>
+          <div class="modal-header bg-warning text-dark py-2 px-3">
+            <h6 class="modal-title"><i class="pi pi-bell me-2"></i>Final Reminder</h6>
             <button type="button" class="btn-close" aria-label="Close" (click)="closeFinalReminderPopup()"></button>
           </div>
-          <div class="modal-body">
-            <p class="mb-2 fw-bold">{{finalReminderPopup.task}}</p>
-            <p class="mb-1"><i class="pi pi-clock me-1"></i>Due: {{finalReminderPopup.due}}</p>
-            <div class="alert alert-warning py-2 mb-0">
+          <div class="modal-body py-2 px-3">
+            <p class="mb-2 fw-bold small">{{finalReminderPopup.task}}</p>
+            <p class="mb-1 small"><i class="pi pi-clock me-1"></i>Due: {{finalReminderPopup.due}}</p>
+            <div class="alert alert-warning py-2 mb-0 small">
               ⏰ This task is due within 1 minute!
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" (click)="closeFinalReminderPopup()">Dismiss</button>
+          <div class="modal-footer py-2 px-3">
+            <button type="button" class="btn btn-outline-secondary btn-sm" (click)="closeFinalReminderPopup()">Dismiss</button>
           </div>
         </div>
       </div>
     </div>
   `,
   styles: [`
-    .card { max-width: 800px; margin: auto; }
+    .mobile-max-w { max-width: 430px; margin: auto; border-radius: 12px; }
     .form-control, .form-select { font-size: 1rem; }
-    .list-group-item { font-size: 1.05rem; }
+    .form-control-sm, .form-select-sm { font-size: 0.98rem; }
+    .list-group-item { font-size: 0.99rem; }
     .text-decoration-line-through { color: #6c757d !important; }
-    .cursor-pointer { cursor: pointer; }
     .btn-xs { padding: 0.15rem 0.35rem; font-size: 0.85em; line-height: 1; }
     .modal-backdrop.show { opacity: 0.45; }
     .modal.fade.show.d-block { z-index: 2000; }
-    @media (max-width: 576px) {
-      .card { margin: 1rem; }
-      .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-12, .col-8, .col-6, .col-4 { flex: 0 0 100%; max-width: 100%; }
-      .d-grid { margin-top: 0.5rem; }
+    .mobile-list-li { border-radius: 10px; background: #f9fbfc; margin-bottom: 7px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);}
+    @media (max-width: 600px) {
+      .mobile-max-w { max-width: 100vw; margin: 0.2rem; border-radius: 0.5rem; }
+      .card-body { padding: 0.7rem 0.3rem !important; }
+      .mobile-list-li { padding-left: 0.5rem; padding-right: 0.5rem; }
+      .modal-dialog { margin: 1rem; }
+      .modal-content { font-size: 0.97rem; }
     }
+    @media (max-width: 400px) {
+      .mobile-max-w { margin: 0; border-radius: 0; }
+      .modal-dialog { margin: 0.2rem; }
+    }
+    .d-grid > .btn, .d-grid > label.btn { width: 100%; }
+    .accordion-button { font-size: 1rem; }
+    .accordion-body { background: #f8fafd; }
   `]
 })
 export class TestAppDataComponent extends CommonExternalComponent implements OnInit {
@@ -370,29 +241,24 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   public newTimezone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
   public today: string = '';
 
-  // For editing main task
   public editId: number | null = null;
   public editTask: string = '';
   public editDueDate: string = '';
   public editDueTime: string = '';
   public editTimezone: string = this.newTimezone;
 
-  // For subtasks
   public subtaskInputs: {[taskId: number]: string} = {};
   public editingSubtaskId: {taskId: number, subId: number} | null = null;
   public editingSubtaskTitle: string = '';
 
-  // Search/Filter state
   public searchText: string = '';
   public filterDate: string = '';
   public filterTime: string = '';
   public filterTimezone: string = '';
 
-  // Modern popup state for final reminder
   public finalReminderPopup: {visible: boolean, task: string, due: string} = {visible: false, task: '', due: ''};
   private lastPopupKey: string = '';
 
-  // List of common timezones (can be expanded)
   public timezones: string[] = [
     'UTC', 'America/New_York', 'Europe/London', 'Europe/Paris', 'Asia/Kolkata', 'Asia/Tokyo', 'Australia/Sydney'
   ];
@@ -406,8 +272,8 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   ngOnInit(): void {
     this.requestNotificationPermission();
     setTimeout(() => this.checkAndNotifyReminders(), 500);
-    setInterval(() => this.checkAndNotifyReminders(), 60 * 60 * 1000); // hourly
-    setInterval(() => this.checkOneMinuteReminders(), 10 * 1000); // every 10s
+    setInterval(() => this.checkAndNotifyReminders(), 60 * 60 * 1000);
+    setInterval(() => this.checkOneMinuteReminders(), 10 * 1000);
   }
 
   addTask(): void {
@@ -437,9 +303,7 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     this.todos = this.todos.filter((t: TodoItem) => t.id !== id);
     this.saveToLocalStorage();
     this.cdr.detectChanges();
-    if (this.editId === id) {
-      this.cancelEdit();
-    }
+    if (this.editId === id) this.cancelEdit();
     delete this.subtaskInputs[id];
   }
 
@@ -452,7 +316,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     }
   }
 
-  // Edit functions
   startEdit(item: TodoItem): void {
     this.editId = item.id;
     this.editTask = item.task;
@@ -491,7 +354,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     this.cdr.detectChanges();
   }
 
-  // Subtask functions
   addSubtask(taskId: number): void {
     const input: string = (this.subtaskInputs[taskId] || '').trim();
     if (!input) return;
@@ -512,9 +374,7 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
       this.todos[taskIdx].subtasks = this.todos[taskIdx].subtasks.filter(st => st.id !== subId);
       this.saveToLocalStorage();
       this.cdr.detectChanges();
-      if (this.isEditingSubtask(taskId, subId)) {
-        this.cancelEditSubtask();
-      }
+      if (this.isEditingSubtask(taskId, subId)) this.cancelEditSubtask();
     }
   }
 
@@ -597,7 +457,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     return today.toISOString().split('T')[0];
   }
 
-  // Convert ISO string to date and time in selected timezone
   parseDateTime(iso: string, timezone: string): {date: string, time: string} {
     try {
       const dt = new Date(iso);
@@ -625,7 +484,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     }
   }
 
-  // Combine date, time, and timezone into ISO string in UTC
   combineDateTime(date: string, time: string, timezone: string): string {
     try {
       const [year, month, day] = date.split('-').map(Number);
@@ -639,7 +497,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     }
   }
 
-  // Returns the offset in minutes for a date in a given timezone
   getTimezoneOffsetMinutes(date: Date, timezone: string): number {
     const locale = 'en-US';
     const dtf = new Intl.DateTimeFormat(locale, {
@@ -653,7 +510,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     return (asUTC - date.getTime()) / 60000;
   }
 
-  // Display date/time in user's local format for a given timezone
   displayLocalDateTime(iso: string, timezone: string): string {
     try {
       const dt = new Date(iso);
@@ -712,7 +568,7 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
           this.lastPopupKey = popupKey;
           window.localStorage.setItem(popupKey, '1');
           this.cdr.detectChanges();
-          break; // Only one popup at a time
+          break;
         }
       }
     }
@@ -725,7 +581,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     this.cdr.detectChanges();
   }
 
-  // Backup/restore
   downloadBackup(): void {
     this.componentDataDownloader(this.todos);
   }
@@ -764,8 +619,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
     });
   }
 
-  // --- Search and Filter Logic ---
-
   filteredTodosRaw(): TodoItem[] {
     return this.todos.slice();
   }
@@ -773,7 +626,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   filteredTodos(): TodoItem[] {
     let list: TodoItem[] = this.todos.slice();
 
-    // Text search (case-insensitive, matches task or subtask)
     if (this.searchText.trim()) {
       const q: string = this.searchText.trim().toLowerCase();
       list = list.filter(item =>
@@ -781,28 +633,21 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
         (item.subtasks && item.subtasks.some(st => st.title.toLowerCase().includes(q)))
       );
     }
-
-    // Date filter
     if (this.filterDate) {
       list = list.filter(item => {
         const dt = this.parseDateTime(item.dueDateTime, item.timezone);
         return dt.date === this.filterDate;
       });
     }
-
-    // Time filter (exact match)
     if (this.filterTime) {
       list = list.filter(item => {
         const dt = this.parseDateTime(item.dueDateTime, item.timezone);
         return dt.time === this.filterTime;
       });
     }
-
-    // Timezone filter
     if (this.filterTimezone) {
       list = list.filter(item => item.timezone === this.filterTimezone);
     }
-
     return list;
   }
 
