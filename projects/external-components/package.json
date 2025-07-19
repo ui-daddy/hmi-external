@@ -13,11 +13,11 @@
     "file-saver": "2.0.5",
     "jspdf": "2.5.1",
     "jspdf-autotable": "3.5.29",
-    "primeicons": "^7.0.0",
+    "primeicons": "7.0.0",
     "primeng": "^18.0.2",
     "tslib": "^2.0.0",
     "xlsx": "0.18.5",
-    "bootstrap": "5.x",
+    "bootstrap": "5.2.3",
     "bootstrap-icons": "1.x"
   }
 }
