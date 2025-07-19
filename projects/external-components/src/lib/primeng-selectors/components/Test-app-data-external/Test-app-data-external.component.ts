@@ -31,13 +31,14 @@ interface TodoItem {
       - Backup & restore: Download/upload all saved data (.txt).
       - Reminder notification:
         - One day before due date/time.
-        - Popup alert when less than 1 minute remains.
+        - Popup alert with modern UI when less than 1 minute remains.
       - Responsive Bootstrap 5 UI.
       - Strict type checking throughout.
       - Delete uses a visible trash icon (PrimeIcons).
       - Edit uses a pencil icon (PrimeIcons).
       - Backup uses cloud-download and cloud-upload icons (PrimeIcons).
       - Timezone selection per task.
+      - Search/filter by text, date, time, and timezone.
     -->
     <div class="card shadow mt-4">
       <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
@@ -64,6 +65,59 @@ interface TodoItem {
         </div>
       </div>
       <div class="card-body">
+        <!-- Search & Filter Section -->
+        <form class="row g-2 mb-3 align-items-end" (ngSubmit)="$event.preventDefault()">
+          <div class="col-md-3 col-12">
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Search tasks..." 
+              [(ngModel)]="searchText"
+              name="searchText"
+              maxlength="100"
+              [ngModelOptions]="{standalone: true}"
+              aria-label="Search tasks"
+            >
+          </div>
+          <div class="col-md-2 col-6">
+            <input 
+              type="date"
+              class="form-control"
+              [(ngModel)]="filterDate"
+              name="filterDate"
+              [ngModelOptions]="{standalone: true}"
+              aria-label="Filter by date"
+            >
+          </div>
+          <div class="col-md-2 col-6">
+            <input 
+              type="time"
+              class="form-control"
+              [(ngModel)]="filterTime"
+              name="filterTime"
+              [ngModelOptions]="{standalone: true}"
+              aria-label="Filter by time"
+            >
+          </div>
+          <div class="col-md-2 col-8">
+            <select 
+              class="form-select"
+              [(ngModel)]="filterTimezone"
+              name="filterTimezone"
+              [ngModelOptions]="{standalone: true}"
+              aria-label="Filter by timezone"
+            >
+              <option value="">All Timezones</option>
+              <option *ngFor="let tz of timezones" [value]="tz">{{tz}}</option>
+            </select>
+          </div>
+          <div class="col-md-1 col-4 d-grid">
+            <button type="button" class="btn btn-outline-secondary" (click)="clearFilters()" title="Clear filters">
+              <i class="pi pi-filter-slash"></i>
+            </button>
+          </div>
+        </form>
+        <!-- Add Task Form -->
         <form class="row g-2 mb-3" (ngSubmit)="addTask()">
           <div class="col-md-4 col-12">
             <input 
@@ -113,8 +167,9 @@ interface TodoItem {
             <button type="submit" class="btn btn-success">Add Task</button>
           </div>
         </form>
+        <!-- Tasks List -->
         <ul class="list-group">
-          <li *ngFor="let item of todos" class="list-group-item d-flex flex-column gap-2">
+          <li *ngFor="let item of filteredTodos()" class="list-group-item d-flex flex-column gap-2">
             <div class="d-flex justify-content-between align-items-center w-100">
               <div class="flex-grow-1">
                 <ng-container *ngIf="editId !== item.id; else editBlock">
@@ -256,8 +311,37 @@ interface TodoItem {
             </div>
           </li>
         </ul>
-        <div *ngIf="todos.length === 0" class="alert alert-info mt-3 mb-0">
-          No tasks yet. Start by adding a new task!
+        <div *ngIf="filteredTodos().length === 0" class="alert alert-info mt-3 mb-0">
+          No tasks found. Try adjusting your search or filters!
+        </div>
+      </div>
+    </div>
+
+    <!-- Modern Popup for Final Reminder -->
+    <div 
+      *ngIf="finalReminderPopup.visible" 
+      class="modal fade show d-block"
+      tabindex="-1"
+      style="background:rgba(0,0,0,0.45);"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-warning shadow-lg">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title"><i class="pi pi-bell me-2"></i>Final Reminder</h5>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeFinalReminderPopup()"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2 fw-bold">{{finalReminderPopup.task}}</p>
+            <p class="mb-1"><i class="pi pi-clock me-1"></i>Due: {{finalReminderPopup.due}}</p>
+            <div class="alert alert-warning py-2 mb-0">
+              ⏰ This task is due within 1 minute!
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" (click)="closeFinalReminderPopup()">Dismiss</button>
+          </div>
         </div>
       </div>
     </div>
@@ -269,9 +353,11 @@ interface TodoItem {
     .text-decoration-line-through { color: #6c757d !important; }
     .cursor-pointer { cursor: pointer; }
     .btn-xs { padding: 0.15rem 0.35rem; font-size: 0.85em; line-height: 1; }
+    .modal-backdrop.show { opacity: 0.45; }
+    .modal.fade.show.d-block { z-index: 2000; }
     @media (max-width: 576px) {
       .card { margin: 1rem; }
-      .col-md-4, .col-md-2, .col-12, .col-8, .col-6, .col-4 { flex: 0 0 100%; max-width: 100%; }
+      .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-12, .col-8, .col-6, .col-4 { flex: 0 0 100%; max-width: 100%; }
       .d-grid { margin-top: 0.5rem; }
     }
   `]
@@ -295,6 +381,16 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   public subtaskInputs: {[taskId: number]: string} = {};
   public editingSubtaskId: {taskId: number, subId: number} | null = null;
   public editingSubtaskTitle: string = '';
+
+  // Search/Filter state
+  public searchText: string = '';
+  public filterDate: string = '';
+  public filterTime: string = '';
+  public filterTimezone: string = '';
+
+  // Modern popup state for final reminder
+  public finalReminderPopup: {visible: boolean, task: string, due: string} = {visible: false, task: '', due: ''};
+  private lastPopupKey: string = '';
 
   // List of common timezones (can be expanded)
   public timezones: string[] = [
@@ -505,7 +601,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   parseDateTime(iso: string, timezone: string): {date: string, time: string} {
     try {
       const dt = new Date(iso);
-      // Use Intl.DateTimeFormat to get local values in the timezone
       const formatter = new Intl.DateTimeFormat('en-US', {
         timeZone: timezone,
         year: 'numeric',
@@ -532,19 +627,11 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
 
   // Combine date, time, and timezone into ISO string in UTC
   combineDateTime(date: string, time: string, timezone: string): string {
-    // date: YYYY-MM-DD, time: HH:mm
     try {
-      // Create a Date object in the selected timezone
       const [year, month, day] = date.split('-').map(Number);
       const [hour, minute] = time.split(':').map(Number);
-      // Get timestamp in that timezone using Date.UTC and offset
-      // But JS Date does not support timezones directly, so use workaround:
-      // 1. Create a date in that timezone via toLocaleString
-      // 2. Parse back as UTC
       const local = new Date(Date.UTC(year, month - 1, day, hour, minute));
-      // Now get offset between UTC and desired timezone at that moment
       const tzOffset = -this.getTimezoneOffsetMinutes(local, timezone);
-      // Apply offset to get the correct UTC time
       local.setMinutes(local.getMinutes() + tzOffset);
       return local.toISOString();
     } catch {
@@ -612,18 +699,30 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
 
   checkOneMinuteReminders(): void {
     const now: Date = new Date();
-    for (const item of this.todos) {
+    for (const item of this.filteredTodosRaw()) {
       if (item.completed) continue;
       const due: Date = new Date(item.dueDateTime);
       const diff: number = due.getTime() - now.getTime();
       if (diff > 0 && diff <= 60 * 1000) {
         const popupKey: string = `todo-popup-reminded-${item.id}-${due.toISOString()}`;
-        if (!window.localStorage.getItem(popupKey)) {
-          alert(`⏰ FINAL REMINDER: Task "${item.task}" is due within 1 minute!\nDue: ${this.displayLocalDateTime(item.dueDateTime, item.timezone)}`);
+        if (this.lastPopupKey !== popupKey && !window.localStorage.getItem(popupKey)) {
+          this.finalReminderPopup.visible = true;
+          this.finalReminderPopup.task = `⏰ FINAL REMINDER: Task "${item.task}"`;
+          this.finalReminderPopup.due = this.displayLocalDateTime(item.dueDateTime, item.timezone);
+          this.lastPopupKey = popupKey;
           window.localStorage.setItem(popupKey, '1');
+          this.cdr.detectChanges();
+          break; // Only one popup at a time
         }
       }
     }
+  }
+
+  closeFinalReminderPopup(): void {
+    this.finalReminderPopup.visible = false;
+    this.finalReminderPopup.task = '';
+    this.finalReminderPopup.due = '';
+    this.cdr.detectChanges();
   }
 
   // Backup/restore
@@ -634,7 +733,6 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
   async uploadBackup(event: Event): Promise<void> {
     await this.componentDataUploader(event).then((data: any) => {
       if (Array.isArray(data)) {
-        // Validate structure
         const valid: boolean = data.every((t: any) =>
           typeof t.id === 'number' &&
           typeof t.task === 'string' &&
@@ -664,5 +762,55 @@ export class TestAppDataComponent extends CommonExternalComponent implements OnI
         }
       }
     });
+  }
+
+  // --- Search and Filter Logic ---
+
+  filteredTodosRaw(): TodoItem[] {
+    return this.todos.slice();
+  }
+
+  filteredTodos(): TodoItem[] {
+    let list: TodoItem[] = this.todos.slice();
+
+    // Text search (case-insensitive, matches task or subtask)
+    if (this.searchText.trim()) {
+      const q: string = this.searchText.trim().toLowerCase();
+      list = list.filter(item =>
+        item.task.toLowerCase().includes(q) ||
+        (item.subtasks && item.subtasks.some(st => st.title.toLowerCase().includes(q)))
+      );
+    }
+
+    // Date filter
+    if (this.filterDate) {
+      list = list.filter(item => {
+        const dt = this.parseDateTime(item.dueDateTime, item.timezone);
+        return dt.date === this.filterDate;
+      });
+    }
+
+    // Time filter (exact match)
+    if (this.filterTime) {
+      list = list.filter(item => {
+        const dt = this.parseDateTime(item.dueDateTime, item.timezone);
+        return dt.time === this.filterTime;
+      });
+    }
+
+    // Timezone filter
+    if (this.filterTimezone) {
+      list = list.filter(item => item.timezone === this.filterTimezone);
+    }
+
+    return list;
+  }
+
+  clearFilters(): void {
+    this.searchText = '';
+    this.filterDate = '';
+    this.filterTime = '';
+    this.filterTimezone = '';
+    this.cdr.detectChanges();
   }
 }
