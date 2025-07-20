@@ -1,0 +1,42 @@
+@import "../../../../../assets/themes.css";
+
+var{--calendar-cell-day-height: 8vw};
+
+.custom-day {
+    text-align: center;
+    width: 100%;
+    height: var(--calendar-cell-day-height);
+    min-height: 2rem;
+    min-width: 2rem;
+    line-height: var(--calendar-cell-day-height);
+    border-radius: 0.25rem;
+    background: 0 0;
+  
+    &.outside {
+      opacity: 0.5;
+    }
+}
+
+.btn-light:hover {
+    color: var(--calendar-date-picker-txtcolor);
+    background-color: var(--calendar-date-picker-bgcolor-disabled);
+    border-color: var(--calendar-date-picker-bordercolor-disabled);
+}
+
+.btn-available {
+    color: var(--calendar-date-picker-txtcolor);
+    background-color: var(--calendar-date-picker-bgcolor-available);
+    border-color: var(--calendar-date-picker-bordercolor-available);
+}
+
+.btn-partial {
+    color: var(--calendar-date-picker-txtcolor);
+    background-color: var(--calendar-date-picker-bgcolor-partial);
+    border-color: var(--calendar-date-picker-bordercolor-partial);
+}
+
+.btn-full {
+    color: var(--calendar-date-picker-txtcolor);
+    background-color: var(--calendar-date-picker-bgcolor-full);
+    border-color: var(--calendar-date-picker-bordercolor-full);
+}
