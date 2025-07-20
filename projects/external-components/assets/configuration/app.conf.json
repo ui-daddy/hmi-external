@@ -195,34 +195,109 @@
     },
     "globalPageSettings": {
       "layoutProperties": {
-        "css": {
-          "configuration": {
-            "selectorName": "",
-            "xs": {
-              "background-image": "url(assets/images/loginPage.jpg)",
-              "background-position": "center center",
-              "background-size": "cover"
-            }
-          }
-        }
+          "css": {
+              "configuration": [
+                  {
+                      "lg": {
+                          "background-color": "#f1f3f6"
+                      },
+                      "md": {
+                          "background-color": "#f1f3f6"
+                      },
+                      "selectorName": "",
+                      "sm": {
+                          "background-color": "#f1f3f6"
+                      },
+                      "xs": {
+                          "background-color": "#f1f3f6"
+                      }
+                  }
+              ],
+              "customClassName": "",
+              "themeClass": ""
+          },
+          "height": null,
+          "labelPlacement": null,
+          "orientation": null,
+          "width": null
       },
-      "title": "Login"
-    },
-    "headerField": {
-      "fetchFromLocal": true,
-      "localURL": "",
-      "serverURL": "/api/section/header/field"
-    },
-    "headerSection": {
-      "fetchFromLocal": true,
-      "localURL": "",
-      "serverURL": "/api/section/header"
-    },
-    "section": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json",
-      "serverURL": "/api/section/forgotPasword.section"
-    }
+      "linkTags": [],
+      "metaTags": [
+          {
+              "content": "nuvoroai",
+              "name": "keywords"
+          },
+          {
+              "charset": "",
+              "content": "Nuvoro AI",
+              "httpEquiv": "",
+              "name": "description"
+          }
+      ],
+      "title": "Nuvoro AI"
+  },
+  "login": {
+      "authGuardConfig": {
+          "conditions": [
+              {
+                  "cookieName": "accessToken",
+                  "if": "accessToken != undefined",
+                  "onConditionSuccess": "dashboard",
+                  "type": "cookie"
+              }
+          ],
+          "enabled": true
+      },
+      "data": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/forgotPasword.data"
+      },
+      "field": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/ui-daddy/login/login.field.json",
+          "serverURL": "/api/section/forgotPasword.field"
+      },
+      "footerField": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/footer/field"
+      },
+      "footerSection": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/footer"
+      },
+      "globalPageSettings": {
+          "layoutProperties": {
+              "css": {
+                  "configuration": {
+                      "selectorName": "",
+                      "xs": {
+                          "background-image": "url(assets/images/loginPage.jpg)",
+                          "background-position": "center center",
+                          "background-size": "cover"
+                      }
+                  }
+              }
+          },
+          "title": "Login"
+      },
+      "headerField": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/header/field"
+      },
+      "headerSection": {
+          "fetchFromLocal": true,
+          "localURL": "",
+          "serverURL": "/api/section/header"
+      },
+      "section": {
+          "fetchFromLocal": true,
+          "localURL": "./assets/pageLayout/ui-daddy/login/login.section.json",
+          "serverURL": "/api/section/forgotPasword.section"
+      }
   },
   "aipage": {
     "headerField": {

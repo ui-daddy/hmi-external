@@ -193,20 +193,20 @@ export const STACKBLITZ_INDEX_HTML = `
 export const STACKBLITZ_POLLYFILL_TS = "import 'zone.js';";
 
 export const STACKBLITZ_DEPENDENCIES = {
-    "@angular/animations": "14.1.3",
-    "@angular/common": "14.1.3",
-    "@angular/compiler": "14.1.3",
-    "@angular/core": "14.1.3",
-    "@angular/forms": "14.1.3",
-    "@angular/platform-browser": "14.1.3",
-    "@angular/platform-browser-dynamic": "14.1.3",
-    "@angular/router": "14.1.3",
-    "@angular/cdk": "^14.1.3",
-    "rxjs": "~6.6.0",
+    "@angular/animations": "18.2.13",
+    "@angular/common": "18.2.13",
+    "@angular/compiler": "18.2.13",
+    "@angular/core": "18.2.13",
+    "@angular/forms": "18.2.13",
+    "@angular/platform-browser": "18.2.13",
+    "@angular/platform-browser-dynamic": "18.2.13",
+    "@angular/router": "18.2.13",
+    "@angular/cdk": "18.2.13",
+    "rxjs": "7.8.1",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.4",
-    "primeicons": "^4.1.0",
-    "primeng": "^14.2.3"
+    "zone.js": "~0.14.10",
+    "primeicons": "^7.0.0",
+    "primeng": "^18.0.2"
 };
 
 export const STACKBLITZ_COMMON_EXTERNAL_TS = `

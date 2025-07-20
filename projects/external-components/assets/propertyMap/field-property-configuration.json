@@ -390,5 +390,56 @@
 			"label": "Icon Class",
 			"placeholder": "Enter Font awesome icon Class name"
 		}]
-  }
+  }, 
+    {
+        "widgetList": [
+            {
+
+                "name": "FilterGroupExternalComponent",
+                "icon": "bi pi-angle-down",
+                "label": "FilterGroupExternalComponent"
+            }
+          ],
+          "hiddenBaseProperties": ["label"],
+          "hiddenLayoutProperties": ["orientation"],
+          "hiddenExpressionProperties":["required", "readOnly", "disabled"],
+          "customAttributes": [
+            {
+                "propertyName": "showComponentLoaderOnApply",
+                "defaultValueMapping": "showComponentLoaderOnApply",
+                "type": "text",
+                "label": "Show Component Loader On Apply",
+                "placeholder": "Enter Component Loader On Apply"
+              },
+              {
+                "propertyName": "buttonOptions",
+                "defaultValueMapping": "buttonOptions",
+                "type": "textarea",
+                "label": "Show Button Options",
+                "placeholder": "Enter Button Options"
+              },
+              {
+                "propertyName": "filterSharedDataAccessor",
+                "defaultValueMapping": "filterSharedDataAccessor",
+                "type": "text",
+                "label": "Show Filter Shared Data Accessor",
+                "placeholder": "Enter Filter Shared Data Accessor"
+              },
+              {
+                "propertyName": "filterOptions",
+                "defaultValueMapping": "filterOptions",
+                "type": "textarea",
+                "label": "Show Filter Options",
+                "placeholder": "Enter Filter Options"
+              },
+              {
+                "propertyName": "filterConfig",
+                "defaultValueMapping": "filterConfig",
+                "type": "textarea",
+                "label": "Show Filter Config",
+                "placeholder": "Enter Filter Configaration"
+              }
+
+          ]
+    }
 ]
