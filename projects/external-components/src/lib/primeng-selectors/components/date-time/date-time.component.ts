@@ -66,7 +66,7 @@ export class DateTimeComponent extends CommonExternalComponent implements OnInit
 
   //Disable days if not current month
   //In case of data from API, disable any days not present in the response.  
-  isDisabled = (date: NgbDate, current?: {month: number}) => {
+  isDisabled = (date: NgbDateStruct, current?: {month: number}) => {
     if (date.month !== current?.month) {
       return true;
     }
