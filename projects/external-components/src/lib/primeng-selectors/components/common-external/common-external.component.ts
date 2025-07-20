@@ -2,9 +2,11 @@ import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild, ViewC
 import { FieldDynamicAttributes } from '../../../interfaces/dynamic-comp-interface';
 import { UrlConfiguration } from '../../../interfaces/url-configuration';
 import { Observable } from 'rxjs';
+import * as _ from 'lodash';
 
 interface FormsService {
   updateFieldValuebyName(formName: any, fieldName: any, value: any): void;
+  isFormValid(fieldObj:any): any;
 }
 @Component({
   selector: 'hmi-ext-common-external',
@@ -55,5 +57,5 @@ export class CommonExternalComponent implements AfterViewInit {
       this.isEventInitialized = true;
       this.initializeEvents.emit();
     }
-  }
+  } 
 }

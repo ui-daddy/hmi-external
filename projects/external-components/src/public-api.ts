@@ -20,3 +20,13 @@ export * from './lib/primeng-selectors/components/generate-with-ai/generate-with
 export * from './lib/primeng-selectors/components/static-text/static-text.component';
 export * from './lib/primeng-selectors/components/dropdown/dropdown.component';
 export * from './lib/primeng-selectors/components/char-text/char-text.component';
+export * from './lib/primeng-selectors/components/static-image/static-image.component';
+export * from './lib/primeng-selectors/components/static-icon/static-icon.component';
+export * from './lib/primeng-selectors/components/checkbox/checkbox.component';
+export * from './lib/primeng-selectors/components/radio/radio.component';
+export * from './lib/primeng-selectors/components/nav-item-group/nav-item-group.component';
+export * from './lib/primeng-selectors/components/button/button.component';
+export * from './lib/primeng-selectors/components/date-time/date-time.component';
+export * from './lib/primeng-selectors/components/file-upload/file-upload.component';
+export * from './lib/primeng-selectors/components/typeahead/typeahead.component';
+export * from './lib/primeng-selectors/components/nav-menu/nav-menu.component';

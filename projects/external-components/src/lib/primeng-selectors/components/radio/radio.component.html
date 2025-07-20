@@ -1,0 +1,19 @@
+<div #primeElement class="dynamic-style-parent" 
+    [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName"
+    [hidden]="!dynamicAttributes?.visibleValue" [formGroup]="formGroupObj">
+    <div *ngFor="let option of optionList" 
+        class="custom-control custom-radio"
+        [ngClass]="{ 'custom-control-inline' : fieldObj.layoutProperties.orientation === 'horizontal' }">
+        <input
+        id="{{option.name}}"
+        [value]="option"
+        type="radio"
+        class="custom-control-input dynamic-style-child"
+        [formControlName]="fieldObj.baseProperties.name"
+        (click)="onValueChange(option)"/>
+        <label for="{{option.name}}" class="custom-control-label">
+            {{option.label}}
+        </label>
+    </div>
+</div>
+

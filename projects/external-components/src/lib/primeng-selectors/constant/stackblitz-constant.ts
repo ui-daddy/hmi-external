@@ -4,7 +4,7 @@ import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
 import { ChartModule } from "primeng/chart";
 import { DropdownModule } from "primeng/dropdown";
-import { DynamicDialogModule } from "primeng/dynamicdialog";
+import { DynamicDialog } from "primeng/dynamicdialog";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
 import { MultiSelectModule } from "primeng/multiselect";
@@ -14,19 +14,23 @@ import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
 
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule, NgbModule
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon, 
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule, NgbModule
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon,
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
@@ -36,7 +40,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
 import { DropdownModule } from "primeng/dropdown";
-import { DynamicDialogModule } from "primeng/dynamicdialog";
+import { DynamicDialog } from "primeng/dynamicdialog";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
 import { MultiSelectModule } from "primeng/multiselect";
@@ -189,20 +193,20 @@ export const STACKBLITZ_INDEX_HTML = `
 export const STACKBLITZ_POLLYFILL_TS = "import 'zone.js';";
 
 export const STACKBLITZ_DEPENDENCIES = {
-    "@angular/animations": "14.1.3",
-    "@angular/common": "14.1.3",
-    "@angular/compiler": "14.1.3",
-    "@angular/core": "14.1.3",
-    "@angular/forms": "14.1.3",
-    "@angular/platform-browser": "14.1.3",
-    "@angular/platform-browser-dynamic": "14.1.3",
-    "@angular/router": "14.1.3",
-    "@angular/cdk": "^14.1.3",
-    "rxjs": "~6.6.0",
+    "@angular/animations": "18.2.13",
+    "@angular/common": "18.2.13",
+    "@angular/compiler": "18.2.13",
+    "@angular/core": "18.2.13",
+    "@angular/forms": "18.2.13",
+    "@angular/platform-browser": "18.2.13",
+    "@angular/platform-browser-dynamic": "18.2.13",
+    "@angular/router": "18.2.13",
+    "@angular/cdk": "18.2.13",
+    "rxjs": "7.8.1",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.4",
-    "primeicons": "^4.1.0",
-    "primeng": "^14.2.3"
+    "zone.js": "~0.14.10",
+    "primeicons": "^7.0.0",
+    "primeng": "^18.0.2"
 };
 
 export const STACKBLITZ_COMMON_EXTERNAL_TS = `

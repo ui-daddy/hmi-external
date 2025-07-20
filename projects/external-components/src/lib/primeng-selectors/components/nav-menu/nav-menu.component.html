@@ -1,0 +1,21 @@
+<ul class="navbar-nav mr-auto dynamic-style-parent"
+  [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName">
+  <li class="nav-item dropdown dynamic-style-child" ngbDropdown>
+    <i class="nav-menu-icon fas fa-fw" *ngIf="fieldObj.icon" [ngClass]="fieldObj.icon"></i>
+    <img class="nav-menu-image" *ngIf="fieldObj.imageUrl" [src]="fieldObj.imageUrl"/>
+    <a class="nav-link dropdown-toggle" id="{{ fieldObj.baseProperties.label }}" href="javascript:void(0)" ngbDropdownToggle>{{ fieldObj.value || fieldObj.baseProperties.label }}</a>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <div class="dynamic-style-parent" 
+        [ngClass]="option.layoutProperties && option.layoutProperties.css && option.layoutProperties.css.customClassName" 
+        *ngFor="let option of fieldObj.optionList">
+        <div class="dropdown-static-item dynamic-style-child " *ngIf="option.type === 'text'" [innerHTML]="option.value"></div>
+        <a class="dropdown-item dynamic-style-child" [ngClass]="[ option.highlight && (option.active || (currentRoute.indexOf('/' + option.id + '/') !== -1)) ? 'active': '']" href="{{ option.href }}" *ngIf="option.type === 'link' && option.href">
+          {{ option.label }}
+        </a>
+        <a class="dropdown-item dynamic-style-child"  [ngClass]="[ option.highlight && (option.active || (currentRoute.indexOf('/' + option.id + '/') !== -1)) ? 'active': '']" *ngIf="option.type === 'link' && !option.href" (click)="this.eventAction($event, option)">
+          {{ option.label }}
+        </a>
+      </div>
+    </div>
+  </li>
+</ul>
