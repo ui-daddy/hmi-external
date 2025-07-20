@@ -1,0 +1,45 @@
+@import "../../../../../assets/themes.css";
+
+.navbar {
+    white-space: nowrap;
+}
+
+.nav-more-dropdown.dropdown-menu a.nav-item {
+    padding-left: 15px;
+}
+
+.navbar-nav .dropdown-menu.nav-more-dropdown  {
+    position: absolute;
+}
+
+.nav-link {
+    display: inline-block;
+}
+
+i.fas {
+    padding-right: 30px;
+}
+
+.navbar-nav.desktop {
+    flex-direction: row;
+    .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}
+
+.navbar-dark .navbar-nav .item-active {
+    border-bottom: 1px solid  var(--nav-item-active-bordercolor);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--nav-item-link-txtcolor);    
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--nav-item-link-hover-txtcolor);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--nav-item-active-bordercolor);    
+}
