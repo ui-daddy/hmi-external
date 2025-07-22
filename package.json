@@ -8,7 +8,7 @@
     "build:nowatch": "ng build external-components",
     "test": "ng test",
     "lint": "ng lint",
-    "link": "cd dist\\external-components && npm link",
+    "link": "cd dist\\external-components && npm link && npm install",
     "unlink": "cd dist\\external-components && npm unlink",
     "prepare": "husky install"
   },

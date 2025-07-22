@@ -1,0 +1,30 @@
+<div class="button-container dynamic-style-parent" 
+      *ngIf="dynamicAttributes?.visibleValue"
+      [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName">
+    <button #primeElements *ngIf="fieldObj.baseProperties.type !== 'link'" 
+        type="{{fieldObj.baseProperties.type}}" 
+        class="btn dynamic-style-child"
+        [ngClass]="[defaultClass]"
+        [disabled]="!isFormValid()">
+        <i *ngIf="!(state.loading || state.showTimer) && (fieldObj.icon && fieldObj.icon.preIconClass)" [ngClass]="fieldObj.icon.preIconClass"></i>
+        <span class="btn-label" *ngIf="!(state.loading || state.showTimer) && fieldObj.baseProperties.label">{{ fieldObj.baseProperties.label }}</span>
+        <i *ngIf="!(state.loading || state.showTimer) && (fieldObj.icon && fieldObj.icon.postIconClass)" [ngClass]="fieldObj.icon.postIconClass"></i>
+        <span *ngIf="state.loading" class="fa-spin fas fa-circle-notch"></span>
+        <!-- Timer built referring following code https://codepen.io/stg/pen/KyJLrP  -->
+        <div *ngIf="state.showTimer" class="timer">
+            <div class="circle-timer">
+              <div class="timer-slot">
+                <div class="timer-lt" [ngStyle]="{'animation-duration': spinnerTime}"> </div>
+              </div>
+              <div class="timer-slot">
+                <div class="timer-rt" [ngStyle]="{'animation-duration': spinnerTime}"></div>
+              </div>
+              <div class="count"></div>
+            </div>
+        </div>
+    </button>
+
+    <a #primeElements *ngIf="fieldObj.baseProperties.type === 'link'"
+        class="dynamic-style-child"
+        href="{{ fieldObj.href }}" target="{{ fieldObj.target }}">{{ fieldObj.baseProperties.label }}</a>
+  </div>
