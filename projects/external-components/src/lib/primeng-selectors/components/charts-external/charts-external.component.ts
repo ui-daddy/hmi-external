@@ -48,7 +48,7 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
   loadData(): void {
     this.loading = true;
     if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
-      this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {
+      this.customApiCall?.(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {
         
         let result = data;
         this.dataFormation(result)

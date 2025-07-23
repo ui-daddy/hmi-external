@@ -1,0 +1,7 @@
+.custom-file-label::after{
+    display: none;
+}
+
+.custom-file {
+    width:79%;
+}

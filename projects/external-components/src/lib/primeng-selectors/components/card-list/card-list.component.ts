@@ -61,7 +61,7 @@ export class CardListComponent extends CommonExternalComponent {
 
   private refreshCards() {
     this.loading = true;
-    this.customApiCall(this.fieldObj.customAttributes.apiConfig).subscribe((response: any) => {
+    this.customApiCall!(this.fieldObj.customAttributes.apiConfig).subscribe((response: any) => {
       this.cardList = response;
       this.loading = false;
     });
@@ -81,7 +81,7 @@ export class CardListComponent extends CommonExternalComponent {
           window.open(`${card.deployLink}/${card.title}`, '_blank');
           break;
         case 'INVOKE_API': 
-          this.customApiCall(action.apiConfig, card).subscribe((_:any)=>{
+          this.customApiCall!(action.apiConfig, card).subscribe((_:any)=>{
 
           })
           break;
