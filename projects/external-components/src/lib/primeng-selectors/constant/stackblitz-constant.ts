@@ -18,12 +18,13 @@ import { NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeahea
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
 import { DialogModule } from 'primeng/dialog';
+import {DatePickerModule} from 'primeng/datepicker';
 
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
     TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon, 
-    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule, DialogModule
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule, DialogModule,DatePickerModule
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
@@ -31,7 +32,7 @@ export const STACKBLITZ_IMPORT_MODULES = `
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
     TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon,
-    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule, DialogModule
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule, DialogModule, DatePickerModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
