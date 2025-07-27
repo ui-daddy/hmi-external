@@ -1,0 +1,16 @@
+/* Chrome, Safari, Edge, Opera */
+input.hide-spinner[type=number]::-webkit-outer-spin-button,
+input.hide-spinner[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.hide-spinner[type=number] {
+  -moz-appearance: textfield;
+}
+
+.tooltipStyle{
+  font-size: 1rem;
+  color: blue;
+}

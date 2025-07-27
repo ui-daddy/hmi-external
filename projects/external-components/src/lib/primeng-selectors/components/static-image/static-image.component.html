@@ -1,0 +1,7 @@
+<div class="dynamic-style-parent"
+    [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName">                    
+    <img #primeElement class="dynamic-style-child" [src]="fieldObj.imageUrl" aria-hidden="true" [alt]="fieldObj.altText" />
+    <a [href]="fieldObj.imageUrl" *ngIf="fieldObj.showDownload" download>  
+        Download
+    </a>
+</div>

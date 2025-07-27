@@ -8,6 +8,30 @@
     --body-bg-color: #E3E9F7;
     --card-bg-color: white;
     --header-height: 56px;
+
+
+    /* nav-item-group.component.scss */
+
+    --nav-item-active-bordercolor: #fff;
+    --nav-item-link-txtcolor: rgba(255, 255, 255, 0.9);
+    --nav-item-link-hover-txtcolor: rgba(255, 255, 255, 0.75);
+
+    /* button.component.scss */
+    --button-timer-count-txtcolor: #fff;
+    --button-timer-left-color: #fff;
+    --button-timer-paused-color: rgba(#fff, .5);
+    --button-timer-completed-color: lime;
+
+    /* date-time.component.scss */
+    --calendar-date-picker-txtcolor: #212529;
+    --calendar-date-picker-bgcolor-disabled: #e2e6ea;
+    --calendar-date-picker-bgcolor-available: #8af3c7;
+    --calendar-date-picker-bgcolor-partial: #f3b98a;
+    --calendar-date-picker-bgcolor-full: #f38abb;
+    --calendar-date-picker-bordercolor-disabled: #dae0e5;
+    --calendar-date-picker-bordercolor-available: #306604;
+    --calendar-date-picker-bordercolor-partial: #663804;
+    --calendar-date-picker-bordercolor-full: #660440;
 }
 
 .btn-primary {
@@ -20,81 +44,99 @@
     border: 1px solid var(--secondary-button-color);
     color: var(--secondary-button-txt-color);
 }
+
 .p-button.p-button-secondary.theme:enabled:hover {
     background: var(--secondary-button-hover-color);
     color: inherit;
     border-color: var(--secondary-button-hover-color);
 }
-.p-button.p-button-secondary.theme:enabled:active, .p-button.p-button-secondary.theme.active {
+
+.p-button.p-button-secondary.theme:enabled:active,
+.p-button.p-button-secondary.theme.active {
     background: var(--primary-button-color);
     border: 1px solid var(--primary-button-color);
     color: var(--primary-button-txt-color);
 }
-.p-button.p-button-secondary.theme:enabled:active:hover, .p-button.p-button-secondary.theme.active:hover {
+
+.p-button.p-button-secondary.theme:enabled:active:hover,
+.p-button.p-button-secondary.theme.active:hover {
     background: var(--primary-button-hover-color);
     color: var(--primary-button-txt-color);
     border-color: var(--primary-button-color);
 }
+
 .p-button.p-button-secondary.theme:enabled:focus {
     outline: none;
     box-shadow: none;
 }
+
 .p-button.theme,
 .btn-primary.theme {
     background: var(--primary-button-color);
     border: 1px solid var(--primary-button-color);
     color: var(--primary-button-txt-color);
 }
+
 .p-button.theme:enabled:hover,
 .btn-primary.theme:enabled:hover {
     background: var(--primary-button-hover-color);
     color: var(--primary-button-txt-color);
     border-color: var(--primary-button-color);
 }
+
 .p-button.theme:focus {
     outline: none;
     box-shadow: none;
 }
-.p-splitbutton.theme > .p-button {
+
+.p-splitbutton.theme>.p-button {
     background: var(--primary-button-color);
     border: 1px solid var(--primary-button-color);
     color: var(--primary-button-txt-color);
 }
-.p-splitbutton.theme > .p-button:enabled:hover {
+
+.p-splitbutton.theme>.p-button:enabled:hover {
     background: var(--primary-button-hover-color);
     color: var(--primary-button-txt-color);
     border-color: var(--primary-button-color);
 }
-.p-splitbutton.theme > .p-button:focus {
+
+.p-splitbutton.theme>.p-button:focus {
     outline: none;
     box-shadow: none;
 }
-.justify-content-end .p-splitbutton.p-button-sm > .p-button {
+
+.justify-content-end .p-splitbutton.p-button-sm>.p-button {
     font-size: 14px;
     padding: 6px 6px;
 }
-.justify-content-end .p-splitbutton.p-button-sm > .p-button.p-button-icon-only {
+
+.justify-content-end .p-splitbutton.p-button-sm>.p-button.p-button-icon-only {
     width: 24px;
 }
+
 .p-panel-event .p-panel .p-panel-content {
     padding: 1.25rem 0.25rem;
 }
+
 .p-fieldset .p-toggleable-content .p-fieldset-content {
     padding: 0.25rem;
 }
+
 .p-accordion .p-toggleable-content .p-accordion-content {
     padding: 0.25rem;
 }
+
 .p-selectbutton .p-button {
     padding: 0.75rem 0rem;
 }
 
 header.header-container {
-    background-color: white!important;
+    background-color: white !important;
     border-bottom: 1px solid var(--gray-300);
 }
 
-.iframe-form > .row > [class*="col-"] {
+.iframe-form>.row>[class*="col-"] {
     padding-left: 7px;
 }
 
@@ -118,11 +160,13 @@ body {
     background-color: #F1F3F8;
 }
 
-.btn:hover, .btn:focus-visible {
+.btn:hover,
+.btn:focus-visible {
     --bs-btn-hover-color: var(--primary-button-txt-color);
     --bs-btn-hover-bg: var(--primary-button-color);
     --bs-btn-border-color: var(--primary-button-color);
 }
+
 .btn-primary {
     --bs-btn-bg: var(--primary-button-color);
     --bs-btn-color: var(--primary-button-txt-color);

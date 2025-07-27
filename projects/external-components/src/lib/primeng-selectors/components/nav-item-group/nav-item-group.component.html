@@ -1,0 +1,36 @@
+<div class="navbar" [ngClass]="[isMobileDevice ? 'navbar-light':'navbar-dark']" #primeElement>
+    <div class="navbar-nav dynamic-style-parent" 
+        [ngClass]="[isMobileDevice ? 'mobile':'desktop',
+        fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName || '']">
+        <div [ngClass]="{ 'item-active': (item.active || (currentRoute.indexOf('/' + item.id + '/') !== -1)) }" 
+                *ngFor="let item of getNavItems()" class="dynamic-style-child">
+            <i class="fas fa-fw" *ngIf="item.icon" [ngClass]="item.icon"></i>
+            <img class="fas fa-fw" *ngIf="item.imageUrl" [src]="item.imageUrl"/>
+            <a class="nav-item nav-link"
+                [ngClass]="[ (item.active || (currentRoute.indexOf('/' + item.id + '/') !== -1)) ? 'active': '',
+                            item.disabled ? 'disabled' : '',
+                            item.layoutProperties && item.layoutProperties.css && item.layoutProperties.css.customClassName || '' ]"
+                href="#" (click)="navItemClick($event, item)">
+                {{ item.label }}
+            </a>
+        </div>
+        <div class="nav-item dynamic-style-child" ngbDropdown *ngIf="!isMobileDevice && navItemCount < fieldObj.navItems.length">
+            <a type="button" class="nav-link" ngbDropdownToggle  id="navbarDropdown-{{fieldObj.baseProperties.id}}">{{fieldObj.dropdownLabel}}</a>
+            <div class="nav-more-dropdown" ngbDropdownMenu
+                attr.aria-labelledby="navbarDropdown-{{fieldObj.baseProperties.id}}">
+                <div [ngClass]="{ 'item-active': (item.active || (currentRoute.indexOf('/' + item.id + '/') !== -1)) }" 
+                        *ngFor="let item of fieldObj.navItems.slice(navItemCount)">
+                    <i ngbDropdownItem class="fas fa-fw" *ngIf="item.icon" [ngClass]="item.icon"></i>
+                    <img ngbDropdownItem class="fas fa-fw" *ngIf="item.imageUrl" [src]="item.imageUrl"/>
+                    <a ngbDropdownItem class="nav-item nav-link"
+                        [ngClass]="[ (item.active || (currentRoute.indexOf('/' + item.id + '/') !== -1)) ? 'active': '',
+                                    item.disabled ? 'disabled' : '',
+                                    item.layoutProperties && item.layoutProperties.css && item.layoutProperties.css.customClassName || '' ]"
+                        href="#" (click)="navItemClick($event, item)">
+                        {{ item.label }}
+                    </a>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

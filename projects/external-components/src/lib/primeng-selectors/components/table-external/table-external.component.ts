@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../../services/common.service';
 import { CommonExternalComponent } from '../common-external/common-external.component';
@@ -9,7 +9,7 @@ import * as FileSaver from 'file-saver';
   templateUrl: './table-external.component.html',
   styleUrls: ['./table-external.component.scss']
 })
-export class TableExternalComponent extends CommonExternalComponent implements OnInit {
+export class TableExternalComponent extends CommonExternalComponent implements OnInit, AfterViewInit {
   data: any = [];
 
   constructor(private commonService: CommonService, private router: Router) { 
@@ -17,7 +17,6 @@ export class TableExternalComponent extends CommonExternalComponent implements O
   }
 
   ngOnInit(): void {
-    this.refreshTable(true);
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === "RELOAD_COMPONENT_DATA") {
         this.refreshTable();
@@ -32,6 +31,11 @@ export class TableExternalComponent extends CommonExternalComponent implements O
         this.primeElement.loading = false;
       }
     });
+  }
+
+  override ngAfterViewInit(): void {
+    super.ngAfterViewInit();
+    this.refreshTable(true);
   }
 
   applyGlobalFilter($event: Event, stringVal: string) {
@@ -52,7 +56,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
     } else {
       this.primeElement.loading = true;
       if (this.fieldObj.customAttributes.dataConfig && this.fieldObj.customAttributes.dataConfig.url) {
-        this.customApiCall(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {
+        this.customApiCall?.(this.fieldObj.customAttributes.dataConfig).subscribe((data: any) => {
           this.data = data;
           this.primeElement.loading = false;
         });
@@ -65,7 +69,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
       if (colConfig.action.name === "ROW_ACTION") {
         if(colConfig.action.apiConfig && colConfig.action.apiConfig.url) {
           this.primeElement.loading = true;
-          this.customApiCall(colConfig.action.apiConfig, rowData).subscribe(() => { 
+          this.customApiCall?.(colConfig.action.apiConfig, rowData).subscribe(() => { 
             console.log("Row action performed successfully.");
           }, (err: any) => {
             console.error(err);
@@ -98,7 +102,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
 
   exportPdf() {
     if(this.fieldObj.customAttributes.pdfDownloadConfig && this.fieldObj.customAttributes.pdfDownloadConfig.url){    
-      this.customApiCall(this.fieldObj.customAttributes.pdfDownloadConfig).subscribe((data: Blob) => {
+      this.customApiCall?.(this.fieldObj.customAttributes.pdfDownloadConfig).subscribe((data: Blob) => {
        
       });
     } else{
@@ -146,7 +150,7 @@ export class TableExternalComponent extends CommonExternalComponent implements O
 
   exportExcel() {
     if(this.fieldObj.customAttributes.excelDownloadConfig && this.fieldObj.customAttributes.excelDownloadConfig.url){
-      this.customApiCall(this.fieldObj.customAttributes.excelDownloadConfig).subscribe((data: any) => {
+      this.customApiCall?.(this.fieldObj.customAttributes.excelDownloadConfig).subscribe((data: any) => {
        
       });
     } else {

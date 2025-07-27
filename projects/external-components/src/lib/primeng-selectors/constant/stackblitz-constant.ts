@@ -14,6 +14,7 @@ import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
 import { DialogModule } from 'primeng/dialog';
@@ -21,12 +22,16 @@ import { DialogModule } from 'primeng/dialog';
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon, DialogModule
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon, 
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule, DialogModule
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
-    BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule
+    BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
+    TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon,
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule, DialogModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `

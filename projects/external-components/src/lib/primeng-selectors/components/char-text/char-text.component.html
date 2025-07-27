@@ -1,0 +1,66 @@
+<div
+  class="dynamic-style-parent"
+  [ngClass]="[
+    fieldObj.fieldPlacement === 'right' ? 'float-right' : '',
+    (fieldObj.layoutProperties.css &&
+      fieldObj.layoutProperties.css.customClassName) ||
+      ''
+  ]"
+>
+  <span
+    [hidden]="!dynamicAttributes?.visibleValue"
+    ngClass="{{ applyLabelPlacementClass() }}"
+    [formGroup]="formGroupObj"
+  >
+  <div class="field-label">
+    <label      
+      [ngClass]="{
+        'label-required':
+          dynamicAttributes?.requiredValue && fieldObj.baseProperties.label
+      }"
+      for="{{ fieldObj.baseProperties.name }}"
+      >{{ fieldObj.baseProperties.label }}
+    </label>
+    <i
+      *ngIf="fieldObj.baseProperties.tooltip"
+      class="pi pi-info-circle pl-2 tooltipStyle"
+      placement="{{ fieldObj.baseProperties.tooltipPlacement }}"
+      ngbTooltip="{{ fieldObj.baseProperties.tooltip }}"
+    ></i>
+  </div>
+
+    <input #primeElements
+      *ngIf="fieldObj.baseProperties.type.toLowerCase() !== 'textarea'"
+      type="{{ fieldObj.baseProperties.type }}"
+      id="{{ fieldObj.baseProperties.name }}"
+      name="{{ fieldObj.baseProperties.name }}"
+      placeholder="{{ fieldObj.placeholder }}"
+      [formControlName]="fieldObj.baseProperties.name"
+      [readonly]="dynamicAttributes?.readOnlyValue"
+      class="form-control field-input dynamic-style-child"
+      [ngClass]="{
+        'field-required':
+          formGroupObj?.controls?.[fieldObj.baseProperties.name]?.errors &&
+          formGroupObj.controls[fieldObj.baseProperties.name].errors.required,
+        'hide-spinner': fieldObj.hideSpinner
+      }"
+      (input)="this.debounceValueChange.next()"
+    />
+
+    <textarea #primeElements
+      *ngIf="fieldObj.baseProperties.type.toLowerCase() === 'textarea'"
+      id="{{ fieldObj.baseProperties.name }}"
+      name="{{ fieldObj.baseProperties.name }}"
+      placeholder="{{ fieldObj.placeholder }}"
+      [formControlName]="fieldObj.baseProperties.name"
+      [readonly]="dynamicAttributes?.readOnlyValue"
+      class="form-control field-input dynamic-style-child"
+      [ngClass]="{
+        'field-required':
+          formGroupObj?.controls?.[fieldObj.baseProperties.name]?.errors &&
+          formGroupObj.controls[fieldObj.baseProperties.name].errors.required
+      }"
+      (input)="this.debounceValueChange.next()"
+    ></textarea>
+  </span>
+</div>
