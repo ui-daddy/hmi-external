@@ -1,0 +1,47 @@
+<div *ngIf="dynamicAttributes?.visibleValue" class="form-group dynamic-style-parent"
+    [ngClass]="[ fieldObj.fieldPlacement === 'right' ? 'float-right' : '',
+                fieldObj.layoutProperties.labelPlacement && fieldObj.layoutProperties.labelPlacement.toLowerCase() === 'left' ? 'input-label__placement-left' : 'input-label__placement-top',
+                fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName || '']">
+    <label *ngIf="fieldObj.layoutProperties.labelPlacement !== 'none'" class="field-label" [ngClass]="{ 'label-required': dynamicAttributes?.requiredValue && fieldObj.baseProperties.label }"
+        for="{{ fieldObj.baseProperties.name }}">{{ fieldObj.baseProperties.label }}</label>
+    <div class="input-group" [formGroup]="formGroupObj" *ngIf="fieldObj.baseProperties.type === 'date'">
+        <input class="form-control dynamic-style-child" placeholder="yyyy-mm-dd" id="{{ fieldObj.baseProperties.name }}" name="{{ fieldObj.baseProperties.name }}"
+            ngbDatepicker #primeElements="ngbDatepicker" [formControlName]="fieldObj.baseProperties.name" (ngModelChange)="onValueChange()"
+            [minDate]="dynamicAttributes!.minDateValue" [maxDate]="dynamicAttributes!.maxDateValue" [outsideDays]="fieldObj.outsideDays">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar far fa-calendar-alt" (click)="primeElements.toggle()" type="button"></button>
+        </div>
+    </div>
+
+    <div class="input-group" [formGroup]="formGroupObj" *ngIf="fieldObj.baseProperties.type === 'time'">
+        <ngb-timepicker #primeElements class="dynamic-style-child" [meridian]="true" [formControlName]="fieldObj.baseProperties.name" (ngModelChange)="onValueChange()"></ngb-timepicker>
+    </div>
+
+    <!-- Custom Inline date-picker -->
+    <div class="input-group" id="{{ fieldObj.baseProperties.name }}"
+        [formGroup]="formGroupObj" *ngIf="fieldObj.baseProperties.type === 'date-inline'">
+        <ngb-datepicker #primeElements class="responsive dynamic-style-child"
+            *ngIf="!loadingCalendarConfig" [dayTemplate]="customDayTemplate" 
+             [formControlName]="fieldObj.baseProperties.name" [showWeekNumbers]="false" [markDisabled]="isDisabled" 
+             (navigate)="onMonthChange($event)" (ngModelChange)="onValueChange()"></ngb-datepicker>
+        <!-- <ngb-datepicker [meridian]="true" [formControlName]="fieldObj.baseProperties.name" [showWeekNumbers]="false"></ngb-datepicker> -->
+    </div>
+
+    <!-- TODO: Disable the days which are not sent from backend -->
+    <ng-template #customDayTemplate let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+        <div class="btn-light custom-day" 
+              [class.focused]="focused"
+              [class.bg-primary]="selected"              
+              [class.text-muted]="disabled"
+
+              [class.outside]="disabled"
+              [class.active]="focused"
+              [class.text-white]="selected"
+              [class.hidden]="date.month !== currentMonth"
+
+              [ngStyle]="backgroundStyle(date)"
+              (click)="onDateSelect(date)">
+          {{ i18n.getDayNumerals(date) }}
+        </div>
+    </ng-template>
+</div>
