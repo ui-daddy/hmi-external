@@ -1,0 +1,33 @@
+<div
+  class="dynamic-style-parent"
+  [ngClass]="[fieldObj.fieldPlacement === 'right' ? 'float-right' : '',
+              fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName || '']">
+  <span
+    [hidden]="!dynamicAttributes?.visibleValue"
+    ngClass="{{ applyLabelPlacementClass() }}"
+    [formGroup]="formGroupObj">
+    <label
+      class="field-label"
+      [ngClass]="{ 'label-required': dynamicAttributes?.requiredValue && fieldObj.baseProperties.label }"
+      for="{{ fieldObj.baseProperties.name }}">{{ fieldObj.baseProperties.label }}</label>
+      <div class="custom-file">  
+      <input #fileRef
+        type="file"
+        id="{{ fieldObj.baseProperties.name }}"
+        accept="{{ fieldObj.allowedExt }}"
+        name="{{ fieldObj.baseProperties.name }}"
+        placeholder="{{ fieldObj.placeholder }}"
+        [formControlName]="fieldObj.baseProperties.name"
+        class="form-control custom-file-input dynamic-style-child"
+        [ngClass]="{
+          'field-required': formGroupObj.controls[fieldObj.baseProperties.name].errors
+                            && formGroupObj.controls[fieldObj.baseProperties.name].errors!.required,
+          'hide-spinner': fieldObj.hideSpinner
+        }"
+        (change)="onValueChange($event)"
+      />
+        <label #inputLabel class="custom-file-label" for="{{ fieldObj.baseProperties.id }}">Choose file</label>
+      </div>
+  </span>      
+  
+</div>
