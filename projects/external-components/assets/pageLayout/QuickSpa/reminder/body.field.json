@@ -9,6 +9,7 @@
                 "name": "",
                 "label": "Add Reminder"
             },
+            "libraryComponent": "ButtonComponent",
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -271,6 +272,8 @@
                     "method": "GET",
                     "params": {},
                     "postTransform": "multiDateTimeTransform",
+                    "postTransformAccessors": ["scheduledDate"],
+                    "postTransformArgs": "dd/MM/YYYY, hh:mm a",
                     "onSuccess": {
                         "apiDataAccessor": "reminders.rows"
                     }
@@ -289,6 +292,7 @@
                 "name": "userId",
                 "formName": "editreminderModal"
             },
+            "libraryComponent": "CharTextComponent",
             "dynamicValueAccessor": [
                 "id"
             ],
@@ -315,7 +319,8 @@
                 "name": "reminderIdEdit",
                 "formName": "editreminderModal",
                 "label": "reminderId"
-            },
+            },            
+            "libraryComponent": "CharTextComponent",
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -343,6 +348,7 @@
                 "name": "editreminderModalTitle",
                 "formName": "editreminderModal"
             },
+            "libraryComponent": "StaticTextComponent",
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -380,6 +386,7 @@
                 "name": "title-editModal",
                 "label": "Title"
             },
+            "libraryComponent": "CharTextComponent",
             "layoutProperties": {
                 "labelPlacement": "left",
                 "width": null,
@@ -404,6 +411,7 @@
                 "name": "messageEdit",
                 "label": "Message"
             },
+            "libraryComponent": "CharTextComponent",
             "layoutProperties": {
                 "labelPlacement": "left",
                 "width": null,
@@ -428,6 +436,7 @@
                 "name": "redirectUrlEdit",
                 "label": "Redirect Url"
             },
+            "libraryComponent": "CharTextComponent",
             "layoutProperties": {
                 "labelPlacement": "left",
                 "width": null,
@@ -467,7 +476,10 @@
             "events": [],
             "expressionProperties": {},
             "value": null,
-            "placeholder": null
+            "placeholder": null,
+            "dateInputFormat": "DD/MM/YYYY, hh:mm A",
+            "dateInputTimezone": "Asia/Kolkata",
+            "dateViewFormat": "dd/mm/yy"
         },
         {
             "baseProperties": {
@@ -477,6 +489,7 @@
                 "name": "savereminderBtn",
                 "label": "Save"
             },
+            "libraryComponent": "ButtonComponent",
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -633,6 +646,7 @@
                 "name": "userId",
                 "formName": "addreminderModal"
             },
+            "libraryComponent": "CharTextComponent",
             "dynamicValueAccessor": [
                 "id"
             ],
@@ -659,6 +673,7 @@
                 "name": "addreminderTitle",
                 "formName": "addreminderModal"
             },
+            "libraryComponent": "StaticTextComponent",
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
@@ -696,6 +711,7 @@
                 "name": "title",
                 "label": "Title"
             },
+            "libraryComponent": "CharTextComponent",
             "layoutProperties": {
                 "labelPlacement": "left",
                 "width": null,
@@ -720,6 +736,7 @@
                 "formName": "addreminderModal",
                 "label": "Message"
             },
+            "libraryComponent": "CharTextComponent",
             "layoutProperties": {
                 "labelPlacement": "left",
                 "width": null,
@@ -744,6 +761,7 @@
                 "name": "redirectUrl",
                 "label": "Redirect Url"
             },
+            "libraryComponent": "CharTextComponent",
             "layoutProperties": {
                 "labelPlacement": "left",
                 "width": null,
@@ -783,7 +801,11 @@
             "events": [],
             "expressionProperties": {},
             "value": null,
-            "placeholder": null
+            "placeholder": null,
+            "dateInputFormat": "DD/MM/YYYY, hh:mm A",
+            "dateInputTimezone": "Asia/Kolkata",
+            "dateViewFormat": "dd/mm/yy"
+
         },
         {
             "baseProperties": {
@@ -793,6 +815,7 @@
                 "name": "submitreminder",
                 "label": "Save"
             },
+            "libraryComponent": "ButtonComponent",
             "layoutProperties": {
                 "labelPlacement": null,
                 "width": null,
