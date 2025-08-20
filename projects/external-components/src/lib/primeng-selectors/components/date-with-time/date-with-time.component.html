@@ -7,7 +7,7 @@
     <div class="input-group" [formGroup]="formGroupObj" *ngIf="fieldObj.baseProperties.type === 'date-time'">
         <p-datepicker #primeElements class="dynamic-style-child" inputId="calendar-12h"
             [showTime]="true" [hourFormat]="'12'" [showIcon]="true" [formControlName]="fieldObj.baseProperties.name"
-            (ngModelChange)="onValueChange()"  dateFormat="dd/mm/yy"/>
+            (ngModelChange)="onValueChange()"  [dateFormat]="dateViewFormat"/>
     </div>
 
 </div>

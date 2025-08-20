@@ -4,7 +4,8 @@ import { UntypedFormGroup } from '@angular/forms';
 import * as _ from "lodash";
 import { ACTION_TYPE } from '../../../interfaces/hmi-events';
 import { Observable } from 'rxjs';
-import * as moment from 'moment-timezone'
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -16,12 +17,14 @@ export class DateWithTimeComponent extends CommonExternalComponent implements On
 
   isTemplateOnly: boolean = false;
   datetime: Date[] | any;
+  dateViewFormat!: string;
 
   constructor() {
     super();
   }
 
   ngOnInit(): void {
+    this.dateViewFormat = this.fieldObj.dateViewFormat;
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === ACTION_TYPE.CLEAR_COMPONENT_DATA) {
         this.clearValue();
@@ -31,7 +34,8 @@ export class DateWithTimeComponent extends CommonExternalComponent implements On
     if (this.fieldObj && this.fieldObj.baseProperties && this.fieldObj.baseProperties.name) {
       const dateTimeValue = this.formGroupObj.get(this.fieldObj.baseProperties.name)?.value;
       if (dateTimeValue) {
-        this.datetime = new Date(dateTimeValue);
+        const momentDate = moment.tz(dateTimeValue, this.fieldObj.dateInputFormat, this.fieldObj.dateInputTimezone); //"DD/MM/YYYY, hh:mm A", "asia/kolkata"
+        this.datetime = momentDate.toDate();
         this.formGroupObj.get(this.fieldObj.baseProperties.name)?.setValue(this.datetime);
       }
     }

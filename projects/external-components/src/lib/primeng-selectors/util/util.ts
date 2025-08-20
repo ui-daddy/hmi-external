@@ -22,15 +22,19 @@ export const multiDateTransform = (value:any)=> {
     });
 }
 
-export const multiDateTimeTransform = (value: any) => {
+export const multiDateTimeTransform = (
+    value: any,
+    postTransformAccessors: string[],
+    postTransformArgs?: string
+) => {
     const datePipe = new DatePipe('en-US');
-    const dateTimeFormat = 'dd MMM yy, hh:mm a'; // e.g., 25 Jul 24, 03:45 PM
+    const dateTimeFormat = postTransformArgs || 'dd MMM yy, hh:mm a';
     return value.map((v: any) => {
-        const scheduledDate = datePipe.transform(v.scheduledDate, dateTimeFormat);
-        const expectedEndDate = datePipe.transform(v.expectedEndDate, dateTimeFormat);
-        const actualStartDate = datePipe.transform(v.actualStartDate, dateTimeFormat);
-        const actualEndDate = datePipe.transform(v.actualEndDate, dateTimeFormat);
-        return { ...v, scheduledDate, expectedEndDate, actualStartDate, actualEndDate };
+        const transformed: any = { ...v };
+        postTransformAccessors.forEach(accessor => {
+            transformed[accessor] = datePipe.transform(v[accessor], dateTimeFormat);
+        });
+        return transformed;
     });
 }
 
