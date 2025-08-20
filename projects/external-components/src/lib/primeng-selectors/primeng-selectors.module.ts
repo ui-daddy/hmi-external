@@ -1,3 +1,4 @@
+import { PhasercityComponent } from './components/phasercity-external/phasercity-external.component';
 import { NgModule } from '@angular/core';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
@@ -35,8 +36,7 @@ import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
 
 @NgModule({
-    declarations: [
-        PasswordExternalComponent,
+    declarations: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -60,11 +60,9 @@ import CustomPreset from './custom-theme';
         DateTimeComponent,
         FileUploadComponent,
         TypeaheadComponent,
-        NavMenuComponent
-    ],
+        NavMenuComponent, PhasercityComponent],
     imports: IMPORT_MODULES,
-    exports: [
-        PasswordExternalComponent,
+    exports: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -76,8 +74,7 @@ import CustomPreset from './custom-theme';
         CharTextComponent, StaticImageComponent, StaticIconComponent,
         CheckboxComponent, RadioComponent, NavItemGroupComponent,
         ButtonComponent, DateTimeComponent, FileUploadComponent,
-        TypeaheadComponent, NavMenuComponent
-    ],
+        TypeaheadComponent, NavMenuComponent, PhasercityComponent],
     providers: [
         DialogService,
         providePrimeNG({ 
