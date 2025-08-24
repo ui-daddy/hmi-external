@@ -25,9 +25,7 @@ export const IMPORT_MODULES = [
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
-    BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
-    TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule
+    BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
