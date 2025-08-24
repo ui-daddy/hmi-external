@@ -24,7 +24,7 @@ export class DateWithTimeComponent extends CommonExternalComponent implements On
   }
 
   ngOnInit(): void {
-    this.dateViewFormat = this.fieldObj.dateViewFormat;
+    this.dateViewFormat = this.fieldObj.customAttributes.dateViewFormat;
     this.subscription = this.fieldObj.action.subscribe((actionObj: any) => {
       if (actionObj.actionType === ACTION_TYPE.CLEAR_COMPONENT_DATA) {
         this.clearValue();
@@ -34,7 +34,7 @@ export class DateWithTimeComponent extends CommonExternalComponent implements On
     if (this.fieldObj && this.fieldObj.baseProperties && this.fieldObj.baseProperties.name) {
       const dateTimeValue = this.formGroupObj.get(this.fieldObj.baseProperties.name)?.value;
       if (dateTimeValue) {
-        const momentDate = moment.tz(dateTimeValue, this.fieldObj.dateInputFormat, this.fieldObj.dateInputTimezone); //"DD/MM/YYYY, hh:mm A", "asia/kolkata"
+        const momentDate = moment.tz(dateTimeValue, this.fieldObj.customAttributes.dateInputFormat, this.fieldObj.customAttributes.dateInputTimezone); //"DD/MM/YYYY, hh:mm A", "asia/kolkata"
         this.datetime = momentDate.toDate();
         this.formGroupObj.get(this.fieldObj.baseProperties.name)?.setValue(this.datetime);
       }

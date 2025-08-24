@@ -4,7 +4,7 @@
     <label *ngIf="fieldObj.layoutProperties.labelPlacement !== 'none'" class="field-label"
         [ngClass]="{ 'label-required': dynamicAttributes?.requiredValue && fieldObj.baseProperties.label }"
         for="{{ fieldObj.baseProperties.name }}">{{ fieldObj.baseProperties.label }}</label>
-    <div class="input-group" [formGroup]="formGroupObj" *ngIf="fieldObj.baseProperties.type === 'date-time'">
+    <div class="input-group" [formGroup]="formGroupObj">
         <p-datepicker #primeElements class="dynamic-style-child" inputId="calendar-12h"
             [showTime]="true" [hourFormat]="'12'" [showIcon]="true" [formControlName]="fieldObj.baseProperties.name"
             (ngModelChange)="onValueChange()"  [dateFormat]="dateViewFormat"/>
