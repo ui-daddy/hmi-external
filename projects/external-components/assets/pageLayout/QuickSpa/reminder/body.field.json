@@ -455,7 +455,7 @@
         },
         {
             "baseProperties": {
-                "type": "date-time",
+                "type": "dynamicField",
                 "id": "dnd-25",
                 "formName": "addreminderModal",
                 "name": "scheduledDateEdit",
@@ -477,9 +477,11 @@
             "expressionProperties": {},
             "value": null,
             "placeholder": null,
-            "dateInputFormat": "DD/MM/YYYY, hh:mm A",
-            "dateInputTimezone": "Asia/Kolkata",
-            "dateViewFormat": "dd/mm/yy"
+           "customAttributes": {
+                "dateInputFormat": "DD/MM/YYYY, hh:mm A",
+                "dateInputTimezone": "Asia/Kolkata",
+                "dateViewFormat": "dd/mm/yy"
+            }
         },
         {
             "baseProperties": {
@@ -780,7 +782,7 @@
         },
         {
             "baseProperties": {
-                "type": "date-time",
+                "type": "dynamicField",
                 "id": "dnd-16",
                 "formName": "addreminderModal",
                 "name": "scheduledDate",
@@ -802,9 +804,11 @@
             "expressionProperties": {},
             "value": null,
             "placeholder": null,
-            "dateInputFormat": "DD/MM/YYYY, hh:mm A",
-            "dateInputTimezone": "Asia/Kolkata",
-            "dateViewFormat": "dd/mm/yy"
+            "customAttributes": {
+                "dateInputFormat": "DD/MM/YYYY, hh:mm A",
+                "dateInputTimezone": "Asia/Kolkata",
+                "dateViewFormat": "dd/mm/yy"
+            }
 
         },
         {
