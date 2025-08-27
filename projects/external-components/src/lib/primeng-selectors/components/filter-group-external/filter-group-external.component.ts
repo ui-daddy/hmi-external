@@ -143,7 +143,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
 
   loadData(ddOption: any, selectedValue?: string) {
     ddOption.showLoader = true;
-    this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
+    this.customApiCall?.(ddOption.optionsConfig).subscribe((data: any[]) => {
       ddOption.optionList = data;
       if (data && data.length && ddOption.filterOptionListBy) {
         ddOption.optionList = ddOption.optionList.filter((v:any)=> v[ddOption.filterOptionListBy] === selectedValue);
@@ -287,7 +287,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       ], data: null});
     }
 
-    this.customApiCall(config, data).subscribe((data: any[]) => {
+    this.customApiCall?.(config, data).subscribe((data: any[]) => {
       if (isRemove && filter) {
         filter.filterApplied = false;
         if (filter.type === FilterEventType.DEPENDENT) {

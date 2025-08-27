@@ -7,7 +7,30 @@
     --secondary-button-hover-color: #e9ecef;
     --body-bg-color: #E3E9F7;
     --card-bg-color: white;
-}
+    
+    /* nav-item-group.component.scss */
+
+    --nav-item-active-bordercolor: #fff;
+    --nav-item-link-txtcolor: rgba(255, 255, 255, 0.9);
+    --nav-item-link-hover-txtcolor: rgba(255, 255, 255, 0.75);
+
+    /* button.component.scss */
+    --button-timer-count-txtcolor: #fff;
+    --button-timer-left-color: #fff;
+    --button-timer-paused-color: rgba(#fff, .5);
+    --button-timer-completed-color: lime;
+
+    /* date-time.component.scss */
+    --calendar-date-picker-txtcolor: #212529;
+    --calendar-date-picker-bgcolor-disabled: #e2e6ea;
+    --calendar-date-picker-bgcolor-available: #8af3c7;
+    --calendar-date-picker-bgcolor-partial: #f3b98a;
+    --calendar-date-picker-bgcolor-full: #f38abb;
+    --calendar-date-picker-bordercolor-disabled: #dae0e5;
+    --calendar-date-picker-bordercolor-available: #306604;
+    --calendar-date-picker-bordercolor-partial: #663804;
+    --calendar-date-picker-bordercolor-full: #660440;
+    }
 
 .p-button.p-button-secondary.theme {
     background: var(--secondary-button-color);
