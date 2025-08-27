@@ -1,0 +1,36 @@
+<div [ngClass]="[ fieldObj.fieldPlacement === 'right' ? 'float-right' : '',
+                (fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName) || '' ]"
+    class="form-group dynamic-style-parent"
+    [hidden]="!dynamicAttributes?.visibleValue" [formGroup]="formGroupObj">
+  <span
+    [hidden]="!dynamicAttributes?.visibleValue"
+    ngClass="{{ applyLabelPlacementClass() }}"
+    [formGroup]="formGroupObj"
+  >
+    <div class="field-label">
+      <label class="field-label"
+      [ngClass]="{
+        'label-required':
+          dynamicAttributes?.requiredValue && fieldObj.baseProperties.label
+      }"
+      for="{{ fieldObj.baseProperties.name }}">{{ fieldObj.baseProperties.label }}</label>
+    </div>
+    <select #primeElement [formControlName]="fieldObj.baseProperties.name"
+        [compareWith]="compareFn"
+        class="form-control field-input dynamic-style-child"
+        [ngClass]="{
+          'field-required':
+            formGroupObj.controls[fieldObj.baseProperties.name].errors &&
+            formGroupObj.controls[fieldObj.baseProperties.name].errors.required
+        }"
+        (change)="selectChangeHandler()">
+        <option> -- Select -- </option>
+        <option *ngFor="let option of formattedOptionList" [ngValue]="option">
+                {{option.label}}
+        </option>
+    </select>
+    <div class="input-component-loader d-flex justify-content-center align-items-center" *ngIf="showLoader">
+        <div class="spinner-border text-info loader-placement"></div>
+    </div>
+  </span>
+</div>

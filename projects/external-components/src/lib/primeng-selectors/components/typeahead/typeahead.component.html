@@ -1,0 +1,22 @@
+<div [ngClass]="[ fieldObj.fieldPlacement === 'right' ? 'float-right' : '',
+                fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName || '']">
+    <span ngClass="{{ applyLabelPlacementClass() }}" [formGroup]="formGroupObj">
+        <label for="typeahead-focus" [ngClass]="{ 'label-required': dynamicAttributes!.requiredValue && fieldObj.baseProperties.label }">{{ fieldObj.baseProperties.label }}</label>
+        <input
+            id="typeahead-focus"
+            name="{{ fieldObj.baseProperties.name }}"
+            type="text"
+            class="form-control dynamic-style-child"
+            placeholder="{{ fieldObj.placeholder }}"
+            [formControlName]="fieldObj.baseProperties.name"
+            [ngbTypeahead]="search"
+            [resultFormatter]="formatter"
+            [inputFormatter]="formatter"
+            [editable]="false"
+            (focus)="focus$.next($any($event).target.value)"
+            (click)="click$.next($any($event).target.value)"
+            (selectItem)="onValueChange($event)"
+            #primeElement="ngbTypeahead"
+        />
+    </span>
+</div>
