@@ -22,6 +22,22 @@ export const multiDateTransform = (value:any)=> {
     });
 }
 
+export const multiDateTimeTransform = (
+    value: any,
+    postTransformAccessors: string[],
+    postTransformArgs?: string
+) => {
+    const datePipe = new DatePipe('en-US');
+    const dateTimeFormat = postTransformArgs || 'dd MMM yy, hh:mm a';
+    return value.map((v: any) => {
+        const transformed: any = { ...v };
+        postTransformAccessors.forEach(accessor => {
+            transformed[accessor] = datePipe.transform(v[accessor], dateTimeFormat);
+        });
+        return transformed;
+    });
+}
+
 export const deepClone = (originalObject: any) => {
     return JSON.parse(JSON.stringify(originalObject));
 }

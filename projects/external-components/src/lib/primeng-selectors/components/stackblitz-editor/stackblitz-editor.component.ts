@@ -21,6 +21,8 @@ import sdk from '@stackblitz/sdk';
 import { isIosDevice } from '../../util/platform';
 import { STACKBLITZ_ANGULAR_JSON, STACKBLITZ_APP_MODULE_TS, STACKBLITZ_COMMON_EXTERNAL_TS, STACKBLITZ_COMPONENT_CLASS_NAME, STACKBLITZ_COMPONENT_SELECTOR, STACKBLITZ_DEPENDENCIES, STACKBLITZ_HMI_PREVIEW_APP_COMP_HTML, STACKBLITZ_HMI_PREVIEW_APP_COMPONENT_TS, STACKBLITZ_INDEX_HTML, STACKBLITZ_MAIN_TS, STACKBLITZ_POLLYFILL_TS, STACKBLITZ_STYLES_CSS } from '../../constant/stackblitz-constant';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { UrlConfiguration } from '../../../interfaces/url-configuration';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hmi-ext-stackblitz-editor',
@@ -40,7 +42,7 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
   @Input() code: string = '';
   @Input() dependencies: string = '';
   @Input() isDialog: boolean = true;
-  @Input() customApiCall: any;
+  @Input() customApiCall: ((searchConfig: UrlConfiguration, CUSTOM_FIELD_OBJECT?: any) => Observable<any>) | undefined;
   @Input() initializeEvents:any;
   @Input() downloadLogEvent:any;
   @Input() checkBuildEvent:any;
@@ -264,7 +266,7 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
     }
     const BuildStatusAction = this.checkBuildEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
     this.intervalId = setInterval(() => {
-      this.customApiCall(BuildStatusAction.apiConfig).subscribe(
+      this.customApiCall!(BuildStatusAction.apiConfig).subscribe(
         (item: any) => {
           this.buildStatus = item?.data?.buildStatus;
           this.previewLink = `${item?.data?.deployLink}/${item?.data?.title}`;
@@ -336,7 +338,7 @@ export class StackblitzEditorComponent implements AfterViewInit, OnChanges {
     this.showModal = true;
     this.buildLog = null;
     const downloadLogAction = this.downloadLogEvent?.actions?.find((action: any) => action.actionType === "INVOKE_API");
-    this.customApiCall(downloadLogAction.apiConfig).subscribe((data: any) => {
+    this.customApiCall!(downloadLogAction.apiConfig).subscribe((data: any) => {
       const parts = data.split("----------Errors---------");
       this.buildLog = parts.length > 1 ? parts[1] : '';
 

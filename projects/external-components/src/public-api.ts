@@ -31,3 +31,4 @@ export * from './lib/primeng-selectors/components/date-time/date-time.component'
 export * from './lib/primeng-selectors/components/file-upload/file-upload.component';
 export * from './lib/primeng-selectors/components/typeahead/typeahead.component';
 export * from './lib/primeng-selectors/components/nav-menu/nav-menu.component';
+export * from './lib/primeng-selectors/components/date-with-time/date-with-time.component';

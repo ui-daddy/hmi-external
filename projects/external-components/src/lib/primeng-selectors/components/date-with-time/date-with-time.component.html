@@ -1,0 +1,13 @@
+<div *ngIf="dynamicAttributes?.visibleValue" class="form-group dynamic-style-parent" [ngClass]="[ fieldObj.fieldPlacement === 'right' ? 'float-right' : '',
+                fieldObj.layoutProperties.labelPlacement && fieldObj.layoutProperties.labelPlacement.toLowerCase() === 'left' ? 'input-label__placement-left' : 'input-label__placement-top',
+                fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName || '']">
+    <label *ngIf="fieldObj.layoutProperties.labelPlacement !== 'none'" class="field-label"
+        [ngClass]="{ 'label-required': dynamicAttributes?.requiredValue && fieldObj.baseProperties.label }"
+        for="{{ fieldObj.baseProperties.name }}">{{ fieldObj.baseProperties.label }}</label>
+    <div class="input-group" [formGroup]="formGroupObj">
+        <p-datepicker #primeElements class="dynamic-style-child" inputId="calendar-12h"
+            [showTime]="true" [hourFormat]="'12'" [showIcon]="true" [formControlName]="fieldObj.baseProperties.name"
+            (ngModelChange)="onValueChange()"  [dateFormat]="dateViewFormat"/>
+    </div>
+
+</div>

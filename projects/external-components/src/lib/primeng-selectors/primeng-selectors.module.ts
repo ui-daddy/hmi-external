@@ -35,6 +35,7 @@ import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { FocusableDirective } from './directives/focusable.directive';
+import { DateWithTimeComponent } from './components/date-with-time/date-with-time.component';
 
 @NgModule({
     declarations: [
@@ -64,7 +65,8 @@ import { FocusableDirective } from './directives/focusable.directive';
         DateTimeComponent,
         FileUploadComponent,
         TypeaheadComponent,
-        NavMenuComponent
+        NavMenuComponent,
+        DateWithTimeComponent
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -82,7 +84,7 @@ import { FocusableDirective } from './directives/focusable.directive';
         CharTextComponent, StaticImageComponent, StaticIconComponent,
         CheckboxComponent, RadioComponent, NavItemGroupComponent,
         ButtonComponent, DateTimeComponent, FileUploadComponent,
-        TypeaheadComponent, NavMenuComponent
+        TypeaheadComponent, NavMenuComponent, DateWithTimeComponent
     ],
     providers: [
         DialogService,
