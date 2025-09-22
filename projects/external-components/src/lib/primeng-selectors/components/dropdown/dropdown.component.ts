@@ -127,6 +127,8 @@ export class DropdownComponent extends CommonExternalComponent implements OnDest
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
   }
 }

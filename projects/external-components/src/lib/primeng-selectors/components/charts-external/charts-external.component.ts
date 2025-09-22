@@ -135,7 +135,9 @@ export class ChartsExternalComponent extends CommonExternalComponent implements 
   **/
 
     ngOnDestroy(): void {
-      this.subscription.unsubscribe();
+      if(this.subscription){
+        this.subscription.unsubscribe();
+      }
     }
 
 }

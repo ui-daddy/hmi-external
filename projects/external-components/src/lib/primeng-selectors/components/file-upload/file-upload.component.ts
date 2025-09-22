@@ -90,7 +90,9 @@ export class FileUploadComponent extends CommonExternalComponent  implements OnI
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
   }
 
 }
