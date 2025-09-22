@@ -27,7 +27,9 @@ export class StaticTextComponent extends CommonExternalComponent implements OnDe
 
   ngOnDestroy() {
     this.eventSubscriptionArr?.forEach((subObj:any) => {
-      subObj.unsubscribe();
+      if(subObj){
+        subObj.unsubscribe();
+      }
     });
     this.eventSubscriptionArr = null;
   }
