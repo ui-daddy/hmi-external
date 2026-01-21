@@ -3,7 +3,7 @@
  */
 
 export * from './lib/primeng-selectors/primeng-selectors.module';
-export * from './lib/primeng-selectors/components/password-external/password-external.component';
+export {PasswordExternalComponent} from './lib/primeng-selectors/components/password-external/password-external.component';
 export * from './lib/primeng-selectors/components/text-external/text-external.component';
 export * from './lib/primeng-selectors/components/table-external/table-external.component';
 export * from './lib/primeng-selectors/components/dropdown-external/dropdown-external.component';
